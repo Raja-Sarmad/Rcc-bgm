@@ -4,17 +4,28 @@
 
   const nav = document.querySelector("nav");
   if (nav) {
+    const isHomePage = currentPage === "index.html" || currentPage === "" || currentPage === "/";
+    const navLinksHtml = isHomePage 
+      ? `
+          <li><a href="services.html">Services</a></li>
+          <li><a href="commercial-cleaning-services.html">Cleaning</a></li>
+          <li><a href="commercial-construction.html">Construction</a></li>
+          <li><a href="smart-cleaning-robotics.html">Technology</a></li>
+          <li><a href="#faq">FAQ</a></li>`
+      : `
+          <li><a href="services.html">Services</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
+          <li><a href="about.html">About</a></li>`;
+
     nav.innerHTML = `
       <div class="container nav-flex">
         <a href="index.html" class="logo" aria-label="RCC-BGM home">
           <span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span>RCC<span>BGM</span>
         </a>
         <ul class="nav-links">
-          <li><a href="services.html">Services</a></li>
-          <li><a href="industries.html">Industries</a></li>
-          <li><a href="locations.html">Locations</a></li>
-          <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
-          <li><a href="about.html">About</a></li>
+          ${navLinksHtml}
         </ul>
         <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
@@ -46,7 +57,39 @@
         link.setAttribute("aria-current", "page");
       }
     });
+
+    // Background transition on scroll
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 30) {
+        nav.classList.add("nav-scrolled");
+      } else {
+        nav.classList.remove("nav-scrolled");
+      }
+    });
+    // Trigger initial check
+    if (window.scrollY > 30) {
+      nav.classList.add("nav-scrolled");
+    }
   }
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href === '#' || href === '#!') return;
+      const targetEl = document.querySelector(href);
+      if (targetEl) {
+        e.preventDefault();
+        const header = document.querySelector('nav');
+        const navHeight = header ? header.offsetHeight : 0;
+        const targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - navHeight;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
 
   const footer = document.querySelector("footer");
   if (footer) {
