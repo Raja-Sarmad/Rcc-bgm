@@ -992,7 +992,7 @@ footer {
   background: #050a18;
   color: white;
   padding: 70px 0 40px 0;
-  border-top: 8px solid var(--accent-teal);
+  border-top: none;
 }
 
 .f-grid {
@@ -5159,7 +5159,7 @@ main section>.split-intro>div:first-child,
 
 .s-item:hover {
   transform: translateY(-8px) !important;
-  box-shadow: 0 20px 40px -15px rgba(0, 119, 182, 0.18) !important;
+  box-shadow: 0 10px 24px -10px rgba(0, 119, 182, 0.08) !important;
   border-color: rgba(0, 180, 216, 0.3) !important;
 }
 
@@ -5361,7 +5361,7 @@ body {
   overflow: hidden;
   margin-top: 40px;
   border: 1px solid rgba(0, 180, 216, 0.12) !important;
-  box-shadow: 0 25px 50px -12px rgba(6, 11, 28, 0.5) !important;
+  box-shadow: 0 16px 36px rgba(6, 11, 28, 0.25) !important;
 }
 
 .modern-process-sec::before {
@@ -5456,8 +5456,8 @@ body {
   border-color: rgba(0, 180, 216, 0.6);
   background: rgba(15, 23, 42, 0.7);
   box-shadow:
-    0 20px 40px -15px rgba(0, 180, 216, 0.25),
-    0 0 20px 0 rgba(0, 180, 216, 0.1) inset;
+    0 12px 24px -10px rgba(0, 180, 216, 0.08),
+    0 0 20px 0 rgba(0, 180, 216, 0.05) inset;
 }
 
 .modern-card-header {
@@ -5596,7 +5596,7 @@ body {
 .industries-s-card:hover {
   transform: translateY(-8px) !important;
   border-color: rgba(0, 180, 216, 0.35) !important;
-  box-shadow: 0 20px 45px -15px rgba(0, 119, 182, 0.15) !important;
+  box-shadow: 0 10px 24px -10px rgba(0, 119, 182, 0.06) !important;
 }
 
 .ind-icon-box {
@@ -6465,4 +6465,10 @@ body {
   .ind-process-num-box {
     margin: 0 auto;
   }
+}
+
+/* Global Footer Border-Bottom Remover for last section before footer */
+main>section:last-of-type,
+main>section:last-child {
+  border-bottom: none !important;
 }

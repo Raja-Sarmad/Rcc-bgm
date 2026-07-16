@@ -5,7 +5,7 @@
   const nav = document.querySelector("nav");
   if (nav) {
     const isHomePage = currentPage === "index.html" || currentPage === "" || currentPage === "/";
-    const navLinksHtml = isHomePage 
+    const navLinksHtml = isHomePage
       ? `
           <li><a href="services.html">Services</a></li>
           <li><a href="commercial-cleaning-services.html">Cleaning</a></li>
@@ -140,12 +140,36 @@
     question.setAttribute("role", "button");
     question.setAttribute("tabindex", "0");
     question.setAttribute("aria-controls", id);
-    question.setAttribute("aria-expanded", "false");
-    item.classList.remove("is-open");
+
+    // Make 1st FAQ open by default
+    if (index === 0) {
+      item.classList.add("is-open");
+      question.setAttribute("aria-expanded", "true");
+    } else {
+      item.classList.remove("is-open");
+      question.setAttribute("aria-expanded", "false");
+    }
 
     const toggle = () => {
-      const open = item.classList.toggle("is-open");
-      question.setAttribute("aria-expanded", String(open));
+      const isOpen = item.classList.contains("is-open");
+
+      // Close all other items
+      items.forEach((otherItem) => {
+        if (otherItem !== item) {
+          otherItem.classList.remove("is-open");
+          otherItem.querySelector("h4")?.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      // Toggle current item
+      const nowOpen = !isOpen;
+      if (nowOpen) {
+        item.classList.add("is-open");
+        question.setAttribute("aria-expanded", "true");
+      } else {
+        item.classList.remove("is-open");
+        question.setAttribute("aria-expanded", "false");
+      }
     };
 
     question.addEventListener("click", toggle);
@@ -156,4 +180,81 @@
       }
     });
   });
+
+  // Count up stats animations
+  const stats = [
+    { id: "stat-years", target: 15, suffix: "+" },
+    { id: "stat-facilities", target: 750, suffix: "+" },
+    { id: "stat-states", target: 6, suffix: "" },
+    { id: "stat-support", target: 24, suffix: "/7" },
+    { id: "service-stat-1", target: 1, suffix: "", pad: true },
+    { id: "service-stat-2", target: 2, suffix: "", pad: true },
+    { id: "service-stat-3", target: 3, suffix: "", pad: true }
+  ];
+
+  const animateStats = () => {
+    stats.forEach(stat => {
+      const el = document.getElementById(stat.id);
+      if (!el) return;
+
+      let current = 0;
+      const duration = 1200; // ms
+      const startTime = performance.now();
+
+      const update = (timestamp) => {
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Easing out quadratic
+        const ease = progress * (2 - progress);
+
+        const value = Math.floor(ease * stat.target);
+        const displayValue = stat.pad ? String(value).padStart(2, '0') : value;
+        el.textContent = `${displayValue}${stat.suffix}`;
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          const finalDisplayValue = stat.pad ? String(stat.target).padStart(2, '0') : stat.target;
+          el.textContent = `${finalDisplayValue}${stat.suffix}`;
+        }
+      };
+
+      requestAnimationFrame(update);
+    });
+  };
+
+  const resetStats = () => {
+    const defaultStats = [
+      { id: "stat-years", initial: "0+" },
+      { id: "stat-facilities", initial: "0+" },
+      { id: "stat-states", initial: "0" },
+      { id: "stat-support", initial: "0/7" },
+      { id: "service-stat-1", initial: "00" },
+      { id: "service-stat-2", initial: "00" },
+      { id: "service-stat-3", initial: "00" }
+    ];
+    defaultStats.forEach(stat => {
+      const el = document.getElementById(stat.id);
+      if (el) {
+        el.textContent = stat.initial;
+      }
+    });
+  };
+
+  const statsContainer = document.querySelector(".hero-stats");
+  if (statsContainer) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateStats();
+        } else {
+          resetStats();
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(statsContainer);
+  }
 })();
+

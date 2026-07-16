@@ -9,6 +9,52 @@
     content="Explore the service areas RCC-BGM can review and combine around your property’s actual requirements." />
   <link rel="stylesheet" href="site.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Spacing gap reduction specifically for services page */
+    .section-padding {
+      padding: 24px 0 !important;
+    }
+
+    .redesign-flex {
+      gap: 24px !important;
+    }
+
+    .modern-process-grid {
+      gap: 16px !important;
+      margin-top: 24px !important;
+    }
+
+    .services-grid {
+      gap: 16px !important;
+      margin-top: 24px !important;
+    }
+
+    .faq-item {
+      margin-bottom: 12px !important;
+      padding: 16px 20px !important;
+    }
+
+    .hero-stats {
+      margin-top: 30px !important;
+    }
+
+    .modern-process-sec {
+      padding: 40px 32px !important;
+      margin-top: 24px !important;
+    }
+
+    .modern-process-sec .section-intro {
+      margin-bottom: 30px !important;
+    }
+
+    .modern-step-card {
+      padding: 24px 20px !important;
+    }
+
+    main section h2 {
+      margin-bottom: 16px !important;
+    }
+  </style>
 </head>
 
 <body class="page-company">
@@ -45,22 +91,18 @@
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
-          <div class="num">01</div>
+          <div class="num" id="service-stat-1">00</div>
           <div class="lbl">Clear scope</div>
         </div>
         <div class="hero-stat">
-          <div class="num">02</div>
+          <div class="num" id="service-stat-2">00</div>
           <div class="lbl">Coordinated team</div>
         </div>
         <div class="hero-stat">
-          <div class="num">03</div>
+          <div class="num" id="service-stat-3">00</div>
           <div class="lbl">Planned delivery</div>
         </div>
       </div>
-    </div>
-    <div class="scroll-cue">
-      Scroll
-      <div class="dot-track"></div>
     </div>
   </section>
   <main>
@@ -220,11 +262,14 @@
         </p>
       </div>
     </section>
-    <section class="container section-padding industry-standard">
-      <div style="max-width: 780px">
-        <span class="hero-tag">Ready to discuss the property?</span>
-        <h2>Start with a clear facility requirement</h2>
-        <p style="margin-top: 16px">
+    <section class="container" style="padding: 24px 0 28px 0; border-bottom: none !important;">
+      <div class="cta-box"
+        style="background: radial-gradient(120% 120% at 0% 0%, rgba(255, 255, 255, 0.03) 0%, rgba(0, 180, 216, 0.03) 100%), #050a18; border: 1px solid rgba(0, 180, 216, 0.25); box-shadow: 0 12px 30px rgba(0, 180, 216, 0.08); border-radius: 24px;">
+        <span class="hero-tag"
+          style="background: rgba(0, 180, 216, 0.06); border: 1px solid rgba(0, 180, 216, 0.25); border-radius: 100px; color: var(--accent-blue); padding: 6px 16px;">Ready
+          to discuss the property?</span>
+        <h2 style="color: white !important; margin-top: 16px;">Start with a clear facility requirement</h2>
+        <p style="margin-top: 12px; color: #cbd5e1 !important;">
           Tell RCC-BGM what needs attention, where the property is located and
           how the work must fit around operations.
         </p>
