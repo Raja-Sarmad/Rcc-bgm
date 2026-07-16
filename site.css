@@ -58,7 +58,7 @@ p {
 
 /* Sections Gaps - tightened */
 .section-padding {
-  padding: 60px 0;
+  padding: 44px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -5091,7 +5091,7 @@ footer {
 
 /* 1. Global Spacing & Layout Consistency */
 .section-padding {
-  padding: 85px 0 !important;
+  padding: 44px 0 !important;
   /* Standardize section spacing */
   border-bottom: 1px solid rgba(0, 180, 216, 0.06);
 }
@@ -6471,4 +6471,60 @@ body {
 main>section:last-of-type,
 main>section:last-child {
   border-bottom: none !important;
+}
+
+/* Make all subpage final CTA sections match index.html CTA design */
+main>section:last-of-type {
+  padding: 24px 0 28px 0 !important;
+  border-bottom: none !important;
+  background: transparent !important;
+}
+
+main>section:last-of-type>div {
+  background: radial-gradient(120% 120% at 0% 0%, rgba(255, 255, 255, 0.03) 0%, rgba(0, 180, 216, 0.03) 100%), #050a18 !important;
+  border-radius: 24px !important;
+  padding: 42px 32px !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+  box-shadow: 0 12px 30px rgba(0, 180, 216, 0.08) !important;
+  border: 1px solid rgba(0, 180, 216, 0.25) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  max-width: 780px !important;
+}
+
+main>section:last-of-type>div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 90% 80%, rgba(0, 180, 216, 0.04) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+main>section:last-of-type>div h2 {
+  color: white !important;
+  font-size: 34px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.5px;
+  margin-top: 16px !important;
+  text-align: center !important;
+}
+
+main>section:last-of-type>div p {
+  color: #cbd5e1 !important;
+  font-size: 14.5px !important;
+  margin-top: 12px !important;
+  text-align: center !important;
+}
+
+main>section:last-of-type>div .hero-tag {
+  background: rgba(0, 180, 216, 0.06) !important;
+  border: 1px solid rgba(0, 180, 216, 0.25) !important;
+  border-radius: 100px !important;
+  color: var(--accent-blue) !important;
+  padding: 6px 16px !important;
+  display: inline-block !important;
 }
