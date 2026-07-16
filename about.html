@@ -9,6 +9,220 @@
     content="RCC-BGM helps property teams start with the facility need, define a practical scope and connect the right service group." />
   <link rel="stylesheet" href="site.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* About Page custom Twin-Division Team Console styling */
+    .about-hero {
+      position: relative;
+      background: radial-gradient(circle at 10% 20%, rgba(0, 180, 216, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(0, 119, 182, 0.08) 0%, transparent 50%),
+        #050a18;
+      padding: 140px 0 85px 0;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(0, 180, 216, 0.2);
+    }
+
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.007) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+    }
+
+    .about-hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    .about-hero-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .about-hero-left h1 {
+      font-size: clamp(34px, 4.5vw, 52px);
+      color: white;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1.2px;
+      margin-top: 16px;
+    }
+
+    .about-hero-left h1 span.gradient-text {
+      background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .about-hero-left p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #cbd5e1;
+      margin-top: 18px;
+      max-width: 520px;
+    }
+
+    .about-hero-actions {
+      display: flex;
+      gap: 16px;
+      margin-top: 30px;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .about-hero-actions .btn-glow {
+      box-shadow: 0 0 15px rgba(0, 180, 216, 0.35);
+    }
+
+    .about-hero-actions .btn-outline {
+      border: 1px solid rgba(0, 180, 216, 0.3);
+      background: rgba(255, 255, 255, 0.02);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 99px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .about-hero-actions .btn-outline:hover {
+      border-color: var(--accent-teal);
+      background: rgba(0, 180, 216, 0.05);
+      color: var(--accent-teal);
+      box-shadow: 0 0 15px rgba(0, 180, 216, 0.1);
+    }
+
+    /* Dedicated Twin division structure */
+    .about-team-console {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+    }
+
+    .console-card {
+      background: rgba(5, 15, 35, 0.45);
+      border: 1px solid rgba(0, 180, 216, 0.2);
+      border-radius: 20px;
+      padding: 20px 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .console-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-teal);
+      box-shadow: 0 15px 35px rgba(0, 180, 216, 0.16);
+    }
+
+    .console-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .console-card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(0, 180, 216, 0.1);
+      border: 1px solid rgba(0, 180, 216, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-teal);
+      font-size: 16px;
+    }
+
+    .console-card-header h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: white;
+      margin: 0;
+    }
+
+    .console-card-body {
+      font-size: 13px;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    .console-tag-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .console-tag {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--accent-teal);
+      background: rgba(0, 180, 216, 0.08);
+      border: 1px solid rgba(0, 180, 216, 0.15);
+      border-radius: 6px;
+      padding: 4px 8px;
+    }
+
+    /* Interactive connector line */
+    .console-connector {
+      position: absolute;
+      left: 44px;
+      top: 60px;
+      width: 2px;
+      height: 80px;
+      background: linear-gradient(180deg, var(--accent-teal) 0%, rgba(0, 180, 216, 0.1) 100%);
+      z-index: -1;
+    }
+
+    @media (max-width: 900px) {
+      .about-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .about-hero-left {
+        align-items: center;
+        text-align: center;
+      }
+
+      .about-hero-left p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .about-hero-actions {
+        justify-content: center;
+      }
+
+      .about-team-console {
+        width: 100%;
+        max-width: 440px;
+        margin: 0 auto;
+      }
+
+      .console-connector {
+        display: none;
+      }
+    }
+  </style>
 </head>
 
 <body class="page-company">
@@ -25,42 +239,73 @@
       <a href="contact.html" class="btn-header">Get Assessment</a>
     </div>
   </nav>
-  <section class="hero family-construction" style="min-height: 72vh">
-    <video class="hero-video" autoplay muted loop playsinline
-      poster="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000">
-      <source src="https://assets.mixkit.co/videos/31450/31450-360.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <span class="hero-tag"><i class="fa-solid fa-building"></i> RCC-BGM</span>
-      <h1>About RCC-BGM</h1>
-      <p style="color: #cbd5e1; max-width: 720px; margin: 22px auto 0">
-        Two specialized teams supporting commercial facilities through
-        coordinated cleaning, construction and maintenance.
-      </p>
-      <div class="hero-labels">
-        <a class="btn-header btn-glow" href="contact.html">Request an Assessment <i
-            class="fa-solid fa-arrow-right"></i></a><a class="h-label" href="services.html"><i
-            class="fa-solid fa-layer-group"></i> Explore Services</a>
+  <section class="about-hero">
+    <div class="container">
+      <div class="about-hero-grid">
+
+        <!-- Left: Text and CTAs -->
+        <div class="about-hero-left">
+          <span class="hero-tag"
+            style="background: rgba(0, 180, 216, 0.08); border: 1px solid rgba(0, 180, 216, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;"><i
+              class="fa-solid fa-users"></i> STRUCTURED CAPABILITY</span>
+          <h1>Two Specialized<br><span class="gradient-text">Operational Divisions</span></h1>
+          <p>
+            We divide commercial facility management into two independent forces: Scoping & Setup (defining project
+            parameters) and Delivery & Updates (field operations).
+          </p>
+          <div class="about-hero-actions">
+            <a class="btn-header btn-glow" href="contact.html">Request Assessment <i
+                class="fa-solid fa-arrow-right"></i></a>
+            <a class="btn-outline" href="services.html"><i class="fa-solid fa-layer-group"></i> Explore Services</a>
+          </div>
+        </div>
+
+        <!-- Right: Twin Division Console -->
+        <div class="about-team-console">
+
+          <div class="console-connector"></div>
+
+          <!-- Card 1: Setup Div -->
+          <div class="console-card">
+            <div class="console-card-header">
+              <div class="console-card-icon">
+                <i class="fa-solid fa-clipboard-check"></i>
+              </div>
+              <h3>01 / Scoping & Setup</h3>
+            </div>
+            <div class="console-card-body">
+              Responsible for initial properties audits, scope exclusions, access timing rules, and coordinated
+              blueprints before crews deploy.
+            </div>
+            <div class="console-tag-row">
+              <span class="console-tag">SLA Setup</span>
+              <span class="console-tag">Access Rules</span>
+              <span class="console-tag">Joint Scopes</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Delivery Div -->
+          <div class="console-card">
+            <div class="console-card-header">
+              <div class="console-card-icon">
+                <i class="fa-solid fa-truck-ramp-box"></i>
+              </div>
+              <h3>02 / Delivery & Updates</h3>
+            </div>
+            <div class="console-card-body">
+              Responsible for directing active tradesmen, managing Smart Clean operations, publishing daily client
+              notes, and closing out items.
+            </div>
+            <div class="console-tag-row">
+              <span class="console-tag">Active Dispatch</span>
+              <span class="console-tag">Quality Auditing</span>
+              <span class="console-tag">Direct Reports</span>
+            </div>
+          </div>
+
+        </div>
+
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="num">01</div>
-          <div class="lbl">Clear scope</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">02</div>
-          <div class="lbl">Coordinated team</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">03</div>
-          <div class="lbl">Planned delivery</div>
-        </div>
-      </div>
-    </div>
-    <div class="scroll-cue">
-      Scroll
-      <div class="dot-track"></div>
     </div>
   </section>
   <main>

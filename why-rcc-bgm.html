@@ -9,6 +9,295 @@
     content="RCC-BGM brings service planning, communication and practical scope definition together for commercial property teams." />
   <link rel="stylesheet" href="site.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Why RCC-BGM Page custom Synergistic Core Hero */
+    .why-hero {
+      position: relative;
+      background: radial-gradient(circle at 80% 20%, rgba(0, 180, 216, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 20% 80%, rgba(0, 119, 182, 0.08) 0%, transparent 60%),
+        #050a18;
+      padding: 140px 0 85px 0;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(0, 180, 216, 0.2);
+    }
+
+    .why-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.007) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+    }
+
+    .why-hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    .why-hero-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .why-hero-left h1 {
+      font-size: clamp(34px, 4.5vw, 52px);
+      color: white;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1.2px;
+      margin-top: 16px;
+    }
+
+    .why-hero-left h1 span.gradient-text {
+      background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .why-hero-left p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #cbd5e1;
+      margin-top: 18px;
+      max-width: 520px;
+    }
+
+    .why-hero-actions {
+      display: flex;
+      gap: 16px;
+      margin-top: 30px;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .why-hero-actions .btn-glow {
+      box-shadow: 0 0 15px rgba(0, 180, 216, 0.35);
+    }
+
+    .why-hero-actions .btn-outline {
+      border: 1px solid rgba(0, 180, 216, 0.3);
+      background: rgba(255, 255, 255, 0.02);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 99px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .why-hero-actions .btn-outline:hover {
+      border-color: var(--accent-teal);
+      background: rgba(0, 180, 216, 0.05);
+      color: var(--accent-teal);
+      box-shadow: 0 0 15px rgba(0, 180, 216, 0.1);
+    }
+
+    /* Interactive Synergy Core Console */
+    .why-synergy-console {
+      height: 380px;
+      background: rgba(5, 15, 35, 0.45);
+      border: 1px solid rgba(0, 180, 216, 0.2);
+      border-radius: 28px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(16px);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease;
+    }
+
+    .why-synergy-console:hover {
+      border-color: rgba(0, 180, 216, 0.4);
+      box-shadow: 0 24px 60px rgba(0, 180, 216, 0.15);
+    }
+
+    /* Core Glowing Hub */
+    .synergy-core {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 245, 212, 0.2) 0%, rgba(0, 180, 216, 0.05) 70%);
+      border: 1px solid rgba(0, 180, 216, 0.35);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 10;
+      box-shadow: 0 0 30px rgba(0, 180, 216, 0.25);
+      animation: pulse-core 3.5s infinite alternate;
+    }
+
+    @keyframes pulse-core {
+      0% {
+        transform: scale(0.96);
+        box-shadow: 0 0 20px rgba(0, 180, 216, 0.15), 0 0 10px rgba(0, 245, 212, 0.1) inset;
+      }
+
+      100% {
+        transform: scale(1.04);
+        box-shadow: 0 0 35px rgba(0, 180, 216, 0.35), 0 0 20px rgba(0, 245, 212, 0.25) inset;
+      }
+    }
+
+    .synergy-core-label {
+      font-size: 10px;
+      font-weight: 800;
+      color: white;
+      letter-spacing: 1px;
+      text-shadow: 0 0 5px rgba(0, 245, 212, 0.6);
+    }
+
+    .synergy-core-sub {
+      font-family: monospace;
+      font-size: 8px;
+      color: var(--accent-teal);
+    }
+
+    /* Floating Pillar Cards */
+    .pillar-card {
+      position: absolute;
+      width: 140px;
+      background: rgba(10, 25, 50, 0.7);
+      border: 1px solid rgba(0, 180, 216, 0.2);
+      border-radius: 16px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      z-index: 10;
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .pillar-card:hover {
+      background: rgba(0, 180, 216, 0.08);
+      border-color: var(--accent-teal);
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 8px 24px rgba(0, 180, 216, 0.2);
+    }
+
+    .pillar-card i {
+      font-size: 20px;
+      color: var(--accent-teal);
+    }
+
+    .pillar-card h4 {
+      font-size: 12px;
+      font-weight: 700;
+      color: white;
+      margin: 0;
+      text-align: center;
+    }
+
+    .pillar-card span {
+      font-size: 10px;
+      color: #94a3b8;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    /* Positions around central core */
+    .pillar-1 {
+      top: 30px;
+      left: 30px;
+    }
+
+    .pillar-2 {
+      top: 30px;
+      right: 30px;
+    }
+
+    .pillar-3 {
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .pillar-3:hover {
+      transform: translateX(-50%) translateY(-4px) scale(1.03);
+    }
+
+    /* SVG pulse connector paths overlay */
+    .synergy-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .pulse-path {
+      fill: none;
+      stroke: rgba(0, 180, 216, 0.15);
+      stroke-width: 2;
+    }
+
+    .pulse-glow {
+      fill: none;
+      stroke: var(--accent-teal);
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-dasharray: 20, 100;
+      animation: pulse-glow-flow 4s linear infinite;
+    }
+
+    @keyframes pulse-glow-flow {
+      0% {
+        stroke-dashoffset: 120;
+      }
+
+      100% {
+        stroke-dashoffset: -120;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .why-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .why-hero-left {
+        align-items: center;
+        text-align: center;
+      }
+
+      .why-hero-left p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .why-hero-actions {
+        justify-content: center;
+      }
+
+      .why-synergy-console {
+        width: 100%;
+        max-width: 440px;
+        margin: 0 auto;
+      }
+    }
+  </style>
 </head>
 
 <body class="page-company">
@@ -25,42 +314,75 @@
       <a href="contact.html" class="btn-header">Get Assessment</a>
     </div>
   </nav>
-  <section class="hero family-construction" style="min-height: 72vh">
-    <video class="hero-video" autoplay muted loop playsinline
-      poster="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000">
-      <source src="https://assets.mixkit.co/videos/31450/31450-360.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <span class="hero-tag"><i class="fa-solid fa-building"></i> RCC-BGM</span>
-      <h1>Why RCC-BGM</h1>
-      <p style="color: #cbd5e1; max-width: 720px; margin: 22px auto 0">
-        A clearer way to coordinate the facility work your business depends
-        on.
-      </p>
-      <div class="hero-labels">
-        <a class="btn-header btn-glow" href="contact.html">Request an Assessment <i
-            class="fa-solid fa-arrow-right"></i></a><a class="h-label" href="services.html"><i
-            class="fa-solid fa-layer-group"></i> Explore Services</a>
+  <section class="why-hero">
+    <div class="container">
+      <div class="why-hero-grid">
+
+        <!-- Left: Text and CTAs -->
+        <div class="why-hero-left">
+          <span class="hero-tag"
+            style="background: rgba(0, 180, 216, 0.08); border: 1px solid rgba(0, 180, 216, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;"><i
+              class="fa-solid fa-building"></i> CO-OPERATIVE SYSTEM</span>
+          <h1>Structured for<br><span class="gradient-text">Property Operations</span></h1>
+          <p>
+            We align service requirements, team routing, and direct feedback channels inside a unified system that
+            handles everything commercial facilities need.
+          </p>
+          <div class="why-hero-actions">
+            <a class="btn-header btn-glow" href="contact.html">Request Assessment <i
+                class="fa-solid fa-arrow-right"></i></a>
+            <a class="btn-outline" href="#timeline-sec"><i class="fa-solid fa-sliders"></i> Operations Map</a>
+          </div>
+        </div>
+
+        <!-- Right: Synergy Console -->
+        <div class="why-synergy-console">
+
+          <svg class="synergy-svg" viewBox="0 0 440 380">
+            <!-- Pillar 1 relative coordinates: card center at (100, 75) to Core center at (220, 190) -->
+            <path class="pulse-path" d="M100,75 L220,190" />
+            <path class="pulse-glow" d="M100,75 L220,190" />
+
+            <!-- Pillar 2 relative coordinates: card center at (340, 75) to Core center at (220, 190) -->
+            <path class="pulse-path" d="M340,75 L220,190" />
+            <path class="pulse-glow" d="M340,75 L220,190" />
+
+            <!-- Pillar 3 relative coordinates: card center at (220, 310) to Core center at (220, 190) -->
+            <path class="pulse-path" d="M220,310 L220,190" />
+            <path class="pulse-glow" d="M220,310 L220,190" />
+          </svg>
+
+          <!-- Core Glowing Node -->
+          <div class="synergy-core">
+            <i class="fa-solid fa-circle-nodes" style="font-size:24px;color:#00f5d4;margin-bottom:4px;"></i>
+            <span class="synergy-core-label">RCC CORE</span>
+            <span class="synergy-core-sub">COORDINATED</span>
+          </div>
+
+          <!-- Pillar 1 Card: Scope -->
+          <div class="pillar-card pillar-1">
+            <i class="fa-solid fa-clipboard-check"></i>
+            <h4>Defined Scope</h4>
+            <span>Clear requirements & SLA thresholds</span>
+          </div>
+
+          <!-- Pillar 2 Card: Teams -->
+          <div class="pillar-card pillar-2">
+            <i class="fa-solid fa-users-gear"></i>
+            <h4>Unified Team</h4>
+            <span>Matched skills & direct dispatch</span>
+          </div>
+
+          <!-- Pillar 3 Card: Delivery -->
+          <div class="pillar-card pillar-3">
+            <i class="fa-solid fa-route"></i>
+            <h4>Planned Routing</h4>
+            <span>Real-time tracking & structured review</span>
+          </div>
+
+        </div>
+
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="num">01</div>
-          <div class="lbl">Clear scope</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">02</div>
-          <div class="lbl">Coordinated team</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">03</div>
-          <div class="lbl">Planned delivery</div>
-        </div>
-      </div>
-    </div>
-    <div class="scroll-cue">
-      Scroll
-      <div class="dot-track"></div>
     </div>
   </section>
   <main>
@@ -126,7 +448,7 @@
         </div>
       </div>
     </section>
-    <section class="container section-padding">
+    <section id="timeline-sec" class="container section-padding">
       <h2>How the work is planned</h2>
       <p class="section-intro">
         A focused process keeps the scope useful and the delivery aligned with

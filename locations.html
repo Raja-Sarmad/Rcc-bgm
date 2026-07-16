@@ -9,6 +9,354 @@
     content="Choose a location to explore relevant cleaning, construction and maintenance support, subject to confirmed availability." />
   <link rel="stylesheet" href="site.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Separate overlapping solid blue panels */
+    .modern-process-sec {
+      margin-top: 40px !important;
+    }
+
+    /* Futuristic HUD Radar Telemetry Hero */
+    .loc-hero {
+      position: relative;
+      background: radial-gradient(circle at 10% 20%, rgba(0, 180, 216, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(0, 119, 182, 0.08) 0%, transparent 50%),
+        #050a18;
+      padding: 140px 0 85px 0;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(0, 180, 216, 0.2);
+    }
+
+    .loc-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.007) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+    }
+
+    .loc-hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    .loc-hero-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .loc-hero-left h1 {
+      font-size: clamp(34px, 4.5vw, 52px);
+      color: white;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1.2px;
+      margin-top: 16px;
+    }
+
+    .loc-hero-left h1 span.gradient-text {
+      background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .loc-hero-left p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #cbd5e1;
+      margin-top: 18px;
+      max-width: 520px;
+    }
+
+    .loc-hero-actions {
+      display: flex;
+      gap: 16px;
+      margin-top: 30px;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .loc-hero-actions .btn-glow {
+      box-shadow: 0 0 15px rgba(0, 180, 216, 0.35);
+    }
+
+    .loc-hero-actions .btn-outline {
+      border: 1px solid rgba(0, 180, 216, 0.3);
+      background: rgba(255, 255, 255, 0.02);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 99px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .loc-hero-actions .btn-outline:hover {
+      border-color: var(--accent-teal);
+      background: rgba(0, 180, 216, 0.05);
+      color: var(--accent-teal);
+      box-shadow: 0 0 15px rgba(0, 180, 216, 0.1);
+    }
+
+    /* Radar Telemetry Panel */
+    .loc-radar-panel {
+      background: rgba(5, 15, 35, 0.45);
+      border: 1px solid rgba(0, 180, 216, 0.2);
+      border-radius: 28px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(16px);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1.15;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 380px;
+      transition: all 0.4s ease;
+    }
+
+    .loc-radar-panel:hover {
+      border-color: rgba(0, 180, 216, 0.45);
+      box-shadow: 0 24px 60px rgba(0, 180, 216, 0.15);
+    }
+
+    /* Radar Sweep Animation */
+    .radar-screen {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 180, 216, 0.05);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .radar-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px solid rgba(0, 180, 216, 0.1);
+      width: 100%;
+      height: 100%;
+    }
+
+    .radar-circle-mid {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px dashed rgba(0, 180, 216, 0.15);
+      width: 66%;
+      height: 66%;
+    }
+
+    .radar-circle-inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px dashed rgba(0, 180, 216, 0.2);
+      width: 33%;
+      height: 33%;
+    }
+
+    .radar-sweep {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: conic-gradient(from 0deg, rgba(0, 180, 216, 0.15) 0deg, transparent 90deg, transparent 360deg);
+      border-radius: 50%;
+      animation: radar-sweep-anim 8s linear infinite;
+    }
+
+    @keyframes radar-sweep-anim {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Telemetry Info Overlay */
+    .radar-telemetry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 5;
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      color: rgba(0, 180, 216, 0.8);
+      letter-spacing: 1px;
+      border-bottom: 1px solid rgba(0, 180, 216, 0.1);
+      padding-bottom: 8px;
+    }
+
+    .radar-system-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .radar-sys-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #00f5d4;
+      box-shadow: 0 0 8px #00f5d4;
+      animation: pulse-dot 1.5s infinite alternate;
+    }
+
+    @keyframes pulse-dot {
+      0% {
+        opacity: 0.3;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Coordinate node items */
+    .loc-node-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      position: relative;
+      z-index: 5;
+      margin-top: 15px;
+    }
+
+    .loc-node-item {
+      background: rgba(10, 25, 50, 0.6);
+      border: 1px solid rgba(0, 180, 216, 0.15);
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .loc-node-item:hover {
+      background: rgba(0, 180, 216, 0.08);
+      border-color: var(--accent-teal);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 180, 216, 0.1);
+    }
+
+    .loc-node-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .loc-node-coords {
+      font-family: monospace;
+      font-size: 10px;
+      color: #94a3b8;
+    }
+
+    .loc-node-meta {
+      font-size: 11px;
+      color: var(--accent-teal);
+      font-weight: 600;
+      margin-top: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .loc-node-meta span:last-child {
+      color: #38bdf8;
+    }
+
+    @media (max-width: 900px) {
+      .loc-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .loc-hero-left {
+        align-items: center;
+        text-align: center;
+      }
+
+      .loc-hero-left p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .loc-hero-actions {
+        justify-content: center;
+      }
+
+      .loc-radar-panel {
+        width: 100%;
+        max-width: 440px;
+        margin: 0 auto;
+        height: auto;
+        aspect-ratio: auto;
+      }
+    }
+
+    /* Centered Flexbox Layout for Related Services Card grid */
+    .related-services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 28px;
+      margin-top: 30px;
+    }
+
+    .related-services-grid .s-item {
+      width: calc(33.333% - 20px);
+      min-width: 290px;
+      max-width: 380px;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 900px) {
+      .related-services-grid .s-item {
+        width: calc(50% - 15px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .related-services-grid .s-item {
+        width: 100% !important;
+      }
+    }
+  </style>
 </head>
 
 <body class="page-company page-locations-hub">
@@ -25,42 +373,95 @@
       <a href="contact.html" class="btn-header">Get Assessment</a>
     </div>
   </nav>
-  <section class="hero family-construction" style="min-height: 72vh">
-    <video class="hero-video" autoplay muted loop playsinline
-      poster="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000">
-      <source src="https://assets.mixkit.co/videos/31450/31450-360.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <span class="hero-tag"><i class="fa-solid fa-location-dot"></i> RCC-BGM</span>
-      <h1>RCC-BGM Service Locations</h1>
-      <p style="color: #cbd5e1; max-width: 720px; margin: 22px auto 0">
-        Commercial facility services for properties across the markets we
-        support.
-      </p>
-      <div class="hero-labels">
-        <a class="btn-header btn-glow" href="contact.html">Request an Assessment <i
-            class="fa-solid fa-arrow-right"></i></a><a class="h-label" href="services.html"><i
-            class="fa-solid fa-layer-group"></i> Explore Services</a>
+  <section class="loc-hero">
+    <div class="container">
+      <div class="loc-hero-grid">
+
+        <!-- Left: Text and CTAs -->
+        <div class="loc-hero-left">
+          <span class="hero-tag"
+            style="background: rgba(0, 180, 216, 0.08); border: 1px solid rgba(0, 180, 216, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;"><i
+              class="fa-solid fa-location-dot"></i> GEOGRAPHIC COMMAND AREA</span>
+          <h1>Regional Dispatch &<br><span class="gradient-text">Operations Hubs</span></h1>
+          <p>
+            We manage facility services across critical Northern California corridors from centralized regional offices,
+            keeping response times short and communication absolute.
+          </p>
+          <div class="loc-hero-actions">
+            <a class="btn-header btn-glow" href="contact.html">Request Assessment <i
+                class="fa-solid fa-arrow-right"></i></a>
+            <a class="btn-outline" href="#hubs-region"><i class="fa-solid fa-layer-group"></i> See Coverage</a>
+          </div>
+        </div>
+
+        <!-- Right: Radar HUD Telemetry Console -->
+        <div class="loc-radar-panel">
+
+          <!-- Radar Scanning HUD Graphic -->
+          <div class="radar-screen">
+            <div class="radar-circle"></div>
+            <div class="radar-circle-mid"></div>
+            <div class="radar-circle-inner"></div>
+            <div class="radar-sweep"></div>
+          </div>
+
+          <div class="radar-telemetry-header">
+            <span>SYS_LOCATIONS // CORE_UPTIME</span>
+            <div class="radar-system-status">
+              <div class="radar-sys-dot"></div>
+              <span>ONLINE</span>
+            </div>
+          </div>
+
+          <div class="loc-node-list">
+            <!-- Node 1: Silicon Valley -->
+            <a class="loc-node-item" href="#hubs-region">
+              <span class="loc-node-name"><i class="fa-solid fa-circle" style="font-size:8px;color:#00f5d4;"></i>
+                Silicon Valley</span>
+              <span class="loc-node-coords">37.3382° N, 121.8863° W</span>
+              <div class="loc-node-meta">
+                <span>ACTIVE CREWS</span>
+                <span>18</span>
+              </div>
+            </a>
+
+            <!-- Node 2: SF Peninsula -->
+            <a class="loc-node-item" href="#hubs-region">
+              <span class="loc-node-name"><i class="fa-solid fa-circle" style="font-size:8px;color:#00f5d4;"></i> SF &
+                Peninsula</span>
+              <span class="loc-node-coords">37.7749° N, 122.4194° W</span>
+              <div class="loc-node-meta">
+                <span>ACTIVE CREWS</span>
+                <span>12</span>
+              </div>
+            </a>
+
+            <!-- Node 3: East Bay -->
+            <a class="loc-node-item" href="#hubs-region">
+              <span class="loc-node-name"><i class="fa-solid fa-circle" style="font-size:8px;color:#00f5d4;"></i> East
+                Bay Core</span>
+              <span class="loc-node-coords">37.8044° N, 122.2712° W</span>
+              <div class="loc-node-meta">
+                <span>ACTIVE CREWS</span>
+                <span>8</span>
+              </div>
+            </a>
+
+            <!-- Node 4: Sacramento -->
+            <a class="loc-node-item" href="#hubs-region">
+              <span class="loc-node-name"><i class="fa-solid fa-circle" style="font-size:8px;color:#38bdf8;"></i>
+                Sacramento</span>
+              <span class="loc-node-coords">38.5816° N, 121.4944° W</span>
+              <div class="loc-node-meta">
+                <span>DISPATCH SPEED</span>
+                <span>Scheduled</span>
+              </div>
+            </a>
+          </div>
+
+        </div>
+
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="num">01</div>
-          <div class="lbl">Clear scope</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">02</div>
-          <div class="lbl">Coordinated team</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">03</div>
-          <div class="lbl">Planned delivery</div>
-        </div>
-      </div>
-    </div>
-    <div class="scroll-cue">
-      Scroll
-      <div class="dot-track"></div>
     </div>
   </section>
   <main>
@@ -114,7 +515,7 @@
       </div>
     </section>
 
-    <section class="container section-padding"
+    <section id="hubs-region" class="container section-padding"
       style="background: linear-gradient(135deg, #071426 0%, #0c2a42 100%) !important; border-radius: 36px; padding: 75px 45px !important; margin-top: 40px; border: 1px solid rgba(0, 180, 216, 0.12) !important;">
       <div class="locations-intro-block">
         <span class="hero-tag"
@@ -293,7 +694,7 @@
     </section>
     <section class="container section-padding">
       <h2>Related RCC-BGM services</h2>
-      <div class="services-grid" style="margin-top: 30px">
+      <div class="related-services-grid" style="margin-top: 30px">
         <a class="s-item" href="commercial-cleaning-services.html">
           <h3>Commercial Cleaning Services</h3>
           <p>Explore this connected RCC-BGM service area.</p>
@@ -304,6 +705,10 @@
           <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
         </a><a class="s-item" href="facility-maintenance-services.html">
           <h3>Facility Maintenance Services</h3>
+          <p>Explore this connected RCC-BGM service area.</p>
+          <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+        </a><a class="s-item" href="smart-cleaning-robotics.html">
+          <h3>Smart Cleaning Robotics</h3>
           <p>Explore this connected RCC-BGM service area.</p>
           <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
         </a><a class="s-item" href="contact.html">
