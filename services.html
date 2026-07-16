@@ -54,6 +54,415 @@
     main section h2 {
       margin-bottom: 16px !important;
     }
+
+    /* Immersive Services Split Hero Section Version 2 */
+    .services-hero {
+      position: relative;
+      background: radial-gradient(circle at 5% 10%, rgba(0, 180, 216, 0.09) 0%, transparent 50%),
+        radial-gradient(circle at 95% 90%, rgba(0, 119, 182, 0.09) 0%, transparent 50%),
+        #050a18;
+      padding: 120px 0 65px 0;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(0, 180, 216, 0.15);
+    }
+
+    .services-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.007) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.007) 1px, transparent 1px);
+      background-size: 35px 35px;
+      pointer-events: none;
+    }
+
+    .services-hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 45px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .services-hero-left {
+      text-align: left;
+    }
+
+    .services-hero-left h1 {
+      font-size: clamp(34px, 4.8vw, 52px);
+      font-weight: 800;
+      color: white;
+      line-height: 1.15;
+      letter-spacing: -1.2px;
+      margin-top: 16px;
+    }
+
+    .services-hero-left h1 span.gradient-text {
+      background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .services-hero-left p {
+      font-size: 16px;
+      line-height: 1.75;
+      color: #cbd5e1;
+      margin-top: 20px;
+      max-width: 580px;
+    }
+
+    .services-hero-actions {
+      display: flex;
+      gap: 16px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .btn-outline-hero {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      color: white;
+      font-weight: 600;
+      padding: 12px 24px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14.5px;
+      transition: all 0.35s ease;
+    }
+
+    .btn-outline-hero:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--accent-teal);
+      transform: translateY(-2px);
+    }
+
+    /* Right column: 3D perspective rotated glassmorphic dashboard */
+    .services-hero-mockup-wrapper {
+      perspective: 1000px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .services-hero-mockup {
+      background: rgba(10, 25, 50, 0.4);
+      border: 1px solid rgba(0, 180, 216, 0.2);
+      box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.7),
+        0 0 50px rgba(0, 180, 216, 0.08);
+      backdrop-filter: blur(16px);
+      border-radius: 20px;
+      padding: 24px;
+      width: 100%;
+      max-width: 440px;
+      transform: rotateX(6deg) rotateY(-12deg) rotateZ(2deg);
+      transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+      color: white;
+    }
+
+    .services-hero-mockup:hover {
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.02);
+      border-color: rgba(0, 180, 216, 0.4);
+      box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.8),
+        0 0 60px rgba(0, 180, 216, 0.15);
+    }
+
+    .mockup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 16px;
+    }
+
+    .mockup-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mockup-badge {
+      font-size: 10px;
+      font-weight: 700;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #10b981;
+      padding: 3px 8px;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      background: #10b981;
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulse-green 1.5s infinite;
+    }
+
+    @keyframes pulse-green {
+      0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+      }
+
+      70% {
+        box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+      }
+    }
+
+    .pulse-dot-orange {
+      width: 6px;
+      height: 6px;
+      background: #f59e0b;
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulse-orange 1.5s infinite;
+    }
+
+    @keyframes pulse-orange {
+      0% {
+        box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+      }
+
+      70% {
+        box-shadow: 0 0 0 6px rgba(245, 158, 11, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+      }
+    }
+
+    .mockup-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .mockup-metric {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 12px;
+      text-align: left;
+    }
+
+    .m-lbl {
+      display: block;
+      font-size: 11px;
+      color: #708090;
+      margin-bottom: 4px;
+    }
+
+    .m-val {
+      font-size: 17px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .mockup-orders {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .order-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 12px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .order-status {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .order-status.completed {
+      background: rgba(0, 180, 216, 0.08);
+      color: var(--accent-teal);
+    }
+
+    .order-status.active {
+      background: rgba(245, 158, 11, 0.08);
+      color: #f59e0b;
+    }
+
+    .order-status.pending {
+      background: rgba(148, 163, 184, 0.08);
+      color: #94a3b8;
+    }
+
+    .order-title {
+      font-size: 12px;
+      color: #cbd5e1;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 1;
+      text-align: left;
+    }
+
+    .order-time {
+      font-size: 10.5px;
+      color: #64748b;
+    }
+
+    /* Graphical analytics elements inside card */
+    .mockup-graph {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      height: 70px;
+      padding-top: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      gap: 8px;
+    }
+
+    .graph-bar {
+      width: 100%;
+      background: rgba(0, 180, 216, 0.15);
+      border-radius: 4px 4px 0 0;
+      transition: height 0.4s ease, background 0.4s ease;
+    }
+
+    .graph-bar.active,
+    .graph-bar:hover {
+      background: var(--accent-teal);
+      box-shadow: 0 0 10px rgba(0, 180, 216, 0.3);
+    }
+
+    .graph-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9px;
+      color: #556070;
+      margin-top: 6px;
+    }
+
+    /* Stats Dock */
+    .services-hero-stats-dock {
+      grid-column: span 2;
+      background: rgba(5, 10, 24, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      padding: 16px 24px;
+      margin-top: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .services-hero-stats-dock .hero-stats {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .services-hero-stats-dock .hero-stat {
+      flex: 1;
+      text-align: center;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 8px 10px;
+    }
+
+    .services-hero-stats-dock .hero-stat:last-child {
+      border-right: none;
+    }
+
+    .services-hero-stats-dock .hero-stat .num {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--accent-teal);
+      text-shadow: 0 0 15px rgba(0, 180, 216, 0.2);
+    }
+
+    .services-hero-stats-dock .hero-stat .lbl {
+      font-size: 11px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 5px;
+    }
+
+    @media (max-width: 991px) {
+      .services-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .services-hero-stats-dock {
+        grid-column: span 1;
+      }
+
+      .services-hero {
+        padding: 90px 0 50px 0;
+      }
+
+      .services-hero-mockup-wrapper {
+        margin-top: 15px;
+      }
+
+      .services-hero-mockup {
+        transform: none !important;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .services-hero-stats-dock .hero-stats {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .services-hero-stats-dock .hero-stat {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding-bottom: 15px;
+        width: 100%;
+      }
+
+      .services-hero-stats-dock .hero-stat:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+    }
   </style>
 </head>
 
@@ -71,42 +480,104 @@
       <a href="contact.html" class="btn-header">Get Assessment</a>
     </div>
   </nav>
-  <section class="hero family-construction" style="min-height: 72vh">
-    <video class="hero-video" autoplay muted loop playsinline
-      poster="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000">
-      <source src="https://assets.mixkit.co/videos/31450/31450-360.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <span class="hero-tag"><i class="fa-solid fa-building"></i> RCC-BGM</span>
-      <h1>Commercial Facility Services</h1>
-      <p style="color: #cbd5e1; max-width: 720px; margin: 22px auto 0">
-        One coordinated starting point for commercial cleaning, construction,
-        maintenance and facility projects.
-      </p>
-      <div class="hero-labels">
-        <a class="btn-header btn-glow" href="contact.html">Request an Assessment <i
-            class="fa-solid fa-arrow-right"></i></a><a class="h-label" href="services.html"><i
-            class="fa-solid fa-layer-group"></i> Explore Services</a>
-      </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="num" id="service-stat-1">00</div>
-          <div class="lbl">Clear scope</div>
+  <section class="services-hero">
+    <div class="container">
+      <div class="services-hero-grid">
+
+        <!-- Left Side: Header & CTAs -->
+        <div class="services-hero-left">
+          <span class="hero-tag"
+            style="background: rgba(0, 180, 216, 0.08); border: 1px solid rgba(0, 180, 216, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;"><i
+              class="fa-solid fa-clipboard-list"></i> RCC-BGM SERVICES DIRECTORY</span>
+          <h1>Expert Commercial<br><span class="gradient-text">Facility Services</span></h1>
+          <p>
+            One coordinated starting point for specialized cleaning, tenant improvements, facility preservation, and
+            building systems services tailored to operational properties.
+          </p>
+          <div class="services-hero-actions">
+            <a class="btn-header btn-glow" href="contact.html">Request an Assessment <i
+                class="fa-solid fa-arrow-right"></i></a>
+            <a class="btn-outline-hero" href="#services-list"><i class="fa-solid fa-bars-staggered"></i> Explore
+              Directory</a>
+          </div>
         </div>
-        <div class="hero-stat">
-          <div class="num" id="service-stat-2">00</div>
-          <div class="lbl">Coordinated team</div>
+
+        <!-- Right Side: Immersive SaaS-Style Dashboard Mockup -->
+        <div class="services-hero-mockup-wrapper">
+          <div class="services-hero-mockup">
+            <div class="mockup-header">
+              <span class="mockup-title"><i class="fa-solid fa-gauge-high"></i> Operations Command</span>
+              <span class="mockup-badge"><span class="pulse-dot"></span> LIVE</span>
+            </div>
+
+            <div class="mockup-grid">
+              <div class="mockup-metric">
+                <span class="m-lbl">Active Dispatches</span>
+                <span class="m-val">18 crews</span>
+              </div>
+              <div class="mockup-metric">
+                <span class="m-lbl">Response Time</span>
+                <span class="m-val">14m avg</span>
+              </div>
+            </div>
+
+            <div class="mockup-orders">
+              <div class="order-item">
+                <span class="order-status completed"><i class="fa-solid fa-circle-check"></i> Clean</span>
+                <span class="order-title">Stanford Lab Sanitation</span>
+                <span class="order-time">10:45 AM</span>
+              </div>
+              <div class="order-item">
+                <span class="order-status active"><span class="pulse-dot-orange"></span> Maintain</span>
+                <span class="order-title">HVAC Emergency Repair</span>
+                <span class="order-time">Just Now</span>
+              </div>
+              <div class="order-item">
+                <span class="order-status pending"><i class="fa-solid fa-clock"></i> Build</span>
+                <span class="order-title">HQ Wall Partition Init</span>
+                <span class="order-time">1:30 PM</span>
+              </div>
+            </div>
+
+            <!-- Visual Graph Element -->
+            <div class="mockup-graph">
+              <div class="graph-bar" style="height: 48%;"></div>
+              <div class="graph-bar" style="height: 64%;"></div>
+              <div class="graph-bar" style="height: 52%;"></div>
+              <div class="graph-bar active" style="height: 82%;"></div>
+              <div class="graph-bar" style="height: 70%;"></div>
+              <div class="graph-bar" style="height: 90%;"></div>
+            </div>
+            <div class="graph-labels">
+              <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+            </div>
+
+          </div>
         </div>
-        <div class="hero-stat">
-          <div class="num" id="service-stat-3">00</div>
-          <div class="lbl">Planned delivery</div>
+
+        <!-- Float Stats Dock Underneath -->
+        <div class="services-hero-stats-dock">
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="num" id="service-stat-1">00</div>
+              <div class="lbl">Clear scope</div>
+            </div>
+            <div class="hero-stat">
+              <div class="num" id="service-stat-2">00</div>
+              <div class="lbl">Coordinated team</div>
+            </div>
+            <div class="hero-stat">
+              <div class="num" id="service-stat-3">00</div>
+              <div class="lbl">Planned delivery</div>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
   <main>
-    <section class="container section-padding industry-standard design-redesign">
+    <section id="services-list" class="container section-padding industry-standard design-redesign">
       <div class="redesign-flex">
         <div class="redesign-left">
           <span class="hero-tag" style="

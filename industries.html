@@ -9,6 +9,248 @@
     content="Every environment has different access, occupancy, compliance and scheduling needs. The scope starts there." />
   <link rel="stylesheet" href="site.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Spacing Overrides & Compact Section Padding */
+    .section-padding {
+      padding-top: 44px !important;
+      padding-bottom: 44px !important;
+    }
+
+    /* Dynamic Expanding Accordion Hero */
+    .ind-hero {
+      position: relative;
+      background: radial-gradient(circle at 50% 0%, rgba(0, 180, 216, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 10% 80%, rgba(0, 119, 182, 0.08) 0%, transparent 50%),
+        #050a18;
+      padding: 130px 0 75px 0;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(0, 180, 216, 0.15);
+    }
+
+    .ind-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.007) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+    }
+
+    .ind-hero-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      position: relative;
+      z-index: 10;
+    }
+
+    .ind-hero-header h1 {
+      font-size: clamp(34px, 4.8vw, 54px);
+      font-weight: 800;
+      color: white;
+      line-height: 1.15;
+      letter-spacing: -1.2px;
+      margin-top: 16px;
+    }
+
+    .ind-hero-header h1 span.gradient-text {
+      background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .ind-hero-header p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #cbd5e1;
+      margin-top: 18px;
+    }
+
+    /* Flex Accordion Layout */
+    .ind-accordion {
+      display: flex;
+      width: 100%;
+      height: 290px;
+      gap: 16px;
+      margin-top: 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .ind-accordion-item {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 24px;
+      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .ind-accordion-item::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(0, 180, 216, 0.15);
+      transition: all 0.35s ease;
+    }
+
+    /* Static layout details */
+    .ind-acc-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: rgba(0, 180, 216, 0.08);
+      border: 1px solid rgba(0, 180, 216, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: var(--accent-teal);
+      flex-shrink: 0;
+      transition: all 0.35s ease;
+    }
+
+    .ind-accordion-item:hover .ind-acc-icon {
+      background: var(--accent-teal);
+      color: #050a18;
+      box-shadow: 0 0 15px rgba(0, 180, 216, 0.4);
+    }
+
+    .ind-acc-collapsed-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #94a3b8;
+      margin-top: 24px;
+      white-space: nowrap;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transition: opacity 0.3s ease, margin-top 0.3s ease;
+      letter-spacing: 1.5px;
+      opacity: 0.85;
+    }
+
+    .ind-acc-expanded {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+      text-align: left;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .ind-acc-expanded h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: white;
+      margin: 0;
+    }
+
+    .ind-acc-expanded p {
+      font-size: 13.5px;
+      color: #cbd5e1;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .ind-acc-expanded .btn-ind-link {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--accent-teal);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 16px;
+      transition: all 0.25s ease;
+    }
+
+    .ind-acc-expanded .btn-ind-link:hover {
+      text-shadow: 0 0 8px rgba(0, 180, 216, 0.5);
+      transform: translateX(4px);
+    }
+
+    /* Hover State (Accordion Expansion) */
+    .ind-accordion-item:hover {
+      flex: 3.5;
+      background: rgba(10, 25, 50, 0.4);
+      border-color: rgba(0, 180, 216, 0.4);
+      box-shadow: 0 20px 45px -10px rgba(0, 180, 216, 0.15);
+    }
+
+    .ind-accordion-item:hover::before {
+      background: var(--accent-teal);
+      box-shadow: 0 0 12px var(--accent-teal);
+    }
+
+    .ind-accordion-item:hover .ind-acc-collapsed-title {
+      opacity: 0;
+      margin-top: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .ind-accordion-item:hover .ind-acc-expanded {
+      opacity: 1;
+      pointer-events: auto;
+      transition: opacity 0.5s ease 0.15s;
+    }
+
+    @media (max-width: 991px) {
+      .ind-accordion {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .ind-accordion-item {
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 20px;
+        width: 100%;
+        height: auto !important;
+        flex: none !important;
+      }
+
+      .ind-accordion-item::before {
+        left: 0;
+        top: 0;
+        width: 4px;
+        height: 100%;
+      }
+
+      .ind-acc-collapsed-title {
+        display: none;
+      }
+
+      .ind-acc-expanded {
+        opacity: 1;
+        pointer-events: auto;
+        margin-top: 0;
+      }
+    }
+  </style>
 </head>
 
 <body class="page-company">
@@ -25,42 +267,110 @@
       <a href="contact.html" class="btn-header">Get Assessment</a>
     </div>
   </nav>
-  <section class="hero family-construction" style="min-height: 72vh">
-    <video class="hero-video" autoplay muted loop playsinline
-      poster="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000">
-      <source src="https://assets.mixkit.co/videos/31450/31450-360.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <span class="hero-tag"><i class="fa-solid fa-building"></i> RCC-BGM</span>
-      <h1>Industries We Support</h1>
-      <p style="color: #cbd5e1; max-width: 720px; margin: 22px auto 0">
-        Facility services shaped around the demands of offices, industrial
-        properties, technology spaces and more.
-      </p>
-      <div class="hero-labels">
-        <a class="btn-header btn-glow" href="contact.html">Request an Assessment <i
-            class="fa-solid fa-arrow-right"></i></a><a class="h-label" href="services.html"><i
-            class="fa-solid fa-layer-group"></i> Explore Services</a>
+  <section class="ind-hero">
+    <div class="container">
+
+      <!-- Top Title and Badges -->
+      <div class="ind-hero-header">
+        <span class="hero-tag"
+          style="background: rgba(0, 180, 216, 0.08); border: 1px solid rgba(0, 180, 216, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;"><i
+            class="fa-solid fa-industry"></i> TARGET COMPLIANCE & ACCESSIBILITY</span>
+        <h1>Specialized Support for<br><span class="gradient-text">High-Standards Sectors</span></h1>
+        <p>
+          Every business environment has unique regulatory, technical, cleanliness, and operational requirements. We
+          construct site-specific workflows for key vertical industries.
+        </p>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="num">01</div>
-          <div class="lbl">Clear scope</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">02</div>
-          <div class="lbl">Coordinated team</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">03</div>
-          <div class="lbl">Planned delivery</div>
-        </div>
+
+      <!-- Center Dynamic Accordion Selector -->
+      <div class="ind-accordion">
+
+        <!-- Tab 1: Life Sciences -->
+        <a class="ind-accordion-item" href="#industries">
+          <div class="ind-acc-icon">
+            <i class="fa-solid fa-flask"></i>
+          </div>
+          <span class="ind-acc-collapsed-title">LIFE SCIENCES</span>
+          <div class="ind-acc-expanded">
+            <h3>Life Sciences</h3>
+            <p>Biotech, pharmaceutical, and active laboratories requiring certified cleanroom sanitation and strict
+              protocol adherence.</p>
+            <span class="btn-ind-link">Explore Sector <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Tab 2: Corporate Offices -->
+        <a class="ind-accordion-item" href="#industries">
+          <div class="ind-acc-icon">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+          <span class="ind-acc-collapsed-title">CORPORATE OFFICES</span>
+          <div class="ind-acc-expanded">
+            <h3>Corporate Offices</h3>
+            <p>High-end corporate headquarters and regional hub complexes designed to sustain visitor experience and
+              peak employee productivity.</p>
+            <span class="btn-ind-link">Explore Sector <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Tab 3: Healthcare -->
+        <a class="ind-accordion-item" href="#industries">
+          <div class="ind-acc-icon">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <span class="ind-acc-collapsed-title">HEALTHCARE</span>
+          <div class="ind-acc-expanded">
+            <h3>Healthcare</h3>
+            <p>Clinical, emergency, and outpatient facilities managed for deep terminal cleaning, airborne vectors, and
+              infection control protocols.</p>
+            <span class="btn-ind-link">Explore Sector <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Tab 4: Manufacturing -->
+        <a class="ind-accordion-item" href="#industries">
+          <div class="ind-acc-icon">
+            <i class="fa-solid fa-industry"></i>
+          </div>
+          <span class="ind-acc-collapsed-title">MANUFACTURING</span>
+          <div class="ind-acc-expanded">
+            <h3>Manufacturing</h3>
+            <p>Precision assembly areas, storage distribution vaults, and heavy industrial facilities demanding uptime
+              and heavy equipment upkeep.</p>
+            <span class="btn-ind-link">Explore Sector <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Tab 5: Technology -->
+        <a class="ind-accordion-item" href="#industries">
+          <div class="ind-acc-icon">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <span class="ind-acc-collapsed-title">TECHNOLOGY</span>
+          <div class="ind-acc-expanded">
+            <h3>Technology</h3>
+            <p>Data center server arrays, microfluidic clean labs, and hardware fabrication testing vaults matching high
+              electrostatic standards.</p>
+            <span class="btn-ind-link">Explore Sector <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Tab 6: Retail Properties -->
+        <a class="ind-accordion-item" href="#industries">
+          <div class="ind-acc-icon">
+            <i class="fa-solid fa-store"></i>
+          </div>
+          <span class="ind-acc-collapsed-title">RETAIL PROPERTIES</span>
+          <div class="ind-acc-expanded">
+            <h3>Retail Properties</h3>
+            <p>High-exposure flagship storefront buildings, luxury boutiques, and high-crowd malls requiring 24/7
+              exterior and interior upkeep.</p>
+            <span class="btn-ind-link">Explore Sector <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
       </div>
-    </div>
-    <div class="scroll-cue">
-      Scroll
-      <div class="dot-track"></div>
+
     </div>
   </section>
   <main>
