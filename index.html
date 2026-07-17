@@ -213,7 +213,7 @@
             box-shadow: 0 14px 30px -6px rgba(0, 180, 216, 0.65);
         }
 
-        /* 1. HERO - with background video */
+        /* 1. HERO - Updated with Slider Styles */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -227,17 +227,30 @@
             padding: 120px 0 90px 0;
         }
 
-        .hero-video {
+        /* New Slider Styles */
+        .hero-slider {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             z-index: 0;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
         }
 
         .hero-overlay {
@@ -1506,12 +1519,14 @@
         </div>
     </nav>
 
-    <!-- 1. HERO SECTION WITH BACKGROUND VIDEO -->
+    <!-- 1. HERO SECTION - Updated from Video to Image Slider -->
     <section class="hero">
-        <video id="heroVideo" class="hero-video" autoplay muted loop playsinline
-            poster="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000">
-            <source src="https://assets.mixkit.co/videos/31450/31450-360.mp4" type="video/mp4">
-        </video>
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000');"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000');"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000');"></div>
+        </div>
+        
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <span class="hero-tag">Integrated Facility Solutions</span>
@@ -1553,49 +1568,6 @@
             </div>
         </div>
     </section>
-    <script>
-        // Fallback: if the background video can't load, keep a rich static image + overlay instead of a blank frame
-        (function () {
-            var v = document.getElementById('heroVideo');
-            var fallbackTimer = setTimeout(function () {
-                if (v.readyState === 0) { v.style.display = 'none'; }
-            }, 3500);
-            v.addEventListener('loadeddata', function () { clearTimeout(fallbackTimer); });
-            v.addEventListener('error', function () { v.style.display = 'none'; clearTimeout(fallbackTimer); });
-        })();
-
-        // Scroll-triggered dynamic numbers counting animation
-        (function () {
-            const stats = [
-                { id: 'stat-years', max: 15, suffix: '+' },
-                { id: 'stat-facilities', max: 500, suffix: '+' },
-                { id: 'stat-states', max: 6, suffix: '' },
-                { id: 'stat-support', max: 24, suffix: '/7' }
-            ];
-
-            const handleNumbersScroll = () => {
-                const scrollY = window.scrollY;
-                const heroHeight = document.querySelector('.hero')?.offsetHeight || 600;
-
-                // Animate linearly between scrollY = 0 and scrollY = 350 (or 60% of hero height)
-                const animRange = Math.min(350, heroHeight);
-                let ratio = scrollY / animRange;
-                ratio = Math.max(0, Math.min(1, ratio));
-
-                stats.forEach(stat => {
-                    const el = document.getElementById(stat.id);
-                    if (el) {
-                        const currentVal = Math.floor(ratio * stat.max);
-                        el.innerText = `${currentVal}${stat.suffix}`;
-                    }
-                });
-            };
-
-            window.addEventListener('scroll', handleNumbersScroll);
-            // Run initially
-            handleNumbersScroll();
-        })();
-    </script>
 
     <!-- 2. COMBINED INTRODUCTION -->
     <section class="section-padding">
@@ -1688,7 +1660,7 @@
                     <li><i class="fa-solid fa-circle-check"></i> Cleanroom and controlled-environment cleaning</li>
                 </ul>
             </div>
-            <img src="https://images.unsplash.com/photo-1627905646269-7f034dcc5738?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2xlYW5pbmclMjBzZXJ2aWNlfGVufDB8fDB8fHww"
+            <img src="https://images.unsplash.com/photo-1627905646269-7f034dcc5738?w=500&auto=format&fit=crop&q=60"
                 class="focus-img" alt="Cleaning Services">
         </div>
     </section>
@@ -1708,7 +1680,7 @@
                     <li><i class="fa-solid fa-circle-check"></i> Facility renovations & functional upgrades</li>
                 </ul>
             </div>
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTh8fHRlY2hub2xvZ3l8ZW58MHx8MHx8fDA%3D"
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&auto=format&fit=crop&q=60"
                 class="focus-img" alt="Construction">
         </div>
     </section>
@@ -2016,7 +1988,62 @@
         </div>
     </footer>
 
-    <script src="site.js" defer></script>
+    <script>
+        // 1. MOBILE NAV TOGGLE
+        const navToggle = document.querySelector('.nav-toggle');
+        const nav = document.querySelector('nav');
+        if(navToggle) {
+            navToggle.addEventListener('click', () => {
+                nav.classList.toggle('nav-open');
+            });
+        }
+
+        // 2. HERO SLIDER LOGIC
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        setInterval(nextSlide, 5000); // Change every 5 seconds
+
+        // 3. STATS SCROLL ANIMATION
+        (function () {
+            const stats = [
+                { id: 'stat-years', max: 15, suffix: '+' },
+                { id: 'stat-facilities', max: 500, suffix: '+' },
+                { id: 'stat-states', max: 6, suffix: '' },
+                { id: 'stat-support', max: 24, suffix: '/7' }
+            ];
+
+            const handleNumbersScroll = () => {
+                const scrollY = window.scrollY;
+                const heroHeight = document.querySelector('.hero')?.offsetHeight || 600;
+                const animRange = Math.min(350, heroHeight);
+                let ratio = scrollY / animRange;
+                ratio = Math.max(0, Math.min(1, ratio));
+
+                stats.forEach(stat => {
+                    const el = document.getElementById(stat.id);
+                    if (el) {
+                        const currentVal = Math.floor(ratio * stat.max);
+                        el.innerText = `${currentVal}${stat.suffix}`;
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', handleNumbersScroll);
+            handleNumbersScroll();
+        })();
+
+        // 4. FAQ TOGGLE
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('is-open');
+            });
+        });
+    </script>
 </body>
 
 </html>
