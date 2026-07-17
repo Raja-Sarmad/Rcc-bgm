@@ -280,7 +280,7 @@ nav.nav-scrolled::after {
 .hero-tag {
   color: var(--accent-teal);
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 0;
   font-weight: 800;
   font-size: 11px;
   margin-bottom: 18px;
@@ -289,6 +289,8 @@ nav.nav-scrolled::after {
   border: 1px solid rgba(0, 180, 216, 0.4);
   border-radius: 30px;
   background: rgba(0, 180, 216, 0.08);
+  width: fit-content;
+  align-self: flex-start;
 }
 
 .hero-glow {
@@ -882,7 +884,7 @@ a.s-item p {
 .faq-item:hover,
 .faq-item.is-open {
   border-color: rgba(0, 180, 216, 0.35);
-  box-shadow: 0 14px 30px -24px rgba(0, 119, 182, 0.7);
+  box-shadow: 0 8px 24px -12px rgba(0, 119, 182, 0.2);
 }
 
 .faq-item.is-open {
@@ -5120,8 +5122,7 @@ main section>div[style*="max-width"],
 main section>.split-intro>div:first-child,
 .section-lead,
 .section-intro,
-.eyebrow,
-.hero-tag {
+.eyebrow {
   display: block;
   text-align: center !important;
   margin-left: auto !important;

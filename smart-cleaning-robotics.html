@@ -13,6 +13,282 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <style>
+      .scr-hero {
+        position: relative;
+        background: radial-gradient(circle at 70% 20%, rgba(0, 180, 216, 0.14) 0%, transparent 50%),
+          radial-gradient(circle at 20% 75%, rgba(0, 119, 182, 0.08) 0%, transparent 50%),
+          #050a18;
+        padding: 140px 0 85px 0;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(0, 180, 216, 0.15);
+      }
+
+      .scr-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image:
+          radial-gradient(rgba(255, 255, 255, 0.006) 1px, transparent 1px);
+        background-size: 18px 18px;
+        pointer-events: none;
+      }
+
+      .scr-hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.15fr;
+        gap: 56px;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+      }
+
+      .scr-hero-left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .scr-hero-left h1 {
+        font-size: clamp(32px, 4.5vw, 52px);
+        color: white;
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -1.2px;
+        margin-top: 18px;
+      }
+
+      .scr-hero-left h1 span.gradient-text {
+        background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .scr-hero-left p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #cbd5e1;
+        margin-top: 20px;
+        max-width: 480px;
+      }
+
+      .scr-hero-actions {
+        display: flex;
+        gap: 16px;
+        margin-top: 32px;
+        flex-wrap: wrap;
+      }
+
+      .scr-hero-actions .btn-outline-hero {
+        border: 1px solid rgba(0, 180, 216, 0.3);
+        background: rgba(255, 255, 255, 0.02);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 99px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .scr-hero-actions .btn-outline-hero:hover {
+        border-color: var(--accent-teal);
+        background: rgba(0, 180, 216, 0.08);
+      }
+
+      /* Tech Spec Panel */
+      .scr-spec-panel {
+        background: rgba(5, 15, 35, 0.45);
+        border: 1px solid rgba(0, 180, 216, 0.12);
+        border-radius: 24px;
+        backdrop-filter: blur(12px);
+        overflow: hidden;
+      }
+
+      .scr-spec-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 26px;
+        border-bottom: 1px solid rgba(0, 180, 216, 0.08);
+      }
+
+      .scr-spec-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        font-weight: 700;
+        color: white;
+      }
+
+      .scr-spec-title i {
+        color: var(--accent-teal);
+      }
+
+      .scr-spec-live {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #22c55e;
+        background: rgba(34, 197, 94, 0.08);
+        border: 1px solid rgba(34, 197, 94, 0.2);
+        border-radius: 100px;
+        padding: 4px 12px;
+      }
+
+      .scr-spec-live-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #22c55e;
+        animation: scr-pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes scr-pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.3; }
+      }
+
+      .scr-spec-body {
+        padding: 22px 26px 26px 26px;
+      }
+
+      .scr-spec-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(0, 180, 216, 0.05);
+      }
+
+      .scr-spec-row:last-child {
+        border-bottom: none;
+      }
+
+      .scr-spec-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        flex-shrink: 0;
+      }
+
+      .scr-spec-icon.autonomous {
+        background: rgba(0, 180, 216, 0.1);
+        color: var(--accent-teal);
+      }
+
+      .scr-spec-icon.mapping {
+        background: rgba(139, 92, 246, 0.1);
+        color: #8b5cf6;
+      }
+
+      .scr-spec-icon.sanitize {
+        background: rgba(34, 197, 94, 0.1);
+        color: #22c55e;
+      }
+
+      .scr-spec-icon.analytics {
+        background: rgba(245, 158, 11, 0.1);
+        color: #f59e0b;
+      }
+
+      .scr-spec-info {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .scr-spec-name {
+        font-size: 13px;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 2px;
+      }
+
+      .scr-spec-detail {
+        font-size: 11px;
+        color: #64748b;
+      }
+
+      .scr-spec-bar-wrap {
+        flex: 1;
+        min-width: 100px;
+        max-width: 160px;
+      }
+
+      .scr-spec-bar-label {
+        display: flex;
+        justify-content: space-between;
+        font-size: 10px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .scr-spec-bar-label span:first-child {
+        color: #64748b;
+      }
+
+      .scr-spec-bar-label span:last-child {
+        color: var(--accent-teal);
+      }
+
+      .scr-spec-bar {
+        height: 5px;
+        border-radius: 10px;
+        background: rgba(0, 180, 216, 0.1);
+        overflow: hidden;
+      }
+
+      .scr-spec-bar-fill {
+        height: 100%;
+        border-radius: 10px;
+        background: linear-gradient(90deg, var(--accent-teal), #0077b6);
+      }
+
+      @media (max-width: 900px) {
+        .scr-hero-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .scr-hero-left {
+          align-items: center;
+          text-align: center;
+        }
+
+        .scr-hero-left p {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .scr-hero-actions {
+          justify-content: center;
+        }
+
+        .scr-spec-panel {
+          max-width: 440px;
+          margin: 0 auto;
+        }
+
+        .scr-spec-bar-wrap {
+          display: none;
+        }
+      }
+    </style>
   </head>
   <body class="page-specialist">
     <nav>
@@ -31,55 +307,89 @@
         <a href="contact.html" class="btn-header">Get Assessment</a>
       </div>
     </nav>
-    <section class="hero family-construction" style="min-height: 72vh">
-      <video
-        class="hero-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        poster="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000"
-      >
-        <source
-          src="https://assets.mixkit.co/videos/31450/31450-360.mp4"
-          type="video/mp4"
-        />
-      </video>
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
-        <span class="hero-tag"
-          ><i class="fa-solid fa-sparkles"></i> RCC-BGM</span
-        >
-        <h1>Smart Cleaning & Robotics</h1>
-        <p style="color: #cbd5e1; max-width: 720px; margin: 22px auto 0">
-          Technology-enabled cleaning support for teams looking to improve
-          consistency, visibility and facility coverage.
-        </p>
-        <div class="hero-labels">
-          <a class="btn-header btn-glow" href="contact.html"
-            >Request an Assessment <i class="fa-solid fa-arrow-right"></i></a
-          ><a class="h-label" href="services.html"
-            ><i class="fa-solid fa-layer-group"></i> Explore Services</a
-          >
+
+    <section class="scr-hero">
+      <div class="container">
+        <div class="scr-hero-grid">
+
+          <div class="scr-hero-left">
+            <span class="hero-tag"
+              style="background: rgba(0, 180, 216, 0.08); border: 1px solid rgba(0, 180, 216, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;"><i
+                class="fa-solid fa-robot"></i> RCC-BGM SMART CLEANING</span>
+            <h1>Smart Cleaning<br><span class="gradient-text">& Robotics</span></h1>
+            <p>
+              Technology-enabled cleaning support for teams looking to improve consistency, visibility and facility
+              coverage. Robotics and connected tools complement—not replace—a well-defined facility program.
+            </p>
+            <div class="scr-hero-actions">
+              <a class="btn-header btn-glow" href="contact.html">Request an Assessment <i class="fa-solid fa-arrow-right"></i></a>
+              <a class="btn-outline-hero" href="services.html"><i class="fa-solid fa-layer-group"></i> Explore Services</a>
+            </div>
+          </div>
+
+          <div class="scr-spec-panel">
+            <div class="scr-spec-header">
+              <div class="scr-spec-title">
+                <i class="fa-solid fa-microchip"></i> Robot Capabilities
+              </div>
+              <div class="scr-spec-live">
+                <span class="scr-spec-live-dot"></span> ONLINE
+              </div>
+            </div>
+            <div class="scr-spec-body">
+
+              <div class="scr-spec-row">
+                <div class="scr-spec-icon autonomous"><i class="fa-solid fa-route"></i></div>
+                <div class="scr-spec-info">
+                  <div class="scr-spec-name">Autonomous Navigation</div>
+                  <div class="scr-spec-detail">Obstacle avoidance, path planning</div>
+                </div>
+                <div class="scr-spec-bar-wrap">
+                  <div class="scr-spec-bar-label"><span>Efficiency</span><span>96%</span></div>
+                  <div class="scr-spec-bar"><div class="scr-spec-bar-fill" style="width: 96%;"></div></div>
+                </div>
+              </div>
+
+              <div class="scr-spec-row">
+                <div class="scr-spec-icon mapping"><i class="fa-solid fa-map-location-dot"></i></div>
+                <div class="scr-spec-info">
+                  <div class="scr-spec-name">Facility Mapping</div>
+                  <div class="scr-spec-detail">Real-time floor coverage tracking</div>
+                </div>
+                <div class="scr-spec-bar-wrap">
+                  <div class="scr-spec-bar-label"><span>Coverage</span><span>92%</span></div>
+                  <div class="scr-spec-bar"><div class="scr-spec-bar-fill" style="width: 92%;"></div></div>
+                </div>
+              </div>
+
+              <div class="scr-spec-row">
+                <div class="scr-spec-icon sanitize"><i class="fa-solid fa-shield-virus"></i></div>
+                <div class="scr-spec-info">
+                  <div class="scr-spec-name">Sanitization Protocol</div>
+                  <div class="scr-spec-detail">UV-C and chemical distribution</div>
+                </div>
+                <div class="scr-spec-bar-wrap">
+                  <div class="scr-spec-bar-label"><span>Sanitization</span><span>99%</span></div>
+                  <div class="scr-spec-bar"><div class="scr-spec-bar-fill" style="width: 99%;"></div></div>
+                </div>
+              </div>
+
+              <div class="scr-spec-row">
+                <div class="scr-spec-icon analytics"><i class="fa-solid fa-chart-line"></i></div>
+                <div class="scr-spec-info">
+                  <div class="scr-spec-name">Usage Analytics</div>
+                  <div class="scr-spec-detail">Performance logs and alerts</div>
+                </div>
+                <div class="scr-spec-bar-wrap">
+                  <div class="scr-spec-bar-label"><span>Uptime</span><span>94%</span></div>
+                  <div class="scr-spec-bar"><div class="scr-spec-bar-fill" style="width: 94%;"></div></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="num">01</div>
-            <div class="lbl">Clear scope</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">02</div>
-            <div class="lbl">Coordinated team</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">03</div>
-            <div class="lbl">Planned delivery</div>
-          </div>
-        </div>
-      </div>
-      <div class="scroll-cue">
-        Scroll
-        <div class="dot-track"></div>
       </div>
     </section>
     <main>

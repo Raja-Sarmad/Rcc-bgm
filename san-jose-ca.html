@@ -13,6 +13,393 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <style>
+      .sj-hero {
+        position: relative;
+        background: radial-gradient(circle at 50% 10%, rgba(0, 180, 216, 0.15) 0%, transparent 55%),
+          radial-gradient(circle at 80% 90%, rgba(0, 119, 182, 0.08) 0%, transparent 50%),
+          #050a18;
+        padding: 130px 0 70px 0;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(0, 180, 216, 0.15);
+      }
+
+      .sj-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.004) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.004) 1px, transparent 1px);
+        background-size: 70px 70px;
+        pointer-events: none;
+      }
+
+      .sj-hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 56px;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+      }
+
+      .sj-hero-left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .sj-hero-left h1 {
+        font-size: clamp(32px, 4.5vw, 52px);
+        color: white;
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -1.2px;
+        margin-top: 18px;
+      }
+
+      .sj-hero-left h1 span.gradient-text {
+        background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .sj-hero-left p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #cbd5e1;
+        margin-top: 20px;
+        max-width: 500px;
+      }
+
+      .sj-hero-actions {
+        display: flex;
+        gap: 16px;
+        margin-top: 32px;
+        flex-wrap: wrap;
+      }
+
+      .sj-hero-actions .btn-outline-hero {
+        border: 1px solid rgba(0, 180, 216, 0.3);
+        background: rgba(255, 255, 255, 0.02);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 99px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .sj-hero-actions .btn-outline-hero:hover {
+        border-color: var(--accent-teal);
+        background: rgba(0, 180, 216, 0.08);
+      }
+
+      /* Orbital Service Map */
+      .sj-orbital {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1;
+        max-width: 440px;
+        margin: 0 auto;
+      }
+
+      .sj-orbital-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(0, 180, 216, 0.15) 0%, rgba(0, 180, 216, 0.03) 70%, transparent 100%);
+        border: 1px solid rgba(0, 180, 216, 0.35);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 3;
+        backdrop-filter: blur(16px);
+        box-shadow: 0 0 40px rgba(0, 180, 216, 0.12), 0 0 80px rgba(0, 180, 216, 0.06);
+      }
+
+      .sj-orbital-center::before {
+        content: '';
+        position: absolute;
+        width: 140%;
+        height: 140%;
+        border-radius: 50%;
+        border: 1px solid rgba(0, 180, 216, 0.08);
+        animation: sj-center-pulse 4s ease-in-out infinite;
+      }
+
+      .sj-orbital-center::after {
+        content: '';
+        position: absolute;
+        width: 170%;
+        height: 170%;
+        border-radius: 50%;
+        border: 1px solid rgba(0, 180, 216, 0.04);
+        animation: sj-center-pulse 4s ease-in-out infinite 1s;
+      }
+
+      @keyframes sj-center-pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.08); opacity: 0.4; }
+      }
+
+      .sj-orbital-center i {
+        font-size: 24px;
+        color: var(--accent-teal);
+        margin-bottom: 5px;
+        filter: drop-shadow(0 0 8px rgba(0, 180, 216, 0.4));
+      }
+
+      .sj-orbital-center span {
+        font-size: 10px;
+        font-weight: 700;
+        color: white;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      /* Orbit Rings */
+      .sj-orbit-ring {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 80%;
+        border-radius: 50%;
+        border: 1px solid rgba(0, 180, 216, 0.1);
+        z-index: 1;
+      }
+
+      .sj-orbit-ring::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 50%;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent-teal);
+        box-shadow: 0 0 10px rgba(0, 180, 216, 0.6);
+        animation: sj-orbit-dot 8s linear infinite;
+      }
+
+      @keyframes sj-orbit-dot {
+        from { transform: rotate(0deg) translateX(calc(80% * 0.5 / 2)) rotate(0deg); }
+        to { transform: rotate(360deg) translateX(calc(80% * 0.5 / 2)) rotate(-360deg); }
+      }
+
+      .sj-orbit-ring-inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 55%;
+        height: 55%;
+        border-radius: 50%;
+        border: 1px dashed rgba(0, 180, 216, 0.08);
+        z-index: 1;
+      }
+
+      /* Service Nodes */
+      .sj-node {
+        position: absolute;
+        background: rgba(5, 15, 35, 0.6);
+        border: 1px solid rgba(0, 180, 216, 0.12);
+        border-radius: 18px;
+        padding: 18px 14px;
+        backdrop-filter: blur(12px);
+        transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+        z-index: 2;
+        text-align: center;
+        width: 124px;
+        text-decoration: none;
+      }
+
+      .sj-node:hover {
+        border-color: rgba(0, 180, 216, 0.5);
+        background: rgba(5, 15, 35, 0.8);
+        box-shadow: 0 0 24px rgba(0, 180, 216, 0.15), 0 8px 32px rgba(0, 0, 0, 0.3);
+      }
+
+      .sj-node-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        margin: 0 auto 10px auto;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .sj-node:hover .sj-node-icon {
+        transform: scale(1.12);
+      }
+
+      .sj-orbital > a:nth-of-type(1) .sj-node-icon {
+        background: rgba(0, 180, 216, 0.12);
+        color: var(--accent-teal);
+      }
+
+      .sj-orbital > a:nth-of-type(1):hover .sj-node-icon {
+        box-shadow: 0 0 16px rgba(0, 180, 216, 0.3);
+      }
+
+      .sj-orbital > a:nth-of-type(2) .sj-node-icon {
+        background: rgba(34, 197, 94, 0.12);
+        color: #22c55e;
+      }
+
+      .sj-orbital > a:nth-of-type(2):hover .sj-node-icon {
+        box-shadow: 0 0 16px rgba(34, 197, 94, 0.3);
+      }
+
+      .sj-orbital > a:nth-of-type(3) .sj-node-icon {
+        background: rgba(245, 158, 11, 0.12);
+        color: #f59e0b;
+      }
+
+      .sj-orbital > a:nth-of-type(3):hover .sj-node-icon {
+        box-shadow: 0 0 16px rgba(245, 158, 11, 0.3);
+      }
+
+      .sj-orbital > a:nth-of-type(4) .sj-node-icon {
+        background: rgba(139, 92, 246, 0.12);
+        color: #8b5cf6;
+      }
+
+      .sj-orbital > a:nth-of-type(4):hover .sj-node-icon {
+        box-shadow: 0 0 16px rgba(139, 92, 246, 0.3);
+      }
+
+      .sj-node-title {
+        font-size: 12px;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 3px;
+      }
+
+      .sj-node-count {
+        font-size: 10px;
+        color: #64748b;
+      }
+
+      /* Node Positions */
+      .sj-orbital > a:nth-of-type(1) { top: 0%; left: 50%; transform: translateX(-50%); }
+      .sj-orbital > a:nth-of-type(2) { top: 50%; right: 0%; transform: translateY(-50%); }
+      .sj-orbital > a:nth-of-type(3) { bottom: 0%; left: 50%; transform: translateX(-50%); }
+      .sj-orbital > a:nth-of-type(4) { top: 50%; left: 0%; transform: translateY(-50%); }
+
+      .sj-orbital > a:nth-of-type(1):hover { transform: translateX(-50%) scale(1.08); }
+      .sj-orbital > a:nth-of-type(2):hover { transform: translateY(-50%) scale(1.08); }
+      .sj-orbital > a:nth-of-type(3):hover { transform: translateX(-50%) scale(1.08); }
+      .sj-orbital > a:nth-of-type(4):hover { transform: translateY(-50%) scale(1.08); }
+
+      /* Connection Lines */
+      .sj-connections {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .sj-conn-line {
+        stroke: url(#sj-line-gradient);
+        stroke-width: 1;
+        stroke-dasharray: 6 4;
+        opacity: 0.5;
+      }
+
+      /* Bottom Stats Bar */
+      .sj-stats-bar {
+        display: flex;
+        justify-content: center;
+        gap: 48px;
+        margin-top: 48px;
+        padding-top: 28px;
+        border-top: 1px solid rgba(0, 180, 216, 0.08);
+        position: relative;
+        z-index: 10;
+        flex-wrap: wrap;
+      }
+
+      .sj-stat {
+        text-align: center;
+      }
+
+      .sj-stat-val {
+        font-size: 26px;
+        font-weight: 800;
+        color: white;
+      }
+
+      .sj-stat-val span {
+        color: var(--accent-teal);
+      }
+
+      .sj-stat-label {
+        font-size: 11px;
+        color: #64748b;
+        margin-top: 3px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        font-weight: 600;
+      }
+
+      @media (max-width: 900px) {
+        .sj-hero-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .sj-hero-left {
+          align-items: center;
+          text-align: center;
+        }
+
+        .sj-hero-left p {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .sj-hero-actions {
+          justify-content: center;
+        }
+
+        .sj-orbital {
+          max-width: 340px;
+        }
+
+        .sj-node {
+          width: 100px;
+          padding: 12px 10px;
+        }
+
+        .sj-stats-bar {
+          gap: 28px;
+        }
+      }
+    </style>
   </head>
   <body class="page-location">
     <nav>
@@ -31,55 +418,113 @@
         <a href="contact.html" class="btn-header">Get Assessment</a>
       </div>
     </nav>
-    <section class="hero family-construction" style="min-height: 72vh">
-      <video
-        class="hero-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        poster="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000"
-      >
-        <source
-          src="https://assets.mixkit.co/videos/31450/31450-360.mp4"
-          type="video/mp4"
-        />
-      </video>
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
-        <span class="hero-tag"
-          ><i class="fa-solid fa-building"></i> RCC-BGM</span
-        >
-        <h1>San Jose Ca Facility Services</h1>
-        <p style="color: #cbd5e1; max-width: 720px; margin: 22px auto 0">
-          Commercial facility support for businesses and properties in San Jose
-          Ca.
-        </p>
-        <div class="hero-labels">
-          <a class="btn-header btn-glow" href="contact.html"
-            >Request an Assessment <i class="fa-solid fa-arrow-right"></i></a
-          ><a class="h-label" href="services.html"
-            ><i class="fa-solid fa-layer-group"></i> Explore Services</a
-          >
+
+    <section class="sj-hero">
+      <div class="container">
+        <div class="sj-hero-grid">
+
+          <div class="sj-hero-left">
+            <span class="hero-tag"
+              style="background: rgba(0, 180, 216, 0.08); border: 1px solid rgba(0, 180, 216, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;"><i
+                class="fa-solid fa-location-dot"></i> SAN JOSE, CALIFORNIA</span>
+            <h1>Facility Services<br><span class="gradient-text">in San Jose, CA</span></h1>
+            <p>
+              Commercial facility support for businesses and properties in San Jose. Cleaning, maintenance, construction
+              and building-system services coordinated around your local facility and confirmed service scope.
+            </p>
+            <div class="sj-hero-actions">
+              <a class="btn-header btn-glow" href="contact.html">Request an Assessment <i class="fa-solid fa-arrow-right"></i></a>
+              <a class="btn-outline-hero" href="services.html"><i class="fa-solid fa-layer-group"></i> Explore Services</a>
+            </div>
+          </div>
+
+          <div class="sj-orbital">
+            <!-- Orbit Rings -->
+            <div class="sj-orbit-ring"></div>
+            <div class="sj-orbit-ring-inner"></div>
+
+            <!-- SVG Connection Lines -->
+            <svg class="sj-connections" viewBox="0 0 440 440">
+              <defs>
+                <linearGradient id="sj-line-gradient" x1="50%" y1="50%" x2="0%" y2="0%">
+                  <stop offset="0%" stop-color="rgba(0, 180, 216, 0.4)" />
+                  <stop offset="100%" stop-color="rgba(0, 180, 216, 0.05)" />
+                </linearGradient>
+                <linearGradient id="sj-line-gradient-r" x1="50%" y1="50%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="rgba(0, 180, 216, 0.4)" />
+                  <stop offset="100%" stop-color="rgba(34, 197, 94, 0.05)" />
+                </linearGradient>
+                <linearGradient id="sj-line-gradient-b" x1="50%" y1="50%" x2="50%" y2="100%">
+                  <stop offset="0%" stop-color="rgba(0, 180, 216, 0.4)" />
+                  <stop offset="100%" stop-color="rgba(245, 158, 11, 0.05)" />
+                </linearGradient>
+                <linearGradient id="sj-line-gradient-l" x1="50%" y1="50%" x2="0%" y2="50%">
+                  <stop offset="0%" stop-color="rgba(0, 180, 216, 0.4)" />
+                  <stop offset="100%" stop-color="rgba(139, 92, 246, 0.05)" />
+                </linearGradient>
+              </defs>
+              <line class="sj-conn-line" x1="220" y1="220" x2="220" y2="50" style="stroke: url(#sj-line-gradient);" />
+              <line class="sj-conn-line" x1="220" y1="220" x2="400" y2="220" style="stroke: url(#sj-line-gradient-r);" />
+              <line class="sj-conn-line" x1="220" y1="220" x2="220" y2="390" style="stroke: url(#sj-line-gradient-b);" />
+              <line class="sj-conn-line" x1="220" y1="220" x2="40" y2="220" style="stroke: url(#sj-line-gradient-l);" />
+            </svg>
+
+            <!-- Center Hub -->
+            <div class="sj-orbital-center">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>San Jose</span>
+            </div>
+
+            <!-- Top Node: HVAC -->
+            <a class="sj-node" href="commercial-hvac-services.html">
+              <div class="sj-node-icon"><i class="fa-solid fa-temperature-half"></i></div>
+              <div class="sj-node-title">HVAC</div>
+              <div class="sj-node-count">Install & Repair</div>
+            </a>
+
+            <!-- Right Node: Maintenance -->
+            <a class="sj-node" href="facility-maintenance-services.html">
+              <div class="sj-node-icon"><i class="fa-solid fa-wrench"></i></div>
+              <div class="sj-node-title">Maintenance</div>
+              <div class="sj-node-count">Repairs & Upkeep</div>
+            </a>
+
+            <!-- Bottom Node: Construction -->
+            <a class="sj-node" href="commercial-construction.html">
+              <div class="sj-node-icon"><i class="fa-solid fa-helmet-safety"></i></div>
+              <div class="sj-node-title">Construction</div>
+              <div class="sj-node-count">Build-Outs</div>
+            </a>
+
+            <!-- Left Node: Cleaning -->
+            <a class="sj-node" href="commercial-cleaning-services.html">
+              <div class="sj-node-icon"><i class="fa-solid fa-broom"></i></div>
+              <div class="sj-node-title">Cleaning</div>
+              <div class="sj-node-count">Offices & Lobbies</div>
+            </a>
+          </div>
+
         </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="num">01</div>
-            <div class="lbl">Clear scope</div>
+
+        <div class="sj-stats-bar">
+          <div class="sj-stat">
+            <div class="sj-stat-val">240<span>+</span></div>
+            <div class="sj-stat-label">Local Facilities</div>
           </div>
-          <div class="hero-stat">
-            <div class="num">02</div>
-            <div class="lbl">Coordinated team</div>
+          <div class="sj-stat">
+            <div class="sj-stat-val">14<span>hr</span></div>
+            <div class="sj-stat-label">Avg Response</div>
           </div>
-          <div class="hero-stat">
-            <div class="num">03</div>
-            <div class="lbl">Planned delivery</div>
+          <div class="sj-stat">
+            <div class="sj-stat-val">98<span>%</span></div>
+            <div class="sj-stat-label">Client Retention</div>
+          </div>
+          <div class="sj-stat">
+            <div class="sj-stat-val">24<span>/7</span></div>
+            <div class="sj-stat-label">Dispatch Ready</div>
           </div>
         </div>
-      </div>
-      <div class="scroll-cue">
-        Scroll
-        <div class="dot-track"></div>
+
       </div>
     </section>
     <main>

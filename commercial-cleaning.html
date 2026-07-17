@@ -13,6 +13,310 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <style>
+      .cc-hero {
+        position: relative;
+        background: radial-gradient(circle at 10% 20%, rgba(0, 180, 216, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 90% 80%, rgba(0, 119, 182, 0.08) 0%, transparent 50%),
+          #050a18;
+        padding: 140px 0 85px 0;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(0, 180, 216, 0.15);
+      }
+
+      .cc-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(rgba(255, 255, 255, 0.007) 1px, transparent 1px);
+        background-size: 24px 24px;
+        pointer-events: none;
+      }
+
+      .cc-hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 48px;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+      }
+
+      .cc-hero-left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .cc-hero-left h1 {
+        font-size: clamp(34px, 4.5vw, 52px);
+        color: white;
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -1.2px;
+        margin-top: 16px;
+      }
+
+      .cc-hero-left h1 span.gradient-text {
+        background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .cc-hero-left p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #cbd5e1;
+        margin-top: 18px;
+        max-width: 520px;
+      }
+
+      .cc-hero-actions {
+        display: flex;
+        gap: 16px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+      }
+
+      .cc-hero-actions .btn-outline-hero {
+        border: 1px solid rgba(0, 180, 216, 0.3);
+        background: rgba(255, 255, 255, 0.02);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 99px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .cc-hero-actions .btn-outline-hero:hover {
+        border-color: var(--accent-teal);
+        background: rgba(0, 180, 216, 0.08);
+      }
+
+      /* Cleaning Operations Console Card */
+      .cc-console {
+        background: rgba(5, 15, 35, 0.45);
+        border: 1px solid rgba(0, 180, 216, 0.2);
+        border-radius: 24px;
+        backdrop-filter: blur(16px);
+        padding: 28px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s ease;
+      }
+
+      .cc-console:hover {
+        border-color: rgba(0, 180, 216, 0.4);
+      }
+
+      .cc-console-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid rgba(0, 180, 216, 0.1);
+      }
+
+      .cc-console-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        font-weight: 700;
+        color: white;
+      }
+
+      .cc-console-title i {
+        color: var(--accent-teal);
+        font-size: 16px;
+      }
+
+      .cc-console-badge {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #22c55e;
+        background: rgba(34, 197, 94, 0.1);
+        border: 1px solid rgba(34, 197, 94, 0.25);
+        border-radius: 100px;
+        padding: 4px 12px;
+        letter-spacing: 0.5px;
+      }
+
+      .cc-pulse {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #22c55e;
+        animation: cc-pulse-anim 2s ease-in-out infinite;
+      }
+
+      @keyframes cc-pulse-anim {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.3; }
+      }
+
+      .cc-console-metrics {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .cc-metric {
+        background: rgba(10, 25, 50, 0.5);
+        border: 1px solid rgba(0, 180, 216, 0.08);
+        border-radius: 14px;
+        padding: 16px;
+        transition: border-color 0.3s ease;
+      }
+
+      .cc-metric:hover {
+        border-color: rgba(0, 180, 216, 0.25);
+      }
+
+      .cc-metric-label {
+        font-size: 11px;
+        font-weight: 600;
+        color: rgba(0, 180, 216, 0.7);
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+        display: block;
+      }
+
+      .cc-metric-value {
+        font-size: 22px;
+        font-weight: 800;
+        color: white;
+      }
+
+      .cc-metric-value span {
+        font-size: 13px;
+        color: #cbd5e1;
+        font-weight: 500;
+      }
+
+      .cc-console-tasks {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .cc-task {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 16px;
+        background: rgba(10, 25, 50, 0.4);
+        border: 1px solid rgba(0, 180, 216, 0.06);
+        border-radius: 12px;
+        transition: border-color 0.3s ease;
+      }
+
+      .cc-task:hover {
+        border-color: rgba(0, 180, 216, 0.2);
+      }
+
+      .cc-task-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        flex-shrink: 0;
+      }
+
+      .cc-task-icon.clean {
+        background: rgba(0, 180, 216, 0.12);
+        color: var(--accent-teal);
+      }
+
+      .cc-task-icon.sanitize {
+        background: rgba(34, 197, 94, 0.1);
+        color: #22c55e;
+      }
+
+      .cc-task-icon.inspect {
+        background: rgba(139, 92, 246, 0.1);
+        color: #8b5cf6;
+      }
+
+      .cc-task-info {
+        flex: 1;
+      }
+
+      .cc-task-name {
+        font-size: 13px;
+        font-weight: 600;
+        color: white;
+      }
+
+      .cc-task-detail {
+        font-size: 11px;
+        color: #64748b;
+        margin-top: 2px;
+      }
+
+      .cc-task-status {
+        font-size: 11px;
+        font-weight: 600;
+        padding: 3px 10px;
+        border-radius: 100px;
+        flex-shrink: 0;
+      }
+
+      .cc-task-status.active {
+        background: rgba(0, 180, 216, 0.12);
+        color: var(--accent-teal);
+      }
+
+      .cc-task-status.complete {
+        background: rgba(34, 197, 94, 0.1);
+        color: #22c55e;
+      }
+
+      @media (max-width: 900px) {
+        .cc-hero-grid {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+
+        .cc-hero-left {
+          align-items: center;
+          text-align: center;
+        }
+
+        .cc-hero-left p {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .cc-hero-actions {
+          justify-content: center;
+        }
+
+        .cc-console {
+          max-width: 440px;
+          margin: 0 auto;
+        }
+      }
+    </style>
   </head>
   <body class="page-service">
     <nav>
@@ -31,55 +335,75 @@
         <a href="contact.html" class="btn-header">Get Assessment</a>
       </div>
     </nav>
-    <section class="hero family-construction" style="min-height: 72vh">
-      <video
-        class="hero-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        poster="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000"
-      >
-        <source
-          src="https://assets.mixkit.co/videos/31450/31450-360.mp4"
-          type="video/mp4"
-        />
-      </video>
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
-        <span class="hero-tag"
-          ><i class="fa-solid fa-sparkles"></i> RCC-BGM</span
-        >
-        <h1>Commercial Cleaning</h1>
-        <p style="color: #cbd5e1; max-width: 720px; margin: 22px auto 0">
-          Commercial facility support planned around your property and operating
-          requirements.
-        </p>
-        <div class="hero-labels">
-          <a class="btn-header btn-glow" href="contact.html"
-            >Request an Assessment <i class="fa-solid fa-arrow-right"></i></a
-          ><a class="h-label" href="services.html"
-            ><i class="fa-solid fa-layer-group"></i> Explore Services</a
-          >
+    <section class="cc-hero">
+      <div class="container">
+        <div class="cc-hero-grid">
+
+          <div class="cc-hero-left">
+            <span class="hero-tag"
+              style="background: rgba(0, 180, 216, 0.08); border: 1px solid rgba(0, 180, 216, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;"><i
+                class="fa-solid fa-sparkles"></i> RCC-BGM CLEANING DIVISION</span>
+            <h1>Commercial Cleaning<br><span class="gradient-text">Planned & Coordinated</span></h1>
+            <p>
+              Commercial facility support planned around your property and operating requirements. Work is scoped around
+              conditions, access priorities, and the outcome your team needs.
+            </p>
+            <div class="cc-hero-actions">
+              <a class="btn-header btn-glow" href="contact.html">Request an Assessment <i class="fa-solid fa-arrow-right"></i></a>
+              <a class="btn-outline-hero" href="services.html"><i class="fa-solid fa-layer-group"></i> Explore Services</a>
+            </div>
+          </div>
+
+          <div class="cc-console">
+            <div class="cc-console-header">
+              <div class="cc-console-title">
+                <i class="fa-solid fa-broom"></i> Cleaning Operations
+              </div>
+              <div class="cc-console-badge">
+                <span class="cc-pulse"></span> LIVE
+              </div>
+            </div>
+
+            <div class="cc-console-metrics">
+              <div class="cc-metric">
+                <span class="cc-metric-label">Active Crews</span>
+                <div class="cc-metric-value">12 <span>deployed</span></div>
+              </div>
+              <div class="cc-metric">
+                <span class="cc-metric-label">Completion</span>
+                <div class="cc-metric-value">97<span>%</span></div>
+              </div>
+            </div>
+
+            <div class="cc-console-tasks">
+              <div class="cc-task">
+                <div class="cc-task-icon clean"><i class="fa-solid fa-broom"></i></div>
+                <div class="cc-task-info">
+                  <div class="cc-task-name">Nightly Janitorial Sweep</div>
+                  <div class="cc-task-detail">Palo Alto Office Tower</div>
+                </div>
+                <span class="cc-task-status active">In Progress</span>
+              </div>
+              <div class="cc-task">
+                <div class="cc-task-icon sanitize"><i class="fa-solid fa-shield-virus"></i></div>
+                <div class="cc-task-info">
+                  <div class="cc-task-name">Terminal Sanitization</div>
+                  <div class="cc-task-detail">San Jose Medical Complex</div>
+                </div>
+                <span class="cc-task-status complete">Completed</span>
+              </div>
+              <div class="cc-task">
+                <div class="cc-task-icon inspect"><i class="fa-solid fa-clipboard-check"></i></div>
+                <div class="cc-task-info">
+                  <div class="cc-task-name">Floor Care Assessment</div>
+                  <div class="cc-task-detail">Santa Clara Tech Campus</div>
+                </div>
+                <span class="cc-task-status active">Scheduled</span>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="num">01</div>
-            <div class="lbl">Clear scope</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">02</div>
-            <div class="lbl">Coordinated team</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">03</div>
-            <div class="lbl">Planned delivery</div>
-          </div>
-        </div>
-      </div>
-      <div class="scroll-cue">
-        Scroll
-        <div class="dot-track"></div>
       </div>
     </section>
     <main>

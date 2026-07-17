@@ -21,6 +21,232 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <style>
+      .mep-hero {
+        position: relative;
+        background: radial-gradient(circle at 50% 30%, rgba(0, 180, 216, 0.13) 0%, transparent 55%),
+          radial-gradient(circle at 15% 85%, rgba(0, 119, 182, 0.08) 0%, transparent 50%),
+          #050a18;
+        padding: 140px 0 85px 0;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(0, 180, 216, 0.15);
+      }
+
+      .mep-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.006) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.006) 1px, transparent 1px);
+        background-size: 50px 50px;
+        pointer-events: none;
+      }
+
+      .mep-hero-inner {
+        position: relative;
+        z-index: 10;
+      }
+
+      .mep-hero-header {
+        text-align: center;
+        max-width: 780px;
+        margin: 0 auto 50px auto;
+      }
+
+      .mep-hero-header h1 {
+        font-size: clamp(30px, 4.5vw, 50px);
+        color: white;
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -1.2px;
+        margin-top: 16px;
+      }
+
+      .mep-hero-header h1 span.gradient-text {
+        background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .mep-hero-header p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #cbd5e1;
+        margin-top: 18px;
+        max-width: 620px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .mep-hero-actions {
+        display: flex;
+        gap: 16px;
+        margin-top: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .mep-hero-actions .btn-outline-hero {
+        border: 1px solid rgba(0, 180, 216, 0.3);
+        background: rgba(255, 255, 255, 0.02);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 99px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .mep-hero-actions .btn-outline-hero:hover {
+        border-color: var(--accent-teal);
+        background: rgba(0, 180, 216, 0.08);
+      }
+
+      /* Stacked Discipline Cards */
+      .mep-stack {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .mep-discipline {
+        background: rgba(5, 15, 35, 0.45);
+        border: 1px solid rgba(0, 180, 216, 0.1);
+        border-radius: 20px;
+        padding: 32px 26px 28px 26px;
+        backdrop-filter: blur(10px);
+        transition: border-color 0.35s ease, transform 0.35s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .mep-discipline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        border-radius: 20px 20px 0 0;
+      }
+
+      .mep-discipline:nth-child(1)::before {
+        background: linear-gradient(90deg, #ef4444, rgba(239, 68, 68, 0.2));
+      }
+
+      .mep-discipline:nth-child(2)::before {
+        background: linear-gradient(90deg, #f59e0b, rgba(245, 158, 11, 0.2));
+      }
+
+      .mep-discipline:nth-child(3)::before {
+        background: linear-gradient(90deg, #3b82f6, rgba(59, 130, 246, 0.2));
+      }
+
+      .mep-discipline:hover {
+        border-color: rgba(0, 180, 216, 0.3);
+        transform: translateY(-6px);
+      }
+
+      .mep-disc-num {
+        font-size: 48px;
+        font-weight: 800;
+        letter-spacing: -2px;
+        line-height: 1;
+        margin-bottom: 16px;
+        opacity: 0.08;
+      }
+
+      .mep-discipline:nth-child(1) .mep-disc-num { color: #ef4444; opacity: 0.35; text-shadow: 0 0 20px rgba(239, 68, 68, 0.3); }
+      .mep-discipline:nth-child(2) .mep-disc-num { color: #f59e0b; opacity: 0.35; text-shadow: 0 0 20px rgba(245, 158, 11, 0.3); }
+      .mep-discipline:nth-child(3) .mep-disc-num { color: #3b82f6; opacity: 0.35; text-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+
+      .mep-disc-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        margin-bottom: 16px;
+      }
+
+      .mep-discipline:nth-child(1) .mep-disc-icon {
+        background: rgba(239, 68, 68, 0.1);
+        color: #ef4444;
+      }
+
+      .mep-discipline:nth-child(2) .mep-disc-icon {
+        background: rgba(245, 158, 11, 0.1);
+        color: #f59e0b;
+      }
+
+      .mep-discipline:nth-child(3) .mep-disc-icon {
+        background: rgba(59, 130, 246, 0.1);
+        color: #3b82f6;
+      }
+
+      .mep-disc-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 8px;
+      }
+
+      .mep-disc-desc {
+        font-size: 13px;
+        color: #64748b;
+        line-height: 1.6;
+        margin-bottom: 16px;
+      }
+
+      .mep-disc-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .mep-disc-tag {
+        font-size: 10px;
+        font-weight: 600;
+        padding: 3px 9px;
+        border-radius: 6px;
+        letter-spacing: 0.3px;
+      }
+
+      .mep-discipline:nth-child(1) .mep-disc-tag {
+        background: rgba(239, 68, 68, 0.08);
+        color: #ef4444;
+      }
+
+      .mep-discipline:nth-child(2) .mep-disc-tag {
+        background: rgba(245, 158, 11, 0.08);
+        color: #f59e0b;
+      }
+
+      .mep-discipline:nth-child(3) .mep-disc-tag {
+        background: rgba(59, 130, 246, 0.08);
+        color: #3b82f6;
+      }
+
+      @media (max-width: 900px) {
+        .mep-stack {
+          grid-template-columns: 1fr;
+          max-width: 400px;
+        }
+      }
+    </style>
   </head>
   <body class="page-mep">
     <nav>
@@ -40,63 +266,65 @@
       </div>
     </nav>
 
-    <section class="hero family-construction mep-hero">
-      <video
-        class="hero-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        poster="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&amp;fit=crop&amp;q=80&amp;w=2000"
-      >
-        <source
-          src="https://assets.mixkit.co/videos/31450/31450-360.mp4"
-          type="video/mp4"
-        />
-      </video>
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
-        <span class="hero-tag"
-          ><i class="fa-solid fa-diagram-project"></i> Mechanical, Electrical
-          &amp; Plumbing Coordination</span
-        >
-        <h1>Commercial MEP Services Connected to Your Building and Project</h1>
-        <p>
-          RCC-BGM coordinates commercial mechanical, electrical and plumbing
-          requirements for tenant improvements, building renovations, facility
-          upgrades and approved construction projects.
-        </p>
-        <p class="hero-subcopy">
-          Our approach connects MEP work with HVAC, interior construction,
-          building access and project scheduling—helping reduce conflicts
-          between technical trades and the wider commercial scope.
-        </p>
-        <div class="hero-labels">
-          <a class="btn-header btn-glow" href="contact.html"
-            >Request an MEP Project Assessment
-            <i class="fa-solid fa-arrow-right"></i></a
-          ><a class="h-label" href="commercial-hvac-services.html"
-            ><i class="fa-solid fa-wind"></i> Commercial HVAC Services</a
-          >
+    <section class="mep-hero">
+      <div class="container">
+        <div class="mep-hero-inner">
+
+          <div class="mep-hero-header">
+            <span class="hero-tag"
+              style="background: rgba(0, 180, 216, 0.08); border: 1px solid rgba(0, 180, 216, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;"><i
+                class="fa-solid fa-diagram-project"></i> RCC-BGM MEP COORDINATION</span>
+            <h1>Commercial MEP Services<br><span class="gradient-text">Connected to Your Building</span></h1>
+            <p>
+              Coordinated mechanical, electrical and plumbing support for tenant improvements, building renovations,
+              facility upgrades and approved construction projects. MEP work connected with HVAC, interior construction
+              and project scheduling.
+            </p>
+            <div class="mep-hero-actions">
+              <a class="btn-header btn-glow" href="contact.html">Request an MEP Assessment <i class="fa-solid fa-arrow-right"></i></a>
+              <a class="btn-outline-hero" href="commercial-hvac-services.html"><i class="fa-solid fa-wind"></i> HVAC Services</a>
+            </div>
+          </div>
+
+          <div class="mep-stack">
+            <div class="mep-discipline">
+              <div class="mep-disc-num">01</div>
+              <div class="mep-disc-icon"><i class="fa-solid fa-gear"></i></div>
+              <div class="mep-disc-title">Mechanical</div>
+              <div class="mep-disc-desc">HVAC distribution, equipment placement, ductwork routing and mechanical system coordination</div>
+              <div class="mep-disc-tags">
+                <span class="mep-disc-tag">HVAC</span>
+                <span class="mep-disc-tag">Ductwork</span>
+                <span class="mep-disc-tag">Equipment</span>
+              </div>
+            </div>
+
+            <div class="mep-discipline">
+              <div class="mep-disc-num">02</div>
+              <div class="mep-disc-icon"><i class="fa-solid fa-bolt"></i></div>
+              <div class="mep-disc-title">Electrical</div>
+              <div class="mep-disc-desc">Power distribution, panel layout, lighting circuits, data cabling and code compliance</div>
+              <div class="mep-disc-tags">
+                <span class="mep-disc-tag">Power</span>
+                <span class="mep-disc-tag">Lighting</span>
+                <span class="mep-disc-tag">Data</span>
+              </div>
+            </div>
+
+            <div class="mep-discipline">
+              <div class="mep-disc-num">03</div>
+              <div class="mep-disc-icon"><i class="fa-solid fa-faucet-drip"></i></div>
+              <div class="mep-disc-title">Plumbing</div>
+              <div class="mep-disc-desc">Supply and waste piping, fixture connections, gas lines and backflow prevention systems</div>
+              <div class="mep-disc-tags">
+                <span class="mep-disc-tag">Supply</span>
+                <span class="mep-disc-tag">Waste</span>
+                <span class="mep-disc-tag">Gas</span>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="num">01</div>
-            <div class="lbl">Mechanical coordination</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">02</div>
-            <div class="lbl">Electrical coordination</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">03</div>
-            <div class="lbl">Plumbing coordination</div>
-          </div>
-        </div>
-      </div>
-      <div class="scroll-cue">
-        Scroll
-        <div class="dot-track"></div>
       </div>
     </section>
 

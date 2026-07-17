@@ -22,6 +22,215 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <style>
+      .fms-hero {
+        position: relative;
+        background: radial-gradient(circle at 50% 0%, rgba(0, 180, 216, 0.12) 0%, transparent 60%),
+          radial-gradient(circle at 20% 90%, rgba(0, 119, 182, 0.08) 0%, transparent 50%),
+          #050a18;
+        padding: 130px 0 60px 0;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(0, 180, 216, 0.15);
+      }
+
+      .fms-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.005) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.005) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+      }
+
+      .fms-hero-center {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 10;
+      }
+
+      .fms-hero-center h1 {
+        font-size: clamp(34px, 4.8vw, 54px);
+        color: white;
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -1.2px;
+        margin-top: 16px;
+      }
+
+      .fms-hero-center h1 span.gradient-text {
+        background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .fms-hero-center p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #cbd5e1;
+        margin-top: 18px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .fms-hero-actions {
+        display: flex;
+        gap: 16px;
+        margin-top: 32px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .fms-hero-actions .btn-outline-hero {
+        border: 1px solid rgba(0, 180, 216, 0.3);
+        background: rgba(255, 255, 255, 0.02);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 99px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .fms-hero-actions .btn-outline-hero:hover {
+        border-color: var(--accent-teal);
+        background: rgba(0, 180, 216, 0.08);
+      }
+
+      /* Capabilities Strip */
+      .fms-cap-strip {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-top: 48px;
+        position: relative;
+        z-index: 10;
+      }
+
+      .fms-cap-item {
+        background: rgba(5, 15, 35, 0.4);
+        border: 1px solid rgba(0, 180, 216, 0.1);
+        border-radius: 18px;
+        padding: 24px 18px;
+        text-align: center;
+        transition: border-color 0.3s ease, transform 0.3s ease;
+        backdrop-filter: blur(8px);
+      }
+
+      .fms-cap-item:hover {
+        border-color: rgba(0, 180, 216, 0.35);
+        transform: translateY(-4px);
+      }
+
+      .fms-cap-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 14px auto;
+        font-size: 18px;
+      }
+
+      .fms-cap-icon.mechanical {
+        background: rgba(0, 180, 216, 0.1);
+        color: var(--accent-teal);
+      }
+
+      .fms-cap-icon.electrical {
+        background: rgba(245, 158, 11, 0.1);
+        color: #f59e0b;
+      }
+
+      .fms-cap-icon.plumbing {
+        background: rgba(34, 197, 94, 0.1);
+        color: #22c55e;
+      }
+
+      .fms-cap-icon.structural {
+        background: rgba(139, 92, 246, 0.1);
+        color: #8b5cf6;
+      }
+
+      .fms-cap-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 6px;
+      }
+
+      .fms-cap-desc {
+        font-size: 12px;
+        color: #64748b;
+        line-height: 1.5;
+      }
+
+      /* Bottom Stats Row */
+      .fms-hero-bottom-stats {
+        display: flex;
+        justify-content: center;
+        gap: 48px;
+        margin-top: 44px;
+        padding-top: 32px;
+        border-top: 1px solid rgba(0, 180, 216, 0.08);
+        position: relative;
+        z-index: 10;
+      }
+
+      .fms-bottom-stat {
+        text-align: center;
+      }
+
+      .fms-bottom-stat-val {
+        font-size: 28px;
+        font-weight: 800;
+        color: white;
+        letter-spacing: -0.5px;
+      }
+
+      .fms-bottom-stat-val span {
+        color: var(--accent-teal);
+      }
+
+      .fms-bottom-stat-label {
+        font-size: 12px;
+        color: #64748b;
+        margin-top: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        font-weight: 600;
+      }
+
+      @media (max-width: 900px) {
+        .fms-cap-strip {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .fms-hero-bottom-stats {
+          flex-wrap: wrap;
+          gap: 28px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .fms-cap-strip {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body class="page-maintenance">
     <nav>
@@ -40,71 +249,70 @@
         <a href="contact.html" class="btn-header">Get Assessment</a>
       </div>
     </nav>
-    <header class="hero maintenance-hero">
-      <video
-        class="hero-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        poster="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=2000"
-      >
-        <source
-          src="https://assets.mixkit.co/videos/31450/31450-360.mp4"
-          type="video/mp4"
-        />
-      </video>
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
-        <span class="hero-tag">Commercial building maintenance</span>
-        <h1>
-          Facility Maintenance Services<br /><span class="hero-glow"
-            >That Keep Commercial Buildings Working</span
-          >
-        </h1>
-        <p>
-          RCC-BGM provides coordinated facility maintenance services for
-          offices, commercial properties, industrial buildings and specialized
-          business environments.
-        </p>
-        <p class="hero-subcopy">
-          From routine upkeep and repair coordination to HVAC support,
-          carpentry, painting and facility improvements, we organize essential
-          property needs around one accountable service relationship.
-        </p>
-        <div class="hero-labels">
-          <a class="btn-header btn-glow" href="contact.html"
-            >Request a Facility Assessment
-            <i class="fa-solid fa-arrow-right"></i></a
-          ><a class="h-label" href="contact.html"
-            ><i class="fa-solid fa-screwdriver-wrench"></i> Discuss Your
-            Maintenance Needs</a
-          >
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="num">Plan</div>
-            <div class="lbl">Building upkeep</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">Repair</div>
-            <div class="lbl">Issue coordination</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">Improve</div>
-            <div class="lbl">Property upgrades</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">Align</div>
-            <div class="lbl">Facility operations</div>
+
+    <section class="fms-hero">
+      <div class="container">
+
+        <div class="fms-hero-center">
+          <span class="hero-tag"
+            style="background: rgba(0, 180, 216, 0.08); border: 1px solid rgba(0, 180, 216, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;"><i
+              class="fa-solid fa-screwdriver-wrench"></i> RCC-BGM MAINTENANCE</span>
+          <h1>Facility Maintenance<br><span class="gradient-text">That Keeps Buildings Working</span></h1>
+          <p>
+            Coordinated facility maintenance for offices, commercial properties, industrial buildings and specialized
+            environments. From routine upkeep to HVAC support and property improvements—organized around one
+            accountable service relationship.
+          </p>
+          <div class="fms-hero-actions">
+            <a class="btn-header btn-glow" href="contact.html">Request a Facility Assessment <i class="fa-solid fa-arrow-right"></i></a>
+            <a class="btn-outline-hero" href="#maintenance-services"><i class="fa-solid fa-layer-group"></i> Explore Services</a>
           </div>
         </div>
+
+        <div class="fms-cap-strip">
+          <div class="fms-cap-item">
+            <div class="fms-cap-icon mechanical"><i class="fa-solid fa-fan"></i></div>
+            <div class="fms-cap-title">HVAC Systems</div>
+            <div class="fms-cap-desc">Heating, ventilation and air conditioning service and repair</div>
+          </div>
+          <div class="fms-cap-item">
+            <div class="fms-cap-icon electrical"><i class="fa-solid fa-bolt"></i></div>
+            <div class="fms-cap-title">Electrical</div>
+            <div class="fms-cap-desc">Lighting, panels, circuits and power distribution maintenance</div>
+          </div>
+          <div class="fms-cap-item">
+            <div class="fms-cap-icon plumbing"><i class="fa-solid fa-faucet-drip"></i></div>
+            <div class="fms-cap-title">Plumbing</div>
+            <div class="fms-cap-desc">Pipes, fixtures, drains and water system upkeep</div>
+          </div>
+          <div class="fms-cap-item">
+            <div class="fms-cap-icon structural"><i class="fa-solid fa-building"></i></div>
+            <div class="fms-cap-title">Building Envelope</div>
+            <div class="fms-cap-desc">Walls, roofing, doors, windows and structural repairs</div>
+          </div>
+        </div>
+
+        <div class="fms-hero-bottom-stats">
+          <div class="fms-bottom-stat">
+            <div class="fms-bottom-stat-val">2,400<span>+</span></div>
+            <div class="fms-bottom-stat-label">Work Orders Completed</div>
+          </div>
+          <div class="fms-bottom-stat">
+            <div class="fms-bottom-stat-val">98<span>%</span></div>
+            <div class="fms-bottom-stat-label">On-Time Completion</div>
+          </div>
+          <div class="fms-bottom-stat">
+            <div class="fms-bottom-stat-val">14<span>hr</span></div>
+            <div class="fms-bottom-stat-label">Avg Response Time</div>
+          </div>
+          <div class="fms-bottom-stat">
+            <div class="fms-bottom-stat-val">120<span>+</span></div>
+            <div class="fms-bottom-stat-label">Facilities Maintained</div>
+          </div>
+        </div>
+
       </div>
-      <div class="scroll-cue">
-        Explore
-        <div class="dot-track"></div>
-      </div>
-    </header>
+    </section>
     <main>
       <section class="container section-padding maintenance-intro">
         <div class="split-intro">

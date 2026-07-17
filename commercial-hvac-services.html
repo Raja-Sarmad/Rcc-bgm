@@ -22,6 +22,262 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <style>
+      .hvac-hero {
+        position: relative;
+        background: radial-gradient(circle at 30% 20%, rgba(0, 180, 216, 0.14) 0%, transparent 50%),
+          radial-gradient(circle at 70% 80%, rgba(0, 119, 182, 0.09) 0%, transparent 50%),
+          #050a18;
+        padding: 140px 0 85px 0;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(0, 180, 216, 0.15);
+      }
+
+      .hvac-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(rgba(255, 255, 255, 0.006) 1px, transparent 1px);
+        background-size: 20px 20px;
+        pointer-events: none;
+      }
+
+      .hvac-hero-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 48px;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+      }
+
+      .hvac-hero-left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .hvac-hero-left h1 {
+        font-size: clamp(26px, 3.5vw, 42px);
+        color: white;
+        font-weight: 800;
+        line-height: 1.12;
+        letter-spacing: -1.4px;
+        margin-top: 18px;
+      }
+
+      .hvac-hero-left h1 span.gradient-text {
+        background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hvac-hero-left p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #cbd5e1;
+        margin-top: 20px;
+        max-width: 480px;
+      }
+
+      .hvac-hero-actions {
+        display: flex;
+        gap: 16px;
+        margin-top: 32px;
+        flex-wrap: wrap;
+      }
+
+      .hvac-hero-actions .btn-outline-hero {
+        border: 1px solid rgba(0, 180, 216, 0.3);
+        background: rgba(255, 255, 255, 0.02);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 99px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .hvac-hero-actions .btn-outline-hero:hover {
+        border-color: var(--accent-teal);
+        background: rgba(0, 180, 216, 0.08);
+      }
+
+      /* HVAC System Hub */
+      .hvac-hub {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 14px;
+      }
+
+      .hvac-hub-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: rgba(0, 180, 216, 0.1);
+        border: 1px solid rgba(0, 180, 216, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        backdrop-filter: blur(8px);
+      }
+
+      .hvac-hub-center i {
+        font-size: 26px;
+        color: var(--accent-teal);
+      }
+
+      .hvac-hub-node {
+        background: rgba(5, 15, 35, 0.45);
+        border: 1px solid rgba(0, 180, 216, 0.1);
+        border-radius: 18px;
+        padding: 22px 20px;
+        backdrop-filter: blur(8px);
+        transition: border-color 0.3s ease, transform 0.3s ease;
+        position: relative;
+      }
+
+      .hvac-hub-node:hover {
+        border-color: rgba(0, 180, 216, 0.35);
+        transform: scale(1.03);
+      }
+
+      .hvac-hub-node:nth-child(1) {
+        border-top-right-radius: 8px;
+      }
+
+      .hvac-hub-node:nth-child(2) {
+        border-top-left-radius: 8px;
+      }
+
+      .hvac-hub-node:nth-child(3) {
+        border-bottom-right-radius: 8px;
+      }
+
+      .hvac-hub-node:nth-child(4) {
+        border-bottom-left-radius: 8px;
+      }
+
+      .hvac-node-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 17px;
+        margin-bottom: 12px;
+      }
+
+      .hvac-node-icon.heating {
+        background: rgba(239, 68, 68, 0.1);
+        color: #ef4444;
+      }
+
+      .hvac-node-icon.cooling {
+        background: rgba(0, 180, 216, 0.12);
+        color: var(--accent-teal);
+      }
+
+      .hvac-node-icon.ventilation {
+        background: rgba(34, 197, 94, 0.1);
+        color: #22c55e;
+      }
+
+      .hvac-node-icon.controls {
+        background: rgba(139, 92, 246, 0.1);
+        color: #8b5cf6;
+      }
+
+      .hvac-node-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 4px;
+      }
+
+      .hvac-node-desc {
+        font-size: 12px;
+        color: #64748b;
+        line-height: 1.5;
+      }
+
+      .hvac-node-tag {
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 3px 8px;
+        border-radius: 6px;
+        margin-top: 10px;
+        letter-spacing: 0.3px;
+      }
+
+      .hvac-node-tag.essential {
+        background: rgba(239, 68, 68, 0.1);
+        color: #ef4444;
+      }
+
+      .hvac-node-tag.standard {
+        background: rgba(0, 180, 216, 0.1);
+        color: var(--accent-teal);
+      }
+
+      .hvac-node-tag.eco {
+        background: rgba(34, 197, 94, 0.1);
+        color: #22c55e;
+      }
+
+      .hvac-node-tag.smart {
+        background: rgba(139, 92, 246, 0.1);
+        color: #8b5cf6;
+      }
+
+      @media (max-width: 900px) {
+        .hvac-hero-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .hvac-hero-left {
+          align-items: center;
+          text-align: center;
+        }
+
+        .hvac-hero-left p {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .hvac-hero-actions {
+          justify-content: center;
+        }
+
+        .hvac-hub {
+          max-width: 400px;
+          margin: 0 auto;
+        }
+
+        .hvac-hub-center {
+          display: none;
+        }
+      }
+    </style>
   </head>
   <body class="page-hvac">
     <nav>
@@ -40,71 +296,64 @@
         <a href="contact.html" class="btn-header">Get Assessment</a>
       </div>
     </nav>
-    <header class="hero hvac-hero">
-      <video
-        class="hero-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        poster="https://images.unsplash.com/photo-1631545806609-4b7d7b5b4f57?auto=format&fit=crop&q=80&w=2000"
-      >
-        <source
-          src="https://assets.mixkit.co/videos/31450/31450-360.mp4"
-          type="video/mp4"
-        />
-      </video>
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
-        <span class="hero-tag">Commercial heating, cooling & ventilation</span>
-        <h1>
-          Commercial HVAC Services<br /><span class="hero-glow"
-            >Built Around Your Facility</span
-          >
-        </h1>
-        <p>
-          RCC-BGM provides commercial HVAC installation, maintenance, repair and
-          equipment-replacement support for offices, commercial buildings,
-          industrial properties and specialized facilities.
-        </p>
-        <p class="hero-subcopy">
-          Work is coordinated around building conditions, operating schedules,
-          tenant requirements and wider facility priorities—from a focused
-          repair to a planned system upgrade.
-        </p>
-        <div class="hero-labels">
-          <a class="btn-header btn-glow" href="contact.html"
-            >Request an HVAC Site Walk
-            <i class="fa-solid fa-arrow-right"></i></a
-          ><a class="h-label" href="contact.html"
-            ><i class="fa-solid fa-temperature-half"></i> Discuss Your HVAC
-            Requirements</a
-          >
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="num">Install</div>
-            <div class="lbl">New systems</div>
+
+    <section class="hvac-hero">
+      <div class="container">
+        <div class="hvac-hero-grid">
+
+          <div class="hvac-hero-left">
+            <span class="hero-tag"
+              style="background: rgba(0, 180, 216, 0.08); border: 1px solid rgba(0, 180, 216, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;"><i
+                class="fa-solid fa-temperature-half"></i> RCC-BGM HVAC DIVISION</span>
+            <h1>Commercial HVAC<br><span class="gradient-text">Built Around Your Facility</span></h1>
+            <p>
+              Commercial HVAC installation, maintenance, repair and equipment replacement for offices, commercial
+              buildings, industrial properties and specialized facilities. Work coordinated around building conditions,
+              operating schedules and tenant requirements.
+            </p>
+            <div class="hvac-hero-actions">
+              <a class="btn-header btn-glow" href="contact.html">Request an HVAC Site Walk <i class="fa-solid fa-arrow-right"></i></a>
+              <a class="btn-outline-hero" href="#hvac-services"><i class="fa-solid fa-layer-group"></i> Explore Services</a>
+            </div>
           </div>
-          <div class="hero-stat">
-            <div class="num">Maintain</div>
-            <div class="lbl">Planned care</div>
+
+          <div class="hvac-hub">
+            <div class="hvac-hub-center">
+              <i class="fa-solid fa-wind"></i>
+            </div>
+
+            <div class="hvac-hub-node">
+              <div class="hvac-node-icon heating"><i class="fa-solid fa-fire"></i></div>
+              <div class="hvac-node-title">Heating</div>
+              <div class="hvac-node-desc">Boilers, furnaces, heat pumps and radiant systems</div>
+              <span class="hvac-node-tag essential">Critical</span>
+            </div>
+
+            <div class="hvac-hub-node">
+              <div class="hvac-node-icon cooling"><i class="fa-solid fa-snowflake"></i></div>
+              <div class="hvac-node-title">Cooling</div>
+              <div class="hvac-node-desc">Chillers, RTUs, split systems and process cooling</div>
+              <span class="hvac-node-tag standard">Standard</span>
+            </div>
+
+            <div class="hvac-hub-node">
+              <div class="hvac-node-icon ventilation"><i class="fa-solid fa-fan"></i></div>
+              <div class="hvac-node-title">Ventilation</div>
+              <div class="hvac-node-desc">Air handlers, exhaust fans, dampers and ductwork</div>
+              <span class="hvac-node-tag eco">Efficiency</span>
+            </div>
+
+            <div class="hvac-hub-node">
+              <div class="hvac-node-icon controls"><i class="fa-solid fa-microchip"></i></div>
+              <div class="hvac-node-title">Controls</div>
+              <div class="hvac-node-desc">BAS integration, sensors, scheduling and optimization</div>
+              <span class="hvac-node-tag smart">Smart</span>
+            </div>
           </div>
-          <div class="hero-stat">
-            <div class="num">Repair</div>
-            <div class="lbl">System issues</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">Replace</div>
-            <div class="lbl">Aging equipment</div>
-          </div>
+
         </div>
       </div>
-      <div class="scroll-cue">
-        Explore
-        <div class="dot-track"></div>
-      </div>
-    </header>
+    </section>
     <main>
       <section class="container section-padding hvac-intro">
         <div class="split-intro">

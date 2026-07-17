@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -273,6 +273,21 @@
       letter-spacing: 0.5px;
     }
 
+    .page-contact .container.section-padding {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .page-contact main > section.container.section-padding:nth-child(2) {
+      padding-left: 30px !important;
+      padding-right: 30px !important;
+    }
+
+    .page-contact .step-card h2 {
+      color: var(--accent-teal) !important;
+      opacity: 1 !important;
+    }
+
     @media (max-width: 900px) {
       .contact-hero-grid {
         grid-template-columns: 1fr;
@@ -418,13 +433,9 @@
     }
   </script>
   <main>
-    <section class="container section-padding industry-standard">
-      <div style="max-width: 780px">
-        <span class="hero-tag" style="
-              color: var(--accent-blue);
-              border-color: rgba(0, 119, 182, 0.3);
-              background: rgba(0, 119, 182, 0.06);
-            ">Built around your facility</span>
+    <section class="container section-padding">
+      <div style="max-width: 800px">
+        <span class="hero-tag">Built around your facility</span>
         <h2>Practical support for the way your property operates</h2>
         <p style="margin-top: 16px">
           Share the property type, service need, location and timing so the
@@ -496,7 +507,7 @@
     </section>
     <section class="container section-padding">
       <h2>Related RCC-BGM services</h2>
-      <div class="services-grid" style="margin-top: 30px">
+      <div class="services-grid" style="margin-top: 30px; grid-template-columns: repeat(3, 1fr);">
         <a class="s-item" href="commercial-cleaning-services.html">
           <h3>Commercial Cleaning Services</h3>
           <p>Explore this connected RCC-BGM service area.</p>

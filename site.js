@@ -172,7 +172,7 @@
       }
     };
 
-    question.addEventListener("click", toggle);
+    item.addEventListener("click", toggle);
     question.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
