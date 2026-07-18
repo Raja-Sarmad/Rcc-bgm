@@ -31,57 +31,258 @@
         <a href="contact.html" class="btn-header">Get Assessment</a>
       </div>
     </nav>
-    <section class="hero family-construction" style="min-height: 72vh">
-      <video
-        class="hero-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        poster="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000"
-      >
-        <source
-          src="https://assets.mixkit.co/videos/31450/31450-360.mp4"
-          type="video/mp4"
-        />
-      </video>
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
-        <span class="hero-tag"
-          ><i class="fa-solid fa-building"></i> RCC-BGM</span
-        >
-        <h1>Palo Alto Ca Facility Services</h1>
-        <p style="color: #cbd5e1; max-width: 720px; margin: 22px auto 0">
-          Commercial facility support for businesses and properties in Palo Alto
-          Ca.
+
+    <section class="pa-hero">
+      <div class="pa-hero-bg"></div>
+      <div class="pa-hero-glow pa-hero-glow--a"></div>
+      <div class="pa-hero-glow pa-hero-glow--b"></div>
+
+      <div class="pa-top">
+        <span class="pa-badge"><i class="fa-solid fa-location-dot"></i> Palo Alto, CA</span>
+        <h1 class="pa-title">
+          <span class="pa-title-white">Palo Alto</span>
+          <span class="pa-title-teal">Facility Service Hub</span>
+        </h1>
+        <p class="pa-desc">
+          Integrated cleaning, maintenance, construction and building-system
+          support for commercial properties in Palo Alto.
         </p>
-        <div class="hero-labels">
-          <a class="btn-header btn-glow" href="contact.html"
-            >Request an Assessment <i class="fa-solid fa-arrow-right"></i></a
-          ><a class="h-label" href="services.html"
-            ><i class="fa-solid fa-layer-group"></i> Explore Services</a
-          >
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="num">01</div>
-            <div class="lbl">Clear scope</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">02</div>
-            <div class="lbl">Coordinated team</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">03</div>
-            <div class="lbl">Planned delivery</div>
-          </div>
+        <div class="pa-actions">
+          <a href="contact.html" class="pa-btn-primary"><span>Request an Assessment</span><i class="fa-solid fa-arrow-right"></i></a>
+          <a href="services.html" class="pa-btn-ghost"><i class="fa-solid fa-grid-2"></i><span>All Services</span></a>
         </div>
       </div>
-      <div class="scroll-cue">
-        Scroll
-        <div class="dot-track"></div>
+
+      <!-- Spectrum Bar -->
+      <div class="pa-spectrum">
+        <a href="commercial-cleaning-services.html" class="pa-seg">
+          <div class="pa-seg-fill pa-seg-fill--teal"></div>
+          <div class="pa-seg-content">
+            <div class="pa-seg-icon pa-seg-icon--teal"><i class="fa-solid fa-broom"></i></div>
+            <div class="pa-seg-text">
+              <div class="pa-seg-name">Commercial Cleaning</div>
+              <div class="pa-seg-desc">Daily cleaning, janitorial & hygiene</div>
+            </div>
+          </div>
+          <div class="pa-seg-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <a href="facility-maintenance-services.html" class="pa-seg">
+          <div class="pa-seg-fill pa-seg-fill--green"></div>
+          <div class="pa-seg-content">
+            <div class="pa-seg-icon pa-seg-icon--green"><i class="fa-solid fa-wrench"></i></div>
+            <div class="pa-seg-text">
+              <div class="pa-seg-name">Facility Maintenance</div>
+              <div class="pa-seg-desc">Preventive plans & reactive repairs</div>
+            </div>
+          </div>
+          <div class="pa-seg-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <a href="commercial-construction.html" class="pa-seg">
+          <div class="pa-seg-fill pa-seg-fill--amber"></div>
+          <div class="pa-seg-content">
+            <div class="pa-seg-icon pa-seg-icon--amber"><i class="fa-solid fa-helmet-safety"></i></div>
+            <div class="pa-seg-text">
+              <div class="pa-seg-name">Commercial Construction</div>
+              <div class="pa-seg-desc">Build-outs, TI & project mgmt</div>
+            </div>
+          </div>
+          <div class="pa-seg-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <a href="commercial-hvac-services.html" class="pa-seg">
+          <div class="pa-seg-fill pa-seg-fill--blue"></div>
+          <div class="pa-seg-content">
+            <div class="pa-seg-icon pa-seg-icon--blue"><i class="fa-solid fa-temperature-half"></i></div>
+            <div class="pa-seg-text">
+              <div class="pa-seg-name">HVAC Services</div>
+              <div class="pa-seg-desc">Install, seasonal maint & diagnostics</div>
+            </div>
+          </div>
+          <div class="pa-seg-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+      </div>
+
+      <div class="pa-bottom">
+        <div class="pa-stat"><span class="pa-stat-val">01</span><span class="pa-stat-lbl">Clear scope</span></div>
+        <div class="pa-stat-div"></div>
+        <div class="pa-stat"><span class="pa-stat-val">02</span><span class="pa-stat-lbl">Coordinated team</span></div>
+        <div class="pa-stat-div"></div>
+        <div class="pa-stat"><span class="pa-stat-val">03</span><span class="pa-stat-lbl">Planned delivery</span></div>
       </div>
     </section>
+
+    <style>
+      .pa-hero {
+        position: relative;
+        min-height: 92vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background:
+          radial-gradient(ellipse 50% 50% at 50% 15%, rgba(0, 180, 216, 0.08) 0%, transparent 60%),
+          radial-gradient(ellipse 40% 40% at 80% 80%, rgba(14, 165, 233, 0.05) 0%, transparent 50%),
+          #050a18;
+        padding: 110px 0 0 0;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(0, 180, 216, 0.12);
+      }
+
+      .pa-hero-bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(circle 1px at 50% 50%, rgba(255,255,255,0.012) 1px, transparent 1px);
+        background-size: 28px 28px;
+      }
+
+      .pa-hero-glow {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(160px);
+        pointer-events: none;
+      }
+      .pa-hero-glow--a { width: 500px; height: 500px; top: -120px; left: 50%; transform: translateX(-50%); background: rgba(0, 180, 216, 0.06); }
+      .pa-hero-glow--b { width: 300px; height: 300px; bottom: -60px; right: 15%; background: rgba(14, 165, 233, 0.04); }
+
+      /* TITLE */
+      .pa-top { display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; z-index: 10; max-width: 700px; margin: 0 auto; padding: 0 32px; }
+      .pa-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--accent-teal); border: 1px solid rgba(0, 180, 216, 0.25); background: rgba(0, 180, 216, 0.06); padding: 8px 18px; border-radius: 99px; }
+      .pa-title { margin-top: 24px; display: flex; flex-direction: column; align-items: center; }
+      .pa-title-white { font-size: clamp(30px, 4vw, 48px); font-weight: 800; color: white; line-height: 1.1; letter-spacing: -1.5px; }
+      .pa-title-teal { font-size: clamp(34px, 4.5vw, 56px); font-weight: 800; color: var(--accent-teal); line-height: 1.05; letter-spacing: -2px; margin-top: 4px; }
+      .pa-desc { font-size: 16px; line-height: 1.75; color: #94a3b8; max-width: 480px; margin-top: 22px; }
+      .pa-actions { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; justify-content: center; }
+
+      .pa-btn-primary { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 10px; font-weight: 700; font-size: 14px; color: #050a18; background: var(--accent-teal); text-decoration: none; transition: all 0.3s ease; }
+      .pa-btn-primary:hover { background: #22d3ee; transform: translateY(-2px); }
+      .pa-btn-ghost { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 10px; font-weight: 600; font-size: 14px; color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.02); text-decoration: none; transition: all 0.3s ease; }
+      .pa-btn-ghost:hover { border-color: rgba(0,180,216,0.4); color: white; background: rgba(0,180,216,0.05); }
+
+      /* ══════════════════════════════════════
+         SPECTRUM BAR — full-width segmented strip
+         ══════════════════════════════════════ */
+      .pa-spectrum {
+        display: flex;
+        max-width: 1300px;
+        margin: 50px auto 0 auto;
+        padding: 0 60px;
+        position: relative;
+        z-index: 10;
+      }
+
+      .pa-seg {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 24px;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.35s ease;
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .pa-seg:first-child { border-left: none; }
+
+      .pa-seg-fill {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        transition: height 0.35s ease;
+      }
+
+      .pa-seg-fill--teal  { background: var(--accent-teal); }
+      .pa-seg-fill--green { background: #22c55e; }
+      .pa-seg-fill--amber { background: #f59e0b; }
+      .pa-seg-fill--blue  { background: #0ea5e9; }
+
+      .pa-seg:hover .pa-seg-fill { height: 100%; opacity: 0.06; }
+
+      .pa-seg-content {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .pa-seg-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 17px;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+      }
+
+      .pa-seg-icon--teal  { background: rgba(0, 180, 216, 0.1); color: var(--accent-teal); border: 1px solid rgba(0, 180, 216, 0.2); }
+      .pa-seg-icon--green { background: rgba(34, 197, 94, 0.1); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.2); }
+      .pa-seg-icon--amber { background: rgba(245, 158, 11, 0.1); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.2); }
+      .pa-seg-icon--blue  { background: rgba(14, 165, 233, 0.1); color: #0ea5e9; border: 1px solid rgba(14, 165, 233, 0.2); }
+
+      .pa-seg:hover .pa-seg-icon--teal  { box-shadow: 0 0 20px rgba(0, 180, 216, 0.4); transform: scale(1.1); }
+      .pa-seg:hover .pa-seg-icon--green { box-shadow: 0 0 20px rgba(34, 197, 94, 0.4); transform: scale(1.1); }
+      .pa-seg:hover .pa-seg-icon--amber { box-shadow: 0 0 20px rgba(245, 158, 11, 0.4); transform: scale(1.1); }
+      .pa-seg:hover .pa-seg-icon--blue  { box-shadow: 0 0 20px rgba(14, 165, 233, 0.4); transform: scale(1.1); }
+
+      .pa-seg-text { position: relative; z-index: 1; }
+
+      .pa-seg-name {
+        font-size: 14px;
+        font-weight: 700;
+        color: white;
+        white-space: nowrap;
+      }
+
+      .pa-seg-desc {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.3);
+        margin-top: 2px;
+        white-space: nowrap;
+      }
+
+      .pa-seg-arrow {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.1);
+        position: relative;
+        z-index: 1;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+      }
+      .pa-seg:hover .pa-seg-arrow { color: rgba(255, 255, 255, 0.5); transform: translateX(4px); }
+
+      /* BOTTOM STATS */
+      .pa-bottom { display: flex; justify-content: center; align-items: center; gap: 48px; margin: 50px auto 0 auto; padding: 28px 0 36px 0; border-top: 1px solid rgba(255, 255, 255, 0.04); position: relative; z-index: 10; }
+      .pa-stat { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+      .pa-stat-val { font-size: 18px; font-weight: 800; color: var(--accent-teal); letter-spacing: 1px; }
+      .pa-stat-lbl { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: rgba(255, 255, 255, 0.3); }
+      .pa-stat-div { width: 1px; height: 28px; background: rgba(255, 255, 255, 0.08); }
+
+      /* RESPONSIVE */
+      @media (max-width: 960px) {
+        .pa-spectrum { flex-direction: column; padding: 0 32px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
+        .pa-seg { border-left: none; border-bottom: 1px solid rgba(255,255,255,0.05); padding: 18px 20px; }
+        .pa-seg:last-child { border-bottom: none; }
+        .pa-seg-fill { bottom: auto; top: 0; left: auto; right: auto; width: 3px; height: 100%; }
+        .pa-seg:hover .pa-seg-fill { width: 100%; height: 100%; }
+      }
+
+      @media (max-width: 560px) {
+        .pa-hero { min-height: auto; padding: 90px 0 0 0; }
+        .pa-spectrum { margin: 40px 20px 0; padding: 0; }
+        .pa-bottom { gap: 24px; flex-wrap: wrap; }
+        .pa-stat-div { display: none; }
+      }
+    </style>
     <main>
       <section class="container section-padding industry-standard">
         <div style="max-width: 780px">

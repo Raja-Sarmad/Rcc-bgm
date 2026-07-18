@@ -31,57 +31,419 @@
         <a href="contact.html" class="btn-header">Get Assessment</a>
       </div>
     </nav>
-    <section class="hero family-construction" style="min-height: 72vh">
-      <video
-        class="hero-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        poster="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000"
-      >
-        <source
-          src="https://assets.mixkit.co/videos/31450/31450-360.mp4"
-          type="video/mp4"
-        />
-      </video>
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
-        <span class="hero-tag"
-          ><i class="fa-solid fa-building"></i> RCC-BGM</span
-        >
-        <h1>Fremont Ca Facility Services</h1>
-        <p style="color: #cbd5e1; max-width: 720px; margin: 22px auto 0">
-          Commercial facility support for businesses and properties in Fremont
-          Ca.
-        </p>
-        <div class="hero-labels">
-          <a class="btn-header btn-glow" href="contact.html"
-            >Request an Assessment <i class="fa-solid fa-arrow-right"></i></a
-          ><a class="h-label" href="services.html"
-            ><i class="fa-solid fa-layer-group"></i> Explore Services</a
-          >
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="num">01</div>
-            <div class="lbl">Clear scope</div>
+    <section class="fr-hero">
+      <div class="fr-hero-bg"></div>
+      <div class="fr-hero-glow fr-hero-glow--a"></div>
+      <div class="fr-hero-glow fr-hero-glow--b"></div>
+
+      <div class="fr-inner">
+        <!-- Left -->
+        <div class="fr-left">
+          <span class="fr-badge"><i class="fa-solid fa-location-dot"></i> Fremont, CA</span>
+          <h1 class="fr-title">
+            <span class="fr-title-line1">Integrated Facility</span>
+            <span class="fr-title-line2">Services for Fremont</span>
+          </h1>
+          <p class="fr-desc">
+            Cleaning, maintenance, construction and building-system support
+            coordinated around your Fremont property — scoped to match your
+            facility, schedule and priorities.
+          </p>
+          <div class="fr-actions">
+            <a href="contact.html" class="fr-btn-primary">
+              <span>Request an Assessment</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="services.html" class="fr-btn-ghost">
+              <i class="fa-solid fa-grid-2"></i>
+              <span>All Services</span>
+            </a>
           </div>
-          <div class="hero-stat">
-            <div class="num">02</div>
-            <div class="lbl">Coordinated team</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">03</div>
-            <div class="lbl">Planned delivery</div>
+          <div class="fr-left-stats">
+            <div class="fr-lstat"><span class="fr-lstat-val">01</span><span class="fr-lstat-lbl">Clear scope</span></div>
+            <div class="fr-lstat"><span class="fr-lstat-val">02</span><span class="fr-lstat-lbl">Coordinated team</span></div>
+            <div class="fr-lstat"><span class="fr-lstat-val">03</span><span class="fr-lstat-lbl">Planned delivery</span></div>
           </div>
         </div>
-      </div>
-      <div class="scroll-cue">
-        Scroll
-        <div class="dot-track"></div>
+
+        <!-- Right — 2×2 Service Grid -->
+        <div class="fr-grid">
+          <a href="commercial-cleaning-services.html" class="fr-card fr-card--teal">
+            <div class="fr-card-top"></div>
+            <div class="fr-card-head">
+              <div class="fr-card-icon"><i class="fa-solid fa-broom"></i></div>
+              <div class="fr-card-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+            <h3>Commercial Cleaning</h3>
+            <p>Daily cleaning, janitorial programs and specialist hygiene for offices, lobbies and shared spaces.</p>
+            <span class="fr-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+          <a href="facility-maintenance-services.html" class="fr-card fr-card--green">
+            <div class="fr-card-top"></div>
+            <div class="fr-card-head">
+              <div class="fr-card-icon"><i class="fa-solid fa-wrench"></i></div>
+              <div class="fr-card-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+            <h3>Facility Maintenance</h3>
+            <p>Preventive maintenance, reactive repairs and multi-trade coordination across building systems.</p>
+            <span class="fr-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+          <a href="commercial-construction.html" class="fr-card fr-card--amber">
+            <div class="fr-card-top"></div>
+            <div class="fr-card-head">
+              <div class="fr-card-icon"><i class="fa-solid fa-helmet-safety"></i></div>
+              <div class="fr-card-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+            <h3>Commercial Construction</h3>
+            <p>Tenant improvements, build-outs, renovations and construction project management.</p>
+            <span class="fr-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+          <a href="commercial-hvac-services.html" class="fr-card fr-card--blue">
+            <div class="fr-card-top"></div>
+            <div class="fr-card-head">
+              <div class="fr-card-icon"><i class="fa-solid fa-temperature-half"></i></div>
+              <div class="fr-card-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+            <h3>HVAC Services</h3>
+            <p>System installation, seasonal maintenance, diagnostics and indoor climate management.</p>
+            <span class="fr-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
       </div>
     </section>
+
+    <style>
+      /* ══════════════════════════════════════
+         HERO
+         ══════════════════════════════════════ */
+      .fr-hero {
+        position: relative;
+        min-height: 92vh;
+        display: flex;
+        align-items: center;
+        background:
+          radial-gradient(ellipse 45% 55% at 20% 50%, rgba(0, 180, 216, 0.08) 0%, transparent 60%),
+          radial-gradient(ellipse 40% 40% at 80% 80%, rgba(34, 197, 94, 0.04) 0%, transparent 50%),
+          #050a18;
+        padding: 100px 0;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(0, 180, 216, 0.12);
+      }
+
+      .fr-hero-bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(circle 1px at 50% 50%, rgba(255,255,255,0.012) 1px, transparent 1px);
+        background-size: 28px 28px;
+      }
+
+      .fr-hero-glow {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(160px);
+        pointer-events: none;
+      }
+      .fr-hero-glow--a {
+        width: 500px;
+        height: 500px;
+        top: -100px;
+        left: 15%;
+        background: rgba(0, 180, 216, 0.06);
+      }
+      .fr-hero-glow--b {
+        width: 300px;
+        height: 300px;
+        bottom: -80px;
+        right: 10%;
+        background: rgba(34, 197, 94, 0.04);
+      }
+
+      /* ══════════════════════════════════════
+         INNER LAYOUT
+         ══════════════════════════════════════ */
+      .fr-inner {
+        width: 100%;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 60px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+      }
+
+      /* ══════════════════════════════════════
+         LEFT
+         ══════════════════════════════════════ */
+      .fr-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--accent-teal);
+        border: 1px solid rgba(0, 180, 216, 0.25);
+        background: rgba(0, 180, 216, 0.06);
+        padding: 8px 18px;
+        border-radius: 99px;
+      }
+
+      .fr-title {
+        margin-top: 24px;
+      }
+
+      .fr-title-line1 {
+        display: block;
+        font-size: clamp(28px, 3.5vw, 42px);
+        font-weight: 800;
+        color: white;
+        line-height: 1.1;
+        letter-spacing: -1px;
+      }
+
+      .fr-title-line2 {
+        display: block;
+        font-size: clamp(30px, 4vw, 48px);
+        font-weight: 800;
+        color: var(--accent-teal);
+        line-height: 1.05;
+        letter-spacing: -1.5px;
+        margin-top: 4px;
+      }
+
+      .fr-desc {
+        font-size: 16px;
+        line-height: 1.75;
+        color: #94a3b8;
+        max-width: 440px;
+        margin-top: 24px;
+      }
+
+      .fr-actions {
+        display: flex;
+        gap: 14px;
+        margin-top: 32px;
+        flex-wrap: wrap;
+      }
+
+      .fr-btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 28px;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 14px;
+        color: #050a18;
+        background: var(--accent-teal);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      .fr-btn-primary:hover {
+        background: #22d3ee;
+        transform: translateY(-2px);
+      }
+
+      .fr-btn-ghost {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 24px;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.02);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      .fr-btn-ghost:hover {
+        border-color: rgba(0, 180, 216, 0.4);
+        color: white;
+        background: rgba(0, 180, 216, 0.05);
+      }
+
+      .fr-left-stats {
+        display: flex;
+        gap: 28px;
+        margin-top: 40px;
+        padding-top: 28px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .fr-lstat {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .fr-lstat-val {
+        font-size: 16px;
+        font-weight: 800;
+        color: var(--accent-teal);
+        letter-spacing: 1px;
+      }
+
+      .fr-lstat-lbl {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.3);
+      }
+
+      /* ══════════════════════════════════════
+         RIGHT — 2×2 SERVICE GRID
+         ══════════════════════════════════════ */
+      .fr-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .fr-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.025);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 14px;
+        padding: 24px;
+        text-decoration: none;
+        transition: all 0.35s ease;
+        overflow: hidden;
+      }
+
+      .fr-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.008) 0%, transparent 70%);
+        pointer-events: none;
+      }
+
+      .fr-card:hover {
+        border-color: rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.04);
+        transform: translateY(-3px);
+      }
+
+      .fr-card-top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        border-radius: 2px 2px 0 0;
+        opacity: 0.6;
+      }
+
+      .fr-card--teal  .fr-card-top { background: linear-gradient(90deg, var(--accent-teal), transparent); }
+      .fr-card--green .fr-card-top { background: linear-gradient(90deg, #22c55e, transparent); }
+      .fr-card--amber .fr-card-top { background: linear-gradient(90deg, #f59e0b, transparent); }
+      .fr-card--blue  .fr-card-top { background: linear-gradient(90deg, #0ea5e9, transparent); }
+
+      .fr-card:hover .fr-card-top { opacity: 1; }
+
+      .fr-card-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 16px;
+      }
+
+      .fr-card-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
+
+      .fr-card--teal  .fr-card-icon { background: rgba(0, 180, 216, 0.1); color: var(--accent-teal); border: 1px solid rgba(0, 180, 216, 0.2); }
+      .fr-card--green .fr-card-icon { background: rgba(34, 197, 94, 0.1); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.2); }
+      .fr-card--amber .fr-card-icon { background: rgba(245, 158, 11, 0.1); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.2); }
+      .fr-card--blue  .fr-card-icon { background: rgba(14, 165, 233, 0.1); color: #0ea5e9; border: 1px solid rgba(14, 165, 233, 0.2); }
+
+      .fr-card--teal:hover  .fr-card-icon { box-shadow: 0 0 16px rgba(0, 180, 216, 0.3); }
+      .fr-card--green:hover .fr-card-icon { box-shadow: 0 0 16px rgba(34, 197, 94, 0.3); }
+      .fr-card--amber:hover .fr-card-icon { box-shadow: 0 0 16px rgba(245, 158, 11, 0.3); }
+      .fr-card--blue:hover  .fr-card-icon { box-shadow: 0 0 16px rgba(14, 165, 233, 0.3); }
+
+      .fr-card-arrow {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.15);
+        transition: all 0.3s ease;
+      }
+
+      .fr-card:hover .fr-card-arrow {
+        color: rgba(255, 255, 255, 0.5);
+        transform: translateX(3px);
+      }
+
+      .fr-card h3 {
+        font-size: 16px;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 8px;
+        line-height: 1.3;
+      }
+
+      .fr-card p {
+        font-size: 13px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.4);
+        flex: 1;
+      }
+
+      .fr-card-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.25);
+        margin-top: 14px;
+        transition: all 0.3s ease;
+      }
+
+      .fr-card:hover .fr-card-link {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* ══════════════════════════════════════
+         Responsive
+         ══════════════════════════════════════ */
+      @media (max-width: 900px) {
+        .fr-inner {
+          grid-template-columns: 1fr;
+          padding: 0 32px;
+          gap: 48px;
+        }
+        .fr-left { text-align: center; max-width: 560px; margin: 0 auto; }
+        .fr-desc { margin-left: auto; margin-right: auto; }
+        .fr-actions { justify-content: center; }
+        .fr-left-stats { justify-content: center; }
+      }
+
+      @media (max-width: 500px) {
+        .fr-hero { padding: 80px 0; }
+        .fr-inner { padding: 0 20px; }
+        .fr-grid { grid-template-columns: 1fr; }
+        .fr-left-stats { gap: 20px; }
+      }
+    </style>
     <main>
       <section class="container section-padding industry-standard">
         <div style="max-width: 780px">

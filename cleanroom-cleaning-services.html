@@ -42,71 +42,452 @@
         <a href="contact.html" class="btn-header">Get Assessment</a>
       </div>
     </nav>
-    <header class="hero cleanroom-hero">
-      <video
-        class="hero-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        poster="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=2000"
-      >
-        <source
-          src="https://assets.mixkit.co/videos/31450/31450-360.mp4"
-          type="video/mp4"
-        />
-      </video>
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
-        <span class="hero-tag">Controlled-environment cleaning</span>
-        <h1>
-          Cleanroom Cleaning Services<br /><span class="hero-glow"
-            >Built Around Your Facility Protocols</span
-          >
+    <header class="cr-hero">
+      <div class="cr-hero-bg"></div>
+      <div class="cr-hero-glow cr-hero-glow--a"></div>
+      <div class="cr-hero-glow cr-hero-glow--b"></div>
+
+      <!-- Centered Title Area -->
+      <div class="cr-hero-top">
+        <span class="cr-badge"><span class="cr-badge-dot"></span> Controlled-Environment Cleaning</span>
+        <h1 class="cr-title">
+          <span class="cr-title-main">Cleanroom Cleaning</span>
+          <span class="cr-title-accent">Services</span>
         </h1>
-        <p>
-          RCC-BGM provides specialized cleanroom cleaning services for
-          laboratories, life-science facilities, semiconductor environments,
-          medical-device operations and other controlled commercial spaces.
+        <p class="cr-desc">
+          Specialized cleaning programs for laboratories, life-science
+          facilities, semiconductor environments and other controlled
+          commercial spaces — developed around approved facility protocols.
         </p>
-        <p class="hero-subcopy">
-          Each program is developed around approved procedures, access
-          restrictions, gowning protocols, contamination-control priorities and
-          the operating schedule.
-        </p>
-        <div class="hero-labels">
-          <a class="btn-header btn-glow" href="contact.html"
-            >Request a Cleanroom Cleaning Assessment
-            <i class="fa-solid fa-arrow-right"></i></a
-          ><a class="h-label" href="contact.html"
-            ><i class="fa-solid fa-microscope"></i> Discuss Your Facility
-            Requirements</a
-          >
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="num">Protocol</div>
-            <div class="lbl">Based cleaning</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">Zone</div>
-            <div class="lbl">Specific scope</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">ESD</div>
-            <div class="lbl">Floor support</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">Trace</div>
-            <div class="lbl">able work</div>
-          </div>
+        <div class="cr-actions">
+          <a href="contact.html" class="cr-btn-primary">
+            <span>Request Assessment</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="contact.html" class="cr-btn-ghost">
+            <i class="fa-solid fa-microscope"></i>
+            <span>Discuss Facility Requirements</span>
+          </a>
         </div>
       </div>
-      <div class="scroll-cue">
-        Explore
-        <div class="dot-track"></div>
+
+      <!-- Full-Width Protocol Matrix -->
+      <div class="cr-matrix">
+
+        <div class="cr-matrix-card">
+          <div class="cr-matrix-accent cr-matrix-accent--blue"></div>
+          <div class="cr-matrix-head">
+            <div class="cr-matrix-icon cr-matrix-icon--blue"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Contamination Control</h3>
+          </div>
+          <ul class="cr-matrix-list">
+            <li><i class="fa-solid fa-check"></i> Particle-controlled movement</li>
+            <li><i class="fa-solid fa-check"></i> Zone-separated tools</li>
+            <li><i class="fa-solid fa-check"></i> Approved wiping sequence</li>
+            <li><i class="fa-solid fa-check"></i> Material compatibility</li>
+          </ul>
+        </div>
+
+        <div class="cr-matrix-card">
+          <div class="cr-matrix-accent cr-matrix-accent--teal"></div>
+          <div class="cr-matrix-head">
+            <div class="cr-matrix-icon cr-matrix-icon--teal"><i class="fa-solid fa-shirt"></i></div>
+            <h3>Protocol Compliance</h3>
+          </div>
+          <ul class="cr-matrix-list">
+            <li><i class="fa-solid fa-check"></i> Gowning procedures</li>
+            <li><i class="fa-solid fa-check"></i> Access & entry logs</li>
+            <li><i class="fa-solid fa-check"></i> Airlock transitions</li>
+            <li><i class="fa-solid fa-check"></i> Documentation sign-off</li>
+          </ul>
+        </div>
+
+        <div class="cr-matrix-card">
+          <div class="cr-matrix-accent cr-matrix-accent--green"></div>
+          <div class="cr-matrix-head">
+            <div class="cr-matrix-icon cr-matrix-icon--green"><i class="fa-solid fa-clipboard-check"></i></div>
+            <h3>Traceable Work</h3>
+          </div>
+          <ul class="cr-matrix-list">
+            <li><i class="fa-solid fa-check"></i> Task records & logs</li>
+            <li><i class="fa-solid fa-check"></i> Deviation reporting</li>
+            <li><i class="fa-solid fa-check"></i> Quality contacts</li>
+            <li><i class="fa-solid fa-check"></i> Room release process</li>
+          </ul>
+        </div>
+
+        <div class="cr-matrix-card">
+          <div class="cr-matrix-accent cr-matrix-accent--amber"></div>
+          <div class="cr-matrix-head">
+            <div class="cr-matrix-icon cr-matrix-icon--amber"><i class="fa-solid fa-boxes-stacked"></i></div>
+            <h3>Equipment & Materials</h3>
+          </div>
+          <ul class="cr-matrix-list">
+            <li><i class="fa-solid fa-check"></i> Approved consumables</li>
+            <li><i class="fa-solid fa-check"></i> Room-assigned tools</li>
+            <li><i class="fa-solid fa-check"></i> ESD-compatible mops</li>
+            <li><i class="fa-solid fa-check"></i> Labeled storage</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Stats -->
+      <div class="cr-hero-stats">
+        <div class="cr-stat">
+          <div class="cr-stat-val">Protocol</div>
+          <div class="cr-stat-lbl">Based cleaning</div>
+        </div>
+        <div class="cr-stat-div"></div>
+        <div class="cr-stat">
+          <div class="cr-stat-val">Zone</div>
+          <div class="cr-stat-lbl">Specific scope</div>
+        </div>
+        <div class="cr-stat-div"></div>
+        <div class="cr-stat">
+          <div class="cr-stat-val">ESD</div>
+          <div class="cr-stat-lbl">Floor support</div>
+        </div>
+        <div class="cr-stat-div"></div>
+        <div class="cr-stat">
+          <div class="cr-stat-val">Trace</div>
+          <div class="cr-stat-lbl">able work</div>
+        </div>
       </div>
     </header>
+
+    <style>
+      /* ══════════════════════════════════════
+         HERO SHELL
+         ══════════════════════════════════════ */
+      .cr-hero {
+        position: relative;
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background:
+          radial-gradient(ellipse 50% 50% at 50% 15%, rgba(59, 130, 246, 0.08) 0%, transparent 70%),
+          radial-gradient(ellipse 40% 40% at 20% 80%, rgba(0, 180, 216, 0.06) 0%, transparent 60%),
+          #050a18;
+        padding: 120px 60px 0 60px;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(0, 119, 182, 0.15);
+      }
+
+      .cr-hero-bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(circle 1px at 50% 50%, rgba(255,255,255,0.012) 1px, transparent 1px);
+        background-size: 28px 28px;
+      }
+
+      .cr-hero-glow {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(140px);
+        pointer-events: none;
+      }
+      .cr-hero-glow--a {
+        width: 500px;
+        height: 500px;
+        top: -160px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(59, 130, 246, 0.06);
+      }
+      .cr-hero-glow--b {
+        width: 300px;
+        height: 300px;
+        bottom: -60px;
+        right: 15%;
+        background: rgba(0, 180, 216, 0.05);
+      }
+
+      /* ══════════════════════════════════════
+         CENTERED TITLE AREA
+         ══════════════════════════════════════ */
+      .cr-hero-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        z-index: 10;
+        max-width: 820px;
+        margin: 0 auto;
+      }
+
+      .cr-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        color: #3b82f6;
+        border: 1px solid rgba(59, 130, 246, 0.25);
+        background: rgba(59, 130, 246, 0.06);
+        padding: 8px 18px;
+        border-radius: 99px;
+      }
+
+      .cr-badge-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #3b82f6;
+        animation: cr-dot-pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes cr-dot-pulse {
+        0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5); }
+        50% { opacity: 0.5; box-shadow: 0 0 0 5px rgba(59, 130, 246, 0); }
+      }
+
+      .cr-title {
+        margin-top: 28px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cr-title-main {
+        font-size: clamp(42px, 6vw, 72px);
+        font-weight: 800;
+        color: white;
+        line-height: 1.05;
+        letter-spacing: -2px;
+      }
+
+      .cr-title-accent {
+        font-size: clamp(18px, 2.4vw, 30px);
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.3);
+        letter-spacing: 0.5px;
+        margin-top: 6px;
+      }
+
+      .cr-desc {
+        font-size: 16px;
+        line-height: 1.75;
+        color: #94a3b8;
+        max-width: 600px;
+        margin-top: 24px;
+      }
+
+      .cr-actions {
+        display: flex;
+        gap: 14px;
+        margin-top: 36px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .cr-btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 28px;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 14px;
+        color: #050a18;
+        background: #3b82f6;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      .cr-btn-primary:hover {
+        background: #60a5fa;
+        transform: translateY(-2px);
+      }
+
+      .cr-btn-ghost {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 24px;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.02);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      .cr-btn-ghost:hover {
+        border-color: rgba(59, 130, 246, 0.4);
+        color: white;
+        background: rgba(59, 130, 246, 0.05);
+      }
+
+      /* ══════════════════════════════════════
+         FULL-WIDTH PROTOCOL MATRIX
+         ══════════════════════════════════════ */
+      .cr-matrix {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-top: 56px;
+        position: relative;
+        z-index: 10;
+      }
+
+      .cr-matrix-card {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 14px;
+        padding: 24px 20px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      .cr-matrix-card:hover {
+        border-color: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.03);
+        transform: translateY(-3px);
+      }
+
+      .cr-matrix-accent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        border-radius: 14px 14px 0 0;
+      }
+      .cr-matrix-accent--blue  { background: linear-gradient(90deg, #3b82f6, rgba(59, 130, 246, 0.2)); }
+      .cr-matrix-accent--teal  { background: linear-gradient(90deg, #00b4d8, rgba(0, 180, 216, 0.2)); }
+      .cr-matrix-accent--green { background: linear-gradient(90deg, #22c55e, rgba(34, 197, 94, 0.2)); }
+      .cr-matrix-accent--amber { background: linear-gradient(90deg, #f59e0b, rgba(245, 158, 11, 0.2)); }
+
+      .cr-matrix-head {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .cr-matrix-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        flex-shrink: 0;
+      }
+      .cr-matrix-icon--blue  { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+      .cr-matrix-icon--teal  { background: rgba(0, 180, 216, 0.1); color: #00b4d8; }
+      .cr-matrix-icon--green { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
+      .cr-matrix-icon--amber { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+
+      .cr-matrix-head h3 {
+        font-size: 14px;
+        font-weight: 700;
+        color: white;
+      }
+
+      .cr-matrix-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .cr-matrix-list li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      .cr-matrix-list li i {
+        font-size: 9px;
+        color: rgba(255, 255, 255, 0.15);
+        flex-shrink: 0;
+      }
+
+      /* ══════════════════════════════════════
+         Bottom Stats Strip
+         ══════════════════════════════════════ */
+      .cr-hero-stats {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 48px;
+        margin-top: 64px;
+        padding: 28px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+        position: relative;
+        z-index: 10;
+      }
+
+      .cr-stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .cr-stat-val {
+        font-size: 20px;
+        font-weight: 800;
+        color: #3b82f6;
+        letter-spacing: 1px;
+      }
+
+      .cr-stat-lbl {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.3);
+      }
+
+      .cr-stat-div {
+        width: 1px;
+        height: 32px;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      /* ══════════════════════════════════════
+         Responsive
+         ══════════════════════════════════════ */
+      @media (max-width: 1000px) {
+        .cr-matrix {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 900px) {
+        .cr-hero {
+          padding: 110px 24px 0 24px;
+        }
+        .cr-hero-stats {
+          gap: 24px;
+          flex-wrap: wrap;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .cr-matrix {
+          grid-template-columns: 1fr;
+        }
+        .cr-hero { min-height: auto; padding: 100px 20px 0 20px; }
+        .cr-hero-stats { gap: 16px; }
+        .cr-stat-div { display: none; }
+      }
+    </style>
     <main>
       <section class="container section-padding cleanroom-intro">
         <div class="split-intro">
