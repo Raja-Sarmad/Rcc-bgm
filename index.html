@@ -13,14 +13,14 @@
 
     <style>
         :root {
-            --bg-main: #f8fafc;
-            --bg-deep: #0a1128;
-            --accent-teal: #00b4d8;
-            --accent-blue: #0077b6;
-            --text-dark: #0f172a;
-            --text-slate: #475569;
+            --bg-main: #FDF6EF;
+            --bg-deep: #1E1714;
+            --accent-teal: #E8714A;
+            --accent-blue: #C4813A;
+            --text-dark: #1C1410;
+            --text-slate: #6B5B52;
             --white: #ffffff;
-            --gradient: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+            --gradient: linear-gradient(135deg, #E8714A 0%, #C4813A 100%);
         }
 
         * {
@@ -33,7 +33,7 @@
         body {
             background-color: var(--bg-main);
             color: var(--text-dark);
-            background-image: radial-gradient(#cbd5e1 0.5px, transparent 0.5px);
+            background-image: radial-gradient(#D4C0AC 0.5px, transparent 0.5px);
             background-size: 30px 30px;
         }
 
@@ -73,7 +73,7 @@
         /* Sections Gaps - tightened */
         .section-padding {
             padding: 44px 0;
-            border-bottom: 1px solid rgba(0, 180, 216, 0.05);
+            border-bottom: 1px solid rgba(232, 113, 74, 0.05);
         }
 
         /* Navigation */
@@ -82,11 +82,11 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(8, 13, 32, 0.8);
+            background: rgba(30, 23, 20, 0.8);
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
             padding: 16px 0;
-            border-bottom: 1px solid rgba(0, 180, 216, 0.18);
+            border-bottom: 1px solid rgba(232, 113, 74, 0.18);
             box-shadow: 0 12px 34px -14px rgba(0, 0, 0, 0.55);
             transition: padding 0.3s ease, background 0.3s ease;
         }
@@ -98,7 +98,7 @@
             bottom: -1px;
             width: 100%;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(0, 180, 216, 0.7), transparent);
+            background: linear-gradient(90deg, transparent, rgba(232, 113, 74, 0.7), transparent);
         }
 
         .nav-flex {
@@ -127,7 +127,7 @@
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            box-shadow: 0 8px 18px -6px rgba(0, 119, 182, 0.6);
+            box-shadow: 0 8px 18px -6px rgba(196, 129, 58, 0.6);
         }
 
         .logo-icon i {
@@ -147,7 +147,7 @@
 
         .nav-links a {
             position: relative;
-            color: #cbd5e1;
+            color: #D4C0AC;
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
@@ -187,9 +187,9 @@
             display: none;
             width: 44px;
             height: 44px;
-            border: 1px solid rgba(0, 180, 216, .45);
+            border: 1px solid rgba(232, 113, 74, .45);
             border-radius: 12px;
-            background: rgba(0, 180, 216, .08);
+            background: rgba(232, 113, 74, .08);
             color: #fff;
             font-size: 18px;
             cursor: pointer;
@@ -203,14 +203,14 @@
             text-decoration: none;
             font-weight: 700;
             font-size: 13px;
-            box-shadow: 0 10px 24px -6px rgba(0, 119, 182, 0.55);
+            box-shadow: 0 10px 24px -6px rgba(196, 129, 58, 0.55);
             transition: transform 0.25s ease, box-shadow 0.25s ease;
             display: inline-block;
         }
 
         .btn-header:hover {
             transform: translateY(-2px);
-            box-shadow: 0 14px 30px -6px rgba(0, 180, 216, 0.65);
+            box-shadow: 0 14px 30px -6px rgba(232, 113, 74, 0.65);
         }
 
         /* 1. HERO - with background video */
@@ -223,7 +223,7 @@
             overflow: hidden;
             color: white;
             text-align: center;
-            background: #060a1a;
+            background: #181310;
             padding: 120px 0 90px 0;
         }
 
@@ -247,8 +247,8 @@
             width: 100%;
             height: 100%;
             background:
-                radial-gradient(ellipse at 50% 20%, rgba(0, 119, 182, 0.25), transparent 60%),
-                linear-gradient(180deg, rgba(6, 10, 26, 0.88) 0%, rgba(6, 10, 26, 0.72) 45%, rgba(6, 10, 26, 0.94) 100%);
+                radial-gradient(ellipse at 50% 20%, rgba(196, 129, 58, 0.25), transparent 60%),
+                linear-gradient(180deg, rgba(30, 23, 20, 0.88) 0%, rgba(30, 23, 20, 0.72) 45%, rgba(30, 23, 20, 0.94) 100%);
             z-index: 1;
         }
 
@@ -272,13 +272,17 @@
             margin-bottom: 18px;
             display: inline-block;
             padding: 7px 18px;
-            border: 1px solid rgba(0, 180, 216, 0.4);
+            border: 1px solid rgba(232, 113, 74, 0.4);
             border-radius: 30px;
-            background: rgba(0, 180, 216, 0.08);
+            background: rgba(232, 113, 74, 0.08);
+        }
+
+        .hero .hero-tag {
+            align-self: center;
         }
 
         .hero-glow {
-            background: linear-gradient(135deg, #48e0f5, #00b4d8 40%, #7cd8ff);
+            background: linear-gradient(135deg, #F09060, #E8714A 40%, #F4B090);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -294,7 +298,7 @@
 
         .h-label {
             background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(0, 180, 216, 0.5);
+            border: 1px solid rgba(232, 113, 74, 0.5);
             padding: 11px 22px;
             border-radius: 30px;
             font-weight: 700;
@@ -311,13 +315,13 @@
         }
 
         .btn-glow {
-            box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.5), 0 15px 40px rgba(0, 180, 216, 0.35);
+            box-shadow: 0 0 0 0 rgba(232, 113, 74, 0.5), 0 15px 40px rgba(232, 113, 74, 0.35);
             transition: 0.3s;
         }
 
         .btn-glow:hover {
             transform: translateY(-3px);
-            box-shadow: 0 20px 50px rgba(0, 180, 216, 0.5);
+            box-shadow: 0 20px 50px rgba(232, 113, 74, 0.5);
         }
 
         .hero-stats {
@@ -354,14 +358,14 @@
         .hero-stat .num {
             font-size: 32px;
             font-weight: 800;
-            text-shadow: 0 0 20px rgba(0, 180, 216, 0.3);
+            text-shadow: 0 0 20px rgba(232, 113, 74, 0.3);
         }
 
         .hero-stat .lbl {
             font-size: 11px;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: #94a3b8;
+            color: #9E8B7E;
             margin-top: 4px;
         }
 
@@ -374,11 +378,11 @@
         }
 
         .intro-card {
-            background: linear-gradient(135deg, #0a1128 0%, #070c1e 100%);
+            background: linear-gradient(135deg, #1E1714 0%, #1E1A14 100%);
             color: white;
             padding: 36px;
             border-radius: 20px;
-            border: 1px solid rgba(0, 180, 216, 0.12);
+            border: 1px solid rgba(232, 113, 74, 0.12);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
             transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.35s, box-shadow 0.35s;
             position: relative;
@@ -399,8 +403,8 @@
 
         .intro-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(0, 180, 216, 0.35);
-            box-shadow: 0 20px 40px rgba(0, 180, 216, 0.15);
+            border-color: rgba(232, 113, 74, 0.35);
+            box-shadow: 0 20px 40px rgba(232, 113, 74, 0.15);
         }
 
         .intro-card:hover::before {
@@ -425,11 +429,11 @@
         .s-item {
             position: relative;
             overflow: hidden;
-            background: radial-gradient(130% 130% at 0% 0%, #ffffff 0%, #f8fafc 100%);
+            background: radial-gradient(130% 130% at 0% 0%, #ffffff 0%, #FDF6EF 100%);
             padding: 24px;
             border-radius: 18px;
-            border: 1px solid rgba(0, 180, 216, 0.08);
-            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.02);
+            border: 1px solid rgba(232, 113, 74, 0.08);
+            box-shadow: 0 4px 15px rgba(40, 30, 22, 0.02);
             transition: transform 0.4s cubic-bezier(.2, .8, .2, 1), box-shadow 0.4s cubic-bezier(.2, .8, .2, 1), border-color 0.4s;
         }
 
@@ -440,7 +444,7 @@
             right: -60px;
             width: 140px;
             height: 140px;
-            background: radial-gradient(circle, rgba(0, 180, 216, 0.15) 0%, rgba(0, 180, 216, 0) 70%);
+            background: radial-gradient(circle, rgba(232, 113, 74, 0.15) 0%, rgba(232, 113, 74, 0) 70%);
             opacity: 0;
             transition: opacity 0.4s ease;
             pointer-events: none;
@@ -460,8 +464,8 @@
 
         .s-item:hover {
             transform: translateY(-6px);
-            box-shadow: 0 20px 40px -15px rgba(0, 119, 182, 0.15);
-            border-color: rgba(0, 180, 216, 0.25);
+            box-shadow: 0 20px 40px -15px rgba(196, 129, 58, 0.15);
+            border-color: rgba(232, 113, 74, 0.25);
         }
 
         .s-item:hover::before {
@@ -478,20 +482,20 @@
             width: 48px;
             height: 48px;
             border-radius: 50%;
-            background: linear-gradient(135deg, rgba(0, 180, 216, 0.1) 0%, rgba(0, 119, 182, 0.05) 100%);
-            border: 1px solid rgba(0, 180, 216, 0.2);
+            background: linear-gradient(135deg, rgba(232, 113, 74, 0.1) 0%, rgba(196, 129, 58, 0.05) 100%);
+            border: 1px solid rgba(232, 113, 74, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 16px;
-            box-shadow: 0 4px 10px rgba(0, 180, 216, 0.05);
+            box-shadow: 0 4px 10px rgba(232, 113, 74, 0.05);
             transition: all 0.4s cubic-bezier(.2, .8, .2, 1);
         }
 
         .s-item:hover .s-icon {
             background: var(--gradient);
             border-color: transparent;
-            box-shadow: 0 8px 20px rgba(0, 180, 216, 0.4);
+            box-shadow: 0 8px 20px rgba(232, 113, 74, 0.4);
             transform: scale(1.05);
         }
 
@@ -561,13 +565,25 @@
             align-items: center;
         }
 
+        .focus-flex.reversed {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .focus-flex.reversed > :first-child {
+            order: 2;
+        }
+
+        .focus-flex.reversed > :last-child {
+            order: 1;
+        }
+
         .focus-img {
             width: 100%;
             border-radius: 20px;
             height: 380px;
             object-fit: cover;
-            box-shadow: 0 15px 35px rgba(10, 17, 40, 0.08);
-            border: 1px solid rgba(0, 180, 216, 0.1);
+            box-shadow: 0 15px 35px rgba(40, 30, 22, 0.08);
+            border: 1px solid rgba(232, 113, 74, 0.1);
             transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
@@ -597,7 +613,7 @@
         .check-list i {
             color: var(--accent-teal);
             font-size: 14px;
-            background: rgba(0, 180, 216, 0.08);
+            background: rgba(232, 113, 74, 0.08);
             padding: 6px;
             border-radius: 50%;
             display: inline-flex;
@@ -622,7 +638,7 @@
             font-weight: 600;
             font-size: 13.5px;
             color: var(--text-slate);
-            border: 1px solid rgba(15, 23, 42, 0.08);
+            border: 1px solid rgba(40, 30, 22, 0.08);
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
             transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
             display: inline-flex;
@@ -639,9 +655,9 @@
         .chip:hover {
             border-color: var(--accent-teal);
             color: var(--accent-blue);
-            background: rgba(0, 180, 216, 0.03);
+            background: rgba(232, 113, 74, 0.03);
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px -10px rgba(0, 180, 216, 0.3);
+            box-shadow: 0 10px 20px -10px rgba(232, 113, 74, 0.3);
         }
 
         /* Regional Locations Hubs */
@@ -665,19 +681,19 @@
         }
 
         .market-card {
-            background: radial-gradient(120% 120% at 0% 0%, #ffffff 0%, #f8fafc 100%);
-            border: 1px solid rgba(0, 180, 216, 0.08);
+            background: radial-gradient(120% 120% at 0% 0%, #ffffff 0%, #FDF6EF 100%);
+            border: 1px solid rgba(232, 113, 74, 0.08);
             padding: 20px;
             border-radius: 16px;
             text-align: left;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.015);
+            box-shadow: 0 4px 12px rgba(40, 30, 22, 0.015);
             transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
         .market-card:hover {
             transform: translateY(-3px);
-            border-color: rgba(0, 180, 216, 0.25);
-            box-shadow: 0 12px 25px -10px rgba(0, 119, 182, 0.12);
+            border-color: rgba(232, 113, 74, 0.25);
+            box-shadow: 0 12px 25px -10px rgba(196, 129, 58, 0.12);
         }
 
         .market-header {
@@ -711,10 +727,10 @@
             position: relative;
             overflow: hidden;
             background:
-                linear-gradient(180deg, rgba(0, 180, 216, 0.05) 0%, transparent 12%),
+                linear-gradient(180deg, rgba(232, 113, 74, 0.05) 0%, transparent 12%),
                 repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.025) 0px, rgba(255, 255, 255, 0.025) 1px, transparent 1px, transparent 34px),
                 var(--bg-deep);
-            border: 1px solid rgba(0, 180, 216, 0.18);
+            border: 1px solid rgba(232, 113, 74, 0.18);
             border-radius: 28px;
             padding: 48px 40px;
             color: white;
@@ -730,7 +746,7 @@
             left: -35%;
             width: 35%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 180, 216, 0.08), transparent);
+            background: linear-gradient(90deg, transparent, rgba(232, 113, 74, 0.08), transparent);
             pointer-events: none;
             animation: scanMove 7s linear infinite;
         }
@@ -756,9 +772,9 @@
             font-size: 11px;
             margin-bottom: 18px;
             padding: 7px 16px 7px 12px;
-            border: 1px solid rgba(0, 180, 216, 0.3);
+            border: 1px solid rgba(232, 113, 74, 0.3);
             border-radius: 30px;
-            background: rgba(0, 180, 216, 0.08);
+            background: rgba(232, 113, 74, 0.08);
         }
 
         .live-dot {
@@ -766,21 +782,21 @@
             height: 7px;
             border-radius: 50%;
             background: var(--accent-teal);
-            box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.6);
+            box-shadow: 0 0 0 0 rgba(232, 113, 74, 0.6);
             animation: pulseDot 1.8s ease-out infinite;
         }
 
         @keyframes pulseDot {
             0% {
-                box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.55);
+                box-shadow: 0 0 0 0 rgba(232, 113, 74, 0.55);
             }
 
             70% {
-                box-shadow: 0 0 0 9px rgba(0, 180, 216, 0);
+                box-shadow: 0 0 0 9px rgba(232, 113, 74, 0);
             }
 
             100% {
-                box-shadow: 0 0 0 0 rgba(0, 180, 216, 0);
+                box-shadow: 0 0 0 0 rgba(232, 113, 74, 0);
             }
         }
 
@@ -803,8 +819,8 @@
 
         .t-item:hover {
             transform: translateY(-4px);
-            background: rgba(0, 180, 216, 0.07);
-            border-color: rgba(0, 180, 216, 0.45);
+            background: rgba(232, 113, 74, 0.07);
+            border-color: rgba(232, 113, 74, 0.45);
         }
 
         .t-item-head {
@@ -819,8 +835,8 @@
             height: 28px;
             flex-shrink: 0;
             border-radius: 8px;
-            background: rgba(0, 180, 216, 0.14);
-            border: 1px solid rgba(0, 180, 216, 0.25);
+            background: rgba(232, 113, 74, 0.14);
+            border: 1px solid rgba(232, 113, 74, 0.25);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -836,93 +852,210 @@
 
         .t-item p {
             font-size: 13px;
-            color: #cbd5e1;
+            color: #D4C0AC;
             margin-top: 2px;
         }
 
-        /* 10. Process Steps */
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 16px;
-            margin-top: 30px;
+        /* 10. Process Steps — Premium Timeline */
+        .process-section-wrap {
+            background: var(--bg-deep);
+            border-radius: 32px;
+            padding: 70px 60px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .step-card {
-            background: white;
-            padding: 24px 20px;
-            border-radius: 18px;
+        .process-section-wrap::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 10% 50%, rgba(232, 113, 74, 0.12), transparent 55%),
+                radial-gradient(ellipse at 90% 50%, rgba(196, 129, 58, 0.14), transparent 55%);
+            pointer-events: none;
+        }
+
+        .process-section-wrap .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(232, 113, 74, 0.12);
+            border: 1px solid rgba(232, 113, 74, 0.3);
+            color: #F09060;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 7px 16px;
+            border-radius: 30px;
+            margin-bottom: 18px;
+        }
+
+        .process-section-wrap h2 {
+            color: #fff;
+            font-size: 38px;
+            max-width: 620px;
+            margin: 0 auto 14px;
             text-align: center;
-            border: 1px solid rgba(0, 180, 216, 0.08);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.015);
-            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            line-height: 1.2;
+        }
+
+        .process-section-wrap .proc-sub {
+            text-align: center;
+            color: rgba(255,255,255,0.55);
+            font-size: 15px;
+            margin: 0 auto 52px;
+            max-width: 520px;
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
             position: relative;
         }
 
-        .step-card::before {
+        /* Connecting line behind all steps */
+        .process-timeline::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient);
-            border-radius: 18px 18px 0 0;
-            opacity: 0.15;
-            transition: opacity 0.3s ease;
+            top: 44px;
+            left: calc(10% + 2px);
+            right: calc(10% + 2px);
+            height: 2px;
+            background: linear-gradient(90deg,
+                rgba(232, 113, 74, 0.6),
+                rgba(232, 113, 74, 0.3) 50%,
+                rgba(196, 129, 58, 0.6));
+            z-index: 0;
         }
 
-        .step-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(0, 180, 216, 0.25);
-            box-shadow: 0 20px 40px -15px rgba(0, 119, 182, 0.15);
+        .proc-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 12px;
+            position: relative;
+            z-index: 1;
         }
 
-        .step-card:hover::before {
-            opacity: 1;
+        /* Number bubble */
+        .proc-num {
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            font-weight: 900;
+            color: #E8714A;
+            background: rgba(232, 113, 74, 0.1);
+            border: 2px solid rgba(232, 113, 74, 0.35);
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            position: relative;
+            flex-shrink: 0;
         }
 
-        .step-num {
-            font-size: 13px;
+        .proc-num i {
+            font-size: 28px;
+            color: #E8714A;
+            transition: all 0.4s ease;
+        }
+
+        /* Active / filled step */
+        .proc-step.active .proc-num {
+            background: linear-gradient(135deg, #E8714A, #C4813A);
+            border-color: transparent;
+            box-shadow: 0 0 0 6px rgba(232, 113, 74, 0.15), 0 14px 32px rgba(232, 113, 74, 0.35);
+        }
+
+        .proc-step.active .proc-num i {
+            color: #fff;
+        }
+
+        .proc-step:hover .proc-num {
+            background: linear-gradient(135deg, #E8714A, #C4813A);
+            border-color: transparent;
+            box-shadow: 0 0 0 8px rgba(232, 113, 74, 0.12), 0 18px 36px rgba(232, 113, 74, 0.4);
+            transform: scale(1.08);
+        }
+
+        .proc-step:hover .proc-num i {
+            color: #fff;
+        }
+
+        /* Step label pill */
+        .proc-badge {
+            margin-top: 12px;
+            font-size: 10px;
             font-weight: 800;
-            color: var(--accent-blue);
-            background: rgba(0, 180, 216, 0.07);
-            padding: 4px 10px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(232, 113, 74, 0.7);
+        }
+
+        .proc-step.active .proc-badge {
+            color: #F09060;
+        }
+
+        /* Card below */
+        .proc-card {
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
+            padding: 24px 18px;
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            width: 100%;
         }
 
-        .step-card:hover .step-num {
-            background: var(--gradient);
-            color: white;
+        .proc-step:hover .proc-card {
+            background: rgba(232, 113, 74, 0.08);
+            border-color: rgba(232, 113, 74, 0.25);
+            transform: translateY(-4px);
+            box-shadow: 0 18px 36px rgba(0,0,0,0.25);
         }
 
-        .step-icon-wrap {
-            font-size: 24px;
-            color: var(--bg-deep);
-            margin-bottom: 10px;
-            transition: transform 0.3s ease, color 0.3s ease;
+        .proc-step.active .proc-card {
+            background: rgba(232, 113, 74, 0.1);
+            border-color: rgba(232, 113, 74, 0.3);
         }
 
-        .step-card:hover .step-icon-wrap {
-            color: var(--accent-teal);
-            transform: scale(1.1) rotate(3deg);
+        .proc-card h4 {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: 8px;
         }
 
-        .step-card h4 {
-            margin-bottom: 6px;
-            font-size: 17px;
-            font-weight: 700;
-            color: var(--bg-deep);
-        }
-
-        .step-card p {
+        .proc-card p {
+            color: rgba(255, 255, 255, 0.5);
             font-size: 13px;
-            color: var(--text-slate);
-            line-height: 1.4;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        .proc-step:hover .proc-card p,
+        .proc-step.active .proc-card p {
+            color: rgba(255, 255, 255, 0.72);
+        }
+
+        @media (max-width: 900px) {
+            .process-timeline {
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+            }
+            .process-timeline::before { display: none; }
+            .process-section-wrap { padding: 44px 28px; }
+            .process-section-wrap h2 { font-size: 28px; }
+        }
+
+        @media (max-width: 500px) {
+            .process-timeline {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* 12. FAQ */
@@ -932,20 +1065,20 @@
             border-radius: 12px;
             padding: 18px 24px;
             cursor: pointer;
-            border: 1px solid rgba(15, 23, 42, 0.06);
+            border: 1px solid rgba(40, 30, 22, 0.06);
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.01);
             transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
         .faq-item:hover {
-            border-color: rgba(0, 180, 216, 0.25);
-            box-shadow: 0 10px 25px -10px rgba(0, 119, 182, 0.1);
+            border-color: rgba(232, 113, 74, 0.25);
+            box-shadow: 0 10px 25px -10px rgba(196, 129, 58, 0.1);
         }
 
         .faq-item.is-open {
             border-color: var(--accent-teal);
-            box-shadow: 0 12px 30px -10px rgba(0, 180, 216, 0.15);
-            background: rgba(0, 180, 216, 0.01);
+            box-shadow: 0 12px 30px -10px rgba(232, 113, 74, 0.15);
+            background: rgba(232, 113, 74, 0.01);
             transform: translateY(-2px);
         }
 
@@ -993,21 +1126,21 @@
         }
 
         .faq-item h4:focus-visible {
-            outline: 3px solid rgba(0, 180, 216, 0.35);
+            outline: 3px solid rgba(232, 113, 74, 0.35);
             outline-offset: 6px;
             border-radius: 4px;
         }
 
         /* 13. CTA */
         .cta-box {
-            background: radial-gradient(120% 120% at 0% 0%, rgba(255, 255, 255, 0.03) 0%, rgba(0, 180, 216, 0.03) 100%), #050a18;
+            background: radial-gradient(120% 120% at 0% 0%, rgba(255, 255, 255, 0.03) 0%, rgba(232, 113, 74, 0.03) 100%), #181310;
             border-radius: 24px;
             padding: 42px 32px;
             text-align: center;
             color: white;
             margin-bottom: 0;
-            box-shadow: 0 12px 30px rgba(0, 180, 216, 0.08);
-            border: 1px solid rgba(0, 180, 216, 0.25);
+            box-shadow: 0 12px 30px rgba(232, 113, 74, 0.08);
+            border: 1px solid rgba(232, 113, 74, 0.25);
             position: relative;
             overflow: hidden;
         }
@@ -1019,7 +1152,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 90% 80%, rgba(0, 180, 216, 0.04) 0%, transparent 50%);
+            background: radial-gradient(circle at 90% 80%, rgba(232, 113, 74, 0.04) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -1031,7 +1164,7 @@
         }
 
         .cta-box p {
-            color: #cbd5e1;
+            color: #D4C0AC;
             font-size: 14.5px;
         }
 
@@ -1048,8 +1181,8 @@
         }
 
         .cta-form:focus-within {
-            border-color: rgba(0, 180, 216, 0.6);
-            box-shadow: 0 10px 30px -10px rgba(0, 180, 216, 0.25);
+            border-color: rgba(232, 113, 74, 0.6);
+            box-shadow: 0 10px 30px -10px rgba(232, 113, 74, 0.25);
         }
 
         .cta-form input {
@@ -1063,7 +1196,7 @@
         }
 
         .cta-form input::placeholder {
-            color: #94a3b8;
+            color: #9E8B7E;
         }
 
         .cta-form button {
@@ -1076,7 +1209,7 @@
             cursor: pointer;
             font-size: 14.5px;
             transition: opacity 0.2s, transform 0.2s;
-            box-shadow: 0 4px 12px rgba(0, 180, 216, 0.2);
+            box-shadow: 0 4px 12px rgba(232, 113, 74, 0.2);
         }
 
         .cta-form button:hover {
@@ -1085,28 +1218,28 @@
         }
 
         .industry-card {
-            background: radial-gradient(120% 120% at 0% 0%, #ffffff 0%, #f8fafc 100%);
-            border: 1px solid rgba(0, 180, 216, 0.08);
+            background: radial-gradient(120% 120% at 0% 0%, #ffffff 0%, #FDF6EF 100%);
+            border: 1px solid rgba(232, 113, 74, 0.08);
             padding: 20px 24px;
             border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.015);
+            box-shadow: 0 4px 12px rgba(40, 30, 22, 0.015);
             transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
             text-align: center;
         }
 
         .industry-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(0, 180, 216, 0.25);
-            box-shadow: 0 15px 30px -10px rgba(0, 119, 182, 0.12);
-            background: rgba(0, 180, 216, 0.02);
+            border-color: rgba(232, 113, 74, 0.25);
+            box-shadow: 0 15px 30px -10px rgba(196, 129, 58, 0.12);
+            background: rgba(232, 113, 74, 0.02);
         }
 
         .ind-icon {
             width: 42px;
             height: 42px;
             border-radius: 50%;
-            background: rgba(0, 180, 216, 0.06);
-            border: 1px solid rgba(0, 180, 216, 0.15);
+            background: rgba(232, 113, 74, 0.06);
+            border: 1px solid rgba(232, 113, 74, 0.15);
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -1120,7 +1253,7 @@
             background: var(--gradient);
             color: white;
             border-color: transparent;
-            box-shadow: 0 6px 15px rgba(0, 180, 216, 0.3);
+            box-shadow: 0 6px 15px rgba(232, 113, 74, 0.3);
             transform: scale(1.08);
         }
 
@@ -1139,10 +1272,10 @@
 
         /* 9. WHY CHOOSE RCC-BGM Redesign */
         #why-choose {
-            background: #050a18;
+            background: #181310;
             color: #ffffff;
-            border-top: 1px solid rgba(0, 180, 216, 0.15);
-            border-bottom: 1px solid rgba(0, 180, 216, 0.15);
+            border-top: 1px solid rgba(232, 113, 74, 0.15);
+            border-bottom: 1px solid rgba(232, 113, 74, 0.15);
             position: relative;
             overflow: hidden;
         }
@@ -1154,7 +1287,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 10% 20%, rgba(0, 180, 216, 0.05) 0%, transparent 40%);
+            background: radial-gradient(circle at 10% 20%, rgba(232, 113, 74, 0.05) 0%, transparent 40%);
             pointer-events: none;
         }
 
@@ -1162,7 +1295,7 @@
             display: grid;
             grid-template-columns: 1.1fr 1.3fr;
             gap: 40px;
-            align-items: center;
+            align-items: start;
         }
 
         .why-info h2 {
@@ -1175,7 +1308,7 @@
         }
 
         .why-info .subtitle {
-            color: #cbd5e1;
+            color: #D4C0AC;
             font-size: 15px;
             margin-bottom: 24px;
             line-height: 1.6;
@@ -1196,7 +1329,7 @@
         .why-metric i {
             color: var(--accent-teal);
             font-size: 14px;
-            background: rgba(0, 180, 216, 0.12);
+            background: rgba(232, 113, 74, 0.12);
             padding: 8px;
             border-radius: 50%;
             display: inline-flex;
@@ -1209,7 +1342,7 @@
         .why-metric span {
             font-size: 14.5px;
             font-weight: 600;
-            color: #e2e8f0;
+            color: #DDD0C4;
         }
 
         .difference-card {
@@ -1231,18 +1364,18 @@
 
         .difference-card:hover {
             transform: translateX(4px);
-            background: rgba(0, 180, 216, 0.05);
-            border-color: rgba(0, 180, 216, 0.25);
+            background: rgba(232, 113, 74, 0.05);
+            border-color: rgba(232, 113, 74, 0.25);
             border-left-color: var(--accent-blue);
-            box-shadow: 0 10px 25px -10px rgba(0, 180, 216, 0.2);
+            box-shadow: 0 10px 25px -10px rgba(232, 113, 74, 0.2);
         }
 
         .diff-icon {
             width: 40px;
             height: 40px;
             border-radius: 10px;
-            background: rgba(0, 180, 216, 0.14);
-            border: 1px solid rgba(0, 180, 216, 0.25);
+            background: rgba(232, 113, 74, 0.14);
+            border: 1px solid rgba(232, 113, 74, 0.25);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1272,14 +1405,14 @@
         }
 
         .diff-content p {
-            color: #cbd5e1;
+            color: #D4C0AC;
             font-size: 13.5px;
             line-height: 1.5;
             margin: 0;
         }
 
         footer {
-            background: #050a18;
+            background: #181310;
             color: white;
             padding: 36px 0 30px 0;
             border-top: none;
@@ -1317,7 +1450,7 @@
         }
 
         .f-col a {
-            color: #94a3b8;
+            color: #9E8B7E;
             text-decoration: none;
             font-size: 14px;
         }
@@ -1330,9 +1463,19 @@
 
             .split-intro,
             .focus-flex,
+            .focus-flex.reversed,
             .tech-box,
-            .f-grid {
+            .f-grid,
+            .why-split {
                 grid-template-columns: 1fr;
+            }
+
+            .focus-flex.reversed > :first-child {
+                order: 1;
+            }
+
+            .focus-flex.reversed > :last-child {
+                order: 2;
             }
 
             h1 {
@@ -1362,6 +1505,14 @@
 
             .tech-grid {
                 grid-template-columns: 1fr 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+
+            .market-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -1412,10 +1563,10 @@
                 right: 0;
                 z-index: 50;
                 padding: 14px;
-                border: 1px solid rgba(0, 180, 216, .26);
+                border: 1px solid rgba(232, 113, 74, .26);
                 border-top: 0;
                 border-radius: 0 0 18px 18px;
-                background: rgba(5, 10, 24, .98);
+                background: rgba(30, 23, 20, .98);
                 box-shadow: 0 20px 40px rgba(0, 0, 0, .3);
                 flex-direction: column;
                 gap: 4px;
@@ -1433,7 +1584,7 @@
 
             nav .nav-links a:hover,
             nav .nav-links a.is-active {
-                background: rgba(0, 180, 216, .1);
+                background: rgba(232, 113, 74, .1);
             }
 
             nav .nav-links a::after {
@@ -1485,6 +1636,63 @@
             .hero-stat:not(:last-child)::after {
                 display: none;
             }
+
+            .market-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 18px;
+            }
+
+            .cta-box {
+                padding: 32px 20px;
+                border-radius: 18px;
+            }
+
+            .cta-box h2 {
+                font-size: 24px;
+            }
+
+            .cta-form {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px;
+            }
+
+            .cta-form input {
+                padding: 12px 16px;
+            }
+
+            .cta-form button {
+                width: 100%;
+            }
+
+            .tech-box {
+                padding: 30px 20px;
+                border-radius: 18px;
+            }
+
+            .why-info h2 {
+                font-size: 26px;
+            }
+
+            .difference-card {
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            }
+
+            .focus-img {
+                height: 280px;
+            }
         }
     </style>
 </head>
@@ -1502,6 +1710,9 @@
                 <li><a href="smart-cleaning-robotics.html">Technology</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
+            <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
             <a href="contact.html" class="btn-header">Get Assessment</a>
         </div>
     </nav>
@@ -1518,7 +1729,7 @@
             <h1>Commercial Cleaning, Construction<br>& Maintenance — <span class="hero-glow">Managed Together</span>
             </h1>
             <br>
-            <p style="font-size: 16px; color: #cbd5e1; text-align: center; max-width: 700px; margin: 0 auto;">
+            <p style="font-size: 16px; color: #D4C0AC; text-align: center; max-width: 700px; margin: 0 auto;">
                 RCC-BGM brings commercial cleaning, janitorial services, construction and specialized facility
                 maintenance together under one accountable team. We help businesses maintain cleaner, safer and
                 better-performing environments.
@@ -1562,38 +1773,6 @@
             }, 3500);
             v.addEventListener('loadeddata', function () { clearTimeout(fallbackTimer); });
             v.addEventListener('error', function () { v.style.display = 'none'; clearTimeout(fallbackTimer); });
-        })();
-
-        // Scroll-triggered dynamic numbers counting animation
-        (function () {
-            const stats = [
-                { id: 'stat-years', max: 15, suffix: '+' },
-                { id: 'stat-facilities', max: 500, suffix: '+' },
-                { id: 'stat-states', max: 6, suffix: '' },
-                { id: 'stat-support', max: 24, suffix: '/7' }
-            ];
-
-            const handleNumbersScroll = () => {
-                const scrollY = window.scrollY;
-                const heroHeight = document.querySelector('.hero')?.offsetHeight || 600;
-
-                // Animate linearly between scrollY = 0 and scrollY = 350 (or 60% of hero height)
-                const animRange = Math.min(350, heroHeight);
-                let ratio = scrollY / animRange;
-                ratio = Math.max(0, Math.min(1, ratio));
-
-                stats.forEach(stat => {
-                    const el = document.getElementById(stat.id);
-                    if (el) {
-                        const currentVal = Math.floor(ratio * stat.max);
-                        el.innerText = `${currentVal}${stat.suffix}`;
-                    }
-                });
-            };
-
-            window.addEventListener('scroll', handleNumbersScroll);
-            // Run initially
-            handleNumbersScroll();
         })();
     </script>
 
@@ -1695,8 +1874,8 @@
 
     <!-- 5. RCC CONSTRUCTION FOCUS -->
     <section id="construction" class="section-padding" style="background: #fff;">
-        <div class="container focus-flex" style="direction: rtl;">
-            <div style="direction: ltr;">
+        <div class="container focus-flex reversed">
+            <div>
                 <span class="hero-tag">Reliable Concepts Corporation</span>
                 <h2>Elite <span style="color:var(--accent-blue);">Construction</span> & Improvements</h2>
                 <p style="margin-top: 10px;">RCC coordinates commercial construction, tenant improvements, HVAC, MEP,
@@ -1737,7 +1916,7 @@
             <div>
                 <span class="live-badge"><span class="live-dot"></span> Live Facility Monitoring</span>
                 <h2 style="color:white;">Smarter Cleaning Through Robotics</h2>
-                <p style="color:#cbd5e1; margin: 14px 0 0 0;">We combine trained service teams with modern cleaning
+                <p style="color:#D4C0AC; margin: 14px 0 0 0;">We combine trained service teams with modern cleaning
                     technology to improve consistency, visibility and resource allocation.</p>
             </div>
             <div class="tech-grid">
@@ -1818,7 +1997,7 @@
             <div class="why-split">
                 <div class="why-info">
                     <span class="hero-tag"
-                        style="border-color: rgba(0, 180, 216, 0.35); background: rgba(0, 180, 216, 0.08); color: var(--accent-teal);">Why
+                        style="border-color: rgba(232, 113, 74, 0.35); background: rgba(232, 113, 74, 0.08); color: var(--accent-teal);">Why
                         Partner With Us</span>
                     <h2>Engineered for Seamless Facility Accountability</h2>
                     <p class="subtitle">A single resource to eliminate coordination gaps, reduce overhead costs, and
@@ -1869,39 +2048,55 @@
     </section>
 
     <!-- 10. PROCESS MAP -->
-    <section class="section-padding" style="padding-bottom: 12px;">
+    <section class="section-padding">
         <div class="container">
-            <h2 style="text-align: center;">A Clearer Way To Manage Facilities</h2>
-            <div class="process-grid">
-                <div class="step-card">
-                    <span class="step-num">Step 01</span>
-                    <div class="step-icon-wrap"><i class="fa-solid fa-magnifying-glass"></i></div>
-                    <h4>Assess</h4>
-                    <p>Property & requirement review.</p>
+            <div class="process-section-wrap">
+                <div style="text-align:center; position:relative; z-index:1;">
+                    <span class="section-label"><i class="fa-solid fa-route"></i>&nbsp; Our Process</span>
+                    <h2>A Clearer Way To Manage Facilities</h2>
+                    <p class="proc-sub">From initial assessment to continuous improvement — a structured, accountable process every time.</p>
                 </div>
-                <div class="step-card">
-                    <span class="step-num">Step 02</span>
-                    <div class="step-icon-wrap"><i class="fa-solid fa-map"></i></div>
-                    <h4>Plan</h4>
-                    <p>Defined scope & staffing.</p>
-                </div>
-                <div class="step-card">
-                    <span class="step-num">Step 03</span>
-                    <div class="step-icon-wrap"><i class="fa-solid fa-gears"></i></div>
-                    <h4>Deliver</h4>
-                    <p>Trained team execution.</p>
-                </div>
-                <div class="step-card">
-                    <span class="step-num">Step 04</span>
-                    <div class="step-icon-wrap"><i class="fa-solid fa-clipboard-check"></i></div>
-                    <h4>Verify</h4>
-                    <p>Quality & feedback audits.</p>
-                </div>
-                <div class="step-card">
-                    <span class="step-num">Step 05</span>
-                    <div class="step-icon-wrap"><i class="fa-solid fa-chart-line"></i></div>
-                    <h4>Improve</h4>
-                    <p>Operational refinement.</p>
+                <div class="process-timeline" style="position:relative; z-index:1;">
+                    <div class="proc-step active">
+                        <div class="proc-num"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <span class="proc-badge">Step 01</span>
+                        <div class="proc-card">
+                            <h4>Assess</h4>
+                            <p>Full property walkthrough, compliance review &amp; scope documentation.</p>
+                        </div>
+                    </div>
+                    <div class="proc-step">
+                        <div class="proc-num"><i class="fa-solid fa-pen-ruler"></i></div>
+                        <span class="proc-badge">Step 02</span>
+                        <div class="proc-card">
+                            <h4>Plan</h4>
+                            <p>Defined scope, staffing schedule &amp; customised service blueprint.</p>
+                        </div>
+                    </div>
+                    <div class="proc-step">
+                        <div class="proc-num"><i class="fa-solid fa-people-carry-box"></i></div>
+                        <span class="proc-badge">Step 03</span>
+                        <div class="proc-card">
+                            <h4>Deliver</h4>
+                            <p>Trained, vetted teams execute with precision &amp; real-time supervision.</p>
+                        </div>
+                    </div>
+                    <div class="proc-step">
+                        <div class="proc-num"><i class="fa-solid fa-clipboard-check"></i></div>
+                        <span class="proc-badge">Step 04</span>
+                        <div class="proc-card">
+                            <h4>Verify</h4>
+                            <p>Quality inspections, client sign-off &amp; transparent performance reporting.</p>
+                        </div>
+                    </div>
+                    <div class="proc-step">
+                        <div class="proc-num"><i class="fa-solid fa-chart-line"></i></div>
+                        <span class="proc-badge">Step 05</span>
+                        <div class="proc-card">
+                            <h4>Improve</h4>
+                            <p>Ongoing optimisation cycles driven by data &amp; client feedback.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1985,36 +2180,7 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container f-grid">
-            <div class="f-col">
-                <a href="index.html" class="logo">RCC<span>BGM</span></a>
-                <p style="margin-top:16px;">The industry leader in integrated commercial facility solutions.</p>
-            </div>
-            <div class="f-col">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="commercial-janitorial-services.html">Janitorial Suite</a></li>
-                    <li><a href="commercial-construction.html">Construction</a></li>
-                    <li><a href="cleanroom-cleaning-services.html">Cleanrooms</a></li>
-                    <li><a href="commercial-hvac-services.html">HVAC & MEP</a></li>
-                </ul>
-            </div>
-            <div class="f-col">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="why-rcc-bgm.html">Our Approach</a></li>
-                    <li><a href="locations.html">Markets</a></li>
-                    <li><a href="smart-cleaning-robotics.html">Technology</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="f-col">
-                <h4>Contact HQ</h4>
-                <p>San Jose, California<br>United States<br>support@rcc-bgm.com</p>
-            </div>
-        </div>
-    </footer>
+    <footer></footer>
 
     <script src="site.js" defer></script>
 </body>
