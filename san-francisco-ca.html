@@ -62,26 +62,282 @@
             ><i class="fa-solid fa-layer-group"></i> Explore Services</a
           >
         </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="num">01</div>
-            <div class="lbl">Clear scope</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">02</div>
-            <div class="lbl">Coordinated team</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">03</div>
-            <div class="lbl">Planned delivery</div>
+
+        <!-- RIGHT — Service Ops Console -->
+        <div class="sf-right">
+          <div class="sf-panel">
+            <div class="sf-panel-header">
+              <span class="sf-panel-dot"></span>
+              <span class="sf-panel-title">Active Service Lines</span>
+              <span class="sf-panel-count">4 services</span>
+            </div>
+
+            <a href="commercial-cleaning-services.html" class="sf-item">
+              <div class="sf-item-icon sf-item-icon--teal"><i class="fa-solid fa-broom"></i></div>
+              <div class="sf-item-info">
+                <div class="sf-item-name">Commercial Cleaning</div>
+                <div class="sf-item-desc">Daily cleaning, janitorial & specialist hygiene</div>
+              </div>
+              <span class="sf-item-tag sf-item-tag--teal">Active</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+
+            <a href="facility-maintenance-services.html" class="sf-item">
+              <div class="sf-item-icon sf-item-icon--green"><i class="fa-solid fa-wrench"></i></div>
+              <div class="sf-item-info">
+                <div class="sf-item-name">Facility Maintenance</div>
+                <div class="sf-item-desc">Preventive plans, repairs & multi-trade coordination</div>
+              </div>
+              <span class="sf-item-tag sf-item-tag--green">Active</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+
+            <a href="commercial-construction.html" class="sf-item">
+              <div class="sf-item-icon sf-item-icon--amber"><i class="fa-solid fa-helmet-safety"></i></div>
+              <div class="sf-item-info">
+                <div class="sf-item-name">Commercial Construction</div>
+                <div class="sf-item-desc">Build-outs, tenant improvements & project mgmt</div>
+              </div>
+              <span class="sf-item-tag sf-item-tag--amber">Active</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+
+            <a href="commercial-hvac-services.html" class="sf-item">
+              <div class="sf-item-icon sf-item-icon--blue"><i class="fa-solid fa-temperature-half"></i></div>
+              <div class="sf-item-info">
+                <div class="sf-item-name">HVAC Services</div>
+                <div class="sf-item-desc">Installation, seasonal maint & diagnostics</div>
+              </div>
+              <span class="sf-item-tag sf-item-tag--blue">Active</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
           </div>
         </div>
       </div>
-      <div class="scroll-cue">
-        Scroll
-        <div class="dot-track"></div>
+
+      <!-- FULL WIDTH BOTTOM STATS -->
+      <div class="sf-bottom">
+        <div class="sf-stat"><span class="sf-stat-val">01</span><span class="sf-stat-lbl">Clear scope</span></div>
+        <div class="sf-stat-div"></div>
+        <div class="sf-stat"><span class="sf-stat-val">02</span><span class="sf-stat-lbl">Coordinated team</span></div>
+        <div class="sf-stat-div"></div>
+        <div class="sf-stat"><span class="sf-stat-val">03</span><span class="sf-stat-lbl">Planned delivery</span></div>
       </div>
     </section>
+
+    <style>
+      .sf-hero {
+        position: relative;
+        min-height: 92vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background:
+          radial-gradient(ellipse 50% 50% at 50% 15%, rgba(0, 180, 216, 0.08) 0%, transparent 60%),
+          radial-gradient(ellipse 40% 40% at 80% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
+          #050a18;
+        padding: 110px 0 0 0;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(0, 180, 216, 0.12);
+      }
+
+      .sf-hero-bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: radial-gradient(circle 1px at 50% 50%, rgba(255,255,255,0.012) 1px, transparent 1px);
+        background-size: 28px 28px;
+      }
+
+      .sf-hero-glow { position: absolute; border-radius: 50%; filter: blur(160px); pointer-events: none; }
+      .sf-hero-glow--a { width: 500px; height: 500px; top: -120px; left: 50%; transform: translateX(-50%); background: rgba(0, 180, 216, 0.06); }
+      .sf-hero-glow--b { width: 300px; height: 300px; bottom: -60px; right: 15%; background: rgba(245, 158, 11, 0.04); }
+
+      /* SPLIT LAYOUT */
+      .sf-split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; position: relative; z-index: 10; max-width: 1360px; margin: 0 auto; padding: 0 60px; }
+
+      /* LEFT */
+      .sf-left { display: flex; flex-direction: column; }
+      .sf-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--accent-teal); border: 1px solid rgba(0, 180, 216, 0.25); background: rgba(0, 180, 216, 0.06); padding: 8px 18px; border-radius: 99px; width: fit-content; }
+      .sf-title { margin-top: 24px; display: flex; flex-direction: column; }
+      .sf-title-white { font-size: clamp(30px, 4vw, 48px); font-weight: 800; color: white; line-height: 1.1; letter-spacing: -1.5px; }
+      .sf-title-teal { font-size: clamp(34px, 4.5vw, 56px); font-weight: 800; color: var(--accent-teal); line-height: 1.05; letter-spacing: -2px; margin-top: 4px; }
+      .sf-desc { font-size: 16px; line-height: 1.75; color: #94a3b8; max-width: 480px; margin-top: 22px; }
+      .sf-actions { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
+
+      .sf-btn-primary { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 10px; font-weight: 700; font-size: 14px; color: #050a18; background: var(--accent-teal); text-decoration: none; transition: all 0.3s ease; }
+      .sf-btn-primary:hover { background: #22d3ee; transform: translateY(-2px); }
+      .sf-btn-ghost { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 10px; font-weight: 600; font-size: 14px; color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.02); text-decoration: none; transition: all 0.3s ease; }
+      .sf-btn-ghost:hover { border-color: rgba(0,180,216,0.4); color: white; background: rgba(0,180,216,0.05); }
+
+      /* ══════════════════════════════════════
+         RIGHT PANEL — Service Ops Console
+         ══════════════════════════════════════ */
+      .sf-right { position: relative; }
+
+      .sf-panel {
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 16px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.015);
+      }
+
+      .sf-panel-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      }
+
+      .sf-panel-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #22c55e;
+        box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+        animation: sf-pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes sf-pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.4; }
+      }
+
+      .sf-panel-title {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      .sf-panel-count {
+        margin-left: auto;
+        font-size: 11px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.04);
+        padding: 4px 10px;
+        border-radius: 6px;
+      }
+
+      .sf-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 16px 24px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        position: relative;
+      }
+
+      .sf-item:last-child { border-bottom: none; }
+
+      .sf-item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .sf-item:hover::before { opacity: 1; }
+
+      .sf-item:nth-child(2)::before { background: var(--accent-teal); }
+      .sf-item:nth-child(3)::before { background: #22c55e; }
+      .sf-item:nth-child(4)::before { background: #f59e0b; }
+      .sf-item:nth-child(5)::before { background: #0ea5e9; }
+
+      .sf-item:hover { background: rgba(255, 255, 255, 0.02); }
+
+      .sf-item-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+      }
+
+      .sf-item-icon--teal  { background: rgba(0, 180, 216, 0.1); color: var(--accent-teal); border: 1px solid rgba(0, 180, 216, 0.2); }
+      .sf-item-icon--green { background: rgba(34, 197, 94, 0.1); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.2); }
+      .sf-item-icon--amber { background: rgba(245, 158, 11, 0.1); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.2); }
+      .sf-item-icon--blue  { background: rgba(14, 165, 233, 0.1); color: #0ea5e9; border: 1px solid rgba(14, 165, 233, 0.2); }
+
+      .sf-item:hover .sf-item-icon--teal  { box-shadow: 0 0 14px rgba(0, 180, 216, 0.3); }
+      .sf-item:hover .sf-item-icon--green { box-shadow: 0 0 14px rgba(34, 197, 94, 0.3); }
+      .sf-item:hover .sf-item-icon--amber { box-shadow: 0 0 14px rgba(245, 158, 11, 0.3); }
+      .sf-item:hover .sf-item-icon--blue  { box-shadow: 0 0 14px rgba(14, 165, 233, 0.3); }
+
+      .sf-item-info { flex: 1; min-width: 0; }
+
+      .sf-item-name {
+        font-size: 15px;
+        font-weight: 700;
+        color: white;
+      }
+
+      .sf-item-desc {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.3);
+        margin-top: 2px;
+      }
+
+      .sf-item-tag {
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 4px 10px;
+        border-radius: 6px;
+        flex-shrink: 0;
+      }
+
+      .sf-item-tag--teal  { color: var(--accent-teal); background: rgba(0, 180, 216, 0.1); }
+      .sf-item-tag--green { color: #22c55e; background: rgba(34, 197, 94, 0.1); }
+      .sf-item-tag--amber { color: #f59e0b; background: rgba(245, 158, 11, 0.1); }
+      .sf-item-tag--blue  { color: #0ea5e9; background: rgba(14, 165, 233, 0.1); }
+
+      .sf-item > i {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+      }
+
+      .sf-item:hover > i { color: rgba(255, 255, 255, 0.4); transform: translateX(3px); }
+
+      /* BOTTOM STATS — full width at end */
+      .sf-bottom { display: flex; justify-content: center; align-items: center; gap: 48px; margin: 50px auto 0 auto; padding: 28px 0 36px 0; border-top: 1px solid rgba(255, 255, 255, 0.04); position: relative; z-index: 10; max-width: 1360px; padding-left: 60px; padding-right: 60px; }
+      .sf-stat { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+      .sf-stat-val { font-size: 18px; font-weight: 800; color: var(--accent-teal); letter-spacing: 1px; }
+      .sf-stat-lbl { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: rgba(255, 255, 255, 0.3); }
+      .sf-stat-div { width: 1px; height: 28px; background: rgba(255, 255, 255, 0.08); }
+
+      /* RESPONSIVE */
+      @media (max-width: 960px) {
+        .sf-split { grid-template-columns: 1fr; gap: 40px; }
+        .sf-left { text-align: center; align-items: center; }
+        .sf-actions { justify-content: center; }
+      }
+      @media (max-width: 560px) {
+        .sf-hero { min-height: auto; padding: 90px 0 0 0; }
+        .sf-split { padding: 0 24px; }
+        .sf-bottom { padding-left: 24px; padding-right: 24px; gap: 24px; flex-wrap: wrap; }
+        .sf-item { padding: 14px 18px; }
+        .sf-item-desc { display: none; }
+        .sf-item-tag { display: none; }
+        .sf-stat-div { display: none; }
+      }
+    </style>
     <main>
       <section class="container section-padding industry-standard">
         <div style="max-width: 780px">

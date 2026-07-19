@@ -55,33 +55,238 @@
           Commercial facility support for businesses and properties in Redwood
           City Ca.
         </p>
-        <div class="hero-labels">
-          <a class="btn-header btn-glow" href="contact.html"
-            >Request an Assessment <i class="fa-solid fa-arrow-right"></i></a
-          ><a class="h-label" href="services.html"
-            ><i class="fa-solid fa-layer-group"></i> Explore Services</a
-          >
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="num">01</div>
-            <div class="lbl">Clear scope</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">02</div>
-            <div class="lbl">Coordinated team</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">03</div>
-            <div class="lbl">Planned delivery</div>
-          </div>
+        <div class="rw-actions">
+          <a href="contact.html" class="rw-btn-primary"><span>Request an Assessment</span><i class="fa-solid fa-arrow-right"></i></a>
+          <a href="services.html" class="rw-btn-ghost"><i class="fa-solid fa-grid-2"></i><span>All Services</span></a>
         </div>
       </div>
-      <div class="scroll-cue">
-        Scroll
-        <div class="dot-track"></div>
+
+      <!-- 4 Vertical Columns -->
+      <div class="rw-columns">
+        <a href="commercial-cleaning-services.html" class="rw-col">
+          <div class="rw-col-glow rw-col-glow--teal"></div>
+          <div class="rw-col-inner">
+            <div class="rw-col-num">01</div>
+            <div class="rw-col-icon rw-col-icon--teal"><i class="fa-solid fa-broom"></i></div>
+            <h3>Commercial Cleaning</h3>
+            <p>Daily cleaning, janitorial programs and specialist hygiene for offices, lobbies and shared spaces.</p>
+            <span class="rw-col-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <a href="facility-maintenance-services.html" class="rw-col">
+          <div class="rw-col-glow rw-col-glow--green"></div>
+          <div class="rw-col-inner">
+            <div class="rw-col-num">02</div>
+            <div class="rw-col-icon rw-col-icon--green"><i class="fa-solid fa-wrench"></i></div>
+            <h3>Facility Maintenance</h3>
+            <p>Preventive maintenance, reactive repairs and multi-trade coordination across building systems.</p>
+            <span class="rw-col-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <a href="commercial-construction.html" class="rw-col">
+          <div class="rw-col-glow rw-col-glow--amber"></div>
+          <div class="rw-col-inner">
+            <div class="rw-col-num">03</div>
+            <div class="rw-col-icon rw-col-icon--amber"><i class="fa-solid fa-helmet-safety"></i></div>
+            <h3>Commercial Construction</h3>
+            <p>Tenant improvements, build-outs, renovations and construction project management.</p>
+            <span class="rw-col-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <a href="commercial-hvac-services.html" class="rw-col">
+          <div class="rw-col-glow rw-col-glow--blue"></div>
+          <div class="rw-col-inner">
+            <div class="rw-col-num">04</div>
+            <div class="rw-col-icon rw-col-icon--blue"><i class="fa-solid fa-temperature-half"></i></div>
+            <h3>HVAC Services</h3>
+            <p>System installation, seasonal maintenance, diagnostics and indoor climate management.</p>
+            <span class="rw-col-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+
+      <div class="rw-bottom">
+        <div class="rw-stat"><span class="rw-stat-val">01</span><span class="rw-stat-lbl">Clear scope</span></div>
+        <div class="rw-stat-div"></div>
+        <div class="rw-stat"><span class="rw-stat-val">02</span><span class="rw-stat-lbl">Coordinated team</span></div>
+        <div class="rw-stat-div"></div>
+        <div class="rw-stat"><span class="rw-stat-val">03</span><span class="rw-stat-lbl">Planned delivery</span></div>
       </div>
     </section>
+
+    <style>
+      .rw-hero {
+        position: relative;
+        min-height: 92vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background:
+          radial-gradient(ellipse 50% 50% at 50% 15%, rgba(0, 180, 216, 0.08) 0%, transparent 60%),
+          radial-gradient(ellipse 40% 40% at 80% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
+          #050a18;
+        padding: 110px 0 0 0;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(0, 180, 216, 0.12);
+      }
+
+      .rw-hero-bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: radial-gradient(circle 1px at 50% 50%, rgba(255,255,255,0.012) 1px, transparent 1px);
+        background-size: 28px 28px;
+      }
+
+      .rw-hero-glow { position: absolute; border-radius: 50%; filter: blur(160px); pointer-events: none; }
+      .rw-hero-glow--a { width: 500px; height: 500px; top: -120px; left: 50%; transform: translateX(-50%); background: rgba(0, 180, 216, 0.06); }
+      .rw-hero-glow--b { width: 300px; height: 300px; bottom: -60px; left: 25%; background: rgba(245, 158, 11, 0.04); }
+
+      /* TITLE */
+      .rw-top { display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; z-index: 10; max-width: 700px; margin: 0 auto; padding: 0 32px; }
+      .rw-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--accent-teal); border: 1px solid rgba(0, 180, 216, 0.25); background: rgba(0, 180, 216, 0.06); padding: 8px 18px; border-radius: 99px; }
+      .rw-title { margin-top: 24px; display: flex; flex-direction: column; align-items: center; }
+      .rw-title-white { font-size: clamp(30px, 4vw, 48px); font-weight: 800; color: white; line-height: 1.1; letter-spacing: -1.5px; }
+      .rw-title-teal { font-size: clamp(34px, 4.5vw, 56px); font-weight: 800; color: var(--accent-teal); line-height: 1.05; letter-spacing: -2px; margin-top: 4px; }
+      .rw-desc { font-size: 16px; line-height: 1.75; color: #94a3b8; max-width: 480px; margin-top: 22px; }
+      .rw-actions { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; justify-content: center; }
+
+      .rw-btn-primary { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 10px; font-weight: 700; font-size: 14px; color: #050a18; background: var(--accent-teal); text-decoration: none; transition: all 0.3s ease; }
+      .rw-btn-primary:hover { background: #22d3ee; transform: translateY(-2px); }
+      .rw-btn-ghost { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 10px; font-weight: 600; font-size: 14px; color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.02); text-decoration: none; transition: all 0.3s ease; }
+      .rw-btn-ghost:hover { border-color: rgba(0,180,216,0.4); color: white; background: rgba(0,180,216,0.05); }
+
+      /* ══════════════════════════════════════
+         4 VERTICAL COLUMNS
+         ══════════════════════════════════════ */
+      .rw-columns {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        max-width: 1300px;
+        margin: 50px auto 0 auto;
+        padding: 0 60px;
+        position: relative;
+        z-index: 10;
+      }
+
+      .rw-col {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.015);
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        border-radius: 14px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+      }
+
+      .rw-col:hover {
+        background: rgba(255, 255, 255, 0.035);
+        border-color: rgba(255, 255, 255, 0.1);
+        transform: translateY(-4px);
+      }
+
+      .rw-col-glow {
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.25;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+      }
+
+      .rw-col:hover .rw-col-glow { opacity: 0.5; }
+
+      .rw-col-glow--teal  { background: var(--accent-teal); }
+      .rw-col-glow--green { background: #22c55e; }
+      .rw-col-glow--amber { background: #f59e0b; }
+      .rw-col-glow--blue  { background: #0ea5e9; }
+
+      .rw-col-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 32px 24px;
+        position: relative;
+        z-index: 1;
+        flex: 1;
+      }
+
+      .rw-col-num {
+        font-size: 11px;
+        font-weight: 800;
+        color: rgba(255, 255, 255, 0.12);
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+      }
+
+      .rw-col-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        margin-bottom: 20px;
+        transition: all 0.35s ease;
+      }
+
+      .rw-col-icon--teal  { background: rgba(0, 180, 216, 0.1); color: var(--accent-teal); border: 1px solid rgba(0, 180, 216, 0.2); }
+      .rw-col-icon--green { background: rgba(34, 197, 94, 0.1); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.2); }
+      .rw-col-icon--amber { background: rgba(245, 158, 11, 0.1); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.2); }
+      .rw-col-icon--blue  { background: rgba(14, 165, 233, 0.1); color: #0ea5e9; border: 1px solid rgba(14, 165, 233, 0.2); }
+
+      .rw-col:hover .rw-col-icon { transform: scale(1.12); }
+      .rw-col:hover .rw-col-icon--teal  { box-shadow: 0 0 24px rgba(0, 180, 216, 0.4); }
+      .rw-col:hover .rw-col-icon--green { box-shadow: 0 0 24px rgba(34, 197, 94, 0.4); }
+      .rw-col:hover .rw-col-icon--amber { box-shadow: 0 0 24px rgba(245, 158, 11, 0.4); }
+      .rw-col:hover .rw-col-icon--blue  { box-shadow: 0 0 24px rgba(14, 165, 233, 0.4); }
+
+      .rw-col h3 { font-size: 16px; font-weight: 700; color: white; margin-bottom: 10px; line-height: 1.3; }
+      .rw-col p { font-size: 13px; line-height: 1.65; color: rgba(255, 255, 255, 0.4); flex: 1; }
+
+      .rw-col-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.2);
+        margin-top: 20px;
+        transition: all 0.3s ease;
+      }
+      .rw-col:hover .rw-col-link { color: rgba(255, 255, 255, 0.6); }
+
+      /* BOTTOM STATS */
+      .rw-bottom { display: flex; justify-content: center; align-items: center; gap: 48px; margin: 50px auto 0 auto; padding: 28px 0 36px 0; border-top: 1px solid rgba(255, 255, 255, 0.04); position: relative; z-index: 10; }
+      .rw-stat { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+      .rw-stat-val { font-size: 18px; font-weight: 800; color: var(--accent-teal); letter-spacing: 1px; }
+      .rw-stat-lbl { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: rgba(255, 255, 255, 0.3); }
+      .rw-stat-div { width: 1px; height: 28px; background: rgba(255, 255, 255, 0.08); }
+
+      /* RESPONSIVE */
+      @media (max-width: 960px) {
+        .rw-columns { grid-template-columns: 1fr 1fr; padding: 0 32px; gap: 12px; }
+      }
+      @media (max-width: 560px) {
+        .rw-hero { min-height: auto; padding: 90px 0 0 0; }
+        .rw-columns { grid-template-columns: 1fr; padding: 0 20px; }
+        .rw-bottom { gap: 24px; flex-wrap: wrap; }
+        .rw-stat-div { display: none; }
+      }
+    </style>
     <main>
       <section class="container section-padding industry-standard">
         <div style="max-width: 780px">
