@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RCC-BGM | Complete Facility Solutions</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -27,7 +27,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
@@ -1733,6 +1733,32 @@
         footer .logo, footer .f-col h4, footer .footer-contact-link { color: #f6d6e4 !important; }
         footer .f-col a, footer .f-col p, footer .footer-summary { color: #eee7f7 !important; }
         footer a:hover { color: #f8df9a !important; }
+        body { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 500; line-height: 1.65; font-kerning: normal; font-feature-settings: 'kern' 1, 'liga' 1, 'cv11' 1; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+        h1, h2, h3, h4, h5, h6 { color: var(--text-dark); line-height: 1.2; letter-spacing: -.025em; font-weight: 750; font-feature-settings: 'kern' 1, 'liga' 1, 'ss01' 1; text-wrap: balance; }
+        h1 { font-size: clamp(2rem, 3.2vw, 3.4rem); }
+        h2 { font-size: clamp(1.65rem, 2.45vw, 2.45rem); }
+        h3 { font-size: clamp(1.08rem, 1.35vw, 1.25rem); line-height: 1.4; }
+        p, li, label, input, textarea, select { color: var(--text-slate); font-size: clamp(.97rem, 1.05vw, 1.06rem); line-height: 1.75; letter-spacing: .002em; }
+        p + p { margin-top: 1rem; }
+        button, .btn-header, .btn-glow, .cta-form button { font-size: .92rem; font-weight: 750; letter-spacing: .01em; line-height: 1.25; }
+        .nav-links a, .f-col a, .footer-contact-link { font-weight: 650; letter-spacing: .005em; }
+        .hero-tag, .eyebrow, .section-tag, .hero-badge { font-weight: 750; letter-spacing: .07em; text-transform: uppercase; }
+        input, textarea, select { color: var(--text-dark); font-weight: 500; }
+        input::placeholder, textarea::placeholder { color: #837a92; opacity: 1; }
+        .hero-content p { color: #f7f2fc !important; font-weight: 500; text-shadow: 0 2px 14px rgba(34,23,55,.3); }
+        .hero-content h1, .hero-content h2 { color: #fff; text-shadow: 0 2px 14px rgba(34,23,55,.3); }
+        .hero h1, .hero-content h1, [class*="hero"] h1 { font-size: clamp(2.15rem, 3vw, 3.35rem); line-height: 1.18; max-width: 920px; }
+        main, main > section, .container, [class*="grid"] > *, [class*="flex"] > *, .f-grid > * { min-width: 0; }
+        img, video, iframe, svg, canvas { max-width: 100%; }
+        img, video { height: auto; }
+        .hero { min-height: clamp(540px, 68vh, 720px) !important; padding: 126px 0 78px !important; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .hero-content { width: min(100% - 40px, 900px); margin-left: auto; margin-right: auto; }
+        .hero-content > p, .hero-intro, .hero-subcopy { max-width: 720px; margin-left: auto; margin-right: auto; }
+        .section-padding { padding-block: clamp(3.75rem, 6vw, 6.5rem); }
+        .services-grid, .process-grid, .tech-grid, .industry-grid, .why-grid, .faq-grid { gap: clamp(18px, 2.2vw, 32px) !important; align-items: stretch; }
+        .services-grid > *, .process-grid > *, .tech-grid > *, .industry-grid > *, .why-grid > *, .faq-grid > * { min-width: 0; height: 100%; }
+        section > :is(.section-heading, .section-head, .section-intro, .section-lead), section > h2, section > h3 { max-width: 780px; margin-left: auto; margin-right: auto; text-align: center; }
+        @media (max-width: 760px) { .hero { min-height: 540px !important; padding: 110px 0 64px !important; } .hero-content { width: min(100% - 32px, 680px); } .hero-stats { gap: 12px; } .hero-stat { min-width: min(100%, 130px); } }
         .scroll-reveal { opacity: 0; transform: translateY(18px); }
         .scroll-reveal.is-visible { animation: rise-in .55s cubic-bezier(.22,.8,.32,1) var(--reveal-delay,0ms) both; }
         @keyframes rise-in { to { opacity: 1; transform: translateY(0); } }

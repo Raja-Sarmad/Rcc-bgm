@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
 :root {
   --bg-main: #fcf9ff;
   --bg-deep: #302447;
@@ -13,7 +15,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -6715,4 +6717,202 @@ main>section:last-of-type>div {
 
 @keyframes rise-in {
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Readability layer: consistent, comfortable type across all page templates. */
+body {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.65;
+  font-family: "Poppins", sans-serif;
+  font-kerning: normal;
+  font-feature-settings: "kern" 1, "liga" 1, "cv11" 1;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-dark);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  font-weight: 750;
+  font-feature-settings: "kern" 1, "liga" 1, "ss01" 1;
+  text-wrap: balance;
+}
+
+h1 { font-size: clamp(2rem, 3.2vw, 3.4rem); }
+h2 { font-size: clamp(1.65rem, 2.45vw, 2.45rem); }
+h3 { font-size: clamp(1.08rem, 1.35vw, 1.25rem); line-height: 1.4; }
+
+p, li, dt, dd, label, input, textarea, select {
+  color: var(--text-slate);
+  font-size: clamp(0.97rem, 1.05vw, 1.06rem);
+  line-height: 1.75;
+  letter-spacing: 0.002em;
+}
+
+p + p { margin-top: 1rem; }
+
+a { text-underline-offset: 0.18em; }
+button, .btn-header, .btn-glow, .cta-form button, input[type="submit"] {
+  font-size: 0.92rem;
+  font-weight: 750;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+}
+
+.nav-links a, .f-col a, .footer-contact-link { font-weight: 650; letter-spacing: 0.005em; }
+.hero-tag, .eyebrow, .section-tag, .hero-badge { font-weight: 750; letter-spacing: 0.07em; text-transform: uppercase; }
+
+input, textarea, select {
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+input::placeholder, textarea::placeholder { color: #837a92; opacity: 1; }
+
+.hero-content p, .hero-content h1, .hero-content h2,
+.page-hero p, .page-hero h1, .page-hero h2,
+.hero p, .hero h1, .hero h2 { text-shadow: 0 2px 14px rgba(34, 23, 55, 0.3); }
+
+.hero-content p, .page-hero p, .hero p { color: #f7f2fc !important; font-weight: 500; }
+.hero-content h1, .hero-content h2, .page-hero h1, .page-hero h2, .hero h1, .hero h2 { color: #ffffff; }
+.hero h1, .hero-content h1, [class*="hero"] h1 { font-size: clamp(2.15rem, 3vw, 3.35rem); line-height: 1.18; max-width: 920px; }
+
+@media (max-width: 600px) {
+  body { font-size: 15px; }
+  p, li, dt, dd, label, input, textarea, select { line-height: 1.68; }
+  .container { padding-left: 20px; padding-right: 20px; }
+}
+
+/* Cross-page layout normalization. */
+body, body :not(.fa):not(.fas):not(.far):not(.fab):not(.fa-solid):not(.fa-regular):not(.fa-brands) {
+  font-family: "Poppins", sans-serif !important;
+}
+
+main, main > section, .container, [class*="grid"] > *, [class*="flex"] > *, .f-grid > * { min-width: 0; }
+img, video, iframe, svg, canvas { max-width: 100%; }
+img, video { height: auto; }
+
+.hero, body > section[class*="hero"], body > header[class*="hero"], main > section[class*="hero"], main > header[class*="hero"] {
+  min-height: clamp(540px, 68vh, 720px) !important;
+  padding: 126px 0 78px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-content, [class$="-hero"] > .container, [class$="-hero"] > .hero-content,
+[class$="-hero"] .hero-content {
+  width: min(100% - 40px, 900px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-content > p, .hero-intro, .hero-subcopy, [class$="-hero"] p {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main > section:not([class*="hero"]) { padding-block: clamp(3.75rem, 6vw, 6.5rem); }
+.section-padding { padding-block: clamp(3.75rem, 6vw, 6.5rem); }
+
+.about-hero-grid, .services-hero-grid, .ccs-hero-grid, .cc-hero-grid, .hvac-hero-grid,
+.services-grid, .process-grid, .tech-grid, .about-team-grid, .about-staggered-grid,
+.about-faq-grid, .modern-process-grid, .redesign-grid, .quality-grid, .cleaning-scope {
+  gap: clamp(18px, 2.2vw, 32px) !important;
+  align-items: stretch;
+}
+
+.services-grid > *, .process-grid > *, .tech-grid > *, .about-team-grid > *,
+.about-staggered-grid > *, .about-faq-grid > *, .modern-process-grid > *,
+.redesign-grid > *, .quality-grid > *, .cleaning-scope > * { min-width: 0; height: 100%; }
+
+main > section > :is(.section-heading, .section-head, .section-intro, .section-lead),
+main > section > h2, main > section > h3 {
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.about-hero-left, .services-hero-left, .ccs-hero-left, .cc-hero-left, .hvac-hero-left {
+  text-align: center;
+}
+
+.about-hero-actions, .services-hero-actions, .ccs-hero-actions, .cc-hero-actions, .hvac-hero-actions {
+  justify-content: center;
+}
+
+@media (max-width: 760px) {
+  .hero, body > section[class*="hero"], body > header[class*="hero"], main > section[class*="hero"], main > header[class*="hero"] {
+    min-height: 540px !important;
+    padding: 110px 0 64px !important;
+  }
+  .hero-content, [class$="-hero"] > .container, [class$="-hero"] > .hero-content,
+  [class$="-hero"] .hero-content { width: min(100% - 32px, 680px); }
+  .hero-stats { gap: 12px; }
+  .hero-stat { min-width: min(100%, 130px); }
+  .about-hero-grid, .services-hero-grid, .ccs-hero-grid, .cc-hero-grid, .hvac-hero-grid { grid-template-columns: 1fr !important; }
+}
+
+/* Compact hero correction for the main directory pages. */
+.services-hero, .about-hero, .ind-hero, .loc-hero, .why-hero {
+  height: 680px !important;
+  min-height: 620px !important;
+  padding: 96px 0 60px !important;
+}
+
+.services-hero > .container, .about-hero > .container, .ind-hero > .container,
+.loc-hero > .container, .why-hero > .container {
+  width: min(100% - 64px, 1240px) !important;
+}
+
+.services-hero-left h1, .about-hero-left h1, .ind-hero-header h1,
+.loc-hero-left h1, .why-hero-left h1 {
+  font-size: clamp(2.05rem, 2.65vw, 2.7rem) !important;
+  line-height: 1.16 !important;
+  letter-spacing: -0.035em !important;
+  margin-top: 12px !important;
+}
+
+.services-hero-left p, .about-hero-left p, .ind-hero-header p,
+.loc-hero-left p, .why-hero-left p {
+  font-size: 0.97rem !important;
+  line-height: 1.65 !important;
+  margin-top: 14px !important;
+}
+
+.services-hero-left p, .about-hero-left p, .loc-hero-left p, .why-hero-left p,
+.ccs-hero-left p, .cc-hero-left p, .hvac-hero-left p {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left !important;
+}
+
+.services-hero-actions, .about-hero-actions, .loc-hero-actions, .why-hero-actions,
+.ccs-hero-actions, .cc-hero-actions, .hvac-hero-actions {
+  justify-content: flex-start !important;
+}
+
+.services-hero-grid, .about-hero-grid, .loc-hero-grid, .why-hero-grid {
+  gap: clamp(28px, 3vw, 46px) !important;
+}
+
+.ind-hero-header { max-width: 740px !important; margin-bottom: 28px !important; }
+.ind-accordion { height: 260px !important; margin-top: 12px !important; }
+
+@media (max-width: 760px) {
+  .services-hero, .about-hero, .ind-hero, .loc-hero, .why-hero {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 100px 0 58px !important;
+  }
+  .services-hero > .container, .about-hero > .container, .ind-hero > .container,
+  .loc-hero > .container, .why-hero > .container { width: min(100% - 32px, 640px) !important; }
+  .services-hero-left h1, .about-hero-left h1, .ind-hero-header h1,
+  .loc-hero-left h1, .why-hero-left h1 { font-size: clamp(2rem, 8.5vw, 2.45rem) !important; }
+  .ind-accordion { height: 230px !important; }
 }
