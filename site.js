@@ -1,4 +1,32 @@
 (() => {
+  // Normalize legacy page-level styles to the shared green–gold palette. Several
+  // older pages contain local <style> blocks and inline styles, so variables alone
+  // cannot keep the rendered experience visually consistent.
+  const legacyPalette = [
+    [/#e8714a/gi, "#8063c7"],
+    [/#c4813a/gi, "#d96f9f"],
+    [/#f09060/gi, "#b79ae4"],
+    [/#f4b090/gi, "#f4d47f"],
+    [/#1e1714/gi, "#302447"],
+    [/#1e1a14/gi, "#3b2d55"],
+    [/#181310/gi, "#392b53"],
+    [/#d4c0ac/gi, "#eee7f7"],
+    [/#9e8b7e/gi, "#9b8eae"],
+    [/#fdf6ef/gi, "#fcf9ff"],
+    [/rgba\(\s*232\s*,\s*113\s*,\s*74\s*,/gi, "rgba(128, 99, 199,"],
+    [/rgba\(\s*196\s*,\s*129\s*,\s*58\s*,/gi, "rgba(217, 111, 159,"],
+    [/rgba\(\s*30\s*,\s*23\s*,\s*20\s*,/gi, "rgba(48, 36, 71,"],
+    [/rgba\(\s*212\s*,\s*192\s*,\s*172\s*,/gi, "rgba(238, 231, 247,"]
+  ];
+  const applyPalette = (value) => legacyPalette.reduce(
+    (updated, [pattern, replacement]) => updated.replace(pattern, replacement), value
+  );
+  document.querySelectorAll("style, [style], [stop-color]").forEach((element) => {
+    if (element.tagName === "STYLE") element.textContent = applyPalette(element.textContent);
+    if (element.hasAttribute("style")) element.setAttribute("style", applyPalette(element.getAttribute("style")));
+    if (element.hasAttribute("stop-color")) element.setAttribute("stop-color", applyPalette(element.getAttribute("stop-color")));
+  });
+
   const currentPage =
     window.location.pathname.split("/").pop().toLowerCase() || "index.html";
 
@@ -255,6 +283,26 @@
     }, { threshold: 0.1 });
 
     observer.observe(statsContainer);
+  }
+
+  // Reveal content progressively, while keeping the experience motion-safe.
+  if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const revealTargets = document.querySelectorAll(
+      ".service-card, .industry-card, .location-card, .feature-card, .why-card, .difference-card, .process-card, .contact-card"
+    );
+    revealTargets.forEach((element, index) => {
+      element.classList.add("scroll-reveal");
+      element.style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 70}ms`);
+    });
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealTargets.forEach((element) => revealObserver.observe(element));
   }
 })();
 
