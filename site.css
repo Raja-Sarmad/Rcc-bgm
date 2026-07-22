@@ -60,7 +60,7 @@ p {
 
 /* Sections Gaps - tightened */
 .section-padding {
-  padding: 44px 0;
+  padding: 20px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -1431,8 +1431,8 @@ footer a:hover {
 }
 
 .page-company main>section:nth-child(2) {
-  background: linear-gradient(135deg, #1E1714, #2C2018);
-  color: #FEF0E8;
+  background: var(--bg-deep);
+  color: #fff;
 }
 
 .page-company main>section:nth-child(2) h2 {
@@ -1445,7 +1445,7 @@ footer a:hover {
 }
 
 .page-company main>section:nth-child(3) {
-  background: #FAF0E6;
+  background: var(--bg-main);
 }
 
 .page-contact main>section:first-child {
@@ -1604,7 +1604,7 @@ footer a:hover {
   .page-location,
   .page-company,
   .page-contact) main>section:nth-child(4) {
-  background: linear-gradient(180deg, #F9F0E4, #fff);
+  background: var(--bg-main);
 }
 
 :is(.page-service,
@@ -1632,7 +1632,7 @@ footer a:hover {
   .page-location,
   .page-company,
   .page-contact) main>section:last-child {
-  background: #1E1714;
+  background: linear-gradient(135deg, #302447 0%, #4a2d6b 50%, #302447 100%);
   color: white;
   margin-top: 0;
   margin-bottom: 0;
@@ -1693,8 +1693,9 @@ footer a:hover {
 
 .page-company .hero-overlay {
   background:
-    linear-gradient(115deg, rgba(30, 23, 20, 0.96), rgba(44, 32, 24, 0.78)),
-    radial-gradient(circle at 80% 25%, rgba(232, 113, 74, 0.22), transparent 42%);
+    radial-gradient(ellipse at 20% 40%, rgba(140, 112, 209, 0.45) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 60%, rgba(217, 111, 159, 0.25) 0%, transparent 50%),
+    linear-gradient(160deg, rgba(48, 36, 71, 0.95) 0%, rgba(72, 48, 108, 0.85) 100%);
 }
 
 .page-service .hero-overlay {
@@ -6816,8 +6817,8 @@ img, video { height: auto; }
   margin-right: auto;
 }
 
-main > section:not([class*="hero"]) { padding-block: clamp(3.75rem, 6vw, 6.5rem); }
-.section-padding { padding-block: clamp(3.75rem, 6vw, 6.5rem); }
+main > section:not([class*="hero"]) { padding-block: clamp(1.5rem, 2.5vw, 3rem); }
+.section-padding { padding-block: clamp(1.5rem, 2.5vw, 3rem); }
 
 .about-hero-grid, .services-hero-grid, .ccs-hero-grid, .cc-hero-grid, .hvac-hero-grid,
 .services-grid, .process-grid, .tech-grid, .about-team-grid, .about-staggered-grid,
