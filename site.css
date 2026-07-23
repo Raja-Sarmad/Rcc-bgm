@@ -1425,24 +1425,9 @@ footer a:hover {
   background: white;
 }
 
-.page-company main>section:first-child>div:first-child {
-  border-left: 6px solid var(--accent-teal);
-  padding-left: 34px;
-}
 
-.page-company main>section:nth-child(2) {
-  background: var(--bg-deep);
-  color: #fff;
-}
 
-.page-company main>section:nth-child(2) h2 {
-  color: white;
-}
 
-.page-company main>section:nth-child(2) .step-card {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: var(--accent-teal);
-}
 
 .page-company main>section:nth-child(3) {
   background: var(--bg-main);
@@ -1489,7 +1474,7 @@ footer a:hover {
   right: -150px;
   top: -110px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(232, 113, 74, 0.16), transparent 70%);
+  background: radial-gradient(circle, rgba(128, 99, 199, 0.08), transparent 70%);
   pointer-events: none;
 }
 

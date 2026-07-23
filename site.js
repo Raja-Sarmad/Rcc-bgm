@@ -217,7 +217,10 @@
     { id: "stat-support", target: 24, suffix: "/7" },
     { id: "service-stat-1", target: 1, suffix: "", pad: true },
     { id: "service-stat-2", target: 2, suffix: "", pad: true },
-    { id: "service-stat-3", target: 3, suffix: "", pad: true }
+    { id: "service-stat-3", target: 3, suffix: "", pad: true },
+    { id: "loc-stat-1", target: 32, suffix: "" },
+    { id: "loc-stat-2", target: 6, suffix: "" },
+    { id: "loc-stat-3", target: 25, suffix: "" }
   ];
 
   const animateStats = () => {
@@ -260,7 +263,10 @@
       { id: "stat-support", initial: "0/7" },
       { id: "service-stat-1", initial: "00" },
       { id: "service-stat-2", initial: "00" },
-      { id: "service-stat-3", initial: "00" }
+      { id: "service-stat-3", initial: "00" },
+      { id: "loc-stat-1", initial: "0" },
+      { id: "loc-stat-2", initial: "0" },
+      { id: "loc-stat-3", initial: "0" }
     ];
     defaultStats.forEach(stat => {
       const el = document.getElementById(stat.id);
@@ -270,8 +276,8 @@
     });
   };
 
-  const statsContainer = document.querySelector(".hero-stats");
-  if (statsContainer) {
+  const statsContainers = document.querySelectorAll(".hero-stats, .loc-stats-row");
+  if (statsContainers.length > 0) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -282,13 +288,13 @@
       });
     }, { threshold: 0.1 });
 
-    observer.observe(statsContainer);
+    statsContainers.forEach(container => observer.observe(container));
   }
 
   // Reveal content progressively, while keeping the experience motion-safe.
   if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     const revealTargets = document.querySelectorAll(
-      ".service-card, .industry-card, .location-card, .feature-card, .why-card, .difference-card, .process-card, .contact-card"
+      ".scroll-reveal, .service-card, .industry-card, .location-card, .feature-card, .why-card, .difference-card, .process-card, .contact-card"
     );
     revealTargets.forEach((element, index) => {
       element.classList.add("scroll-reveal");

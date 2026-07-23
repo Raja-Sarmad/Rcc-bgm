@@ -9,19 +9,20 @@
     content="Discover how RCC-BGM connects commercial cleaning, janitorial, maintenance, HVAC, MEP and construction through two coordinated companies." />
   <link rel="stylesheet" href="site.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <style>
     /* ── Why RCC-BGM Page Styles ── */
 
     /* Hero */
     .why-hero {
       position: relative;
-      background:
-        radial-gradient(circle at 10% 15%, rgba(232, 113, 74, 0.12) 0%, transparent 50%),
-        radial-gradient(circle at 90% 85%, rgba(196, 129, 58, 0.09) 0%, transparent 50%),
-        #181310;
-      padding: 130px 0 80px;
+      background: linear-gradient(135deg, rgba(128, 99, 199, 0.04) 0%, rgba(217, 111, 159, 0.04) 50%, rgba(128, 99, 199, 0.04) 100%), #ffffff;
+      padding: 140px 0 100px;
       overflow: hidden;
-      border-bottom: 1px solid rgba(232, 113, 74, 0.18);
+      border-bottom: 1px solid rgba(128, 99, 199, 0.1);
     }
 
     .why-hero::before {
@@ -29,8 +30,8 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255, 255, 255, 0.006) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.006) 1px, transparent 1px);
+        linear-gradient(rgba(128, 99, 199, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(128, 99, 199, 0.05) 1px, transparent 1px);
       background-size: 36px 36px;
       pointer-events: none;
     }
@@ -39,21 +40,21 @@
       position: relative;
       z-index: 2;
       text-align: center;
-      max-width: 780px;
+      max-width: 880px;
       margin: 0 auto;
     }
 
     .why-hero-content h1 {
       font-size: clamp(34px, 5vw, 54px);
-      font-weight: 800;
-      color: white;
-      line-height: 1.15;
+      font-weight: 600;
+      color: var(--bg-deep);
+      line-height: 1.2;
       letter-spacing: -1.2px;
       margin-top: 18px;
     }
 
     .why-hero-content h1 .gradient-text {
-      background: linear-gradient(135deg, #E8714A 0%, #C4813A 100%);
+      background: var(--gradient);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -62,9 +63,9 @@
     .why-hero-content p {
       font-size: 16.5px;
       line-height: 1.75;
-      color: #D4C0AC;
+      color: var(--text-slate);
       margin-top: 20px;
-      max-width: 640px;
+      max-width: 680px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -73,29 +74,42 @@
       display: flex;
       gap: 16px;
       justify-content: center;
-      margin-top: 32px;
+      align-items: center;
+      margin-top: 36px;
+      margin-left: 140px;
+      margin-bottom: -10px;
       flex-wrap: wrap;
     }
 
-    .btn-outline-hero {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 12px;
-      color: white;
-      font-weight: 600;
-      padding: 12px 24px;
-      text-decoration: none;
+    .why-hero-actions > a {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      font-size: 14.5px;
+      justify-content: center;
+      height: 48px;
+      padding: 0 28px !important;
+      border-radius: 99px;
+      font-weight: 700;
+      text-decoration: none;
       transition: all 0.35s ease;
+      font-size: 14.5px;
+      box-sizing: border-box;
+      gap: 8px;
+      min-width: 290px;
+    }
+
+    .btn-outline-hero {
+      background: #ffffff;
+      border: 1px solid rgba(128, 99, 199, 0.2);
+      color: var(--bg-deep);
+      box-shadow: 0 4px 10px rgba(48, 36, 71, 0.02);
     }
 
     .btn-outline-hero:hover {
-      background: rgba(255, 255, 255, 0.08);
+      background: #fcf9ff;
       border-color: var(--accent-teal);
+      color: var(--accent-teal);
       transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(48, 36, 71, 0.05);
     }
 
     /* Value Proposition Intro */
@@ -128,52 +142,10 @@
       transition: transform 0.4s cubic-bezier(.165, .84, .44, 1), box-shadow 0.4s ease, border-color 0.4s ease;
     }
 
-    .diff-card::before {
-      content: "";
-      position: absolute;
-      top: -50px;
-      right: -50px;
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(232, 113, 74, 0.08) 0%, transparent 70%);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    .diff-card::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 4px;
-      width: 0;
-      background: var(--gradient);
-      border-radius: 0 0 22px 22px;
-      transition: width 0.4s ease;
-    }
-
     .diff-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 28px 50px -18px rgba(196, 129, 58, 0.22);
       border-color: rgba(232, 113, 74, 0.3);
-    }
-
-    .diff-card:hover::before {
-      opacity: 1;
-    }
-
-    .diff-card:hover::after {
-      width: 100%;
-    }
-
-    .diff-num {
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--accent-teal);
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-      display: block;
     }
 
     .diff-icon {
@@ -356,26 +328,10 @@
       overflow: hidden;
     }
 
-    .scenario-card::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 3px;
-      width: 0;
-      background: var(--gradient);
-      border-radius: 0 0 20px 20px;
-      transition: width 0.4s ease;
-    }
-
     .scenario-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 20px 40px -12px rgba(196, 129, 58, 0.18);
       border-color: rgba(232, 113, 74, 0.25);
-    }
-
-    .scenario-card:hover::after {
-      width: 100%;
     }
 
     .scenario-icon {
@@ -418,7 +374,7 @@
       }
     }
 
-    /* Engagement Process - dark section wrapper */
+    /* Engagement Process */
     .engage-section {
       background: var(--bg-deep);
       border-radius: 28px;
@@ -475,13 +431,6 @@
       color: var(--accent-teal);
       opacity: 0.8;
       letter-spacing: -1px;
-      transition: all 0.35s ease;
-    }
-
-    .engage-card:hover .e-num {
-      opacity: 1;
-      color: #fff;
-      text-shadow: 0 0 12px rgba(232, 113, 74, 0.5);
     }
 
     .engage-card .e-icon {
@@ -495,14 +444,12 @@
       justify-content: center;
       color: var(--accent-teal);
       font-size: 18px;
-      transition: all 0.35s ease;
     }
 
     .engage-card:hover .e-icon {
       background: var(--gradient);
       color: #fff;
       border-color: transparent;
-      box-shadow: 0 6px 16px -4px rgba(232, 113, 74, 0.5);
     }
 
     .engage-card h4 {
@@ -523,59 +470,111 @@
       .engage-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-
-      .engage-section {
-        padding: 44px 24px;
-      }
     }
 
     @media (max-width: 600px) {
       .engage-grid {
         grid-template-columns: 1fr;
       }
+    }
 
-      .engage-section {
-        padding: 36px 18px;
-        border-radius: 20px;
+    /* ── REDESIGNED: Trust & Accountability Wide Cards ── */
+    .trust-list {
+      max-width: 920px;
+      margin: 40px auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .trust-wide-card {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-radius: 24px;
+      padding: 30px 40px;
+      box-shadow: 0 10px 25px -15px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s cubic-bezier(.165, .84, .44, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .trust-wide-card:hover {
+      transform: translateX(12px);
+      border-color: var(--accent-teal);
+      box-shadow: 0 20px 45px -18px rgba(196, 129, 58, 0.15);
+    }
+
+    .trust-wide-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background: var(--gradient);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .trust-wide-card:hover::before {
+      opacity: 1;
+    }
+
+    .trust-icon-box {
+      width: 64px;
+      height: 64px;
+      background: rgba(128, 99, 199, 0.06);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 24px;
+      color: var(--accent-teal);
+      transition: all 0.3s ease;
+    }
+
+    .trust-wide-card:hover .trust-icon-box {
+      background: var(--gradient);
+      color: #fff;
+      transform: scale(1.1) rotate(-5deg);
+    }
+
+    .trust-info h4 {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--bg-deep);
+      margin-bottom: 6px;
+    }
+
+    .trust-info p {
+      font-size: 14.5px;
+      color: var(--text-slate);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .trust-wide-card {
+        padding: 24px;
+        gap: 20px;
+      }
+      .trust-icon-box {
+        width: 54px;
+        height: 54px;
+        font-size: 20px;
       }
     }
 
-    /* Trust Section */
-    .trust-list {
-      max-width: 760px;
-      margin: 28px auto 0;
-    }
-
-    .trust-item {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      padding: 16px 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    }
-
-    .trust-item:last-child {
-      border-bottom: none;
-    }
-
-    .trust-item i {
-      color: var(--accent-teal);
-      font-size: 18px;
-      margin-top: 3px;
-      flex-shrink: 0;
-    }
-
-    .trust-item h4 {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 4px;
-    }
-
-    .trust-item p {
-      font-size: 14.5px;
-      color: var(--text-slate);
-      line-height: 1.6;
+    @media (max-width: 600px) {
+      .trust-wide-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 32px 24px;
+      }
     }
 
     /* FAQ Section */
@@ -586,9 +585,7 @@
 
     /* CTA Box */
     .why-cta-box {
-      background:
-        radial-gradient(120% 120% at 0% 0%, rgba(255, 255, 255, 0.03) 0%, rgba(232, 113, 74, 0.03) 100%),
-        #181310;
+      background: radial-gradient(120% 120% at 0% 0%, rgba(255, 255, 255, 0.03) 0%, rgba(232, 113, 74, 0.03) 100%), #181310;
       border: 1px solid rgba(232, 113, 74, 0.25);
       box-shadow: 0 12px 30px rgba(232, 113, 74, 0.08);
       border-radius: 24px;
@@ -607,12 +604,6 @@
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
-    }
-
-    @media (max-width: 600px) {
-      .why-cta-box {
-        padding: 36px 22px;
-      }
     }
   </style>
 </head>
@@ -637,7 +628,7 @@
     <div class="container">
       <div class="why-hero-content scroll-reveal">
         <span class="hero-tag"
-          style="background: rgba(232, 113, 74, 0.08); border: 1px solid rgba(232, 113, 74, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;">
+          style="background: rgba(128, 99, 199, 0.1); border: 1px solid rgba(128, 99, 199, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;">
           <i class="fa-solid fa-handshake"></i> INTEGRATED COMMERCIAL FACILITY SOLUTIONS
         </span>
         <h1>Two Companies. One Integrated<br><span class="gradient-text">Commercial Facility Solution.</span></h1>
@@ -663,11 +654,11 @@
     <section class="container section-padding">
       <div class="value-intro scroll-reveal">
         <span class="hero-tag"
-          style="color: var(--accent-blue); border-color: rgba(196, 129, 58, 0.3); background: rgba(196, 129, 58, 0.06);">
+          style="color: var(--accent-teal); border-color: rgba(128, 99, 199, 0.3); background: rgba(128, 99, 199, 0.1);">
           The RCC-BGM Difference
         </span>
         <h2>Why commercial property teams choose a coordinated approach</h2>
-        <p>
+        <p style="color: var(--text-slate);">
           Commercial buildings rarely have isolated needs. A tenant improvement may
           affect HVAC, power, plumbing, carpentry, painting and final cleaning. A
           janitorial program may reveal repair or maintenance needs. An equipment
@@ -719,41 +710,35 @@
       </div>
       <div class="diff-grid">
         <div class="diff-card scroll-reveal">
-          <span class="diff-num">01</span>
           <div class="diff-icon"><i class="fa-solid fa-arrow-right-to-bracket"></i></div>
           <h3>Coordinated entry point</h3>
           <p>The customer can begin with the building and required outcome rather than guessing which internal team
             should receive the request.</p>
         </div>
         <div class="diff-card scroll-reveal">
-          <span class="diff-num">02</span>
           <div class="diff-icon"><i class="fa-solid fa-user-gear"></i></div>
           <h3>Specialized execution</h3>
           <p>The work can remain with the appropriate construction, maintenance, HVAC, cleaning or specialty capability.
           </p>
         </div>
         <div class="diff-card scroll-reveal">
-          <span class="diff-num">03</span>
           <div class="diff-icon"><i class="fa-solid fa-people-arrows"></i></div>
           <h3>Fewer disconnected handoffs</h3>
           <p>Related work can be identified before walls are closed, finishes are completed or recurring service begins.
           </p>
         </div>
         <div class="diff-card scroll-reveal">
-          <span class="diff-num">04</span>
           <div class="diff-icon"><i class="fa-solid fa-building-lock"></i></div>
           <h3>Occupied-property planning</h3>
           <p>Access, service windows, temporary closures and occupant communication can be considered across the
             project.</p>
         </div>
         <div class="diff-card scroll-reveal">
-          <span class="diff-num">05</span>
           <div class="diff-icon"><i class="fa-solid fa-list-check"></i></div>
           <h3>Clearer scope control</h3>
           <p>Inclusions, exclusions, customer responsibilities, allowances and change procedures can be documented.</p>
         </div>
         <div class="diff-card scroll-reveal">
-          <span class="diff-num">06</span>
           <div class="diff-icon"><i class="fa-solid fa-binoculars"></i></div>
           <h3>Long-term facility view</h3>
           <p>The relationship can support immediate work while also identifying future maintenance or improvement
@@ -787,8 +772,6 @@
             <li>Commercial carpentry, painting and landscaping</li>
             <li>Facility upgrades and modernization projects</li>
           </ul>
-          <a href="commercial-construction.html" class="s-link" style="margin-top:18px;display:inline-flex;">Explore RCC
-            services <i class="fa-solid fa-arrow-right"></i></a>
         </div>
         <div class="division-card scroll-reveal">
           <span class="div-badge"><i class="fa-solid fa-sparkles"></i> BGM — Brilliant General Maintenance</span>
@@ -802,10 +785,7 @@
             <li>Window cleaning and specialty cleaning</li>
             <li>Cleanroom and controlled-environment support</li>
             <li>Green consulting, recycling and composting programs</li>
-            <li>Robotics, smart sensors and connected cleaning workflows</li>
           </ul>
-          <a href="commercial-cleaning-services.html" class="s-link" style="margin-top:18px;display:inline-flex;">Explore
-            BGM services <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </section>
@@ -841,11 +821,6 @@
           Multi-Tenant Buildings</span>
         <span class="prop-tag"><i class="fa-solid fa-store" style="margin-right:6px;color:var(--accent-teal);"></i>
           Customer-Facing Properties</span>
-      </div>
-      <div style="text-align:center;margin-top:24px;">
-        <a href="industries.html" class="btn-outline-hero"
-          style="border-color:rgba(232,113,74,0.3);color:var(--text-dark);">
-          <i class="fa-solid fa-grid-2"></i> Explore all industries we serve</a>
       </div>
     </section>
 
@@ -951,7 +926,7 @@
       </div>
     </section>
 
-    <!-- ═══════════ TRUST & ACCOUNTABILITY ═══════════ -->
+    <!-- ═══════════ REDESIGNED TRUST SECTION: WIDE CARDS ═══════════ -->
     <section class="container section-padding">
       <div style="text-align:center;max-width:700px;margin:0 auto;">
         <span class="hero-tag"
@@ -962,47 +937,58 @@
         <p style="margin-top:14px;">Scopes are developed through specifics rather than unsupported claims. Here is how
           every engagement stays transparent.</p>
       </div>
+      
       <div class="trust-list">
-        <div class="trust-item scroll-reveal">
-          <i class="fa-solid fa-circle-check"></i>
-          <div>
+        <!-- Wide Card 1 -->
+        <div class="trust-wide-card scroll-reveal">
+          <div class="trust-icon-box"><i class="fa-solid fa-circle-check"></i></div>
+          <div class="trust-info">
             <h4>Defined scope</h4>
             <p>Service areas, tasks, materials, frequency, project phases and completion criteria are documented before
               work begins.</p>
           </div>
         </div>
-        <div class="trust-item scroll-reveal">
-          <i class="fa-solid fa-user-tie"></i>
-          <div>
+
+        <!-- Wide Card 2 -->
+        <div class="trust-wide-card scroll-reveal">
+          <div class="trust-icon-box"><i class="fa-solid fa-user-tie"></i></div>
+          <div class="trust-info">
             <h4>Named contacts</h4>
             <p>Authorized customer, facility, project and escalation contacts are identified for every engagement.</p>
           </div>
         </div>
-        <div class="trust-item scroll-reveal">
-          <i class="fa-solid fa-pen-to-square"></i>
-          <div>
+
+        <!-- Wide Card 3 -->
+        <div class="trust-wide-card scroll-reveal">
+          <div class="trust-icon-box"><i class="fa-solid fa-pen-to-square"></i></div>
+          <div class="trust-info">
             <h4>Change management</h4>
-            <p>Additional requirements are documented before the original scope expands, keeping expectations aligned.
-            </p>
+            <p>Additional requirements are documented before the original scope expands, keeping expectations aligned.</p>
           </div>
         </div>
-        <div class="trust-item scroll-reveal">
-          <i class="fa-solid fa-map-location-dot"></i>
-          <div>
+
+        <!-- Wide Card 4 -->
+        <div class="trust-wide-card scroll-reveal">
+          <div class="trust-icon-box"><i class="fa-solid fa-map-location-dot"></i></div>
+          <div class="trust-info">
             <h4>Location qualification</h4>
             <p>Exact availability is confirmed by market, trade and project rather than blanket coverage claims.</p>
           </div>
         </div>
-        <div class="trust-item scroll-reveal">
-          <i class="fa-solid fa-shield-halved"></i>
-          <div>
+
+        <!-- Wide Card 5 -->
+        <div class="trust-wide-card scroll-reveal">
+          <div class="trust-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="trust-info">
             <h4>Specialist boundaries</h4>
             <p>Licensed, engineered, regulated or hazardous work is assigned appropriately to qualified teams.</p>
           </div>
         </div>
-        <div class="trust-item scroll-reveal">
-          <i class="fa-solid fa-rotate"></i>
-          <div>
+
+        <!-- Wide Card 6 -->
+        <div class="trust-wide-card scroll-reveal">
+          <div class="trust-icon-box"><i class="fa-solid fa-rotate"></i></div>
+          <div class="trust-info">
             <h4>Review points</h4>
             <p>Recurring service reviews or project completion walkthroughs are built into every engagement.</p>
           </div>
