@@ -1,283 +1,217 @@
-﻿<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kalamazoo Mi Facility Services | RCC-BGM</title>
-    <meta
-      name="description"
-      content="RCC-BGM can review cleaning, maintenance, construction and building-system needs around your local facility and confirmed service scope."
-    />
-    <link rel="stylesheet" href="site.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
-  <body class="page-location">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commercial Facility Services in Kalamazoo, MI | RCC-BGM</title>
+    <meta name="description" content="RCC-BGM provides commercial cleaning, janitorial, construction, HVAC and facility services for business properties in Kalamazoo, Michigan, subject to service availability.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="site.css">
+    <style>
+        .svc-card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-top:34px}
+        .svc-card{background:var(--white);border:1px solid rgba(128,99,199,.1);border-radius:16px;padding:30px;transition:all .35s ease;position:relative;overflow:hidden}
+        .svc-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px -12px rgba(128,99,199,.18);border-color:var(--accent-teal)}
+        .svc-card i{font-size:28px;color:var(--accent-teal);margin-bottom:16px;display:block}
+        .svc-card h3{font-size:18px;margin-bottom:10px;color:var(--text-dark)}
+        .svc-card p{font-size:14px;line-height:1.6}
+        .svc-card .card-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:13px;font-weight:600;color:var(--accent-blue);text-decoration:none;transition:gap .25s}
+        .svc-card:hover .card-link{gap:10px}
+        .ind-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;margin-top:30px}
+        .ind-item{background:var(--white);border:1px solid rgba(128,99,199,.08);border-radius:12px;padding:22px;text-align:center;transition:all .3s ease}
+        .ind-item:hover{border-color:var(--accent-blue);transform:translateY(-4px);box-shadow:0 12px 30px -10px rgba(217,111,159,.15)}
+        .ind-item i{font-size:26px;color:var(--accent-blue);margin-bottom:12px;display:block}
+        .ind-item h4{font-size:15px;color:var(--text-dark);margin-bottom:6px}
+        .ind-item p{font-size:13px}
+        .modern-step-card{background:var(--white);border:1px solid rgba(128,99,199,.1);border-radius:16px;padding:32px;position:relative;transition:all .35s ease}
+        .modern-step-card:hover{transform:translateY(-5px);box-shadow:0 16px 36px -12px rgba(128,99,199,.16);border-color:var(--accent-teal)}
+        .modern-step-card .step-num{font-size:42px;font-weight:800;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:12px}
+        .modern-step-card h4{font-size:17px;font-weight:700;color:var(--text-dark);margin-bottom:8px}
+        .modern-step-card p{font-size:14px;line-height:1.6}
+        .steps-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;margin-top:30px}
+        .faq-item{background:var(--white);border:1px solid rgba(128,99,199,.08);border-radius:14px;padding:24px 28px;margin-bottom:14px;transition:all .3s ease;cursor:pointer}
+        .faq-item:hover{border-color:var(--accent-teal);box-shadow:0 8px 24px -8px rgba(128,99,199,.12)}
+        .faq-item h4{display:flex;justify-content:space-between;align-items:center;font-size:16px;font-weight:600;color:var(--text-dark)}
+        .faq-item h4 i{color:var(--accent-teal);font-size:14px;transition:transform .3s}
+        .faq-item p{font-size:14px;line-height:1.65;margin-top:12px}
+        .cta-section{background:var(--gradient);border-radius:20px;padding:60px 48px;text-align:center;margin:40px 0}
+        .cta-section h2{color:#fff;font-size:32px;margin-bottom:14px}
+        .cta-section p{color:rgba(255,255,255,.88);max-width:600px;margin:0 auto 28px;font-size:16px}
+        .cta-section .btn-header{background:#fff;color:var(--bg-deep);font-weight:700}
+        .cta-section .btn-header:hover{background:var(--bg-deep);color:#fff}
+    </style>
+</head>
+<body class="page-location">
     <nav>
-      <div class="container nav-flex">
-        <a href="index.html" class="logo"
-          ><span class="logo-icon"
-            ><i class="fa-solid fa-building-shield"></i></span
-          >RCC<span>BGM</span></a
-        >
-        <ul class="nav-links">
-          <li><a href="services.html">Services</a></li>
-          <li><a href="industries.html">Industries</a></li>
-          <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-        <a href="contact.html" class="btn-header">Get Assessment</a>
-      </div>
+        <div class="container nav-flex">
+            <a href="index.html" class="logo"><span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span>RCC<span>BGM</span></a>
+            <ul class="nav-links">
+                <li><a href="services.html">Services</a></li>
+                <li><a href="industries.html">Industries</a></li>
+                <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <a href="contact.html" class="btn-header">Get Assessment</a>
+        </div>
     </nav>
-    <section class="hero family-construction" style="min-height: 72vh">
-      <video
-        class="hero-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        poster="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000"
-      >
-        <source
-          src="https://assets.mixkit.co/videos/31450/31450-360.mp4"
-          type="video/mp4"
-        />
-      </video>
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
-        <span class="hero-tag"
-          ><i class="fa-solid fa-building"></i> RCC-BGM</span
-        >
-        <h1>Kalamazoo Mi Facility Services</h1>
-        <p style="color: #D4C0AC; max-width: 720px; margin: 22px auto 0">
-          Commercial facility support for businesses and properties in Kalamazoo
-          Mi.
-        </p>
-        <div class="hero-labels">
-          <a class="btn-header btn-glow" href="contact.html"
-            >Request an Assessment <i class="fa-solid fa-arrow-right"></i></a
-          ><a class="h-label" href="services.html"
-            ><i class="fa-solid fa-layer-group"></i> Explore Services</a
-          >
+
+    <section class="hero family-construction" style="min-height:72vh">
+        <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000">
+            <source src="https://assets.mixkit.co/videos/31450/31450-360.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="hero-tag"><i class="fa-solid fa-location-dot"></i> Kalamazoo, Michigan</span>
+            <h1>Commercial Facility Services in Kalamazoo, Michigan</h1>
+            <p style="color:#D4C0AC;max-width:720px;margin:22px auto 0">RCC-BGM supports pharmaceutical facilities, manufacturing properties, educational institutions and commercial offices across the Kalamazoo market with integrated cleaning, construction and maintenance services.</p>
+            <div class="hero-labels">
+                <a class="btn-header btn-glow" href="contact.html">Request a Local Assessment <i class="fa-solid fa-arrow-right"></i></a>
+                <a class="h-label" href="services.html"><i class="fa-solid fa-layer-group"></i> Explore Services</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat"><div class="num">01</div><div class="lbl">Life-science aware</div></div>
+                <div class="hero-stat"><div class="num">02</div><div class="lbl">Industrial-ready</div></div>
+                <div class="hero-stat"><div class="num">03</div><div class="lbl">Confirmed scope</div></div>
+            </div>
         </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="num">01</div>
-            <div class="lbl">Clear scope</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">02</div>
-            <div class="lbl">Coordinated team</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num">03</div>
-            <div class="lbl">Planned delivery</div>
-          </div>
-        </div>
-      </div>
-      <div class="scroll-cue">
-        Scroll
-        <div class="dot-track"></div>
-      </div>
+        <div class="scroll-cue">Scroll<div class="dot-track"></div></div>
     </section>
+
     <main>
-      <section class="container section-padding industry-standard">
-        <div style="max-width: 780px">
-          <span
-            class="hero-tag"
-            style="
-              color: var(--accent-blue);
-              border-color: rgba(196, 129, 58, 0.3);
-              background: rgba(196, 129, 58, 0.06);
-            "
-            >Built around your facility</span
-          >
-          <h2>Practical support for the way your property operates</h2>
-          <p style="margin-top: 16px">
-            RCC-BGM can review cleaning, maintenance, construction and
-            building-system needs around your local facility and confirmed
-            service scope. Work is scoped around existing conditions, access,
-            priorities, communication and the outcome your team needs.
-          </p>
-        </div>
-        <div class="services-grid" style="margin-top: 34px">
-          <article class="s-item">
-            <i class="fa-solid fa-clipboard-check"></i>
-            <h3>Defined requirements</h3>
-            <p>
-              Clarify the property, service areas, timing, access and
-              responsibilities before work begins.
-            </p>
-          </article>
-          <article class="s-item">
-            <i class="fa-solid fa-arrows-to-circle"></i>
-            <h3>Connected planning</h3>
-            <p>
-              Coordinate related cleaning, maintenance, construction or
-              building-system needs where they overlap.
-            </p>
-          </article>
-          <article class="s-item">
-            <i class="fa-solid fa-comments"></i>
-            <h3>Clear communication</h3>
-            <p>
-              Use agreed milestones, review points and closeout actions to keep
-              the facility team informed.
-            </p>
-          </article>
-        </div>
-      </section>
-      <section class="container section-padding">
-        <h2>How the work is planned</h2>
-        <p class="section-intro">
-          A focused process keeps the scope useful and the delivery aligned with
-          your property.
-        </p>
-        <div class="process-grid">
-          <div class="step-card">
-            <h2>01</h2>
-            <h4>Understand</h4>
-            <p>Review the facility, current condition and desired result.</p>
-          </div>
-          <div class="step-card">
-            <h2>02</h2>
-            <h4>Define</h4>
-            <p>
-              Confirm inclusions, exclusions, access, timing and
-              responsibilities.
-            </p>
-          </div>
-          <div class="step-card">
-            <h2>03</h2>
-            <h4>Coordinate</h4>
-            <p>
-              Plan people, materials, service windows and connected workstreams.
-            </p>
-          </div>
-          <div class="step-card">
-            <h2>04</h2>
-            <h4>Close out</h4>
-            <p>Review the completed work, open actions and next priorities.</p>
-          </div>
-        </div>
-      </section>
-      <section class="container section-padding">
-        <h2>Related RCC-BGM services</h2>
-        <div class="services-grid" style="margin-top: 30px">
-          <a class="s-item" href="commercial-cleaning-services.html"
-            ><h3>Commercial Cleaning Services</h3>
-            <p>Explore this connected RCC-BGM service area.</p>
-            <span class="s-link"
-              >View service <i class="fa-solid fa-arrow-right"></i></span></a
-          ><a class="s-item" href="commercial-construction.html"
-            ><h3>Commercial Construction</h3>
-            <p>Explore this connected RCC-BGM service area.</p>
-            <span class="s-link"
-              >View service <i class="fa-solid fa-arrow-right"></i></span></a
-          ><a class="s-item" href="facility-maintenance-services.html"
-            ><h3>Facility Maintenance Services</h3>
-            <p>Explore this connected RCC-BGM service area.</p>
-            <span class="s-link"
-              >View service <i class="fa-solid fa-arrow-right"></i></span></a
-          ><a class="s-item" href="contact.html"
-            ><h3>Contact</h3>
-            <p>Explore this connected RCC-BGM service area.</p>
-            <span class="s-link"
-              >View service <i class="fa-solid fa-arrow-right"></i></span
-          ></a>
-        </div>
-      </section>
-      <section class="container section-padding">
-        <h2>Common questions</h2>
-        <div class="faq-item">
-          <h4>
-            Can the scope be tailored to our facility?
-            <i class="fa-solid fa-plus"></i>
-          </h4>
-          <p style="margin-top: 12px">
-            Yes. The appropriate plan depends on the property, operating
-            schedule, access, existing conditions and required outcome.
-          </p>
-        </div>
-        <div class="faq-item">
-          <h4>
-            Can related services be coordinated?
-            <i class="fa-solid fa-plus"></i>
-          </h4>
-          <p style="margin-top: 12px">
-            Where needs overlap, RCC-BGM can review the connected work and
-            clarify which team owns each part of the scope.
-          </p>
-        </div>
-        <div class="faq-item">
-          <h4>What is the first step? <i class="fa-solid fa-plus"></i></h4>
-          <p style="margin-top: 12px">
-            Request an assessment with the facility type, location, service need
-            and timing. The team can then determine the right next conversation.
-          </p>
-        </div>
-      </section>
-      <section class="container section-padding industry-standard">
-        <div style="max-width: 780px">
-          <span class="hero-tag">Ready to discuss the property?</span>
-          <h2>Start with a clear facility requirement</h2>
-          <p style="margin-top: 16px">
-            Tell RCC-BGM what needs attention, where the property is located and
-            how the work must fit around operations.
-          </p>
-          <a
-            href="contact.html"
-            class="btn-header btn-glow"
-            style="display: inline-block; margin-top: 24px"
-            >Request a Facility Assessment
-            <i class="fa-solid fa-arrow-right"></i
-          ></a>
-        </div>
-      </section>
+        <!-- Local Introduction -->
+        <section class="container section-padding industry-standard">
+            <div style="max-width:780px">
+                <span class="hero-tag" style="color:var(--accent-blue);border-color:rgba(217,111,159,.3);background:rgba(217,111,159,.06)">Kalamazoo commercial market</span>
+                <h2>Facility services for a life-science and manufacturing center</h2>
+                <p style="margin-top:16px">Kalamazoo has a long-standing presence in pharmaceutical and life-science industries, alongside major healthcare systems, educational institutions including Western Michigan University, and a diverse manufacturing base. The city's commercial properties often serve regulated industries where cleanliness, environmental controls and facility condition are closely managed. RCC-BGM connects Kalamazoo properties with Brilliant General Maintenance for commercial cleaning, industrial facility cleaning and janitorial programs and Reliable Concepts Corporation for facility maintenance, HVAC and maintenance construction. Every engagement is scoped to the property, confirmed services and local team availability.</p>
+            </div>
+        </section>
+
+        <!-- Services Available -->
+        <section class="container section-padding">
+            <span class="hero-tag" style="color:var(--accent-blue);border-color:rgba(217,111,159,.3);background:rgba(217,111,159,.06)">Services in this market</span>
+            <h2 style="margin-top:14px">RCC-BGM services available in Kalamazoo</h2>
+            <p class="section-intro">Service availability depends on the property, scope and confirmed local capability. Explore the primary service categories relevant to Kalamazoo commercial facilities.</p>
+            <div class="svc-card-grid">
+                <a href="commercial-cleaning-services.html" class="svc-card scroll-reveal">
+                    <i class="fa-solid fa-spray-can-sparkles"></i>
+                    <h3>Commercial Cleaning &amp; Janitorial</h3>
+                    <p>BGM develops commercial cleaning, industrial facility cleaning and janitorial programs for Kalamazoo's manufacturing, pharmaceutical and commercial properties.</p>
+                    <span class="card-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="commercial-janitorial-services.html" class="svc-card scroll-reveal">
+                    <i class="fa-solid fa-broom"></i>
+                    <h3>Commercial Janitorial Services</h3>
+                    <p>Scheduled janitorial programs for offices, educational facilities and commercial spaces requiring consistent maintenance in the Kalamazoo market.</p>
+                    <span class="card-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="industrial-cleaning-services.html" class="svc-card scroll-reveal">
+                    <i class="fa-solid fa-industry"></i>
+                    <h3>Industrial Cleaning Services</h3>
+                    <p>Specialized cleaning for manufacturing, production and pharmaceutical-adjacent environments where standard janitorial programs are insufficient.</p>
+                    <span class="card-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="commercial-construction.html" class="svc-card scroll-reveal">
+                    <i class="fa-solid fa-helmet-safety"></i>
+                    <h3>Commercial Construction</h3>
+                    <p>RCC reviews maintenance construction, facility upgrades and renovation projects for Kalamazoo commercial and industrial properties.</p>
+                    <span class="card-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="commercial-hvac-services.html" class="svc-card scroll-reveal">
+                    <i class="fa-solid fa-temperature-arrow-down"></i>
+                    <h3>Commercial HVAC Services</h3>
+                    <p>HVAC maintenance and coordination for Michigan's seasonal demands and the environmental control requirements of pharmaceutical and manufacturing spaces.</p>
+                    <span class="card-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="facility-maintenance-services.html" class="svc-card scroll-reveal">
+                    <i class="fa-solid fa-wrench"></i>
+                    <h3>Facility Maintenance</h3>
+                    <p>Building maintenance, repairs and facility upgrades coordinated with cleaning and building-system needs for Kalamazoo commercial and operational properties.</p>
+                    <span class="card-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Industries -->
+        <section class="container section-padding">
+            <span class="hero-tag" style="color:var(--accent-blue);border-color:rgba(217,111,159,.3);background:rgba(217,111,159,.06)">Local industry focus</span>
+            <h2 style="margin-top:14px">Industries relevant to Kalamazoo facilities</h2>
+            <p class="section-intro">Kalamazoo's commercial base is shaped by life sciences, healthcare, education and a strong manufacturing tradition.</p>
+            <div class="ind-grid">
+                <div class="ind-item scroll-reveal"><i class="fa-solid fa-pills"></i><h4>Pharmaceutical</h4><p>Drug manufacturing, R&amp;D facilities and pharmaceutical-adjacent properties</p></div>
+                <div class="ind-item scroll-reveal"><i class="fa-solid fa-flask"></i><h4>Life Sciences</h4><p>Research laboratories and scientific facilities with controlled environments</p></div>
+                <div class="ind-item scroll-reveal"><i class="fa-solid fa-hospital"></i><h4>Healthcare</h4><p>Hospital systems, medical offices and healthcare commercial properties</p></div>
+                <div class="ind-item scroll-reveal"><i class="fa-solid fa-graduation-cap"></i><h4>Education</h4><p>University facilities, college campuses and educational commercial spaces</p></div>
+                <div class="ind-item scroll-reveal"><i class="fa-solid fa-industry"></i><h4>Manufacturing</h4><p>Paper, food processing and diversified manufacturing operations</p></div>
+                <div class="ind-item scroll-reveal"><i class="fa-solid fa-building"></i><h4>Commercial Offices</h4><p>Downtown and suburban office buildings serving local business sectors</p></div>
+            </div>
+        </section>
+
+        <!-- Service Process -->
+        <section class="container section-padding">
+            <span class="hero-tag" style="color:var(--accent-blue);border-color:rgba(217,111,159,.3);background:rgba(217,111,159,.06)">How engagement works</span>
+            <h2 style="margin-top:14px">Service process for Kalamazoo properties</h2>
+            <div class="steps-grid">
+                <div class="modern-step-card scroll-reveal">
+                    <div class="step-num">01</div>
+                    <h4>Share the Property</h4>
+                    <p>Provide the Kalamazoo address, facility type, current need and preferred timing so RCC-BGM can begin the review.</p>
+                </div>
+                <div class="modern-step-card scroll-reveal">
+                    <div class="step-num">02</div>
+                    <h4>Confirm Coverage</h4>
+                    <p>RCC-BGM confirms which division, service and local team can support the Kalamazoo request based on scope and availability.</p>
+                </div>
+                <div class="modern-step-card scroll-reveal">
+                    <div class="step-num">03</div>
+                    <h4>Review the Site</h4>
+                    <p>A walkthrough is arranged when the scope cannot be accurately defined remotely, accounting for pharmaceutical, manufacturing and regulated environment conditions.</p>
+                </div>
+                <div class="modern-step-card scroll-reveal">
+                    <div class="step-num">04</div>
+                    <h4>Receive a Defined Proposal</h4>
+                    <p>The proposal identifies services, frequency or project scope, responsibilities and exclusions specific to the Kalamazoo facility.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="container section-padding">
+            <h2>Common questions about Kalamazoo services</h2>
+            <div style="max-width:800px;margin-top:24px">
+                <div class="faq-item scroll-reveal">
+                    <h4>Does RCC-BGM provide commercial cleaning in Kalamazoo? <i class="fa-solid fa-plus"></i></h4>
+                    <p>Kalamazoo is listed as an RCC-BGM service market. Cleaning availability and program frequency must be confirmed for the specific property and scope.</p>
+                </div>
+                <div class="faq-item scroll-reveal">
+                    <h4>Can RCC-BGM support pharmaceutical and life-science facilities? <i class="fa-solid fa-plus"></i></h4>
+                    <p>Pharmaceutical and life-science properties can be evaluated for cleaning, industrial facility support and maintenance needs based on confirmed local capability and environment requirements.</p>
+                </div>
+                <div class="faq-item scroll-reveal">
+                    <h4>Does RCC provide construction or facility maintenance in Kalamazoo? <i class="fa-solid fa-plus"></i></h4>
+                    <p>RCC can review the project. Licensing, permit requirements, trade availability and scope must be confirmed before a proposal is issued.</p>
+                </div>
+                <div class="faq-item scroll-reveal">
+                    <h4>Can cleaning programs meet regulated industry standards? <i class="fa-solid fa-plus"></i></h4>
+                    <p>Cleaning programs can be developed around pharmaceutical, manufacturing and healthcare regulatory requirements when confirmed for the specific property and environment.</p>
+                </div>
+                <div class="faq-item scroll-reveal">
+                    <h4>Can RCC-BGM coordinate cleaning and facility work? <i class="fa-solid fa-plus"></i></h4>
+                    <p>Related cleaning, maintenance, HVAC and improvement work can be organized through the combined RCC-BGM platform when clearly scoped.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="container section-padding">
+            <div class="cta-section scroll-reveal">
+                <h2>Request a Local Facility Assessment</h2>
+                <p>Share the property address, facility type and required service for your Kalamazoo location. RCC-BGM will confirm local availability and the appropriate next step.</p>
+                <a href="contact.html" class="btn-header">Request Assessment <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </section>
     </main>
-    <footer>
-      <div class="container f-grid">
-        <div class="f-col">
-          <a href="index.html" class="logo">RCC<span>BGM</span></a>
-          <p style="margin-top: 16px">
-            Integrated commercial facility solutions for the spaces your
-            business depends on.
-          </p>
-        </div>
-        <div class="f-col">
-          <h4>Services</h4>
-          <ul>
-            <li>
-              <a href="commercial-cleaning-services.html"
-                >Commercial Cleaning</a
-              >
-            </li>
-            <li><a href="commercial-construction.html">Construction</a></li>
-            <li>
-              <a href="facility-maintenance-services.html">Maintenance</a>
-            </li>
-            <li><a href="smart-cleaning-robotics.html">Robotics</a></li>
-          </ul>
-        </div>
-        <div class="f-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
-            <li><a href="industries.html">Industries</a></li>
-            <li><a href="locations.html">Locations</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="f-col">
-          <h4>Contact HQ</h4>
-          <p>
-            San Jose, California<br />United States<br />support@rcc-bgm.com
-          </p>
-        </div>
-      </div>
-    </footer>
+
     <script src="site.js" defer></script>
-  </body>
+</body>
 </html>
