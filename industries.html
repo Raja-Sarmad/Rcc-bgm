@@ -4,25 +4,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Industries We Support | RCC-BGM</title>
+  <title>Industries Served | Commercial Facility Services | RCC-BGM</title>
   <meta name="description"
-    content="Every environment has different access, occupancy, compliance and scheduling needs. The scope starts there." />
+    content="Explore RCC-BGM cleaning, maintenance, HVAC, MEP and construction services for offices, technology, life sciences, healthcare, manufacturing and warehouses." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="site.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    /* Spacing Overrides & Compact Section Padding */
-    .section-padding {
-      padding-top: 44px !important;
-      padding-bottom: 44px !important;
-    }
-
-    /* Dynamic Expanding Accordion Hero */
+    /* ── Hero Section ── */
     .ind-hero {
       position: relative;
-      background: radial-gradient(circle at 50% 0%, rgba(232, 113, 74, 0.15) 0%, transparent 60%),
-        radial-gradient(circle at 10% 80%, rgba(196, 129, 58, 0.08) 0%, transparent 50%),
+      background:
+        radial-gradient(circle at 8% 12%, rgba(232, 113, 74, 0.10) 0%, transparent 50%),
+        radial-gradient(circle at 92% 88%, rgba(196, 129, 58, 0.10) 0%, transparent 50%),
         #181310;
-      padding: 130px 0 75px 0;
+      padding: 130px 0 80px 0;
       overflow: hidden;
       border-bottom: 1px solid rgba(232, 113, 74, 0.15);
     }
@@ -30,526 +26,1088 @@
     .ind-hero::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.007) 1px, transparent 1px);
-      background-size: 24px 24px;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.006) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.006) 1px, transparent 1px);
+      background-size: 36px 36px;
       pointer-events: none;
     }
 
-    .ind-hero-header {
+    .ind-hero-inner {
       text-align: center;
-      max-width: 800px;
-      margin: 0 auto 40px auto;
+      max-width: 820px;
+      margin: 0 auto;
       position: relative;
-      z-index: 10;
+      z-index: 2;
     }
 
-    .ind-hero-header h1 {
+    .ind-hero-inner h1 {
       font-size: clamp(34px, 4.8vw, 54px);
       font-weight: 800;
       color: white;
       line-height: 1.15;
       letter-spacing: -1.2px;
-      margin-top: 16px;
+      margin-top: 18px;
     }
 
-    .ind-hero-header h1 span.gradient-text {
+    .ind-hero-inner h1 .gradient-text {
       background: linear-gradient(135deg, #E8714A 0%, #C4813A 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .ind-hero-header p {
-      font-size: 16px;
-      line-height: 1.7;
+    .ind-hero-inner p {
+      font-size: 16.5px;
+      line-height: 1.75;
       color: #D4C0AC;
-      margin-top: 18px;
-    }
-
-    /* Flex Accordion Layout */
-    .ind-accordion {
-      display: flex;
-      width: 100%;
-      height: 330px;
-      gap: 16px;
       margin-top: 20px;
-      position: relative;
-      z-index: 10;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .ind-accordion-item {
-      flex: 1;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(12px);
-      border-radius: 20px;
-      position: relative;
-      overflow: hidden;
+    .ind-hero-actions {
       display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      padding: 24px 24px 40px 24px;
-      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-      cursor: pointer;
-      text-decoration: none;
+      gap: 16px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
-    .ind-accordion-item::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: rgba(232, 113, 74, 0.15);
+    .btn-outline-hero {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      color: white;
+      font-weight: 600;
+      padding: 12px 24px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14.5px;
       transition: all 0.35s ease;
     }
 
-    /* Static layout details */
-    .ind-acc-icon {
-      width: 50px;
-      height: 50px;
+    .btn-outline-hero:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--accent-teal);
+      transform: translateY(-2px);
+    }
+
+    /* ── Industry Cards Grid (8 cards) ── */
+    .ind-card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 42px;
+    }
+
+    .ind-card {
+      position: relative;
+      overflow: hidden;
+      background: #fff;
+      padding: 36px 28px 30px;
+      border-radius: 22px;
+      border: 1px solid #EAD8CC;
+      box-shadow: 0 1px 2px rgba(40, 30, 22, 0.04);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition:
+        transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+        border-color 0.45s;
+    }
+
+    .ind-card::before {
+      content: "";
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba(232, 113, 74, 0.16) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+
+    .ind-card::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 4px;
+      width: 52px;
+      background: var(--gradient);
+      border-radius: 0 6px 6px 0;
+      transition: width 0.45s ease;
+    }
+
+    .ind-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 32px 60px -20px rgba(196, 129, 58, 0.28);
+      border-color: rgba(232, 113, 74, 0.35);
+    }
+
+    .ind-card:hover::before {
+      opacity: 1;
+    }
+
+    .ind-card:hover::after {
+      width: 100%;
+    }
+
+    .ind-card-icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 16px;
+      background: var(--gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      box-shadow: 0 12px 24px -8px rgba(196, 129, 58, 0.45);
+      position: relative;
+      z-index: 1;
+      transition: transform 0.4s ease;
+    }
+
+    .ind-card:hover .ind-card-icon {
+      transform: rotate(-6deg) scale(1.08);
+    }
+
+    .ind-card-icon i {
+      font-size: 26px;
+      color: #fff;
+    }
+
+    .ind-card h3 {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--bg-deep);
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ind-card p {
+      font-size: 14.5px;
+      color: var(--text-slate);
+      line-height: 1.65;
+      position: relative;
+      z-index: 1;
+      flex-grow: 1;
+    }
+
+    .ind-card .ind-features {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0 0 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ind-card .ind-features li {
+      font-size: 13px;
+      color: var(--text-slate);
+      padding: 4px 0 4px 18px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .ind-card .ind-features li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gradient);
+    }
+
+    /* ── Service Adaptation Split Layout ── */
+    .adapt-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .adapt-split h2 {
+      text-align: left !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    .adapt-left p {
+      margin-top: 16px;
+    }
+
+    .adapt-right {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .adapt-card {
+      display: flex;
+      gap: 18px;
+      background: white;
+      padding: 22px 24px;
+      border-radius: 18px;
+      border: 1px solid #EAD8CC;
+      box-shadow: 0 4px 15px rgba(40, 30, 22, 0.02);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .adapt-card:hover {
+      transform: translateX(8px);
+      border-color: rgba(232, 113, 74, 0.28);
+      box-shadow: 0 8px 24px rgba(232, 113, 74, 0.06);
+    }
+
+    .adapt-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: rgba(232, 113, 74, 0.08);
+      border: 1px solid rgba(232, 113, 74, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-blue);
+      font-size: 20px;
+      flex-shrink: 0;
+      transition: all 0.35s ease;
+    }
+
+    .adapt-card:hover .adapt-card-icon {
+      background: var(--gradient);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 8px 18px -4px rgba(232, 113, 74, 0.5);
+    }
+
+    .adapt-card h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--bg-deep);
+      margin-bottom: 4px;
+    }
+
+    .adapt-card p {
+      font-size: 14px;
+      color: var(--text-slate);
+      line-height: 1.6;
+    }
+
+    /* ── Integrated Model Cards ── */
+    .model-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      margin-top: 38px;
+    }
+
+    .model-card {
+      background: linear-gradient(135deg, #1E1714 0%, #2C2018 100%);
+      border: 1px solid rgba(232, 113, 74, 0.18);
+      border-radius: 22px;
+      padding: 34px 26px;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .model-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(232, 113, 74, 0.5);
+      box-shadow: 0 20px 40px -12px rgba(232, 113, 74, 0.2);
+    }
+
+    .model-card-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(232, 113, 74, 0.1);
+      border: 1px solid rgba(232, 113, 74, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: var(--accent-teal);
+      margin-bottom: 20px;
+      transition: all 0.4s ease;
+    }
+
+    .model-card:hover .model-card-icon {
+      background: var(--gradient);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 8px 20px rgba(232, 113, 74, 0.4);
+    }
+
+    .model-card h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .model-card p {
+      font-size: 14px;
+      color: #D4C0AC;
+      line-height: 1.6;
+    }
+
+    /* ── Assessment Factors Grid ── */
+    .assess-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 38px;
+    }
+
+    .assess-item {
+      background: #fff;
+      border: 1px solid #EAD8CC;
+      border-radius: 18px;
+      padding: 28px 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: all 0.35s ease;
+    }
+
+    .assess-item:hover {
+      transform: translateY(-6px);
+      border-color: rgba(232, 113, 74, 0.3);
+      box-shadow: 0 12px 28px -8px rgba(196, 129, 58, 0.18);
+    }
+
+    .assess-num {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(232, 113, 74, 0.08);
+      border: 1px solid rgba(232, 113, 74, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--accent-blue);
+      flex-shrink: 0;
+      transition: all 0.35s ease;
+    }
+
+    .assess-item:hover .assess-num {
+      background: var(--gradient);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .assess-item h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--bg-deep);
+      margin-bottom: 4px;
+    }
+
+    .assess-item p {
+      font-size: 13.5px;
+      color: var(--text-slate);
+      line-height: 1.55;
+    }
+
+    /* ── Service Selection Guidance ── */
+    .select-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      margin-top: 38px;
+    }
+
+    .select-item {
+      background: #fff;
+      border: 1px solid #EAD8CC;
+      border-radius: 18px;
+      padding: 28px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: all 0.35s ease;
+    }
+
+    .select-item:hover {
+      transform: translateY(-5px);
+      border-color: rgba(232, 113, 74, 0.3);
+      box-shadow: 0 10px 24px -8px rgba(196, 129, 58, 0.16);
+    }
+
+    .select-item-icon {
+      width: 44px;
+      height: 44px;
       border-radius: 12px;
       background: rgba(232, 113, 74, 0.08);
       border: 1px solid rgba(232, 113, 74, 0.2);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
-      color: var(--accent-teal);
+      font-size: 18px;
+      color: var(--accent-blue);
       flex-shrink: 0;
       transition: all 0.35s ease;
     }
 
-    .ind-accordion-item:hover .ind-acc-icon {
-      background: var(--accent-teal);
-      color: #181310;
-      box-shadow: 0 0 15px rgba(232, 113, 74, 0.4);
+    .select-item:hover .select-item-icon {
+      background: var(--gradient);
+      color: #fff;
+      border-color: transparent;
     }
 
-    .ind-acc-collapsed-title {
-      font-size: 16px;
+    .select-item h4 {
+      font-size: 15px;
       font-weight: 700;
-      color: #9E8B7E;
-      margin-top: 24px;
-      white-space: nowrap;
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      transition: opacity 0.3s ease, margin-top 0.3s ease;
-      letter-spacing: 1.5px;
-      opacity: 0.85;
+      color: var(--bg-deep);
+      margin-bottom: 5px;
     }
 
-    .ind-acc-expanded {
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      justify-content: center;
-      text-align: left;
-      width: 100%;
-      margin-top: 10px;
-    }
-
-    .ind-acc-expanded h3 {
-      font-size: 20px;
-      font-weight: 700;
-      color: white;
-      margin: 0;
-    }
-
-    .ind-acc-expanded p {
+    .select-item p {
       font-size: 13.5px;
-      color: #D4C0AC;
-      margin-top: 10px;
-      line-height: 1.6;
+      color: var(--text-slate);
+      line-height: 1.55;
     }
 
-    .ind-acc-expanded .btn-ind-link {
-      font-size: 12.5px;
-      font-weight: 700;
-      color: var(--accent-teal);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 16px;
-      transition: all 0.25s ease;
+    /* ── FAQ Section ── */
+    .faq-wrap {
+      max-width: 900px;
+      margin: 30px auto 0;
     }
 
-    .ind-acc-expanded .btn-ind-link:hover {
-      text-shadow: 0 0 8px rgba(232, 113, 74, 0.5);
-      transform: translateX(4px);
-    }
+    /* ── Responsive ── */
+    @media (max-width: 1100px) {
+      .ind-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-    /* Hover State (Accordion Expansion) */
-    .ind-accordion-item:hover {
-      flex: 3.5;
-      background: rgba(10, 25, 50, 0.4);
-      border-color: rgba(232, 113, 74, 0.4);
-      box-shadow: 0 20px 45px -10px rgba(232, 113, 74, 0.15);
-    }
+      .model-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-    .ind-accordion-item:hover::before {
-      background: var(--accent-teal);
-      box-shadow: 0 0 12px var(--accent-teal);
-    }
-
-    .ind-accordion-item:hover .ind-acc-collapsed-title {
-      opacity: 0;
-      margin-top: 0;
-      height: 0;
-      overflow: hidden;
-    }
-
-    .ind-accordion-item:hover .ind-acc-expanded {
-      opacity: 1;
-      pointer-events: auto;
-      transition: opacity 0.5s ease 0.15s;
+      .assess-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 991px) {
-      .ind-accordion {
-        flex-direction: column;
-        height: auto;
+      .adapt-split {
+        grid-template-columns: 1fr;
+        gap: 30px;
       }
 
-      .ind-accordion-item {
-        flex-direction: row;
-        gap: 20px;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 20px;
-        width: 100%;
-        height: auto !important;
-        flex: none !important;
+      .ind-hero {
+        padding: 100px 0 60px 0;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .ind-card-grid {
+        grid-template-columns: 1fr;
       }
 
-      .ind-accordion-item::before {
-        left: 0;
-        top: 0;
-        width: 4px;
-        height: 100%;
+      .model-grid {
+        grid-template-columns: 1fr;
       }
 
-      .ind-acc-collapsed-title {
-        display: none;
+      .assess-grid {
+        grid-template-columns: 1fr;
       }
 
-      .ind-acc-expanded {
-        opacity: 1;
-        pointer-events: auto;
-        margin-top: 0;
+      .select-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 
 <body class="page-company">
+  <!-- ── Navigation ── -->
   <nav>
     <div class="container nav-flex">
       <a href="index.html" class="logo"><span class="logo-icon"><i
             class="fa-solid fa-building-shield"></i></span>RCC<span>BGM</span></a>
       <ul class="nav-links">
         <li><a href="services.html">Services</a></li>
-        <li><a href="industries.html">Industries</a></li>
+        <li><a href="industries.html" class="is-active">Industries</a></li>
         <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
       <a href="contact.html" class="btn-header">Get Assessment</a>
     </div>
   </nav>
+
+  <!-- ── Hero Section ── -->
   <section class="ind-hero">
     <div class="container">
-
-      <!-- Top Title and Badges -->
-      <div class="ind-hero-header">
+      <div class="ind-hero-inner scroll-reveal">
         <span class="hero-tag"
-          style="background: rgba(232, 113, 74, 0.08); border: 1px solid rgba(232, 113, 74, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;"><i
-            class="fa-solid fa-industry"></i> TARGET COMPLIANCE & ACCESSIBILITY</span>
-        <h1>Specialized Support for<br><span class="gradient-text">High-Standards Sectors</span></h1>
+          style="background: rgba(232, 113, 74, 0.08); border: 1px solid rgba(232, 113, 74, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;">
+          <i class="fa-solid fa-industry"></i> INDUSTRY-SPECIFIC FACILITY SOLUTIONS
+        </span>
+        <h1>Commercial Facility Services<br><span class="gradient-text">Adapted to Your Industry</span></h1>
         <p>
-          Every business environment has unique regulatory, technical, cleanliness, and operational requirements. We
-          construct site-specific workflows for key vertical industries.
+          RCC-BGM coordinates commercial cleaning, specialized facility support, HVAC, MEP and construction around the
+          building type, operating schedule, occupant needs and technical environment. Each program is scoped for the
+          property rather than copied from a generic service package.
         </p>
+        <div class="ind-hero-actions">
+          <a class="btn-header btn-glow" href="contact.html">Request an Industry-Specific Assessment <i
+              class="fa-solid fa-arrow-right"></i></a>
+          <a class="btn-outline-hero" href="#industries"><i class="fa-solid fa-grid-2"></i> Explore All Industries</a>
+        </div>
       </div>
-
-      <!-- Center Dynamic Accordion Selector -->
-      <div class="ind-accordion">
-
-        <!-- Tab 1: Life Sciences -->
-        <a class="ind-accordion-item" href="#industries">
-          <div class="ind-acc-icon">
-            <i class="fa-solid fa-flask"></i>
-          </div>
-          <span class="ind-acc-collapsed-title">LIFE SCIENCES</span>
-          <div class="ind-acc-expanded">
-            <h3>Life Sciences</h3>
-            <p>Biotech, pharmaceutical, and active laboratories requiring certified cleanroom sanitation and strict
-              protocol adherence.</p>
-            <span class="btn-ind-link">Explore Sector <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </a>
-
-        <!-- Tab 2: Corporate Offices -->
-        <a class="ind-accordion-item" href="#industries">
-          <div class="ind-acc-icon">
-            <i class="fa-solid fa-briefcase"></i>
-          </div>
-          <span class="ind-acc-collapsed-title">CORPORATE OFFICES</span>
-          <div class="ind-acc-expanded">
-            <h3>Corporate Offices</h3>
-            <p>High-end corporate headquarters and regional hub complexes designed to sustain visitor experience and
-              peak employee productivity.</p>
-            <span class="btn-ind-link">Explore Sector <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </a>
-
-        <!-- Tab 3: Healthcare -->
-        <a class="ind-accordion-item" href="#industries">
-          <div class="ind-acc-icon">
-            <i class="fa-solid fa-heart-pulse"></i>
-          </div>
-          <span class="ind-acc-collapsed-title">HEALTHCARE</span>
-          <div class="ind-acc-expanded">
-            <h3>Healthcare</h3>
-            <p>Clinical, emergency, and outpatient facilities managed for deep terminal cleaning, airborne vectors, and
-              infection control protocols.</p>
-            <span class="btn-ind-link">Explore Sector <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </a>
-
-        <!-- Tab 4: Manufacturing -->
-        <a class="ind-accordion-item" href="#industries">
-          <div class="ind-acc-icon">
-            <i class="fa-solid fa-industry"></i>
-          </div>
-          <span class="ind-acc-collapsed-title">MANUFACTURING</span>
-          <div class="ind-acc-expanded">
-            <h3>Manufacturing</h3>
-            <p>Precision assembly areas, storage distribution vaults, and heavy industrial facilities demanding uptime
-              and heavy equipment upkeep.</p>
-            <span class="btn-ind-link">Explore Sector <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </a>
-
-        <!-- Tab 5: Technology -->
-        <a class="ind-accordion-item" href="#industries">
-          <div class="ind-acc-icon">
-            <i class="fa-solid fa-microchip"></i>
-          </div>
-          <span class="ind-acc-collapsed-title">TECHNOLOGY</span>
-          <div class="ind-acc-expanded">
-            <h3>Technology</h3>
-            <p>Data center server arrays, microfluidic clean labs, and hardware fabrication testing vaults matching high
-              electrostatic standards.</p>
-            <span class="btn-ind-link">Explore Sector <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </a>
-
-        <!-- Tab 6: Retail Properties -->
-        <a class="ind-accordion-item" href="#industries">
-          <div class="ind-acc-icon">
-            <i class="fa-solid fa-store"></i>
-          </div>
-          <span class="ind-acc-collapsed-title">RETAIL PROPERTIES</span>
-          <div class="ind-acc-expanded">
-            <h3>Retail Properties</h3>
-            <p>High-exposure flagship storefront buildings, luxury boutiques, and high-crowd malls requiring 24/7
-              exterior and interior upkeep.</p>
-            <span class="btn-ind-link">Explore Sector <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </a>
-
-      </div>
-
     </div>
   </section>
+
   <main>
-    <section class="container section-padding industry-standard industries-intro-sec">
-      <div style="max-width: 780px">
-        <span class="hero-tag" style="
-              color: var(--accent-blue);
-              border-color: rgba(196, 129, 58, 0.3);
-              background: rgba(196, 129, 58, 0.06);
-            ">Built around your facility</span>
-        <h2>Practical support for the way your property operates</h2>
-        <p style="margin-top: 16px">
-          Every environment has different access, occupancy, compliance and
-          scheduling needs. The scope starts there. Work is scoped around
-          existing conditions, access, priorities, communication and the
-          outcome your team needs.
-        </p>
-      </div>
-      <div class="industries-card-grid" style="margin-top: 34px">
-        <div class="industries-s-card">
-          <div class="ind-icon-box">
-            <i class="fa-solid fa-clipboard-check"></i>
-          </div>
-          <h3>Defined requirements</h3>
-          <p>
-            Clarify the property, service areas, timing, access and
-            responsibilities before work begins.
-          </p>
-        </div>
-        <div class="industries-s-card">
-          <div class="ind-icon-box">
-            <i class="fa-solid fa-arrows-to-circle"></i>
-          </div>
-          <h3>Connected planning</h3>
-          <p>
-            Coordinate related cleaning, maintenance, construction or
-            building-system needs where they overlap.
-          </p>
-        </div>
-        <div class="industries-s-card">
-          <div class="ind-icon-box">
-            <i class="fa-solid fa-comments"></i>
-          </div>
-          <h3>Clear communication</h3>
-          <p>
-            Use agreed milestones, review points and closeout actions to keep
-            the facility team informed.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="container section-padding"
-      style="background: rgba(255, 255, 255, 0.015); border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
-      <h2>How the work is planned</h2>
-      <p class="section-intro">
-        A focused process keeps the scope useful and the delivery aligned with
-        your property.
+    <!-- ══════════════════════════════════════════════════════════════
+         SECTION 1 – Industry Cards Grid (8 Industries)
+    ══════════════════════════════════════════════════════════════ -->
+    <section id="industries" class="container section-padding">
+      <h2 class="scroll-reveal">Industries We Serve</h2>
+      <p class="section-intro scroll-reveal" style="text-align:center; max-width:700px; margin:12px auto 0;">
+        Every property has different access, occupancy, compliance and scheduling needs. RCC-BGM adapts cleaning,
+        maintenance, HVAC, MEP and construction services to match.
       </p>
-      <div class="ind-process-container">
-        <div class="ind-process-item">
-          <div class="ind-process-num-box">01</div>
-          <div class="ind-process-content">
-            <h4>Understand</h4>
-            <p>Review the facility, current condition and desired result.</p>
+
+      <div class="ind-card-grid">
+        <!-- 1. Corporate Offices -->
+        <div class="ind-card scroll-reveal">
+          <div class="ind-card-icon"><i class="fa-solid fa-building"></i></div>
+          <h3>Corporate Offices</h3>
+          <p>Office properties require reliable presentation, employee-support areas and coordinated building services.
+            RCC-BGM develops recurring cleaning and janitorial programs while separately assessing HVAC, facility
+            maintenance and workplace upgrades.</p>
+          <ul class="ind-features">
+            <li>Private offices, open workspaces, conference rooms and reception</li>
+            <li>Restrooms, kitchens, break rooms and shared spaces</li>
+            <li>HVAC maintenance and occupied-office project planning</li>
+            <li>Tenant moves, reconfiguration, painting and carpentry</li>
+          </ul>
+        </div>
+
+        <!-- 2. Multi-Tenant Properties -->
+        <div class="ind-card scroll-reveal">
+          <div class="ind-card-icon"><i class="fa-solid fa-city"></i></div>
+          <h3>Multi-Tenant Properties</h3>
+          <p>Multi-tenant buildings require coordination between ownership, property management and individual
+            occupants. Programs combine common-area cleaning, tenant communication and facility maintenance.</p>
+          <ul class="ind-features">
+            <li>Lobbies, corridors, shared restrooms and management areas</li>
+            <li>Suite-specific service requests and landlord responsibilities</li>
+            <li>Move-in, move-out and tenant-improvement coordination</li>
+            <li>Phased work around occupants and shared access</li>
+          </ul>
+        </div>
+
+        <!-- 3. Technology Campuses -->
+        <div class="ind-card scroll-reveal">
+          <div class="ind-card-icon"><i class="fa-solid fa-microchip"></i></div>
+          <h3>Technology Campuses</h3>
+          <p>Technology environments include high-occupancy offices, secure areas, continuous operations and
+            multi-building campuses. Services are planned around access restrictions and employee schedules.</p>
+          <ul class="ind-features">
+            <li>Office, collaboration, meeting and employee-support areas</li>
+            <li>Occupancy-informed cleaning or autonomous floor care</li>
+            <li>HVAC and facility maintenance coordination</li>
+            <li>Construction scheduled around controlled access</li>
+          </ul>
+        </div>
+
+        <!-- 4. Life Sciences / Labs -->
+        <div class="ind-card scroll-reveal">
+          <div class="ind-card-icon"><i class="fa-solid fa-flask"></i></div>
+          <h3>Life Sciences &amp; Labs</h3>
+          <p>Life-science and laboratory properties require detailed qualification. Scope may involve laboratory
+            support areas, gowning zones, controlled spaces, ESD-sensitive floors and approved construction
+            coordination.</p>
+          <ul class="ind-features">
+            <li>Customer SOPs, gowning, access and contamination control</li>
+            <li>Cleanroom and laboratory cleaning as specialized scopes</li>
+            <li>ESD floor maintenance and controlled equipment handling</li>
+            <li>HVAC, MEP and construction with qualified parties</li>
+          </ul>
+        </div>
+
+        <!-- 5. Healthcare -->
+        <div class="ind-card scroll-reveal">
+          <div class="ind-card-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <h3>Healthcare &amp; Medical</h3>
+          <p>Medical offices, clinics and healthcare-support properties require cleaning and facility support for
+            waiting, administrative, staff and approved patient-facing areas.</p>
+          <ul class="ind-features">
+            <li>Waiting areas, reception, offices, staff rooms and restrooms</li>
+            <li>Cleaning schedules around patients and operating hours</li>
+            <li>Facility maintenance, HVAC and tenant-improvement coordination</li>
+            <li>Clear exclusions for regulated clinical responsibilities</li>
+          </ul>
+        </div>
+
+        <!-- 6. Manufacturing -->
+        <div class="ind-card scroll-reveal">
+          <div class="ind-card-icon"><i class="fa-solid fa-industry"></i></div>
+          <h3>Manufacturing &amp; Industrial</h3>
+          <p>Manufacturing and industrial properties combine production-support spaces, warehouses, administrative
+            offices and employee areas. Plans account for shifts, machinery and site safety rules.</p>
+          <ul class="ind-features">
+            <li>Industrial floor, office, restroom and employee-area cleaning</li>
+            <li>Facility maintenance and corrective construction</li>
+            <li>Commercial HVAC support for conditioned areas</li>
+            <li>Phased improvements around production schedules</li>
+          </ul>
+        </div>
+
+        <!-- 7. Warehouses -->
+        <div class="ind-card scroll-reveal">
+          <div class="ind-card-icon"><i class="fa-solid fa-warehouse"></i></div>
+          <h3>Warehouses &amp; Distribution</h3>
+          <p>Warehouses and logistics facilities need cleaning and maintenance programs that reflect floor area,
+            loading activity, employee spaces, shift schedules and vehicle movement.</p>
+          <ul class="ind-features">
+            <li>Warehouse floors, offices and employee-support areas</li>
+            <li>Loading-area and high-traffic cleaning where approved</li>
+            <li>Maintenance and repair around active logistics</li>
+            <li>Multi-site standardization with site-specific assessments</li>
+          </ul>
+        </div>
+
+        <!-- 8. Retail / Hospitality -->
+        <div class="ind-card scroll-reveal">
+          <div class="ind-card-icon"><i class="fa-solid fa-store"></i></div>
+          <h3>Retail &amp; Hospitality</h3>
+          <p>Customer-facing properties depend on presentation, access and scheduling. Cleaning, painting, repairs,
+            HVAC and interior improvements are timed around customers and guests.</p>
+          <ul class="ind-features">
+            <li>Entrances, reception, sales floors and customer areas</li>
+            <li>Employee rooms, restrooms and back-of-house spaces</li>
+            <li>Finish restoration, painting and interior upgrades</li>
+            <li>Schedules aligned with customers and operating hours</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         SECTION 2 – How Services Adapt by Industry (Split Layout)
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="container section-padding scroll-reveal">
+      <div class="adapt-split">
+        <div class="adapt-left">
+          <span class="hero-tag"
+            style="color: var(--accent-blue); border-color: rgba(196, 129, 58, 0.3); background: rgba(196, 129, 58, 0.06);">
+            How it works
+          </span>
+          <h2>How RCC-BGM Adapts Services by Industry</h2>
+          <p>Every property has different daily demands. The scope depends on building type, operating schedule,
+            occupancy, technical environment and the outcome your team needs — not a generic service package.</p>
+        </div>
+        <div class="adapt-right">
+          <article class="adapt-card">
+            <div class="adapt-card-icon"><i class="fa-solid fa-building-columns"></i></div>
+            <div>
+              <h4>Property Use</h4>
+              <p>Offices, laboratories, warehouses and medical properties have different daily demands and service
+                requirements.</p>
+            </div>
+          </article>
+          <article class="adapt-card">
+            <div class="adapt-card-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <h4>Operating Schedule</h4>
+              <p>Service windows depend on shifts, customers, tenants, production cycles or controlled access periods.</p>
+            </div>
+          </article>
+          <article class="adapt-card">
+            <div class="adapt-card-icon"><i class="fa-solid fa-users"></i></div>
+            <div>
+              <h4>Occupancy &amp; Traffic</h4>
+              <p>Employee count, visitor flow and shared areas influence cleaning frequency and maintenance scope.</p>
+            </div>
+          </article>
+          <article class="adapt-card">
+            <div class="adapt-card-icon"><i class="fa-solid fa-server"></i></div>
+            <div>
+              <h4>Technical Environment</h4>
+              <p>HVAC, MEP, cleanroom procedures, equipment and building systems may affect how services are delivered.
+              </p>
+            </div>
+          </article>
+          <article class="adapt-card">
+            <div class="adapt-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <h4>Risk &amp; Responsibility</h4>
+              <p>Specialist, regulated and licensed work must be clearly assigned and separately qualified.</p>
+            </div>
+          </article>
+          <article class="adapt-card">
+            <div class="adapt-card-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <div>
+              <h4>Required Outcome</h4>
+              <p>Recurring service, corrective maintenance, tenant preparation or capital improvement — each shapes the
+                scope.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         SECTION 3 – Integrated BGM & RCC Service Model
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="container section-padding">
+      <h2 class="scroll-reveal">Integrated BGM &amp; RCC Service Model</h2>
+      <p class="section-intro scroll-reveal" style="text-align:center; max-width:700px; margin:12px auto 0;">
+        Programs and projects may be phased around employees, tenants, customers, production and approved access
+        periods. RCC-BGM coordinates across four capability areas.
+      </p>
+
+      <div class="model-grid">
+        <div class="model-card scroll-reveal">
+          <div class="model-card-icon"><i class="fa-solid fa-broom"></i></div>
+          <h4>Clean</h4>
+          <p>Commercial cleaning, janitorial, deep cleaning, industrial cleaning and specialized protocols.</p>
+        </div>
+        <div class="model-card scroll-reveal">
+          <div class="model-card-icon"><i class="fa-solid fa-wrench"></i></div>
+          <h4>Maintain</h4>
+          <p>Facility maintenance, HVAC support, landscaping and approved corrective repair coordination.</p>
+        </div>
+        <div class="model-card scroll-reveal">
+          <div class="model-card-icon"><i class="fa-solid fa-hammer"></i></div>
+          <h4>Improve</h4>
+          <p>Tenant improvements, maintenance construction, carpentry, painting, MEP and facility upgrades.</p>
+        </div>
+        <div class="model-card scroll-reveal">
+          <div class="model-card-icon"><i class="fa-solid fa-robot"></i></div>
+          <h4>Modernize</h4>
+          <p>Robotics-supported cleaning and occupancy-informed workflows for suitable, confirmed properties.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         SECTION 4 – Assessment Factors
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="container section-padding">
+      <h2 class="scroll-reveal">Industry-Specific Facility Assessment</h2>
+      <p class="section-intro scroll-reveal" style="text-align:center; max-width:700px; margin:12px auto 0;">
+        No two properties receive the same package. The assessment gathers enough information to route the inquiry and
+        identify specialist responsibilities.
+      </p>
+
+      <div class="assess-grid">
+        <div class="assess-item scroll-reveal">
+          <div class="assess-num">1</div>
+          <div>
+            <h4>Industry &amp; Property Type</h4>
+            <p>Identify the building category, use profile and any special classifications.</p>
           </div>
         </div>
-        <div class="ind-process-item">
-          <div class="ind-process-num-box">02</div>
-          <div class="ind-process-content">
-            <h4>Define</h4>
-            <p>
-              Confirm inclusions, exclusions, access, timing and
-              responsibilities.
-            </p>
+        <div class="assess-item scroll-reveal">
+          <div class="assess-num">2</div>
+          <div>
+            <h4>Location &amp; Size</h4>
+            <p>Approximate size, number of buildings and geographic market area.</p>
           </div>
         </div>
-        <div class="ind-process-item">
-          <div class="ind-process-num-box">03</div>
-          <div class="ind-process-content">
-            <h4>Coordinate</h4>
-            <p>
-              Plan people, materials, service windows and connected workstreams.
-            </p>
+        <div class="assess-item scroll-reveal">
+          <div class="assess-num">3</div>
+          <div>
+            <h4>Occupancy &amp; Hours</h4>
+            <p>Employee count, shifts, visitor flow and operating schedule.</p>
           </div>
         </div>
-        <div class="ind-process-item">
-          <div class="ind-process-num-box">04</div>
-          <div class="ind-process-content">
-            <h4>Close out</h4>
-            <p>Review the completed work, open actions and next priorities.</p>
+        <div class="assess-item scroll-reveal">
+          <div class="assess-num">4</div>
+          <div>
+            <h4>Current Challenges</h4>
+            <p>Cleaning, maintenance, HVAC or construction pain points and priorities.</p>
+          </div>
+        </div>
+        <div class="assess-item scroll-reveal">
+          <div class="assess-num">5</div>
+          <div>
+            <h4>Controlled Areas</h4>
+            <p>Regulated, restricted or specialist zones requiring separate qualification.</p>
+          </div>
+        </div>
+        <div class="assess-item scroll-reveal">
+          <div class="assess-num">6</div>
+          <div>
+            <h4>Service Frequency</h4>
+            <p>Required service frequency, project deadlines and milestone dates.</p>
+          </div>
+        </div>
+        <div class="assess-item scroll-reveal">
+          <div class="assess-num">7</div>
+          <div>
+            <h4>SOPs &amp; Access</h4>
+            <p>Customer SOPs, landlord rules, access procedures and security requirements.</p>
+          </div>
+        </div>
+        <div class="assess-item scroll-reveal">
+          <div class="assess-num">8</div>
+          <div>
+            <h4>Existing Documentation</h4>
+            <p>Plans, photographs, service records or project documents already available.</p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         SECTION 5 – 5-Step Conversion Process
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="container section-padding modern-process-sec scroll-reveal">
+      <h2>Recommended Five-Step Conversion Process</h2>
+      <p class="section-intro">
+        A clear path from inquiry to service launch, designed around your property and industry.
+      </p>
+      <div class="modern-process-grid" style="grid-template-columns: repeat(5, 1fr) !important;">
+        <div class="modern-step-card">
+          <div class="modern-card-header">
+            <h2>01</h2>
+            <div class="step-icon-box"><i class="fa-solid fa-magnifying-glass"></i></div>
+          </div>
+          <h4>Identify</h4>
+          <p>Confirm property type, location, size, schedule and facility priorities.</p>
+        </div>
+        <div class="modern-step-card">
+          <div class="modern-card-header">
+            <h2>02</h2>
+            <div class="step-icon-box"><i class="fa-solid fa-list-check"></i></div>
+          </div>
+          <h4>Review</h4>
+          <p>Separate cleaning, maintenance, technical and construction requirements.</p>
+        </div>
+        <div class="modern-step-card">
+          <div class="modern-card-header">
+            <h2>03</h2>
+            <div class="step-icon-box"><i class="fa-solid fa-user-check"></i></div>
+          </div>
+          <h4>Qualify</h4>
+          <p>Identify controlled areas, specialist trades, licensing and customer responsibilities.</p>
+        </div>
+        <div class="modern-step-card">
+          <div class="modern-card-header">
+            <h2>04</h2>
+            <div class="step-icon-box"><i class="fa-solid fa-file-lines"></i></div>
+          </div>
+          <h4>Scope</h4>
+          <p>Define tasks, frequency, access, assumptions, exclusions and communication.</p>
+        </div>
+        <div class="modern-step-card">
+          <div class="modern-card-header">
+            <h2>05</h2>
+            <div class="step-icon-box"><i class="fa-solid fa-rocket"></i></div>
+          </div>
+          <h4>Launch</h4>
+          <p>Begin service or project delivery with agreed review and closeout points.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         SECTION 6 – Service Selection Guidance
+    ══════════════════════════════════════════════════════════════ -->
     <section class="container section-padding">
-      <h2>Related RCC-BGM services</h2>
-      <div class="services-grid" style="margin-top: 30px">
-        <a class="s-item" href="commercial-cleaning-services.html">
+      <h2 class="scroll-reveal">Service Selection Guidance</h2>
+      <p class="section-intro scroll-reveal" style="text-align:center; max-width:700px; margin:12px auto 0;">
+        Not sure which service to start with? Use this guide to find the right entry point for your property.
+      </p>
+
+      <div class="select-grid">
+        <div class="select-item scroll-reveal">
+          <div class="select-item-icon"><i class="fa-solid fa-rotate"></i></div>
+          <div>
+            <h4>Recurring Cleaning</h4>
+            <p>Choose when the main need is ongoing cleanliness, restrooms, floors and facility presentation.</p>
+          </div>
+        </div>
+        <div class="select-item scroll-reveal">
+          <div class="select-item-icon"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+          <div>
+            <h4>Specialized Cleaning</h4>
+            <p>Choose when customer procedures, controlled environments or industrial conditions require separate
+              protocols.</p>
+          </div>
+        </div>
+        <div class="select-item scroll-reveal">
+          <div class="select-item-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+          <div>
+            <h4>Facility Maintenance</h4>
+            <p>Choose for recurring upkeep, smaller repairs and coordinated property condition support.</p>
+          </div>
+        </div>
+        <div class="select-item scroll-reveal">
+          <div class="select-item-icon"><i class="fa-solid fa-fan"></i></div>
+          <div>
+            <h4>HVAC or MEP</h4>
+            <p>Choose when the requirement affects heating, cooling, ventilation, power, plumbing or technical building
+              systems.</p>
+          </div>
+        </div>
+        <div class="select-item scroll-reveal">
+          <div class="select-item-icon"><i class="fa-solid fa-helmet-safety"></i></div>
+          <div>
+            <h4>Construction</h4>
+            <p>Choose for tenant build-outs, renovations, construction-level repairs or planned facility upgrades.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         SECTION 7 – Related Services
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="container section-padding">
+      <h2 class="scroll-reveal">Related RCC-BGM Services</h2>
+      <div class="services-grid" style="margin-top:30px">
+        <a class="s-item scroll-reveal" href="commercial-cleaning-services.html">
           <h3>Commercial Cleaning Services</h3>
           <p>Explore this connected RCC-BGM service area.</p>
           <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
-        </a><a class="s-item" href="commercial-construction.html">
-          <h3>Commercial Construction</h3>
-          <p>Explore this connected RCC-BGM service area.</p>
-          <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
-        </a><a class="s-item" href="facility-maintenance-services.html">
+        </a>
+        <a class="s-item scroll-reveal" href="facility-maintenance-services.html">
           <h3>Facility Maintenance Services</h3>
           <p>Explore this connected RCC-BGM service area.</p>
           <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
-        </a><a class="s-item" href="contact.html">
-          <h3>Contact</h3>
+        </a>
+        <a class="s-item scroll-reveal" href="commercial-construction.html">
+          <h3>Commercial Construction</h3>
+          <p>Explore this connected RCC-BGM service area.</p>
+          <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+        <a class="s-item scroll-reveal" href="commercial-hvac-services.html">
+          <h3>Commercial HVAC Services</h3>
           <p>Explore this connected RCC-BGM service area.</p>
           <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
         </a>
       </div>
     </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         SECTION 8 – FAQs
+    ══════════════════════════════════════════════════════════════ -->
     <section class="container section-padding">
-      <h2>Common questions</h2>
-      <div class="faq-item">
-        <h4>
-          Can the scope be tailored to our facility?
-          <i class="fa-solid fa-plus"></i>
-        </h4>
-        <p style="margin-top: 12px">
-          Yes. The appropriate plan depends on the property, operating
-          schedule, access, existing conditions and required outcome.
-        </p>
-      </div>
-      <div class="faq-item">
-        <h4>
-          Can related services be coordinated?
-          <i class="fa-solid fa-plus"></i>
-        </h4>
-        <p style="margin-top: 12px">
-          Where needs overlap, RCC-BGM can review the connected work and
-          clarify which team owns each part of the scope.
-        </p>
-      </div>
-      <div class="faq-item">
-        <h4>What is the first step? <i class="fa-solid fa-plus"></i></h4>
-        <p style="margin-top: 12px">
-          Request an assessment with the facility type, location, service need
-          and timing. The team can then determine the right next conversation.
-        </p>
+      <h2 class="scroll-reveal">Common Questions</h2>
+      <div class="faq-wrap">
+        <div class="faq-item scroll-reveal">
+          <h4>What industries does RCC-BGM serve? <i class="fa-solid fa-plus"></i></h4>
+          <p style="margin-top:12px">
+            RCC-BGM supports corporate offices, commercial buildings, technology workplaces, life-science and laboratory
+            environments, medical offices, manufacturing properties, warehouses, distribution facilities and selected
+            multi-site portfolios.
+          </p>
+        </div>
+        <div class="faq-item scroll-reveal">
+          <h4>Can RCC-BGM provide several services at one property? <i class="fa-solid fa-plus"></i></h4>
+          <p style="margin-top:12px">
+            Yes. Approved cleaning, facility maintenance, HVAC, MEP and construction requirements may be coordinated
+            within one wider facility plan while each service keeps its own scope.
+          </p>
+        </div>
+        <div class="faq-item scroll-reveal">
+          <h4>Does every industry receive the same service package? <i class="fa-solid fa-plus"></i></h4>
+          <p style="margin-top:12px">
+            No. The scope depends on the building type, occupancy, operating schedule, technical environment, customer
+            procedures and required outcome.
+          </p>
+        </div>
+        <div class="faq-item scroll-reveal">
+          <h4>Can services be delivered in occupied facilities? <i class="fa-solid fa-plus"></i></h4>
+          <p style="margin-top:12px">
+            Programs and projects may be phased around employees, tenants, customers, production and approved access
+            periods.
+          </p>
+        </div>
+        <div class="faq-item scroll-reveal">
+          <h4>Can RCC-BGM support laboratories and cleanrooms? <i class="fa-solid fa-plus"></i></h4>
+          <p style="margin-top:12px">
+            Specialized cleaning and facility support may be assessed, but room classifications, SOPs, validation and
+            compliance responsibilities must be confirmed before service.
+          </p>
+        </div>
+        <div class="faq-item scroll-reveal">
+          <h4>Does RCC-BGM support industrial or warehouse properties? <i class="fa-solid fa-plus"></i></h4>
+          <p style="margin-top:12px">
+            Approved cleaning, maintenance, HVAC and construction support may be developed around shifts, access,
+            logistics and site safety requirements.
+          </p>
+        </div>
+        <div class="faq-item scroll-reveal">
+          <h4>Can RCC-BGM support multiple locations? <i class="fa-solid fa-plus"></i></h4>
+          <p style="margin-top:12px">
+            Multi-location programs may be considered according to active markets, local resources, property conditions
+            and required service consistency.
+          </p>
+        </div>
+        <div class="faq-item scroll-reveal">
+          <h4>What is the first step? <i class="fa-solid fa-plus"></i></h4>
+          <p style="margin-top:12px">
+            Request an assessment with the industry, property type, location, approximate size, operating schedule,
+            current challenges and required services.
+          </p>
+        </div>
       </div>
     </section>
-    <section class="container section-padding industry-standard">
-      <div style="max-width: 780px">
-        <span class="hero-tag">Ready to discuss the property?</span>
-        <h2>Start with a clear facility requirement</h2>
-        <p style="margin-top: 16px">
-          Tell RCC-BGM what needs attention, where the property is located and
-          how the work must fit around operations.
+
+    <!-- ══════════════════════════════════════════════════════════════
+         SECTION 9 – Final CTA
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="container" style="padding: 24px 0 28px 0; border-bottom: none !important;">
+      <div class="cta-box"
+        style="background: radial-gradient(120% 120% at 0% 0%, rgba(255,255,255,0.03) 0%, rgba(232,113,74,0.03) 100%), #181310; border: 1px solid rgba(232,113,74,0.25); box-shadow: 0 12px 30px rgba(232,113,74,0.08); border-radius: 24px;">
+        <span class="hero-tag"
+          style="background: rgba(232,113,74,0.06); border: 1px solid rgba(232,113,74,0.25); border-radius: 100px; color: var(--accent-blue); padding: 6px 16px;">
+          Build an Industry-Specific Facility Plan
+        </span>
+        <h2 style="color:white !important; margin-top:16px;">Start with the Property and Operating Environment</h2>
+        <p style="margin-top:12px; color:#D4C0AC !important;">
+          Tell RCC-BGM about your industry, building type, current challenges and service priorities. The team can
+          identify the relevant BGM and RCC capabilities and develop an individual or coordinated facility-support
+          proposal.
         </p>
-        <a href="contact.html" class="btn-header btn-glow" style="display: inline-block; margin-top: 24px">Request a
-          Facility Assessment
-          <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="contact.html" class="btn-header btn-glow" style="display:inline-block; margin-top:24px">
+          Request an Industry-Specific Facility Assessment <i class="fa-solid fa-arrow-right"></i>
+        </a>
       </div>
     </section>
   </main>
+
+  <!-- ── Footer ── -->
   <footer>
     <div class="container f-grid">
       <div class="f-col">
         <a href="index.html" class="logo">RCC<span>BGM</span></a>
-        <p style="margin-top: 16px">
-          Integrated commercial facility solutions for the spaces your
-          business depends on.
+        <p style="margin-top:16px">
+          Integrated commercial facility solutions for the spaces your business depends on.
         </p>
       </div>
       <div class="f-col">
         <h4>Services</h4>
         <ul>
-          <li>
-            <a href="commercial-cleaning-services.html">Commercial Cleaning</a>
-          </li>
+          <li><a href="commercial-cleaning-services.html">Commercial Cleaning</a></li>
           <li><a href="commercial-construction.html">Construction</a></li>
-          <li>
-            <a href="facility-maintenance-services.html">Maintenance</a>
-          </li>
+          <li><a href="facility-maintenance-services.html">Maintenance</a></li>
           <li><a href="smart-cleaning-robotics.html">Robotics</a></li>
         </ul>
       </div>

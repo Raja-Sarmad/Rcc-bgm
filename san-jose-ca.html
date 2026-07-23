@@ -1,728 +1,255 @@
-﻿<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>San Jose Ca Facility Services | RCC-BGM</title>
-    <meta
-      name="description"
-      content="RCC-BGM can review cleaning, maintenance, construction and building-system needs around your local facility and confirmed service scope."
-    />
-    <link rel="stylesheet" href="site.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <style>
-      .sj-hero {
-        position: relative;
-        background: radial-gradient(circle at 50% 10%, rgba(232, 113, 74, 0.15) 0%, transparent 55%),
-          radial-gradient(circle at 80% 90%, rgba(196, 129, 58, 0.08) 0%, transparent 50%),
-          #181310;
-        padding: 130px 0 70px 0;
-        overflow: hidden;
-        border-bottom: 1px solid rgba(232, 113, 74, 0.15);
-      }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commercial Facility Services in San Jose, CA | RCC-BGM</title>
+    <meta name="description" content="RCC-BGM provides commercial cleaning, janitorial, construction, HVAC and facility services for business properties in San Jose, California, subject to service availability.">
 
-      .sj-hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image:
-          linear-gradient(rgba(255, 255, 255, 0.004) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.004) 1px, transparent 1px);
-        background-size: 70px 70px;
-        pointer-events: none;
-      }
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="site.css">
+</head>
+<body class="page-location">
 
-      .sj-hero-grid {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 56px;
-        align-items: center;
-        position: relative;
-        z-index: 10;
-      }
-
-      .sj-hero-left {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-      }
-
-      .sj-hero-left h1 {
-        font-size: clamp(32px, 4.5vw, 52px);
-        color: white;
-        font-weight: 800;
-        line-height: 1.15;
-        letter-spacing: -1.2px;
-        margin-top: 18px;
-      }
-
-      .sj-hero-left h1 span.gradient-text {
-        background: linear-gradient(135deg, #E8714A 0%, #C4813A 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .sj-hero-left p {
-        font-size: 16px;
-        line-height: 1.7;
-        color: #D4C0AC;
-        margin-top: 20px;
-        max-width: 500px;
-      }
-
-      .sj-hero-actions {
-        display: flex;
-        gap: 16px;
-        margin-top: 32px;
-        flex-wrap: wrap;
-      }
-
-      .sj-hero-actions .btn-outline-hero {
-        border: 1px solid rgba(232, 113, 74, 0.3);
-        background: rgba(255, 255, 255, 0.02);
-        color: white;
-        padding: 12px 24px;
-        border-radius: 99px;
-        font-weight: 700;
-        font-size: 14px;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        transition: all 0.3s ease;
-      }
-
-      .sj-hero-actions .btn-outline-hero:hover {
-        border-color: var(--accent-teal);
-        background: rgba(232, 113, 74, 0.08);
-      }
-
-      /* Orbital Service Map */
-      .sj-orbital {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 1;
-        max-width: 440px;
-        margin: 0 auto;
-      }
-
-      .sj-orbital-center {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 110px;
-        height: 110px;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(232, 113, 74, 0.15) 0%, rgba(232, 113, 74, 0.03) 70%, transparent 100%);
-        border: 1px solid rgba(232, 113, 74, 0.35);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        z-index: 3;
-        backdrop-filter: blur(16px);
-        box-shadow: 0 0 40px rgba(232, 113, 74, 0.12), 0 0 80px rgba(232, 113, 74, 0.06);
-      }
-
-      .sj-orbital-center::before {
-        content: '';
-        position: absolute;
-        width: 140%;
-        height: 140%;
-        border-radius: 50%;
-        border: 1px solid rgba(232, 113, 74, 0.08);
-        animation: sj-center-pulse 4s ease-in-out infinite;
-      }
-
-      .sj-orbital-center::after {
-        content: '';
-        position: absolute;
-        width: 170%;
-        height: 170%;
-        border-radius: 50%;
-        border: 1px solid rgba(232, 113, 74, 0.04);
-        animation: sj-center-pulse 4s ease-in-out infinite 1s;
-      }
-
-      @keyframes sj-center-pulse {
-        0%, 100% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(1.08); opacity: 0.4; }
-      }
-
-      .sj-orbital-center i {
-        font-size: 24px;
-        color: var(--accent-teal);
-        margin-bottom: 5px;
-        filter: drop-shadow(0 0 8px rgba(232, 113, 74, 0.4));
-      }
-
-      .sj-orbital-center span {
-        font-size: 10px;
-        font-weight: 700;
-        color: white;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-      }
-
-      /* Orbit Rings */
-      .sj-orbit-ring {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 80%;
-        height: 80%;
-        border-radius: 50%;
-        border: 1px solid rgba(232, 113, 74, 0.1);
-        z-index: 1;
-      }
-
-      .sj-orbit-ring::before {
-        content: '';
-        position: absolute;
-        top: -2px;
-        left: 50%;
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: var(--accent-teal);
-        box-shadow: 0 0 10px rgba(232, 113, 74, 0.6);
-        animation: sj-orbit-dot 8s linear infinite;
-      }
-
-      @keyframes sj-orbit-dot {
-        from { transform: rotate(0deg) translateX(calc(80% * 0.5 / 2)) rotate(0deg); }
-        to { transform: rotate(360deg) translateX(calc(80% * 0.5 / 2)) rotate(-360deg); }
-      }
-
-      .sj-orbit-ring-inner {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 55%;
-        height: 55%;
-        border-radius: 50%;
-        border: 1px dashed rgba(232, 113, 74, 0.08);
-        z-index: 1;
-      }
-
-      /* Service Nodes */
-      .sj-node {
-        position: absolute;
-        background: rgba(5, 15, 35, 0.6);
-        border: 1px solid rgba(232, 113, 74, 0.12);
-        border-radius: 18px;
-        padding: 18px 14px;
-        backdrop-filter: blur(12px);
-        transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-        z-index: 2;
-        text-align: center;
-        width: 124px;
-        text-decoration: none;
-      }
-
-      .sj-node:hover {
-        border-color: rgba(232, 113, 74, 0.5);
-        background: rgba(5, 15, 35, 0.8);
-        box-shadow: 0 0 24px rgba(232, 113, 74, 0.15), 0 8px 32px rgba(0, 0, 0, 0.3);
-      }
-
-      .sj-node-icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 16px;
-        margin: 0 auto 10px auto;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .sj-node:hover .sj-node-icon {
-        transform: scale(1.12);
-      }
-
-      .sj-orbital > a:nth-of-type(1) .sj-node-icon {
-        background: rgba(232, 113, 74, 0.12);
-        color: var(--accent-teal);
-      }
-
-      .sj-orbital > a:nth-of-type(1):hover .sj-node-icon {
-        box-shadow: 0 0 16px rgba(232, 113, 74, 0.3);
-      }
-
-      .sj-orbital > a:nth-of-type(2) .sj-node-icon {
-        background: rgba(34, 197, 94, 0.12);
-        color: #22c55e;
-      }
-
-      .sj-orbital > a:nth-of-type(2):hover .sj-node-icon {
-        box-shadow: 0 0 16px rgba(34, 197, 94, 0.3);
-      }
-
-      .sj-orbital > a:nth-of-type(3) .sj-node-icon {
-        background: rgba(245, 158, 11, 0.12);
-        color: #f59e0b;
-      }
-
-      .sj-orbital > a:nth-of-type(3):hover .sj-node-icon {
-        box-shadow: 0 0 16px rgba(245, 158, 11, 0.3);
-      }
-
-      .sj-orbital > a:nth-of-type(4) .sj-node-icon {
-        background: rgba(139, 92, 246, 0.12);
-        color: #8b5cf6;
-      }
-
-      .sj-orbital > a:nth-of-type(4):hover .sj-node-icon {
-        box-shadow: 0 0 16px rgba(139, 92, 246, 0.3);
-      }
-
-      .sj-node-title {
-        font-size: 12px;
-        font-weight: 700;
-        color: white;
-        margin-bottom: 3px;
-      }
-
-      .sj-node-count {
-        font-size: 10px;
-        color: #64748b;
-      }
-
-      /* Node Positions */
-      .sj-orbital > a:nth-of-type(1) { top: 0%; left: 50%; transform: translateX(-50%); }
-      .sj-orbital > a:nth-of-type(2) { top: 50%; right: 0%; transform: translateY(-50%); }
-      .sj-orbital > a:nth-of-type(3) { bottom: 0%; left: 50%; transform: translateX(-50%); }
-      .sj-orbital > a:nth-of-type(4) { top: 50%; left: 0%; transform: translateY(-50%); }
-
-      .sj-orbital > a:nth-of-type(1):hover { transform: translateX(-50%) scale(1.08); }
-      .sj-orbital > a:nth-of-type(2):hover { transform: translateY(-50%) scale(1.08); }
-      .sj-orbital > a:nth-of-type(3):hover { transform: translateX(-50%) scale(1.08); }
-      .sj-orbital > a:nth-of-type(4):hover { transform: translateY(-50%) scale(1.08); }
-
-      /* Connection Lines */
-      .sj-connections {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        pointer-events: none;
-      }
-
-      .sj-conn-line {
-        stroke: url(#sj-line-gradient);
-        stroke-width: 1;
-        stroke-dasharray: 6 4;
-        opacity: 0.5;
-      }
-
-      /* Bottom Stats Bar */
-      .sj-stats-bar {
-        display: flex;
-        justify-content: center;
-        gap: 48px;
-        margin-top: 48px;
-        padding-top: 28px;
-        border-top: 1px solid rgba(232, 113, 74, 0.08);
-        position: relative;
-        z-index: 10;
-        flex-wrap: wrap;
-      }
-
-      .sj-stat {
-        text-align: center;
-      }
-
-      .sj-stat-val {
-        font-size: 26px;
-        font-weight: 800;
-        color: white;
-      }
-
-      .sj-stat-val span {
-        color: var(--accent-teal);
-      }
-
-      .sj-stat-label {
-        font-size: 11px;
-        color: #64748b;
-        margin-top: 3px;
-        text-transform: uppercase;
-        letter-spacing: 0.8px;
-        font-weight: 600;
-      }
-
-      @media (max-width: 900px) {
-        .sj-hero-grid {
-          grid-template-columns: 1fr;
-          gap: 40px;
-        }
-
-        .sj-hero-left {
-          align-items: center;
-          text-align: center;
-        }
-
-        .sj-hero-left p {
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        .sj-hero-actions {
-          justify-content: center;
-        }
-
-        .sj-orbital {
-          max-width: 340px;
-        }
-
-        .sj-node {
-          width: 100px;
-          padding: 12px 10px;
-        }
-
-        .sj-stats-bar {
-          gap: 28px;
-        }
-      }
-    </style>
-  </head>
-  <body class="page-location">
+    <!-- Navigation -->
     <nav>
-      <div class="container nav-flex">
-        <a href="index.html" class="logo"
-          ><span class="logo-icon"
-            ><i class="fa-solid fa-building-shield"></i></span
-          >RCC<span>BGM</span></a
-        >
-        <ul class="nav-links">
-          <li><a href="services.html">Services</a></li>
-          <li><a href="industries.html">Industries</a></li>
-          <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-        <a href="contact.html" class="btn-header">Get Assessment</a>
-      </div>
+        <div class="container nav-flex">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span>
+                RCC<span>BGM</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="services.html">Services</a></li>
+                <li><a href="industries.html">Industries</a></li>
+                <li><a href="locations.html" class="is-active">Locations</a></li>
+                <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <a href="contact.html" class="btn-header">Get Assessment</a>
+        </div>
     </nav>
 
-    <section class="sj-hero">
-      <div class="container">
-        <div class="sj-hero-grid">
-
-          <div class="sj-hero-left">
-            <span class="hero-tag"
-              style="background: rgba(232, 113, 74, 0.08); border: 1px solid rgba(232, 113, 74, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;"><i
-                class="fa-solid fa-location-dot"></i> SAN JOSE, CALIFORNIA</span>
-            <h1>Facility Services<br><span class="gradient-text">in San Jose, CA</span></h1>
-            <p>
-              Commercial facility support for businesses and properties in San Jose. Cleaning, maintenance, construction
-              and building-system services coordinated around your local facility and confirmed service scope.
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 72vh;">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="hero-tag"><i class="fa-solid fa-location-dot"></i> South Bay / Silicon Valley</span>
+            <h1>Commercial Facility Services in San Jose, California</h1>
+            <p style="color: #D4C0AC; max-width: 720px; margin: 22px auto 0;">
+                Commercial facility support for offices, commercial properties and controlled environments in San Jose, the capital of Silicon Valley.
             </p>
-            <div class="sj-hero-actions">
-              <a class="btn-header btn-glow" href="contact.html">Request an Assessment <i class="fa-solid fa-arrow-right"></i></a>
-              <a class="btn-outline-hero" href="services.html"><i class="fa-solid fa-layer-group"></i> Explore Services</a>
+            <div class="hero-labels">
+                <a class="btn-header btn-glow" href="contact.html">Request a Local Facility Assessment <i class="fa-solid fa-arrow-right"></i></a>
+                <a class="h-label" href="services.html"><i class="fa-solid fa-layer-group"></i> Explore Services</a>
             </div>
-          </div>
-
-          <div class="sj-orbital">
-            <!-- Orbit Rings -->
-            <div class="sj-orbit-ring"></div>
-            <div class="sj-orbit-ring-inner"></div>
-
-            <!-- SVG Connection Lines -->
-            <svg class="sj-connections" viewBox="0 0 440 440">
-              <defs>
-                <linearGradient id="sj-line-gradient" x1="50%" y1="50%" x2="0%" y2="0%">
-                  <stop offset="0%" stop-color="rgba(232, 113, 74, 0.4)" />
-                  <stop offset="100%" stop-color="rgba(232, 113, 74, 0.05)" />
-                </linearGradient>
-                <linearGradient id="sj-line-gradient-r" x1="50%" y1="50%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="rgba(232, 113, 74, 0.4)" />
-                  <stop offset="100%" stop-color="rgba(34, 197, 94, 0.05)" />
-                </linearGradient>
-                <linearGradient id="sj-line-gradient-b" x1="50%" y1="50%" x2="50%" y2="100%">
-                  <stop offset="0%" stop-color="rgba(232, 113, 74, 0.4)" />
-                  <stop offset="100%" stop-color="rgba(245, 158, 11, 0.05)" />
-                </linearGradient>
-                <linearGradient id="sj-line-gradient-l" x1="50%" y1="50%" x2="0%" y2="50%">
-                  <stop offset="0%" stop-color="rgba(232, 113, 74, 0.4)" />
-                  <stop offset="100%" stop-color="rgba(139, 92, 246, 0.05)" />
-                </linearGradient>
-              </defs>
-              <line class="sj-conn-line" x1="220" y1="220" x2="220" y2="50" style="stroke: url(#sj-line-gradient);" />
-              <line class="sj-conn-line" x1="220" y1="220" x2="400" y2="220" style="stroke: url(#sj-line-gradient-r);" />
-              <line class="sj-conn-line" x1="220" y1="220" x2="220" y2="390" style="stroke: url(#sj-line-gradient-b);" />
-              <line class="sj-conn-line" x1="220" y1="220" x2="40" y2="220" style="stroke: url(#sj-line-gradient-l);" />
-            </svg>
-
-            <!-- Center Hub -->
-            <div class="sj-orbital-center">
-              <i class="fa-solid fa-location-dot"></i>
-              <span>San Jose</span>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="num">01</div>
+                    <div class="lbl">Clear scope</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">02</div>
+                    <div class="lbl">Coordinated team</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">03</div>
+                    <div class="lbl">Planned delivery</div>
+                </div>
             </div>
-
-            <!-- Top Node: HVAC -->
-            <a class="sj-node" href="commercial-hvac-services.html">
-              <div class="sj-node-icon"><i class="fa-solid fa-temperature-half"></i></div>
-              <div class="sj-node-title">HVAC</div>
-              <div class="sj-node-count">Install & Repair</div>
-            </a>
-
-            <!-- Right Node: Maintenance -->
-            <a class="sj-node" href="facility-maintenance-services.html">
-              <div class="sj-node-icon"><i class="fa-solid fa-wrench"></i></div>
-              <div class="sj-node-title">Maintenance</div>
-              <div class="sj-node-count">Repairs & Upkeep</div>
-            </a>
-
-            <!-- Bottom Node: Construction -->
-            <a class="sj-node" href="commercial-construction.html">
-              <div class="sj-node-icon"><i class="fa-solid fa-helmet-safety"></i></div>
-              <div class="sj-node-title">Construction</div>
-              <div class="sj-node-count">Build-Outs</div>
-            </a>
-
-            <!-- Left Node: Cleaning -->
-            <a class="sj-node" href="commercial-cleaning-services.html">
-              <div class="sj-node-icon"><i class="fa-solid fa-broom"></i></div>
-              <div class="sj-node-title">Cleaning</div>
-              <div class="sj-node-count">Offices & Lobbies</div>
-            </a>
-          </div>
-
         </div>
-
-        <div class="sj-stats-bar">
-          <div class="sj-stat">
-            <div class="sj-stat-val">240<span>+</span></div>
-            <div class="sj-stat-label">Local Facilities</div>
-          </div>
-          <div class="sj-stat">
-            <div class="sj-stat-val">14<span>hr</span></div>
-            <div class="sj-stat-label">Avg Response</div>
-          </div>
-          <div class="sj-stat">
-            <div class="sj-stat-val">98<span>%</span></div>
-            <div class="sj-stat-label">Client Retention</div>
-          </div>
-          <div class="sj-stat">
-            <div class="sj-stat-val">24<span>/7</span></div>
-            <div class="sj-stat-label">Dispatch Ready</div>
-          </div>
-        </div>
-
-      </div>
+        <div class="scroll-cue">Scroll<div class="dot-track"></div></div>
     </section>
+
     <main>
-      <section class="container section-padding industry-standard">
-        <div style="max-width: 780px">
-          <span
-            class="hero-tag"
-            style="
-              color: var(--accent-blue);
-              border-color: rgba(196, 129, 58, 0.3);
-              background: rgba(196, 129, 58, 0.06);
-            "
-            >Built around your facility</span
-          >
-          <h2>Practical support for the way your property operates</h2>
-          <p style="margin-top: 16px">
-            RCC-BGM can review cleaning, maintenance, construction and
-            building-system needs around your local facility and confirmed
-            service scope. Work is scoped around existing conditions, access,
-            priorities, communication and the outcome your team needs.
-          </p>
-        </div>
-        <div class="services-grid" style="margin-top: 34px">
-          <article class="s-item">
-            <i class="fa-solid fa-clipboard-check"></i>
-            <h3>Defined requirements</h3>
-            <p>
-              Clarify the property, service areas, timing, access and
-              responsibilities before work begins.
-            </p>
-          </article>
-          <article class="s-item">
-            <i class="fa-solid fa-arrows-to-circle"></i>
-            <h3>Connected planning</h3>
-            <p>
-              Coordinate related cleaning, maintenance, construction or
-              building-system needs where they overlap.
-            </p>
-          </article>
-          <article class="s-item">
-            <i class="fa-solid fa-comments"></i>
-            <h3>Clear communication</h3>
-            <p>
-              Use agreed milestones, review points and closeout actions to keep
-              the facility team informed.
-            </p>
-          </article>
-        </div>
-      </section>
-      <section class="container section-padding">
-        <h2>How the work is planned</h2>
-        <p class="section-intro">
-          A focused process keeps the scope useful and the delivery aligned with
-          your property.
-        </p>
+        <!-- Local Introduction -->
+        <section class="container section-padding industry-standard">
+            <div style="max-width: 780px;">
+                <span class="hero-tag" style="color: var(--accent-blue); border-color: rgba(196, 129, 58, 0.3); background: rgba(196, 129, 58, 0.06);">Silicon Valley Market</span>
+                <h2>Commercial Facility Support in San Jose</h2>
+                <p style="margin-top: 16px;">San Jose is the capital of Silicon Valley and one of the largest commercial markets in Northern California, with major technology campuses, corporate offices, R&D centers and controlled environments. RCC-BGM supports offices, commercial properties and controlled environments in San Jose through Brilliant General Maintenance and Reliable Concepts Corporation. Cleaning, janitorial, construction, HVAC and facility work are scoped around the property and confirmed local availability.</p>
+            </div>
+            <div class="services-grid" style="margin-top: 34px;">
+                
+          <a class="s-item scroll-reveal" href="commercial-cleaning-services.html">
+            <i class="fa-solid fa-broom"></i>
+            <h3>Commercial Cleaning &amp; Janitorial</h3>
+            <p>BGM can develop commercial janitorial, office cleaning and selected cleanroom support for offices, commercial properties and controlled environments in San Jose, subject to the confirmed facility scope and local service availability.</p>
+            <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+          <a class="s-item scroll-reveal" href="commercial-construction.html">
+            <i class="fa-solid fa-helmet-safety"></i>
+            <h3>Commercial Construction &amp; Improvements</h3>
+            <p>RCC can coordinate tenant improvements, HVAC, MEP and facility upgrades for commercial properties in San Jose, based on the project, licensing and trade requirements.</p>
+            <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+          <a class="s-item scroll-reveal" href="facility-maintenance-services.html">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <h3>Facility Maintenance</h3>
+            <p>Selected building maintenance, repairs and facility-upgrade work can be connected with cleaning and building-system needs in San Jose.</p>
+            <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+          <a class="s-item scroll-reveal" href="commercial-hvac-services.html">
+            <i class="fa-solid fa-temperature-arrow-down"></i>
+            <h3>Commercial HVAC &amp; MEP</h3>
+            <p>HVAC and MEP work can be reviewed as stand-alone service or coordinated with tenant improvements and facility projects in San Jose.</p>
+            <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+            </div>
+        </section>
+
+        <!-- Industries -->
+        <section class="container section-padding">
+            <h2>Industries in San Jose</h2>
+            <p class="section-intro">RCC-BGM supports commercial properties connected to San Jose's key business sectors, with services tailored to each facility type.</p>
+            <div class="services-grid" style="margin-top: 30px;">
+                
+          <div class="s-item scroll-reveal">
+            <i class="fa-solid fa-microchip"></i>
+            <h3>Technology & Semiconductor</h3>
+            <p>Major tech campuses, semiconductor offices and hardware companies headquartered in San Jose.</p>
+          </div>
+          <div class="s-item scroll-reveal">
+            <i class="fa-solid fa-wind"></i>
+            <h3>Cleanroom & R&D</h3>
+            <p>Cleanroom environments, research laboratories and specialized controlled spaces.</p>
+          </div>
+          <div class="s-item scroll-reveal">
+            <i class="fa-solid fa-building"></i>
+            <h3>Corporate Headquarters</h3>
+            <p>Regional and national corporate offices in San Jose's business districts.</p>
+          </div>
+          <div class="s-item scroll-reveal">
+            <i class="fa-solid fa-hospital"></i>
+            <h3>Healthcare & Medical</h3>
+            <p>Medical offices, hospital campuses and clinical environments.</p>
+          </div>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section class="container section-padding">
+            <h2>How a Local Service Request Works in San Jose</h2>
+            <p class="section-intro">A focused process keeps the scope useful and the delivery aligned with your property.</p>
+            
         <div class="process-grid">
-          <div class="step-card">
+          <div class="step-card scroll-reveal">
             <h2>01</h2>
-            <h4>Understand</h4>
-            <p>Review the facility, current condition and desired result.</p>
+            <h4>Share the Property</h4>
+            <p>Provide the San Jose address, facility type, current need and preferred timing.</p>
           </div>
-          <div class="step-card">
+          <div class="step-card scroll-reveal">
             <h2>02</h2>
-            <h4>Define</h4>
-            <p>
-              Confirm inclusions, exclusions, access, timing and
-              responsibilities.
-            </p>
+            <h4>Confirm Coverage</h4>
+            <p>RCC-BGM confirms which division, service and local team can support the request.</p>
           </div>
-          <div class="step-card">
+          <div class="step-card scroll-reveal">
             <h2>03</h2>
-            <h4>Coordinate</h4>
-            <p>
-              Plan people, materials, service windows and connected workstreams.
-            </p>
+            <h4>Review the Site</h4>
+            <p>A walkthrough is arranged when the scope cannot be accurately defined remotely.</p>
           </div>
-          <div class="step-card">
+          <div class="step-card scroll-reveal">
             <h2>04</h2>
-            <h4>Close out</h4>
-            <p>Review the completed work, open actions and next priorities.</p>
+            <h4>Receive a Proposal</h4>
+            <p>The proposal identifies services, frequency or project scope, responsibilities and exclusions.</p>
           </div>
         </div>
-      </section>
-      <section class="container section-padding">
-        <h2>Related RCC-BGM services</h2>
-        <div class="services-grid" style="margin-top: 30px">
-          <a class="s-item" href="commercial-cleaning-services.html"
-            ><h3>Commercial Cleaning Services</h3>
-            <p>Explore this connected RCC-BGM service area.</p>
-            <span class="s-link"
-              >View service <i class="fa-solid fa-arrow-right"></i></span></a
-          ><a class="s-item" href="commercial-construction.html"
-            ><h3>Commercial Construction</h3>
-            <p>Explore this connected RCC-BGM service area.</p>
-            <span class="s-link"
-              >View service <i class="fa-solid fa-arrow-right"></i></span></a
-          ><a class="s-item" href="facility-maintenance-services.html"
-            ><h3>Facility Maintenance Services</h3>
-            <p>Explore this connected RCC-BGM service area.</p>
-            <span class="s-link"
-              >View service <i class="fa-solid fa-arrow-right"></i></span></a
-          ><a class="s-item" href="contact.html"
-            ><h3>Contact</h3>
-            <p>Explore this connected RCC-BGM service area.</p>
-            <span class="s-link"
-              >View service <i class="fa-solid fa-arrow-right"></i></span
-          ></a>
-        </div>
-      </section>
-      <section class="container section-padding">
-        <h2>Common questions</h2>
+        </section>
+
+        <!-- Related Services -->
+        <section class="container section-padding">
+            <h2>Related RCC-BGM Services</h2>
+            <div class="services-grid" style="margin-top: 30px;">
+                <a class="s-item scroll-reveal" href="commercial-cleaning-services.html">
+                    <h3>Commercial Cleaning Services</h3>
+                    <p>Explore BGM commercial cleaning capabilities available in the San Jose market.</p>
+                    <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="s-item scroll-reveal" href="commercial-construction.html">
+                    <h3>Commercial Construction</h3>
+                    <p>Explore RCC construction, tenant improvements and facility upgrades in San Jose.</p>
+                    <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="s-item scroll-reveal" href="facility-maintenance-services.html">
+                    <h3>Facility Maintenance Services</h3>
+                    <p>Explore connected maintenance programs for San Jose commercial properties.</p>
+                    <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="s-item scroll-reveal" href="industries.html">
+                    <h3>Industries</h3>
+                    <p>See which industries RCC-BGM serves and how services connect to your facility type.</p>
+                    <span class="s-link">View industries <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="container section-padding">
+            <h2>Frequently Asked Questions About San Jose</h2>
+            
         <div class="faq-item">
-          <h4>
-            Can the scope be tailored to our facility?
-            <i class="fa-solid fa-plus"></i>
-          </h4>
-          <p style="margin-top: 12px">
-            Yes. The appropriate plan depends on the property, operating
-            schedule, access, existing conditions and required outcome.
-          </p>
+          <h4>Does RCC-BGM provide commercial cleaning in San Jose? <i class="fa-solid fa-plus"></i></h4>
+          <p>RCC-BGM lists San Jose as a primary South Bay service market. Cleaning availability and program frequency must be confirmed for the specific property.</p>
         </div>
         <div class="faq-item">
-          <h4>
-            Can related services be coordinated?
-            <i class="fa-solid fa-plus"></i>
-          </h4>
-          <p style="margin-top: 12px">
-            Where needs overlap, RCC-BGM can review the connected work and
-            clarify which team owns each part of the scope.
-          </p>
+          <h4>Can I request cleanroom or controlled-environment cleaning? <i class="fa-solid fa-plus"></i></h4>
+          <p>Yes. Submit the facility type, address and specialized requirements so BGM can confirm local capability for controlled environments.</p>
         </div>
         <div class="faq-item">
-          <h4>What is the first step? <i class="fa-solid fa-plus"></i></h4>
-          <p style="margin-top: 12px">
-            Request an assessment with the facility type, location, service need
-            and timing. The team can then determine the right next conversation.
-          </p>
+          <h4>Does RCC provide tenant improvements in San Jose? <i class="fa-solid fa-plus"></i></h4>
+          <p>RCC can review the project. Licensing, permit requirements, trade availability and scope must be confirmed before a proposal is issued.</p>
         </div>
-      </section>
-      <section class="container section-padding industry-standard">
-        <div style="max-width: 780px">
-          <span class="hero-tag">Ready to discuss the property?</span>
-          <h2>Start with a clear facility requirement</h2>
-          <p style="margin-top: 16px">
-            Tell RCC-BGM what needs attention, where the property is located and
-            how the work must fit around operations.
-          </p>
-          <a
-            href="contact.html"
-            class="btn-header btn-glow"
-            style="display: inline-block; margin-top: 24px"
-            >Request a Facility Assessment
-            <i class="fa-solid fa-arrow-right"></i
-          ></a>
+        <div class="faq-item">
+          <h4>Can RCC-BGM coordinate cleaning and construction? <i class="fa-solid fa-plus"></i></h4>
+          <p>Yes. Related cleaning, maintenance, HVAC and improvement work can be organized through the combined platform when clearly scoped.</p>
         </div>
-      </section>
+        <div class="faq-item">
+          <h4>What property types does RCC-BGM serve in San Jose? <i class="fa-solid fa-plus"></i></h4>
+          <p>Tech campuses, cleanroom facilities, corporate offices, R&D centers and healthcare properties.</p>
+        </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section id="contact" class="container section-padding" style="border-bottom: none;">
+            <div class="cta-box">
+                <h2>Request a Local Facility Assessment in San Jose</h2>
+                <p style="margin-top: 10px;">Share the property address, facility type and required service. RCC-BGM will confirm local availability and the appropriate next step for your San Jose property.</p>
+                <div style="margin-top: 30px;">
+                    <a href="contact.html" class="btn-header btn-glow" style="background: white; color: var(--bg-deep);">Request an Assessment <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nearby Cities -->
+        <section class="container section-padding" style="text-align: center; padding-bottom: 40px;">
+            <h2>Explore Nearby Markets</h2>
+            <p style="margin: 10px auto 0; max-width: 620px;">RCC-BGM serves selected commercial properties across the Silicon Valley region. Explore other nearby service markets.</p>
+            <div class="services-grid" style="margin-top: 24px;">
+                
+                <a class="s-item scroll-reveal" href="santa-clara-ca.html">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h3>Santa Clara, CA</h3>
+                    <p>Explore RCC-BGM commercial facility services available in Santa Clara.</p>
+                    <span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="s-item scroll-reveal" href="campbell-ca.html">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h3>Campbell, CA</h3>
+                    <p>Explore RCC-BGM commercial facility services available in Campbell.</p>
+                    <span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="s-item scroll-reveal" href="cupertino-ca.html">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h3>Cupertino, CA</h3>
+                    <p>Explore RCC-BGM commercial facility services available in Cupertino.</p>
+                    <span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </section>
     </main>
-    <footer>
-      <div class="container f-grid">
-        <div class="f-col">
-          <a href="index.html" class="logo">RCC<span>BGM</span></a>
-          <p style="margin-top: 16px">
-            Integrated commercial facility solutions for the spaces your
-            business depends on.
-          </p>
-        </div>
-        <div class="f-col">
-          <h4>Services</h4>
-          <ul>
-            <li>
-              <a href="commercial-cleaning-services.html"
-                >Commercial Cleaning</a
-              >
-            </li>
-            <li><a href="commercial-construction.html">Construction</a></li>
-            <li>
-              <a href="facility-maintenance-services.html">Maintenance</a>
-            </li>
-            <li><a href="smart-cleaning-robotics.html">Robotics</a></li>
-          </ul>
-        </div>
-        <div class="f-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
-            <li><a href="industries.html">Industries</a></li>
-            <li><a href="locations.html">Locations</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="f-col">
-          <h4>Contact HQ</h4>
-          <p>
-            San Jose, California<br />United States<br />support@rcc-bgm.com
-          </p>
-        </div>
-      </div>
-    </footer>
+
+    <footer></footer>
     <script src="site.js" defer></script>
-  </body>
+</body>
 </html>

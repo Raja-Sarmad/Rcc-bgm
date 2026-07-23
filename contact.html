@@ -3,10 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Request a Facility Assessment | RCC-BGM</title>
+    <title>Contact RCC-BGM | Request a Facility Assessment</title>
     <meta
       name="description"
-      content="Share the property type, service need, location and timing so the request can be reviewed by the appropriate RCC-BGM team."
+      content="Contact RCC-BGM about commercial cleaning, facility maintenance, HVAC, MEP, tenant improvements or construction. Request a facility assessment."
+    />
+    <link rel="canonical" href="https://rcc-bgm.com/contact" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="site.css" />
     <link
@@ -14,57 +19,39 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <style>
-      /* Contact Page custom Intake Form Hero styling */
+      /* ── Contact Hero ── */
       .contact-hero {
         position: relative;
         background:
-          radial-gradient(
-            circle at 10% 30%,
-            rgba(232, 113, 74, 0.15) 0%,
-            transparent 50%
-          ),
-          radial-gradient(
-            circle at 80% 80%,
-            rgba(196, 129, 58, 0.08) 0%,
-            transparent 50%
-          ),
+          radial-gradient(circle at 10% 30%, rgba(232,113,74,.15) 0%, transparent 50%),
+          radial-gradient(circle at 80% 80%, rgba(196,129,58,.08) 0%, transparent 50%),
           #181310;
-        padding: 140px 0 85px 0;
+        padding: 140px 0 85px;
         overflow: hidden;
-        border-bottom: 1px solid rgba(232, 113, 74, 0.2);
+        border-bottom: 1px solid rgba(232,113,74,.2);
       }
-
       .contact-hero::before {
         content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: radial-gradient(
-          rgba(255, 255, 255, 0.007) 1px,
-          transparent 1px
-        );
+        inset: 0;
+        background-image: radial-gradient(rgba(255,255,255,.007) 1px, transparent 1px);
         background-size: 24px 24px;
         pointer-events: none;
       }
-
       .contact-hero-grid {
         display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
+        grid-template-columns: 1.15fr .85fr;
         gap: 48px;
         align-items: center;
         position: relative;
         z-index: 10;
       }
-
       .contact-hero-left {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         text-align: left;
       }
-
       .contact-hero-left h1 {
         font-size: clamp(34px, 4.5vw, 52px);
         color: white;
@@ -73,29 +60,25 @@
         letter-spacing: -1.2px;
         margin-top: 16px;
       }
-
       .contact-hero-left h1 span.gradient-text {
         background: linear-gradient(135deg, #E8714A 0%, #C4813A 100%);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-
       .contact-hero-left p {
         font-size: 16px;
         line-height: 1.7;
         color: #D4C0AC;
         margin-top: 18px;
-        max-width: 520px;
+        max-width: 540px;
       }
-
       .contact-info-list {
         margin-top: 32px;
         display: flex;
         flex-direction: column;
         gap: 16px;
       }
-
       .contact-info-item {
         display: flex;
         align-items: center;
@@ -103,103 +86,74 @@
         font-size: 15px;
         color: #D4C0AC;
       }
-
       .contact-info-item i {
         font-size: 18px;
         color: var(--accent-teal);
         width: 24px;
       }
+      .contact-info-item a {
+        color: #D4C0AC;
+        text-decoration: none;
+        transition: color .25s;
+      }
+      .contact-info-item a:hover { color: var(--accent-teal); }
 
-      /* Intake Form Card */
+      /* ── Intake Card (hero right) ── */
       .contact-intake-card {
-        background: rgba(5, 15, 35, 0.45);
-        border: 1px solid rgba(232, 113, 74, 0.2);
+        background: rgba(5,15,35,.45);
+        border: 1px solid rgba(232,113,74,.2);
         border-radius: 28px;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 20px 50px rgba(0,0,0,.4);
         backdrop-filter: blur(16px);
         padding: 32px;
         position: relative;
         overflow: hidden;
-        transition: all 0.4s ease;
+        transition: all .4s ease;
         min-height: 440px;
         box-sizing: border-box;
       }
-
       .contact-intake-card:hover {
-        border-color: rgba(232, 113, 74, 0.4);
-        box-shadow: 0 24px 60px rgba(232, 113, 74, 0.15);
+        border-color: rgba(232,113,74,.4);
+        box-shadow: 0 24px 60px rgba(232,113,74,.15);
       }
-
       .intake-title {
         font-size: 18px;
         font-weight: 700;
         color: white;
         margin-bottom: 20px;
-        border-bottom: 1px solid rgba(232, 113, 74, 0.1);
+        border-bottom: 1px solid rgba(232,113,74,.1);
         padding-bottom: 8px;
       }
-
       .intake-group {
         margin-bottom: 16px;
         display: flex;
         flex-direction: column;
         gap: 6px;
       }
-
       .intake-group label {
         font-size: 11px;
         font-weight: 700;
-        color: rgba(232, 113, 74, 0.85);
-        letter-spacing: 0.8px;
+        color: rgba(232,113,74,.85);
+        letter-spacing: .8px;
         text-transform: uppercase;
-        font-family: inherit;
       }
-
       .intake-input {
-        background: rgba(10, 25, 50, 0.6);
-        border: 1px solid rgba(232, 113, 74, 0.15);
+        background: rgba(10,25,50,.6);
+        border: 1px solid rgba(232,113,74,.15);
         border-radius: 10px;
         padding: 10px 14px;
         color: white;
         font-size: 14px;
-        transition: all 0.3s ease;
+        transition: all .3s ease;
         outline: none;
         width: 100%;
         box-sizing: border-box;
       }
-
       .intake-input:focus {
         border-color: var(--accent-teal);
-        background: rgba(10, 25, 50, 0.8);
-        box-shadow: 0 0 10px rgba(232, 113, 74, 0.15);
+        background: rgba(10,25,50,.8);
+        box-shadow: 0 0 10px rgba(232,113,74,.15);
       }
-
-      .intake-tabs {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-      }
-
-      .intake-tab-btn {
-        background: rgba(10, 25, 50, 0.6);
-        border: 1px solid rgba(232, 113, 74, 0.15);
-        border-radius: 8px;
-        padding: 8px;
-        color: #9E8B7E;
-        font-size: 12px;
-        font-weight: 600;
-        cursor: pointer;
-        text-align: center;
-        transition: all 0.3s ease;
-      }
-
-      .intake-tab-btn.active {
-        background: rgba(232, 113, 74, 0.15);
-        border-color: var(--accent-teal);
-        color: white;
-        box-shadow: 0 0 10px rgba(232, 113, 74, 0.1);
-      }
-
       .intake-submit {
         width: 100%;
         padding: 12px;
@@ -214,17 +168,16 @@
         align-items: center;
         justify-content: center;
         gap: 8px;
-        box-shadow: 0 0 15px rgba(232, 113, 74, 0.3);
-        transition: all 0.3s ease;
+        box-shadow: 0 0 15px rgba(232,113,74,.3);
+        transition: all .3s ease;
         margin-top: 10px;
       }
-
       .intake-submit:hover {
-        box-shadow: 0 0 25px rgba(232, 113, 74, 0.5);
+        box-shadow: 0 0 25px rgba(232,113,74,.5);
         transform: translateY(-2px);
       }
 
-      /* Success Screen */
+      /* ── Success Screen ── */
       .success-container {
         display: none;
         flex-direction: column;
@@ -233,97 +186,365 @@
         text-align: center;
         height: 100%;
         min-height: 380px;
-        animation: form-fade-in 0.5s ease forwards;
+        animation: form-fade-in .5s ease forwards;
       }
-
       @keyframes form-fade-in {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(10px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      .success-icon-box {
+        width: 68px; height: 68px;
+        border-radius: 50%;
+        background: rgba(0,245,212,.08);
+        border: 1px solid rgba(0,245,212,.3);
+        display: flex; align-items: center; justify-content: center;
+        color: #00f5d4; font-size: 28px;
+        margin-bottom: 24px;
+        box-shadow: 0 0 20px rgba(0,245,212,.2);
+      }
+      .success-container h3 { font-size: 20px; color: white; font-weight: 700; margin-bottom: 12px; }
+      .success-container p  { font-size: 14px; color: #D4C0AC; line-height: 1.6; max-width: 290px; margin-bottom: 20px; }
+      .success-badge {
+        font-family: monospace; font-size: 11px;
+        background: rgba(232,113,74,.15); color: var(--accent-teal);
+        border: 1px solid rgba(232,113,74,.25); border-radius: 6px;
+        padding: 4px 10px; letter-spacing: .5px;
       }
 
-      .success-icon-box {
-        width: 68px;
-        height: 68px;
-        border-radius: 50%;
-        background: rgba(0, 245, 212, 0.08);
-        border: 1px solid rgba(0, 245, 212, 0.3);
+      /* ── Full Form Section ── */
+      .contact-form-section {
+        padding: 60px 0 40px;
+      }
+      .contact-form-card {
+        background: #fff;
+        border-radius: 22px;
+        box-shadow: 0 8px 40px rgba(48,36,71,.08), 0 1px 3px rgba(48,36,71,.06);
+        padding: 48px 44px;
+        max-width: 980px;
+        margin: 0 auto;
+        border: 1px solid rgba(128,99,199,.08);
+      }
+      .contact-form-card h2 {
+        font-size: 30px;
+        margin-bottom: 6px;
+      }
+      .contact-form-card > p {
+        color: var(--text-slate);
+        margin-bottom: 32px;
+        font-size: 15px;
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 28px;
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .form-group.full-width {
+        grid-column: 1 / -1;
+      }
+      .form-label {
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .5px;
+        color: var(--bg-deep);
+      }
+      .form-label .required-star {
+        color: var(--accent-blue);
+        margin-left: 2px;
+      }
+      .form-input,
+      .form-select,
+      .form-textarea {
+        background: #f8f6fc;
+        border: none;
+        border-bottom: 2px solid rgba(128,99,199,.12);
+        border-radius: 10px 10px 0 0;
+        padding: 14px 18px;
+        font-size: 15px;
+        font-family: inherit;
+        color: var(--text-dark);
+        transition: border-color .25s, background .25s, box-shadow .25s;
+        outline: none;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .form-input:focus,
+      .form-select:focus,
+      .form-textarea:focus {
+        border-bottom-color: var(--accent-teal);
+        background: #f0ecfa;
+        box-shadow: 0 2px 0 0 var(--accent-teal);
+      }
+      .form-input::placeholder,
+      .form-textarea::placeholder {
+        color: #a99dba;
+      }
+      .form-select {
+        appearance: none;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238063c7' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 18px center;
+        padding-right: 44px;
+        cursor: pointer;
+      }
+      .form-textarea {
+        resize: vertical;
+        min-height: 110px;
+        border-radius: 10px;
+        border: 2px solid rgba(128,99,199,.12);
+      }
+      .form-textarea:focus {
+        border-color: var(--accent-teal);
+        box-shadow: none;
+      }
+
+      /* File upload */
+      .file-upload-wrapper {
+        position: relative;
+      }
+      .file-upload-label {
         display: flex;
         align-items: center;
-        justify-content: center;
-        color: #00f5d4;
-        font-size: 28px;
-        margin-bottom: 24px;
-        box-shadow: 0 0 20px rgba(0, 245, 212, 0.2);
+        gap: 12px;
+        background: #f8f6fc;
+        border: 2px dashed rgba(128,99,199,.2);
+        border-radius: 12px;
+        padding: 18px;
+        cursor: pointer;
+        transition: border-color .25s, background .25s;
       }
-
-      .success-container h3 {
-        font-size: 20px;
-        color: white;
-        font-weight: 700;
-        margin-bottom: 12px;
+      .file-upload-label:hover {
+        border-color: var(--accent-teal);
+        background: #f0ecfa;
       }
-
-      .success-container p {
-        font-size: 14px;
-        color: #D4C0AC;
-        line-height: 1.6;
-        max-width: 290px;
-        margin-bottom: 20px;
-      }
-
-      .success-badge {
-        font-family: monospace;
-        font-size: 11px;
-        background: rgba(232, 113, 74, 0.15);
+      .file-upload-label i {
+        font-size: 22px;
         color: var(--accent-teal);
-        border: 1px solid rgba(232, 113, 74, 0.25);
-        border-radius: 6px;
-        padding: 4px 10px;
-        letter-spacing: 0.5px;
+      }
+      .file-upload-label span {
+        font-size: 14px;
+        color: var(--text-slate);
+      }
+      .file-upload-label strong {
+        color: var(--accent-teal);
+      }
+      .file-upload-wrapper input[type="file"] {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        cursor: pointer;
+      }
+      .file-name-display {
+        margin-top: 6px;
+        font-size: 13px;
+        color: var(--accent-teal);
+        font-weight: 600;
       }
 
+      /* Service pills */
+      .service-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .service-pill {
+        position: relative;
+      }
+      .service-pill input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .service-pill label {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 9px 18px;
+        border-radius: 100px;
+        border: 1px solid rgba(128,99,199,.18);
+        background: #f8f6fc;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-slate);
+        cursor: pointer;
+        transition: all .25s ease;
+        user-select: none;
+      }
+      .service-pill label:hover {
+        border-color: var(--accent-teal);
+        color: var(--accent-teal);
+        background: #f0ecfa;
+      }
+      .service-pill input:checked + label {
+        background: var(--gradient);
+        color: #fff;
+        border-color: transparent;
+        box-shadow: 0 4px 12px rgba(128,99,199,.2);
+      }
+      .service-pill input:focus-visible + label {
+        outline: 2px solid var(--accent-teal);
+        outline-offset: 2px;
+      }
+
+      /* Form submit row */
+      .form-submit-row {
+        margin-top: 32px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .form-submit-btn {
+        padding: 14px 40px;
+        border: none;
+        border-radius: 30px;
+        background: var(--gradient);
+        color: #fff;
+        font-weight: 700;
+        font-size: 15px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 9px 20px rgba(128,99,199,.22);
+        transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+      }
+      .form-submit-btn:hover {
+        transform: translateY(-3px);
+        filter: saturate(1.1) brightness(1.03);
+        box-shadow: 0 14px 28px rgba(217,111,159,.28);
+      }
+      .form-submit-btn:active {
+        transform: translateY(0) scale(.98);
+      }
+      .form-note {
+        font-size: 13px;
+        color: var(--text-slate);
+      }
+
+      /* ── What Happens Next - 5-step override for grid ── */
+      .contact-steps-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+      }
+      .contact-steps-grid .modern-step-card h4 {
+        color: #fff;
+      }
+      .contact-steps-grid .modern-step-card p {
+        color: #D4C0AC;
+        font-size: 14px;
+      }
+
+      /* ── Contact quick-link cards ── */
+      .contact-quick-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-top: 30px;
+      }
+      .contact-quick-card {
+        background: #fff;
+        border-radius: 18px;
+        padding: 28px 22px;
+        border: 1px solid rgba(128,99,199,.08);
+        box-shadow: 0 4px 16px rgba(48,36,71,.05);
+        transition: transform .3s, box-shadow .3s, border-color .3s;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .contact-quick-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(128,99,199,.1);
+        border-color: rgba(128,99,199,.2);
+      }
+      .contact-quick-card i {
+        font-size: 24px;
+        color: var(--accent-teal);
+      }
+      .contact-quick-card h3 {
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--bg-deep);
+      }
+      .contact-quick-card p {
+        font-size: 14px;
+        color: var(--text-slate);
+        line-height: 1.55;
+      }
+      .contact-quick-card .s-link {
+        margin-top: auto;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--accent-teal);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: gap .25s;
+      }
+      .contact-quick-card:hover .s-link { gap: 10px; }
+
+      /* ── Page-specific overrides ── */
       .page-contact .container.section-padding {
         padding-left: 0 !important;
         padding-right: 0 !important;
       }
-
       .page-contact main > section:nth-child(2).container.section-padding {
         padding-left: 30px !important;
         padding-right: 30px !important;
       }
-
       .page-contact .step-card h2 {
         color: var(--accent-teal) !important;
         opacity: 1 !important;
       }
 
-      @media (max-width: 900px) {
+      /* ── Responsive ── */
+      @media (max-width: 991px) {
         .contact-hero-grid {
           grid-template-columns: 1fr;
           gap: 36px;
         }
-
         .contact-hero-left {
           align-items: center;
           text-align: center;
         }
-
         .contact-hero-left p {
           margin-left: auto;
           margin-right: auto;
         }
-
         .contact-intake-card {
           width: 100%;
           max-width: 440px;
           margin: 0 auto;
+        }
+        .contact-steps-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .contact-quick-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 768px) {
+        .contact-form-card {
+          padding: 32px 20px;
+        }
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+        .contact-steps-grid {
+          grid-template-columns: 1fr;
+        }
+        .contact-quick-grid {
+          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -346,321 +567,657 @@
         <a href="contact.html" class="btn-header">Get Assessment</a>
       </div>
     </nav>
+
+    <!-- ════════ HERO ════════ -->
     <section class="contact-hero">
       <div class="container">
         <div class="contact-hero-grid">
-          <!-- Left: Text and Contact details -->
+          <!-- Left: Text + Contact details -->
           <div class="contact-hero-left">
             <span
               class="hero-tag"
               style="
-                background: rgba(232, 113, 74, 0.08);
-                border: 1px solid rgba(232, 113, 74, 0.3);
+                background: rgba(232,113,74,.08);
+                border: 1px solid rgba(232,113,74,.3);
                 border-radius: 100px;
                 color: var(--accent-teal);
                 padding: 6px 16px;
               "
-              ><i class="fa-solid fa-paper-plane"></i> ASSESSMENTS
-              DIVISION</span
+              ><i class="fa-solid fa-paper-plane"></i> FACILITY ASSESSMENTS</span
             >
             <h1>
-              Start with a Clear<br /><span class="gradient-text"
-                >Facility Intake</span
+              Tell Us What Your<br /><span class="gradient-text"
+                >Commercial Facility Needs</span
               >
             </h1>
             <p>
-              Submit your specific property needs, location parameters, and
-              operating window. Our dispatch division will prepare a custom SLA
-              scope within 24 hours.
+              Share the location, property type, current challenge and services
+              you are considering. RCC-BGM can review the enquiry and determine
+              whether it belongs with Reliable Concepts Corporation, Brilliant
+              General Maintenance or a coordinated facility scope.
             </p>
             <div class="contact-info-list">
               <div class="contact-info-item">
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:+18442716677">(844) 271-6677</a>
+              </div>
+              <div class="contact-info-item">
                 <i class="fa-solid fa-envelope"></i>
-                <span>support@rcc-bgm.com</span>
+                <a href="mailto:info@rcc-bgm.com">info@rcc-bgm.com</a>
               </div>
               <div class="contact-info-item">
-                <i class="fa-solid fa-clock"></i>
+                <i class="fa-solid fa-location-dot"></i>
                 <span
-                  >Intake Review: Mon-Fri
-                  <span style="color: var(--accent-teal); font-weight: 600"
-                    >8:00 AM - 5:00 PM PST</span
-                  ></span
-                >
-              </div>
-              <div class="contact-info-item">
-                <i class="fa-solid fa-building-circle-check"></i>
-                <span
-                  >HQ Dispatch Center:
-                  <span style="font-weight: 600; color: white"
-                    >San Jose, CA</span
-                  ></span
+                  >Review active markets on the
+                  <a href="locations.html" style="color:var(--accent-teal);text-decoration:underline;">Locations&nbsp;page</a></span
                 >
               </div>
             </div>
           </div>
 
-          <!-- Right: Intake Form Card -->
+          <!-- Right: Quick Intake Card -->
           <div class="contact-intake-card" id="intake-console-card">
-            <!-- Form View State -->
             <div id="contact-form-elements">
-              <div class="intake-title">Facility Assessment Request</div>
+              <div class="intake-title">Quick Facility Assessment</div>
               <form
                 id="facility-intake-form"
                 onsubmit="handleIntakeSubmit(event)"
               >
                 <div class="intake-group">
-                  <label>Facility Class</label>
-                  <div class="intake-tabs">
-                    <div
-                      class="intake-tab-btn active"
-                      onclick="tabSelect(this, 'Commercial')"
-                    >
-                      Commercial
-                    </div>
-                    <div
-                      class="intake-tab-btn"
-                      onclick="tabSelect(this, 'Industrial')"
-                    >
-                      Industrial
-                    </div>
-                  </div>
+                  <label for="intake-name">Full Name</label>
                   <input
-                    type="hidden"
-                    name="facility_class"
-                    id="intake-facility-class"
-                    value="Commercial"
+                    class="intake-input"
+                    type="text"
+                    id="intake-name"
+                    name="full_name"
+                    required
+                    autocomplete="name"
+                    placeholder="Your name"
+                    aria-required="true"
                   />
                 </div>
-
                 <div class="intake-group">
-                  <label for="intake-email">Contact Email</label>
+                  <label for="intake-email">Work Email</label>
                   <input
                     class="intake-input"
                     type="email"
                     id="intake-email"
+                    name="email"
                     required
+                    autocomplete="email"
                     placeholder="contact@company.com"
+                    aria-required="true"
                   />
                 </div>
-
                 <div class="intake-group">
-                  <label for="intake-location">Property City</label>
+                  <label for="intake-location">Property City &amp; State</label>
                   <input
                     class="intake-input"
                     type="text"
                     id="intake-location"
+                    name="location"
                     required
-                    placeholder="e.g. San Jose, Palo Alto"
+                    placeholder="e.g. San Jose, CA"
+                    aria-required="true"
                   />
                 </div>
-
                 <div class="intake-group">
                   <label for="intake-scope">Requirement Summary</label>
                   <textarea
                     class="intake-input"
                     id="intake-scope"
+                    name="description"
                     rows="3"
                     required
-                    placeholder="Describe what service needs attention..."
-                    style="resize: none"
+                    placeholder="Describe what service needs attention…"
+                    style="resize:none"
+                    aria-required="true"
                   ></textarea>
                 </div>
-
                 <button class="intake-submit" type="submit">
-                  Submit Request <i class="fa-solid fa-arrow-right"></i>
+                  Send Facility Enquiry <i class="fa-solid fa-arrow-right"></i>
                 </button>
               </form>
             </div>
 
-            <!-- Success View State -->
+            <!-- Success View -->
             <div class="success-container" id="contact-success-state">
               <div class="success-icon-box">
-                <i class="fa-solid fa-circle-nodes"></i>
+                <i class="fa-solid fa-circle-check"></i>
               </div>
-              <h3>Intake Registered</h3>
+              <h3>Enquiry Received</h3>
               <p>
-                Our regional coordination center has successfully received your
-                facility details.
+                Thank you for contacting RCC-BGM. The submitted information will
+                be reviewed and routed to the appropriate team.
               </p>
-              <span class="success-badge">TICKET ID // RCC-4190</span>
+              <span class="success-badge">REF // RCC-BGM</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Interactive form handling script -->
+    <!-- Form handling script -->
     <script>
-      function tabSelect(btn, value) {
-        const parent = btn.parentElement;
-        const buttons = parent.querySelectorAll(".intake-tab-btn");
-        buttons.forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-        document.getElementById("intake-facility-class").value = value;
-      }
-
       function handleIntakeSubmit(e) {
         e.preventDefault();
-        // Hide form contents
         document.getElementById("contact-form-elements").style.display = "none";
-        // Show success message container
-        const success = document.getElementById("contact-success-state");
-        success.style.display = "flex";
+        var s = document.getElementById("contact-success-state");
+        s.style.display = "flex";
+      }
+      function handleFullFormSubmit(e) {
+        e.preventDefault();
+        var form = e.target;
+        form.innerHTML =
+          '<div style="text-align:center;padding:60px 20px;">' +
+          '<div class="success-icon-box" style="margin:0 auto 24px;"><i class="fa-solid fa-circle-check"></i></div>' +
+          '<h3 style="font-size:22px;color:var(--bg-deep);margin-bottom:10px;">Your Facility Enquiry Has Been Received</h3>' +
+          '<p style="color:var(--text-slate);max-width:520px;margin:0 auto;">Thank you for contacting RCC-BGM. The submitted information will be reviewed and routed to the appropriate team. A representative may request photographs, plans, service records, a site walkthrough or additional scope details before pricing and scheduling are discussed.</p>' +
+          '<p style="margin-top:18px;font-size:14px;color:var(--text-slate);">Alternative contact: <strong>(844) 271-6677</strong> | <strong>info@rcc-bgm.com</strong></p>' +
+          '</div>';
+        form.parentElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      function showFileName(input) {
+        var display = input.closest('.file-upload-wrapper').querySelector('.file-name-display');
+        if (input.files.length > 0) {
+          var names = Array.from(input.files).map(function(f){ return f.name; }).join(", ");
+          display.textContent = names;
+        } else {
+          display.textContent = "";
+        }
       }
     </script>
+
     <main>
-      <section class="container section-padding">
-        <div style="max-width: 800px">
-          <span class="hero-tag">Built around your facility</span>
-          <h2>Practical support for the way your property operates</h2>
-          <p style="margin-top: 16px">
-            Share the property type, service need, location and timing so the
-            request can be reviewed by the appropriate RCC-BGM team. Work is
-            scoped around existing conditions, access, priorities, communication
-            and the outcome your team needs.
+      <!-- ════════ FULL CONTACT FORM ════════ -->
+      <section class="container section-padding contact-form-section scroll-reveal" id="full-form">
+        <div class="contact-form-card">
+          <h2>Request a Facility Assessment</h2>
+          <p>
+            Complete the fields below with the information currently available. Exact
+            pricing, scheduling and service availability will be confirmed after the
+            property and scope are reviewed.
           </p>
-        </div>
-        <div class="services-grid" style="margin-top: 34px">
-          <article class="s-item">
-            <i class="fa-solid fa-clipboard-check"></i>
-            <h3>Defined requirements</h3>
-            <p>
-              Clarify the property, service areas, timing, access and
-              responsibilities before work begins.
-            </p>
-          </article>
-          <article class="s-item">
-            <i class="fa-solid fa-arrows-to-circle"></i>
-            <h3>Connected planning</h3>
-            <p>
-              Coordinate related cleaning, maintenance, construction or
-              building-system needs where they overlap.
-            </p>
-          </article>
-          <article class="s-item">
-            <i class="fa-solid fa-comments"></i>
-            <h3>Clear communication</h3>
-            <p>
-              Use agreed milestones, review points and closeout actions to keep
-              the facility team informed.
-            </p>
-          </article>
+
+          <form
+            action="#"
+            method="POST"
+            onsubmit="handleFullFormSubmit(event)"
+            aria-label="Facility assessment request form"
+          >
+            <div class="form-grid">
+              <!-- Row 1: Name + Company -->
+              <div class="form-group">
+                <label class="form-label" for="cf-name"
+                  >Full Name <span class="required-star" aria-hidden="true">*</span></label
+                >
+                <input
+                  class="form-input"
+                  type="text"
+                  id="cf-name"
+                  name="full_name"
+                  required
+                  autocomplete="name"
+                  placeholder="Jane Doe"
+                  aria-required="true"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cf-company"
+                  >Company <span class="required-star" aria-hidden="true">*</span></label
+                >
+                <input
+                  class="form-input"
+                  type="text"
+                  id="cf-company"
+                  name="company"
+                  required
+                  autocomplete="organization"
+                  placeholder="Company name"
+                  aria-required="true"
+                />
+              </div>
+
+              <!-- Row 2: Email + Phone -->
+              <div class="form-group">
+                <label class="form-label" for="cf-email"
+                  >Work Email <span class="required-star" aria-hidden="true">*</span></label
+                >
+                <input
+                  class="form-input"
+                  type="email"
+                  id="cf-email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  placeholder="jane@company.com"
+                  aria-required="true"
+                  aria-describedby="email-hint"
+                />
+                <span id="email-hint" class="sr-only">Enter a valid work email address</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cf-phone"
+                  >Phone Number <span class="required-star" aria-hidden="true">*</span></label
+                >
+                <input
+                  class="form-input"
+                  type="tel"
+                  id="cf-phone"
+                  name="phone"
+                  required
+                  autocomplete="tel"
+                  placeholder="(555) 123-4567"
+                  aria-required="true"
+                />
+              </div>
+
+              <!-- Row 3: Location (full width) -->
+              <div class="form-group full-width">
+                <label class="form-label" for="cf-location"
+                  >Property Location
+                  <span class="required-star" aria-hidden="true">*</span></label
+                >
+                <input
+                  class="form-input"
+                  type="text"
+                  id="cf-location"
+                  name="location"
+                  required
+                  placeholder="Address, city, state and ZIP — or at minimum city and state"
+                  aria-required="true"
+                />
+              </div>
+
+              <!-- Row 4: Facility Type + Preferred Contact -->
+              <div class="form-group">
+                <label class="form-label" for="cf-facility-type"
+                  >Facility Type
+                  <span class="required-star" aria-hidden="true">*</span></label
+                >
+                <select
+                  class="form-select"
+                  id="cf-facility-type"
+                  name="facility_type"
+                  required
+                  aria-required="true"
+                >
+                  <option value="" disabled selected>Select facility type</option>
+                  <option>Office</option>
+                  <option>Multi-tenant</option>
+                  <option>Technology</option>
+                  <option>Laboratory</option>
+                  <option>Healthcare</option>
+                  <option>Industrial</option>
+                  <option>Warehouse</option>
+                  <option>Retail</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cf-contact-method"
+                  >Preferred Contact Method</label
+                >
+                <select
+                  class="form-select"
+                  id="cf-contact-method"
+                  name="contact_method"
+                >
+                  <option value="" disabled selected>Select preference</option>
+                  <option>Phone</option>
+                  <option>Email</option>
+                  <option>Scheduled walkthrough</option>
+                </select>
+              </div>
+
+              <!-- Row 5: Services needed (pills, full width) -->
+              <div class="form-group full-width">
+                <label class="form-label">Service Needed</label>
+                <div class="service-pills" role="group" aria-label="Select one or more services">
+                  <span class="service-pill">
+                    <input type="checkbox" id="svc-1" name="services" value="commercial-cleaning" />
+                    <label for="svc-1"><i class="fa-solid fa-broom"></i> Commercial Cleaning / Janitorial</label>
+                  </span>
+                  <span class="service-pill">
+                    <input type="checkbox" id="svc-2" name="services" value="office-cleaning" />
+                    <label for="svc-2"><i class="fa-solid fa-building"></i> Office / Recurring Cleaning</label>
+                  </span>
+                  <span class="service-pill">
+                    <input type="checkbox" id="svc-3" name="services" value="industrial-cleaning" />
+                    <label for="svc-3"><i class="fa-solid fa-flask"></i> Industrial / Cleanroom / Lab</label>
+                  </span>
+                  <span class="service-pill">
+                    <input type="checkbox" id="svc-4" name="services" value="facility-maintenance" />
+                    <label for="svc-4"><i class="fa-solid fa-wrench"></i> Facility Maintenance</label>
+                  </span>
+                  <span class="service-pill">
+                    <input type="checkbox" id="svc-5" name="services" value="hvac" />
+                    <label for="svc-5"><i class="fa-solid fa-fan"></i> Commercial HVAC</label>
+                  </span>
+                  <span class="service-pill">
+                    <input type="checkbox" id="svc-6" name="services" value="mep" />
+                    <label for="svc-6"><i class="fa-solid fa-gears"></i> Commercial MEP</label>
+                  </span>
+                  <span class="service-pill">
+                    <input type="checkbox" id="svc-7" name="services" value="construction" />
+                    <label for="svc-7"><i class="fa-solid fa-helmet-safety"></i> Commercial Construction</label>
+                  </span>
+                  <span class="service-pill">
+                    <input type="checkbox" id="svc-8" name="services" value="tenant-improvements" />
+                    <label for="svc-8"><i class="fa-solid fa-pen-ruler"></i> Tenant Improvements</label>
+                  </span>
+                  <span class="service-pill">
+                    <input type="checkbox" id="svc-9" name="services" value="maintenance-construction" />
+                    <label for="svc-9"><i class="fa-solid fa-screwdriver-wrench"></i> Maintenance Construction</label>
+                  </span>
+                  <span class="service-pill">
+                    <input type="checkbox" id="svc-10" name="services" value="facility-upgrades" />
+                    <label for="svc-10"><i class="fa-solid fa-arrow-up-from-ground-water"></i> Facility Upgrades</label>
+                  </span>
+                  <span class="service-pill">
+                    <input type="checkbox" id="svc-11" name="services" value="carpentry-painting-landscaping" />
+                    <label for="svc-11"><i class="fa-solid fa-paint-roller"></i> Carpentry / Painting / Landscaping</label>
+                  </span>
+                  <span class="service-pill">
+                    <input type="checkbox" id="svc-12" name="services" value="smart-robotics" />
+                    <label for="svc-12"><i class="fa-solid fa-robot"></i> Smart Cleaning Robotics</label>
+                  </span>
+                  <span class="service-pill">
+                    <input type="checkbox" id="svc-13" name="services" value="multiple" />
+                    <label for="svc-13"><i class="fa-solid fa-layer-group"></i> Multiple Services</label>
+                  </span>
+                  <span class="service-pill">
+                    <input type="checkbox" id="svc-14" name="services" value="unsure" />
+                    <label for="svc-14"><i class="fa-solid fa-circle-question"></i> Unsure Which Service</label>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Row 6: Description (full width) -->
+              <div class="form-group full-width">
+                <label class="form-label" for="cf-description"
+                  >Project Description
+                  <span class="required-star" aria-hidden="true">*</span></label
+                >
+                <textarea
+                  class="form-textarea"
+                  id="cf-description"
+                  name="description"
+                  required
+                  rows="5"
+                  placeholder="Describe the current conditions, priority areas and the desired outcome…"
+                  aria-required="true"
+                ></textarea>
+              </div>
+
+              <!-- Row 7: File upload (full width) -->
+              <div class="form-group full-width">
+                <label class="form-label">Attach Documents / Images</label>
+                <div class="file-upload-wrapper">
+                  <label class="file-upload-label" for="cf-files">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <span
+                      >Drag files here or <strong>browse</strong> — photos,
+                      plans, scope documents</span
+                    >
+                  </label>
+                  <input
+                    type="file"
+                    id="cf-files"
+                    name="attachments"
+                    multiple
+                    accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.gif,.dwg,.dxf"
+                    onchange="showFileName(this)"
+                    aria-label="Upload supporting documents or images"
+                  />
+                  <div class="file-name-display" aria-live="polite"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-submit-row">
+              <button class="form-submit-btn" type="submit">
+                Send Facility Enquiry
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+              <span class="form-note"
+                ><i class="fa-solid fa-lock" style="color:var(--accent-teal);margin-right:4px;"></i>
+                Your information is kept confidential.</span
+              >
+            </div>
+          </form>
         </div>
       </section>
-      <section class="container section-padding">
-        <h2>How the work is planned</h2>
-        <p class="section-intro">
-          A focused process keeps the scope useful and the delivery aligned with
-          your property.
+
+      <!-- ════════ QUICK-LINK CARDS ════════ -->
+      <section class="container section-padding scroll-reveal">
+        <h2>Looking for a specific service?</h2>
+        <p style="margin-top:10px;">
+          Jump directly to the relevant RCC-BGM capability page before
+          submitting a detailed request.
         </p>
-        <div class="process-grid">
-          <div class="step-card">
-            <h2>01</h2>
-            <h4>Understand</h4>
-            <p>Review the facility, current condition and desired result.</p>
-          </div>
-          <div class="step-card">
-            <h2>02</h2>
-            <h4>Define</h4>
-            <p>
-              Confirm inclusions, exclusions, access, timing and
-              responsibilities.
-            </p>
-          </div>
-          <div class="step-card">
-            <h2>03</h2>
-            <h4>Coordinate</h4>
-            <p>
-              Plan people, materials, service windows and connected workstreams.
-            </p>
-          </div>
-          <div class="step-card">
-            <h2>04</h2>
-            <h4>Close out</h4>
-            <p>Review the completed work, open actions and next priorities.</p>
-          </div>
-        </div>
-      </section>
-      <section class="container section-padding">
-        <h2>Related RCC-BGM services</h2>
-        <div
-          class="services-grid"
-          style="margin-top: 30px; grid-template-columns: repeat(3, 1fr)"
-        >
-          <a class="s-item" href="commercial-cleaning-services.html">
-            <h3>Commercial Cleaning Services</h3>
-            <p>Explore this connected RCC-BGM service area.</p>
-            <span class="s-link"
-              >View service <i class="fa-solid fa-arrow-right"></i
-            ></span> </a
-          ><a class="s-item" href="commercial-construction.html">
-            <h3>Commercial Construction</h3>
-            <p>Explore this connected RCC-BGM service area.</p>
-            <span class="s-link"
-              >View service <i class="fa-solid fa-arrow-right"></i
-            ></span> </a
-          ><a class="s-item" href="facility-maintenance-services.html">
-            <h3>Facility Maintenance Services</h3>
-            <p>Explore this connected RCC-BGM service area.</p>
-            <span class="s-link"
-              >View service <i class="fa-solid fa-arrow-right"></i
-            ></span>
+        <div class="contact-quick-grid">
+          <a class="contact-quick-card" href="commercial-cleaning-services.html">
+            <i class="fa-solid fa-broom"></i>
+            <h3>Recurring Cleaning</h3>
+            <p>Commercial cleaning, janitorial and specialty cleaning services.</p>
+            <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+          <a class="contact-quick-card" href="commercial-construction.html">
+            <i class="fa-solid fa-helmet-safety"></i>
+            <h3>Renovation or Build-out</h3>
+            <p>Commercial construction and tenant improvement projects.</p>
+            <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+          <a class="contact-quick-card" href="commercial-hvac-services.html">
+            <i class="fa-solid fa-fan"></i>
+            <h3>HVAC or MEP</h3>
+            <p>Heating, ventilation, air conditioning and mechanical-electrical-plumbing.</p>
+            <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+          <a class="contact-quick-card" href="locations.html">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <h3>Coverage Question</h3>
+            <p>Review active markets or request coverage for an unlisted city.</p>
+            <span class="s-link">View locations <i class="fa-solid fa-arrow-right"></i></span>
           </a>
         </div>
       </section>
-      <section class="container section-padding">
-        <h2>Common questions</h2>
+
+      <!-- ════════ WHAT HAPPENS NEXT ════════ -->
+      <section class="container section-padding modern-process-sec scroll-reveal">
+        <h2 style="color:#fff!important;">What Happens Next</h2>
+        <p class="section-intro" style="color:#D4C0AC;">
+          From enquiry to proposal — a clear, structured path.
+        </p>
+        <div class="contact-steps-grid modern-process-grid">
+          <div class="modern-step-card">
+            <div class="modern-card-header">
+              <h2>01</h2>
+              <div class="step-icon-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+            </div>
+            <h4>Review</h4>
+            <p>Confirm location, facility type, service and information quality.</p>
+          </div>
+          <div class="modern-step-card">
+            <div class="modern-card-header">
+              <h2>02</h2>
+              <div class="step-icon-box">
+                <i class="fa-solid fa-route"></i>
+              </div>
+            </div>
+            <h4>Route</h4>
+            <p>Assign the enquiry to RCC, BGM, a local contact or a coordinated reviewer.</p>
+          </div>
+          <div class="modern-step-card">
+            <div class="modern-card-header">
+              <h2>03</h2>
+              <div class="step-icon-box">
+                <i class="fa-solid fa-circle-question"></i>
+              </div>
+            </div>
+            <h4>Clarify</h4>
+            <p>Request missing photographs, measurements, records or operational details.</p>
+          </div>
+          <div class="modern-step-card">
+            <div class="modern-card-header">
+              <h2>04</h2>
+              <div class="step-icon-box">
+                <i class="fa-solid fa-clipboard-check"></i>
+              </div>
+            </div>
+            <h4>Assess</h4>
+            <p>Schedule a walkthrough, remote scope review or technical conversation.</p>
+          </div>
+          <div class="modern-step-card">
+            <div class="modern-card-header">
+              <h2>05</h2>
+              <div class="step-icon-box">
+                <i class="fa-solid fa-file-invoice"></i>
+              </div>
+            </div>
+            <h4>Propose</h4>
+            <p>Provide a qualified scope, assumptions, exclusions and pricing path.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════ FAQ ════════ -->
+      <section class="container section-padding scroll-reveal">
+        <h2>Frequently Asked Questions</h2>
+
         <div class="faq-item">
           <h4>
-            Can the scope be tailored to our facility?
+            What services can I request?
             <i class="fa-solid fa-plus"></i>
           </h4>
-          <p style="margin-top: 12px">
-            Yes. The appropriate plan depends on the property, operating
-            schedule, access, existing conditions and required outcome.
+          <p style="margin-top:12px;">
+            Commercial cleaning, janitorial, maintenance, HVAC, MEP,
+            construction, tenant improvements, facility upgrades and other
+            listed capabilities.
           </p>
         </div>
         <div class="faq-item">
           <h4>
-            Can related services be coordinated?
+            Do I need to know the exact service?
             <i class="fa-solid fa-plus"></i>
           </h4>
-          <p style="margin-top: 12px">
-            Where needs overlap, RCC-BGM can review the connected work and
-            clarify which team owns each part of the scope.
+          <p style="margin-top:12px;">
+            No. Select the unsure or multi-service option and describe the
+            facility condition and required outcome.
           </p>
         </div>
         <div class="faq-item">
-          <h4>What is the first step? <i class="fa-solid fa-plus"></i></h4>
-          <p style="margin-top: 12px">
-            Request an assessment with the facility type, location, service need
-            and timing. The team can then determine the right next conversation.
+          <h4>
+            Can I request multiple locations?
+            <i class="fa-solid fa-plus"></i>
+          </h4>
+          <p style="margin-top:12px;">
+            Yes. Include the number of properties, cities, required consistency
+            and whether the scope is the same at each site.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h4>
+            Can I attach plans or photographs?
+            <i class="fa-solid fa-plus"></i>
+          </h4>
+          <p style="margin-top:12px;">
+            Approved file types may be uploaded. Do not submit protected health,
+            payment-card or security-sensitive information.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h4>
+            Will I receive pricing immediately?
+            <i class="fa-solid fa-plus"></i>
+          </h4>
+          <p style="margin-top:12px;">
+            Pricing follows review of the property, access, conditions, location
+            and final scope.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h4>
+            Can I use the form for an emergency?
+            <i class="fa-solid fa-plus"></i>
+          </h4>
+          <p style="margin-top:12px;">
+            The general form should not be used as an emergency channel. For
+            life-safety, fire, medical, utility or other immediate emergencies,
+            contact the appropriate emergency authority or utility provider.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h4>
+            What if my city is not listed?
+            <i class="fa-solid fa-plus"></i>
+          </h4>
+          <p style="margin-top:12px;">
+            Submit the location for coverage review before service availability
+            is promised.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h4>
+            Can I contact RCC-BGM directly?
+            <i class="fa-solid fa-plus"></i>
+          </h4>
+          <p style="margin-top:12px;">
+            Yes. Call <strong>(844) 271-6677</strong> or email
+            <strong>info@rcc-bgm.com</strong> for direct enquiries.
           </p>
         </div>
       </section>
-      <section class="container section-padding industry-standard">
-        <div style="max-width: 780px">
-          <span class="hero-tag">Ready to discuss the property?</span>
-          <h2>Start with a clear facility requirement</h2>
-          <p style="margin-top: 16px">
-            Tell RCC-BGM what needs attention, where the property is located and
-            how the work must fit around operations.
+
+      <!-- ════════ FINAL CTA ════════ -->
+      <section class="container" style="padding:24px 0 28px;border-bottom:none!important;">
+        <div
+          class="cta-box"
+          style="
+            background: radial-gradient(120% 120% at 0% 0%, rgba(255,255,255,.03) 0%, rgba(232,113,74,.03) 100%), #181310;
+            border: 1px solid rgba(232,113,74,.25);
+            box-shadow: 0 12px 30px rgba(232,113,74,.08);
+            border-radius: 24px;
+          "
+        >
+          <span
+            class="hero-tag"
+            style="
+              background: rgba(232,113,74,.06);
+              border: 1px solid rgba(232,113,74,.25);
+              border-radius: 100px;
+              color: var(--accent-blue);
+              padding: 6px 16px;
+            "
+            >Ready to discuss the property?</span
+          >
+          <h2 style="color:white!important;margin-top:16px;">
+            Start With a Clear Facility Requirement
+          </h2>
+          <p style="margin-top:12px;color:#D4C0AC!important;">
+            Provide the property location, operating environment, current issue
+            and required outcome. RCC-BGM can review the information and
+            determine the appropriate next step.
           </p>
           <a
-            href="contact.html"
+            href="#full-form"
             class="btn-header btn-glow"
-            style="display: inline-block; margin-top: 24px"
+            style="display:inline-block;margin-top:24px;"
             >Request a Facility Assessment
             <i class="fa-solid fa-arrow-right"></i
           ></a>
         </div>
       </section>
     </main>
+
     <footer>
       <div class="container f-grid">
         <div class="f-col">
           <a href="index.html" class="logo">RCC<span>BGM</span></a>
-          <p style="margin-top: 16px">
+          <p style="margin-top:16px;">
             Integrated commercial facility solutions for the spaces your
             business depends on.
           </p>
@@ -668,15 +1225,9 @@
         <div class="f-col">
           <h4>Services</h4>
           <ul>
-            <li>
-              <a href="commercial-cleaning-services.html"
-                >Commercial Cleaning</a
-              >
-            </li>
+            <li><a href="commercial-cleaning-services.html">Commercial Cleaning</a></li>
             <li><a href="commercial-construction.html">Construction</a></li>
-            <li>
-              <a href="facility-maintenance-services.html">Maintenance</a>
-            </li>
+            <li><a href="facility-maintenance-services.html">Maintenance</a></li>
             <li><a href="smart-cleaning-robotics.html">Robotics</a></li>
           </ul>
         </div>
@@ -692,7 +1243,11 @@
         <div class="f-col">
           <h4>Contact HQ</h4>
           <p>
-            San Jose, California<br />United States<br />support@rcc-bgm.com
+            San Jose, California<br />United States<br /><a
+              href="mailto:info@rcc-bgm.com"
+              style="color:var(--accent-teal);text-decoration:none;"
+              >info@rcc-bgm.com</a
+            >
           </p>
         </div>
       </div>
