@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About RCC-BGM | RCC-BGM</title>
+  <title>About RCC-BGM | Commercial Facility Solutions Company</title>
   <meta name="description"
-    content="RCC-BGM helps property teams start with the facility need, define a practical scope and connect the right service group." />
+    content="Learn about Reliable Concepts Corporation and Brilliant General Maintenance, two companies providing commercial construction, janitorial and facility services." />
   <link rel="stylesheet" href="site.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
@@ -73,7 +73,7 @@
       line-height: 1.7;
       color: #D4C0AC;
       margin-top: 18px;
-      max-width: 520px;
+      max-width: 540px;
     }
 
     .about-hero-actions {
@@ -85,31 +85,32 @@
     }
 
     .about-hero-actions .btn-glow {
-      box-shadow: 0 0 15px rgba(232, 113, 74, 0.35);
+      box-shadow: 0 0 15px rgba(140, 112, 209, 0.35);
     }
 
-    .about-hero-actions .btn-outline {
-      border: 1px solid rgba(140, 112, 209, 0.4);
+    .about-btn-outline-hero {
       background: rgba(255, 255, 255, 0.05);
-      color: white;
-      padding: 12px 24px;
+      border: 1px solid rgba(140, 112, 209, 0.4);
       border-radius: 99px;
+      color: white;
       font-weight: 700;
+      padding: 12px 24px;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      transition: all 0.3s ease;
+      font-size: 14.5px;
+      transition: all 0.35s ease;
     }
 
-    .about-hero-actions .btn-outline:hover {
+    .about-btn-outline-hero:hover {
+      background: rgba(140, 112, 209, 0.12);
       border-color: var(--accent-teal);
-      background: rgba(140, 112, 209, 0.1);
-      color: #fff;
+      transform: translateY(-2px);
       box-shadow: 0 0 20px rgba(140, 112, 209, 0.2);
     }
 
-    /* Dedicated Twin division structure */
+    /* Right side console cards */
     .about-team-console {
       display: flex;
       flex-direction: column;
@@ -121,29 +122,28 @@
       background: rgba(48, 36, 71, 0.7);
       border: 1px solid rgba(140, 112, 209, 0.25);
       border-radius: 20px;
-      padding: 20px 24px;
+      padding: 22px 24px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(12px);
-      transition: all 0.3s ease;
-      position: relative;
+      transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .console-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-5px);
       border-color: var(--accent-teal);
-      box-shadow: 0 15px 35px rgba(140, 112, 209, 0.2);
+      box-shadow: 0 18px 40px rgba(140, 112, 209, 0.2);
     }
 
     .console-card-header {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .console-card-icon {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       background: rgba(140, 112, 209, 0.15);
       border: 1px solid rgba(140, 112, 209, 0.35);
@@ -152,6 +152,7 @@
       justify-content: center;
       color: var(--accent-teal);
       font-size: 16px;
+      flex-shrink: 0;
     }
 
     .console-card-header h3 {
@@ -162,15 +163,15 @@
     }
 
     .console-card-body {
-      font-size: 13px;
+      font-size: 13.5px;
       color: #9E8B7E;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     .console-tag-row {
       display: flex;
       gap: 8px;
-      margin-top: 12px;
+      margin-top: 14px;
       flex-wrap: wrap;
     }
 
@@ -181,17 +182,16 @@
       background: rgba(140, 112, 209, 0.1);
       border: 1px solid rgba(140, 112, 209, 0.2);
       border-radius: 6px;
-      padding: 4px 8px;
+      padding: 4px 10px;
     }
 
-    /* Interactive connector line */
     .console-connector {
       position: absolute;
       left: 44px;
-      top: 60px;
+      top: 70px;
       width: 2px;
-      height: 80px;
-      background: linear-gradient(180deg, var(--accent-teal) 0%, rgba(140, 112, 209, 0.1) 100%);
+      height: 70px;
+      background: linear-gradient(180deg, var(--accent-teal) 0%, rgba(140, 112, 209, 0.05) 100%);
       z-index: -1;
     }
 
@@ -200,34 +200,27 @@
         grid-template-columns: 1fr;
         gap: 36px;
       }
-
       .about-hero-left {
         align-items: center;
         text-align: center;
       }
-
       .about-hero-left p {
         margin-left: auto;
         margin-right: auto;
       }
-
       .about-hero-actions {
         justify-content: center;
       }
-
       .about-team-console {
         width: 100%;
         max-width: 440px;
         margin: 0 auto;
       }
-
-      .console-connector {
-        display: none;
-      }
+      .console-connector { display: none; }
     }
 
-    /* ── "Practical support…" twin-panel section ── */
-    .about-team-grid {
+    /* ── Two-Division Panels ── */
+    .about-division-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 24px;
@@ -235,326 +228,403 @@
     }
 
     @media (max-width: 760px) {
-      .about-team-grid { grid-template-columns: 1fr; }
+      .about-division-grid { grid-template-columns: 1fr; }
     }
 
-    .about-team-panel {
-      background: #ffffff !important;
+    .about-division-panel {
+      background: #ffffff;
       border: 1px solid rgba(140, 112, 209, 0.15);
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 8px 28px rgba(48, 36, 71, 0.08);
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-      text-align: left;
+      transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1), border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .about-team-panel:hover {
-      transform: translateY(-5px);
+    .about-division-panel:hover {
+      transform: translateY(-6px);
       border-color: rgba(140, 112, 209, 0.4);
-      box-shadow: 0 18px 40px rgba(140, 112, 209, 0.14);
+      box-shadow: 0 18px 44px rgba(140, 112, 209, 0.14);
     }
 
-    .about-panel-header {
+    .about-division-header {
       display: flex;
       align-items: center;
       gap: 14px;
-      padding: 20px 24px 16px;
+      padding: 22px 24px 18px;
       border-bottom: 1px solid rgba(140, 112, 209, 0.1);
       background: rgba(140, 112, 209, 0.04);
     }
 
-    .about-panel-icon {
-      width: 44px;
-      height: 44px;
+    .about-division-icon {
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       background: var(--gradient);
-      border: none;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
-      font-size: 17px;
+      font-size: 18px;
       flex-shrink: 0;
       box-shadow: 0 6px 16px -4px rgba(140,112,209,0.45);
     }
 
-    .about-panel-header h3 {
-      font-size: 17px;
+    .about-division-header h3 {
+      font-size: 18px;
       font-weight: 700;
-      color: var(--bg-deep) !important;
+      color: var(--bg-deep);
       margin: 0;
     }
 
-    .about-panel-body {
+    .about-division-body {
       padding: 22px 24px 26px;
-      color: var(--text-slate) !important;
+    }
+
+    .about-division-body p {
+      color: var(--text-slate);
       font-size: 14px;
       line-height: 1.65;
     }
 
-    .about-panel-body h4 {
-      color: var(--bg-deep) !important;
-      font-size: 14.5px;
-      font-weight: 700;
-      margin-bottom: 5px;
+    .about-division-body ul {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
-    .about-panel-body p {
-      color: var(--text-slate) !important;
+    .about-division-body ul li {
       font-size: 13.5px;
+      color: var(--text-slate);
+      line-height: 1.55;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
     }
 
-    /* ── "How the work is planned" step cards ── */
-    .about-staggered-grid {
+    .about-division-body ul li i {
+      color: var(--accent-teal);
+      font-size: 11px;
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    .about-division-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 18px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent-teal);
+      text-decoration: none;
+      transition: gap 0.3s ease;
+    }
+
+    .about-division-link:hover {
+      gap: 10px;
+    }
+
+    .about-division-link i {
+      font-size: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    /* ── Structure Benefits ── */
+    .about-structure-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 760px) {
+      .about-structure-grid { grid-template-columns: 1fr; }
+    }
+
+    .about-structure-card {
+      background: rgba(48, 36, 71, 0.55);
+      border: 1px solid rgba(140, 112, 209, 0.18);
+      border-radius: 18px;
+      padding: 28px 24px;
+      text-align: center;
+      transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1), border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .about-structure-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(140, 112, 209, 0.4);
+      box-shadow: 0 14px 36px rgba(140, 112, 209, 0.15);
+    }
+
+    .about-structure-card i {
+      font-size: 26px;
+      color: var(--accent-teal);
+      margin-bottom: 14px;
+    }
+
+    .about-structure-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .about-structure-card p {
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+
+    /* ── Industries Grid ── */
+    .about-industries-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
       margin-top: 36px;
     }
 
-    @media (max-width: 900px) {
-      .about-staggered-grid { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 700px) {
+      .about-industries-grid { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 540px) {
-      .about-staggered-grid { grid-template-columns: 1fr; }
-    }
-
-    .about-step-card {
-      background: #ffffff !important;
-      border: 1px solid rgba(140, 112, 209, 0.13) !important;
-      border-radius: 18px;
-      padding: 26px 20px 24px;
+    .about-industry-card {
+      background: #ffffff;
+      border: 1px solid rgba(140, 112, 209, 0.13);
+      border-radius: 20px;
+      padding: 32px 26px;
+      text-align: center;
+      box-shadow: 0 4px 18px rgba(48, 36, 71, 0.06);
+      transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1), border-color 0.3s ease, box-shadow 0.3s ease;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 4px 16px rgba(48, 36, 71, 0.06);
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .about-step-card::before {
+    .about-industry-card::after {
       content: '';
       position: absolute;
-      top: 0; left: 0;
-      right: 0; height: 3px;
+      left: 0; bottom: 0;
+      height: 3px; width: 0;
       background: var(--gradient);
-      border-radius: 18px 18px 0 0;
+      transition: width 0.35s ease;
+    }
+
+    .about-industry-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(140, 112, 209, 0.35);
+      box-shadow: 0 18px 40px rgba(140, 112, 209, 0.13);
+    }
+
+    .about-industry-card:hover::after { width: 100%; }
+
+    .about-industry-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: var(--gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+      box-shadow: 0 8px 20px -6px rgba(128, 99, 199, 0.4);
+      transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1);
+    }
+
+    .about-industry-card:hover .about-industry-icon {
+      transform: rotate(-6deg) scale(1.08);
+    }
+
+    .about-industry-icon i {
+      font-size: 22px;
+      color: #fff;
+    }
+
+    .about-industry-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--bg-deep);
+      margin-bottom: 8px;
+    }
+
+    .about-industry-card p {
+      font-size: 13.5px;
+      color: var(--text-slate);
+      line-height: 1.6;
+    }
+
+    .about-link-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(140, 112, 209, 0.08);
+      border: 1px solid rgba(140, 112, 209, 0.25);
+      border-radius: 99px;
+      color: var(--accent-teal);
+      padding: 10px 22px;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .about-link-pill:hover {
+      background: rgba(140, 112, 209, 0.15);
+      border-color: var(--accent-teal);
+      transform: translateY(-2px);
+    }
+
+    /* ── Operating Principles ── */
+    .about-principles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 36px;
+    }
+
+    @media (max-width: 700px) {
+      .about-principles-grid { grid-template-columns: 1fr; }
+    }
+
+    .about-principle-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(140, 112, 209, 0.18);
+      border-radius: 20px;
+      padding: 30px 24px;
+      text-align: center;
+      transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1), border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    .about-principle-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(140, 112, 209, 0.45);
+      box-shadow: 0 18px 40px rgba(140, 112, 209, 0.15);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .about-principle-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(140, 112, 209, 0.12);
+      border: 1px solid rgba(140, 112, 209, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .about-principle-card:hover .about-principle-icon {
+      background: rgba(140, 112, 209, 0.22);
+      transform: scale(1.08);
+    }
+
+    .about-principle-icon i {
+      font-size: 20px;
+      color: var(--accent-teal);
+    }
+
+    .about-principle-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .about-principle-card p {
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+
+    /* ── 6-Step Process ── */
+    .about-process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 36px;
+    }
+
+    @media (max-width: 700px) {
+      .about-process-grid { grid-template-columns: 1fr; }
+    }
+
+    .about-process-card {
+      background: #ffffff;
+      border: 1px solid rgba(140, 112, 209, 0.13);
+      border-radius: 20px;
+      padding: 28px 24px 26px;
+      text-align: left;
+      box-shadow: 0 4px 18px rgba(48, 36, 71, 0.06);
+      transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1), border-color 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-process-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gradient);
       opacity: 0;
       transition: opacity 0.3s ease;
     }
 
-    .about-step-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(140,112,209,0.35);
-      box-shadow: 0 16px 36px rgba(140,112,209,0.13);
+    .about-process-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(140, 112, 209, 0.35);
+      box-shadow: 0 18px 44px rgba(140, 112, 209, 0.14);
     }
 
-    .about-step-card:hover::before { opacity: 1; }
+    .about-process-card:hover::before { opacity: 1; }
 
-    .about-card-head {
+    .about-process-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
-    .about-step-num {
+    .about-process-num {
       font-size: 12px;
       font-weight: 800;
       color: var(--accent-teal);
       letter-spacing: 2px;
       background: rgba(140,112,209,0.08);
-      padding: 3px 8px;
-      border-radius: 6px;
+      padding: 4px 10px;
+      border-radius: 8px;
     }
 
-    .about-step-icon {
-      font-size: 22px;
-      color: var(--accent-blue);
-      opacity: 0.85;
-    }
-
-    .about-step-card h4 {
-      color: var(--bg-deep) !important;
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .about-step-card p {
-      color: var(--text-slate) !important;
-      font-size: 13.5px;
-      line-height: 1.6;
-    }
-
-    /* ── FAQ cards ── */
-    .about-faq-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-top: 32px;
-    }
-
-    @media (max-width: 680px) {
-      .about-faq-grid { grid-template-columns: 1fr; }
-      .about-faq-card[style*="span 2"] { grid-column: span 1 !important; }
-    }
-
-    .about-faq-card {
-      background: linear-gradient(135deg, #1E1714 0%, #1E1A14 100%);
-      border: 1px solid rgba(232,113,74,0.13);
-      border-radius: 16px;
-      padding: 24px 26px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-      transition: transform 0.3s ease, border-color 0.3s ease;
-    }
-
-    .about-faq-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(232,113,74,0.32);
-    }
-
-    .about-faq-card h4 {
-      color: #fff;
-      font-size: 15px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .about-faq-card h4 i {
-      color: var(--accent-teal);
-      font-size: 14px;
-      flex-shrink: 0;
-    }
-
-    .about-faq-card p {
-      color: #9E8B7E;
-      font-size: 13.5px;
-      line-height: 1.65;
-    }
-
-    /* ── Industry-standard CTA section ── */
-    .industry-standard {
-      position: relative;
-    }
-
-    /* ── Premium Service Cards ── */
-    .about-services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      margin-top: 32px;
-    }
-
-    @media (max-width: 900px) {
-      .about-services-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 540px) {
-      .about-services-grid { grid-template-columns: 1fr; }
-    }
-
-    .about-service-card {
-      display: flex;
-      flex-direction: column;
-      background: #ffffff;
-      border: 1px solid rgba(128, 99, 199, 0.12);
-      border-radius: 20px;
-      padding: 28px 22px 22px;
-      text-decoration: none;
-      color: var(--text-dark);
-      box-shadow: 0 4px 18px rgba(48, 36, 71, 0.06);
-      transition: transform 0.32s cubic-bezier(.2,.8,.2,1), box-shadow 0.32s ease, border-color 0.32s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .about-service-card::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 3px;
-      width: 0;
-      background: var(--gradient);
-      border-radius: 0 4px 0 0;
-      transition: width 0.35s ease;
-    }
-
-    .about-service-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 20px 44px rgba(128, 99, 199, 0.16);
-      border-color: rgba(128, 99, 199, 0.32);
-    }
-
-    .about-service-card:hover::after {
-      width: 100%;
-    }
-
-    .about-service-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 14px;
+    .about-process-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
       background: var(--gradient);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 18px;
-      box-shadow: 0 8px 20px -6px rgba(128, 99, 199, 0.4);
-      transition: transform 0.32s cubic-bezier(.2,.8,.2,1);
-      flex-shrink: 0;
+      box-shadow: 0 6px 14px -4px rgba(128,99,199,0.4);
     }
 
-    .about-service-card:hover .about-service-icon {
-      transform: rotate(-6deg) scale(1.08);
-    }
-
-    .about-service-icon i {
-      font-size: 20px;
+    .about-process-icon i {
+      font-size: 16px;
       color: #fff;
     }
 
-    .about-service-card h3 {
+    .about-process-card h3 {
       font-size: 16px;
       font-weight: 700;
       color: var(--bg-deep);
       margin-bottom: 8px;
-      line-height: 1.3;
     }
 
-    .about-service-card p {
+    .about-process-card p {
       font-size: 13.5px;
       color: var(--text-slate);
       line-height: 1.6;
-      flex: 1;
-    }
-
-    .about-service-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      margin-top: 16px;
-      font-size: 12.5px;
-      font-weight: 700;
-      color: var(--accent-teal);
-      opacity: 0;
-      transform: translateY(6px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    .about-service-link i {
-      font-size: 10px;
-      transition: transform 0.3s ease;
-    }
-
-    .about-service-card:hover .about-service-link {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .about-service-card:hover .about-service-link i {
-      transform: translateX(4px);
     }
 
     /* ── FAQ Accordion ── */
@@ -631,7 +701,7 @@
     }
 
     .about-faq-item.open .about-faq-a {
-      max-height: 200px;
+      max-height: 220px;
       padding: 0 24px 20px;
     }
 
@@ -641,6 +711,17 @@
       line-height: 1.7;
       border-top: 1px solid rgba(140, 112, 209, 0.1);
       padding-top: 14px;
+    }
+
+    /* ── Scroll Reveal ── */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .scroll-reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -659,237 +740,405 @@
       <a href="contact.html" class="btn-header">Get Assessment</a>
     </div>
   </nav>
+
+  <!-- ═══ HERO ═══ -->
   <section class="about-hero">
     <div class="container">
       <div class="about-hero-grid">
-
-        <!-- Left: Text and CTAs -->
         <div class="about-hero-left">
           <span class="hero-tag"
             style="background: rgba(232, 113, 74, 0.08); border: 1px solid rgba(232, 113, 74, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;"><i
-              class="fa-solid fa-users"></i> STRUCTURED CAPABILITY</span>
-          <h1>Two Specialized<br><span class="gradient-text">Operational Divisions</span></h1>
+              class="fa-solid fa-building-columns"></i> ABOUT RCC-BGM</span>
+          <h1>Two Companies. One<br><span class="gradient-text">Connected Platform.</span></h1>
           <p>
-            We divide commercial facility management into two independent forces: Scoping & Setup (defining project
-            parameters) and Delivery & Updates (field operations).
+            RCC-BGM is the connected platform for Reliable Concepts Corporation and Brilliant General Maintenance. Together, the companies support commercial properties through construction, tenant improvements, janitorial service, specialized cleaning, maintenance, HVAC, MEP coordination and planned facility improvements.
           </p>
           <div class="about-hero-actions">
-            <a class="btn-header btn-glow" href="contact.html">Request Assessment <i
+            <a class="btn-header btn-glow" href="contact.html">Request a Facility Walkthrough <i
                 class="fa-solid fa-arrow-right"></i></a>
-            <a class="btn-outline" href="services.html"><i class="fa-solid fa-layer-group"></i> Explore Services</a>
+            <a class="about-btn-outline-hero" href="services.html"><i class="fa-solid fa-layer-group"></i> Explore Our Services</a>
           </div>
         </div>
 
         <!-- Right: Twin Division Console -->
         <div class="about-team-console">
-
           <div class="console-connector"></div>
 
-          <!-- Card 1: Setup Div -->
           <div class="console-card">
             <div class="console-card-header">
-              <div class="console-card-icon">
-                <i class="fa-solid fa-clipboard-check"></i>
-              </div>
-              <h3>01 / Scoping & Setup</h3>
+              <div class="console-card-icon"><i class="fa-solid fa-helmet-safety"></i></div>
+              <h3>Reliable Concepts Corporation</h3>
             </div>
             <div class="console-card-body">
-              Responsible for initial properties audits, scope exclusions, access timing rules, and coordinated
-              blueprints before crews deploy.
+              Commercial construction, tenant improvements and building services. Focused on project-based work from maintenance construction to HVAC and facility upgrades.
             </div>
             <div class="console-tag-row">
-              <span class="console-tag">SLA Setup</span>
-              <span class="console-tag">Access Rules</span>
-              <span class="console-tag">Joint Scopes</span>
+              <span class="console-tag">Construction</span>
+              <span class="console-tag">HVAC</span>
+              <span class="console-tag">Tenant Improvements</span>
             </div>
           </div>
 
-          <!-- Card 2: Delivery Div -->
           <div class="console-card">
             <div class="console-card-header">
-              <div class="console-card-icon">
-                <i class="fa-solid fa-truck-ramp-box"></i>
-              </div>
-              <h3>02 / Delivery & Updates</h3>
+              <div class="console-card-icon"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+              <h3>Brilliant General Maintenance</h3>
             </div>
             <div class="console-card-body">
-              Responsible for directing active tradesmen, managing Smart Clean operations, publishing daily client
-              notes, and closing out items.
+              Commercial janitorial, specialty cleaning and connected facility support. Focused on recurring programs with quality-control systems and technology integration.
             </div>
             <div class="console-tag-row">
-              <span class="console-tag">Active Dispatch</span>
-              <span class="console-tag">Quality Auditing</span>
-              <span class="console-tag">Direct Reports</span>
+              <span class="console-tag">Janitorial</span>
+              <span class="console-tag">Specialty Cleaning</span>
+              <span class="console-tag">Robotics</span>
             </div>
           </div>
-
         </div>
-
       </div>
     </div>
   </section>
+
   <main>
-    <!-- Section 1: Practical Support -->
-    <section style="background: var(--bg-main); padding: 56px 0 48px;">
+    <!-- ═══ SECTION: Who RCC-BGM Is ═══ -->
+    <section style="background: var(--bg-main); padding: 64px 0 56px;">
       <div class="container" style="text-align: center;">
-        <span class="hero-tag" style="color: var(--accent-blue); border-color: rgba(196,129,58,0.3); background: rgba(196,129,58,0.06); margin: 0 auto 18px; display: inline-block;">Built around your facility</span>
-        <h2 style="max-width: 680px; margin: 0 auto 14px;">Practical support for the way your property operates</h2>
-        <p style="max-width: 600px; margin: 0 auto 40px;">RCC-BGM helps property teams start with the facility need, define a practical scope and connect the right service group. Work is scoped around existing conditions, access, priorities, communication and the outcome your team needs.</p>
-        <div class="about-team-grid">
-          <div class="about-team-panel">
-            <div class="about-panel-header">
-              <div class="about-panel-icon"><i class="fa-solid fa-clipboard-check"></i></div>
-              <h3>Scoping &amp; Setup</h3>
+        <span class="hero-tag" style="color: var(--accent-blue); border-color: rgba(196,129,58,0.3); background: rgba(196,129,58,0.06); margin: 0 auto 18px; display: inline-block;">Who we are</span>
+        <h2 style="max-width: 680px; margin: 0 auto 14px;">Built around the commercial facilities our clients depend on</h2>
+        <p style="max-width: 620px; margin: 0 auto 40px;">RCC-BGM represents two companies serving commercial facilities from different but connected operational perspectives. The shared platform helps customers understand both companies through one website while keeping the legal entities, service responsibilities and trade qualifications clear.</p>
+        <div class="about-division-grid">
+
+          <!-- RCC Panel -->
+          <div class="about-division-panel scroll-reveal">
+            <div class="about-division-header">
+              <div class="about-division-icon"><i class="fa-solid fa-helmet-safety"></i></div>
+              <h3>Reliable Concepts Corporation</h3>
             </div>
-            <div class="about-panel-body">
-              <div style="margin-bottom: 20px;">
-                <h4 style="color:#fff; font-size:15px; margin-bottom:6px;">Defined requirements</h4>
-                <p>Clarify the property, service areas, timing, access and responsibilities before work begins.</p>
-              </div>
-              <div>
-                <h4 style="color:#fff; font-size:15px; margin-bottom:6px;">Connected planning</h4>
-                <p>Coordinate related cleaning, maintenance, construction or building-system needs where they overlap.</p>
-              </div>
+            <div class="about-division-body">
+              <p>Reliable supports physical construction, renovation and building-system requirements within commercial properties. The company handles projects ranging from maintenance construction and tenant improvements to HVAC, MEP coordination and facility upgrades.</p>
+              <ul>
+                <li><i class="fa-solid fa-check"></i> Tenant improvement build-outs and commercial renovations</li>
+                <li><i class="fa-solid fa-check"></i> Maintenance construction and corrective building repairs</li>
+                <li><i class="fa-solid fa-check"></i> Commercial HVAC installation, repair and maintenance</li>
+                <li><i class="fa-solid fa-check"></i> MEP coordination for mechanical, electrical and plumbing</li>
+                <li><i class="fa-solid fa-check"></i> Commercial carpentry, painting and landscaping</li>
+                <li><i class="fa-solid fa-check"></i> Facility upgrades and modernization projects</li>
+              </ul>
+              <a href="commercial-construction.html" class="about-division-link">Explore RCC Services <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
-          <div class="about-team-panel">
-            <div class="about-panel-header">
-              <div class="about-panel-icon"><i class="fa-solid fa-comments"></i></div>
-              <h3>Delivery &amp; Updates</h3>
+
+          <!-- BGM Panel -->
+          <div class="about-division-panel scroll-reveal">
+            <div class="about-division-header">
+              <div class="about-division-icon"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+              <h3>Brilliant General Maintenance</h3>
             </div>
-            <div class="about-panel-body">
-              <div>
-                <h4 style="color:#fff; font-size:15px; margin-bottom:6px;">Clear communication</h4>
-                <p>Use agreed milestones, review points and closeout actions to keep the facility team informed.</p>
-              </div>
+            <div class="about-division-body">
+              <p>Brilliant supports recurring janitorial, specialty cleaning and facility-management programs for commercial properties. The company emphasizes tailored cleaning schedules, quality-control systems and technology such as robotics, smart sensors and real-time monitoring.</p>
+              <ul>
+                <li><i class="fa-solid fa-check"></i> Commercial janitorial programs for recurring facility cleaning</li>
+                <li><i class="fa-solid fa-check"></i> Window, carpet, upholstery and hard-floor services</li>
+                <li><i class="fa-solid fa-check"></i> Cleanroom and specialty cleaning for qualified environments</li>
+                <li><i class="fa-solid fa-check"></i> Green consulting, recycling and composting programs</li>
+                <li><i class="fa-solid fa-check"></i> Robotics, sensors and connected cleaning workflows</li>
+                <li><i class="fa-solid fa-check"></i> Inspection, checklist, monitoring and performance reviews</li>
+              </ul>
+              <a href="commercial-cleaning-services.html" class="about-division-link">Explore BGM Services <i class="fa-solid fa-arrow-right"></i></a>
             </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SECTION: Why the Two-Company Structure Matters ═══ -->
+    <section style="background: var(--bg-deep); padding: 64px 0 56px;">
+      <div class="container" style="text-align: center;">
+        <h2 style="color:#fff; max-width: 620px; margin: 0 auto 14px;">Why the two-company structure matters</h2>
+        <p style="color: rgba(255,255,255,0.6); max-width:580px; margin: 0 auto 16px;">A commercial property may require daily cleaning, seasonal floor care, an HVAC replacement, tenant repairs and a later build-out. The RCC-BGM structure allows these requirements to be introduced through one platform without pretending that they are the same service.</p>
+        <div class="about-structure-grid">
+          <div class="about-structure-card scroll-reveal">
+            <i class="fa-solid fa-diagram-project"></i>
+            <h3>Project-Based Work</h3>
+            <p>Reliable handles construction, tenant improvements, building repairs, HVAC and approved facility upgrades.</p>
+          </div>
+          <div class="about-structure-card scroll-reveal">
+            <i class="fa-solid fa-arrows-rotate"></i>
+            <h3>Recurring Support</h3>
+            <p>Brilliant handles janitorial, specialty cleaning and technology-supported facility programs.</p>
+          </div>
+          <div class="about-structure-card scroll-reveal">
+            <i class="fa-solid fa-link"></i>
+            <h3>Connected Planning</h3>
+            <p>Related scopes may be sequenced around the same property, occupants, access and completion goals.</p>
+          </div>
+          <div class="about-structure-card scroll-reveal">
+            <i class="fa-solid fa-file-signature"></i>
+            <h3>Clear Responsibilities</h3>
+            <p>Each proposal identifies the performing company, licensed trades, exclusions and customer obligations.</p>
+          </div>
+          <div class="about-structure-card scroll-reveal">
+            <i class="fa-solid fa-handshake"></i>
+            <h3>One Relationship</h3>
+            <p>Combined position for properties that may need both project-based and recurring services.</p>
+          </div>
+          <div class="about-structure-card scroll-reveal">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <h3>Multi-State Delivery</h3>
+            <p>Service hubs across Arizona, California, Florida, Illinois, Michigan, Nevada, New Mexico, New York, Tennessee, Texas and Utah.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 2: How the work is planned -->
-    <section style="background: var(--bg-deep); padding: 56px 0 52px;">
+    <!-- ═══ SECTION: Industries Served ═══ -->
+    <section style="background: var(--bg-main); padding: 64px 0 56px;">
       <div class="container" style="text-align: center;">
-        <h2 style="color:#fff; max-width: 560px; margin: 0 auto 12px;">How the work is planned</h2>
-        <p style="color: rgba(255,255,255,0.6); max-width:520px; margin: 0 auto 36px;">A focused process keeps the scope useful and the delivery aligned with your property.</p>
-        <div class="about-staggered-grid">
-          <div class="about-step-card">
-            <div class="about-card-head">
-              <span class="about-step-num">01</span>
-              <i class="fa-solid fa-clipboard-question about-step-icon"></i>
-            </div>
-            <h4>Understand</h4>
-            <p>Review the facility, current condition and desired result.</p>
+        <span class="hero-tag" style="color: var(--accent-blue); border-color: rgba(196,129,58,0.3); background: rgba(196,129,58,0.06); margin: 0 auto 18px; display: inline-block;">Commercial property focus</span>
+        <h2 style="max-width: 620px; margin: 0 auto 14px;">Industries and environments we serve</h2>
+        <p style="max-width: 620px; margin: 0 auto 40px;">RCC-BGM supports a range of commercial property types, from corporate offices and technology campuses to life-science facilities and industrial environments.</p>
+        <div class="about-industries-grid">
+          <div class="about-industry-card scroll-reveal">
+            <div class="about-industry-icon"><i class="fa-solid fa-building"></i></div>
+            <h3>Corporate Offices</h3>
+            <p>Multi-tenant commercial properties and corporate campuses requiring coordinated facility support.</p>
           </div>
-          <div class="about-step-card">
-            <div class="about-card-head">
-              <span class="about-step-num">02</span>
-              <i class="fa-solid fa-sliders about-step-icon"></i>
-            </div>
-            <h4>Define</h4>
-            <p>Confirm inclusions, exclusions, access, timing and responsibilities.</p>
+          <div class="about-industry-card scroll-reveal">
+            <div class="about-industry-icon"><i class="fa-solid fa-microchip"></i></div>
+            <h3>Technology Campuses</h3>
+            <p>Data-driven workplaces and technology environments with specialized infrastructure needs.</p>
           </div>
-          <div class="about-step-card">
-            <div class="about-card-head">
-              <span class="about-step-num">03</span>
-              <i class="fa-solid fa-calendar-days about-step-icon"></i>
-            </div>
-            <h4>Coordinate</h4>
-            <p>Plan people, materials, service windows and connected workstreams.</p>
+          <div class="about-industry-card scroll-reveal">
+            <div class="about-industry-icon"><i class="fa-solid fa-flask-vial"></i></div>
+            <h3>Life Science & Labs</h3>
+            <p>Laboratories, cleanrooms and approved environments requiring precise cleaning and construction standards.</p>
           </div>
-          <div class="about-step-card">
-            <div class="about-card-head">
-              <span class="about-step-num">04</span>
-              <i class="fa-solid fa-circle-check about-step-icon"></i>
-            </div>
-            <h4>Close out</h4>
-            <p>Review the completed work, open actions and next priorities.</p>
+          <div class="about-industry-card scroll-reveal">
+            <div class="about-industry-icon"><i class="fa-solid fa-hospital"></i></div>
+            <h3>Healthcare Facilities</h3>
+            <p>Medical offices, clinics and healthcare environments with strict hygiene and compliance requirements.</p>
+          </div>
+          <div class="about-industry-card scroll-reveal">
+            <div class="about-industry-icon"><i class="fa-solid fa-warehouse"></i></div>
+            <h3>Industrial & Warehouse</h3>
+            <p>Manufacturing, distribution and warehouse properties needing durable facility maintenance programs.</p>
+          </div>
+          <div class="about-industry-card scroll-reveal">
+            <div class="about-industry-icon"><i class="fa-solid fa-store"></i></div>
+            <h3>Retail & Hospitality</h3>
+            <p>Customer-facing facilities where appearance, safety and operational continuity are priorities.</p>
+          </div>
+        </div>
+        <div style="margin-top: 36px;">
+          <a href="industries.html" class="about-link-pill"><i class="fa-solid fa-grip"></i> View All Industries <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SECTION: Operating Principles ═══ -->
+    <section style="background: var(--bg-deep); padding: 64px 0 56px;">
+      <div class="container" style="text-align: center;">
+        <h2 style="color:#fff; max-width: 580px; margin: 0 auto 14px;">Operating principles that guide every engagement</h2>
+        <p style="color: rgba(255,255,255,0.6); max-width:560px; margin: 0 auto 40px;">RCC-BGM operates with clear accountability, practical planning and continuous improvement across every project and service program.</p>
+        <div class="about-principles-grid">
+          <div class="about-principle-card scroll-reveal">
+            <div class="about-principle-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Accountability</h3>
+            <p>Define who owns each scope, approval, change and completion item before work begins.</p>
+          </div>
+          <div class="about-principle-card scroll-reveal">
+            <div class="about-principle-icon"><i class="fa-solid fa-gears"></i></div>
+            <h3>Commercial Practicality</h3>
+            <p>Plan around occupancy, schedules, access, business continuity and the actual building conditions.</p>
+          </div>
+          <div class="about-principle-card scroll-reveal">
+            <div class="about-principle-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+            <h3>Quality Control</h3>
+            <p>Use inspections, checklists, milestones and review points that match the service or project scope.</p>
+          </div>
+          <div class="about-principle-card scroll-reveal">
+            <div class="about-principle-icon"><i class="fa-solid fa-comments"></i></div>
+            <h3>Clear Communication</h3>
+            <p>Establish authorized contacts, reporting methods and escalation routes for every engagement.</p>
+          </div>
+          <div class="about-principle-card scroll-reveal">
+            <div class="about-principle-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>Continuous Improvement</h3>
+            <p>Use service reviews, facility observations and completed-project findings to identify future priorities.</p>
+          </div>
+          <div class="about-principle-card scroll-reveal">
+            <div class="about-principle-icon"><i class="fa-solid fa-certificate"></i></div>
+            <h3>Responsible Qualification</h3>
+            <p>Confirm licensing, specialist trades, regulated services and technical responsibilities before work begins.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 3: Related Services -->
-    <section style="background: var(--bg-main); padding: 56px 0 52px;">
+    <!-- ═══ SECTION: 6-Step Engagement Process ═══ -->
+    <section style="background: var(--bg-main); padding: 64px 0 56px;">
       <div class="container" style="text-align: center;">
-        <h2 style="max-width: 560px; margin: 0 auto 36px;">Related RCC-BGM services</h2>
-        <div class="about-services-grid">
-          <a class="about-service-card" href="commercial-cleaning-services.html">
-            <div class="about-service-icon"><i class="fa-solid fa-spray-can-sparkles"></i></div>
-            <h3>Commercial Cleaning Services</h3>
-            <p>Comprehensive janitorial and deep-clean programs tailored to your facility schedule.</p>
-            <span class="about-service-link">View service <i class="fa-solid fa-arrow-right"></i></span>
-          </a>
-          <a class="about-service-card" href="commercial-construction.html">
-            <div class="about-service-icon"><i class="fa-solid fa-helmet-safety"></i></div>
-            <h3>Commercial Construction</h3>
-            <p>Tenant improvements, build-outs and renovation scoping for commercial properties.</p>
-            <span class="about-service-link">View service <i class="fa-solid fa-arrow-right"></i></span>
-          </a>
-          <a class="about-service-card" href="facility-maintenance-services.html">
-            <div class="about-service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-            <h3>Facility Maintenance Services</h3>
-            <p>Ongoing preventive and corrective maintenance programs for your building systems.</p>
-            <span class="about-service-link">View service <i class="fa-solid fa-arrow-right"></i></span>
-          </a>
-          <a class="about-service-card" href="contact.html">
-            <div class="about-service-icon"><i class="fa-solid fa-headset"></i></div>
-            <h3>Contact RCC-BGM</h3>
-            <p>Start the conversation with a facility assessment request from our team.</p>
-            <span class="about-service-link">Get in touch <i class="fa-solid fa-arrow-right"></i></span>
-          </a>
+        <span class="hero-tag" style="color: var(--accent-blue); border-color: rgba(196,129,58,0.3); background: rgba(196,129,58,0.06); margin: 0 auto 18px; display: inline-block;">How customers engage</span>
+        <h2 style="max-width: 620px; margin: 0 auto 14px;">A clear path from requirement to delivery</h2>
+        <p style="max-width: 580px; margin: 0 auto 40px;">RCC-BGM follows a structured six-step engagement process that moves from the initial requirement through to ongoing performance reviews.</p>
+        <div class="about-process-grid">
+          <div class="about-process-card scroll-reveal">
+            <div class="about-process-header">
+              <span class="about-process-num">01</span>
+              <div class="about-process-icon"><i class="fa-solid fa-paper-plane"></i></div>
+            </div>
+            <h3>Share the Requirement</h3>
+            <p>Provide the property type, location, operating environment and desired result to start the conversation.</p>
+          </div>
+          <div class="about-process-card scroll-reveal">
+            <div class="about-process-header">
+              <span class="about-process-num">02</span>
+              <div class="about-process-icon"><i class="fa-solid fa-route"></i></div>
+            </div>
+            <h3>Route the Enquiry</h3>
+            <p>Identify the relevant Reliable, Brilliant or coordinated service path based on the scope.</p>
+          </div>
+          <div class="about-process-card scroll-reveal">
+            <div class="about-process-header">
+              <span class="about-process-num">03</span>
+              <div class="about-process-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+            <h3>Assess the Facility</h3>
+            <p>Review conditions, access, schedules, existing systems and available documents.</p>
+          </div>
+          <div class="about-process-card scroll-reveal">
+            <div class="about-process-header">
+              <span class="about-process-num">04</span>
+              <div class="about-process-icon"><i class="fa-solid fa-file-lines"></i></div>
+            </div>
+            <h3>Define the Scope</h3>
+            <p>Document tasks, frequency, materials, phases, exclusions and responsibilities clearly.</p>
+          </div>
+          <div class="about-process-card scroll-reveal">
+            <div class="about-process-header">
+              <span class="about-process-num">05</span>
+              <div class="about-process-icon"><i class="fa-solid fa-people-carry-box"></i></div>
+            </div>
+            <h3>Deliver & Communicate</h3>
+            <p>Coordinate teams, service windows, milestones and approved changes throughout the project.</p>
+          </div>
+          <div class="about-process-card scroll-reveal">
+            <div class="about-process-header">
+              <span class="about-process-num">06</span>
+              <div class="about-process-icon"><i class="fa-solid fa-rotate"></i></div>
+            </div>
+            <h3>Review & Continue</h3>
+            <p>Close the project or establish ongoing performance reviews for recurring services.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 4: FAQ -->
-    <section style="background: var(--bg-main); padding: 48px 0 52px;">
-      <div class="container" style="max-width: 780px; text-align: center;">
-        <h2 style="margin-bottom: 32px;">Common questions</h2>
+    <!-- ═══ SECTION: FAQ ═══ -->
+    <section style="background: var(--bg-main); padding: 56px 0 52px; border-top: 1px solid rgba(128,99,199,0.08);">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <h2 style="margin-bottom: 36px;">Frequently asked questions</h2>
         <div class="about-faq-list" style="text-align: left;">
           <div class="about-faq-item open">
             <div class="about-faq-q">
-              <span>Can the scope be tailored to our facility?</span>
+              <span>What is RCC-BGM?</span>
               <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
             </div>
             <div class="about-faq-a">
-              <p>Yes. The appropriate plan depends on the property, operating schedule, access, existing conditions and required outcome.</p>
+              <p>RCC-BGM is the connected website and facility-services platform for Reliable Concepts Corporation and Brilliant General Maintenance, supporting commercial properties through construction, cleaning and ongoing facility programs.</p>
             </div>
           </div>
           <div class="about-faq-item">
             <div class="about-faq-q">
-              <span>Can related services be coordinated?</span>
+              <span>What does Reliable Concepts Corporation do?</span>
               <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
             </div>
             <div class="about-faq-a">
-              <p>Where needs overlap, RCC-BGM can review the connected work and clarify which team owns each part of the scope.</p>
+              <p>Reliable focuses on commercial construction, tenant improvements, maintenance construction, HVAC, MEP coordination and approved building-improvement services.</p>
             </div>
           </div>
           <div class="about-faq-item">
             <div class="about-faq-q">
-              <span>What is the first step?</span>
+              <span>What does Brilliant General Maintenance do?</span>
               <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
             </div>
             <div class="about-faq-a">
-              <p>Request an assessment with the facility type, location, service need and timing. The team can then determine the right next conversation.</p>
+              <p>Brilliant focuses on commercial janitorial, specialty cleaning, quality-control systems and technology-supported facility services for recurring programs.</p>
+            </div>
+          </div>
+          <div class="about-faq-item">
+            <div class="about-faq-q">
+              <span>Are Reliable and Brilliant the same company?</span>
+              <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="about-faq-a">
+              <p>They are presented as separate companies that work in concert through the RCC-BGM platform. Each maintains its own legal entity, service responsibilities and trade qualifications.</p>
+            </div>
+          </div>
+          <div class="about-faq-item">
+            <div class="about-faq-q">
+              <span>Can a customer hire only one company?</span>
+              <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="about-faq-a">
+              <p>Yes. Customers may request one focused Reliable or Brilliant service without purchasing a combined program. The two-company structure supports both standalone and coordinated engagements.</p>
+            </div>
+          </div>
+          <div class="about-faq-item">
+            <div class="about-faq-q">
+              <span>Can the companies coordinate on one property?</span>
+              <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="about-faq-a">
+              <p>Yes. Related scopes may be coordinated when cleaning, construction, HVAC, maintenance or facility upgrades affect the same building or schedule.</p>
+            </div>
+          </div>
+          <div class="about-faq-item">
+            <div class="about-faq-q">
+              <span>What industries does RCC-BGM serve?</span>
+              <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="about-faq-a">
+              <p>The platform highlights technology, office, life-science and healthcare environments and also supports other qualified commercial property types including industrial, retail and hospitality facilities.</p>
+            </div>
+          </div>
+          <div class="about-faq-item">
+            <div class="about-faq-q">
+              <span>Where does RCC-BGM operate?</span>
+              <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="about-faq-a">
+              <p>The website lists primary hubs across multiple U.S. states including Arizona, California, Florida, Illinois, Michigan, Nevada, New Mexico, New York, Tennessee, Texas and Utah. Exact availability must be confirmed by location, company and service.</p>
+            </div>
+          </div>
+          <div class="about-faq-item">
+            <div class="about-faq-q">
+              <span>How do we start?</span>
+              <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="about-faq-a">
+              <p>Contact RCC-BGM with the property type, location, current requirement, operating schedule and preferred timeline. The team can then determine the right next conversation.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 5: CTA -->
-    <section style="background: linear-gradient(135deg, #302447 0%, #4a2d6b 50%, #302447 100%); padding: 64px 0; position: relative; overflow: hidden;">
+    <!-- ═══ SECTION: CTA ═══ -->
+    <section style="background: linear-gradient(135deg, #302447 0%, #4a2d6b 50%, #302447 100%); padding: 72px 0; position: relative; overflow: hidden;">
       <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:24px 24px;pointer-events:none;"></div>
-      <div class="container" style="text-align: center; max-width: 680px; position: relative; z-index:1;">
-        <span class="hero-tag" style="background: rgba(140,112,209,0.12); border-color: rgba(140,112,209,0.35); color: #c9b8f0; margin: 0 auto 18px; display: inline-block;">Ready to discuss the property?</span>
-        <h2 style="color:#fff; margin-bottom: 14px;">Start with a clear facility requirement</h2>
-        <p style="color: rgba(255,255,255,0.65); margin-bottom: 28px;">Tell RCC-BGM what needs attention, where the property is located and how the work must fit around operations.</p>
-        <a href="contact.html" class="btn-header btn-glow">Request a Facility Assessment <i class="fa-solid fa-arrow-right"></i></a>
+      <div class="container" style="text-align: center; max-width: 700px; position: relative; z-index:1;">
+        <span class="hero-tag" style="background: rgba(140,112,209,0.12); border-color: rgba(140,112,209,0.35); color: #c9b8f0; margin: 0 auto 18px; display: inline-block;">Tell us about the facility</span>
+        <h2 style="color:#fff; margin-bottom: 14px;">Start with the property, the requirement and the desired outcome</h2>
+        <p style="color: rgba(255,255,255,0.65); margin-bottom: 32px; max-width: 580px; margin-left: auto; margin-right: auto;">RCC-BGM can identify whether your enquiry belongs with Reliable Concepts Corporation, Brilliant General Maintenance or a coordinated scope involving both companies.</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="contact.html" class="btn-header btn-glow" style="box-shadow: 0 0 20px rgba(140,112,209,0.35);">Request a Facility Walkthrough <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="services.html" class="about-btn-outline-hero"><i class="fa-solid fa-layer-group"></i> Explore Services</a>
+        </div>
       </div>
     </section>
   </main>
+
   <footer>
     <div class="container f-grid">
       <div class="f-col">
@@ -902,13 +1151,9 @@
       <div class="f-col">
         <h4>Services</h4>
         <ul>
-          <li>
-            <a href="commercial-cleaning-services.html">Commercial Cleaning</a>
-          </li>
+          <li><a href="commercial-cleaning-services.html">Commercial Cleaning</a></li>
           <li><a href="commercial-construction.html">Construction</a></li>
-          <li>
-            <a href="facility-maintenance-services.html">Maintenance</a>
-          </li>
+          <li><a href="facility-maintenance-services.html">Maintenance</a></li>
           <li><a href="smart-cleaning-robotics.html">Robotics</a></li>
         </ul>
       </div>
@@ -936,14 +1181,29 @@
       q.addEventListener('click', function() {
         var item = q.closest('.about-faq-item');
         var isOpen = item.classList.contains('open');
-        // Close all
         document.querySelectorAll('.about-faq-item').forEach(function(el) {
           el.classList.remove('open');
         });
-        // Open clicked if it was closed
         if (!isOpen) item.classList.add('open');
       });
     });
+
+    // Scroll reveal for about page cards
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var revealEls = document.querySelectorAll('.scroll-reveal');
+      revealEls.forEach(function(el, i) {
+        el.style.transitionDelay = (i % 3) * 80 + 'ms';
+      });
+      var revealObs = new IntersectionObserver(function(entries, obs) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      revealEls.forEach(function(el) { revealObs.observe(el); });
+    }
   </script>
 </body>
 
