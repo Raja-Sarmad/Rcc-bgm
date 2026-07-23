@@ -20,6 +20,59 @@
       gap: 24px !important;
     }
 
+    #services-list .redesign-flex {
+      flex-direction: column;
+      align-items: center;
+      gap: 32px !important;
+    }
+
+    #services-list .redesign-left {
+      width: min(100%, 760px);
+      max-width: 760px;
+      text-align: center;
+    }
+
+    #services-list .redesign-left h2 {
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    #services-list .redesign-left p {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    #services-list .redesign-right {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      width: min(100%, 760px);
+    }
+
+    #services-list .redesign-card {
+      height: 160px;
+    }
+
+    #services-list .redesign-card:nth-child(3) {
+      grid-column: 1 / -1;
+      width: calc((100% - 16px) / 2);
+      justify-self: center;
+    }
+
+    @media (max-width: 760px) {
+      #services-list .redesign-right {
+        grid-template-columns: 1fr;
+      }
+
+      #services-list .redesign-card:nth-child(3) {
+        grid-column: auto;
+        width: 100%;
+      }
+    }
+
     .modern-process-grid {
       gap: 16px !important;
       margin-top: 24px !important;
@@ -61,6 +114,9 @@
       position: relative;
       background: radial-gradient(130% 130% at 50% 0%, #ffffff 0%, #f4f0f9 100%);
       padding: 190px 0 100px 0;
+      /* Clear the fixed navigation without shifting either hero column independently. */
+      margin-top: 58px;
+      height: auto !important;
       overflow: hidden;
       border-bottom: 1px solid rgba(128, 99, 199, 0.15);
     }
@@ -81,7 +137,7 @@
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       gap: 45px;
-      align-items: center;
+      align-items: start;
       position: relative;
       z-index: 2;
     }
@@ -150,6 +206,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      transform: translateY(-10px);
     }
 
     .services-hero-mockup {
@@ -164,7 +221,7 @@
       max-width: 440px;
       transform: rotateX(6deg) rotateY(-12deg) rotateZ(2deg);
       transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
-      color: var(--text-dark);
+      
     }
 
     .services-hero-mockup:hover {
@@ -186,7 +243,6 @@
     .mockup-title {
       font-size: 13px;
       font-weight: 700;
-      color: var(--bg-deep);
       text-transform: uppercase;
       letter-spacing: 1px;
       display: flex;
@@ -378,11 +434,12 @@
     .services-hero-stats-dock {
       grid-column: span 2;
       background: transparent;
-      border: none;
+      border: none !important;
+      outline: none !important;
       border-radius: 20px;
-      padding: 16px 24px;
-      margin-top: 10px;
-      box-shadow: none;
+      padding: 16px 24px 24px;
+      margin-top: -7px;
+      box-shadow: none !important;
     }
 
     .services-hero-stats-dock .hero-stats {
@@ -394,13 +451,24 @@
       max-width: 100%;
       margin: 0;
       padding: 0;
+      border: none !important;
+      outline: none;
+      box-shadow: none !important;
     }
 
     .services-hero-stats-dock .hero-stat {
       flex: 1;
       text-align: center;
-      border-right: 1px solid rgba(0, 0, 0, 0.06);
+      border: none !important;
       padding: 8px 10px;
+    }
+
+    .services-hero-stats-dock .hero-stat:not(:last-child) {
+      border-right: 1px solid rgba(0, 0, 0, 0.06) !important;
+    }
+
+    .services-hero-stats-dock .hero-stat::after {
+      display: none;
     }
 
     .services-hero-stats-dock .hero-stat:last-child {
@@ -586,7 +654,7 @@
                 border-color: rgba(196, 129, 58, 0.3);
                 background: rgba(196, 129, 58, 0.06);
               ">Built around your facility</span>
-          <h2>Practical support for the way your property operates</h2>
+          <h2>Practical support for the way<br>your property operates</h2>
           <p>
             Explore the service areas RCC-BGM can review and combine around your
             property’s actual requirements. Work is scoped around existing
