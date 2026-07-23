@@ -1944,6 +1944,13 @@ footer a:hover {
   margin-bottom: 16px;
 }
 
+.page-janitorial section.container.section-padding > .eyebrow {
+  display: block !important;
+  max-width: 800px;
+  margin: 0 auto 16px !important;
+  text-align: center !important;
+}
+
 .page-janitorial .section-lead {
   max-width: 760px;
   margin-top: 14px;
@@ -1953,6 +1960,38 @@ footer a:hover {
   background: linear-gradient(135deg,
       rgba(196, 129, 58, 0.07),
       rgba(255, 255, 255, 0.84));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-janitorial .janitorial-intro .janitorial-intro-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-janitorial .janitorial-intro .janitorial-intro-content .eyebrow {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-janitorial .janitorial-intro .janitorial-intro-content p {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.page-janitorial .janitorial-intro .janitorial-intro-content p:last-child {
+  margin-bottom: 0;
+}
+
+.page-janitorial .inline-highlight {
+  display: inline-block;
+  background: rgba(245, 158, 11, 0.2);
+  border-radius: 6px;
+  padding: 0 4px;
 }
 
 .page-janitorial .janitorial-scope .s-item {
@@ -1977,32 +2016,235 @@ footer a:hover {
 
 .page-janitorial .building-section {
   background: #fff;
+  padding: 56px 20px;
+}
+
+.page-janitorial .building-section .focus-flex {
+  display: flex;
+  gap: 34px;
+  align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.page-janitorial .building-section .focus-flex > div {
+  flex: 1 1 460px;
+  min-width: 280px;
+}
+
+.page-janitorial .building-section .focus-flex > div:first-child {
+  padding: 0;
+  text-align: left;
+}
+
+/* Override global centering for this section's left column: keep the
+   main heading left-aligned but center the eyebrow above it to match
+   the heading's measured max-width. */
+.page-janitorial .building-section .focus-flex > div:first-child h2 {
+  text-align: left !important;
+}
+
+.page-janitorial .building-section .focus-flex > div:first-child .eyebrow {
+  display: block;
+  max-width: 640px;
+  width: 640px;
+  margin: 0 auto 10px !important;
+  text-align: left !important;
+}
+
+.page-janitorial .building-section .eyebrow {
+  display: block;
+  width: max-content;
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.page-janitorial .building-section h2 {
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 700;
+  margin: 0 0 18px;
+  max-width: 640px;
+}
+
+.page-janitorial .building-section p {
+  margin: 0 0 16px;
+  color: #444;
+  max-width: 640px;
+}
+
+.page-janitorial .building-section .check-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.page-janitorial .building-section .check-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #222;
 }
 
 .page-janitorial .building-section .intro-card {
-  min-height: 330px;
+  min-height: auto;
+  /* Balanced, uniform padding for clean visual symmetry */
+  padding: 28px;
+  border-radius: 12px;
+  background: rgba(245,158,11,0.06);
+  border: 1px solid rgba(245,158,11,0.12);
+  box-shadow: 0 6px 18px rgba(16,24,40,0.04);
+  /* make the card slightly wider so chips fit on one line */
+  flex: 0 0 560px;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.page-janitorial .building-section .chip-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+  margin-top: 16px;
+  overflow-x: visible;
+}
+
+.page-janitorial .building-section .chip {
+  background: rgba(0,0,0,0.03);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: #222;
+  border: 1px solid rgba(0,0,0,0.04);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .page-janitorial .building-section {
+    padding: 40px 16px;
+  }
+  .page-janitorial .building-section .focus-flex {
+    gap: 18px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .page-janitorial .building-section h2 {
+    font-size: 22px;
+  }
+  .page-janitorial .building-section .intro-card {
+    flex: 1 1 auto;
+    max-width: 100%;
+    padding: 20px;
+  }
+  .page-janitorial .building-section .chip-container {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    gap: 8px;
+  }
 }
 
 .page-janitorial .office-section {
   background: linear-gradient(135deg, #FEEDE0, #fff);
 }
 
-.page-janitorial .comparison-section {
-  background: #FAF0E6;
+/* Align the right column's inner content with centered section headings
+   without changing its size, spacing or typography. */
+.page-janitorial .office-section .split-intro > div:last-child {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 40px;
 }
 
-.page-janitorial .comparison-section .intro-card {
-  min-height: 300px;
+.page-janitorial .office-section .split-intro > div:last-child p {
+  padding-right: 40px;
+  padding-inline-end: 40px;
+}
+
+.page-janitorial .comparison-section {
+  background: white;
+  text-align: center;
+  padding: 56px 20px;
+}
+
+.page-janitorial .comparison-section > .eyebrow {
+  display: block !important;
+  width: max-content !important;
+  text-align: center !important;
+  margin: 0 auto 16px !important;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  position: relative;
+  padding-top: 8px;
+}
+
+.page-janitorial .comparison-section > .eyebrow::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 4px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+.page-janitorial .schedule-section .industry-standard .eyebrow {
+  display: block !important;
+  width: max-content !important;
+  text-align: center !important;
+  margin: 0 auto 16px !important;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  position: relative;
+  padding-top: 8px;
+}
+
+.page-janitorial .schedule-section .industry-standard .eyebrow::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 4px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+@media (max-width: 900px) {
+  .page-janitorial .comparison-section > h2 {
+    font-size: 22px;
+  }
+  .page-janitorial .comparison-section .split-intro {
+    flex-direction: column;
+    gap: 18px;
+  }
 }
 
 .page-janitorial .comparison-light {
-  background: white;
-  color: var(--text-dark);
-  border: 1px solid #E2CEC0;
+  background: var(--bg-deep);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .page-janitorial .comparison-light h3 {
-  color: var(--accent-blue);
+  color: var(--accent-teal);
 }
 
 .page-janitorial .schedule-section {
@@ -2067,6 +2309,14 @@ footer a:hover {
 
 .page-janitorial .location-strip p {
   opacity: 0.82;
+  text-align: center;
+}
+
+.page-janitorial .location-strip .eyebrow {
+  /* The global eyebrow rule makes this a full-width block; translating it by
+     50% shifts the text out of the section instead of centering it. */
+  position: static;
+  transform: none;
 }
 
 .page-janitorial .location-strip .chip {
@@ -2077,10 +2327,49 @@ footer a:hover {
 
 .page-janitorial .faq-section {
   background: #FAF0E6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.page-janitorial .faq-section h2 {
+  max-width: 760px;
+  margin: 0 auto 24px;
+}
+
+.page-janitorial .faq-section .eyebrow {
+  display: inline-flex;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.page-janitorial .faq-section .eyebrow::after {
+  display: none;
+}
+
+.page-janitorial .faq-section h2 {
+  max-width: 760px;
+  margin: 0 auto 24px;
+  position: relative;
+}
+
+.page-janitorial .faq-section h2::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -18px;
+  transform: translateX(-50%);
+  width: min(760px, 100%);
+  height: 3px;
+  border-radius: 999px;
+  background: var(--accent-blue);
 }
 
 .page-janitorial .faq-section .faq-item {
-  max-width: 980px;
+  width: min(100%, 980px);
+  margin: 0 auto 12px;
+  text-align: left;
 }
 
 .page-office .container.section-padding {
