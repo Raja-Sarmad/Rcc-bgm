@@ -56,15 +56,13 @@
       margin-bottom: 16px !important;
     }
 
-    /* Immersive Services Split Hero Section Version 2 */
+    /* Immersive Services Split Hero Section Version 2 - Light Theme */
     .services-hero {
       position: relative;
-      background: radial-gradient(circle at 5% 10%, rgba(232, 113, 74, 0.09) 0%, transparent 50%),
-        radial-gradient(circle at 95% 90%, rgba(196, 129, 58, 0.09) 0%, transparent 50%),
-        #181310;
-      padding: 120px 0 65px 0;
+      background: radial-gradient(130% 130% at 50% 0%, #ffffff 0%, #f4f0f9 100%);
+      padding: 190px 0 100px 0;
       overflow: hidden;
-      border-bottom: 1px solid rgba(232, 113, 74, 0.15);
+      border-bottom: 1px solid rgba(128, 99, 199, 0.15);
     }
 
     .services-hero::before {
@@ -74,9 +72,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: linear-gradient(rgba(255, 255, 255, 0.007) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.007) 1px, transparent 1px);
-      background-size: 35px 35px;
+      background-image: radial-gradient(rgba(128, 99, 199, 0.08) 1px, transparent 1px);
+      background-size: 30px 30px;
       pointer-events: none;
     }
 
@@ -96,14 +93,14 @@
     .services-hero-left h1 {
       font-size: clamp(34px, 4.8vw, 52px);
       font-weight: 800;
-      color: white;
+      color: var(--bg-deep);
       line-height: 1.15;
       letter-spacing: -1.2px;
       margin-top: 16px;
     }
 
     .services-hero-left h1 span.gradient-text {
-      background: linear-gradient(135deg, #E8714A 0%, #C4813A 100%);
+      background: var(--gradient);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -112,7 +109,7 @@
     .services-hero-left p {
       font-size: 16px;
       line-height: 1.75;
-      color: #D4C0AC;
+      color: var(--text-slate);
       margin-top: 20px;
       max-width: 580px;
     }
@@ -125,24 +122,26 @@
     }
 
     .btn-outline-hero {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 12px;
-      color: white;
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 30px;
+      color: var(--text-dark);
       font-weight: 600;
-      padding: 12px 24px;
+      padding: 11px 24px;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 14.5px;
+      font-size: 13.5px;
       transition: all 0.35s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
     }
 
     .btn-outline-hero:hover {
-      background: rgba(255, 255, 255, 0.08);
       border-color: var(--accent-teal);
+      color: var(--accent-teal);
       transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(128, 99, 199, 0.1);
     }
 
     /* Right column: 3D perspective rotated glassmorphic dashboard */
@@ -154,25 +153,25 @@
     }
 
     .services-hero-mockup {
-      background: rgba(10, 25, 50, 0.4);
-      border: 1px solid rgba(232, 113, 74, 0.2);
-      box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.7),
-        0 0 50px rgba(232, 113, 74, 0.08);
-      backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 30px 60px -20px rgba(48, 36, 71, 0.15),
+        0 0 40px rgba(128, 99, 199, 0.08);
+      backdrop-filter: blur(20px);
       border-radius: 20px;
       padding: 24px;
       width: 100%;
       max-width: 440px;
       transform: rotateX(6deg) rotateY(-12deg) rotateZ(2deg);
       transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
-      color: white;
+      color: var(--text-dark);
     }
 
     .services-hero-mockup:hover {
       transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.02);
-      border-color: rgba(232, 113, 74, 0.4);
-      box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.8),
-        0 0 60px rgba(232, 113, 74, 0.15);
+      border-color: var(--accent-teal);
+      box-shadow: 0 35px 70px -15px rgba(48, 36, 71, 0.2),
+        0 0 50px rgba(128, 99, 199, 0.12);
     }
 
     .mockup-header {
@@ -180,14 +179,14 @@
       justify-content: space-between;
       align-items: center;
       padding-bottom: 16px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
       margin-bottom: 16px;
     }
 
     .mockup-title {
       font-size: 13px;
       font-weight: 700;
-      color: #9E8B7E;
+      color: var(--bg-deep);
       text-transform: uppercase;
       letter-spacing: 1px;
       display: flex;
@@ -262,24 +261,25 @@
     }
 
     .mockup-metric {
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.04);
       border-radius: 12px;
       padding: 12px;
       text-align: left;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
     }
 
     .m-lbl {
       display: block;
       font-size: 11px;
-      color: #708090;
+      color: var(--text-slate);
       margin-bottom: 4px;
     }
 
     .m-val {
       font-size: 17px;
       font-weight: 700;
-      color: white;
+      color: var(--bg-deep);
     }
 
     .mockup-orders {
@@ -290,14 +290,15 @@
     }
 
     .order-item {
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.04);
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.04);
       border-radius: 12px;
       padding: 10px 14px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
     }
 
     .order-status {
@@ -311,23 +312,23 @@
     }
 
     .order-status.completed {
-      background: rgba(232, 113, 74, 0.08);
-      color: var(--accent-teal);
+      background: rgba(16, 185, 129, 0.1);
+      color: #10b981;
     }
 
     .order-status.active {
-      background: rgba(245, 158, 11, 0.08);
+      background: rgba(245, 158, 11, 0.1);
       color: #f59e0b;
     }
 
     .order-status.pending {
-      background: rgba(148, 163, 184, 0.08);
-      color: #9E8B7E;
+      background: rgba(103, 95, 120, 0.1);
+      color: var(--text-slate);
     }
 
     .order-title {
       font-size: 12px;
-      color: #D4C0AC;
+      color: var(--text-dark);
       font-weight: 600;
       white-space: nowrap;
       overflow: hidden;
@@ -338,7 +339,7 @@
 
     .order-time {
       font-size: 10.5px;
-      color: #64748b;
+      color: var(--text-slate);
     }
 
     /* Graphical analytics elements inside card */
@@ -348,13 +349,13 @@
       justify-content: space-between;
       height: 70px;
       padding-top: 10px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
       gap: 8px;
     }
 
     .graph-bar {
       width: 100%;
-      background: rgba(232, 113, 74, 0.15);
+      background: rgba(128, 99, 199, 0.15);
       border-radius: 4px 4px 0 0;
       transition: height 0.4s ease, background 0.4s ease;
     }
@@ -362,27 +363,26 @@
     .graph-bar.active,
     .graph-bar:hover {
       background: var(--accent-teal);
-      box-shadow: 0 0 10px rgba(232, 113, 74, 0.3);
+      box-shadow: 0 0 10px rgba(128, 99, 199, 0.3);
     }
 
     .graph-labels {
       display: flex;
       justify-content: space-between;
       font-size: 9px;
-      color: #556070;
+      color: var(--text-slate);
       margin-top: 6px;
     }
 
     /* Stats Dock */
     .services-hero-stats-dock {
       grid-column: span 2;
-      background: rgba(30, 23, 20, 0.6);
+      background: transparent;
       border: none;
       border-radius: 20px;
       padding: 16px 24px;
       margin-top: 10px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(10px);
+      box-shadow: none;
     }
 
     .services-hero-stats-dock .hero-stats {
@@ -399,7 +399,7 @@
     .services-hero-stats-dock .hero-stat {
       flex: 1;
       text-align: center;
-      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      border-right: 1px solid rgba(0, 0, 0, 0.06);
       padding: 8px 10px;
     }
 
@@ -411,12 +411,12 @@
       font-size: 32px;
       font-weight: 800;
       color: var(--accent-teal);
-      text-shadow: 0 0 15px rgba(232, 113, 74, 0.2);
+      text-shadow: 0 0 15px rgba(128, 99, 199, 0.2);
     }
 
     .services-hero-stats-dock .hero-stat .lbl {
       font-size: 11px;
-      color: #9E8B7E;
+      color: var(--text-slate);
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-top: 5px;
@@ -433,7 +433,7 @@
       }
 
       .services-hero {
-        padding: 90px 0 50px 0;
+        padding: 150px 0 60px 0;
       }
 
       .services-hero-mockup-wrapper {
@@ -454,7 +454,7 @@
 
       .services-hero-stats-dock .hero-stat {
         border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
         padding-bottom: 15px;
         width: 100%;
       }
@@ -488,7 +488,7 @@
         <!-- Left Side: Header & CTAs -->
         <div class="services-hero-left">
           <span class="hero-tag"
-            style="background: rgba(232, 113, 74, 0.08); border: 1px solid rgba(232, 113, 74, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;"><i
+            style="background: rgba(128, 99, 199, 0.1); border: 1px solid rgba(128, 99, 199, 0.25); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px; display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;"><i
               class="fa-solid fa-clipboard-list"></i> RCC-BGM SERVICES DIRECTORY</span>
           <h1>Expert Commercial<br><span class="gradient-text">Facility Services</span></h1>
           <p>
