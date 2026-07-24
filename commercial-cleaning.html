@@ -269,7 +269,7 @@
 
       .cc-task-detail {
         font-size: 11px;
-        color: #64748b;
+        color: rgba(255, 255, 255, 0.68);
         margin-top: 2px;
       }
 
@@ -297,6 +297,13 @@
           gap: 36px;
         }
 
+        .cc-hero-grid,
+        .cc-hero-left,
+        .cc-console {
+          width: 100%;
+          max-width: 100%;
+        }
+
         .cc-hero-left {
           align-items: center;
           text-align: center;
@@ -312,8 +319,65 @@
         }
 
         .cc-console {
-          max-width: 440px;
+          max-width: min(440px, 100%);
           margin: 0 auto;
+        }
+      }
+
+      .cc-console,
+      .cc-task,
+      .cc-task-info,
+      .cc-task-status {
+        min-width: 0;
+      }
+
+      .cc-task {
+        overflow-wrap: anywhere;
+      }
+
+      @media (max-width: 560px) {
+        .cc-hero .container {
+          width: 100%;
+          padding-left: 32px;
+          padding-right: 32px;
+        }
+
+        .cc-hero-left h1 {
+          max-width: 100%;
+          font-size: clamp(28px, 7vw, 32px);
+        }
+
+        .cc-hero-actions {
+          align-items: stretch;
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .cc-hero-actions a {
+          justify-content: center;
+          width: 100%;
+        }
+
+        .cc-console {
+          padding: 22px;
+          border-radius: 16px;
+        }
+
+        .cc-console-header,
+        .cc-task {
+          align-items: flex-start;
+        }
+
+        .cc-console-metrics {
+          grid-template-columns: 1fr;
+        }
+
+        .cc-task {
+          flex-wrap: wrap;
+        }
+
+        .cc-task-status {
+          margin-left: 44px;
         }
       }
     </style>

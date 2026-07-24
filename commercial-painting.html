@@ -820,6 +820,68 @@
         }
       }
 
+      .page-painting main > section > .section-heading {
+        margin-inline: auto;
+        text-align: center;
+      }
+
+      .page-painting main > section > .section-heading .lead-copy {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .page-painting main > section > .section-heading .section-kicker {
+        justify-content: center;
+      }
+
+      .page-painting main > section > .section-heading .section-kicker::before {
+        display: none;
+      }
+
+      .page-painting :is(.scope-grid, .comparison-grid, .surface-grid, .facility-grid, .coordination-grid, .factor-grid, .process-grid, .services-grid) {
+        gap: clamp(16px, 2vw, 24px);
+      }
+
+      .page-painting :is(.scope-card, .comparison-card, .surface-card, .facility-card, .coordination-card, .factor-card, .step-card, .s-item) {
+        min-width: 0;
+        height: 100%;
+        overflow-wrap: anywhere;
+      }
+
+      .page-painting :is(.scope-card, .surface-card, .facility-card, .coordination-card, .factor-card) {
+        padding: clamp(22px, 2.3vw, 28px);
+        border-radius: 16px;
+      }
+
+      .page-painting .comparison-card .number {
+        margin-bottom: 22px;
+      }
+
+      .page-painting :is(.scope-card p, .surface-card p, .facility-card p, .factor-card p, .comparison-card p, .comparison-card li, .coordination-card p) {
+        font-size: 0.96rem;
+        line-height: 1.68;
+      }
+
+      .page-painting :is(.location-chips, .hero-labels) {
+        justify-content: center;
+      }
+
+      @media (max-width: 760px) {
+        .page-painting :is(.scope-grid, .comparison-grid, .surface-grid, .facility-grid, .coordination-grid, .factor-grid, .process-grid) {
+          grid-template-columns: 1fr;
+        }
+
+        .page-painting .scope-boundary {
+          border-left: 0;
+          border-top: 4px solid var(--painting-accent);
+          border-radius: 16px;
+        }
+
+        .page-painting .project-band-inner {
+          padding: 30px 22px;
+        }
+      }
+
       @media (prefers-reduced-motion: reduce) {
         .page-painting *,
         .page-painting *::before,

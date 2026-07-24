@@ -328,8 +328,17 @@
           gap: 36px;
         }
 
+        .ccs-hero-grid,
+        .ccs-hero-left,
+        .ccs-console-wrapper {
+          width: 100%;
+          max-width: 100%;
+        }
+
         .ccs-hero-left {
           align-items: center;
+          flex-basis: auto;
+          padding-right: 0;
           text-align: center;
         }
 
@@ -343,8 +352,13 @@
         }
 
         .ccs-console {
-          max-width: 440px;
+          max-width: min(440px, 100%);
           margin: 0 auto;
+        }
+
+        .ccs-console-wrapper {
+          flex-basis: auto;
+          justify-content: center;
         }
       }
 
@@ -410,6 +424,95 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 16px;
+      }
+
+      .page-cleaning .facility-type-section {
+        text-align: center;
+      }
+
+      .page-cleaning .facility-type-section .eyebrow {
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .page-cleaning .facility-type-section h2 {
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .ccs-console,
+      .ccs-svc,
+      .ccs-svc-info,
+      .facility-chips,
+      .facility-chips .chip {
+        min-width: 0;
+      }
+
+      .ccs-svc,
+      .facility-chips .chip {
+        overflow-wrap: anywhere;
+      }
+
+      @media (max-width: 560px) {
+        .ccs-hero .container {
+          width: 100%;
+          padding-left: 32px;
+          padding-right: 32px;
+        }
+
+        .ccs-hero-left h1 {
+          max-width: 100%;
+          font-size: clamp(28px, 7vw, 32px);
+        }
+
+        .ccs-hero-left h1 .gradient-text {
+          display: block;
+        }
+
+        .ccs-hero-actions {
+          align-items: stretch;
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .ccs-hero-actions a {
+          justify-content: center;
+          width: 100%;
+        }
+
+        .ccs-console {
+          padding: 22px;
+          border-radius: 16px;
+          transform: none;
+        }
+
+        .ccs-console:hover {
+          transform: none;
+        }
+
+        .ccs-console-header,
+        .ccs-svc {
+          align-items: flex-start;
+        }
+
+        .ccs-console-metrics {
+          grid-template-columns: 1fr;
+        }
+
+        .ccs-svc {
+          flex-wrap: wrap;
+        }
+
+        .ccs-svc-freq {
+          margin-left: 48px;
+        }
+
+        .facility-chips .chip {
+          flex: 1 1 100%;
+        }
       }
 
       @media (max-width: 600px) {
@@ -719,7 +822,7 @@
         </div>
       </section>
 
-      <section class="container section-padding">
+      <section class="container section-padding facility-type-section">
         <span class="eyebrow">Commercial and specialized environments</span>
         <h2>Cleaning programs for different facility types</h2>
         <div class="chip-container facility-chips">

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap");
 
 :root {
   --bg-main: #fcf9ff;
@@ -15,7 +15,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 body {
@@ -6999,7 +6999,7 @@ body {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.65;
-  font-family: "Poppins", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-kerning: normal;
   font-feature-settings: "kern" 1, "liga" 1, "cv11" 1;
   -webkit-font-smoothing: antialiased;
@@ -7007,9 +7007,10 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: "Poppins", sans-serif;
   color: var(--text-dark);
   line-height: 1.2;
-  letter-spacing: -0.025em;
+  letter-spacing: 0;
   font-weight: 750;
   font-feature-settings: "kern" 1, "liga" 1, "ss01" 1;
   text-wrap: balance;
@@ -7020,6 +7021,7 @@ h2 { font-size: clamp(1.65rem, 2.45vw, 2.45rem); }
 h3 { font-size: clamp(1.08rem, 1.35vw, 1.25rem); line-height: 1.4; }
 
 p, li, dt, dd, label, input, textarea, select {
+  font-family: "Plus Jakarta Sans", sans-serif;
   color: var(--text-slate);
   font-size: clamp(0.97rem, 1.05vw, 1.06rem);
   line-height: 1.75;
@@ -7062,6 +7064,10 @@ input::placeholder, textarea::placeholder { color: #837a92; opacity: 1; }
 
 /* Cross-page layout normalization. */
 body, body :not(.fa):not(.fas):not(.far):not(.fab):not(.fa-solid):not(.fa-regular):not(.fa-brands) {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+}
+
+body :is(h1, h2, h3, h4, h5, h6, .logo, .hero-tag, .eyebrow, .section-tag, .hero-badge, .section-kicker, .btn-header, .btn-glow, button):not(.fa):not(.fas):not(.far):not(.fab):not(.fa-solid):not(.fa-regular):not(.fa-brands) {
   font-family: "Poppins", sans-serif !important;
 }
 
@@ -7190,4 +7196,160 @@ main > section > h2, main > section > h3 {
   .services-hero-left h1, .about-hero-left h1, .ind-hero-header h1,
   .loc-hero-left h1, .why-hero-left h1 { font-size: clamp(2rem, 8.5vw, 2.45rem) !important; }
   .ind-accordion { height: 230px !important; }
+}
+
+/* Targeted service-page cleanup: keeps the large service pages readable and prevents card overflow. */
+.page-service,
+.page-cleaning,
+.page-hvac,
+.page-mep,
+.page-painting,
+.page-carpentry,
+.page-landscaping {
+  overflow-x: hidden;
+}
+
+.page-service main > section:not([class*="hero"]),
+.page-cleaning main > section:not([class*="hero"]),
+.page-hvac main > section:not([class*="hero"]),
+.page-mep main > section:not([class*="hero"]),
+.page-painting main > section:not([class*="hero"]),
+.page-carpentry main > section:not([class*="hero"]),
+.page-landscaping main > section:not([class*="hero"]) {
+  border-bottom: 0;
+  padding-block: clamp(2.4rem, 4.6vw, 4.75rem);
+}
+
+.page-service :is(.section-heading, .section-head),
+.page-cleaning :is(.section-heading, .section-head),
+.page-hvac :is(.section-heading, .section-head),
+.page-mep :is(.section-heading, .section-head),
+.page-painting :is(.section-heading, .section-head),
+.page-carpentry :is(.section-heading, .section-head),
+.page-landscaping :is(.section-heading, .section-head) {
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: clamp(1.5rem, 3vw, 2.4rem);
+  text-align: center;
+}
+
+.page-service :is(.section-heading, .section-head, .section-intro, .section-lead, .lead-copy) p,
+.page-cleaning :is(.section-heading, .section-head, .section-intro, .section-lead, .lead-copy) p,
+.page-hvac :is(.section-heading, .section-head, .section-intro, .section-lead, .lead-copy) p,
+.page-mep :is(.section-heading, .section-head, .section-intro, .section-lead, .lead-copy) p,
+.page-painting :is(.section-heading, .section-head, .section-intro, .section-lead, .lead-copy) p,
+.page-carpentry :is(.section-heading, .section-head, .section-intro, .section-lead, .lead-copy) p,
+.page-landscaping :is(.section-heading, .section-head, .section-intro, .section-lead, .lead-copy) p,
+.page-service :is(.section-intro, .section-lead, .lead-copy),
+.page-cleaning :is(.section-intro, .section-lead, .lead-copy),
+.page-hvac :is(.section-intro, .section-lead, .lead-copy),
+.page-mep :is(.section-intro, .section-lead, .lead-copy),
+.page-painting :is(.section-intro, .section-lead, .lead-copy),
+.page-carpentry :is(.section-intro, .section-lead, .lead-copy),
+.page-landscaping :is(.section-intro, .section-lead, .lead-copy) {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-service :is(.services-grid, .process-grid, .tech-grid, .scope-grid, .card-grid, .factor-grid, .facility-grid, .surface-grid, .comparison-grid, .coordination-grid, .quality-grid, .property-grid, .mini-grid),
+.page-cleaning :is(.services-grid, .process-grid, .tech-grid, .scope-grid, .card-grid, .factor-grid, .facility-grid, .surface-grid, .comparison-grid, .coordination-grid, .quality-grid, .property-grid, .mini-grid),
+.page-hvac :is(.services-grid, .process-grid, .tech-grid, .scope-grid, .card-grid, .factor-grid, .facility-grid, .surface-grid, .comparison-grid, .coordination-grid, .quality-grid, .property-grid, .mini-grid),
+.page-mep :is(.services-grid, .process-grid, .tech-grid, .scope-grid, .card-grid, .factor-grid, .facility-grid, .surface-grid, .comparison-grid, .coordination-grid, .quality-grid, .property-grid, .mini-grid),
+.page-painting :is(.services-grid, .process-grid, .tech-grid, .scope-grid, .card-grid, .factor-grid, .facility-grid, .surface-grid, .comparison-grid, .coordination-grid, .quality-grid, .property-grid, .mini-grid),
+.page-carpentry :is(.services-grid, .process-grid, .tech-grid, .scope-grid, .card-grid, .factor-grid, .facility-grid, .surface-grid, .comparison-grid, .coordination-grid, .quality-grid, .property-grid, .mini-grid),
+.page-landscaping :is(.services-grid, .process-grid, .tech-grid, .scope-grid, .card-grid, .factor-grid, .facility-grid, .surface-grid, .comparison-grid, .coordination-grid, .quality-grid, .property-grid, .mini-grid) {
+  gap: clamp(1rem, 2vw, 1.5rem) !important;
+}
+
+.page-service :is(.s-item, .step-card, .scope-card, .system-card, .info-card, .factor-card, .facility-card, .surface-card, .comparison-card, .coordination-card, .intro-card, .notice-card, .tech-box),
+.page-cleaning :is(.s-item, .step-card, .scope-card, .system-card, .info-card, .factor-card, .facility-card, .surface-card, .comparison-card, .coordination-card, .intro-card, .notice-card, .tech-box),
+.page-hvac :is(.s-item, .step-card, .scope-card, .system-card, .info-card, .factor-card, .facility-card, .surface-card, .comparison-card, .coordination-card, .intro-card, .notice-card, .tech-box),
+.page-mep :is(.s-item, .step-card, .scope-card, .system-card, .info-card, .factor-card, .facility-card, .surface-card, .comparison-card, .coordination-card, .intro-card, .notice-card, .tech-box),
+.page-painting :is(.s-item, .step-card, .scope-card, .system-card, .info-card, .factor-card, .facility-card, .surface-card, .comparison-card, .coordination-card, .intro-card, .notice-card, .tech-box),
+.page-carpentry :is(.s-item, .step-card, .scope-card, .system-card, .info-card, .factor-card, .facility-card, .surface-card, .comparison-card, .coordination-card, .intro-card, .notice-card, .tech-box),
+.page-landscaping :is(.s-item, .step-card, .scope-card, .system-card, .info-card, .factor-card, .facility-card, .surface-card, .comparison-card, .coordination-card, .intro-card, .notice-card, .tech-box) {
+  overflow-wrap: anywhere;
+  box-shadow: 0 12px 28px rgba(78, 56, 117, 0.08);
+}
+
+.page-service :is(.chip-container, .chips, .location-chips),
+.page-cleaning :is(.chip-container, .chips, .location-chips),
+.page-hvac :is(.chip-container, .chips, .location-chips),
+.page-mep :is(.chip-container, .chips, .location-chips),
+.page-painting :is(.chip-container, .chips, .location-chips),
+.page-carpentry :is(.chip-container, .chips, .location-chips),
+.page-landscaping :is(.chip-container, .chips, .location-chips) {
+  justify-content: center;
+}
+
+.page-service :is(.chip, .location-chip),
+.page-cleaning :is(.chip, .location-chip),
+.page-hvac :is(.chip, .location-chip),
+.page-mep :is(.chip, .location-chip),
+.page-painting :is(.chip, .location-chip),
+.page-carpentry :is(.chip, .location-chip),
+.page-landscaping :is(.chip, .location-chip) {
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .page-service :is(.split-intro, .focus-flex, .split-grid, .detail-layout),
+  .page-cleaning :is(.split-intro, .focus-flex, .split-grid, .detail-layout),
+  .page-hvac :is(.split-intro, .focus-flex, .split-grid, .detail-layout),
+  .page-mep :is(.split-intro, .focus-flex, .split-grid, .detail-layout),
+  .page-painting :is(.split-intro, .focus-flex, .split-grid, .detail-layout),
+  .page-carpentry :is(.split-intro, .focus-flex, .split-grid, .detail-layout),
+  .page-landscaping :is(.split-intro, .focus-flex, .split-grid, .detail-layout) {
+    grid-template-columns: 1fr !important;
+    gap: clamp(1.4rem, 4vw, 2.2rem) !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .page-service main > section:not([class*="hero"]),
+  .page-cleaning main > section:not([class*="hero"]),
+  .page-hvac main > section:not([class*="hero"]),
+  .page-mep main > section:not([class*="hero"]),
+  .page-painting main > section:not([class*="hero"]),
+  .page-carpentry main > section:not([class*="hero"]),
+  .page-landscaping main > section:not([class*="hero"]) {
+    padding-block: 2.2rem;
+  }
+
+  .page-service :is(.s-item, .step-card, .scope-card, .system-card, .info-card, .factor-card, .facility-card, .surface-card, .comparison-card, .coordination-card, .intro-card, .notice-card, .tech-box),
+  .page-cleaning :is(.s-item, .step-card, .scope-card, .system-card, .info-card, .factor-card, .facility-card, .surface-card, .comparison-card, .coordination-card, .intro-card, .notice-card, .tech-box),
+  .page-hvac :is(.s-item, .step-card, .scope-card, .system-card, .info-card, .factor-card, .facility-card, .surface-card, .comparison-card, .coordination-card, .intro-card, .notice-card, .tech-box),
+  .page-mep :is(.s-item, .step-card, .scope-card, .system-card, .info-card, .factor-card, .facility-card, .surface-card, .comparison-card, .coordination-card, .intro-card, .notice-card, .tech-box),
+  .page-painting :is(.s-item, .step-card, .scope-card, .system-card, .info-card, .factor-card, .facility-card, .surface-card, .comparison-card, .coordination-card, .intro-card, .notice-card, .tech-box),
+  .page-carpentry :is(.s-item, .step-card, .scope-card, .system-card, .info-card, .factor-card, .facility-card, .surface-card, .comparison-card, .coordination-card, .intro-card, .notice-card, .tech-box),
+  .page-landscaping :is(.s-item, .step-card, .scope-card, .system-card, .info-card, .factor-card, .facility-card, .surface-card, .comparison-card, .coordination-card, .intro-card, .notice-card, .tech-box) {
+    border-radius: 14px;
+    padding: 22px;
+  }
+
+  .page-service :is(.section-kicker, .eyebrow, .hero-tag),
+  .page-cleaning :is(.section-kicker, .eyebrow, .hero-tag),
+  .page-hvac :is(.section-kicker, .eyebrow, .hero-tag),
+  .page-mep :is(.section-kicker, .eyebrow, .hero-tag),
+  .page-painting :is(.section-kicker, .eyebrow, .hero-tag),
+  .page-carpentry :is(.section-kicker, .eyebrow, .hero-tag),
+  .page-landscaping :is(.section-kicker, .eyebrow, .hero-tag) {
+    justify-content: center;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .page-service :is(.section-kicker, .eyebrow)::before,
+  .page-cleaning :is(.section-kicker, .eyebrow)::before,
+  .page-hvac :is(.section-kicker, .eyebrow)::before,
+  .page-mep :is(.section-kicker, .eyebrow)::before,
+  .page-painting :is(.section-kicker, .eyebrow)::before,
+  .page-carpentry :is(.section-kicker, .eyebrow)::before,
+  .page-landscaping :is(.section-kicker, .eyebrow)::before {
+    display: none;
+  }
 }

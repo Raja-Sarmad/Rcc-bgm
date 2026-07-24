@@ -207,7 +207,7 @@
 
       .mep-disc-desc {
         font-size: 13px;
-        color: #64748b;
+        color: rgba(255, 255, 255, 0.72);
         line-height: 1.6;
         margin-bottom: 16px;
       }
@@ -242,9 +242,63 @@
       }
 
       @media (max-width: 900px) {
+        .mep-hero-inner,
+        .mep-hero-header,
+        .mep-stack {
+          width: 100%;
+          max-width: 100%;
+        }
+
         .mep-stack {
           grid-template-columns: 1fr;
-          max-width: 400px;
+          max-width: min(520px, 100%);
+        }
+      }
+
+      .mep-stack,
+      .mep-discipline,
+      .mep-disc-tags,
+      .mep-disc-tag {
+        min-width: 0;
+      }
+
+      .mep-discipline {
+        overflow-wrap: anywhere;
+      }
+
+      .mep-disc-tags {
+        align-items: flex-start;
+      }
+
+      @media (max-width: 560px) {
+        .mep-hero .container {
+          width: 100%;
+          padding-left: 32px;
+          padding-right: 32px;
+        }
+
+        .mep-hero-header {
+          margin-bottom: 32px;
+        }
+
+        .mep-hero-header h1 {
+          max-width: 100%;
+          font-size: clamp(30px, 8vw, 38px);
+        }
+
+        .mep-hero-actions {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .mep-hero-actions a {
+          justify-content: center;
+          width: 100%;
+        }
+
+        .mep-discipline {
+          padding: 24px 20px;
+          border-radius: 16px;
         }
       }
     </style>
