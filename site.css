@@ -465,10 +465,11 @@ nav.nav-scrolled::after {
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 28px;
+  gap: 20px;              /* Reduced gap between cards */
   margin-top: 40px;
+  padding: 0 40px;        /* Left & right spacing */
+  box-sizing: border-box;
 }
-
 .s-item {
   position: relative;
   overflow: hidden;
@@ -642,8 +643,10 @@ a.s-item p {
 .focus-flex {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 35px;              /* Reduced from 60px */
   align-items: center;
+  padding: 0 40px;        /* Space from left & right */
+  box-sizing: border-box;
 }
 
 .focus-flex.reversed {
@@ -695,12 +698,13 @@ a.s-item p {
 }
 
 .chip {
-  background: white;
+  background: #EFF6FF;
   padding: 12px 24px;
   border-radius: 50px;
   font-weight: 700;
   font-size: 14px;
-  border: 2px solid #DDD0C4;
+  color: #4B5563;
+  border: 1px solid #BFDBFE;
   transition: 0.3s;
 }
 
@@ -888,11 +892,13 @@ a.s-item p {
 /* 12. FAQ */
 .faq-item {
   background: white;
-  margin-bottom: 12px;
   border-radius: 14px;
   padding: 20px 28px;
   cursor: pointer;
   border: 1px solid transparent;
+  max-width: 1000px;
+  margin: 12px auto; 
+  width: 90%;
   transition:
     border-color 0.25s ease,
     box-shadow 0.3s ease,
@@ -916,6 +922,7 @@ a.s-item p {
   gap: 18px;
   font-size: 16px;
   color: var(--text-dark);
+
 }
 
 .faq-item h4 i {
@@ -1934,6 +1941,7 @@ footer a:hover {
   max-width: 800px;
   margin: 0 auto 16px !important;
   text-align: center !important;
+  
 }
 
 .page-janitorial .section-lead {
@@ -3620,13 +3628,14 @@ footer a:hover {
 }
 
 .page-construction .eyebrow {
-  display: inline-block;
+  display: block;
+  width: fit-content;
+  margin: 0 auto 16px;
   color: var(--accent-blue);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  margin-bottom: 16px;
 }
 
 .page-construction .section-lead {
@@ -3705,7 +3714,7 @@ footer a:hover {
 }
 
 .page-construction .preconstruction-section {
-  background: linear-gradient(135deg, #FEEDE0, #fff);
+    background: linear-gradient(180deg, #FFFFFF 0%, #EAF4FF 100%);
 }
 
 .page-construction .quality-section {
@@ -3764,6 +3773,7 @@ footer a:hover {
 
 .page-construction .faq-section {
   background: #FAF0E6;
+  text-align: center;
 }
 
 .page-construction .faq-section .faq-item {
@@ -5474,6 +5484,10 @@ main section h2 {
   max-width: 800px;
   margin-left: auto !important;
   margin-right: auto !important;
+}
+
+.systems-section h2 {
+    color: #F8F4EC !important;
 }
 
 /* Center sections' lead copy and eyebrows */
