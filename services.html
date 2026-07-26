@@ -6,11 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Commercial Facility Services | RCC-BGM</title>
   <meta name="description"
-    content="Explore the service areas RCC-BGM can review and combine around your property’s actual requirements." />
+    content="Explore the service areas RCC-BGM can review and combine around your property's actual requirements." />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
+    :root {
+      --bg-main: #FAF7F2;
+      --bg-white: #FFFFFF;
+      --bg-warm: #F5F0E8;
+      --bg-card: #FFFFFF;
+      --accent-gold: #C4813A;
+      --accent-gold-light: #E8A85C;
+      --accent-gold-soft: rgba(196, 129, 58, 0.08);
+      --accent-gold-border: rgba(196, 129, 58, 0.2);
+      --accent-blue: #4A7C9B;
+      --text-dark: #2D2A26;
+      --text-body: #5A554E;
+      --text-light: #8A847C;
+      --border-warm: rgba(196, 129, 58, 0.12);
+      --border-light: rgba(0, 0, 0, 0.06);
+      --shadow-soft: 0 4px 20px rgba(196, 129, 58, 0.06);
+      --shadow-medium: 0 8px 32px rgba(196, 129, 58, 0.1);
+      --shadow-hover: 0 16px 48px rgba(196, 129, 58, 0.15);
+      --radius: 18px;
+      --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+      /* site.css overrides */
+      --bg-deep: #2D2A26;
+      --text-slate: #5A554E;
+      --accent-teal: #C4813A;
+      --gradient: linear-gradient(135deg, #C4813A, #E8A85C);
+    }
+
+    body.page-company {
+      background: var(--bg-main) !important;
+      color: var(--text-body);
+    }
+
     /* Spacing gap reduction specifically for services page */
     .section-padding {
       padding: 54px 0 !important;
@@ -36,6 +69,7 @@
       text-align: center !important;
       margin-left: auto !important;
       margin-right: auto !important;
+      color: var(--text-dark) !important;
     }
 
     #services-list .redesign-left p {
@@ -43,6 +77,7 @@
       margin-left: auto;
       margin-right: auto;
       text-align: center;
+      color: var(--text-body) !important;
     }
 
     #services-list .redesign-right {
@@ -54,6 +89,16 @@
 
     #services-list .redesign-card {
       height: 160px;
+      background: var(--bg-card) !important;
+      border: 1px solid var(--accent-gold-border) !important;
+      border-radius: var(--radius) !important;
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+    }
+
+    #services-list .redesign-card:hover {
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-gold) !important;
     }
 
     #services-list .redesign-card:nth-child(3) {
@@ -86,6 +131,24 @@
     .faq-item {
       margin-bottom: 12px !important;
       padding: 16px 20px !important;
+      background: var(--bg-card) !important;
+      border: 1px solid var(--accent-gold-border) !important;
+      border-radius: var(--radius) !important;
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+    }
+
+    .faq-item:hover {
+      box-shadow: var(--shadow-medium);
+      border-color: var(--accent-gold) !important;
+    }
+
+    .faq-item h4 {
+      color: var(--text-dark) !important;
+    }
+
+    .faq-item p {
+      color: var(--text-body) !important;
     }
 
     .hero-stats {
@@ -95,30 +158,44 @@
     .modern-process-sec {
       padding: 40px 32px !important;
       margin-top: 24px !important;
+      background: var(--bg-warm) !important;
+      border: 1px solid var(--accent-gold-border) !important;
+      border-radius: var(--radius) !important;
     }
 
     .modern-process-sec .section-intro {
       margin-bottom: 30px !important;
+      color: var(--text-body) !important;
     }
 
     .modern-step-card {
       padding: 24px 20px !important;
+      background: var(--bg-card) !important;
+      border: 1px solid var(--accent-gold-border) !important;
+      border-radius: var(--radius) !important;
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+    }
+
+    .modern-step-card:hover {
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-gold) !important;
     }
 
     main section h2 {
       margin-bottom: 16px !important;
+      color: var(--text-dark) !important;
     }
 
     /* Immersive Services Split Hero Section Version 2 - Light Theme */
     .services-hero {
       position: relative;
-      background: radial-gradient(130% 130% at 50% 0%, #ffffff 0%, #f4f0f9 100%);
+      background: radial-gradient(130% 130% at 50% 0%, var(--bg-white) 0%, var(--bg-warm) 100%) !important;
       padding: 190px 0 100px 0;
-      /* Clear the fixed navigation without shifting either hero column independently. */
       margin-top: 58px;
       height: auto !important;
       overflow: hidden;
-      border-bottom: 1px solid rgba(128, 99, 199, 0.15);
+      border-bottom: 1px solid var(--accent-gold-border) !important;
     }
 
     .services-hero::before {
@@ -128,7 +205,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: radial-gradient(rgba(128, 99, 199, 0.08) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(196, 129, 58, 0.07) 1px, transparent 1px);
       background-size: 30px 30px;
       pointer-events: none;
     }
@@ -149,23 +226,26 @@
     .services-hero-left h1 {
       font-size: clamp(34px, 4.8vw, 52px);
       font-weight: 800;
-      color: var(--bg-deep);
+      color: var(--text-dark) !important;
       line-height: 1.15;
       letter-spacing: -1.2px;
       margin-top: 16px;
     }
 
-    .services-hero-left h1 span.gradient-text {
+    .services-hero-left h1 span.gradient-text,
+    h1 .gradient-text,
+    .gradient-text {
       background: var(--gradient);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
     }
 
     .services-hero-left p {
       font-size: 16px;
       line-height: 1.75;
-      color: var(--text-slate);
+      color: var(--text-body) !important;
       margin-top: 20px;
       max-width: 580px;
     }
@@ -178,10 +258,10 @@
     }
 
     .btn-outline-hero {
-      background: #ffffff;
-      border: 1px solid rgba(0, 0, 0, 0.1);
+      background: var(--bg-white) !important;
+      border: 1px solid var(--accent-gold-border) !important;
       border-radius: 30px;
-      color: var(--text-dark);
+      color: var(--text-dark) !important;
       font-weight: 600;
       padding: 11px 24px;
       text-decoration: none;
@@ -189,15 +269,16 @@
       align-items: center;
       gap: 8px;
       font-size: 13.5px;
-      transition: all 0.35s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+      transition: var(--transition);
+      box-shadow: var(--shadow-soft);
     }
 
     .btn-outline-hero:hover {
-      border-color: var(--accent-teal);
-      color: var(--accent-teal);
+      border-color: var(--accent-gold) !important;
+      color: var(--accent-gold) !important;
+      background: var(--bg-warm) !important;
       transform: translateY(-2px);
-      box-shadow: 0 8px 15px rgba(128, 99, 199, 0.1);
+      box-shadow: var(--shadow-medium);
     }
 
     /* Right column: 3D perspective rotated glassmorphic dashboard */
@@ -210,25 +291,22 @@
     }
 
     .services-hero-mockup {
-      background: rgba(255, 255, 255, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      box-shadow: 0 30px 60px -20px rgba(48, 36, 71, 0.15),
-        0 0 40px rgba(128, 99, 199, 0.08);
+      background: rgba(255, 255, 255, 0.85) !important;
+      border: 1px solid var(--accent-gold-border) !important;
+      box-shadow: var(--shadow-medium);
       backdrop-filter: blur(20px);
-      border-radius: 20px;
+      border-radius: var(--radius);
       padding: 24px;
       width: 100%;
       max-width: 440px;
       transform: rotateX(6deg) rotateY(-12deg) rotateZ(2deg);
       transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
-      
     }
 
     .services-hero-mockup:hover {
       transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.02);
-      border-color: var(--accent-teal);
-      box-shadow: 0 35px 70px -15px rgba(48, 36, 71, 0.2),
-        0 0 50px rgba(128, 99, 199, 0.12);
+      border-color: var(--accent-gold) !important;
+      box-shadow: var(--shadow-hover);
     }
 
     .mockup-header {
@@ -236,7 +314,7 @@
       justify-content: space-between;
       align-items: center;
       padding-bottom: 16px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      border-bottom: 1px solid var(--border-warm);
       margin-bottom: 16px;
     }
 
@@ -248,6 +326,7 @@
       display: flex;
       align-items: center;
       gap: 6px;
+      color: var(--text-dark);
     }
 
     .mockup-badge {
@@ -317,25 +396,25 @@
     }
 
     .mockup-metric {
-      background: #ffffff;
-      border: 1px solid rgba(0, 0, 0, 0.04);
+      background: var(--bg-warm) !important;
+      border: 1px solid var(--accent-gold-border) !important;
       border-radius: 12px;
       padding: 12px;
       text-align: left;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      box-shadow: var(--shadow-soft);
     }
 
     .m-lbl {
       display: block;
       font-size: 11px;
-      color: var(--text-slate);
+      color: var(--text-light);
       margin-bottom: 4px;
     }
 
     .m-val {
       font-size: 17px;
       font-weight: 700;
-      color: var(--bg-deep);
+      color: var(--text-dark);
     }
 
     .mockup-orders {
@@ -346,15 +425,21 @@
     }
 
     .order-item {
-      background: #ffffff;
-      border: 1px solid rgba(0, 0, 0, 0.04);
+      background: var(--bg-warm) !important;
+      border: 1px solid var(--accent-gold-border) !important;
       border-radius: 12px;
       padding: 10px 14px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+    }
+
+    .order-item:hover {
+      box-shadow: var(--shadow-medium);
+      border-color: var(--accent-gold) !important;
     }
 
     .order-status {
@@ -379,7 +464,7 @@
 
     .order-status.pending {
       background: rgba(103, 95, 120, 0.1);
-      color: var(--text-slate);
+      color: var(--text-light);
     }
 
     .order-title {
@@ -395,7 +480,7 @@
 
     .order-time {
       font-size: 10.5px;
-      color: var(--text-slate);
+      color: var(--text-light);
     }
 
     /* Graphical analytics elements inside card */
@@ -405,28 +490,28 @@
       justify-content: space-between;
       height: 70px;
       padding-top: 10px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      border-bottom: 1px solid var(--border-warm);
       gap: 8px;
     }
 
     .graph-bar {
       width: 100%;
-      background: rgba(128, 99, 199, 0.15);
+      background: var(--accent-gold-soft);
       border-radius: 4px 4px 0 0;
       transition: height 0.4s ease, background 0.4s ease;
     }
 
     .graph-bar.active,
     .graph-bar:hover {
-      background: var(--accent-teal);
-      box-shadow: 0 0 10px rgba(128, 99, 199, 0.3);
+      background: var(--accent-gold);
+      box-shadow: 0 0 10px rgba(196, 129, 58, 0.3);
     }
 
     .graph-labels {
       display: flex;
       justify-content: space-between;
       font-size: 9px;
-      color: var(--text-slate);
+      color: var(--text-light);
       margin-top: 6px;
     }
 
@@ -436,7 +521,7 @@
       background: transparent;
       border: none !important;
       outline: none !important;
-      border-radius: 20px;
+      border-radius: var(--radius);
       padding: 16px 24px 24px;
       margin-top: -7px;
       box-shadow: none !important;
@@ -464,7 +549,7 @@
     }
 
     .services-hero-stats-dock .hero-stat:not(:last-child) {
-      border-right: 1px solid rgba(0, 0, 0, 0.06) !important;
+      border-right: 1px solid var(--border-warm) !important;
     }
 
     .services-hero-stats-dock .hero-stat::after {
@@ -478,13 +563,13 @@
     .services-hero-stats-dock .hero-stat .num {
       font-size: 32px;
       font-weight: 800;
-      color: var(--accent-teal);
-      text-shadow: 0 0 15px rgba(128, 99, 199, 0.2);
+      color: var(--accent-gold) !important;
+      text-shadow: 0 0 15px rgba(196, 129, 58, 0.2);
     }
 
     .services-hero-stats-dock .hero-stat .lbl {
       font-size: 11px;
-      color: var(--text-slate);
+      color: var(--text-light);
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-top: 5px;
@@ -522,7 +607,7 @@
 
       .services-hero-stats-dock .hero-stat {
         border-right: none;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        border-bottom: 1px solid var(--border-warm);
         padding-bottom: 15px;
         width: 100%;
       }
@@ -556,7 +641,7 @@
         <!-- Left Side: Header & CTAs -->
         <div class="services-hero-left">
           <span class="hero-tag"
-            style="background: rgba(128, 99, 199, 0.1); border: 1px solid rgba(128, 99, 199, 0.25); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px; display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;"><i
+            style="background: var(--accent-gold-soft); border: 1px solid var(--accent-gold-border); border-radius: 100px; color: var(--accent-gold); padding: 6px 16px; display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;"><i
               class="fa-solid fa-clipboard-list"></i> RCC-BGM SERVICES DIRECTORY</span>
           <h1>Expert Commercial<br><span class="gradient-text">Facility Services</span></h1>
           <p>
@@ -650,14 +735,14 @@
       <div class="redesign-flex">
         <div class="redesign-left">
           <span class="hero-tag" style="
-                color: var(--accent-blue);
-                border-color: rgba(196, 129, 58, 0.3);
-                background: rgba(196, 129, 58, 0.06);
+                color: var(--accent-gold);
+                border-color: var(--accent-gold-border);
+                background: var(--accent-gold-soft);
               ">Built around your facility</span>
           <h2>Practical support for the way<br>your property operates</h2>
           <p>
             Explore the service areas RCC-BGM can review and combine around your
-            property’s actual requirements. Work is scoped around existing
+            property's actual requirements. Work is scoped around existing
             conditions, access, priorities, communication and the outcome your
             team needs.
           </p>
@@ -804,9 +889,9 @@
     </section>
     <section class="container" style="padding: 24px 0 28px 0; border-bottom: none !important;">
       <div class="cta-box"
-        style="background: radial-gradient(120% 120% at 0% 0%, rgba(255, 255, 255, 0.03) 0%, rgba(232, 113, 74, 0.03) 100%), #181310; border: 1px solid rgba(232, 113, 74, 0.25); box-shadow: 0 12px 30px rgba(232, 113, 74, 0.08); border-radius: 24px;">
+        style="background: radial-gradient(120% 120% at 0% 0%, rgba(255, 255, 255, 0.03) 0%, rgba(196, 129, 58, 0.05) 100%), #181310; border: 1px solid var(--accent-gold-border); box-shadow: var(--shadow-medium); border-radius: var(--radius);">
         <span class="hero-tag"
-          style="background: rgba(232, 113, 74, 0.06); border: 1px solid rgba(232, 113, 74, 0.25); border-radius: 100px; color: var(--accent-blue); padding: 6px 16px;">Ready
+          style="background: var(--accent-gold-soft); border: 1px solid var(--accent-gold-border); border-radius: 100px; color: var(--accent-gold-light); padding: 6px 16px;">Ready
           to discuss the property?</span>
         <h2 style="color: white !important; margin-top: 16px;">Start with a clear facility requirement</h2>
         <p style="margin-top: 12px; color: #D4C0AC !important;">

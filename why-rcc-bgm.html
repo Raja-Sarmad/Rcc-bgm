@@ -14,15 +14,52 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <style>
+    :root {
+      --bg-main: #FAF7F2;
+      --bg-white: #FFFFFF;
+      --bg-warm: #F5F0E8;
+      --bg-card: #FFFFFF;
+      --accent-gold: #C4813A;
+      --accent-gold-light: #E8A85C;
+      --accent-gold-soft: rgba(196, 129, 58, 0.08);
+      --accent-gold-border: rgba(196, 129, 58, 0.2);
+      --accent-blue: #4A7C9B;
+      --text-dark: #2D2A26;
+      --text-body: #5A554E;
+      --text-light: #8A847C;
+      --border-warm: rgba(196, 129, 58, 0.12);
+      --border-light: rgba(0, 0, 0, 0.06);
+      --shadow-soft: 0 4px 20px rgba(196, 129, 58, 0.06);
+      --shadow-medium: 0 8px 32px rgba(196, 129, 58, 0.1);
+      --shadow-hover: 0 16px 48px rgba(196, 129, 58, 0.15);
+      --radius: 18px;
+      --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+      /* site.css overrides */
+      --bg-deep: #2D2A26;
+      --text-slate: #5A554E;
+      --accent-teal: #C4813A;
+      --gradient: linear-gradient(135deg, #C4813A, #E8A85C);
+    }
+
+    body.page-company {
+      background: var(--bg-main) !important;
+      color: var(--text-body);
+    }
+
+    main section h2 {
+      color: var(--text-dark) !important;
+    }
+
     /* ── Why RCC-BGM Page Styles ── */
 
     /* Hero */
     .why-hero {
       position: relative;
-      background: linear-gradient(135deg, rgba(128, 99, 199, 0.04) 0%, rgba(217, 111, 159, 0.04) 50%, rgba(128, 99, 199, 0.04) 100%), #ffffff;
+      background: linear-gradient(135deg, rgba(196, 129, 58, 0.06) 0%, rgba(232, 168, 92, 0.04) 50%, rgba(196, 129, 58, 0.06) 100%), var(--bg-warm) !important;
       padding: 140px 0 100px;
       overflow: hidden;
-      border-bottom: 1px solid rgba(128, 99, 199, 0.1);
+      border-bottom: 1px solid var(--accent-gold-border) !important;
     }
 
     .why-hero::before {
@@ -30,8 +67,8 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(128, 99, 199, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(128, 99, 199, 0.05) 1px, transparent 1px);
+        linear-gradient(rgba(196, 129, 58, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(196, 129, 58, 0.05) 1px, transparent 1px);
       background-size: 36px 36px;
       pointer-events: none;
     }
@@ -47,23 +84,26 @@
     .why-hero-content h1 {
       font-size: clamp(34px, 5vw, 54px);
       font-weight: 600;
-      color: var(--bg-deep);
+      color: var(--text-dark) !important;
       line-height: 1.2;
       letter-spacing: -1.2px;
       margin-top: 18px;
     }
 
-    .why-hero-content h1 .gradient-text {
+    .why-hero-content h1 .gradient-text,
+    h1 .gradient-text,
+    .gradient-text {
       background: var(--gradient);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
     }
 
     .why-hero-content p {
       font-size: 16.5px;
       line-height: 1.75;
-      color: var(--text-slate);
+      color: var(--text-body) !important;
       margin-top: 20px;
       max-width: 680px;
       margin-left: auto;
@@ -90,7 +130,7 @@
       border-radius: 99px;
       font-weight: 700;
       text-decoration: none;
-      transition: all 0.35s ease;
+      transition: var(--transition);
       font-size: 14.5px;
       box-sizing: border-box;
       gap: 8px;
@@ -98,18 +138,18 @@
     }
 
     .btn-outline-hero {
-      background: #ffffff;
-      border: 1px solid rgba(128, 99, 199, 0.2);
-      color: var(--bg-deep);
-      box-shadow: 0 4px 10px rgba(48, 36, 71, 0.02);
+      background: var(--bg-white) !important;
+      border: 1px solid var(--accent-gold-border) !important;
+      color: var(--text-dark) !important;
+      box-shadow: var(--shadow-soft);
     }
 
     .btn-outline-hero:hover {
-      background: #fcf9ff;
-      border-color: var(--accent-teal);
-      color: var(--accent-teal);
+      background: var(--bg-warm) !important;
+      border-color: var(--accent-gold) !important;
+      color: var(--accent-gold) !important;
       transform: translateY(-2px);
-      box-shadow: 0 8px 15px rgba(48, 36, 71, 0.05);
+      box-shadow: var(--shadow-medium);
     }
 
     /* Value Proposition Intro */
@@ -121,6 +161,7 @@
 
     .value-intro p {
       margin-top: 16px;
+      color: var(--text-body) !important;
     }
 
     /* Differentiation Cards Grid */
@@ -134,18 +175,18 @@
     .diff-card {
       position: relative;
       overflow: hidden;
-      background: #fff;
+      background: var(--bg-card) !important;
       padding: 36px 28px 30px;
       border-radius: 22px;
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      box-shadow: 0 8px 28px -10px rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--accent-gold-border) !important;
+      box-shadow: var(--shadow-soft);
       transition: transform 0.4s cubic-bezier(.165, .84, .44, 1), box-shadow 0.4s ease, border-color 0.4s ease;
     }
 
     .diff-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 28px 50px -18px rgba(196, 129, 58, 0.22);
-      border-color: rgba(232, 113, 74, 0.3);
+      box-shadow: var(--shadow-hover) !important;
+      border-color: var(--accent-gold) !important;
     }
 
     .diff-icon {
@@ -172,13 +213,13 @@
     .diff-card h3 {
       font-size: 20px;
       font-weight: 700;
-      color: var(--text-dark);
+      color: var(--text-dark) !important;
       margin-bottom: 10px;
     }
 
     .diff-card p {
       font-size: 14.5px;
-      color: var(--text-slate);
+      color: var(--text-body) !important;
       line-height: 1.65;
     }
 
@@ -207,14 +248,14 @@
       color: white;
       padding: 38px 32px;
       border-radius: 22px;
-      border: 1px solid rgba(232, 113, 74, 0.15);
+      border: 1px solid var(--accent-gold-border) !important;
       transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
     }
 
     .division-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.35);
-      border-color: rgba(232, 113, 74, 0.35);
+      border-color: var(--accent-gold) !important;
     }
 
     .division-card .div-badge {
@@ -225,7 +266,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: var(--accent-teal);
+      color: var(--accent-gold-light) !important;
       margin-bottom: 16px;
     }
 
@@ -263,7 +304,7 @@
       font-weight: 900;
       position: absolute;
       left: 0;
-      color: var(--accent-teal);
+      color: var(--accent-gold-light);
       font-size: 11px;
     }
 
@@ -282,6 +323,7 @@
 
     .prop-focus-text p {
       margin-top: 14px;
+      color: var(--text-body) !important;
     }
 
     .prop-tags {
@@ -293,19 +335,19 @@
     }
 
     .prop-tag {
-      background: rgba(232, 113, 74, 0.06);
-      border: 1px solid rgba(232, 113, 74, 0.15);
+      background: var(--accent-gold-soft) !important;
+      border: 1px solid var(--accent-gold-border) !important;
       border-radius: 100px;
       padding: 8px 18px;
       font-size: 13px;
       font-weight: 600;
-      color: var(--text-dark);
-      transition: all 0.3s ease;
+      color: var(--text-dark) !important;
+      transition: var(--transition);
     }
 
     .prop-tag:hover {
-      background: rgba(232, 113, 74, 0.12);
-      border-color: var(--accent-teal);
+      background: rgba(196, 129, 58, 0.14) !important;
+      border-color: var(--accent-gold) !important;
       transform: translateY(-2px);
     }
 
@@ -318,11 +360,11 @@
     }
 
     .scenario-card {
-      background: #fff;
-      border: 1px solid rgba(0, 0, 0, 0.06);
+      background: var(--bg-card) !important;
+      border: 1px solid var(--accent-gold-border) !important;
       border-radius: 20px;
       padding: 32px 28px;
-      box-shadow: 0 6px 20px -8px rgba(0, 0, 0, 0.05);
+      box-shadow: var(--shadow-soft);
       transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
       position: relative;
       overflow: hidden;
@@ -330,41 +372,41 @@
 
     .scenario-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 20px 40px -12px rgba(196, 129, 58, 0.18);
-      border-color: rgba(232, 113, 74, 0.25);
+      box-shadow: var(--shadow-hover) !important;
+      border-color: var(--accent-gold) !important;
     }
 
     .scenario-icon {
       width: 48px;
       height: 48px;
       border-radius: 14px;
-      background: linear-gradient(135deg, rgba(232, 113, 74, 0.12), rgba(196, 129, 58, 0.12));
-      border: 1px solid rgba(232, 113, 74, 0.2);
+      background: var(--accent-gold-soft) !important;
+      border: 1px solid var(--accent-gold-border) !important;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-teal);
+      color: var(--accent-gold) !important;
       font-size: 20px;
       margin-bottom: 18px;
-      transition: all 0.35s ease;
+      transition: var(--transition);
     }
 
     .scenario-card:hover .scenario-icon {
-      background: var(--gradient);
-      color: #fff;
+      background: var(--gradient) !important;
+      color: #fff !important;
       border-color: transparent;
     }
 
     .scenario-card h3 {
       font-size: 19px;
       font-weight: 700;
-      color: var(--text-dark);
+      color: var(--text-dark) !important;
       margin-bottom: 10px;
     }
 
     .scenario-card p {
       font-size: 14.5px;
-      color: var(--text-slate);
+      color: var(--text-body) !important;
       line-height: 1.65;
     }
 
@@ -380,6 +422,7 @@
       border-radius: 28px;
       padding: 56px 40px;
       margin-top: 10px;
+      border: 1px solid var(--accent-gold-border) !important;
     }
 
     .engage-section h2 {
@@ -404,7 +447,7 @@
     .engage-card {
       background: rgba(40, 30, 22, 0.45);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(232, 113, 74, 0.15);
+      border: 1px solid var(--accent-gold-border) !important;
       border-radius: 22px;
       padding: 32px 24px;
       transition: transform 0.4s cubic-bezier(.165, .84, .44, 1), border-color 0.4s ease, box-shadow 0.4s ease;
@@ -414,8 +457,8 @@
 
     .engage-card:hover {
       transform: translateY(-6px);
-      border-color: rgba(232, 113, 74, 0.5);
-      box-shadow: 0 12px 24px -10px rgba(232, 113, 74, 0.1);
+      border-color: var(--accent-gold) !important;
+      box-shadow: 0 12px 24px -10px rgba(196, 129, 58, 0.15);
     }
 
     .engage-card .e-header {
@@ -428,8 +471,8 @@
     .engage-card .e-num {
       font-size: 34px;
       font-weight: 800;
-      color: var(--accent-teal);
-      opacity: 0.8;
+      color: var(--accent-gold-light) !important;
+      opacity: 0.85;
       letter-spacing: -1px;
     }
 
@@ -437,18 +480,18 @@
       width: 46px;
       height: 46px;
       border-radius: 13px;
-      background: linear-gradient(135deg, rgba(232, 113, 74, 0.15), rgba(196, 129, 58, 0.15));
-      border: 1px solid rgba(232, 113, 74, 0.3);
+      background: rgba(196, 129, 58, 0.15) !important;
+      border: 1px solid var(--accent-gold-border) !important;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-teal);
+      color: var(--accent-gold-light) !important;
       font-size: 18px;
     }
 
     .engage-card:hover .e-icon {
-      background: var(--gradient);
-      color: #fff;
+      background: var(--gradient) !important;
+      color: #fff !important;
       border-color: transparent;
     }
 
@@ -491,20 +534,20 @@
       display: flex;
       align-items: center;
       gap: 32px;
-      background: #ffffff;
-      border: 1px solid rgba(0, 0, 0, 0.05);
+      background: var(--bg-card) !important;
+      border: 1px solid var(--accent-gold-border) !important;
       border-radius: 24px;
       padding: 30px 40px;
-      box-shadow: 0 10px 25px -15px rgba(0, 0, 0, 0.08);
-      transition: all 0.4s cubic-bezier(.165, .84, .44, 1);
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
       position: relative;
       overflow: hidden;
     }
 
     .trust-wide-card:hover {
       transform: translateX(12px);
-      border-color: var(--accent-teal);
-      box-shadow: 0 20px 45px -18px rgba(196, 129, 58, 0.15);
+      border-color: var(--accent-gold) !important;
+      box-shadow: var(--shadow-hover) !important;
     }
 
     .trust-wide-card::before {
@@ -526,33 +569,33 @@
     .trust-icon-box {
       width: 64px;
       height: 64px;
-      background: rgba(128, 99, 199, 0.06);
+      background: var(--accent-gold-soft) !important;
       border-radius: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
       font-size: 24px;
-      color: var(--accent-teal);
-      transition: all 0.3s ease;
+      color: var(--accent-gold) !important;
+      transition: var(--transition);
     }
 
     .trust-wide-card:hover .trust-icon-box {
-      background: var(--gradient);
-      color: #fff;
+      background: var(--gradient) !important;
+      color: #fff !important;
       transform: scale(1.1) rotate(-5deg);
     }
 
     .trust-info h4 {
       font-size: 19px;
       font-weight: 700;
-      color: var(--bg-deep);
+      color: var(--text-dark) !important;
       margin-bottom: 6px;
     }
 
     .trust-info p {
       font-size: 14.5px;
-      color: var(--text-slate);
+      color: var(--text-body) !important;
       line-height: 1.65;
       margin: 0;
     }
@@ -583,11 +626,32 @@
       margin: 0 auto;
     }
 
+    .faq-item {
+      background: var(--bg-card) !important;
+      border: 1px solid var(--accent-gold-border) !important;
+      border-radius: var(--radius) !important;
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+    }
+
+    .faq-item:hover {
+      box-shadow: var(--shadow-medium);
+      border-color: var(--accent-gold) !important;
+    }
+
+    .faq-item h4 {
+      color: var(--text-dark) !important;
+    }
+
+    .faq-item p {
+      color: var(--text-body) !important;
+    }
+
     /* CTA Box */
     .why-cta-box {
-      background: radial-gradient(120% 120% at 0% 0%, rgba(255, 255, 255, 0.03) 0%, rgba(232, 113, 74, 0.03) 100%), #181310;
-      border: 1px solid rgba(232, 113, 74, 0.25);
-      box-shadow: 0 12px 30px rgba(232, 113, 74, 0.08);
+      background: radial-gradient(120% 120% at 0% 0%, rgba(255, 255, 255, 0.03) 0%, rgba(196, 129, 58, 0.05) 100%), #181310 !important;
+      border: 1px solid var(--accent-gold-border) !important;
+      box-shadow: var(--shadow-medium) !important;
       border-radius: 24px;
       padding: 48px 40px;
       text-align: center;
@@ -628,7 +692,7 @@
     <div class="container">
       <div class="why-hero-content scroll-reveal">
         <span class="hero-tag"
-          style="background: rgba(128, 99, 199, 0.1); border: 1px solid rgba(128, 99, 199, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;">
+          style="background: var(--accent-gold-soft); border: 1px solid var(--accent-gold-border); border-radius: 100px; color: var(--accent-gold); padding: 6px 16px;">
           <i class="fa-solid fa-handshake"></i> INTEGRATED COMMERCIAL FACILITY SOLUTIONS
         </span>
         <h1>Two Companies. One Integrated<br><span class="gradient-text">Commercial Facility Solution.</span></h1>
@@ -654,11 +718,11 @@
     <section class="container section-padding">
       <div class="value-intro scroll-reveal">
         <span class="hero-tag"
-          style="color: var(--accent-teal); border-color: rgba(128, 99, 199, 0.3); background: rgba(128, 99, 199, 0.1);">
+          style="color: var(--accent-gold); border-color: var(--accent-gold-border); background: var(--accent-gold-soft);">
           The RCC-BGM Difference
         </span>
         <h2>Why commercial property teams choose a coordinated approach</h2>
-        <p style="color: var(--text-slate);">
+        <p>
           Commercial buildings rarely have isolated needs. A tenant improvement may
           affect HVAC, power, plumbing, carpentry, painting and final cleaning. A
           janitorial program may reveal repair or maintenance needs. An equipment
@@ -669,32 +733,32 @@
         </p>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:32px;">
-        <div style="flex:1;min-width:220px;max-width:300px;background:#fff;border:1px solid rgba(0,0,0,0.06);border-radius:18px;padding:24px;text-align:center;box-shadow:0 4px 16px -6px rgba(0,0,0,0.05);"
+        <div style="flex:1;min-width:220px;max-width:300px;background:var(--bg-card);border:1px solid var(--accent-gold-border);border-radius:18px;padding:24px;text-align:center;box-shadow:var(--shadow-soft);"
           class="scroll-reveal">
-          <i class="fa-solid fa-link" style="font-size:22px;color:var(--accent-teal);margin-bottom:10px;"></i>
-          <h4 style="font-size:15px;font-weight:700;margin-bottom:4px;">One relationship</h4>
-          <p style="font-size:13px;">Begin with one facility conversation instead of independently routing every issue.
+          <i class="fa-solid fa-link" style="font-size:22px;color:var(--accent-gold);margin-bottom:10px;"></i>
+          <h4 style="font-size:15px;font-weight:700;margin-bottom:4px;color:var(--text-dark);">One relationship</h4>
+          <p style="font-size:13px;color:var(--text-body);">Begin with one facility conversation instead of independently routing every issue.
           </p>
         </div>
-        <div style="flex:1;min-width:220px;max-width:300px;background:#fff;border:1px solid rgba(0,0,0,0.06);border-radius:18px;padding:24px;text-align:center;box-shadow:0 4px 16px -6px rgba(0,0,0,0.05);"
+        <div style="flex:1;min-width:220px;max-width:300px;background:var(--bg-card);border:1px solid var(--accent-gold-border);border-radius:18px;padding:24px;text-align:center;box-shadow:var(--shadow-soft);"
           class="scroll-reveal">
-          <i class="fa-solid fa-building-columns" style="font-size:22px;color:var(--accent-teal);margin-bottom:10px;"></i>
-          <h4 style="font-size:15px;font-weight:700;margin-bottom:4px;">Two specialized companies</h4>
-          <p style="font-size:13px;">Construction and janitorial work remain distinct while supporting the same
+          <i class="fa-solid fa-building-columns" style="font-size:22px;color:var(--accent-gold);margin-bottom:10px;"></i>
+          <h4 style="font-size:15px;font-weight:700;margin-bottom:4px;color:var(--text-dark);">Two specialized companies</h4>
+          <p style="font-size:13px;color:var(--text-body);">Construction and janitorial work remain distinct while supporting the same
             customer.</p>
         </div>
-        <div style="flex:1;min-width:220px;max-width:300px;background:#fff;border:1px solid rgba(0,0,0,0.06);border-radius:18px;padding:24px;text-align:center;box-shadow:0 4px 16px -6px rgba(0,0,0,0.05);"
+        <div style="flex:1;min-width:220px;max-width:300px;background:var(--bg-card);border:1px solid var(--accent-gold-border);border-radius:18px;padding:24px;text-align:center;box-shadow:var(--shadow-soft);"
           class="scroll-reveal">
           <i class="fa-solid fa-diagram-project"
-            style="font-size:22px;color:var(--accent-teal);margin-bottom:10px;"></i>
-          <h4 style="font-size:15px;font-weight:700;margin-bottom:4px;">Connected planning</h4>
-          <p style="font-size:13px;">Related scopes can be sequenced before work begins.</p>
+            style="font-size:22px;color:var(--accent-gold);margin-bottom:10px;"></i>
+          <h4 style="font-size:15px;font-weight:700;margin-bottom:4px;color:var(--text-dark);">Connected planning</h4>
+          <p style="font-size:13px;color:var(--text-body);">Related scopes can be sequenced before work begins.</p>
         </div>
-        <div style="flex:1;min-width:220px;max-width:300px;background:#fff;border:1px solid rgba(0,0,0,0.06);border-radius:18px;padding:24px;text-align:center;box-shadow:0 4px 16px -6px rgba(0,0,0,0.05);"
+        <div style="flex:1;min-width:220px;max-width:300px;background:var(--bg-card);border:1px solid var(--accent-gold-border);border-radius:18px;padding:24px;text-align:center;box-shadow:var(--shadow-soft);"
           class="scroll-reveal">
-          <i class="fa-solid fa-file-shield" style="font-size:22px;color:var(--accent-teal);margin-bottom:10px;"></i>
-          <h4 style="font-size:15px;font-weight:700;margin-bottom:4px;">Clear ownership</h4>
-          <p style="font-size:13px;">Responsibilities, exclusions, specialists and approval points documented.</p>
+          <i class="fa-solid fa-file-shield" style="font-size:22px;color:var(--accent-gold);margin-bottom:10px;"></i>
+          <h4 style="font-size:15px;font-weight:700;margin-bottom:4px;color:var(--text-dark);">Clear ownership</h4>
+          <p style="font-size:13px;color:var(--text-body);">Responsibilities, exclusions, specialists and approval points documented.</p>
         </div>
       </div>
     </section>
@@ -703,7 +767,7 @@
     <section class="container section-padding">
       <div style="text-align:center;max-width:700px;margin:0 auto;">
         <span class="hero-tag"
-          style="color: var(--accent-blue); border-color: rgba(196, 129, 58, 0.3); background: rgba(196, 129, 58, 0.06);">
+          style="color: var(--accent-gold); border-color: var(--accent-gold-border); background: var(--accent-gold-soft);">
           Six reasons to choose RCC-BGM
         </span>
         <h2>What makes the combined structure more practical</h2>
@@ -751,11 +815,11 @@
     <section id="divisions" class="container section-padding">
       <div style="text-align:center;max-width:700px;margin:0 auto;">
         <span class="hero-tag"
-          style="color: var(--accent-blue); border-color: rgba(196, 129, 58, 0.3); background: rgba(196, 129, 58, 0.06);">
+          style="color: var(--accent-gold); border-color: var(--accent-gold-border); background: var(--accent-gold-soft);">
           Two companies, one shared focus
         </span>
         <h2>The RCC / BGM divide</h2>
-        <p style="margin-top:14px;">Each company has a distinct role, yet both are structured to support the same
+        <p style="margin-top:14px;color:var(--text-body);">Each company has a distinct role, yet both are structured to support the same
           commercial property and customer.</p>
       </div>
       <div class="division-split">
@@ -794,7 +858,7 @@
     <section class="container section-padding">
       <div class="prop-focus-text scroll-reveal">
         <span class="hero-tag"
-          style="color: var(--accent-blue); border-color: rgba(196, 129, 58, 0.3); background: rgba(196, 129, 58, 0.06);">
+          style="color: var(--accent-gold); border-color: var(--accent-gold-border); background: var(--accent-gold-soft);">
           Built for commercial facilities
         </span>
         <h2>Commercial property focus</h2>
@@ -805,21 +869,21 @@
         </p>
       </div>
       <div class="prop-tags scroll-reveal">
-        <span class="prop-tag"><i class="fa-solid fa-building" style="margin-right:6px;color:var(--accent-teal);"></i>
+        <span class="prop-tag"><i class="fa-solid fa-building" style="margin-right:6px;color:var(--accent-gold);"></i>
           Corporate Offices</span>
         <span class="prop-tag"><i class="fa-solid fa-microchip"
-            style="margin-right:6px;color:var(--accent-teal);"></i> Technology Workplaces</span>
-        <span class="prop-tag"><i class="fa-solid fa-flask" style="margin-right:6px;color:var(--accent-teal);"></i>
+            style="margin-right:6px;color:var(--accent-gold);"></i> Technology Workplaces</span>
+        <span class="prop-tag"><i class="fa-solid fa-flask" style="margin-right:6px;color:var(--accent-gold);"></i>
           Life-Science Environments</span>
         <span class="prop-tag"><i class="fa-solid fa-stethoscope"
-            style="margin-right:6px;color:var(--accent-teal);"></i> Healthcare Facilities</span>
+            style="margin-right:6px;color:var(--accent-gold);"></i> Healthcare Facilities</span>
         <span class="prop-tag"><i class="fa-solid fa-industry"
-            style="margin-right:6px;color:var(--accent-teal);"></i> Manufacturing Properties</span>
-        <span class="prop-tag"><i class="fa-solid fa-warehouse"
-            style="margin-right:6px;color:var(--accent-teal);"></i> Warehouses</span>
-        <span class="prop-tag"><i class="fa-solid fa-city" style="margin-right:6px;color:var(--accent-teal);"></i>
+            style="margin-right:6px;color:var(--accent-gold);"></i> Manufacturing Properties</span>
+        <span class="prop-tag"><i class="fa-solid fa-warehouse" style="margin-right:6px;color:var(--accent-gold);"></i>
+          Warehouses</span>
+        <span class="prop-tag"><i class="fa-solid fa-city" style="margin-right:6px;color:var(--accent-gold);"></i>
           Multi-Tenant Buildings</span>
-        <span class="prop-tag"><i class="fa-solid fa-store" style="margin-right:6px;color:var(--accent-teal);"></i>
+        <span class="prop-tag"><i class="fa-solid fa-store" style="margin-right:6px;color:var(--accent-gold);"></i>
           Customer-Facing Properties</span>
       </div>
     </section>
@@ -828,11 +892,11 @@
     <section class="container section-padding">
       <div style="text-align:center;max-width:700px;margin:0 auto;">
         <span class="hero-tag"
-          style="color: var(--accent-blue); border-color: rgba(196, 129, 58, 0.3); background: rgba(196, 129, 58, 0.06);">
+          style="color: var(--accent-gold); border-color: var(--accent-gold-border); background: var(--accent-gold-soft);">
           How the integrated model works
         </span>
         <h2>Practical scenarios</h2>
-        <p style="margin-top:14px;">Real-world examples of how RCC and BGM coordinate around the same building,
+        <p style="margin-top:14px;color:var(--text-body);">Real-world examples of how RCC and BGM coordinate around the same building,
           schedule or project outcome.</p>
       </div>
       <div class="scenario-grid">
@@ -867,7 +931,7 @@
     <section class="container section-padding">
       <div class="engage-section scroll-reveal">
         <span class="hero-tag"
-          style="color: var(--accent-teal); border-color: rgba(232, 113, 74, 0.3); background: rgba(232, 113, 74, 0.06); text-align:center;display:inline-block;">
+          style="color: var(--accent-gold-light); border-color: var(--accent-gold-border); background: rgba(196, 129, 58, 0.08); text-align:center;display:inline-block;">
           Getting started
         </span>
         <h2>Recommended facility engagement process</h2>
@@ -930,11 +994,11 @@
     <section class="container section-padding">
       <div style="text-align:center;max-width:700px;margin:0 auto;">
         <span class="hero-tag"
-          style="color: var(--accent-blue); border-color: rgba(196, 129, 58, 0.3); background: rgba(196, 129, 58, 0.06);">
+          style="color: var(--accent-gold); border-color: var(--accent-gold-border); background: var(--accent-gold-soft);">
           Accountability you can rely on
         </span>
         <h2>Trust and accountability</h2>
-        <p style="margin-top:14px;">Scopes are developed through specifics rather than unsupported claims. Here is how
+        <p style="margin-top:14px;color:var(--text-body);">Scopes are developed through specifics rather than unsupported claims. Here is how
           every engagement stays transparent.</p>
       </div>
       
@@ -1042,7 +1106,7 @@
     <section class="container" style="padding: 24px 0 32px; border-bottom: none !important;">
       <div class="why-cta-box scroll-reveal">
         <span class="hero-tag"
-          style="background: rgba(232, 113, 74, 0.06); border: 1px solid rgba(232, 113, 74, 0.25); border-radius: 100px; color: var(--accent-blue); padding: 6px 16px;">
+          style="background: rgba(196, 129, 58, 0.08); border: 1px solid var(--accent-gold-border); border-radius: 100px; color: var(--accent-gold-light); padding: 6px 16px;">
           Start with one facility conversation
         </span>
         <h2>Bring Cleaning, Maintenance and Construction<br>Requirements Into a Clearer Plan</h2>

@@ -14,13 +14,46 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <style>
+    :root {
+      --bg-main: #FAF7F2;
+      --bg-white: #FFFFFF;
+      --bg-warm: #F5F0E8;
+      --bg-card: #FFFFFF;
+      --accent-gold: #C4813A;
+      --accent-gold-light: #E8A85C;
+      --accent-gold-soft: rgba(196, 129, 58, 0.08);
+      --accent-gold-border: rgba(196, 129, 58, 0.2);
+      --accent-blue: #4A7C9B;
+      --text-dark: #2D2A26;
+      --text-body: #5A554E;
+      --text-light: #8A847C;
+      --border-warm: rgba(196, 129, 58, 0.12);
+      --border-light: rgba(0, 0, 0, 0.06);
+      --shadow-soft: 0 4px 20px rgba(196, 129, 58, 0.06);
+      --shadow-medium: 0 8px 32px rgba(196, 129, 58, 0.1);
+      --shadow-hover: 0 16px 48px rgba(196, 129, 58, 0.15);
+      --radius: 18px;
+      --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+      /* site.css overrides */
+      --bg-deep: #2D2A26;
+      --text-slate: #5A554E;
+      --accent-teal: #C4813A;
+      --gradient: linear-gradient(135deg, #C4813A, #E8A85C);
+    }
+
+    body.page-location {
+      background: var(--bg-main) !important;
+      color: var(--text-body);
+    }
+
     /* ── Locations Hero ── */
     .loc-hero {
       position: relative;
-      background: linear-gradient(135deg, rgba(128, 99, 199, 0.04) 0%, rgba(217, 111, 159, 0.04) 50%, rgba(128, 99, 199, 0.04) 100%), #ffffff;
+      background: linear-gradient(135deg, rgba(196, 129, 58, 0.06) 0%, rgba(232, 168, 92, 0.04) 50%, rgba(196, 129, 58, 0.06) 100%), var(--bg-warm) !important;
       padding: 160px 0 100px 0;
       overflow: hidden;
-      border-bottom: 1px solid rgba(128, 99, 199, 0.1);
+      border-bottom: 1px solid var(--accent-gold-border) !important;
     }
 
     .loc-hero::before {
@@ -28,7 +61,7 @@
       position: absolute;
       inset: 0;
       background-image:
-        radial-gradient(rgba(128, 99, 199, 0.05) 1px, transparent 1px);
+        radial-gradient(rgba(196, 129, 58, 0.07) 1px, transparent 1px);
       background-size: 24px 24px;
       pointer-events: none;
     }
@@ -43,24 +76,27 @@
 
     .loc-hero-inner h1 {
       font-size: clamp(32px, 4.5vw, 52px);
-      color: var(--bg-deep);
+      color: var(--text-dark) !important;
       font-weight: 700;
       line-height: 1.25;
       letter-spacing: -1.2px;
       margin-top: 16px;
     }
 
-    .loc-hero-inner h1 .gradient-text {
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+  .loc-hero-inner h1 .gradient-text,
+h1 .gradient-text,
+.gradient-text {
+  background: var(--gradient) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
 
     .loc-hero-inner p {
       font-size: 16px;
       line-height: 1.75;
-      color: var(--text-slate);
+      color: var(--text-body) !important;
       margin-top: 20px;
       max-width: 680px;
       margin-left: auto;
@@ -86,7 +122,7 @@
       border-radius: 99px;
       font-weight: 700;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: var(--transition);
       font-size: 15px;
       box-sizing: border-box;
       gap: 8px;
@@ -94,26 +130,26 @@
     }
 
     .loc-hero-actions .btn-outline {
-      border: 1px solid rgba(128, 99, 199, 0.2);
-      background: #ffffff;
-      color: var(--bg-deep);
-      box-shadow: 0 4px 10px rgba(48, 36, 71, 0.02);
+      border: 1px solid var(--accent-gold-border) !important;
+      background: var(--bg-white) !important;
+      color: var(--text-dark) !important;
+      box-shadow: var(--shadow-soft);
     }
 
     .loc-hero-actions .btn-outline:hover {
-      border-color: var(--accent-teal);
-      background: #fcf9ff;
-      color: var(--accent-teal);
-      box-shadow: 0 8px 15px rgba(48, 36, 71, 0.05);
+      border-color: var(--accent-gold) !important;
+      background: var(--bg-warm) !important;
+      color: var(--accent-gold) !important;
+      box-shadow: var(--shadow-medium);
     }
 
     /* ── Geographic Overview Card ── */
     .geo-overview-card {
-      background: #ffffff !important;
-      border: 1px solid rgba(128, 99, 199, 0.12);
+      background: var(--bg-card) !important;
+      border: 1px solid var(--accent-gold-border) !important;
       border-radius: 32px;
       padding: 60px 50px;
-      box-shadow: 0 15px 35px rgba(128, 99, 199, 0.06);
+      box-shadow: var(--shadow-medium) !important;
       position: relative;
       z-index: 5;
       text-align: center;
@@ -136,12 +172,12 @@
     .loc-stat-item .num {
       font-size: 36px;
       font-weight: 700;
-      color: var(--accent-teal);
+      color: var(--accent-gold) !important;
     }
 
     .loc-stat-item .lbl {
       font-size: 12px;
-      color: var(--text-slate);
+      color: var(--text-light) !important;
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-top: 4px;
@@ -173,7 +209,7 @@
     .sub-region-label {
       font-size: 13px;
       font-weight: 700;
-      color: var(--accent-blue);
+      color: var(--accent-gold-light) !important;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       margin: 28px 0 14px;
@@ -205,35 +241,35 @@
       border-radius: 14px;
       padding: 16px 18px;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: var(--transition);
       color: #fff;
     }
 
     .city-card:hover {
-      background: rgba(232, 113, 74, 0.07);
-      border-color: rgba(232, 113, 74, 0.35);
+      background: rgba(196, 129, 58, 0.1) !important;
+      border-color: var(--accent-gold-border) !important;
       transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(232, 113, 74, 0.1);
+      box-shadow: 0 10px 25px rgba(196, 129, 58, 0.15);
     }
 
     .city-card .city-icon {
       width: 40px;
       height: 40px;
       border-radius: 10px;
-      background: rgba(232, 113, 74, 0.08);
-      border: 1px solid rgba(232, 113, 74, 0.2);
+      background: rgba(196, 129, 58, 0.1);
+      border: 1px solid var(--accent-gold-border);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-teal);
+      color: var(--accent-gold-light) !important;
       font-size: 16px;
       flex-shrink: 0;
-      transition: all 0.3s ease;
+      transition: var(--transition);
     }
 
     .city-card:hover .city-icon {
-      background: var(--gradient);
-      color: #fff;
+      background: var(--gradient) !important;
+      color: #fff !important;
       border-color: transparent;
     }
 
@@ -253,11 +289,11 @@
       margin-left: auto;
       color: rgba(255, 255, 255, 0.15);
       font-size: 13px;
-      transition: all 0.3s ease;
+      transition: var(--transition);
     }
 
     .city-card:hover .city-arrow {
-      color: var(--accent-teal);
+      color: var(--accent-gold-light) !important;
       transform: translateX(4px);
     }
 
@@ -277,7 +313,7 @@
       }
     }
 
-    /* ── Service Availability Readable Update ── */
+    /* ── Service Availability ── */
     .service-avail-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -286,29 +322,30 @@
     }
 
     .service-avail-card {
-      background: #fcf9ff; /* Subtle light background */
-      border: 1px solid rgba(128, 99, 199, 0.1);
-      border-radius: 18px;
+      background: var(--bg-warm) !important;
+      border: 1px solid var(--accent-gold-border) !important;
+      border-radius: var(--radius);
       padding: 28px 24px;
-      transition: all 0.3s ease;
+      transition: var(--transition);
+      box-shadow: var(--shadow-soft);
     }
 
     .service-avail-card:hover {
-      border-color: var(--accent-teal);
-      background: #ffffff;
-      box-shadow: 0 10px 25px rgba(128, 99, 199, 0.05);
+      border-color: var(--accent-gold) !important;
+      background: var(--bg-white) !important;
+      box-shadow: var(--shadow-hover);
     }
 
     .service-avail-card .svc-icon {
       width: 46px;
       height: 46px;
       border-radius: 12px;
-      background: rgba(128, 99, 199, 0.08);
-      border: 1px solid rgba(128, 99, 199, 0.2);
+      background: var(--accent-gold-soft) !important;
+      border: 1px solid var(--accent-gold-border) !important;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-teal);
+      color: var(--accent-gold) !important;
       font-size: 18px;
       margin-bottom: 16px;
     }
@@ -316,13 +353,13 @@
     .service-avail-card h3 {
       font-size: 17px;
       font-weight: 700;
-      color: var(--bg-deep); /* Dark Heading */
+      color: var(--text-dark) !important;
       margin: 0 0 8px;
     }
 
     .service-avail-card p {
       font-size: 14px;
-      color: var(--text-slate); /* Dark Readable Text */
+      color: var(--text-body) !important;
       line-height: 1.65;
       margin: 0;
     }
@@ -333,25 +370,25 @@
       }
     }
 
-    /* ── Unlisted City CTA Readable Update ── */
+    /* ── Unlisted City CTA ── */
     .unlisted-cta {
-      background: #fcf9ff;
-      border: 1px dashed rgba(128, 99, 199, 0.3);
-      border-radius: 20px;
+      background: var(--bg-warm) !important;
+      border: 1px dashed var(--accent-gold-border) !important;
+      border-radius: var(--radius);
       padding: 40px 32px;
       text-align: center;
       margin-top: 50px;
     }
 
     .unlisted-cta h3 {
-      color: var(--bg-deep); /* Dark Heading */
+      color: var(--text-dark) !important;
       font-size: 22px;
       font-weight: 700;
       margin: 0 0 12px;
     }
 
     .unlisted-cta p {
-      color: var(--text-slate); /* Dark Readable Text */
+      color: var(--text-body) !important;
       font-size: 15px;
       max-width: 600px;
       margin: 0 auto 24px;
@@ -391,10 +428,44 @@
 
     .modern-step-card {
       padding: 24px 20px !important;
+      background: var(--bg-card) !important;
+      border: 1px solid var(--accent-gold-border) !important;
+      border-radius: var(--radius) !important;
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+    }
+
+    .modern-step-card:hover {
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-gold) !important;
     }
 
     main section h2 {
       margin-bottom: 16px !important;
+      color: var(--text-dark) !important;
+    }
+
+    .faq-item {
+      background: var(--bg-card) !important;
+      border: 1px solid var(--accent-gold-border) !important;
+      border-radius: var(--radius) !important;
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+      margin-bottom: 12px;
+      padding: 16px 20px;
+    }
+
+    .faq-item:hover {
+      box-shadow: var(--shadow-medium);
+      border-color: var(--accent-gold) !important;
+    }
+
+    .faq-item h4 {
+      color: var(--text-dark) !important;
+    }
+
+    .faq-item p {
+      color: var(--text-body) !important;
     }
   </style>
 </head>
@@ -419,7 +490,7 @@
     <div class="container">
       <div class="loc-hero-inner">
         <span class="hero-tag"
-          style="background:rgba(128,99,199,0.1);border:1px solid rgba(128,99,199,0.3);border-radius:100px;color:var(--accent-teal);padding:6px 16px;">
+          style="background:var(--accent-gold-soft);border:1px solid var(--accent-gold-border);border-radius:100px;color:var(--accent-gold);padding:6px 16px;">
           <i class="fa-solid fa-map-location-dot"></i> SERVICE AREA DIRECTORY
         </span>
         <h1>Commercial Facility Services<br>Across <span class="gradient-text">Selected U.S. Markets</span></h1>
@@ -451,11 +522,11 @@
 
   <main>
     <!-- ═══════════ GEOGRAPHIC OVERVIEW ═══════════ -->
-    <section class="container section-padding scroll-reveal" style="max-width:920px;margin:0 auto;padding-bottom:60px !important; background: #ffffff;">
+    <section class="container section-padding scroll-reveal" style="max-width:920px;margin:0 auto;padding-bottom:60px !important;">
       <div class="geo-overview-card">
-          <h2 style="font-size: clamp(24px, 3vw, 36px); font-weight: 800; color: var(--bg-deep); margin-bottom: 20px;">How RCC-BGM Connects Markets to Services</h2>
+          <h2 style="font-size: clamp(24px, 3vw, 36px); font-weight: 800; color: var(--text-dark); margin-bottom: 20px;">How RCC-BGM Connects Markets to Services</h2>
           
-          <p style="color:var(--text-slate);line-height:1.8;font-size:16px;max-width:780px;margin:0 auto;">
+          <p style="color:var(--text-body);line-height:1.8;font-size:16px;max-width:780px;margin:0 auto;">
             Commercial properties in different markets face different operating schedules, building conditions, labor
             availability, local regulations and service requirements. RCC-BGM uses a location-based qualification process to
             connect each inquiry with the appropriate Reliable Concepts Corporation or Brilliant General Maintenance
@@ -467,10 +538,10 @@
 
     <!-- ═══════════ BAY AREA / NORTHERN CALIFORNIA ═══════════ -->
     <section id="bay-area" class="container region-section scroll-reveal"
-      style="background:linear-gradient(135deg,#1E1714 0%,#2C2018 100%)!important;border-radius:36px;padding:48px 40px!important;border:1px solid rgba(232,113,74,0.12)!important;">
+      style="background:linear-gradient(135deg,#1E1714 0%,#2C2018 100%)!important;border-radius:36px;padding:48px 40px!important;border:1px solid var(--accent-gold-border)!important;">
       <div class="region-section-header">
         <span class="hero-tag"
-          style="color:var(--accent-teal);border-color:rgba(232,113,74,0.3);background:rgba(232,113,74,0.06);">
+          style="color:var(--accent-gold-light);border-color:var(--accent-gold-border);background:rgba(196,129,58,0.08);">
           <i class="fa-solid fa-location-dot"></i> Northern California
         </span>
         <h2 style="margin-top:14px;">San Francisco Bay Area &amp; Northern California</h2>
@@ -608,10 +679,10 @@
 
     <!-- ═══════════ SOUTHERN CALIFORNIA ═══════════ -->
     <section id="socal" class="container region-section scroll-reveal"
-      style="background:linear-gradient(135deg,#1E1714 0%,#2C2018 100%)!important;border-radius:36px;padding:48px 40px!important;border:1px solid rgba(232,113,74,0.12)!important;">
+      style="background:linear-gradient(135deg,#1E1714 0%,#2C2018 100%)!important;border-radius:36px;padding:48px 40px!important;border:1px solid var(--accent-gold-border)!important;">
       <div class="region-section-header">
         <span class="hero-tag"
-          style="color:var(--accent-teal);border-color:rgba(232,113,74,0.3);background:rgba(232,113,74,0.06);">
+          style="color:var(--accent-gold-light);border-color:var(--accent-gold-border);background:rgba(196,129,58,0.08);">
           <i class="fa-solid fa-sun"></i> Southern California
         </span>
         <h2 style="margin-top:14px;">Southern California Markets</h2>
@@ -708,10 +779,10 @@
 
     <!-- ═══════════ OTHER STATES ═══════════ -->
     <section id="other-states" class="container region-section scroll-reveal"
-      style="background:linear-gradient(135deg,#1E1714 0%,#2C2018 100%)!important;border-radius:36px;padding:48px 40px!important;border:1px solid rgba(232,113,74,0.12)!important;">
+      style="background:linear-gradient(135deg,#1E1714 0%,#2C2018 100%)!important;border-radius:36px;padding:48px 40px!important;border:1px solid var(--accent-gold-border)!important;">
       <div class="region-section-header">
         <span class="hero-tag"
-          style="color:var(--accent-teal);border-color:rgba(232,113,74,0.3);background:rgba(232,113,74,0.06);">
+          style="color:var(--accent-gold-light);border-color:var(--accent-gold-border);background:rgba(196,129,58,0.08);">
           <i class="fa-solid fa-flag-usa"></i> Beyond California
         </span>
         <h2 style="margin-top:14px;">Arizona, Nevada, Texas, Illinois &amp; Michigan</h2>
@@ -797,10 +868,10 @@
     <!-- ═══════════ SERVICE AVAILABILITY BY MARKET ═══════════ -->
     <section class="container section-padding scroll-reveal">
       <span class="hero-tag"
-        style="color:var(--accent-blue);border-color:rgba(196,129,58,0.3);background:rgba(196,129,58,0.06);">Service
+        style="color:var(--accent-gold);border-color:var(--accent-gold-border);background:var(--accent-gold-soft);">Service
         Categories</span>
-      <h2 style="color: var(--bg-deep);">Services Available by Market</h2>
-      <p style="color:var(--text-slate);margin-top:8px;">Service families vary by location. Each city page links to the most
+      <h2 style="color: var(--text-dark);">Services Available by Market</h2>
+      <p style="color:var(--text-body);margin-top:8px;">Service families vary by location. Each city page links to the most
         relevant dedicated service pages after the local scope has been verified.</p>
       <div class="service-avail-grid">
         <div class="service-avail-card">
@@ -837,8 +908,8 @@
 
     <!-- ═══════════ 6-STEP LOCATION QUALIFICATION ═══════════ -->
     <section class="container section-padding modern-process-sec scroll-reveal">
-      <h2 style="color: var(--bg-deep);">How Location Qualification Works</h2>
-      <p class="section-intro" style="color: var(--text-slate);">
+      <h2 style="color: var(--text-dark);">How Location Qualification Works</h2>
+      <p class="section-intro" style="color: var(--text-body);">
         A structured process ensures the right team, trade and scope are matched to each property.
       </p>
       <div class="loc-qual-grid">
@@ -895,35 +966,35 @@
 
     <!-- ═══════════ FAQ ═══════════ -->
     <section class="container section-padding scroll-reveal">
-      <h2 style="color: var(--bg-deep);">Common Questions</h2>
+      <h2 style="color: var(--text-dark);">Common Questions</h2>
       <div class="faq-item">
-        <h4 style="color: var(--bg-deep);">Where does RCC-BGM provide services? <i class="fa-solid fa-plus"></i></h4>
-        <p style="margin-top:12px; color: var(--text-slate);">RCC-BGM publishes selected city pages and broader primary service hubs across
+        <h4 style="color: var(--text-dark);">Where does RCC-BGM provide services? <i class="fa-solid fa-plus"></i></h4>
+        <p style="margin-top:12px; color: var(--text-body);">RCC-BGM publishes selected city pages and broader primary service hubs across
           several U.S. states. Exact availability varies by company, service and project.</p>
       </div>
       <div class="faq-item">
-        <h4 style="color: var(--bg-deep);">Is every service available in every city? <i class="fa-solid fa-plus"></i></h4>
-        <p style="margin-top:12px; color: var(--text-slate);">No. Cleaning, HVAC, construction and specialist services must be confirmed for the
+        <h4 style="color: var(--text-dark);">Is every service available in every city? <i class="fa-solid fa-plus"></i></h4>
+        <p style="margin-top:12px; color: var(--text-body);">No. Cleaning, HVAC, construction and specialist services must be confirmed for the
           specific location and scope.</p>
       </div>
       <div class="faq-item">
-        <h4 style="color: var(--bg-deep);">Can RCC-BGM serve a city not listed? <i class="fa-solid fa-plus"></i></h4>
-        <p style="margin-top:12px; color: var(--text-slate);">An unlisted city can be reviewed through a service-area confirmation request, but
+        <h4 style="color: var(--text-dark);">Can RCC-BGM serve a city not listed? <i class="fa-solid fa-plus"></i></h4>
+        <p style="margin-top:12px; color: var(--text-body);">An unlisted city can be reviewed through a service-area confirmation request, but
           availability should not be promised before qualification.</p>
       </div>
       <div class="faq-item">
-        <h4 style="color: var(--bg-deep);">Can one location receive both RCC and BGM services? <i class="fa-solid fa-plus"></i></h4>
-        <p style="margin-top:12px; color: var(--text-slate);">Related services may be coordinated when both companies have the required capability
+        <h4 style="color: var(--text-dark);">Can one location receive both RCC and BGM services? <i class="fa-solid fa-plus"></i></h4>
+        <p style="margin-top:12px; color: var(--text-body);">Related services may be coordinated when both companies have the required capability
           in that market.</p>
       </div>
       <div class="faq-item">
-        <h4 style="color: var(--bg-deep);">Does RCC-BGM have an office in every listed city? <i class="fa-solid fa-plus"></i></h4>
-        <p style="margin-top:12px; color: var(--text-slate);">A service-area page does not necessarily represent a staffed physical office. The
+        <h4 style="color: var(--text-dark);">Does RCC-BGM have an office in every listed city? <i class="fa-solid fa-plus"></i></h4>
+        <p style="margin-top:12px; color: var(--text-body);">A service-area page does not necessarily represent a staffed physical office. The
           website publishes office addresses only when accurate and verifiable.</p>
       </div>
       <div class="faq-item">
-        <h4 style="color: var(--bg-deep);">Can RCC-BGM support multiple properties? <i class="fa-solid fa-plus"></i></h4>
-        <p style="margin-top:12px; color: var(--text-slate);">Multi-location programs may be considered based on the cities, service consistency,
+        <h4 style="color: var(--text-dark);">Can RCC-BGM support multiple properties? <i class="fa-solid fa-plus"></i></h4>
+        <p style="margin-top:12px; color: var(--text-body);">Multi-location programs may be considered based on the cities, service consistency,
           local resources and required scope.</p>
       </div>
     </section>
@@ -931,9 +1002,9 @@
     <!-- ═══════════ FINAL CTA ═══════════ -->
     <section class="container" style="padding:24px 0 28px 0;border-bottom:none!important;">
       <div class="cta-box"
-        style="background:radial-gradient(120% 120% at 0% 0%,rgba(255,255,255,0.03) 0%,rgba(232,113,74,0.03) 100%),#181310;border:1px solid rgba(232,113,74,0.25);box-shadow:0 12px 30px rgba(232,113,74,0.08);border-radius:24px;">
+        style="background:radial-gradient(120% 120% at 0% 0%,rgba(255,255,255,0.03) 0%,rgba(196,129,58,0.05) 100%),#181310;border:1px solid var(--accent-gold-border);box-shadow:var(--shadow-medium);border-radius:var(--radius);">
         <span class="hero-tag"
-          style="background:rgba(232,113,74,0.06);border:1px solid rgba(232,113,74,0.25);border-radius:100px;color:var(--accent-blue);padding:6px 16px;">Confirm
+          style="background:rgba(196,129,58,0.08);border:1px solid var(--accent-gold-border);border-radius:100px;color:var(--accent-gold-light);padding:6px 16px;">Confirm
           Your Market</span>
         <h2 style="color:white!important;margin-top:16px;">Connect Your Property With the Appropriate RCC-BGM Team</h2>
         <p style="margin-top:12px;color:#D4C0AC!important;">
