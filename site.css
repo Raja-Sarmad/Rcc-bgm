@@ -6986,9 +6986,16 @@ footer a:hover { color: #f8df9a !important; }
 }
 
 main>section:last-of-type>div {
-  background: radial-gradient(120% 120% at 0% 0%, rgba(246, 194, 216, 0.28), transparent 55%), #392b53 !important;
-  border-color: rgba(246, 207, 124, 0.46) !important;
-  box-shadow: 0 16px 36px rgba(78, 56, 117, 0.22) !important;
+  background: linear-gradient(
+      160deg,
+      #FAF7F2 0%,
+      #F6EEE1 45%,
+      #FDF6EC 75%,
+      #FAF7F2 100%
+  ) !important;
+
+  border: 1px solid #F3CF7C !important;
+  box-shadow: 0 16px 36px rgba(196, 129, 58, 0.12) !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -7074,6 +7081,44 @@ input::placeholder, textarea::placeholder { color: #837a92; opacity: 1; }
   body { font-size: 15px; }
   p, li, dt, dd, label, input, textarea, select { line-height: 1.68; }
   .container { padding-left: 20px; padding-right: 20px; }
+}
+
+/* ===== Footer Light Theme Override ===== */
+
+footer {
+    background: linear-gradient(
+        160deg,
+        #FAF7F2 0%,
+        #F6EEE1 45%,
+        #FDF6EC 75%,
+        #FAF7F2 100%
+    ) !important;
+    border-top: 3px solid #F3CF7C !important;
+    color: #2D2D2D !important;
+}
+
+footer *,
+footer .logo,
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6,
+footer p,
+footer span,
+footer li,
+footer a,
+footer .f-col h4,
+footer .f-col a,
+footer .f-col p,
+footer .footer-summary,
+footer .footer-contact-link {
+    color: #2D2D2D !important;
+}
+
+footer a:hover {
+    color: #C4813A !important;
 }
 
 /* Cross-page layout normalization. */
