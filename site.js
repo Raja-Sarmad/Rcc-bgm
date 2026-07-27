@@ -223,39 +223,36 @@
     { id: "loc-stat-3", target: 25, suffix: "" }
   ];
 
+  let statsAnimationFrame = null;
+
   const animateStats = () => {
-    stats.forEach(stat => {
-      const el = document.getElementById(stat.id);
-      if (!el) return;
+    if (statsAnimationFrame) cancelAnimationFrame(statsAnimationFrame);
+    const duration = 2000;
+    const startTime = performance.now();
 
-      let current = 0;
-      const duration = 1200; // ms
-      const startTime = performance.now();
+    const update = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
 
-      const update = (timestamp) => {
-        const elapsed = timestamp - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-
-        // Easing out quadratic
-        const ease = progress * (2 - progress);
-
-        const value = Math.floor(ease * stat.target);
+      stats.forEach(stat => {
+        const el = document.getElementById(stat.id);
+        if (!el) return;
+        const value = Math.floor(eased * stat.target);
         const displayValue = stat.pad ? String(value).padStart(2, '0') : value;
         el.textContent = `${displayValue}${stat.suffix}`;
+      });
 
-        if (progress < 1) {
-          requestAnimationFrame(update);
-        } else {
-          const finalDisplayValue = stat.pad ? String(stat.target).padStart(2, '0') : stat.target;
-          el.textContent = `${finalDisplayValue}${stat.suffix}`;
-        }
-      };
+      if (progress < 1) {
+        statsAnimationFrame = requestAnimationFrame(update);
+      }
+    };
 
-      requestAnimationFrame(update);
-    });
+    statsAnimationFrame = requestAnimationFrame(update);
   };
 
   const resetStats = () => {
+    if (statsAnimationFrame) cancelAnimationFrame(statsAnimationFrame);
     const defaultStats = [
       { id: "stat-years", initial: "0+" },
       { id: "stat-facilities", initial: "0+" },

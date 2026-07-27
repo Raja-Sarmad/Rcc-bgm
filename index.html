@@ -1680,7 +1680,7 @@
         }
         setInterval(nextSlide, 5000);
 
-        // 2. STATS SCROLL ANIMATION
+        // 2. STATS COUNTER ANIMATION
         (function () {
             const stats = [
                 { id: 'stat-years', max: 15, suffix: '+' },
@@ -1689,24 +1689,56 @@
                 { id: 'stat-support', max: 24, suffix: '/7' }
             ];
 
-            const handleNumbersScroll = () => {
-                const scrollY = window.scrollY;
-                const heroHeight = document.querySelector('.hero')?.offsetHeight || 600;
-                const animRange = Math.min(350, heroHeight);
-                let ratio = scrollY / animRange;
-                ratio = Math.max(0, Math.min(1, ratio));
+            let animationFrame = null;
+            let hasAnimated = false;
 
+            function animateCounters() {
+                const duration = 2000;
+                const startTime = performance.now();
+
+                function update(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+
+                    stats.forEach(stat => {
+                        const el = document.getElementById(stat.id);
+                        if (el) {
+                            const currentVal = Math.floor(eased * stat.max);
+                            el.innerText = `${currentVal}${stat.suffix}`;
+                        }
+                    });
+
+                    if (progress < 1) {
+                        animationFrame = requestAnimationFrame(update);
+                    }
+                }
+
+                animationFrame = requestAnimationFrame(update);
+            }
+
+            function resetCounters() {
+                if (animationFrame) cancelAnimationFrame(animationFrame);
                 stats.forEach(stat => {
                     const el = document.getElementById(stat.id);
-                    if (el) {
-                        const currentVal = Math.floor(ratio * stat.max);
-                        el.innerText = `${currentVal}${stat.suffix}`;
+                    if (el) el.innerText = `0${stat.suffix}`;
+                });
+            }
+
+            const statsSection = document.querySelector('.hero-stats');
+            if (!statsSection) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                    } else {
+                        resetCounters();
                     }
                 });
-            };
+            }, { threshold: 0.3 });
 
-            window.addEventListener('scroll', handleNumbersScroll);
-            handleNumbersScroll();
+            observer.observe(statsSection);
         })();
 
         // 3. SCROLL REVEAL ANIMATION

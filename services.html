@@ -1032,7 +1032,7 @@
     <section class="container section-padding">
       <h2 style="text-align: center;">Related RCC-BGM services</h2>
       <div class="services-grid">
-        <a class="s-item" href="commercial-cleaning-services.html">
+        <a class="s-item active" href="commercial-cleaning-services.html">
           <h3>Commercial Cleaning Services</h3>
           <p>Explore this connected RCC-BGM service area.</p>
           <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
@@ -1163,36 +1163,49 @@
     // 3. ANIMATED COUNTER FOR HERO STATS (Re-triggers on scroll)
     const statsDock = document.querySelector('.services-hero-stats-dock .hero-stats');
     if (statsDock) {
+      let statsAnimFrame = null;
+
+      function animateServiceCounters() {
+        if (statsAnimFrame) cancelAnimationFrame(statsAnimFrame);
+        const nums = statsDock.querySelectorAll('.num');
+        const duration = 2000;
+        const startTime = performance.now();
+
+        const update = (currentTime) => {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+
+          nums.forEach(num => {
+            const target = parseInt(num.getAttribute('data-target'));
+            const value = Math.floor(eased * target);
+            num.textContent = String(value).padStart(2, '0');
+          });
+
+          if (progress < 1) {
+            statsAnimFrame = requestAnimationFrame(update);
+          }
+        };
+
+        statsAnimFrame = requestAnimationFrame(update);
+      }
+
+      function resetServiceCounters() {
+        if (statsAnimFrame) cancelAnimationFrame(statsAnimFrame);
+        const nums = statsDock.querySelectorAll('.num');
+        nums.forEach(num => { num.textContent = "00"; });
+      }
+
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          const nums = entry.target.querySelectorAll('.num');
-          
           if (entry.isIntersecting) {
-            nums.forEach(num => {
-              const target = parseInt(num.getAttribute('data-target'));
-              let current = 0;
-              const duration = 1500;
-              const stepTime = 30;
-              const steps = duration / stepTime;
-              const increment = target / steps;
-              
-              const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                  current = target;
-                  clearInterval(timer);
-                }
-                num.textContent = Math.floor(current).toString().padStart(2, '0');
-              }, stepTime);
-            });
+            animateServiceCounters();
           } else {
-            nums.forEach(num => {
-              num.textContent = "00";
-            });
+            resetServiceCounters();
           }
         });
       }, { threshold: 0.5 });
-      
+
       observer.observe(statsDock);
     }
   </script>

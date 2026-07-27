@@ -524,6 +524,16 @@ nav.nav-scrolled::after {
   width: 100%;
 }
 
+.s-item.active {
+  border-color: rgba(128, 99, 199, 0.35);
+  background: rgba(128, 99, 199, 0.04);
+  box-shadow: 0 16px 40px -12px rgba(128, 99, 199, 0.18);
+}
+
+.s-item.active::after {
+  width: 100%;
+}
+
 .s-icon {
   position: relative;
   z-index: 1;
