@@ -5,14 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Commercial Facility Service Locations | RCC-BGM</title>
-  <meta name="description"
-    content="Explore RCC-BGM commercial cleaning, facility maintenance, HVAC and construction service areas across selected U.S. markets." />
-  <link rel="stylesheet" href="site.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta name="description" content="Explore RCC-BGM commercial cleaning, facility maintenance, HVAC and construction service areas across selected U.S. markets." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
   <style>
     :root {
       --bg-main: #FAF7F2;
@@ -34,34 +32,138 @@
       --shadow-hover: 0 16px 48px rgba(196, 129, 58, 0.15);
       --radius: 18px;
       --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
-      /* site.css overrides */
-      --bg-deep: #2D2A26;
-      --text-slate: #5A554E;
-      --accent-teal: #C4813A;
       --gradient: linear-gradient(135deg, #C4813A, #E8A85C);
     }
 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
     body.page-location {
-      background: var(--bg-main) !important;
+      background: var(--bg-main);
       color: var(--text-body);
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
     }
 
-    /* ── Locations Hero ── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(250, 247, 242, 0.9);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-warm);
+      transition: var(--transition);
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: var(--gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-icon i { font-size: 14px; color: #fff; }
+    .logo span { color: var(--accent-gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-body);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+      transition: var(--transition);
+      position: relative;
+      padding: 4px 0;
+    }
+
+    .nav-links a:hover, .nav-links a.is-active { color: var(--accent-gold); }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2.5px;
+      background: var(--gradient);
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+    .nav-links a:hover::after, .nav-links a.is-active::after { width: 100%; }
+
+    .btn-header {
+      background: var(--gradient);
+      color: white !important;
+      padding: 12px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 16px rgba(196, 129, 58, 0.25);
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-header:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(196, 129, 58, 0.35);
+    }
+
+    /* Spacing - BALANCED GAPS */
+    .section-padding { padding: 80px 0; }
+
+    /* Hero */
     .loc-hero {
       position: relative;
-      background: linear-gradient(135deg, rgba(196, 129, 58, 0.06) 0%, rgba(232, 168, 92, 0.04) 50%, rgba(196, 129, 58, 0.06) 100%), var(--bg-warm) !important;
-      padding: 160px 0 100px 0;
+      background: radial-gradient(130% 130% at 50% 0%, var(--bg-white) 0%, var(--bg-warm) 100%);
+      padding: 150px 0 80px 0;
       overflow: hidden;
-      border-bottom: 1px solid var(--accent-gold-border) !important;
+      border-bottom: 1px solid var(--border-warm);
     }
 
     .loc-hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background-image:
-        radial-gradient(rgba(196, 129, 58, 0.07) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(196, 129, 58, 0.06) 1px, transparent 1px);
       background-size: 24px 24px;
       pointer-events: none;
     }
@@ -75,28 +177,25 @@
     }
 
     .loc-hero-inner h1 {
-      font-size: clamp(32px, 4.5vw, 52px);
-      color: var(--text-dark) !important;
-      font-weight: 700;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      color: var(--text-dark);
+      font-weight: 800;
       line-height: 1.25;
-      letter-spacing: -1.2px;
+      letter-spacing: -0.02em;
       margin-top: 16px;
     }
 
-  .loc-hero-inner h1 .gradient-text,
-h1 .gradient-text,
-.gradient-text {
-  background: var(--gradient) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  color: transparent !important;
-}
+    .gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
 
     .loc-hero-inner p {
-      font-size: 16px;
-      line-height: 1.75;
-      color: var(--text-body) !important;
+      font-size: 1.08rem;
+      color: var(--text-body);
       margin-top: 20px;
       max-width: 680px;
       margin-left: auto;
@@ -108,8 +207,7 @@ h1 .gradient-text,
       gap: 16px;
       justify-content: center;
       align-items: center;
-      margin-top: 40px;
-      margin-left: 140px;
+      margin-top: 32px;
       flex-wrap: wrap;
     }
 
@@ -118,212 +216,189 @@ h1 .gradient-text,
       align-items: center;
       justify-content: center;
       height: 48px;
-      padding: 0 28px !important;
-      border-radius: 99px;
-      font-weight: 700;
+      padding: 0 28px;
+      border-radius: 50px;
+      font-weight: 600;
       text-decoration: none;
       transition: var(--transition);
-      font-size: 15px;
-      box-sizing: border-box;
+      font-size: 0.95rem;
       gap: 8px;
-      min-width: 250px;
     }
 
-    .loc-hero-actions .btn-outline {
-      border: 1px solid var(--accent-gold-border) !important;
-      background: var(--bg-white) !important;
+    .btn-outline {
+      border: 1px solid var(--accent-gold-border);
+      background: var(--bg-white);
       color: var(--text-dark) !important;
       box-shadow: var(--shadow-soft);
     }
 
-    .loc-hero-actions .btn-outline:hover {
-      border-color: var(--accent-gold) !important;
-      background: var(--bg-warm) !important;
+    .btn-outline:hover {
+      border-color: var(--accent-gold);
+      background: var(--accent-gold-soft);
       color: var(--accent-gold) !important;
       box-shadow: var(--shadow-medium);
+      transform: translateY(-2px);
     }
 
-    /* ── Geographic Overview Card ── */
-    .geo-overview-card {
-      background: var(--bg-card) !important;
-      border: 1px solid var(--accent-gold-border) !important;
-      border-radius: 32px;
-      padding: 60px 50px;
-      box-shadow: var(--shadow-medium) !important;
-      position: relative;
-      z-index: 5;
-      text-align: center;
-      margin-top: -30px;
-    }
-
-    /* ── Stats row ── */
     .loc-stats-row {
       display: flex;
       justify-content: center;
       gap: 48px;
       margin-top: 48px;
       flex-wrap: wrap;
+      padding-top: 32px;
+      border-top: 1px solid var(--border-warm);
     }
 
-    .loc-stat-item {
-      text-align: center;
-    }
-
+    .loc-stat-item { text-align: center; }
     .loc-stat-item .num {
-      font-size: 36px;
-      font-weight: 700;
-      color: var(--accent-gold) !important;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent-gold);
     }
-
     .loc-stat-item .lbl {
-      font-size: 12px;
-      color: var(--text-light) !important;
+      font-size: 0.85rem;
+      color: var(--text-light);
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.05em;
       margin-top: 4px;
     }
 
-    /* ── Region Section ── */
+    /* Geo Overview */
+    .geo-overview-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: 24px;
+      padding: 48px 40px;
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+    }
+
+    /* Region Sections - LIGHT THEME */
     .region-section {
-      padding: 48px 0 24px;
+      background: var(--bg-white);
+      border: 1px solid var(--border-warm);
+      border-radius: 24px;
+      padding: 48px 40px;
+      margin-bottom: 40px;
     }
 
-    .region-section-header {
-      margin-bottom: 32px;
-    }
-
+    .region-section-header { margin-bottom: 32px; }
     .region-section-header h2 {
-      font-size: 28px;
+      font-size: 1.8rem;
       font-weight: 800;
-      color: #fff;
-      margin: 0 0 10px;
+      color: var(--text-dark);
+      margin: 14px 0 10px;
     }
-
     .region-section-header p {
-      color: #D4C0AC;
-      font-size: 15px;
+      color: var(--text-body);
+      font-size: 1rem;
       line-height: 1.7;
       max-width: 680px;
     }
 
     .sub-region-label {
-      font-size: 13px;
+      font-size: 0.85rem;
       font-weight: 700;
-      color: var(--accent-gold-light) !important;
+      color: var(--accent-gold);
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin: 28px 0 14px;
+      letter-spacing: 0.1em;
+      margin: 32px 0 16px;
       display: flex;
       align-items: center;
       gap: 8px;
     }
-
     .sub-region-label::after {
       content: '';
       flex: 1;
       height: 1px;
-      background: rgba(255, 255, 255, 0.06);
+      background: var(--border-warm);
     }
+    .sub-region-label:first-of-type { margin-top: 0; }
 
-    /* ── City Cards Grid ── */
+    /* City Cards - LIGHT THEME */
     .city-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 16px;
     }
 
     .city-card {
       display: flex;
       align-items: center;
-      gap: 12px;
-      background: rgba(255, 255, 255, 0.025);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 14px;
-      padding: 16px 18px;
+      gap: 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 18px;
       text-decoration: none;
       transition: var(--transition);
-      color: #fff;
+      color: var(--text-dark);
     }
 
     .city-card:hover {
-      background: rgba(196, 129, 58, 0.1) !important;
-      border-color: var(--accent-gold-border) !important;
+      background: var(--bg-warm);
+      border-color: var(--accent-gold-border);
       transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(196, 129, 58, 0.15);
+      box-shadow: var(--shadow-hover);
     }
 
     .city-card .city-icon {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
       border-radius: 10px;
-      background: rgba(196, 129, 58, 0.1);
+      background: var(--accent-gold-soft);
       border: 1px solid var(--accent-gold-border);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-gold-light) !important;
-      font-size: 16px;
+      color: var(--accent-gold);
+      font-size: 1rem;
       flex-shrink: 0;
       transition: var(--transition);
     }
 
     .city-card:hover .city-icon {
-      background: var(--gradient) !important;
-      color: #fff !important;
+      background: var(--gradient);
+      color: #fff;
       border-color: transparent;
     }
 
     .city-card .city-info h3 {
-      font-size: 15px;
+      font-size: 1rem;
       font-weight: 700;
       margin: 0;
-      color: #fff;
+      color: var(--text-dark);
     }
 
     .city-card .city-info span {
-      font-size: 12px;
-      color: #9E8B7E;
+      font-size: 0.8rem;
+      color: var(--text-light);
     }
 
     .city-card .city-arrow {
       margin-left: auto;
-      color: rgba(255, 255, 255, 0.15);
-      font-size: 13px;
+      color: var(--text-light);
+      font-size: 0.9rem;
       transition: var(--transition);
     }
 
     .city-card:hover .city-arrow {
-      color: var(--accent-gold-light) !important;
+      color: var(--accent-gold);
       transform: translateX(4px);
     }
 
-    @media (max-width: 991px) {
-      .city-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .city-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .loc-stats-row {
-        gap: 24px;
-      }
-    }
-
-    /* ── Service Availability ── */
+    /* Service Availability */
     .service-avail-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
       margin-top: 30px;
     }
 
     .service-avail-card {
-      background: var(--bg-warm) !important;
-      border: 1px solid var(--accent-gold-border) !important;
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
       border-radius: var(--radius);
       padding: 28px 24px;
       transition: var(--transition);
@@ -331,49 +406,43 @@ h1 .gradient-text,
     }
 
     .service-avail-card:hover {
-      border-color: var(--accent-gold) !important;
-      background: var(--bg-white) !important;
+      border-color: var(--accent-gold-border);
       box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
     }
 
     .service-avail-card .svc-icon {
       width: 46px;
       height: 46px;
       border-radius: 12px;
-      background: var(--accent-gold-soft) !important;
-      border: 1px solid var(--accent-gold-border) !important;
+      background: var(--accent-gold-soft);
+      border: 1px solid var(--accent-gold-border);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-gold) !important;
-      font-size: 18px;
+      color: var(--accent-gold);
+      font-size: 1.1rem;
       margin-bottom: 16px;
     }
 
     .service-avail-card h3 {
-      font-size: 17px;
+      font-size: 1.1rem;
       font-weight: 700;
-      color: var(--text-dark) !important;
+      color: var(--text-dark);
       margin: 0 0 8px;
     }
 
     .service-avail-card p {
-      font-size: 14px;
-      color: var(--text-body) !important;
+      font-size: 0.92rem;
+      color: var(--text-body);
       line-height: 1.65;
       margin: 0;
     }
 
-    @media (max-width: 700px) {
-      .service-avail-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* ── Unlisted City CTA ── */
+    /* Unlisted CTA */
     .unlisted-cta {
-      background: var(--bg-warm) !important;
-      border: 1px dashed var(--accent-gold-border) !important;
+      background: var(--bg-warm);
+      border: 1px dashed var(--accent-gold-border);
       border-radius: var(--radius);
       padding: 40px 32px;
       text-align: center;
@@ -381,91 +450,278 @@ h1 .gradient-text,
     }
 
     .unlisted-cta h3 {
-      color: var(--text-dark) !important;
-      font-size: 22px;
+      color: var(--text-dark);
+      font-size: 1.5rem;
       font-weight: 700;
       margin: 0 0 12px;
     }
 
     .unlisted-cta p {
-      color: var(--text-body) !important;
-      font-size: 15px;
+      color: var(--text-body);
+      font-size: 1rem;
       max-width: 600px;
       margin: 0 auto 24px;
       line-height: 1.7;
     }
 
-    /* ── Spacing fixes ── */
-    .modern-process-sec {
-      margin-top: 40px !important;
-    }
-
-    .section-padding {
-      padding: 24px 0 !important;
-    }
-
+    /* Location Qualification (Process) */
     .loc-qual-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 24px;
-      position: relative;
-    }
-
-    @media (max-width: 1024px) {
-      .loc-qual-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .loc-qual-grid {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
     }
 
     .modern-step-card {
-      padding: 24px 20px !important;
-      background: var(--bg-card) !important;
-      border: 1px solid var(--accent-gold-border) !important;
-      border-radius: var(--radius) !important;
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 28px 24px;
       box-shadow: var(--shadow-soft);
       transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .modern-step-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--gradient);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
     }
 
     .modern-step-card:hover {
+      transform: translateY(-6px);
       box-shadow: var(--shadow-hover);
-      border-color: var(--accent-gold) !important;
+      border-color: var(--accent-gold-border);
     }
 
-    main section h2 {
-      margin-bottom: 16px !important;
-      color: var(--text-dark) !important;
+    .modern-step-card:hover::before { transform: scaleX(1); }
+
+    .modern-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
     }
 
+    .modern-card-header h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: rgba(196, 129, 58, 0.1);
+      margin: 0;
+      line-height: 1;
+    }
+
+    .step-icon-box {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--accent-gold-soft);
+      border: 1px solid var(--accent-gold-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-gold);
+      font-size: 1rem;
+    }
+
+    .modern-step-card h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      margin-bottom: 8px;
+    }
+
+    .modern-step-card p {
+      font-size: 0.92rem;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* FAQ - LIGHT THEME & DETAILS */
     .faq-item {
-      background: var(--bg-card) !important;
-      border: 1px solid var(--accent-gold-border) !important;
-      border-radius: var(--radius) !important;
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      margin-bottom: 12px;
+      padding: 20px 24px;
       box-shadow: var(--shadow-soft);
       transition: var(--transition);
-      margin-bottom: 12px;
-      padding: 16px 20px;
     }
 
     .faq-item:hover {
+      border-color: var(--accent-gold-border);
       box-shadow: var(--shadow-medium);
-      border-color: var(--accent-gold) !important;
     }
 
+    .faq-item summary {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      cursor: pointer;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
     .faq-item h4 {
-      color: var(--text-dark) !important;
+      font-size: 1rem;
+      color: var(--text-dark);
+      font-weight: 600;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .faq-item h4 i {
+      color: var(--accent-gold);
+      flex: 0 0 auto;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item[open] h4 i { transform: rotate(45deg); }
+    
+    .faq-item[open] {
+      border-color: var(--accent-gold-border);
+      box-shadow: var(--shadow-medium);
     }
 
     .faq-item p {
+      display: block;
+      margin-top: 14px !important;
+      color: var(--text-body);
+      line-height: 1.7;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Final CTA - LIGHT THEME */
+    .cta-box {
+      background: linear-gradient(135deg, #FDF6EC, #FAF0E0, #F8EDD8);
+      border: 1px solid var(--accent-gold-border);
+      border-radius: 24px;
+      padding: 60px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-medium);
+    }
+
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -30%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(196, 129, 58, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .cta-box h2 {
+      color: var(--text-dark) !important;
+      font-size: 2rem;
+      font-weight: 800;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-box p {
       color: var(--text-body) !important;
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      margin: 12px auto 0;
+    }
+
+    .cta-box .btn-header {
+      position: relative;
+      z-index: 1;
+      margin-top: 28px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--text-dark);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 60px 0 30px 0;
+    }
+
+    .f-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .f-col h4 { color: white; margin-bottom: 16px; font-size: 1rem; }
+    .f-col ul { list-style: none; }
+    .f-col li { margin-bottom: 10px; }
+    
+    .f-col a {
+      color: rgba(255, 255, 255, 0.55);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+    
+    .f-col a:hover { color: var(--accent-gold-light); transform: translateX(4px); display: inline-block; }
+    .f-col p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.55); line-height: 1.6; }
+
+    .footer-bottom {
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    
+    .footer-bottom-links a { 
+      color: rgba(255, 255, 255, 0.4); 
+      text-decoration: none; 
+      font-size: 0.85rem; 
+      transition: var(--transition); 
+    }
+    
+    .footer-bottom-links a:hover { color: var(--accent-gold-light); }
+
+    /* Responsive */
+    @media (max-width: 991px) {
+      .city-grid { grid-template-columns: repeat(2, 1fr); }
+      .f-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .section-padding { padding: 50px 0; }
+      .region-section { padding: 32px 24px; }
+      .loc-hero { padding: 130px 0 60px 0; }
+      .loc-stats-row { gap: 24px; }
+      .city-grid { grid-template-columns: 1fr; }
+      .f-grid { grid-template-columns: 1fr; gap: 24px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .cta-box { padding: 40px 24px; }
     }
   </style>
 </head>
@@ -473,11 +729,13 @@ h1 .gradient-text,
 <body class="page-location">
   <nav>
     <div class="container nav-flex">
-      <a href="index.html" class="logo"><span class="logo-icon"><i
-            class="fa-solid fa-building-shield"></i></span>RCC<span>BGM</span></a>
+      <a href="index.html" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span>RCC<span>BGM</span>
+      </a>
       <ul class="nav-links">
         <li><a href="services.html">Services</a></li>
         <li><a href="industries.html">Industries</a></li>
+        <li><a href="locations.html" class="is-active">Locations</a></li>
         <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
@@ -489,30 +747,26 @@ h1 .gradient-text,
   <section class="loc-hero">
     <div class="container">
       <div class="loc-hero-inner">
-        <span class="hero-tag"
-          style="background:var(--accent-gold-soft);border:1px solid var(--accent-gold-border);border-radius:100px;color:var(--accent-gold);padding:6px 16px;">
+        <span class="hero-tag" style="background:var(--accent-gold-soft);border:1px solid var(--accent-gold-border);border-radius:100px;color:var(--accent-gold);padding:8px 18px;display:inline-flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;">
           <i class="fa-solid fa-map-location-dot"></i> SERVICE AREA DIRECTORY
         </span>
         <h1>Commercial Facility Services<br>Across <span class="gradient-text">Selected U.S. Markets</span></h1>
-        <p>RCC-BGM supports commercial properties through selected local and regional teams. Service availability
-          depends on the market, property type, requested division, required trade, staffing, licensing and final scope.
-        </p>
+        <p>RCC-BGM supports commercial properties through selected local and regional teams. Service availability depends on the market, property type, requested division, required trade, staffing, licensing and final scope.</p>
         <div class="loc-hero-actions">
-          <a class="btn-header btn-glow" href="contact.html">Find Your Service Area <i
-              class="fa-solid fa-arrow-right"></i></a>
+          <a class="btn-header btn-glow" href="contact.html">Find Your Service Area <i class="fa-solid fa-arrow-right"></i></a>
           <a class="btn-outline" href="#bay-area"><i class="fa-solid fa-layer-group"></i> Explore Directory</a>
         </div>
         <div class="loc-stats-row">
           <div class="loc-stat-item">
-            <div class="num" id="loc-stat-1">32</div>
+            <div class="num">32</div>
             <div class="lbl">City Pages</div>
           </div>
           <div class="loc-stat-item">
-            <div class="num" id="loc-stat-2">6</div>
+            <div class="num">6</div>
             <div class="lbl">States</div>
           </div>
           <div class="loc-stat-item">
-            <div class="num" id="loc-stat-3">25</div>
+            <div class="num">25</div>
             <div class="lbl">California Cities</div>
           </div>
         </div>
@@ -522,33 +776,23 @@ h1 .gradient-text,
 
   <main>
     <!-- ═══════════ GEOGRAPHIC OVERVIEW ═══════════ -->
-    <section class="container section-padding scroll-reveal" style="max-width:920px;margin:0 auto;padding-bottom:60px !important;">
+    <section class="container section-padding" style="max-width:920px;margin:0 auto;padding-bottom:60px !important;">
       <div class="geo-overview-card">
-          <h2 style="font-size: clamp(24px, 3vw, 36px); font-weight: 800; color: var(--text-dark); margin-bottom: 20px;">How RCC-BGM Connects Markets to Services</h2>
-          
-          <p style="color:var(--text-body);line-height:1.8;font-size:16px;max-width:780px;margin:0 auto;">
-            Commercial properties in different markets face different operating schedules, building conditions, labor
-            availability, local regulations and service requirements. RCC-BGM uses a location-based qualification process to
-            connect each inquiry with the appropriate Reliable Concepts Corporation or Brilliant General Maintenance
-            capability. Use the directory below to explore active city pages or submit a location-confirmation request when
-            your city is not listed.
-          </p>
+        <h2 style="font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; color: var(--text-dark); margin-bottom: 20px;">How RCC-BGM Connects Markets to Services</h2>
+        <p style="color:var(--text-body);line-height:1.8;font-size:1rem;max-width:780px;margin:0 auto;">
+          Commercial properties in different markets face different operating schedules, building conditions, labor availability, local regulations and service requirements. RCC-BGM uses a location-based qualification process to connect each inquiry with the appropriate Reliable Concepts Corporation or Brilliant General Maintenance capability. Use the directory below to explore active city pages or submit a location-confirmation request when your city is not listed.
+        </p>
       </div>
     </section>
 
     <!-- ═══════════ BAY AREA / NORTHERN CALIFORNIA ═══════════ -->
-    <section id="bay-area" class="container region-section scroll-reveal"
-      style="background:linear-gradient(135deg,#1E1714 0%,#2C2018 100%)!important;border-radius:36px;padding:48px 40px!important;border:1px solid var(--accent-gold-border)!important;">
+    <section id="bay-area" class="container region-section">
       <div class="region-section-header">
-        <span class="hero-tag"
-          style="color:var(--accent-gold-light);border-color:var(--accent-gold-border);background:rgba(196,129,58,0.08);">
+        <span class="hero-tag" style="color:var(--accent-gold);border-color:var(--accent-gold-border);background:var(--accent-gold-soft);padding:6px 16px;border-radius:50px;font-size:0.8rem;font-weight:600;display:inline-flex;align-items:center;gap:8px;">
           <i class="fa-solid fa-location-dot"></i> Northern California
         </span>
-        <h2 style="margin-top:14px;">San Francisco Bay Area &amp; Northern California</h2>
-        <p>RCC-BGM supports selected commercial facilities across the San Francisco Bay Area and Northern California.
-          Local inquiries may involve office and janitorial programs, technology and life-science environments,
-          commercial HVAC, tenant improvements, maintenance construction and planned facility upgrades. Availability
-          varies by city, division and project scope.</p>
+        <h2>San Francisco Bay Area &amp; Northern California</h2>
+        <p>RCC-BGM supports selected commercial facilities across the San Francisco Bay Area and Northern California. Local inquiries may involve office and janitorial programs, technology and life-science environments, commercial HVAC, tenant improvements, maintenance construction and planned facility upgrades. Availability varies by city, division and project scope.</p>
       </div>
 
       <!-- South Bay / Silicon Valley -->
@@ -556,51 +800,37 @@ h1 .gradient-text,
       <div class="city-grid">
         <a class="city-card" href="san-jose-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>San Jose</h3><span>CA &bull; Santa Clara County</span>
-          </div>
+          <div class="city-info"><h3>San Jose</h3><span>CA &bull; Santa Clara County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
         <a class="city-card" href="santa-clara-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Santa Clara</h3><span>CA &bull; Santa Clara County</span>
-          </div>
+          <div class="city-info"><h3>Santa Clara</h3><span>CA &bull; Santa Clara County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
         <a class="city-card" href="sunnyvale-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Sunnyvale</h3><span>CA &bull; Santa Clara County</span>
-          </div>
+          <div class="city-info"><h3>Sunnyvale</h3><span>CA &bull; Santa Clara County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
         <a class="city-card" href="cupertino-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Cupertino</h3><span>CA &bull; Santa Clara County</span>
-          </div>
+          <div class="city-info"><h3>Cupertino</h3><span>CA &bull; Santa Clara County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
         <a class="city-card" href="campbell-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Campbell</h3><span>CA &bull; Santa Clara County</span>
-          </div>
+          <div class="city-info"><h3>Campbell</h3><span>CA &bull; Santa Clara County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
         <a class="city-card" href="los-gatos-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Los Gatos</h3><span>CA &bull; Santa Clara County</span>
-          </div>
+          <div class="city-info"><h3>Los Gatos</h3><span>CA &bull; Santa Clara County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
         <a class="city-card" href="fremont-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Fremont</h3><span>CA &bull; Alameda County</span>
-          </div>
+          <div class="city-info"><h3>Fremont</h3><span>CA &bull; Alameda County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
       </div>
@@ -610,30 +840,22 @@ h1 .gradient-text,
       <div class="city-grid">
         <a class="city-card" href="palo-alto-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Palo Alto</h3><span>CA &bull; Santa Clara County</span>
-          </div>
+          <div class="city-info"><h3>Palo Alto</h3><span>CA &bull; Santa Clara County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
         <a class="city-card" href="menlo-park-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Menlo Park</h3><span>CA &bull; San Mateo County</span>
-          </div>
+          <div class="city-info"><h3>Menlo Park</h3><span>CA &bull; San Mateo County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
         <a class="city-card" href="redwood-city-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Redwood City</h3><span>CA &bull; San Mateo County</span>
-          </div>
+          <div class="city-info"><h3>Redwood City</h3><span>CA &bull; San Mateo County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
         <a class="city-card" href="san-mateo-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>San Mateo</h3><span>CA &bull; San Mateo County</span>
-          </div>
+          <div class="city-info"><h3>San Mateo</h3><span>CA &bull; San Mateo County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
       </div>
@@ -643,23 +865,17 @@ h1 .gradient-text,
       <div class="city-grid">
         <a class="city-card" href="san-francisco-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>San Francisco</h3><span>CA &bull; San Francisco County</span>
-          </div>
+          <div class="city-info"><h3>San Francisco</h3><span>CA &bull; San Francisco County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
         <a class="city-card" href="pleasanton-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Pleasanton</h3><span>CA &bull; Alameda County</span>
-          </div>
+          <div class="city-info"><h3>Pleasanton</h3><span>CA &bull; Alameda County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
         <a class="city-card" href="walnut-creek-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Walnut Creek</h3><span>CA &bull; Contra Costa County</span>
-          </div>
+          <div class="city-info"><h3>Walnut Creek</h3><span>CA &bull; Contra Costa County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
       </div>
@@ -669,26 +885,20 @@ h1 .gradient-text,
       <div class="city-grid">
         <a class="city-card" href="sacramento-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Sacramento</h3><span>CA &bull; Sacramento County</span>
-          </div>
+          <div class="city-info"><h3>Sacramento</h3><span>CA &bull; Sacramento County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
       </div>
     </section>
 
     <!-- ═══════════ SOUTHERN CALIFORNIA ═══════════ -->
-    <section id="socal" class="container region-section scroll-reveal"
-      style="background:linear-gradient(135deg,#1E1714 0%,#2C2018 100%)!important;border-radius:36px;padding:48px 40px!important;border:1px solid var(--accent-gold-border)!important;">
+    <section id="socal" class="container region-section">
       <div class="region-section-header">
-        <span class="hero-tag"
-          style="color:var(--accent-gold-light);border-color:var(--accent-gold-border);background:rgba(196,129,58,0.08);">
+        <span class="hero-tag" style="color:var(--accent-gold);border-color:var(--accent-gold-border);background:var(--accent-gold-soft);padding:6px 16px;border-radius:50px;font-size:0.8rem;font-weight:600;display:inline-flex;align-items:center;gap:8px;">
           <i class="fa-solid fa-sun"></i> Southern California
         </span>
-        <h2 style="margin-top:14px;">Southern California Markets</h2>
-        <p>RCC-BGM supports selected Southern California commercial properties through qualified cleaning, maintenance,
-          construction and building-system services. Projects may be scheduled around tenants, customers, employees,
-          hospitality activity and active commercial operations.</p>
+        <h2>Southern California Markets</h2>
+        <p>RCC-BGM supports selected Southern California commercial properties through qualified cleaning, maintenance, construction and building-system services. Projects may be scheduled around tenants, customers, employees, hospitality activity and active commercial operations.</p>
       </div>
 
       <!-- Los Angeles Area -->
@@ -696,98 +906,75 @@ h1 .gradient-text,
       <div class="city-grid">
         <a class="city-card" href="los-angeles-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Los Angeles</h3><span>CA &bull; LA County</span>
-          </div>
+          <div class="city-info"><h3>Los Angeles</h3><span>CA &bull; LA County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
         <a class="city-card" href="culver-city-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Culver City</h3><span>CA &bull; LA County</span>
-          </div>
+          <div class="city-info"><h3>Culver City</h3><span>CA &bull; LA County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
         <a class="city-card" href="long-beach-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Long Beach</h3><span>CA &bull; LA County</span>
-          </div>
+          <div class="city-info"><h3>Long Beach</h3><span>CA &bull; LA County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
         <a class="city-card" href="pasadena-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Pasadena</h3><span>CA &bull; LA County</span>
-          </div>
+          <div class="city-info"><h3>Pasadena</h3><span>CA &bull; LA County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
         <a class="city-card" href="santa-monica-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Santa Monica</h3><span>CA &bull; LA County</span>
-          </div>
+          <div class="city-info"><h3>Santa Monica</h3><span>CA &bull; LA County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
       </div>
 
       <!-- Orange County -->
-      <div class="sub-region-label"><i class="fa-solid fa-orange-whole"></i> Orange County</div>
+      <div class="sub-region-label"><i class="fa-solid fa-umbrella-beach"></i> Orange County</div>
       <div class="city-grid">
         <a class="city-card" href="anaheim-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Anaheim</h3><span>CA &bull; Orange County</span>
-          </div>
+          <div class="city-info"><h3>Anaheim</h3><span>CA &bull; Orange County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
         <a class="city-card" href="irvine-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Irvine</h3><span>CA &bull; Orange County</span>
-          </div>
+          <div class="city-info"><h3>Irvine</h3><span>CA &bull; Orange County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
       </div>
 
       <!-- San Diego County -->
-      <div class="sub-region-label"><i class="fa-solid fa-umbrella-beach"></i> San Diego County</div>
+      <div class="sub-region-label"><i class="fa-solid fa-water"></i> San Diego County</div>
       <div class="city-grid">
         <a class="city-card" href="san-diego-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>San Diego</h3><span>CA &bull; San Diego County</span>
-          </div>
+          <div class="city-info"><h3>San Diego</h3><span>CA &bull; San Diego County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
         <a class="city-card" href="carlsbad-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Carlsbad</h3><span>CA &bull; San Diego County</span>
-          </div>
+          <div class="city-info"><h3>Carlsbad</h3><span>CA &bull; San Diego County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
         <a class="city-card" href="chula-vista-ca.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Chula Vista</h3><span>CA &bull; San Diego County</span>
-          </div>
+          <div class="city-info"><h3>Chula Vista</h3><span>CA &bull; San Diego County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
       </div>
     </section>
 
     <!-- ═══════════ OTHER STATES ═══════════ -->
-    <section id="other-states" class="container region-section scroll-reveal"
-      style="background:linear-gradient(135deg,#1E1714 0%,#2C2018 100%)!important;border-radius:36px;padding:48px 40px!important;border:1px solid var(--accent-gold-border)!important;">
+    <section id="other-states" class="container region-section">
       <div class="region-section-header">
-        <span class="hero-tag"
-          style="color:var(--accent-gold-light);border-color:var(--accent-gold-border);background:rgba(196,129,58,0.08);">
+        <span class="hero-tag" style="color:var(--accent-gold);border-color:var(--accent-gold-border);background:var(--accent-gold-soft);padding:6px 16px;border-radius:50px;font-size:0.8rem;font-weight:600;display:inline-flex;align-items:center;gap:8px;">
           <i class="fa-solid fa-flag-usa"></i> Beyond California
         </span>
-        <h2 style="margin-top:14px;">Arizona, Nevada, Texas, Illinois &amp; Michigan</h2>
-        <p>RCC-BGM publishes dedicated city pages across selected out-of-state markets. Each market is reviewed for
-          service availability based on division, trade, licensing and project scope.</p>
+        <h2>Arizona, Nevada, Texas, Illinois &amp; Michigan</h2>
+        <p>RCC-BGM publishes dedicated city pages across selected out-of-state markets. Each market is reviewed for service availability based on division, trade, licensing and project scope.</p>
       </div>
 
       <!-- Arizona -->
@@ -795,9 +982,7 @@ h1 .gradient-text,
       <div class="city-grid">
         <a class="city-card" href="phoenix-az.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Phoenix</h3><span>AZ &bull; Maricopa County</span>
-          </div>
+          <div class="city-info"><h3>Phoenix</h3><span>AZ &bull; Maricopa County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
       </div>
@@ -807,16 +992,12 @@ h1 .gradient-text,
       <div class="city-grid">
         <a class="city-card" href="las-vegas-nv.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Las Vegas</h3><span>NV &bull; Clark County</span>
-          </div>
+          <div class="city-info"><h3>Las Vegas</h3><span>NV &bull; Clark County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
         <a class="city-card" href="reno-nv.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Reno</h3><span>NV &bull; Washoe County</span>
-          </div>
+          <div class="city-info"><h3>Reno</h3><span>NV &bull; Washoe County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
       </div>
@@ -826,9 +1007,7 @@ h1 .gradient-text,
       <div class="city-grid">
         <a class="city-card" href="austin-tx.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Austin</h3><span>TX &bull; Travis County</span>
-          </div>
+          <div class="city-info"><h3>Austin</h3><span>TX &bull; Travis County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
       </div>
@@ -838,9 +1017,7 @@ h1 .gradient-text,
       <div class="city-grid">
         <a class="city-card" href="chicago-il.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Chicago</h3><span>IL &bull; Cook County</span>
-          </div>
+          <div class="city-info"><h3>Chicago</h3><span>IL &bull; Cook County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
       </div>
@@ -850,29 +1027,22 @@ h1 .gradient-text,
       <div class="city-grid">
         <a class="city-card" href="grand-rapids-mi.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Grand Rapids</h3><span>MI &bull; Kent County</span>
-          </div>
+          <div class="city-info"><h3>Grand Rapids</h3><span>MI &bull; Kent County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
         <a class="city-card" href="kalamazoo-mi.html">
           <div class="city-icon"><i class="fa-solid fa-building"></i></div>
-          <div class="city-info">
-            <h3>Kalamazoo</h3><span>MI &bull; Kalamazoo County</span>
-          </div>
+          <div class="city-info"><h3>Kalamazoo</h3><span>MI &bull; Kalamazoo County</span></div>
           <i class="fa-solid fa-arrow-right city-arrow"></i>
         </a>
       </div>
     </section>
 
     <!-- ═══════════ SERVICE AVAILABILITY BY MARKET ═══════════ -->
-    <section class="container section-padding scroll-reveal">
-      <span class="hero-tag"
-        style="color:var(--accent-gold);border-color:var(--accent-gold-border);background:var(--accent-gold-soft);">Service
-        Categories</span>
-      <h2 style="color: var(--text-dark);">Services Available by Market</h2>
-      <p style="color:var(--text-body);margin-top:8px;">Service families vary by location. Each city page links to the most
-        relevant dedicated service pages after the local scope has been verified.</p>
+    <section class="container section-padding">
+      <span class="hero-tag" style="color:var(--accent-gold);border-color:var(--accent-gold-border);background:var(--accent-gold-soft);padding:8px 18px;border-radius:50px;font-size:0.8rem;font-weight:600;display:inline-flex;align-items:center;gap:8px;">Service Categories</span>
+      <h2>Services Available by Market</h2>
+      <p style="color:var(--text-body);margin-top:8px;max-width:780px;">Service families vary by location. Each city page links to the most relevant dedicated service pages after the local scope has been verified.</p>
       <div class="service-avail-grid">
         <div class="service-avail-card">
           <div class="svc-icon"><i class="fa-solid fa-broom"></i></div>
@@ -897,21 +1067,17 @@ h1 .gradient-text,
       </div>
 
       <!-- Unlisted city CTA -->
-      <div class="unlisted-cta scroll-reveal">
+      <div class="unlisted-cta">
         <h3>Don't See Your City?</h3>
-        <p>Provide the property location, facility type, required services and preferred timeline. RCC-BGM can review
-          current coverage and determine whether the appropriate team or trade is available.</p>
-        <a href="contact.html" class="btn-header btn-glow">Confirm My Location <i
-            class="fa-solid fa-arrow-right"></i></a>
+        <p>Provide the property location, facility type, required services and preferred timeline. RCC-BGM can review current coverage and determine whether the appropriate team or trade is available.</p>
+        <a href="contact.html" class="btn-header btn-glow">Confirm My Location <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </section>
 
     <!-- ═══════════ 6-STEP LOCATION QUALIFICATION ═══════════ -->
-    <section class="container section-padding modern-process-sec scroll-reveal">
-      <h2 style="color: var(--text-dark);">How Location Qualification Works</h2>
-      <p class="section-intro" style="color: var(--text-body);">
-        A structured process ensures the right team, trade and scope are matched to each property.
-      </p>
+    <section class="container section-padding" style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
+      <h2 style="text-align: center;">How Location Qualification Works</h2>
+      <p style="text-align: center; color: var(--text-body); max-width: 680px; margin: 0 auto 40px;">A structured process ensures the right team, trade and scope are matched to each property.</p>
       <div class="loc-qual-grid">
         <div class="modern-step-card">
           <div class="modern-card-header">
@@ -965,60 +1131,117 @@ h1 .gradient-text,
     </section>
 
     <!-- ═══════════ FAQ ═══════════ -->
-    <section class="container section-padding scroll-reveal">
-      <h2 style="color: var(--text-dark);">Common Questions</h2>
-      <div class="faq-item">
-        <h4 style="color: var(--text-dark);">Where does RCC-BGM provide services? <i class="fa-solid fa-plus"></i></h4>
-        <p style="margin-top:12px; color: var(--text-body);">RCC-BGM publishes selected city pages and broader primary service hubs across
-          several U.S. states. Exact availability varies by company, service and project.</p>
-      </div>
-      <div class="faq-item">
-        <h4 style="color: var(--text-dark);">Is every service available in every city? <i class="fa-solid fa-plus"></i></h4>
-        <p style="margin-top:12px; color: var(--text-body);">No. Cleaning, HVAC, construction and specialist services must be confirmed for the
-          specific location and scope.</p>
-      </div>
-      <div class="faq-item">
-        <h4 style="color: var(--text-dark);">Can RCC-BGM serve a city not listed? <i class="fa-solid fa-plus"></i></h4>
-        <p style="margin-top:12px; color: var(--text-body);">An unlisted city can be reviewed through a service-area confirmation request, but
-          availability should not be promised before qualification.</p>
-      </div>
-      <div class="faq-item">
-        <h4 style="color: var(--text-dark);">Can one location receive both RCC and BGM services? <i class="fa-solid fa-plus"></i></h4>
-        <p style="margin-top:12px; color: var(--text-body);">Related services may be coordinated when both companies have the required capability
-          in that market.</p>
-      </div>
-      <div class="faq-item">
-        <h4 style="color: var(--text-dark);">Does RCC-BGM have an office in every listed city? <i class="fa-solid fa-plus"></i></h4>
-        <p style="margin-top:12px; color: var(--text-body);">A service-area page does not necessarily represent a staffed physical office. The
-          website publishes office addresses only when accurate and verifiable.</p>
-      </div>
-      <div class="faq-item">
-        <h4 style="color: var(--text-dark);">Can RCC-BGM support multiple properties? <i class="fa-solid fa-plus"></i></h4>
-        <p style="margin-top:12px; color: var(--text-body);">Multi-location programs may be considered based on the cities, service consistency,
-          local resources and required scope.</p>
+    <section class="container section-padding">
+      <h2 style="text-align: center;">Common Questions</h2>
+      <div style="max-width: 800px; margin: 40px auto 0;">
+        <details class="faq-item">
+          <summary>
+            <h4>Where does RCC-BGM provide services? <i class="fa-solid fa-plus"></i></h4>
+          </summary>
+          <p>RCC-BGM publishes selected city pages and broader primary service hubs across several U.S. states. Exact availability varies by company, service and project.</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <h4>Is every service available in every city? <i class="fa-solid fa-plus"></i></h4>
+          </summary>
+          <p>No. Cleaning, HVAC, construction and specialist services must be confirmed for the specific location and scope.</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <h4>Can RCC-BGM serve a city not listed? <i class="fa-solid fa-plus"></i></h4>
+          </summary>
+          <p>An unlisted city can be reviewed through a service-area confirmation request, but availability should not be promised before qualification.</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <h4>Can one location receive both RCC and BGM services? <i class="fa-solid fa-plus"></i></h4>
+          </summary>
+          <p>Related services may be coordinated when both companies have the required capability in that market.</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <h4>Does RCC-BGM have an office in every listed city? <i class="fa-solid fa-plus"></i></h4>
+          </summary>
+          <p>A service-area page does not necessarily represent a staffed physical office. The website publishes office addresses only when accurate and verifiable.</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <h4>Can RCC-BGM support multiple properties? <i class="fa-solid fa-plus"></i></h4>
+          </summary>
+          <p>Multi-location programs may be considered based on the cities, service consistency, local resources and required scope.</p>
+        </details>
       </div>
     </section>
 
     <!-- ═══════════ FINAL CTA ═══════════ -->
-    <section class="container" style="padding:24px 0 28px 0;border-bottom:none!important;">
-      <div class="cta-box"
-        style="background:radial-gradient(120% 120% at 0% 0%,rgba(255,255,255,0.03) 0%,rgba(196,129,58,0.05) 100%),#181310;border:1px solid var(--accent-gold-border);box-shadow:var(--shadow-medium);border-radius:var(--radius);">
-        <span class="hero-tag"
-          style="background:rgba(196,129,58,0.08);border:1px solid var(--accent-gold-border);border-radius:100px;color:var(--accent-gold-light);padding:6px 16px;">Confirm
-          Your Market</span>
-        <h2 style="color:white!important;margin-top:16px;">Connect Your Property With the Appropriate RCC-BGM Team</h2>
-        <p style="margin-top:12px;color:#D4C0AC!important;">
-          Share the location, facility type, required service and operating schedule. RCC-BGM can review current market
-          coverage and identify the appropriate next step.
-        </p>
-        <a href="contact.html" class="btn-header btn-glow" style="display:inline-block;margin-top:24px;">Request
-          Location Confirmation <i class="fa-solid fa-arrow-right"></i></a>
+    <section class="container section-padding" style="padding-bottom: 100px;">
+      <div class="cta-box">
+        <span class="hero-tag" style="background:var(--accent-gold-soft);border:1px solid var(--accent-gold-border);border-radius:100px;color:var(--accent-gold);padding:8px 18px;font-size:0.8rem;font-weight:600;display:inline-flex;align-items:center;gap:8px;">Confirm Your Market</span>
+        <h2>Connect Your Property With the Appropriate RCC-BGM Team</h2>
+        <p>Share the location, facility type, required service and operating schedule. RCC-BGM can review current market coverage and identify the appropriate next step.</p>
+        <a href="contact.html" class="btn-header btn-glow">Request Location Confirmation <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </section>
   </main>
 
-  <footer></footer>
-  <script src="site.js" defer></script>
-</body>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="f-grid">
+        <div class="f-col">
+          <a href="index.html" class="logo" style="margin-bottom: 16px; display: inline-flex;">
+            <span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span>RCC<span style="color: var(--accent-gold-light);">BGM</span>
+          </a>
+          <p style="margin-top: 16px; max-width: 280px;">Integrated commercial facility solutions for the spaces your business depends on.</p>
+        </div>
+        <div class="f-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="commercial-cleaning-services.html">Commercial Cleaning</a></li>
+            <li><a href="commercial-construction.html">Construction</a></li>
+            <li><a href="facility-maintenance-services.html">Maintenance</a></li>
+            <li><a href="smart-cleaning-robotics.html">Robotics</a></li>
+          </ul>
+        </div>
+        <div class="f-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="f-col">
+          <h4>Contact HQ</h4>
+          <ul style="list-style: none;">
+            <li style="margin-bottom: 12px;"><i class="fa-solid fa-location-dot" style="margin-right: 8px; color: var(--accent-gold-light);"></i> San Jose, California</li>
+            <li style="margin-bottom: 12px;"><i class="fa-solid fa-envelope" style="margin-right: 8px; color: var(--accent-gold-light);"></i> support@rcc-bgm.com</li>
+            <li><i class="fa-solid fa-clock" style="margin-right: 8px; color: var(--accent-gold-light);"></i> Mon – Fri: 7:00 AM – 6:00 PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RCC-BGM. All rights reserved. | Reliable Concepts Corporation & Brilliant General Maintenance</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
+  <script>
+    // Smooth Scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
 </html>

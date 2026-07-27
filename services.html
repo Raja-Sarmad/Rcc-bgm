@@ -145,8 +145,8 @@
       box-shadow: 0 8px 28px rgba(196, 129, 58, 0.35);
     }
 
-    /* Spacing */
-    .section-padding { padding: 90px 0; }
+    /* Spacing - REDUCED GAPS */
+    .section-padding { padding: 60px 0; } /* Reduced from 90px */
     h2 { font-size: 2rem; font-weight: 800; color: var(--text-dark); margin-bottom: 14px; line-height: 1.25; }
     p { color: var(--text-body); font-size: 1rem; }
 
@@ -154,7 +154,7 @@
     .services-hero {
       position: relative;
       background: radial-gradient(130% 130% at 50% 0%, var(--bg-white) 0%, var(--bg-warm) 100%);
-      padding: 160px 0 100px 0;
+      padding: 130px 0 60px 0; /* Reduced padding */
       overflow: hidden;
       border-bottom: 1px solid var(--border-warm);
     }
@@ -174,7 +174,7 @@
     .services-hero-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 60px;
+      gap: 40px; /* Reduced gap */
       align-items: center;
       position: relative;
       z-index: 2;
@@ -200,14 +200,14 @@
     .services-hero-left p {
       font-size: 1.08rem;
       color: var(--text-body);
-      margin-top: 20px;
+      margin-top: 16px;
       max-width: 580px;
     }
 
     .services-hero-actions {
       display: flex;
       gap: 16px;
-      margin-top: 32px;
+      margin-top: 24px;
       flex-wrap: wrap;
     }
 
@@ -446,7 +446,7 @@
       width: 100%;
       max-width: 100%;
       margin: 0;
-      padding: 28px;
+      padding: 24px;
       border-top: 1px solid var(--border-warm);
     }
 
@@ -472,6 +472,7 @@
       font-size: 2rem;
       font-weight: 800;
       color: var(--accent-gold);
+      font-variant-numeric: tabular-nums; /* Prevents jitter during counting */
     }
 
     .services-hero-stats-dock .hero-stat .lbl {
@@ -487,7 +488,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 40px;
+      gap: 30px; /* Reduced gap */
     }
 
     .redesign-left {
@@ -498,7 +499,7 @@
 
     .redesign-left h2 {
       text-align: center;
-      margin: 16px auto;
+      margin: 12px auto;
     }
 
     .redesign-left p {
@@ -510,7 +511,7 @@
     .redesign-right {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
+      gap: 20px; /* Reduced gap */
       width: 100%;
       max-width: 760px;
     }
@@ -519,12 +520,12 @@
       background: var(--bg-card);
       border: 1px solid var(--border-light);
       border-radius: var(--radius);
-      padding: 30px;
+      padding: 24px; /* Reduced padding */
       box-shadow: var(--shadow-soft);
       transition: var(--transition);
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 14px;
     }
 
     .redesign-card:hover {
@@ -553,7 +554,7 @@
       font-size: 1.2rem;
     }
 
-    .r-content h3 { font-size: 1.15rem; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
+    .r-content h3 { font-size: 1.15rem; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; }
     .r-content p { font-size: 0.92rem; color: var(--text-body); line-height: 1.6; margin: 0; }
 
     /* Modern Process */
@@ -566,15 +567,15 @@
     .modern-process-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
+      gap: 20px; /* Reduced gap */
+      margin-top: 24px; /* Reduced margin */
     }
 
     .modern-step-card {
       background: var(--bg-card);
       border: 1px solid var(--border-light);
       border-radius: var(--radius);
-      padding: 30px 24px;
+      padding: 24px 20px; /* Reduced padding */
       box-shadow: var(--shadow-soft);
       transition: var(--transition);
       position: relative;
@@ -606,7 +607,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .modern-card-header h2 {
@@ -630,22 +631,22 @@
       font-size: 1rem;
     }
 
-    .modern-step-card h4 { font-size: 1.1rem; font-weight: 700; color: var(--accent-gold); margin-bottom: 8px; }
+    .modern-step-card h4 { font-size: 1.1rem; font-weight: 700; color: var(--accent-gold); margin-bottom: 6px; }
     .modern-step-card p { font-size: 0.92rem; color: var(--text-body); line-height: 1.6; margin: 0; }
 
     /* Services Grid */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 30px;
+      gap: 20px; /* Reduced gap */
+      margin-top: 24px; /* Reduced margin */
     }
 
     .s-item {
       background: var(--bg-card);
       border: 1px solid var(--border-light);
       border-radius: var(--radius);
-      padding: 30px;
+      padding: 24px; /* Reduced padding */
       text-decoration: none;
       color: inherit;
       transition: var(--transition);
@@ -676,8 +677,8 @@
     }
 
     .s-item:hover::before { transform: scaleX(1); }
-    .s-item h3 { font-size: 1.15rem; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
-    .s-item p { font-size: 0.92rem; color: var(--text-body); flex-grow: 1; margin-bottom: 16px; }
+    .s-item h3 { font-size: 1.15rem; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
+    .s-item p { font-size: 0.92rem; color: var(--text-body); flex-grow: 1; margin-bottom: 12px; }
     
     .s-link {
       color: var(--accent-gold);
@@ -695,8 +696,8 @@
       background: var(--bg-card);
       border: 1px solid var(--border-light);
       border-radius: 14px;
-      margin-bottom: 14px;
-      padding: 22px 28px;
+      margin-bottom: 10px; /* Reduced margin */
+      padding: 18px 24px; /* Reduced padding */
       cursor: pointer;
       box-shadow: var(--shadow-soft);
       transition: var(--transition);
@@ -707,14 +708,25 @@
       box-shadow: var(--shadow-medium);
     }
 
-    .faq-item h4 {
+    .faq-item summary {
+      list-style: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 18px;
+    }
+    
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item h4 {
       font-size: 1rem;
       color: var(--text-dark);
       font-weight: 600;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
     }
 
     .faq-item h4 i {
@@ -723,16 +735,31 @@
       transition: transform 0.3s ease;
     }
 
-    .faq-item.is-open h4 i { transform: rotate(45deg); }
-    .faq-item p { display: none; margin-top: 14px !important; color: var(--text-body); line-height: 1.7; }
-    .faq-item.is-open p { display: block; }
+    .faq-item[open] h4 i { transform: rotate(45deg); }
+    .faq-item[open] {
+      border-color: var(--accent-gold-border);
+      box-shadow: var(--shadow-medium);
+    }
+    
+    .faq-item p { 
+      display: block;
+      margin-top: 12px !important; 
+      color: var(--text-body); 
+      line-height: 1.7; 
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
     /* CTA Box - Updated to Light Theme */
     .cta-box {
       background: linear-gradient(135deg, #FDF6EC, #FAF0E0, #F8EDD8);
       border: 1px solid var(--accent-gold-border);
       border-radius: 24px;
-      padding: 60px 40px;
+      padding: 50px 30px; /* Reduced padding */
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -753,26 +780,26 @@
 
     .cta-box h2 { color: var(--text-dark) !important; font-size: 2rem; font-weight: 800; position: relative; z-index: 1; }
     .cta-box p { color: var(--text-body) !important; position: relative; z-index: 1; max-width: 600px; margin: 12px auto 0; }
-    .cta-box .btn-header { position: relative; z-index: 1; margin-top: 28px; }
+    .cta-box .btn-header { position: relative; z-index: 1; margin-top: 24px; }
 
     /* Footer */
     footer {
       background: var(--text-dark);
       color: rgba(255, 255, 255, 0.7);
-      padding: 70px 0 30px 0;
+      padding: 60px 0 30px 0; /* Reduced padding */
     }
 
     .f-grid {
       display: grid;
       grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 40px;
-      padding-bottom: 40px;
+      gap: 30px; /* Reduced gap */
+      padding-bottom: 30px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .f-col h4 { color: white; margin-bottom: 20px; font-size: 1rem; }
+    .f-col h4 { color: white; margin-bottom: 16px; font-size: 1rem; }
     .f-col ul { list-style: none; }
-    .f-col li { margin-bottom: 12px; }
+    .f-col li { margin-bottom: 10px; }
     .f-col a {
       color: rgba(255, 255, 255, 0.55);
       text-decoration: none;
@@ -783,7 +810,7 @@
     .f-col p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.55); line-height: 1.6; }
 
     .footer-bottom {
-      padding-top: 30px;
+      padding-top: 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -798,25 +825,25 @@
 
     /* Responsive */
     @media (max-width: 991px) {
-      .services-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .services-hero-grid { grid-template-columns: 1fr; gap: 30px; }
       .services-hero-stats-dock { grid-column: span 1; }
-      .services-hero { padding: 140px 0 60px 0; }
+      .services-hero { padding: 120px 0 50px 0; }
       .services-hero-mockup { transform: none !important; margin: 0 auto; }
       .f-grid { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 768px) {
       .nav-links { display: none; }
-      .section-padding { padding: 60px 0; }
-      .services-hero-stats-dock .hero-stats { flex-direction: column; gap: 20px; padding: 20px; }
-      .services-hero-stats-dock .hero-stat { border-right: none; border-bottom: 1px solid var(--border-warm); padding-bottom: 20px; width: 100%; }
+      .section-padding { padding: 40px 0; } /* Further reduced for mobile */
+      .services-hero-stats-dock .hero-stats { flex-direction: column; gap: 16px; padding: 16px; }
+      .services-hero-stats-dock .hero-stat { border-right: none; border-bottom: 1px solid var(--border-warm); padding-bottom: 16px; width: 100%; }
       .services-hero-stats-dock .hero-stat:not(:last-child)::after { display: none; }
       .services-hero-stats-dock .hero-stat:last-child { border-bottom: none; padding-bottom: 0; }
       .redesign-right { grid-template-columns: 1fr; }
       .redesign-card:nth-child(3) { max-width: 100%; }
-      .f-grid { grid-template-columns: 1fr; gap: 30px; }
+      .f-grid { grid-template-columns: 1fr; gap: 24px; }
       .footer-bottom { flex-direction: column; text-align: center; }
-      .cta-box { padding: 40px 24px; }
+      .cta-box { padding: 30px 20px; }
     }
   </style>
 </head>
@@ -909,15 +936,15 @@
         <div class="services-hero-stats-dock">
           <div class="hero-stats">
             <div class="hero-stat">
-              <div class="num">01</div>
+              <div class="num" data-target="1">00</div>
               <div class="lbl">Clear scope</div>
             </div>
             <div class="hero-stat">
-              <div class="num">02</div>
+              <div class="num" data-target="2">00</div>
               <div class="lbl">Coordinated team</div>
             </div>
             <div class="hero-stat">
-              <div class="num">03</div>
+              <div class="num" data-target="3">00</div>
               <div class="lbl">Planned delivery</div>
             </div>
           </div>
@@ -964,7 +991,7 @@
 
     <section class="container section-padding modern-process-sec">
       <h2 style="text-align: center;">How the work is planned</h2>
-      <p class="section-intro" style="text-align: center; max-width: 680px; margin: 0 auto 40px;">A focused process keeps the scope useful and the delivery aligned with your property.</p>
+      <p class="section-intro" style="text-align: center; max-width: 680px; margin: 0 auto 30px;">A focused process keeps the scope useful and the delivery aligned with your property.</p>
       <div class="modern-process-grid">
         <div class="modern-step-card">
           <div class="modern-card-header">
@@ -1029,7 +1056,7 @@
 
     <section class="container section-padding">
       <h2 style="text-align: center;">Common questions</h2>
-      <div style="max-width: 800px; margin: 40px auto 0;">
+      <div style="max-width: 800px; margin: 30px auto 0;">
         <details class="faq-item">
           <summary>
             <h4>Can the scope be tailored to our facility? <i class="fa-solid fa-plus"></i></h4>
@@ -1051,7 +1078,7 @@
       </div>
     </section>
 
-    <section class="container section-padding" style="padding-bottom: 100px;">
+    <section class="container section-padding" style="padding-bottom: 80px;">
       <div class="cta-box">
         <span class="hero-tag" style="background: var(--accent-gold-soft); border: 1px solid var(--accent-gold-border); border-radius: 100px; color: var(--accent-gold); padding: 8px 18px; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
           <i class="fa-solid fa-rocket"></i> Ready to discuss the property?
@@ -1110,28 +1137,18 @@
   </footer>
 
   <script>
-    // FAQ Accordion Logic
-    document.querySelectorAll('.faq-item summary').forEach(summary => {
-      summary.addEventListener('click', (e) => {
-        e.preventDefault();
-        const details = summary.parentElement;
-        const isOpen = details.hasAttribute('open');
-        
-        // Close all others
-        document.querySelectorAll('.faq-item').forEach(item => {
-          item.removeAttribute('open');
-          item.classList.remove('is-open');
-        });
-
-        // Toggle current
-        if (!isOpen) {
-          details.setAttribute('open', '');
-          details.classList.add('is-open');
+    // 1. FAQ Accordion Logic
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('toggle', () => {
+        if (item.open) {
+          document.querySelectorAll('.faq-item').forEach(other => {
+            if (other !== item) other.removeAttribute('open');
+          });
         }
       });
     });
 
-    // Smooth Scroll for anchor links
+    // 2. Smooth Scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -1141,6 +1158,45 @@
         }
       });
     });
+
+    // 3. ANIMATED COUNTER FOR HERO STATS (Re-triggers on scroll)
+    const statsDock = document.querySelector('.services-hero-stats-dock .hero-stats');
+    if (statsDock) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const nums = entry.target.querySelectorAll('.num');
+          
+          if (entry.isIntersecting) {
+            // Animate counting up
+            nums.forEach(num => {
+              const target = parseInt(num.getAttribute('data-target'));
+              let current = 0;
+              const duration = 1500; // 1.5 seconds animation
+              const stepTime = 30;
+              const steps = duration / stepTime;
+              const increment = target / steps;
+              
+              const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                  current = target;
+                  clearInterval(timer);
+                }
+                // Format with leading zero (e.g., "01", "02", "03")
+                num.textContent = Math.floor(current).toString().padStart(2, '0');
+              }, stepTime);
+            });
+          } else {
+            // Reset to "00" when scrolled out of view so it animates again when scrolling back up
+            nums.forEach(num => {
+              num.textContent = "00";
+            });
+          }
+        });
+      }, { threshold: 0.5 }); // Triggers when 50% of the stats dock is visible
+      
+      observer.observe(statsDock);
+    }
   </script>
 </body>
 </html>
