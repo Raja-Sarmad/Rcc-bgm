@@ -1,0 +1,80 @@
+/* ==========================================================================
+   GLOBAL COLORS — Extracted from commercial-cleaning-services.html
+   Use these variables across all pages for consistent theming.
+   ========================================================================== */
+
+:root {
+  /* ── Brand Core ──────────────────────────────────────────────────────────── */
+  --bg-main:          #FAF7F2;
+  --bg-deep:          #302447;
+  --accent-teal:      #8063c7;
+  --accent-blue:      #d96f9f;
+  --accent-coral:     #e8714a;
+  --white:            #ffffff;
+  --black:            #000000;
+
+  /* ── Text ────────────────────────────────────────────────────────────────── */
+  --text-dark:        #2d2740;
+  --text-slate:       #675f78;
+
+  /* ── Gradient ────────────────────────────────────────────────────────────── */
+  --gradient:         linear-gradient(135deg, #8c70d1 0%, #df8eaf 54%, #f4d47f 100%);
+  --gradient-hero:    radial-gradient(130% 130% at 50% 0%, #ffffff 0%, #f4f0f9 100%);
+
+  /* ── Accent Colors (used in badges, icons, highlights) ───────────────────── */
+  --green:            #22c55e;
+  --green-light:      rgba(34, 197, 94, 0.1);
+  --green-border:     rgba(34, 197, 94, 0.25);
+  --purple:           #8b5cf6;
+  --purple-light:     rgba(139, 92, 246, 0.1);
+
+  /* ── Purple / Accent Teal — Alpha Variants ───────────────────────────────── */
+  --purple-8:         rgba(128, 99, 199, 0.08);
+  --purple-10:        rgba(128, 99, 199, 0.1);
+  --purple-12:        rgba(128, 99, 199, 0.12);
+  --purple-15:        rgba(128, 99, 199, 0.15);
+  --purple-25:        rgba(128, 99, 199, 0.25);
+  --purple-40:        rgba(128, 99, 199, 0.4);
+
+  /* ── Dark Deep (bg-deep) — Alpha Variants ────────────────────────────────── */
+  --deep-8:           rgba(48, 36, 71, 0.08);
+  --deep-15:          rgba(48, 36, 71, 0.15);
+  --deep-20:          rgba(48, 36, 71, 0.2);
+
+  /* ── Black — Alpha Variants (borders, subtle lines) ──────────────────────── */
+  --black-2:          rgba(0, 0, 0, 0.02);
+  --black-4:          rgba(0, 0, 0, 0.04);
+  --black-5:          rgba(0, 0, 0, 0.05);
+  --black-6:          rgba(0, 0, 0, 0.06);
+  --black-8:          rgba(0, 0, 0, 0.08);
+  --black-10:         rgba(0, 0, 0, 0.1);
+
+  /* ── White — Alpha Variants (glass / card surfaces) ──────────────────────── */
+  --white-70:         rgba(255, 255, 255, 0.7);
+  --white-80:         rgba(255, 255, 255, 0.8);
+
+  /* ── Hero-specific ───────────────────────────────────────────────────────── */
+  --hero-dot:         rgba(128, 99, 199, 0.08);
+  --hero-scanline:    linear-gradient(90deg, transparent, rgba(128, 99, 199, 0.08), transparent);
+
+  /* ── Coral / Orange — Alpha Variants (icon backgrounds) ──────────────────── */
+  --coral-12:         rgba(232, 113, 74, 0.12);
+  --coral-border:     rgba(232, 113, 74, 0.12);
+
+  /* ── Nav / Header ────────────────────────────────────────────────────────── */
+  --nav-bg:           rgba(30, 23, 20, 0.72);
+  --nav-bg-scrolled:  rgba(30, 23, 20, 0.94);
+  --nav-border:       rgba(232, 113, 74, 0.12);
+  --nav-border-scrolled: rgba(232, 113, 74, 0.35);
+  --nav-shadow:       0 8px 30px rgba(0, 0, 0, 0.2);
+
+  /* ── Shadows ─────────────────────────────────────────────────────────────── */
+  --shadow-card:      0 25px 50px -12px rgba(48, 36, 71, 0.08);
+  --shadow-console:   0 30px 60px -20px rgba(48, 36, 71, 0.15), 0 0 40px rgba(128, 99, 199, 0.08);
+  --shadow-console-hover: 0 35px 70px -15px rgba(48, 36, 71, 0.2), 0 0 50px rgba(128, 99, 199, 0.12);
+  --shadow-metric:    0 2px 8px rgba(0, 0, 0, 0.02);
+  --shadow-service:   0 2px 6px rgba(0, 0, 0, 0.02);
+  --shadow-t-item:    0 4px 15px rgba(0, 0, 0, 0.02);
+  --shadow-btn:       0 4px 10px rgba(0, 0, 0, 0.03);
+  --shadow-btn-hover: 0 8px 15px rgba(128, 99, 199, 0.1);
+}
