@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+\<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -13,14 +13,31 @@
 
     <style>
         :root {
-            --bg-main: #fcf9ff;
-            --bg-deep: #302447;
-            --accent-teal: #8063c7;
-            --accent-blue: #d96f9f;
-            --text-dark: #2d2740;
-            --text-slate: #675f78;
-            --white: #ffffff;
-            --gradient: linear-gradient(135deg, #8c70d1 0%, #df8eaf 54%, #f4d47f 100%);
+            --bg-main: #FAF7F2;
+            --bg-white: #FFFFFF;
+            --bg-warm: #F5F0E8;
+            --bg-card: #FFFFFF;
+            --accent-gold: #C4813A;
+            --accent-gold-light: #E8A85C;
+            --accent-gold-soft: rgba(196, 129, 58, 0.08);
+            --accent-gold-border: rgba(196, 129, 58, 0.2);
+            --accent-blue: #4A7C9B;
+            --text-dark: #2D2A26;
+            --text-body: #5A554E;
+            --text-light: #8A847C;
+            --border-warm: rgba(196, 129, 58, 0.12);
+            --border-light: rgba(0, 0, 0, 0.06);
+            --shadow-soft: 0 4px 20px rgba(196, 129, 58, 0.06);
+            --shadow-medium: 0 8px 32px rgba(196, 129, 58, 0.1);
+            --shadow-hover: 0 16px 48px rgba(196, 129, 58, 0.15);
+            --radius: 18px;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+            /* site.css overrides */
+            --bg-deep: #2D2A26;
+            --text-slate: #5A554E;
+            --accent-teal: #C4813A;
+            --gradient: linear-gradient(135deg, #C4813A, #E8A85C);
         }
 
         * {
@@ -33,18 +50,17 @@
         body {
             background-color: var(--bg-main);
             color: var(--text-dark);
-            background-image: radial-gradient(rgba(128, 99, 199, 0.12) 0.5px, transparent 0.5px);
+            background-image: radial-gradient(rgba(196, 129, 58, 0.12) 0.5px, transparent 0.5px);
             background-size: 30px 30px;
         }
         
-
         .container {
             max-width: 1300px;
             margin: 0 auto;
             padding: 0 30px;
         }
 
-        /* Typography - Adjusted scale for better balance */
+        /* Typography */
         h1 {
             font-size: 46px;
             font-weight: 800;
@@ -71,10 +87,9 @@
             line-height: 1.65;
         }
 
-        /* Sections Gaps - tightened */
         .section-padding {
             padding: 20px 0;
-            border-bottom: 1px solid rgba(232, 113, 74, 0.05);
+            border-bottom: 1px solid rgba(196, 129, 58, 0.05);
         }
 
         /* Navigation */
@@ -87,7 +102,7 @@
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
             padding: 16px 0;
-            border-bottom: 1px solid rgba(232, 113, 74, 0.18);
+            border-bottom: 1px solid rgba(196, 129, 58, 0.18);
             box-shadow: 0 12px 34px -14px rgba(0, 0, 0, 0.55);
             transition: padding 0.3s ease, background 0.3s ease;
         }
@@ -99,7 +114,7 @@
             bottom: -1px;
             width: 100%;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(232, 113, 74, 0.7), transparent);
+            background: linear-gradient(90deg, transparent, rgba(196, 129, 58, 0.7), transparent);
         }
 
         .nav-flex {
@@ -188,9 +203,9 @@
             display: none;
             width: 44px;
             height: 44px;
-            border: 1px solid rgba(232, 113, 74, .45);
+            border: 1px solid rgba(196, 129, 58, .45);
             border-radius: 12px;
-            background: rgba(232, 113, 74, .08);
+            background: rgba(196, 129, 58, .08);
             color: #fff;
             font-size: 18px;
             cursor: pointer;
@@ -211,10 +226,10 @@
 
         .btn-header:hover {
             transform: translateY(-2px);
-            box-shadow: 0 14px 30px -6px rgba(232, 113, 74, 0.65);
+            box-shadow: 0 14px 30px -6px rgba(196, 129, 58, 0.65);
         }
 
-        /* 1. HERO - Updated with Slider Styles */
+        /* HERO */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -228,7 +243,6 @@
             padding: 120px 0 90px 0;
         }
 
-        /* New Slider Styles */
         .hero-slider {
             position: absolute;
             top: 0;
@@ -261,8 +275,8 @@
             width: 100%;
             height: 100%;
             background:
-                radial-gradient(ellipse at 50% 20%, rgba(246, 212, 127, 0.36), transparent 60%),
-                linear-gradient(180deg, rgba(48, 36, 71, 0.9) 0%, rgba(83, 61, 113, 0.76) 45%, rgba(57, 43, 83, 0.96) 100%);
+                radial-gradient(ellipse at 50% 20%, rgba(232, 168, 92, 0.36), transparent 60%),
+                linear-gradient(180deg, rgba(45, 42, 38, 0.9) 0%, rgba(90, 85, 78, 0.76) 45%, rgba(45, 42, 38, 0.96) 100%);
             z-index: 1;
         }
 
@@ -286,9 +300,9 @@
             margin-bottom: 18px;
             display: inline-block;
             padding: 7px 18px;
-            border: 1px solid rgba(232, 113, 74, 0.4);
+            border: 1px solid rgba(196, 129, 58, 0.4);
             border-radius: 30px;
-            background: rgba(232, 113, 74, 0.08);
+            background: rgba(196, 129, 58, 0.08);
         }
 
         .hero .hero-tag {
@@ -296,7 +310,7 @@
         }
 
         .hero-glow {
-            background: linear-gradient(135deg, #111c24 0%, #1a2a35 60%, #F09060 180%);
+            background: linear-gradient(135deg, #111c24 0%, #1a2a35 60%, #E8A85C 180%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -312,7 +326,7 @@
 
         .h-label {
             background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(232, 113, 74, 0.5);
+            border: 1px solid rgba(196, 129, 58, 0.5);
             padding: 11px 22px;
             border-radius: 30px;
             font-weight: 700;
@@ -329,13 +343,13 @@
         }
 
         .btn-glow {
-            box-shadow: 0 0 0 0 rgba(232, 113, 74, 0.5), 0 15px 40px rgba(232, 113, 74, 0.35);
+            box-shadow: 0 0 0 0 rgba(196, 129, 58, 0.5), 0 15px 40px rgba(196, 129, 58, 0.35);
             transition: 0.3s;
         }
 
         .btn-glow:hover {
             transform: translateY(-3px);
-            box-shadow: 0 20px 50px rgba(232, 113, 74, 0.5);
+            box-shadow: 0 20px 50px rgba(196, 129, 58, 0.5);
         }
 
         .hero-stats {
@@ -372,7 +386,7 @@
         .hero-stat .num {
             font-size: 32px;
             font-weight: 800;
-            text-shadow: 0 0 20px rgba(232, 113, 74, 0.3);
+            text-shadow: 0 0 20px rgba(196, 129, 58, 0.3);
         }
 
         .hero-stat .lbl {
@@ -383,7 +397,7 @@
             margin-top: 4px;
         }
 
-        /* 2. RCC+BGM Split */
+        /* Split Intro */
         .split-intro {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -396,7 +410,7 @@
             color: white;
             padding: 36px;
             border-radius: 20px;
-            border: 1px solid rgba(232, 113, 74, 0.12);
+            border: 1px solid rgba(196, 129, 58, 0.12);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
             transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.35s, box-shadow 0.35s;
             position: relative;
@@ -417,8 +431,8 @@
 
         .intro-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(232, 113, 74, 0.35);
-            box-shadow: 0 20px 40px rgba(232, 113, 74, 0.15);
+            border-color: rgba(196, 129, 58, 0.35);
+            box-shadow: 0 20px 40px rgba(196, 129, 58, 0.15);
         }
 
         .intro-card:hover::before {
@@ -432,7 +446,7 @@
             letter-spacing: -0.5px;
         }
 
-        /* 3. Services Grid */
+        /* Services Grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -446,7 +460,7 @@
             background: radial-gradient(130% 130% at 0% 0%, #ffffff 0%, #FDF6EF 100%);
             padding: 24px;
             border-radius: 18px;
-            border: 1px solid rgba(232, 113, 74, 0.08);
+            border: 1px solid rgba(196, 129, 58, 0.08);
             box-shadow: 0 4px 15px rgba(40, 30, 22, 0.02);
             transition: transform 0.4s cubic-bezier(.2, .8, .2, 1), box-shadow 0.4s cubic-bezier(.2, .8, .2, 1), border-color 0.4s;
         }
@@ -458,7 +472,7 @@
             right: -60px;
             width: 140px;
             height: 140px;
-            background: radial-gradient(circle, rgba(232, 113, 74, 0.15) 0%, rgba(232, 113, 74, 0) 70%);
+            background: radial-gradient(circle, rgba(196, 129, 58, 0.15) 0%, rgba(196, 129, 58, 0) 70%);
             opacity: 0;
             transition: opacity 0.4s ease;
             pointer-events: none;
@@ -479,7 +493,7 @@
         .s-item:hover {
             transform: translateY(-6px);
             box-shadow: 0 20px 40px -15px rgba(196, 129, 58, 0.15);
-            border-color: rgba(232, 113, 74, 0.25);
+            border-color: rgba(196, 129, 58, 0.25);
         }
 
         .s-item:hover::before {
@@ -496,20 +510,20 @@
             width: 48px;
             height: 48px;
             border-radius: 50%;
-            background: linear-gradient(135deg, rgba(232, 113, 74, 0.1) 0%, rgba(196, 129, 58, 0.05) 100%);
-            border: 1px solid rgba(232, 113, 74, 0.2);
+            background: linear-gradient(135deg, rgba(196, 129, 58, 0.1) 0%, rgba(196, 129, 58, 0.05) 100%);
+            border: 1px solid rgba(196, 129, 58, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 16px;
-            box-shadow: 0 4px 10px rgba(232, 113, 74, 0.05);
+            box-shadow: 0 4px 10px rgba(196, 129, 58, 0.05);
             transition: all 0.4s cubic-bezier(.2, .8, .2, 1);
         }
 
         .s-item:hover .s-icon {
             background: var(--gradient);
             border-color: transparent;
-            box-shadow: 0 8px 20px rgba(232, 113, 74, 0.4);
+            box-shadow: 0 8px 20px rgba(196, 129, 58, 0.4);
             transform: scale(1.05);
         }
 
@@ -597,7 +611,7 @@
             height: 380px;
             object-fit: cover;
             box-shadow: 0 15px 35px rgba(40, 30, 22, 0.08);
-            border: 1px solid rgba(232, 113, 74, 0.1);
+            border: 1px solid rgba(196, 129, 58, 0.1);
             transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
@@ -627,7 +641,7 @@
         .check-list i {
             color: var(--accent-teal);
             font-size: 14px;
-            background: rgba(232, 113, 74, 0.08);
+            background: rgba(196, 129, 58, 0.08);
             padding: 6px;
             border-radius: 50%;
             display: inline-flex;
@@ -637,7 +651,7 @@
             height: 26px;
         }
 
-        /* 6. Specialized Chips */
+        /* Specialized Chips */
         .chip-container {
             display: flex;
             flex-wrap: wrap;
@@ -669,9 +683,9 @@
         .chip:hover {
             border-color: var(--accent-teal);
             color: var(--accent-blue);
-            background: rgba(232, 113, 74, 0.03);
+            background: rgba(196, 129, 58, 0.03);
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px -10px rgba(232, 113, 74, 0.3);
+            box-shadow: 0 10px 20px -10px rgba(196, 129, 58, 0.3);
         }
 
         /* Regional Locations Hubs */
@@ -696,7 +710,7 @@
 
         .market-card {
             background: radial-gradient(120% 120% at 0% 0%, #ffffff 0%, #FDF6EF 100%);
-            border: 1px solid rgba(232, 113, 74, 0.08);
+            border: 1px solid rgba(196, 129, 58, 0.08);
             padding: 20px;
             border-radius: 16px;
             text-align: left;
@@ -706,7 +720,7 @@
 
         .market-card:hover {
             transform: translateY(-3px);
-            border-color: rgba(232, 113, 74, 0.25);
+            border-color: rgba(196, 129, 58, 0.25);
             box-shadow: 0 12px 25px -10px rgba(196, 129, 58, 0.12);
         }
 
@@ -736,15 +750,15 @@
             margin: 0;
         }
 
-        /* 7. Technology Dark — signature "live console" treatment */
+        /* Technology Dark */
         .tech-box {
             position: relative;
             overflow: hidden;
             background:
-                linear-gradient(180deg, rgba(232, 113, 74, 0.05) 0%, transparent 12%),
+                linear-gradient(180deg, rgba(196, 129, 58, 0.05) 0%, transparent 12%),
                 repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.025) 0px, rgba(255, 255, 255, 0.025) 1px, transparent 1px, transparent 34px),
                 var(--bg-deep);
-            border: 1px solid rgba(232, 113, 74, 0.18);
+            border: 1px solid rgba(196, 129, 58, 0.18);
             border-radius: 28px;
             padding: 48px 40px;
             color: white;
@@ -760,19 +774,14 @@
             left: -35%;
             width: 35%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(232, 113, 74, 0.08), transparent);
+            background: linear-gradient(90deg, transparent, rgba(196, 129, 58, 0.08), transparent);
             pointer-events: none;
             animation: scanMove 7s linear infinite;
         }
 
         @keyframes scanMove {
-            0% {
-                left: -35%;
-            }
-
-            100% {
-                left: 130%;
-            }
+            0% { left: -35%; }
+            100% { left: 130%; }
         }
 
         .live-badge {
@@ -786,9 +795,9 @@
             font-size: 11px;
             margin-bottom: 18px;
             padding: 7px 16px 7px 12px;
-            border: 1px solid rgba(232, 113, 74, 0.3);
+            border: 1px solid rgba(196, 129, 58, 0.3);
             border-radius: 30px;
-            background: rgba(232, 113, 74, 0.08);
+            background: rgba(196, 129, 58, 0.08);
         }
 
         .live-dot {
@@ -796,22 +805,14 @@
             height: 7px;
             border-radius: 50%;
             background: var(--accent-teal);
-            box-shadow: 0 0 0 0 rgba(232, 113, 74, 0.6);
+            box-shadow: 0 0 0 0 rgba(196, 129, 58, 0.6);
             animation: pulseDot 1.8s ease-out infinite;
         }
 
         @keyframes pulseDot {
-            0% {
-                box-shadow: 0 0 0 0 rgba(232, 113, 74, 0.55);
-            }
-
-            70% {
-                box-shadow: 0 0 0 9px rgba(232, 113, 74, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(232, 113, 74, 0);
-            }
+            0% { box-shadow: 0 0 0 0 rgba(196, 129, 58, 0.55); }
+            70% { box-shadow: 0 0 0 9px rgba(196, 129, 58, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(196, 129, 58, 0); }
         }
 
         .tech-grid {
@@ -833,8 +834,8 @@
 
         .t-item:hover {
             transform: translateY(-4px);
-            background: rgba(232, 113, 74, 0.07);
-            border-color: rgba(232, 113, 74, 0.45);
+            background: rgba(196, 129, 58, 0.07);
+            border-color: rgba(196, 129, 58, 0.45);
         }
 
         .t-item-head {
@@ -849,8 +850,8 @@
             height: 28px;
             flex-shrink: 0;
             border-radius: 8px;
-            background: rgba(232, 113, 74, 0.14);
-            border: 1px solid rgba(232, 113, 74, 0.25);
+            background: rgba(196, 129, 58, 0.14);
+            border: 1px solid rgba(196, 129, 58, 0.25);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -870,7 +871,7 @@
             margin-top: 2px;
         }
 
-        /* 10. Process Steps — Premium Timeline */
+        /* Process Steps */
         .process-section-wrap {
             background: var(--bg-deep);
             border-radius: 32px;
@@ -884,7 +885,7 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse at 10% 50%, rgba(232, 113, 74, 0.12), transparent 55%),
+                radial-gradient(ellipse at 10% 50%, rgba(196, 129, 58, 0.12), transparent 55%),
                 radial-gradient(ellipse at 90% 50%, rgba(196, 129, 58, 0.14), transparent 55%);
             pointer-events: none;
         }
@@ -893,9 +894,9 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(232, 113, 74, 0.12);
-            border: 1px solid rgba(232, 113, 74, 0.3);
-            color: #F09060;
+            background: rgba(196, 129, 58, 0.12);
+            border: 1px solid rgba(196, 129, 58, 0.3);
+            color: #E8A85C;
             font-size: 11px;
             font-weight: 800;
             letter-spacing: 2px;
@@ -929,7 +930,6 @@
             position: relative;
         }
 
-        /* Connecting line behind all steps */
         .process-timeline::before {
             content: '';
             position: absolute;
@@ -938,8 +938,8 @@
             right: calc(10% + 2px);
             height: 2px;
             background: linear-gradient(90deg,
-                    rgba(232, 113, 74, 0.6),
-                    rgba(232, 113, 74, 0.3) 50%,
+                    rgba(196, 129, 58, 0.6),
+                    rgba(196, 129, 58, 0.3) 50%,
                     rgba(196, 129, 58, 0.6));
             z-index: 0;
         }
@@ -954,7 +954,6 @@
             z-index: 1;
         }
 
-        /* Number bubble */
         .proc-num {
             width: 88px;
             height: 88px;
@@ -964,9 +963,9 @@
             justify-content: center;
             font-size: 26px;
             font-weight: 900;
-            color: #E8714A;
-            background: rgba(232, 113, 74, 0.1);
-            border: 2px solid rgba(232, 113, 74, 0.35);
+            color: #C4813A;
+            background: rgba(196, 129, 58, 0.1);
+            border: 2px solid rgba(196, 129, 58, 0.35);
             transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
             position: relative;
             flex-shrink: 0;
@@ -974,15 +973,14 @@
 
         .proc-num i {
             font-size: 28px;
-            color: #E8714A;
+            color: #C4813A;
             transition: all 0.4s ease;
         }
 
-        /* Active / filled step */
         .proc-step.active .proc-num {
-            background: linear-gradient(135deg, #E8714A, #C4813A);
+            background: linear-gradient(135deg, #C4813A, #E8A85C);
             border-color: transparent;
-            box-shadow: 0 0 0 6px rgba(232, 113, 74, 0.15), 0 14px 32px rgba(232, 113, 74, 0.35);
+            box-shadow: 0 0 0 6px rgba(196, 129, 58, 0.15), 0 14px 32px rgba(196, 129, 58, 0.35);
         }
 
         .proc-step.active .proc-num i {
@@ -990,9 +988,9 @@
         }
 
         .proc-step:hover .proc-num {
-            background: linear-gradient(135deg, #E8714A, #C4813A);
+            background: linear-gradient(135deg, #C4813A, #E8A85C);
             border-color: transparent;
-            box-shadow: 0 0 0 8px rgba(232, 113, 74, 0.12), 0 18px 36px rgba(232, 113, 74, 0.4);
+            box-shadow: 0 0 0 8px rgba(196, 129, 58, 0.12), 0 18px 36px rgba(196, 129, 58, 0.4);
             transform: scale(1.08);
         }
 
@@ -1000,21 +998,19 @@
             color: #fff;
         }
 
-        /* Step label pill */
         .proc-badge {
             margin-top: 12px;
             font-size: 10px;
             font-weight: 800;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: rgba(232, 113, 74, 0.7);
+            color: rgba(196, 129, 58, 0.7);
         }
 
         .proc-step.active .proc-badge {
-            color: #F09060;
+            color: #E8A85C;
         }
 
-        /* Card below */
         .proc-card {
             margin-top: 20px;
             background: rgba(255, 255, 255, 0.04);
@@ -1026,15 +1022,15 @@
         }
 
         .proc-step:hover .proc-card {
-            background: rgba(232, 113, 74, 0.08);
-            border-color: rgba(232, 113, 74, 0.25);
+            background: rgba(196, 129, 58, 0.08);
+            border-color: rgba(196, 129, 58, 0.25);
             transform: translateY(-4px);
             box-shadow: 0 18px 36px rgba(0, 0, 0, 0.25);
         }
 
         .proc-step.active .proc-card {
-            background: rgba(232, 113, 74, 0.1);
-            border-color: rgba(232, 113, 74, 0.3);
+            background: rgba(196, 129, 58, 0.1);
+            border-color: rgba(196, 129, 58, 0.3);
         }
 
         .proc-card h4 {
@@ -1061,15 +1057,12 @@
                 grid-template-columns: 1fr 1fr;
                 gap: 24px;
             }
-
             .process-timeline::before {
                 display: none;
             }
-
             .process-section-wrap {
                 padding: 44px 28px;
             }
-
             .process-section-wrap h2 {
                 font-size: 28px;
             }
@@ -1081,7 +1074,7 @@
             }
         }
 
-        /* 12. FAQ */
+        /* FAQ */
         .faq-item {
             background: white;
             margin-bottom: 10px;
@@ -1094,14 +1087,14 @@
         }
 
         .faq-item:hover {
-            border-color: rgba(232, 113, 74, 0.25);
+            border-color: rgba(196, 129, 58, 0.25);
             box-shadow: 0 10px 25px -10px rgba(196, 129, 58, 0.1);
         }
 
         .faq-item.is-open {
             border-color: var(--accent-teal);
-            box-shadow: 0 12px 30px -10px rgba(232, 113, 74, 0.15);
-            background: rgba(232, 113, 74, 0.01);
+            box-shadow: 0 12px 30px -10px rgba(196, 129, 58, 0.15);
+            background: rgba(196, 129, 58, 0.01);
             transform: translateY(-2px);
         }
 
@@ -1149,21 +1142,21 @@
         }
 
         .faq-item h4:focus-visible {
-            outline: 3px solid rgba(232, 113, 74, 0.35);
+            outline: 3px solid rgba(196, 129, 58, 0.35);
             outline-offset: 6px;
             border-radius: 4px;
         }
 
-        /* 13. CTA */
+        /* CTA */
         .cta-box {
-            background: radial-gradient(120% 120% at 0% 0%, rgba(255, 255, 255, 0.03) 0%, rgba(232, 113, 74, 0.03) 100%), #181310;
+            background: radial-gradient(120% 120% at 0% 0%, rgba(255, 255, 255, 0.03) 0%, rgba(196, 129, 58, 0.03) 100%), #181310;
             border-radius: 24px;
             padding: 42px 32px;
             text-align: center;
             color: white;
             margin-bottom: 0;
-            box-shadow: 0 12px 30px rgba(232, 113, 74, 0.08);
-            border: 1px solid rgba(232, 113, 74, 0.25);
+            box-shadow: 0 12px 30px rgba(196, 129, 58, 0.08);
+            border: 1px solid rgba(196, 129, 58, 0.25);
             position: relative;
             overflow: hidden;
         }
@@ -1175,7 +1168,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 90% 80%, rgba(232, 113, 74, 0.04) 0%, transparent 50%);
+            background: radial-gradient(circle at 90% 80%, rgba(196, 129, 58, 0.04) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -1204,8 +1197,8 @@
         }
 
         .cta-form:focus-within {
-            border-color: rgba(232, 113, 74, 0.6);
-            box-shadow: 0 10px 30px -10px rgba(232, 113, 74, 0.25);
+            border-color: rgba(196, 129, 58, 0.6);
+            box-shadow: 0 10px 30px -10px rgba(196, 129, 58, 0.25);
         }
 
         .cta-form input {
@@ -1232,7 +1225,7 @@
             cursor: pointer;
             font-size: 14.5px;
             transition: opacity 0.2s, transform 0.2s;
-            box-shadow: 0 4px 12px rgba(232, 113, 74, 0.2);
+            box-shadow: 0 4px 12px rgba(196, 129, 58, 0.2);
         }
 
         .cta-form button:hover {
@@ -1242,7 +1235,7 @@
 
         .industry-card {
             background: radial-gradient(120% 120% at 0% 0%, #ffffff 0%, #FDF6EF 100%);
-            border: 1px solid rgba(232, 113, 74, 0.08);
+            border: 1px solid rgba(196, 129, 58, 0.08);
             padding: 20px 24px;
             border-radius: 16px;
             box-shadow: 0 4px 12px rgba(40, 30, 22, 0.015);
@@ -1252,17 +1245,17 @@
 
         .industry-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(232, 113, 74, 0.25);
+            border-color: rgba(196, 129, 58, 0.25);
             box-shadow: 0 15px 30px -10px rgba(196, 129, 58, 0.12);
-            background: rgba(232, 113, 74, 0.02);
+            background: rgba(196, 129, 58, 0.02);
         }
 
         .ind-icon {
             width: 42px;
             height: 42px;
             border-radius: 50%;
-            background: rgba(232, 113, 74, 0.06);
-            border: 1px solid rgba(232, 113, 74, 0.15);
+            background: rgba(196, 129, 58, 0.06);
+            border: 1px solid rgba(196, 129, 58, 0.15);
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -1276,7 +1269,7 @@
             background: var(--gradient);
             color: white;
             border-color: transparent;
-            box-shadow: 0 6px 15px rgba(232, 113, 74, 0.3);
+            box-shadow: 0 6px 15px rgba(196, 129, 58, 0.3);
             transform: scale(1.08);
         }
 
@@ -1293,12 +1286,12 @@
             line-height: 1.5;
         }
 
-        /* 9. WHY CHOOSE RCC-BGM Redesign */
+        /* WHY CHOOSE */
         #why-choose {
             background: #181310;
             color: #ffffff;
-            border-top: 1px solid rgba(232, 113, 74, 0.15);
-            border-bottom: 1px solid rgba(232, 113, 74, 0.15);
+            border-top: 1px solid rgba(196, 129, 58, 0.15);
+            border-bottom: 1px solid rgba(196, 129, 58, 0.15);
             position: relative;
             overflow: hidden;
         }
@@ -1310,7 +1303,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 10% 20%, rgba(232, 113, 74, 0.05) 0%, transparent 40%);
+            background: radial-gradient(circle at 10% 20%, rgba(196, 129, 58, 0.05) 0%, transparent 40%);
             pointer-events: none;
         }
 
@@ -1352,7 +1345,7 @@
         .why-metric i {
             color: var(--accent-teal);
             font-size: 14px;
-            background: rgba(232, 113, 74, 0.12);
+            background: rgba(196, 129, 58, 0.12);
             padding: 8px;
             border-radius: 50%;
             display: inline-flex;
@@ -1387,18 +1380,18 @@
 
         .difference-card:hover {
             transform: translateX(4px);
-            background: rgba(232, 113, 74, 0.05);
-            border-color: rgba(232, 113, 74, 0.25);
+            background: rgba(196, 129, 58, 0.05);
+            border-color: rgba(196, 129, 58, 0.25);
             border-left-color: var(--accent-blue);
-            box-shadow: 0 10px 25px -10px rgba(232, 113, 74, 0.2);
+            box-shadow: 0 10px 25px -10px rgba(196, 129, 58, 0.2);
         }
 
         .diff-icon {
             width: 40px;
             height: 40px;
             border-radius: 10px;
-            background: rgba(232, 113, 74, 0.14);
-            border: 1px solid rgba(232, 113, 74, 0.25);
+            background: rgba(196, 129, 58, 0.14);
+            border: 1px solid rgba(196, 129, 58, 0.25);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1483,256 +1476,81 @@
         }
 
         @media (max-width: 1024px) {
-
-            .split-intro,
-            .focus-flex,
-            .focus-flex.reversed,
-            .tech-box,
-            .f-grid,
-            .why-split {
+            .split-intro, .focus-flex, .focus-flex.reversed, .tech-box, .f-grid, .why-split {
                 grid-template-columns: 1fr;
             }
-
-            .focus-flex.reversed> :first-child {
-                order: 1;
-            }
-
-            .focus-flex.reversed> :last-child {
-                order: 2;
-            }
-
-            h1 {
-                font-size: 34px;
-            }
-
-            h2 {
-                font-size: 28px;
-            }
-
-            .section-padding {
-                padding: 44px 0;
-            }
-
-            .hero-stats {
-                gap: 30px;
-            }
-
-            .hero-stat .num {
-                font-size: 26px;
-            }
-
-            .hero {
-                padding: 130px 0 80px 0;
-                min-height: 100vh;
-            }
-
-            .tech-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .services-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            }
-
-            .market-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .focus-flex.reversed> :first-child { order: 1; }
+            .focus-flex.reversed> :last-child { order: 2; }
+            h1 { font-size: 34px; }
+            h2 { font-size: 28px; }
+            .section-padding { padding: 44px 0; }
+            .hero-stats { gap: 30px; }
+            .hero-stat .num { font-size: 26px; }
+            .hero { padding: 130px 0 80px 0; min-height: 100vh; }
+            .tech-grid { grid-template-columns: 1fr 1fr; }
+            .services-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+            .market-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 560px) {
-            .tech-grid {
-                grid-template-columns: 1fr;
-            }
+            .tech-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width:760px) {
-
-            html,
-            body {
-                width: 100%;
-                max-width: 100%;
-                overflow-x: hidden;
-            }
-
-            nav {
-                overflow: visible;
-            }
-
-            nav .nav-flex {
-                min-height: 78px;
-                position: relative;
-                width: 100vw;
-                max-width: 100vw;
-                padding-left: 18px;
-                padding-right: 18px;
-            }
-
-            nav .nav-toggle {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                margin-left: auto;
-            }
-
-            nav .btn-header {
-                display: none;
-            }
-
+            html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+            nav { overflow: visible; }
+            nav .nav-flex { min-height: 78px; position: relative; width: 100vw; max-width: 100vw; padding-left: 18px; padding-right: 18px; }
+            nav .nav-toggle { display: inline-flex; align-items: center; justify-content: center; margin-left: auto; }
+            nav .btn-header { display: none; }
             nav .nav-links {
-                display: none;
-                position: absolute;
-                top: calc(100% + 1px);
-                left: 0;
-                right: 0;
-                z-index: 50;
-                padding: 14px;
-                border: 1px solid rgba(232, 113, 74, .26);
-                border-top: 0;
-                border-radius: 0 0 18px 18px;
-                background: rgba(30, 23, 20, .98);
-                box-shadow: 0 20px 40px rgba(0, 0, 0, .3);
-                flex-direction: column;
-                gap: 4px;
+                display: none; position: absolute; top: calc(100% + 1px); left: 0; right: 0; z-index: 50;
+                padding: 14px; border: 1px solid rgba(196, 129, 58, .26); border-top: 0; border-radius: 0 0 18px 18px;
+                background: rgba(30, 23, 20, .98); box-shadow: 0 20px 40px rgba(0, 0, 0, .3); flex-direction: column; gap: 4px;
             }
-
-            nav.nav-open .nav-links {
-                display: flex;
-            }
-
-            nav .nav-links a {
-                display: block;
-                padding: 13px 14px;
-                border-radius: 9px;
-            }
-
-            nav .nav-links a:hover,
-            nav .nav-links a.is-active {
-                background: rgba(232, 113, 74, .1);
-            }
-
-            nav .nav-links a::after {
-                display: none;
-            }
-
-            .hero-content {
-                max-width: 100%;
-                padding-left: 18px;
-                padding-right: 18px;
-            }
-
-            .hero h1 {
-                overflow-wrap: anywhere;
-                max-width: calc(100vw - 36px);
-                font-size: clamp(30px, 9vw, 38px);
-            }
-
-            .hero-content>p {
-                max-width: calc(100vw - 36px) !important;
-            }
-
-            .hero-labels {
-                width: 100%;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .hero-labels>* {
-                width: min(100%, 310px);
-                justify-content: center;
-                text-align: center;
-            }
-
-            .hero-stats {
-                width: 100%;
-                max-width: calc(100vw - 36px);
-                padding: 18px;
-                gap: 0;
-            }
-
-            .hero-stat {
-                min-width: 0;
-                width: 100%;
-                flex: 1 1 100%;
-                padding: 14px 8px;
-            }
-
-            .hero-stat:not(:last-child)::after {
-                display: none;
-            }
-
-            .market-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .container {
-                padding: 0 18px;
-            }
-
-            .cta-box {
-                padding: 32px 20px;
-                border-radius: 18px;
-            }
-
-            .cta-box h2 {
-                font-size: 24px;
-            }
-
-            .cta-form {
-                flex-direction: column;
-                gap: 10px;
-                padding: 10px;
-            }
-
-            .cta-form input {
-                padding: 12px 16px;
-            }
-
-            .cta-form button {
-                width: 100%;
-            }
-
-            .tech-box {
-                padding: 30px 20px;
-                border-radius: 18px;
-            }
-
-            .why-info h2 {
-                font-size: 26px;
-            }
-
-            .difference-card {
-                flex-direction: column;
-                gap: 14px;
-            }
-
-            .process-grid {
-                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            }
-
-            .focus-img {
-                height: 280px;
-            }
+            nav.nav-open .nav-links { display: flex; }
+            nav .nav-links a { display: block; padding: 13px 14px; border-radius: 9px; }
+            nav .nav-links a:hover, nav .nav-links a.is-active { background: rgba(196, 129, 58, .1); }
+            nav .nav-links a::after { display: none; }
+            .hero-content { max-width: 100%; padding-left: 18px; padding-right: 18px; }
+            .hero h1 { overflow-wrap: anywhere; max-width: calc(100vw - 36px); font-size: clamp(30px, 9vw, 38px); }
+            .hero-content>p { max-width: calc(100vw - 36px) !important; }
+            .hero-labels { width: 100%; flex-direction: column; align-items: center; }
+            .hero-labels>* { width: min(100%, 310px); justify-content: center; text-align: center; }
+            .hero-stats { width: 100%; max-width: calc(100vw - 36px); padding: 18px; gap: 0; }
+            .hero-stat { min-width: 0; width: 100%; flex: 1 1 100%; padding: 14px 8px; }
+            .hero-stat:not(:last-child)::after { display: none; }
+            .market-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .container { padding: 0 18px; }
+            .cta-box { padding: 32px 20px; border-radius: 18px; }
+            .cta-box h2 { font-size: 24px; }
+            .cta-form { flex-direction: column; gap: 10px; padding: 10px; }
+            .cta-form input { padding: 12px 16px; }
+            .cta-form button { width: 100%; }
+            .tech-box { padding: 30px 20px; border-radius: 18px; }
+            .why-info h2 { font-size: 26px; }
+            .difference-card { flex-direction: column; gap: 14px; }
+            .process-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+            .focus-img { height: 280px; }
         }
-        /* Home-page finishing layer */
-        nav { background: rgba(255,252,255,.84); border-bottom-color: rgba(128,99,199,.16); box-shadow: 0 10px 30px rgba(78,56,117,.12); }
-        nav.nav-scrolled { background: rgba(255,252,255,.97); }
-        nav::after { background: linear-gradient(90deg, transparent, rgba(217,111,159,.72), rgba(246,212,127,.72), transparent); }
-        nav .logo { color: #302447; }
-        nav .logo span, nav .nav-links a:hover, nav .nav-links a.is-active { color: #8063c7; }
-        nav .nav-links a { color: #675f78; }
-        nav .nav-toggle { color: #8063c7; background: #f8f2ff; border-color: rgba(128,99,199,.28); }
-        .btn-header, .btn-glow, .cta-form button { color: #332848 !important; box-shadow: 0 10px 22px rgba(128,99,199,.24); }
-        .btn-header:hover, .btn-glow:hover, .cta-form button:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(217,111,159,.3); }
-        .service-card, .difference-card, .intro-card, .industry-card, .faq-item { border-color: rgba(128,99,199,.18) !important; transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease; }
-        .service-card:hover, .difference-card:hover, .intro-card:hover, .industry-card:hover { transform: translateY(-6px); border-color: rgba(217,111,159,.55) !important; box-shadow: 0 18px 38px rgba(128,99,199,.18); }
-        footer { background: linear-gradient(135deg, #392b53, #674a83); border-top: 3px solid #f3cf7c; }
-        footer .logo, footer .f-col h4, footer .footer-contact-link { color: #f6d6e4 !important; }
-        footer .f-col a, footer .f-col p, footer .footer-summary { color: #eee7f7 !important; }
-        footer a:hover { color: #f8df9a !important; }
+
+        /* Home-page finishing layer - FULLY UPDATED TO NEW GOLD/WARM PALETTE */
+        nav { background: rgba(250, 247, 242, 0.84); border-bottom-color: rgba(196, 129, 58, 0.16); box-shadow: 0 10px 30px rgba(196, 129, 58, 0.12); }
+        nav.nav-scrolled { background: rgba(250, 247, 242, 0.97); }
+        nav::after { background: linear-gradient(90deg, transparent, rgba(196, 129, 58, 0.72), rgba(232, 168, 92, 0.72), transparent); }
+        nav .logo { color: #2D2A26; }
+        nav .logo span, nav .nav-links a:hover, nav .nav-links a.is-active { color: #C4813A; }
+        nav .nav-links a { color: #5A554E; }
+        nav .nav-toggle { color: #C4813A; background: #FDF6EF; border-color: rgba(196, 129, 58, 0.28); }
+        .btn-header, .btn-glow, .cta-form button { color: #FFFFFF !important; box-shadow: 0 10px 22px rgba(196, 129, 58, 0.24); }
+        .btn-header:hover, .btn-glow:hover, .cta-form button:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(232, 168, 92, 0.3); }
+        .s-item, .difference-card, .intro-card, .industry-card, .faq-item { border-color: rgba(196, 129, 58, 0.18) !important; transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease; }
+        .s-item:hover, .difference-card:hover, .intro-card:hover, .industry-card:hover { transform: translateY(-6px); border-color: rgba(232, 168, 92, 0.55) !important; box-shadow: 0 18px 38px rgba(196, 129, 58, 0.18); }
+        footer { background: linear-gradient(135deg, #2D2A26, #1E1714); border-top: 3px solid #E8A85C; }
+        footer .logo, footer .f-col h4, footer .footer-contact-link { color: #E8A85C !important; }
+        footer .f-col a, footer .f-col p, footer .footer-summary { color: #D4C0AC !important; }
+        footer a:hover { color: #FDF6EF !important; }
+        
         body { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 500; line-height: 1.65; font-kerning: normal; font-feature-settings: 'kern' 1, 'liga' 1, 'cv11' 1; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
         h1, h2, h3, h4, h5, h6 { color: var(--text-dark); line-height: 1.2; letter-spacing: -.025em; font-weight: 750; font-feature-settings: 'kern' 1, 'liga' 1, 'ss01' 1; text-wrap: balance; }
         h1 { font-size: clamp(2rem, 3.2vw, 3.4rem); }
@@ -1770,8 +1588,7 @@
 
     <nav>
         <div class="container nav-flex">
-            <a href="#" class="logo"><span class="logo-icon"><i
-                        class="fa-solid fa-building-shield"></i></span>RCC<span>BGM</span></a>
+            <a href="#" class="logo"><span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span>RCC<span>BGM</span></a>
             <ul class="nav-links">
                 <li><a href="services.html">Services</a></li>
                 <li><a href="commercial-cleaning-services.html">Cleaning</a></li>
@@ -1786,30 +1603,21 @@
         </div>
     </nav>
 
-    <!-- 1. HERO SECTION - Updated from Video to Image Slider -->
+    <!-- 1. HERO SECTION -->
     <section class="hero">
         <div class="hero-slider">
-            <div class="hero-slide active"
-                style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000');">
-            </div>
-            <div class="hero-slide"
-                style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000');">
-            </div>
-            <div class="hero-slide"
-                style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000');">
-            </div>
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000');"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000');"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000');"></div>
         </div>
 
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <br>
-            <h1>Commercial Cleaning, Construction<br>& Maintenance — <span class="hero-glow">Managed Together</span>
-            </h1>
+            <h1>Commercial Cleaning, Construction<br>& Maintenance — <span class="hero-glow">Managed Together</span></h1>
             <br>
             <p style="font-size: 16px; color: #D4C0AC; text-align: center; max-width: 700px; margin: 0 auto;">
-                RCC-BGM brings commercial cleaning, janitorial services, construction and specialized facility
-                maintenance together under one accountable team. We help businesses maintain cleaner, safer and
-                better-performing environments.
+                RCC-BGM brings commercial cleaning, janitorial services, construction and specialized facility maintenance together under one accountable team. We help businesses maintain cleaner, safer and better-performing environments.
             </p>
             <div class="hero-labels">
                 <div class="h-label"><i class="fa-solid fa-broom"></i> Commercial Janitorial</div>
@@ -1817,9 +1625,7 @@
                 <div class="h-label"><i class="fa-solid fa-hammer"></i> Tenant Improvements</div>
                 <div class="h-label"><i class="fa-solid fa-vial-virus"></i> Cleanroom Services</div>
             </div>
-            <a href="#contact" class="btn-header btn-glow"
-                style="display:inline-block; margin-top:38px; padding:17px 40px; font-size:16px;">Request a Facility
-                Assessment <i class="fa-solid fa-arrow-right" style="margin-left:8px;"></i></a>
+            <a href="#contact" class="btn-header btn-glow" style="display:inline-block; margin-top:38px; padding:17px 40px; font-size:16px;">Request a Facility Assessment <i class="fa-solid fa-arrow-right" style="margin-left:8px;"></i></a>
 
             <div class="hero-stats">
                 <div class="hero-stat">
@@ -1841,17 +1647,6 @@
             </div>
         </div>
     </section>
-    <script>
-        // Fallback: if the background video can't load, keep a rich static image + overlay instead of a blank frame
-        (function () {
-            var v = document.getElementById('heroVideo');
-            var fallbackTimer = setTimeout(function () {
-                if (v.readyState === 0) { v.style.display = 'none'; }
-            }, 3500);
-            v.addEventListener('loadeddata', function () { clearTimeout(fallbackTimer); });
-            v.addEventListener('error', function () { v.style.display = 'none'; clearTimeout(fallbackTimer); });
-        })();
-    </script>
 
     <!-- 2. COMBINED INTRODUCTION -->
     <section class="section-padding">
@@ -1859,20 +1654,16 @@
             <div style="text-align: center;">
                 <span class="hero-tag">Two Specialized Companies. One Solution.</span>
                 <h2>One Partner for the Complete Facility Lifecycle</h2>
-                <p style="max-width: 760px; margin: 14px auto 0 auto;">RCC-BGM combines the construction capabilities of
-                    Reliable Concepts Corporation with the janitorial expertise of Brilliant General Maintenance.</p>
+                <p style="max-width: 760px; margin: 14px auto 0 auto;">RCC-BGM combines the construction capabilities of Reliable Concepts Corporation with the janitorial expertise of Brilliant General Maintenance.</p>
             </div>
             <div class="split-intro">
                 <div class="intro-card">
                     <h3>Reliable Concepts Corporation</h3>
-                    <p>Commercial construction, tenant improvements, HVAC services, MEP coordination, carpentry,
-                        painting, landscaping and facility upgrades delivered through accountable project management.
-                    </p>
+                    <p>Commercial construction, tenant improvements, HVAC services, MEP coordination, carpentry, painting, landscaping and facility upgrades delivered through accountable project management.</p>
                 </div>
                 <div class="intro-card" style="border-top: 6px solid var(--accent-teal);">
                     <h3>Brilliant General Maintenance</h3>
-                    <p>Commercial cleaning services, office cleaning, commercial janitorial programs, cleanroom
-                        cleaning, floor care, window cleaning, and technology-supported facility care.</p>
+                    <p>Commercial cleaning services, office cleaning, commercial janitorial programs, cleanroom cleaning, floor care, window cleaning, and technology-supported facility care.</p>
                 </div>
             </div>
         </div>
@@ -1882,35 +1673,30 @@
     <section id="services" class="section-padding" style="background: #fff;">
         <div class="container" style="text-align: center;">
             <h2>Commercial Facility Services Built Around Your Operation</h2>
-            <p style="margin: 6px auto 0 auto; max-width: 780px;">Every facility has different operational, safety and
-                scheduling requirements. RCC-BGM develops coordinated programs around your building type.</p>
+            <p style="margin: 6px auto 0 auto; max-width: 780px;">Every facility has different operational, safety and scheduling requirements. RCC-BGM develops coordinated programs around your building type.</p>
             <div class="services-grid" style="text-align: left;">
                 <div class="s-item">
                     <div class="s-icon"><i class="fa-solid fa-broom"></i></div>
                     <h3>Janitorial Services</h3>
-                    <p>Daily and recurring janitorial services covering restrooms, common areas, and routine facility
-                        cleaning.</p>
+                    <p>Daily and recurring janitorial services covering restrooms, common areas, and routine facility cleaning.</p>
                     <a href="#contact" class="s-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
                 <div class="s-item">
                     <div class="s-icon"><i class="fa-solid fa-vial-virus"></i></div>
                     <h3>Cleanroom Cleaning</h3>
-                    <p>Specialized cleaning for laboratories, healthcare, and medical offices requiring strict
-                        procedures.</p>
+                    <p>Specialized cleaning for laboratories, healthcare, and medical offices requiring strict procedures.</p>
                     <a href="#contact" class="s-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
                 <div class="s-item">
                     <div class="s-icon"><i class="fa-solid fa-hammer"></i></div>
                     <h3>Tenant Improvements</h3>
-                    <p>Interior build-outs, space reconfiguration, and finish upgrades for evolving operational
-                        requirements.</p>
+                    <p>Interior build-outs, space reconfiguration, and finish upgrades for evolving operational requirements.</p>
                     <a href="#contact" class="s-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
                 <div class="s-item">
                     <div class="s-icon"><i class="fa-solid fa-fan"></i></div>
                     <h3>HVAC & MEP Services</h3>
-                    <p>Commercial HVAC installation, repair and maintenance supported by mechanical and plumbing
-                        services.</p>
+                    <p>Commercial HVAC installation, repair and maintenance supported by mechanical and plumbing services.</p>
                     <a href="#contact" class="s-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
                 <div class="s-item">
@@ -1935,8 +1721,7 @@
             <div>
                 <span class="hero-tag">Brilliant General Maintenance</span>
                 <h2>Cleaning You Can <span style="color:var(--accent-blue);">Depend On</span></h2>
-                <p style="margin-top: 10px;">BGM delivers commercial cleaning services tailored to each facility's
-                    schedule, occupancy, and industry requirements.</p>
+                <p style="margin-top: 10px;">BGM delivers commercial cleaning services tailored to each facility's schedule, occupancy, and industry requirements.</p>
                 <ul class="check-list">
                     <li><i class="fa-solid fa-circle-check"></i> Restroom cleaning and sanitation</li>
                     <li><i class="fa-solid fa-circle-check"></i> Manufacturing and industrial cleaning</li>
@@ -1944,8 +1729,7 @@
                     <li><i class="fa-solid fa-circle-check"></i> Cleanroom and controlled-environment cleaning</li>
                 </ul>
             </div>
-            <img src="https://images.unsplash.com/photo-1627905646269-7f034dcc5738?w=500&auto=format&fit=crop&q=60"
-                class="focus-img" alt="Cleaning Services">
+            <img src="https://images.unsplash.com/photo-1627905646269-7f034dcc5738?w=500&auto=format&fit=crop&q=60" class="focus-img" alt="Cleaning Services">
         </div>
     </section>
 
@@ -1955,8 +1739,7 @@
             <div>
                 <span class="hero-tag">Reliable Concepts Corporation</span>
                 <h2>Elite <span style="color:var(--accent-blue);">Construction</span> & Improvements</h2>
-                <p style="margin-top: 10px;">RCC coordinates commercial construction, tenant improvements, HVAC, MEP,
-                    carpentry, and painting through a single point of contact.</p>
+                <p style="margin-top: 10px;">RCC coordinates commercial construction, tenant improvements, HVAC, MEP, carpentry, and painting through a single point of contact.</p>
                 <ul class="check-list">
                     <li><i class="fa-solid fa-circle-check"></i> Interior build-outs & space reconfiguration</li>
                     <li><i class="fa-solid fa-circle-check"></i> Mechanical, electrical, and plumbing upgrades</li>
@@ -1964,8 +1747,7 @@
                     <li><i class="fa-solid fa-circle-check"></i> Facility renovations & functional upgrades</li>
                 </ul>
             </div>
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&auto=format&fit=crop&q=60"
-                class="focus-img" alt="Construction">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&auto=format&fit=crop&q=60" class="focus-img" alt="Construction">
         </div>
     </section>
 
@@ -1973,8 +1755,7 @@
     <section class="section-padding">
         <div class="container" style="text-align: center;">
             <h2>Specialized Cleaning for Controlled Environments</h2>
-            <p style="margin: 10px auto 0 auto; max-width: 780px;">We support cleanrooms, laboratories, life-science
-                facilities, and healthcare environments with ISO-standard cleaning procedures.</p>
+            <p style="margin: 10px auto 0 auto; max-width: 780px;">We support cleanrooms, laboratories, life-science facilities, and healthcare environments with ISO-standard cleaning procedures.</p>
             <div class="chip-container" style="justify-content: center;">
                 <div class="chip">Cleanrooms</div>
                 <div class="chip">Life-science Facilities</div>
@@ -1993,8 +1774,7 @@
             <div>
                 <span class="live-badge"><span class="live-dot"></span> Live Facility Monitoring</span>
                 <h2 style="color:white;">Smarter Cleaning Through Robotics</h2>
-                <p style="color:#D4C0AC; margin: 14px 0 0 0;">We combine trained service teams with modern cleaning
-                    technology to improve consistency, visibility and resource allocation.</p>
+                <p style="color:#D4C0AC; margin: 14px 0 0 0;">We combine trained service teams with modern cleaning technology to improve consistency, visibility and resource allocation.</p>
             </div>
             <div class="tech-grid">
                 <div class="t-item">
@@ -2030,7 +1810,7 @@
     </section>
 
     <!-- 8. INDUSTRIES SERVED -->
-    <section id="industries" class="section-padding" style="padding-top: 20px; padding-bottom: 4comm0px;">
+    <section id="industries" class="section-padding" style="padding-top: 20px; padding-bottom: 40px;">
         <div class="container">
             <h2 style="text-align: center;">Facility Services Adapted to Your Industry</h2>
             <div class="services-grid" style="text-align: center; margin-top: 16px; gap: 16px;">
@@ -2073,12 +1853,9 @@
         <div class="container">
             <div class="why-split">
                 <div class="why-info">
-                    <span class="hero-tag"
-                        style="border-color: rgba(232, 113, 74, 0.35); background: rgba(232, 113, 74, 0.08); color: var(--accent-teal);">Why
-                        Partner With Us</span>
+                    <span class="hero-tag" style="border-color: rgba(196, 129, 58, 0.35); background: rgba(196, 129, 58, 0.08); color: var(--accent-teal);">Why Partner With Us</span>
                     <h2>Engineered for Seamless Facility Accountability</h2>
-                    <p class="subtitle">A single resource to eliminate coordination gaps, reduce overhead costs, and
-                        secure complex operations across your physical properties.</p>
+                    <p class="subtitle">A single resource to eliminate coordination gaps, reduce overhead costs, and secure complex operations across your physical properties.</p>
                     <div class="why-metrics">
                         <div class="why-metric">
                             <i class="fa-solid fa-check"></i>
@@ -2099,24 +1876,21 @@
                         <div class="diff-icon"><i class="fa-solid fa-people-arrows"></i></div>
                         <div class="diff-content">
                             <h4>One Coordinated Partner</h4>
-                            <p>Cleaning, construction, and mechanical maintenance unified under single facility
-                                leadership.</p>
+                            <p>Cleaning, construction, and mechanical maintenance unified under single facility leadership.</p>
                         </div>
                     </div>
                     <div class="difference-card">
                         <div class="diff-icon"><i class="fa-solid fa-circle-check"></i></div>
                         <div class="diff-content">
                             <h4>Clear Scope Ownership</h4>
-                            <p>Direct responsibility with transparent KPIs that remove finger-pointing and coordination
-                                delays.</p>
+                            <p>Direct responsibility with transparent KPIs that remove finger-pointing and coordination delays.</p>
                         </div>
                     </div>
                     <div class="difference-card">
                         <div class="diff-icon"><i class="fa-solid fa-vial-circle-check"></i></div>
                         <div class="diff-content">
                             <h4>Specialized Compliance</h4>
-                            <p>Rigorous operational procedures for laboratories, cleanrooms, and medical environments.
-                            </p>
+                            <p>Rigorous operational procedures for laboratories, cleanrooms, and medical environments.</p>
                         </div>
                     </div>
                 </div>
@@ -2131,8 +1905,7 @@
                 <div style="text-align:center; position:relative; z-index:1;">
                     <span class="section-label"><i class="fa-solid fa-route"></i>&nbsp; Our Process</span>
                     <h2>A Clearer Way To Manage Facilities</h2>
-                    <p class="proc-sub">From initial assessment to continuous improvement — a structured, accountable
-                        process every time.</p>
+                    <p class="proc-sub">From initial assessment to continuous improvement — a structured, accountable process every time.</p>
                 </div>
                 <div class="process-timeline" style="position:relative; z-index:1;">
                     <div class="proc-step active">
@@ -2184,8 +1957,7 @@
     <section class="section-padding bg-white" style="padding-top: 5px; padding-bottom: 12px;">
         <div class="container" style="text-align: center;">
             <h2>Multi-Market Facility Support</h2>
-            <p style="margin: 6px auto 0 auto; max-width: 620px;">Serving California, Arizona, Nevada, Texas, Illinois
-                and Michigan.</p>
+            <p style="margin: 6px auto 0 auto; max-width: 620px;">Serving California, Arizona, Nevada, Texas, Illinois and Michigan.</p>
             <div class="market-grid">
                 <div class="market-card">
                     <div class="market-header">
@@ -2224,24 +1996,19 @@
         <h2 style="margin-bottom: 34px; text-align: center;">Frequently Asked Questions</h2>
         <div class="faq-item">
             <h4>What services does RCC-BGM provide? <i class="fa-solid fa-plus"></i></h4>
-            <p>RCC-BGM provides integrated commercial cleaning, janitorial service, construction, tenant improvements,
-                HVAC, MEP, carpentry, painting, landscaping, and specialized facility maintenance.</p>
+            <p>RCC-BGM provides integrated commercial cleaning, janitorial service, construction, tenant improvements, HVAC, MEP, carpentry, painting, landscaping, and specialized facility maintenance.</p>
         </div>
         <div class="faq-item">
             <h4>Can you manage both construction and cleaning? <i class="fa-solid fa-plus"></i></h4>
-            <p>Yes. RCC-BGM combines the construction and building system capabilities of Reliable Concepts Corporation
-                with the janitorial and specialized cleaning expertise of Brilliant General Maintenance under a single
-                managed relationship.</p>
+            <p>Yes. RCC-BGM combines the construction and building system capabilities of Reliable Concepts Corporation with the janitorial and specialized cleaning expertise of Brilliant General Maintenance under a single managed relationship.</p>
         </div>
         <div class="faq-item">
             <h4>Do you serve medical and lab facilities? <i class="fa-solid fa-plus"></i></h4>
-            <p>Yes, we provide specialized ISO-compliant cleaning for cleanrooms, research laboratories, medical
-                offices, life-science facilities, and healthcare environments.</p>
+            <p>Yes, we provide specialized ISO-compliant cleaning for cleanrooms, research laboratories, medical offices, life-science facilities, and healthcare environments.</p>
         </div>
         <div class="faq-item">
             <h4>Do you provide commercial HVAC maintenance? <i class="fa-solid fa-plus"></i></h4>
-            <p>Yes, we provide commercial HVAC installation, repair, preventive maintenance, and systems coordination
-                alongside MEP services.</p>
+            <p>Yes, we provide commercial HVAC installation, repair, preventive maintenance, and systems coordination alongside MEP services.</p>
         </div>
     </section>
 
@@ -2249,8 +2016,7 @@
     <section id="contact" class="container" style="padding: 12px 0 28px 0; border-bottom: none;">
         <div class="cta-box">
             <h2>Let's Build a Better Facility</h2>
-            <p style="margin-top: 10px;">Start your facility assessment and develop a coordinated plan around your
-                priorities.</p>
+            <p style="margin-top: 10px;">Start your facility assessment and develop a coordinated plan around your priorities.</p>
             <form class="cta-form">
                 <input type="email" placeholder="Your work email address" required>
                 <button type="submit">Get a Quote</button>
@@ -2300,8 +2066,6 @@
             window.addEventListener('scroll', handleNumbersScroll);
             handleNumbersScroll();
         })();
-
     </script>
 </body>
-
 </html>
