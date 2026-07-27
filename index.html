@@ -423,6 +423,22 @@
 
         .s-item:hover::before { transform: scaleX(1); }
 
+        .s-item.active {
+            border-color: var(--accent-gold);
+            background: var(--accent-gold-soft);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .s-item.active::before { transform: scaleX(1); }
+
+        .s-item.active .s-icon {
+            background: var(--gradient);
+            border-color: transparent;
+            box-shadow: 0 6px 20px rgba(128, 99, 199, 0.3);
+        }
+
+        .s-item.active .s-icon i { color: white; }
+
         .s-icon {
             width: 58px;
             height: 58px;
@@ -702,6 +718,7 @@
             grid-template-columns: repeat(5, 1fr);
             gap: 0;
             position: relative;
+            align-items: stretch;
         }
 
         .process-timeline::before {
@@ -723,6 +740,19 @@
             padding: 0 12px;
             position: relative;
             z-index: 1;
+        }
+
+        .proc-card {
+            margin-top: 20px;
+            background: var(--bg-warm);
+            border: 1px solid var(--border-warm);
+            border-radius: 16px;
+            padding: 24px 18px;
+            transition: var(--transition);
+            width: 100%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .proc-num {
@@ -918,6 +948,19 @@
             transform: translateY(-6px);
             border-color: var(--accent-gold-border);
             box-shadow: var(--shadow-hover);
+        }
+
+        .industry-card.active {
+            border-color: var(--accent-gold);
+            background: var(--accent-gold-soft);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .industry-card.active .ind-icon {
+            background: var(--gradient);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 6px 15px rgba(128, 99, 199, 0.3);
         }
 
         .ind-icon {
@@ -1229,7 +1272,7 @@
             <h2>Commercial Facility Services Built Around Your Operation</h2>
             <p style="margin: 6px auto 0 auto; max-width: 780px;">Every facility has different operational, safety and scheduling requirements. RCC-BGM develops coordinated programs around your building type.</p>
             <div class="services-grid" style="text-align: left;">
-                <div class="s-item scroll-reveal">
+                <div class="s-item scroll-reveal active">
                     <div class="s-icon"><i class="fa-solid fa-broom"></i></div>
                     <h3>Janitorial Services</h3>
                     <p>Daily and recurring janitorial services covering restrooms, common areas, and routine facility cleaning.</p>
@@ -1368,7 +1411,7 @@
         <div class="container">
             <h2 style="text-align: center;">Facility Services Adapted to Your Industry</h2>
             <div class="services-grid" style="text-align: center; margin-top: 16px; gap: 24px;">
-                <div class="industry-card scroll-reveal">
+                <div class="industry-card scroll-reveal active">
                     <div class="ind-icon"><i class="fa-solid fa-briefcase"></i></div>
                     <h4>Corporate Offices</h4>
                     <p>Designed around employees, visitors and operating schedules.</p>
@@ -1548,7 +1591,7 @@
     <!-- 12. FAQ -->
     <section id="faq" class="container section-padding">
         <h2 style="text-align: center; margin-bottom: 34px;">Frequently Asked Questions</h2>
-        <details class="faq-item scroll-reveal">
+        <details class="faq-item scroll-reveal" open>
             <summary>What services does RCC-BGM provide?</summary>
             <p>RCC-BGM provides integrated commercial cleaning, janitorial service, construction, tenant improvements, HVAC, MEP, carpentry, painting, landscaping, and specialized facility maintenance.</p>
         </details>
