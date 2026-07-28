@@ -152,20 +152,6 @@
 
         /* Footer */
         .site-footer { background: var(--text-dark); color: rgba(255,255,255,0.7); padding: 70px 0 0; }
-        .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 40px; padding-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-        .footer-brand .logo { color: white; margin-bottom: 16px; font-size: 1.4rem; }
-        .footer-brand .logo span { color: var(--accent-gold-light); }
-        .footer-brand .logo-icon { color: var(--accent-gold-light); }
-        .footer-brand p { font-size: 0.88rem; line-height: 1.7; color: rgba(255,255,255,0.55); max-width: 280px; }
-        .footer-col h4 { color: white; font-size: 0.95rem; font-weight: 600; margin-bottom: 18px; position: relative; padding-bottom: 10px; }
-        .footer-col h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 30px; height: 2px; background: var(--accent-gold); border-radius: 2px; }
-        .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 10px; }
-        .footer-col ul li a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.88rem; transition: var(--transition); display: flex; align-items: center; gap: 8px; }
-        .footer-col ul li a:hover { color: var(--accent-gold-light); transform: translateX(4px); }
-        .footer-col ul li a i { font-size: 0.7rem; color: var(--accent-gold); }
-        .footer-contact li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; font-size: 0.88rem; color: rgba(255,255,255,0.55); }
-        .footer-contact li i { color: var(--accent-gold-light); margin-top: 4px; width: 16px; }
         .footer-bottom { padding: 24px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
         .footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
         .footer-bottom-links { display: flex; gap: 20px; }
@@ -184,8 +170,7 @@
             .hero-labels { justify-content: center; }
             .hero-stats { justify-content: center; margin-left: auto; margin-right: auto; flex-wrap: wrap; gap: 8px 0; }
             .hero-visual { max-width: 480px; margin: 0 auto; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-        }
+            }
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .section-padding { padding: 60px 0; }
@@ -195,7 +180,6 @@
             .hv-chip.loc { left: 6px; }
             .hv-chip.trust { right: 6px; }
             .cta-box { padding: 40px 24px; }
-            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
             .footer-bottom { flex-direction: column; text-align: center; }
         }
         @media (max-width: 420px) { .hv-grid { grid-template-columns: 1fr; } .hero-stat { padding: 0 18px; } }
@@ -335,47 +319,50 @@
                 <a class="s-item scroll-reveal" href="santa-monica-ca.html"><i class="fa-solid fa-location-dot"></i><h3>Santa Monica, CA</h3><p>Explore RCC-BGM commercial facility services available in Santa Monica.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a>
             </div>
         </section>
-    </main>
-
-    <!-- Footer -->
+    </main>    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html" class="logo"><span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span> RCC<span>BGM</span></a>
-                    <p>Commercial facility services for offices, technology campuses and controlled environments across the San Francisco Bay Area. Cleaning, construction, HVAC and maintenance — coordinated through one platform.</p>
+            <div class="f-grid">
+                <div class="f-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 16px; display: inline-flex;">
+                        <span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span>RCC<span style="color: var(--accent-gold-light);">BGM</span>
+                    </a>
+                    <p style="margin-top: 16px; max-width: 280px;">Commercial facility services for offices, technology campuses and controlled environments. Cleaning, construction, HVAC and maintenance — coordinated through one platform.</p>
                 </div>
-                <div class="footer-col">
+                <div class="f-col">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="commercial-cleaning-services.html"><i class="fa-solid fa-chevron-right"></i> Commercial Cleaning</a></li>
-                        <li><a href="commercial-construction.html"><i class="fa-solid fa-chevron-right"></i> Construction & TI</a></li>
-                        <li><a href="facility-maintenance-services.html"><i class="fa-solid fa-chevron-right"></i> Facility Maintenance</a></li>
-                        <li><a href="commercial-hvac-services.html"><i class="fa-solid fa-chevron-right"></i> HVAC & MEP</a></li>
+                        <li><a href="commercial-cleaning-services.html">Commercial Cleaning</a></li>
+                        <li><a href="commercial-construction.html">Construction &amp; TI</a></li>
+                        <li><a href="facility-maintenance-services.html">Facility Maintenance</a></li>
+                        <li><a href="commercial-hvac-services.html">HVAC &amp; MEP</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
+                <div class="f-col">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About RCC-BGM</a></li>
-                        <li><a href="why-rcc-bgm.html"><i class="fa-solid fa-chevron-right"></i> Why RCC-BGM</a></li>
-                        <li><a href="industries.html"><i class="fa-solid fa-chevron-right"></i> Industries</a></li>
-                        <li><a href="locations.html"><i class="fa-solid fa-chevron-right"></i> Locations</a></li>
+                        <li><a href="about.html">About RCC-BGM</a></li>
+                        <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
+                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="locations.html">Locations</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
+                <div class="f-col">
                     <h4>Get in Touch</h4>
-                    <ul class="footer-contact">
-                        <li><i class="fa-solid fa-location-dot"></i> San Jose, CA — Serving the Bay Area</li>
-                        <li><i class="fa-solid fa-envelope"></i> info@rcc-bgm.com</li>
-                        <li><i class="fa-solid fa-clock"></i> Mon – Fri: 7:00 AM – 6:00 PM</li>
+                    <ul>
+                        <li><i class="fa-solid fa-location-dot" style="margin-right: 8px; color: var(--accent-gold-light);"></i> San Jose, CA</li>
+                        <li><i class="fa-solid fa-envelope" style="margin-right: 8px; color: var(--accent-gold-light);"></i> info@rcc-bgm.com</li>
+                        <li><i class="fa-solid fa-clock" style="margin-right: 8px; color: var(--accent-gold-light);"></i> Mon – Fri: 7AM – 6PM</li>
                     </ul>
-                    <a href="contact.html" class="btn-header" style="margin-top: 10px; padding: 10px 22px; font-size: 0.85rem;">Request Assessment <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="contact.html" class="btn-header" style="margin-top: 16px; padding: 10px 22px; font-size: 0.85rem;">Request Assessment <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i></a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 RCC-BGM. All rights reserved. | Reliable Concepts Corporation & Brilliant General Maintenance</p>
-                <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+                <p>&copy; 2026 RCC-BGM. All rights reserved. | Reliable Concepts Corporation &amp; Brilliant General Maintenance</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
