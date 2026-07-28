@@ -74,7 +74,7 @@ nav {
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   padding: 18px 0;
-  border-bottom: 1px solid rgba(232, 113, 74, 0.12);
+  border-bottom: 1px solid rgba(128, 99, 199, 0.12);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   transition:
     padding 0.3s ease,
@@ -86,8 +86,8 @@ nav {
 nav.nav-scrolled {
   padding: 10px 0;
   background: rgba(30, 23, 20, 0.94);
-  border-bottom: 1px solid rgba(232, 113, 74, 0.35);
-  box-shadow: 0 10px 30px -10px rgba(232, 113, 74, 0.15), 0 12px 34px -14px rgba(0, 0, 0, 0.65);
+  border-bottom: 1px solid rgba(128, 99, 199, 0.35);
+  box-shadow: 0 10px 30px -10px rgba(128, 99, 199, 0.15), 0 12px 34px -14px rgba(0, 0, 0, 0.65);
 }
 
 nav::after {
@@ -99,7 +99,7 @@ nav::after {
   height: 1px;
   background: linear-gradient(90deg,
       transparent,
-      rgba(232, 113, 74, 0.6),
+      rgba(128, 99, 199, 0.6),
       transparent);
   opacity: 0.8;
   transition: opacity 0.3s ease;
@@ -195,9 +195,9 @@ nav.nav-scrolled::after {
   display: none;
   width: 44px;
   height: 44px;
-  border: 1px solid rgba(232, 113, 74, 0.45);
+  border: 1px solid rgba(128, 99, 199, 0.45);
   border-radius: 12px;
-  background: rgba(232, 113, 74, 0.08);
+  background: rgba(128, 99, 199, 0.08);
   color: white;
   font-size: 18px;
   cursor: pointer;
@@ -220,7 +220,7 @@ nav.nav-scrolled::after {
 
 .btn-header:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px -6px rgba(232, 113, 74, 0.65);
+  box-shadow: 0 14px 30px -6px rgba(128, 99, 199, 0.65);
 }
 
 /* 1. HERO - with background video */
@@ -287,9 +287,9 @@ nav.nav-scrolled::after {
   margin-bottom: 18px;
   display: inline-block;
   padding: 7px 18px;
-  border: 1px solid rgba(232, 113, 74, 0.4);
+  border: 1px solid rgba(128, 99, 199, 0.4);
   border-radius: 30px;
-  background: rgba(232, 113, 74, 0.08);
+  background: rgba(128, 99, 199, 0.08);
   width: fit-content;
   align-self: flex-start;
 }
@@ -299,7 +299,7 @@ nav.nav-scrolled::after {
 }
 
 .hero-glow {
-  background: linear-gradient(135deg, #F09060, #E8714A 40%, #F4B090);
+  background: linear-gradient(135deg, #b09be0, #8c70d1 40%, #df8eaf);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -315,7 +315,7 @@ nav.nav-scrolled::after {
 
 .h-label {
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(232, 113, 74, 0.5);
+  border: 1px solid rgba(128, 99, 199, 0.5);
   padding: 11px 22px;
   border-radius: 30px;
   font-weight: 700;
@@ -335,14 +335,14 @@ nav.nav-scrolled::after {
 
 .btn-glow {
   box-shadow:
-    0 0 0 0 rgba(232, 113, 74, 0.5),
-    0 15px 40px rgba(232, 113, 74, 0.35);
+    0 0 0 0 rgba(128, 99, 199, 0.5),
+    0 15px 40px rgba(128, 99, 199, 0.35);
   transition: 0.3s;
 }
 
 .btn-glow:hover {
   transform: translateY(-3px);
-  box-shadow: 0 20px 50px rgba(232, 113, 74, 0.5);
+  box-shadow: 0 20px 50px rgba(128, 99, 199, 0.5);
 }
 
 .hero-stats {
@@ -353,7 +353,7 @@ nav.nav-scrolled::after {
   margin-top: 60px;
   flex-wrap: wrap;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(232, 113, 74, 0.28);
+  border: 1px solid rgba(128, 99, 199, 0.28);
   border-radius: 22px;
   padding: 28px 16px;
   max-width: 820px;
@@ -491,8 +491,8 @@ nav.nav-scrolled::after {
   width: 160px;
   height: 160px;
   background: radial-gradient(circle,
-      rgba(232, 113, 74, 0.16) 0%,
-      rgba(232, 113, 74, 0) 70%);
+      rgba(128, 99, 199, 0.16) 0%,
+      rgba(128, 99, 199, 0) 70%);
   opacity: 0;
   transition: opacity 0.5s ease;
   pointer-events: none;
@@ -513,7 +513,7 @@ nav.nav-scrolled::after {
 .s-item:hover {
   transform: translateY(-10px);
   box-shadow: 0 32px 60px -20px rgba(196, 129, 58, 0.28);
-  border-color: rgba(232, 113, 74, 0.35);
+  border-color: rgba(128, 99, 199, 0.35);
 }
 
 .s-item:hover::before {
@@ -521,6 +521,16 @@ nav.nav-scrolled::after {
 }
 
 .s-item:hover::after {
+  width: 100%;
+}
+
+.s-item.active {
+  border-color: rgba(128, 99, 199, 0.35);
+  background: rgba(128, 99, 199, 0.04);
+  box-shadow: 0 16px 40px -12px rgba(128, 99, 199, 0.18);
+}
+
+.s-item.active::after {
   width: 100%;
 }
 
@@ -717,14 +727,14 @@ a.s-item p {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(180deg, rgba(232, 113, 74, 0.05) 0%, transparent 12%),
+    linear-gradient(180deg, rgba(128, 99, 199, 0.05) 0%, transparent 12%),
     repeating-linear-gradient(0deg,
       rgba(255, 255, 255, 0.025) 0px,
       rgba(255, 255, 255, 0.025) 1px,
       transparent 1px,
       transparent 34px),
     var(--bg-deep);
-  border: 1px solid rgba(232, 113, 74, 0.18);
+  border: 1px solid rgba(128, 99, 199, 0.18);
   border-radius: 36px;
   padding: 60px 50px;
   color: white;
@@ -742,7 +752,7 @@ a.s-item p {
   height: 100%;
   background: linear-gradient(90deg,
       transparent,
-      rgba(232, 113, 74, 0.08),
+      rgba(128, 99, 199, 0.08),
       transparent);
   pointer-events: none;
   animation: scanMove 7s linear infinite;
@@ -769,9 +779,9 @@ a.s-item p {
   font-size: 11px;
   margin-bottom: 18px;
   padding: 7px 16px 7px 12px;
-  border: 1px solid rgba(232, 113, 74, 0.35);
+  border: 1px solid rgba(128, 99, 199, 0.35);
   border-radius: 30px;
-  background: rgba(232, 113, 74, 0.08);
+  background: rgba(128, 99, 199, 0.08);
 }
 
 .live-dot {
@@ -779,21 +789,21 @@ a.s-item p {
   height: 7px;
   border-radius: 50%;
   background: var(--accent-teal);
-  box-shadow: 0 0 0 0 rgba(232, 113, 74, 0.6);
+  box-shadow: 0 0 0 0 rgba(128, 99, 199, 0.6);
   animation: pulseDot 1.8s ease-out infinite;
 }
 
 @keyframes pulseDot {
   0% {
-    box-shadow: 0 0 0 0 rgba(232, 113, 74, 0.55);
+    box-shadow: 0 0 0 0 rgba(128, 99, 199, 0.55);
   }
 
   70% {
-    box-shadow: 0 0 0 9px rgba(232, 113, 74, 0);
+    box-shadow: 0 0 0 9px rgba(128, 99, 199, 0);
   }
 
   100% {
-    box-shadow: 0 0 0 0 rgba(232, 113, 74, 0);
+    box-shadow: 0 0 0 0 rgba(128, 99, 199, 0);
   }
 }
 
@@ -819,8 +829,8 @@ a.s-item p {
 
 .t-item:hover {
   transform: translateY(-4px);
-  background: rgba(232, 113, 74, 0.07);
-  border-color: rgba(232, 113, 74, 0.45);
+  background: rgba(128, 99, 199, 0.07);
+  border-color: rgba(128, 99, 199, 0.45);
 }
 
 .t-item-head {
@@ -835,8 +845,8 @@ a.s-item p {
   height: 30px;
   flex-shrink: 0;
   border-radius: 9px;
-  background: rgba(232, 113, 74, 0.14);
-  border: 1px solid rgba(232, 113, 74, 0.3);
+  background: rgba(128, 99, 199, 0.14);
+  border: 1px solid rgba(128, 99, 199, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -906,7 +916,7 @@ a.s-item p {
 
 .faq-item:hover,
 .faq-item.is-open {
-  border-color: rgba(232, 113, 74, 0.35);
+  border-color: rgba(128, 99, 199, 0.35);
   box-shadow: 0 8px 24px -12px rgba(196, 129, 58, 0.2);
 }
 
@@ -964,7 +974,7 @@ a.s-item p {
 }
 
 .faq-item h4:focus-visible {
-  outline: 3px solid rgba(232, 113, 74, 0.35);
+  outline: 3px solid rgba(128, 99, 199, 0.35);
   outline-offset: 6px;
   border-radius: 4px;
 }
@@ -1176,7 +1186,7 @@ footer a:hover {
     right: 0;
     z-index: 50;
     padding: 14px;
-    border: 1px solid rgba(232, 113, 74, 0.26);
+    border: 1px solid rgba(128, 99, 199, 0.26);
     border-top: 0;
     border-radius: 0 0 18px 18px;
     background: rgba(30, 23, 20, 0.98);
@@ -1205,7 +1215,7 @@ footer a:hover {
 
   nav .nav-links a:hover,
   nav .nav-links a.is-active {
-    background: rgba(232, 113, 74, 0.1);
+    background: rgba(128, 99, 199, 0.1);
   }
 
   nav .nav-links a::after {
@@ -1330,13 +1340,13 @@ footer a:hover {
   border-left: 4px solid var(--accent-teal);
   border-radius: 14px;
   padding: 24px 28px;
-  box-shadow: 0 12px 30px -24px #C4813A;
+  box-shadow: 0 12px 30px -24px #8063c7;
   margin-bottom: 14px;
 }
 
 .industry-standard {
   background: linear-gradient(135deg,
-      rgba(232, 113, 74, 0.07),
+      rgba(128, 99, 199, 0.07),
       rgba(255, 255, 255, 0.75));
 }
 
@@ -1350,7 +1360,7 @@ footer a:hover {
 }
 
 .page-service main>section:nth-child(3) {
-  background: linear-gradient(180deg, #1E1714 0%, #0a2035 100%);
+  background: linear-gradient(180deg, #181310 0%, #0a2035 100%);
   color: #FEF0E8;
 }
 
@@ -1360,7 +1370,7 @@ footer a:hover {
 
 .page-service main>section:nth-child(3) .step-card {
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(232, 113, 74, 0.28);
+  border: 1px solid rgba(128, 99, 199, 0.28);
   color: #FEF0E8;
 }
 
@@ -1402,7 +1412,7 @@ footer a:hover {
 }
 
 .page-specialist main>section:nth-child(2) .step-card {
-  background: #2C2018;
+  background: #302447;
   color: #FEEDE0;
 }
 
@@ -1664,7 +1674,7 @@ footer a:hover {
 .page-location .hero-overlay {
   background:
     linear-gradient(135deg, rgba(30, 23, 20, 0.95), rgba(196, 129, 58, 0.66)),
-    radial-gradient(circle at 75% 25%, rgba(232, 113, 74, 0.32), transparent 42%);
+    radial-gradient(circle at 75% 25%, rgba(128, 99, 199, 0.32), transparent 42%);
 }
 
 .page-location main>section:first-child>div:first-child::before {
@@ -1695,7 +1705,7 @@ footer a:hover {
       rgba(30, 23, 20, 0.9),
       rgba(30, 23, 20, 0.78) 50%,
       rgba(30, 23, 20, 0.97)),
-    radial-gradient(circle at 50% 20%, rgba(232, 113, 74, 0.3), transparent 45%);
+    radial-gradient(circle at 50% 20%, rgba(128, 99, 199, 0.3), transparent 45%);
 }
 
 .page-specialist main>section:nth-child(3) .s-item {
@@ -1765,7 +1775,7 @@ footer a:hover {
 
 .page-contact main>section:nth-child(2) .s-item {
   background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(232, 113, 74, 0.28);
+  border-color: rgba(128, 99, 199, 0.28);
   color: #E8D0C0;
 }
 
@@ -1809,7 +1819,7 @@ footer a:hover {
 
 .page-cleaning .cleaning-intro {
   background: linear-gradient(135deg,
-      rgba(232, 113, 74, 0.08),
+      rgba(128, 99, 199, 0.08),
       rgba(255, 255, 255, 0.82));
 }
 
@@ -1884,7 +1894,7 @@ footer a:hover {
 }
 
 .page-cleaning .location-strip {
-  background: linear-gradient(135deg, #1C1612, #2C2018);
+  background: linear-gradient(135deg, #181310, #302447);
   color: white;
 }
 
@@ -1900,7 +1910,7 @@ footer a:hover {
 
 .page-cleaning .location-strip .chip {
   background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(232, 113, 74, 0.35);
+  border-color: rgba(128, 99, 199, 0.35);
   color: #FEEDE0;
 }
 
@@ -2247,7 +2257,7 @@ footer a:hover {
   padding: 58px;
   border-radius: 28px;
   background: linear-gradient(135deg,
-      rgba(232, 113, 74, 0.08),
+      rgba(128, 99, 199, 0.08),
       rgba(255, 255, 255, 0.85));
 }
 
@@ -2290,7 +2300,7 @@ footer a:hover {
 }
 
 .page-janitorial .location-strip {
-  background: linear-gradient(135deg, #1C1612, #2C2018);
+  background: linear-gradient(135deg, #181310, #302447);
   color: white;
 }
 
@@ -2313,7 +2323,7 @@ footer a:hover {
 
 .page-janitorial .location-strip .chip {
   background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(232, 113, 74, 0.35);
+  border-color: rgba(128, 99, 199, 0.35);
   color: #FEEDE0;
 }
 
@@ -2411,7 +2421,7 @@ footer a:hover {
 
 .page-office .office-card {
   min-height: 360px;
-  background: linear-gradient(145deg, #1E1714, #3A2A1A);
+  background: linear-gradient(145deg, #181310, #302447);
 }
 
 .page-office .activity-bars {
@@ -2429,7 +2439,7 @@ footer a:hover {
   font-weight: 700;
   background: linear-gradient(90deg,
       var(--accent-teal),
-      rgba(232, 113, 74, 0.15));
+      rgba(128, 99, 199, 0.15));
 }
 
 .page-office .frequency-section {
@@ -2444,7 +2454,7 @@ footer a:hover {
   padding: 58px;
   border-radius: 28px;
   background: linear-gradient(135deg,
-      rgba(232, 113, 74, 0.08),
+      rgba(128, 99, 199, 0.08),
       rgba(255, 255, 255, 0.88));
 }
 
@@ -2513,7 +2523,7 @@ footer a:hover {
 }
 
 .page-office .location-strip {
-  background: linear-gradient(135deg, #1C1612, #2C2018);
+  background: linear-gradient(135deg, #181310, #302447);
   color: white;
 }
 
@@ -2528,7 +2538,7 @@ footer a:hover {
 
 .page-office .location-strip .chip {
   background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(232, 113, 74, 0.35);
+  border-color: rgba(128, 99, 199, 0.35);
   color: #FEEDE0;
 }
 
@@ -2604,7 +2614,7 @@ footer a:hover {
 
 .page-maintenance .property-card {
   min-height: 350px;
-  background: linear-gradient(145deg, #1E1714, #3A2A1A);
+  background: linear-gradient(145deg, #181310, #302447);
 }
 
 .page-maintenance .systems-section {
@@ -2649,7 +2659,7 @@ footer a:hover {
   padding: 58px;
   border-radius: 28px;
   background: linear-gradient(135deg,
-      rgba(232, 113, 74, 0.08),
+      rgba(128, 99, 199, 0.08),
       rgba(255, 255, 255, 0.88));
 }
 
@@ -2710,7 +2720,7 @@ footer a:hover {
 }
 
 .page-maintenance .location-strip {
-  background: linear-gradient(135deg, #1C1612, #2C2018);
+  background: linear-gradient(135deg, #181310, #302447);
   color: white;
 }
 
@@ -2725,7 +2735,7 @@ footer a:hover {
 
 .page-maintenance .location-strip .chip {
   background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(232, 113, 74, 0.35);
+  border-color: rgba(128, 99, 199, 0.35);
   color: #FEEDE0;
 }
 
@@ -2784,7 +2794,7 @@ footer a:hover {
 
 .page-industrial .zone-map {
   min-height: 370px;
-  background: linear-gradient(145deg, #1E1714, #3A2A1A);
+  background: linear-gradient(145deg, #181310, #302447);
 }
 
 .page-industrial .zone-lines {
@@ -2795,13 +2805,13 @@ footer a:hover {
 
 .page-industrial .zone-lines span {
   padding: 13px 15px;
-  border: 1px solid rgba(232, 113, 74, 0.35);
+  border: 1px solid rgba(128, 99, 199, 0.35);
   border-radius: 8px;
   color: #FEEDE0;
   font-size: 11px;
   letter-spacing: 1px;
   font-weight: 800;
-  background: rgba(232, 113, 74, 0.08);
+  background: rgba(128, 99, 199, 0.08);
 }
 
 .page-industrial .zone-lines .zone-restricted {
@@ -2838,7 +2848,7 @@ footer a:hover {
   padding: 58px;
   border-radius: 28px;
   background: linear-gradient(135deg,
-      rgba(232, 113, 74, 0.08),
+      rgba(128, 99, 199, 0.08),
       rgba(255, 255, 255, 0.88));
 }
 
@@ -2917,7 +2927,7 @@ footer a:hover {
 }
 
 .page-industrial .location-strip {
-  background: linear-gradient(135deg, #1C1612, #2C2018);
+  background: linear-gradient(135deg, #181310, #302447);
   color: white;
 }
 
@@ -2932,7 +2942,7 @@ footer a:hover {
 
 .page-industrial .location-strip .chip {
   background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(232, 113, 74, 0.35);
+  border-color: rgba(128, 99, 199, 0.35);
   color: #FEEDE0;
 }
 
@@ -3013,7 +3023,7 @@ footer a:hover {
 
 .page-deep .detail-card {
   min-height: 350px;
-  background: linear-gradient(145deg, #1E1714, #3A2A1A);
+  background: linear-gradient(145deg, #181310, #302447);
 }
 
 .page-deep .detail-bars {
@@ -3026,9 +3036,9 @@ footer a:hover {
   display: block;
   padding: 13px 15px;
   color: #e4f9fb;
-  border: 1px solid rgba(232, 113, 74, 0.35);
+  border: 1px solid rgba(128, 99, 199, 0.35);
   border-radius: 8px;
-  background: rgba(232, 113, 74, 0.09);
+  background: rgba(128, 99, 199, 0.09);
   font-size: 13px;
 }
 
@@ -3074,7 +3084,7 @@ footer a:hover {
   padding: 58px;
   border-radius: 28px;
   background: linear-gradient(135deg,
-      rgba(232, 113, 74, 0.08),
+      rgba(128, 99, 199, 0.08),
       rgba(255, 255, 255, 0.88));
 }
 
@@ -3109,7 +3119,7 @@ footer a:hover {
 }
 
 .page-deep .location-strip {
-  background: linear-gradient(135deg, #1C1612, #2C2018);
+  background: linear-gradient(135deg, #181310, #302447);
   color: white;
 }
 
@@ -3124,7 +3134,7 @@ footer a:hover {
 
 .page-deep .location-strip .chip {
   background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(232, 113, 74, 0.35);
+  border-color: rgba(128, 99, 199, 0.35);
   color: #FEEDE0;
 }
 
@@ -3203,7 +3213,7 @@ footer a:hover {
 
 .page-cleanroom .esd-card {
   min-height: 340px;
-  background: linear-gradient(145deg, #1E1714, #3A2A1A);
+  background: linear-gradient(145deg, #181310, #302447);
 }
 
 .page-cleanroom .frequency-section {
@@ -3257,7 +3267,7 @@ footer a:hover {
 }
 
 .page-cleanroom .location-strip {
-  background: linear-gradient(135deg, #1C1612, #2C2018);
+  background: linear-gradient(135deg, #181310, #302447);
   color: white;
 }
 
@@ -3272,7 +3282,7 @@ footer a:hover {
 
 .page-cleanroom .location-strip .chip {
   background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(232, 113, 74, 0.35);
+  border-color: rgba(128, 99, 199, 0.35);
   color: #FEEDE0;
 }
 
@@ -3357,7 +3367,7 @@ footer a:hover {
 
 .page-labmedical .research-card {
   min-height: 340px;
-  background: linear-gradient(145deg, #1E1714, #3A2A1A);
+  background: linear-gradient(145deg, #181310, #302447);
 }
 
 .page-labmedical .life-section {
@@ -3384,7 +3394,7 @@ footer a:hover {
   padding: 58px;
   border-radius: 28px;
   background: linear-gradient(135deg,
-      rgba(232, 113, 74, 0.08),
+      rgba(128, 99, 199, 0.08),
       rgba(255, 255, 255, 0.88));
 }
 
@@ -3423,7 +3433,7 @@ footer a:hover {
 }
 
 .page-labmedical .location-strip {
-  background: linear-gradient(135deg, #1C1612, #2C2018);
+  background: linear-gradient(135deg, #181310, #302447);
   color: white;
 }
 
@@ -3438,7 +3448,7 @@ footer a:hover {
 
 .page-labmedical .location-strip .chip {
   background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(232, 113, 74, 0.35);
+  border-color: rgba(128, 99, 199, 0.35);
   color: #FEEDE0;
 }
 
@@ -3517,7 +3527,7 @@ footer a:hover {
 
 .page-hvac .install-card {
   min-height: 320px;
-  background: linear-gradient(145deg, #1E1714, #3A2A1A);
+  background: linear-gradient(145deg, #181310, #302447);
 }
 
 .page-hvac .replacement-section {
@@ -3544,7 +3554,7 @@ footer a:hover {
   padding: 58px;
   border-radius: 28px;
   background: linear-gradient(135deg,
-      rgba(232, 113, 74, 0.08),
+      rgba(128, 99, 199, 0.08),
       rgba(255, 255, 255, 0.88));
 }
 
@@ -3581,7 +3591,7 @@ footer a:hover {
 }
 
 .page-hvac .location-strip {
-  background: linear-gradient(135deg, #1C1612, #2C2018);
+  background: linear-gradient(135deg, #181310, #302447);
   color: white;
 }
 
@@ -3596,7 +3606,7 @@ footer a:hover {
 
 .page-hvac .location-strip .chip {
   background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(232, 113, 74, 0.35);
+  border-color: rgba(128, 99, 199, 0.35);
   color: #FEEDE0;
 }
 
@@ -3673,7 +3683,7 @@ footer a:hover {
 
 .page-construction .renovation-card {
   min-height: 330px;
-  background: linear-gradient(145deg, #1E1714, #3A2A1A);
+  background: linear-gradient(145deg, #181310, #302447);
 }
 
 .page-construction .tenant-section {
@@ -3704,7 +3714,7 @@ footer a:hover {
   padding: 58px;
   border-radius: 28px;
   background: linear-gradient(135deg,
-      rgba(232, 113, 74, 0.08),
+      rgba(128, 99, 199, 0.08),
       rgba(255, 255, 255, 0.88));
 }
 
@@ -3751,7 +3761,7 @@ footer a:hover {
 }
 
 .page-construction .location-strip {
-  background: linear-gradient(135deg, #1C1612, #2C2018);
+  background: linear-gradient(135deg, #181310, #302447);
   color: white;
 }
 
@@ -3766,7 +3776,7 @@ footer a:hover {
 
 .page-construction .location-strip .chip {
   background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(232, 113, 74, 0.35);
+  border-color: rgba(128, 99, 199, 0.35);
   color: #FEEDE0;
 }
 
@@ -3851,7 +3861,7 @@ footer a:hover {
 
 .page-tenant .review-card {
   min-height: 300px;
-  background: linear-gradient(145deg, #1E1714, #3A2A1A);
+  background: linear-gradient(145deg, #181310, #302447);
 }
 
 .page-tenant .responsibility-section {
@@ -3888,7 +3898,7 @@ footer a:hover {
   padding: 58px;
   border-radius: 28px;
   background: linear-gradient(135deg,
-      rgba(232, 113, 74, 0.08),
+      rgba(128, 99, 199, 0.08),
       rgba(255, 255, 255, 0.88));
 }
 
@@ -3921,7 +3931,7 @@ footer a:hover {
 }
 
 .page-tenant .location-strip {
-  background: linear-gradient(135deg, #1C1612, #2C2018);
+  background: linear-gradient(135deg, #181310, #302447);
   color: white;
 }
 
@@ -3936,7 +3946,7 @@ footer a:hover {
 
 .page-tenant .location-strip .chip {
   background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(232, 113, 74, 0.35);
+  border-color: rgba(128, 99, 199, 0.35);
   color: #FEEDE0;
 }
 
@@ -4128,7 +4138,7 @@ footer a:hover {
 }
 
 .page-facility-upgrades .reason-grid b {
-  color: #1E1714;
+  color: #181310;
 }
 
 .page-facility-upgrades .check-list {
@@ -4153,7 +4163,7 @@ footer a:hover {
 }
 
 .page-facility-upgrades .fu-process {
-  background: linear-gradient(135deg, #1C1612, #2C2018);
+  background: linear-gradient(135deg, #181310, #302447);
   color: #fff;
 }
 
@@ -4227,7 +4237,7 @@ footer a:hover {
 }
 
 .page-facility-upgrades .location-strip {
-  background: linear-gradient(135deg, #1C1612, #2C2018);
+  background: linear-gradient(135deg, #181310, #302447);
   color: #fff;
 }
 
@@ -4250,7 +4260,7 @@ footer a:hover {
 .page-facility-upgrades .chip {
   color: #FEEDE0;
   background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(232, 113, 74, 0.35);
+  border: 1px solid rgba(128, 99, 199, 0.35);
   border-radius: 999px;
   padding: 11px 17px;
 }
@@ -4270,7 +4280,7 @@ footer a:hover {
   margin: auto;
   border-radius: 28px;
   padding: 56px;
-  background: linear-gradient(135deg, #1E1714, #C4813A);
+  background: linear-gradient(135deg, #181310, #8063c7);
   color: #fff;
   text-align: center;
   box-shadow: 0 20px 50px rgba(4, 32, 51, 0.2);
@@ -4489,7 +4499,7 @@ footer a:hover {
 }
 
 .page-maintenance-construction .compare-grid .featured {
-  background: linear-gradient(145deg, #1E1714, #0d526b);
+  background: linear-gradient(145deg, #181310, #0d526b);
   color: #fff;
   border-color: #0d526b;
   transform: translateY(-8px);
@@ -4525,7 +4535,7 @@ footer a:hover {
 }
 
 .page-maintenance-construction .mc-occupied {
-  background: linear-gradient(135deg, #1C1612, #2C2018);
+  background: linear-gradient(135deg, #181310, #302447);
   color: #fff;
 }
 
@@ -4599,7 +4609,7 @@ footer a:hover {
 }
 
 .page-maintenance-construction .location-strip {
-  background: linear-gradient(135deg, #1C1612, #2C2018);
+  background: linear-gradient(135deg, #181310, #302447);
   color: #fff;
 }
 
@@ -4622,7 +4632,7 @@ footer a:hover {
 .page-maintenance-construction .chip {
   color: #FEEDE0;
   background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(232, 113, 74, 0.35);
+  border: 1px solid rgba(128, 99, 199, 0.35);
   border-radius: 999px;
   padding: 11px 17px;
 }
@@ -4642,7 +4652,7 @@ footer a:hover {
   margin: auto;
   border-radius: 28px;
   padding: 56px;
-  background: linear-gradient(135deg, #1E1714, #C4813A);
+  background: linear-gradient(135deg, #181310, #8063c7);
   color: #fff;
   text-align: center;
   box-shadow: 0 20px 50px rgba(4, 32, 51, 0.2);
@@ -4829,7 +4839,7 @@ footer a:hover {
 }
 
 .page-mep .scope-grid b {
-  color: #1E1714;
+  color: #181310;
 }
 
 .page-mep .scope-grid p {
@@ -4859,7 +4869,7 @@ footer a:hover {
 }
 
 .page-mep .mep-dark {
-  background: linear-gradient(135deg, #1C1612, #2C2018);
+  background: linear-gradient(135deg, #181310, #302447);
   color: white;
 }
 
@@ -4933,7 +4943,7 @@ footer a:hover {
 }
 
 .page-mep .location-strip {
-  background: linear-gradient(135deg, #1C1612, #2C2018);
+  background: linear-gradient(135deg, #181310, #302447);
   color: white;
 }
 
@@ -4956,7 +4966,7 @@ footer a:hover {
 .page-mep .chip {
   color: #FEEDE0;
   background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(232, 113, 74, 0.35);
+  border: 1px solid rgba(128, 99, 199, 0.35);
   border-radius: 999px;
   padding: 11px 17px;
 }
@@ -4976,7 +4986,7 @@ footer a:hover {
   margin: auto;
   border-radius: 28px;
   padding: 56px;
-  background: linear-gradient(135deg, #1E1714, #C4813A);
+  background: linear-gradient(135deg, #181310, #8063c7);
   color: #fff;
   text-align: center;
   box-shadow: 0 20px 50px rgba(4, 32, 51, 0.2);
@@ -5465,7 +5475,7 @@ footer a:hover {
 .section-padding {
   padding: 44px 0 !important;
   /* Standardize section spacing */
-  border-bottom: 1px solid rgba(232, 113, 74, 0.06);
+  border-bottom: 1px solid rgba(128, 99, 199, 0.06);
 }
 
 /* Remove excessive gaps between sections */
@@ -5535,7 +5545,7 @@ main section>.split-intro>div:first-child,
 .s-item:hover {
   transform: translateY(-8px) !important;
   box-shadow: 0 10px 24px -10px rgba(196, 129, 58, 0.08) !important;
-  border-color: rgba(232, 113, 74, 0.3) !important;
+  border-color: rgba(128, 99, 199, 0.3) !important;
 }
 
 /* 3. Smooth transitions & Hover Micro-Animations */
@@ -5563,7 +5573,7 @@ button,
 /* Subpage Heroes Refinements */
 .hero {
   padding: 140px 0 100px 0 !important;
-  border-bottom: 2px solid rgba(232, 113, 74, 0.2);
+  border-bottom: 2px solid rgba(128, 99, 199, 0.2);
 }
 
 .hero h1 {
@@ -5591,8 +5601,8 @@ button,
 
 /* Redesigned Services section (after Hero) */
 .design-redesign {
-  background: radial-gradient(circle at 10% 20%, rgba(232, 113, 74, 0.05) 0%, rgba(10, 17, 40, 0.01) 100%) !important;
-  border-bottom: 1px solid rgba(232, 113, 74, 0.08) !important;
+  background: radial-gradient(circle at 10% 20%, rgba(128, 99, 199, 0.05) 0%, rgba(10, 17, 40, 0.01) 100%) !important;
+  border-bottom: 1px solid rgba(128, 99, 199, 0.08) !important;
 }
 
 .redesign-flex {
@@ -5641,15 +5651,15 @@ button,
 
 .redesign-card:hover {
   transform: translateX(8px);
-  border-color: rgba(232, 113, 74, 0.28);
-  box-shadow: 0 8px 24px rgba(232, 113, 74, 0.06);
+  border-color: rgba(128, 99, 199, 0.28);
+  box-shadow: 0 8px 24px rgba(128, 99, 199, 0.06);
 }
 
 .redesign-card .r-icon {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: rgba(232, 113, 74, 0.06);
+  background: rgba(128, 99, 199, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5728,14 +5738,14 @@ body {
    Services Modern Process Section Redesign
    ========================================================================== */
 .modern-process-sec {
-  background: linear-gradient(135deg, #1E1714 0%, #2C2018 100%) !important;
+  background: linear-gradient(135deg, #181310 0%, #302447 100%) !important;
   color: #DDD0C4;
   border-radius: 36px;
   padding: 85px 48px !important;
   position: relative;
   overflow: hidden;
   margin-top: 40px;
-  border: 1px solid rgba(232, 113, 74, 0.12) !important;
+  border: 1px solid rgba(128, 99, 199, 0.12) !important;
   box-shadow: 0 16px 36px rgba(30, 23, 20, 0.25) !important;
 }
 
@@ -5746,7 +5756,7 @@ body {
   left: -20%;
   width: 60%;
   height: 60%;
-  background: radial-gradient(circle, rgba(232, 113, 74, 0.12) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(128, 99, 199, 0.12) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -5798,10 +5808,10 @@ body {
     right: 10%;
     height: 2px;
     background: linear-gradient(90deg,
-        rgba(232, 113, 74, 0.05) 0%,
-        rgba(232, 113, 74, 0.6) 20%,
-        rgba(232, 113, 74, 0.6) 80%,
-        rgba(232, 113, 74, 0.05) 100%);
+        rgba(128, 99, 199, 0.05) 0%,
+        rgba(128, 99, 199, 0.6) 20%,
+        rgba(128, 99, 199, 0.6) 80%,
+        rgba(128, 99, 199, 0.05) 100%);
     z-index: 1;
   }
 }
@@ -5810,7 +5820,7 @@ body {
   background: rgba(40, 30, 22, 0.45);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(232, 113, 74, 0.15);
+  border: 1px solid rgba(128, 99, 199, 0.15);
   border-radius: 24px;
   padding: 36px 28px;
   position: relative;
@@ -5828,11 +5838,11 @@ body {
 
 .modern-step-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(232, 113, 74, 0.6);
+  border-color: rgba(128, 99, 199, 0.6);
   background: rgba(40, 30, 22, 0.7);
   box-shadow:
-    0 12px 24px -10px rgba(232, 113, 74, 0.08),
-    0 0 20px 0 rgba(232, 113, 74, 0.05) inset;
+    0 12px 24px -10px rgba(128, 99, 199, 0.08),
+    0 0 20px 0 rgba(128, 99, 199, 0.05) inset;
 }
 
 .modern-card-header {
@@ -5857,15 +5867,15 @@ body {
   transform: scale(1.1);
   color: #ffffff !important;
   opacity: 1 !important;
-  text-shadow: 0 0 10px rgba(232, 113, 74, 0.6);
+  text-shadow: 0 0 10px rgba(128, 99, 199, 0.6);
 }
 
 .step-icon-box {
   width: 50px;
   height: 50px;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(232, 113, 74, 0.15), rgba(196, 129, 58, 0.15));
-  border: 1px solid rgba(232, 113, 74, 0.3);
+  background: linear-gradient(135deg, rgba(128, 99, 199, 0.15), rgba(196, 129, 58, 0.15));
+  border: 1px solid rgba(128, 99, 199, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5878,7 +5888,7 @@ body {
   background: var(--gradient);
   color: #ffffff;
   border-color: transparent;
-  box-shadow: 0 8px 20px -4px rgba(232, 113, 74, 0.6);
+  box-shadow: 0 8px 20px -4px rgba(128, 99, 199, 0.6);
   transform: rotate(-5deg);
 }
 
@@ -5970,7 +5980,7 @@ body {
 
 .industries-s-card:hover {
   transform: translateY(-8px) !important;
-  border-color: rgba(232, 113, 74, 0.35) !important;
+  border-color: rgba(128, 99, 199, 0.35) !important;
   box-shadow: 0 10px 24px -10px rgba(196, 129, 58, 0.06) !important;
 }
 
@@ -5978,8 +5988,8 @@ body {
   width: 58px;
   height: 58px;
   border-radius: 16px;
-  background: rgba(232, 113, 74, 0.08);
-  border: 1px solid rgba(232, 113, 74, 0.2);
+  background: rgba(128, 99, 199, 0.08);
+  border: 1px solid rgba(128, 99, 199, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5993,7 +6003,7 @@ body {
   background: var(--gradient) !important;
   color: #ffffff !important;
   border-color: transparent !important;
-  box-shadow: 0 8px 20px -6px rgba(232, 113, 74, 0.55) !important;
+  box-shadow: 0 8px 20px -6px rgba(128, 99, 199, 0.55) !important;
   transform: scale(1.06) rotate(-5deg);
 }
 
@@ -6048,16 +6058,16 @@ body {
   padding: 40px 50px;
   border-radius: 24px;
   background: linear-gradient(135deg, #091a2f 0%, #071220 100%) !important;
-  border: 1px solid rgba(232, 113, 74, 0.15) !important;
+  border: 1px solid rgba(128, 99, 199, 0.15) !important;
   box-shadow: 0 15px 35px rgba(30, 23, 20, 0.3) !important;
   transition: all 0.4s ease;
 }
 
 .why-feature-row:hover {
   background: linear-gradient(135deg, #0c233f 0%, #091729 100%) !important;
-  border-color: rgba(232, 113, 74, 0.35) !important;
+  border-color: rgba(128, 99, 199, 0.35) !important;
   transform: translateY(-4px);
-  box-shadow: 0 25px 45px rgba(232, 113, 74, 0.15) !important;
+  box-shadow: 0 25px 45px rgba(128, 99, 199, 0.15) !important;
 }
 
 .why-feature-row:nth-child(even) {
@@ -6102,8 +6112,8 @@ body {
   width: 90px;
   height: 90px;
   border-radius: 22px;
-  background: rgba(232, 113, 74, 0.08);
-  border: 1px solid rgba(232, 113, 74, 0.2);
+  background: rgba(128, 99, 199, 0.08);
+  border: 1px solid rgba(128, 99, 199, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6117,7 +6127,7 @@ body {
   background: var(--gradient);
   color: #fff;
   border-color: transparent;
-  box-shadow: 0 8px 25px rgba(232, 113, 74, 0.35);
+  box-shadow: 0 8px 25px rgba(128, 99, 199, 0.35);
 }
 
 /* CSS-based vertical timeline process */
@@ -6135,7 +6145,7 @@ body {
   bottom: 0;
   left: 50%;
   width: 2px;
-  background: linear-gradient(to bottom, rgba(232, 113, 74, 0.4), rgba(72, 202, 228, 0.06));
+  background: linear-gradient(to bottom, rgba(128, 99, 199, 0.4), rgba(72, 202, 228, 0.06));
   transform: translateX(-50%);
 }
 
@@ -6171,14 +6181,14 @@ body {
   color: #fff;
   font-size: 16px;
   z-index: 2;
-  box-shadow: 0 0 15px rgba(232, 113, 74, 0.25);
+  box-shadow: 0 0 15px rgba(128, 99, 199, 0.25);
   transition: all 0.3s ease;
 }
 
 .why-timeline-item:hover .why-timeline-badge {
   background: var(--accent-blue);
   border-color: var(--accent-teal);
-  box-shadow: 0 0 25px rgba(232, 113, 74, 0.6);
+  box-shadow: 0 0 25px rgba(128, 99, 199, 0.6);
   transform: scale(1.1);
 }
 
@@ -6193,7 +6203,7 @@ body {
 .why-timeline-card {
   padding: 30px;
   background: linear-gradient(135deg, #091a2f 0%, #071220 100%) !important;
-  border: 1px solid rgba(232, 113, 74, 0.15) !important;
+  border: 1px solid rgba(128, 99, 199, 0.15) !important;
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(30, 23, 20, 0.3) !important;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -6206,8 +6216,8 @@ body {
 .why-timeline-card:hover {
   transform: translateY(-6px);
   background: linear-gradient(135deg, #0c233f 0%, #091729 100%) !important;
-  border-color: rgba(232, 113, 74, 0.35) !important;
-  box-shadow: 0 25px 45px rgba(232, 113, 74, 0.15) !important;
+  border-color: rgba(128, 99, 199, 0.35) !important;
+  box-shadow: 0 25px 45px rgba(128, 99, 199, 0.15) !important;
 }
 
 .why-timeline-title-row {
@@ -6255,7 +6265,7 @@ body {
   align-items: center;
   padding: 24px 34px;
   background: linear-gradient(135deg, #091a2f 0%, #071220 100%) !important;
-  border: 1px solid rgba(232, 113, 74, 0.1) !important;
+  border: 1px solid rgba(128, 99, 199, 0.1) !important;
   border-radius: 18px;
   text-decoration: none;
   transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -6263,7 +6273,7 @@ body {
 
 .why-service-strip:hover {
   background: linear-gradient(135deg, #0c233f 0%, #091729 100%) !important;
-  border-color: rgba(232, 113, 74, 0.25) !important;
+  border-color: rgba(128, 99, 199, 0.25) !important;
   transform: translateX(12px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
@@ -6278,8 +6288,8 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 12px;
-  background: rgba(232, 113, 74, 0.1);
-  border: 1px solid rgba(232, 113, 74, 0.2);
+  background: rgba(128, 99, 199, 0.1);
+  border: 1px solid rgba(128, 99, 199, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6380,7 +6390,7 @@ body {
   padding: 45px;
   border-radius: 28px;
   background: linear-gradient(135deg, #091a2f 0%, #071220 100%) !important;
-  border: 1px solid rgba(232, 113, 74, 0.15) !important;
+  border: 1px solid rgba(128, 99, 199, 0.15) !important;
   box-shadow: 0 15px 35px rgba(30, 23, 20, 0.3) !important;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: relative;
@@ -6398,14 +6408,14 @@ body {
 }
 
 .about-team-panel:nth-child(even)::before {
-  background: linear-gradient(to bottom, var(--accent-teal), #C4813A);
+  background: linear-gradient(to bottom, var(--accent-teal), #8063c7);
 }
 
 .about-team-panel:hover {
   transform: translateY(-8px);
   background: linear-gradient(135deg, #0c233f 0%, #091729 100%) !important;
-  border-color: rgba(232, 113, 74, 0.35) !important;
-  box-shadow: 0 25px 45px rgba(232, 113, 74, 0.15) !important;
+  border-color: rgba(128, 99, 199, 0.35) !important;
+  box-shadow: 0 25px 45px rgba(128, 99, 199, 0.15) !important;
 }
 
 .about-panel-header {
@@ -6419,8 +6429,8 @@ body {
   width: 68px;
   height: 68px;
   border-radius: 18px;
-  background: rgba(232, 113, 74, 0.08);
-  border: 1px solid rgba(232, 113, 74, 0.25);
+  background: rgba(128, 99, 199, 0.08);
+  border: 1px solid rgba(128, 99, 199, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6434,7 +6444,7 @@ body {
   color: #fff;
   border-color: transparent;
   transform: scale(1.08) rotate(-5deg);
-  box-shadow: 0 8px 20px rgba(232, 113, 74, 0.35);
+  box-shadow: 0 8px 20px rgba(128, 99, 199, 0.35);
 }
 
 .about-panel-header h3 {
@@ -6463,7 +6473,7 @@ body {
 .about-step-card {
   padding: 35px 30px;
   background: linear-gradient(135deg, #091a2f 0%, #071220 100%) !important;
-  border: 1px solid rgba(232, 113, 74, 0.15) !important;
+  border: 1px solid rgba(128, 99, 199, 0.15) !important;
   border-radius: 22px;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: relative;
@@ -6475,7 +6485,7 @@ body {
 
 .about-step-card:hover {
   background: linear-gradient(135deg, #0c233f 0%, #091729 100%) !important;
-  border-color: rgba(232, 113, 74, 0.35) !important;
+  border-color: rgba(128, 99, 199, 0.35) !important;
 }
 
 .about-staggered-grid .about-step-card:nth-child(even):hover {
@@ -6541,14 +6551,14 @@ body {
   padding: 30px;
   border-radius: 20px;
   background: linear-gradient(135deg, #091a2f 0%, #071220 100%) !important;
-  border: 1px solid rgba(232, 113, 74, 0.15) !important;
+  border: 1px solid rgba(128, 99, 199, 0.15) !important;
   transition: all 0.3s ease;
 }
 
 .about-faq-card:hover {
   background: linear-gradient(135deg, #0c233f 0%, #091729 100%) !important;
-  border-color: rgba(232, 113, 74, 0.35) !important;
-  box-shadow: 0 20px 40px rgba(232, 113, 74, 0.15) !important;
+  border-color: rgba(128, 99, 199, 0.35) !important;
+  box-shadow: 0 20px 40px rgba(128, 99, 199, 0.15) !important;
 }
 
 .about-faq-card h4 {
@@ -6631,7 +6641,7 @@ body {
   padding: 34px;
   border-radius: 24px;
   background: linear-gradient(135deg, #091a2f 0%, #071220 100%) !important;
-  border: 1px solid rgba(232, 113, 74, 0.15) !important;
+  border: 1px solid rgba(128, 99, 199, 0.15) !important;
   box-shadow: 0 15px 35px rgba(30, 23, 20, 0.3) !important;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   display: flex;
@@ -6642,8 +6652,8 @@ body {
 .hub-card:hover {
   transform: translateY(-8px);
   background: linear-gradient(135deg, #0c233f 0%, #091729 100%) !important;
-  border-color: rgba(232, 113, 74, 0.35) !important;
-  box-shadow: 0 25px 45px rgba(232, 113, 74, 0.15) !important;
+  border-color: rgba(128, 99, 199, 0.35) !important;
+  box-shadow: 0 25px 45px rgba(128, 99, 199, 0.15) !important;
 }
 
 .hub-card-header {
@@ -6657,8 +6667,8 @@ body {
   width: 52px;
   height: 52px;
   border-radius: 14px;
-  background: rgba(232, 113, 74, 0.08);
-  border: 1px solid rgba(232, 113, 74, 0.2);
+  background: rgba(128, 99, 199, 0.08);
+  border: 1px solid rgba(128, 99, 199, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6774,14 +6784,14 @@ body {
   gap: 30px;
   padding: 30px 40px;
   background: linear-gradient(135deg, #091a2f 0%, #071220 100%) !important;
-  border: 1px solid rgba(232, 113, 74, 0.15) !important;
+  border: 1px solid rgba(128, 99, 199, 0.15) !important;
   border-radius: 20px;
   transition: all 0.35s ease;
 }
 
 .ind-process-item:hover {
   background: linear-gradient(135deg, #0c233f 0%, #091729 100%) !important;
-  border-color: rgba(232, 113, 74, 0.35) !important;
+  border-color: rgba(128, 99, 199, 0.35) !important;
   transform: translateX(8px);
 }
 
@@ -6789,15 +6799,15 @@ body {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background: rgba(232, 113, 74, 0.08);
-  border: 1px solid rgba(232, 113, 74, 0.25);
+  background: rgba(128, 99, 199, 0.08);
+  border: 1px solid rgba(128, 99, 199, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
   font-weight: 800;
   color: var(--accent-blue);
-  box-shadow: 0 0 20px rgba(232, 113, 74, 0.1);
+  box-shadow: 0 0 20px rgba(128, 99, 199, 0.1);
   transition: all 0.4s ease;
 }
 
@@ -6805,7 +6815,7 @@ body {
   background: var(--gradient);
   color: #fff;
   border-color: transparent;
-  box-shadow: 0 8px 20px rgba(232, 113, 74, 0.3);
+  box-shadow: 0 8px 20px rgba(128, 99, 199, 0.3);
   transform: scale(1.08);
 }
 
@@ -6856,13 +6866,13 @@ main>section:last-of-type {
 }
 
 main>section:last-of-type>div {
-  background: radial-gradient(120% 120% at 0% 0%, rgba(255, 255, 255, 0.03) 0%, rgba(232, 113, 74, 0.03) 100%), #181310 !important;
+  background: radial-gradient(120% 120% at 0% 0%, rgba(255, 255, 255, 0.03) 0%, rgba(128, 99, 199, 0.03) 100%), #181310 !important;
   border-radius: 24px !important;
   padding: 42px 32px !important;
   text-align: center !important;
   margin: 0 auto !important;
-  box-shadow: 0 12px 30px rgba(232, 113, 74, 0.08) !important;
-  border: 1px solid rgba(232, 113, 74, 0.25) !important;
+  box-shadow: 0 12px 30px rgba(128, 99, 199, 0.08) !important;
+  border: 1px solid rgba(128, 99, 199, 0.25) !important;
   position: relative !important;
   overflow: hidden !important;
   max-width: 780px !important;
@@ -6875,7 +6885,7 @@ main>section:last-of-type>div::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 90% 80%, rgba(232, 113, 74, 0.04) 0%, transparent 50%);
+  background: radial-gradient(circle at 90% 80%, rgba(128, 99, 199, 0.04) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -6896,8 +6906,8 @@ main>section:last-of-type>div p {
 }
 
 main>section:last-of-type>div .hero-tag {
-  background: rgba(232, 113, 74, 0.06) !important;
-  border: 1px solid rgba(232, 113, 74, 0.25) !important;
+  background: rgba(128, 99, 199, 0.06) !important;
+  border: 1px solid rgba(128, 99, 199, 0.25) !important;
   border-radius: 100px !important;
   color: var(--accent-blue) !important;
   padding: 6px 16px !important;
@@ -7077,8 +7087,8 @@ footer {
     background: linear-gradient(
         160deg,
         #FAF7F2 0%,
-        #F6EEE1 45%,
-        #FDF6EC 75%,
+        #ede8f8 45%,
+        #ede8f8 75%,
         #FAF7F2 100%
     ) !important;
     border-top: 3px solid #F3CF7C !important;
@@ -7106,7 +7116,7 @@ footer .footer-contact-link {
 }
 
 footer a:hover {
-    color: #C4813A !important;
+    color: #8063c7 !important;
 }
 
 /* Cross-page layout normalization. */
