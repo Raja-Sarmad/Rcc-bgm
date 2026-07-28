@@ -601,6 +601,23 @@
       border-color: var(--accent-gold-border);
     }
 
+    .modern-step-card.active {
+      border-color: var(--accent-gold-border);
+      box-shadow: var(--shadow-hover);
+      background: var(--accent-gold-soft);
+    }
+
+    .modern-step-card.active::before { transform: scaleX(1); }
+
+    .modern-step-card.active .step-icon-box {
+      background: var(--gradient);
+      border-color: transparent;
+      box-shadow: 0 6px 20px rgba(128, 99, 199, 0.3);
+    }
+
+    .modern-step-card.active .step-icon-box i { color: white; }
+    .modern-step-card.active h4 { color: var(--accent-gold); }
+
     .modern-step-card:hover::before { transform: scaleX(1); }
 
     .modern-card-header {
@@ -677,6 +694,15 @@
     }
 
     .s-item:hover::before { transform: scaleX(1); }
+
+    .s-item.active {
+      border-color: var(--accent-gold);
+      background: var(--accent-gold-soft);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .s-item.active::before { transform: scaleX(1); }
+
     .s-item h3 { font-size: 1.15rem; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
     .s-item p { font-size: 0.92rem; color: var(--text-body); flex-grow: 1; margin-bottom: 12px; }
     
@@ -994,7 +1020,7 @@
       <h2 style="text-align: center;">How the work is planned</h2>
       <p class="section-intro" style="text-align: center; max-width: 680px; margin: 0 auto 30px;">A focused process keeps the scope useful and the delivery aligned with your property.</p>
       <div class="modern-process-grid">
-        <div class="modern-step-card">
+        <div class="modern-step-card active">
           <div class="modern-card-header">
             <h2>01</h2>
             <div class="step-icon-box"><i class="fa-solid fa-clipboard-question"></i></div>
@@ -1058,7 +1084,7 @@
     <section class="container">
       <h2 style="text-align: center;">Common questions</h2>
       <div style="max-width: 800px; margin: 30px auto 0;">
-        <details class="faq-item">
+        <details class="faq-item" open>
           <summary>
             <h4>Can the scope be tailored to our facility? <i class="fa-solid fa-plus"></i></h4>
           </summary>
@@ -1084,58 +1110,60 @@
         <span class="hero-tag" style="background: var(--accent-gold-soft); border: 1px solid var(--accent-gold-border); border-radius: 100px; color: var(--accent-gold); padding: 8px 18px; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
           <i class="fa-solid fa-rocket"></i> Ready to discuss the property?
         </span>
-        <h2>Start with a clear facility requirement</h2>
+        <h2 style="padding-top: 20px;">Start with a clear facility requirement</h2>
         <p>Tell RCC-BGM what needs attention, where the property is located and how the work must fit around operations.</p>
         <a href="contact.html" class="btn-header btn-glow">Request a Facility Assessment <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <div class="f-grid">
-        <div class="f-col">
-          <a href="index.html" class="logo" style="margin-bottom: 16px; display: inline-flex;">
-            <span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span>RCC<span style="color: var(--accent-gold-light);">BGM</span>
-          </a>
-          <p style="margin-top: 16px; max-width: 280px;">Integrated commercial facility solutions for the spaces your business depends on.</p>
+      <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="f-grid">
+                <div class="f-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 16px; display: inline-flex;">
+                        <span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span>RCC<span style="color: var(--accent-gold-light);">BGM</span>
+                    </a>
+                    <p style="margin-top: 16px; max-width: 280px;">Commercial facility services for offices, technology campuses and controlled environments. Cleaning, construction, HVAC and maintenance — coordinated through one platform.</p>
+                </div>
+                <div class="f-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="commercial-cleaning-services.html">Commercial Cleaning</a></li>
+                        <li><a href="commercial-construction.html">Construction &amp; TI</a></li>
+                        <li><a href="facility-maintenance-services.html">Facility Maintenance</a></li>
+                        <li><a href="commercial-hvac-services.html">HVAC &amp; MEP</a></li>
+                    </ul>
+                </div>
+                <div class="f-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About RCC-BGM</a></li>
+                        <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
+                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                    </ul>
+                </div>
+                <div class="f-col">
+                    <h4>Get in Touch</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-location-dot" style="margin-right: 8px; color: var(--accent-gold-light);"></i> San Jose, CA</li>
+                        <li><i class="fa-solid fa-envelope" style="margin-right: 8px; color: var(--accent-gold-light);"></i> info@rcc-bgm.com</li>
+                        <li><i class="fa-solid fa-clock" style="margin-right: 8px; color: var(--accent-gold-light);"></i> Mon – Fri: 7AM – 6PM</li>
+                    </ul>
+                    <a href="contact.html" class="btn-header" style="margin-top: 16px; padding: 10px 22px; font-size: 0.85rem;">Request Assessment <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 RCC-BGM. All rights reserved. | Reliable Concepts Corporation &amp; Brilliant General Maintenance</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
         </div>
-        <div class="f-col">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="commercial-cleaning-services.html">Commercial Cleaning</a></li>
-            <li><a href="commercial-construction.html">Construction</a></li>
-            <li><a href="facility-maintenance-services.html">Maintenance</a></li>
-            <li><a href="smart-cleaning-robotics.html">Robotics</a></li>
-          </ul>
-        </div>
-        <div class="f-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
-            <li><a href="industries.html">Industries</a></li>
-            <li><a href="locations.html">Locations</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="f-col">
-          <h4>Contact HQ</h4>
-          <ul style="list-style: none;">
-            <li style="margin-bottom: 12px;"><i class="fa-solid fa-location-dot" style="margin-right: 8px; color: var(--accent-gold-light);"></i> San Jose, California</li>
-            <li style="margin-bottom: 12px;"><i class="fa-solid fa-envelope" style="margin-right: 8px; color: var(--accent-gold-light);"></i> support@rcc-bgm.com</li>
-            <li><i class="fa-solid fa-clock" style="margin-right: 8px; color: var(--accent-gold-light);"></i> Mon – Fri: 7:00 AM – 6:00 PM</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 RCC-BGM. All rights reserved. | Reliable Concepts Corporation & Brilliant General Maintenance</p>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
   <script>
     // 1. FAQ Accordion Logic
