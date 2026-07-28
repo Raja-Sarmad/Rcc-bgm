@@ -59,7 +59,7 @@ p {
 
 /* Sections Gaps - tightened */
 .section-padding {
-  padding: 20px 0;
+  padding: 16px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -444,7 +444,7 @@ nav.nav-scrolled::after {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .intro-card {
@@ -525,13 +525,31 @@ nav.nav-scrolled::after {
 }
 
 .s-item.active {
-  border-color: rgba(128, 99, 199, 0.35);
-  background: rgba(128, 99, 199, 0.04);
-  box-shadow: 0 16px 40px -12px rgba(128, 99, 199, 0.18);
+  border-color: var(--accent-teal);
+  background: linear-gradient(160deg, rgba(128, 99, 199, 0.06) 0%, #ffffff 100%);
+  box-shadow: 0 16px 40px -12px rgba(128, 99, 199, 0.22);
+  border-width: 2px;
+  position: relative;
+}
+
+.s-item.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient);
+  border-radius: 22px 22px 0 0;
 }
 
 .s-item.active::after {
   width: 100%;
+}
+
+.s-item.active .s-icon {
+  box-shadow: 0 4px 16px rgba(128, 99, 199, 0.3);
+  transform: scale(1.05);
 }
 
 .s-icon {
@@ -652,9 +670,9 @@ a.s-item p {
 .focus-flex {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 35px;              /* Reduced from 60px */
+  gap: 24px;
   align-items: center;
-  padding: 0 40px;        /* Space from left & right */
+  padding: 0 40px;
   box-sizing: border-box;
 }
 
@@ -1345,9 +1363,7 @@ footer a:hover {
 }
 
 .industry-standard {
-  background: linear-gradient(135deg,
-      rgba(128, 99, 199, 0.07),
-      rgba(255, 255, 255, 0.75));
+  background: transparent;
 }
 
 .industry-standard .services-grid {
@@ -1855,7 +1871,7 @@ footer a:hover {
 }
 
 .page-cleaning .schedule-section {
-  background: #F9F0E4;
+  background: transparent;
 }
 
 .page-cleaning .schedule-section .industry-standard {
@@ -1868,7 +1884,7 @@ footer a:hover {
 }
 
 .page-cleaning .quality-section {
-  background: white;
+  background: transparent;
 }
 
 .page-cleaning .quality-grid {
@@ -1915,7 +1931,7 @@ footer a:hover {
 }
 
 .page-cleaning .faq-section {
-  background: #FAF0E6;
+  background: transparent;
 }
 
 .page-cleaning .faq-section .faq-item {
@@ -5585,13 +5601,13 @@ button,
 /* Mobile & Spacing Helpers */
 @media (max-width: 760px) {
   .section-padding {
-    padding: 50px 0 !important;
+    padding: 24px 0 !important;
   }
 
   .focus-flex,
   .split-intro,
   .tech-box {
-    gap: 30px !important;
+    gap: 20px !important;
   }
 }
 
@@ -7154,8 +7170,8 @@ img, video { height: auto; }
   margin-right: auto;
 }
 
-main > section:not([class*="hero"]) { padding-block: clamp(1.5rem, 2.5vw, 3rem); }
-.section-padding { padding-block: clamp(1.5rem, 2.5vw, 3rem); }
+main > section:not([class*="hero"]) { padding-block: clamp(1rem, 1.5vw, 1.5rem); }
+.section-padding { padding-block: clamp(1rem, 1.5vw, 1.5rem); }
 
 .about-hero-grid, .services-hero-grid, .ccs-hero-grid, .cc-hero-grid, .hvac-hero-grid,
 .services-grid, .process-grid, .tech-grid, .about-team-grid, .about-staggered-grid,

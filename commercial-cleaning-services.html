@@ -23,41 +23,32 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <style>
+      /* ── Hero ── */
       .ccs-hero {
         position: relative;
         background: radial-gradient(130% 130% at 50% 0%, #ffffff 0%, #f4f0f9 100%);
-        padding: 190px 0 100px 0;
+        padding: 160px 0 70px 0;
         margin-top: 58px;
         overflow: hidden;
         border-bottom: 1px solid rgba(128, 99, 199, 0.15);
       }
-
       .ccs-hero::before {
         content: '';
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        inset: 0;
         background-image: radial-gradient(rgba(128, 99, 199, 0.08) 1px, transparent 1px);
         background-size: 30px 30px;
         pointer-events: none;
       }
-
-      .ccs-hero .container {
-        max-width: 1550px;
-        width: 95%;
-      }
-
+      .ccs-hero .container { max-width: 1550px; width: 95%; }
       .ccs-hero-grid {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 60px;
+        gap: 50px;
         position: relative;
         z-index: 10;
       }
-
       .ccs-hero-left {
         display: flex;
         flex-direction: column;
@@ -67,7 +58,6 @@
         max-width: 740px;
         padding-right: 30px;
       }
-
       .ccs-hero-left h1 {
         font-size: clamp(34px, 4.6vw, 68px);
         color: var(--bg-deep);
@@ -76,14 +66,12 @@
         letter-spacing: -1.2px;
         margin-top: 16px;
       }
-
       .ccs-hero-left h1 span.gradient-text {
         background: var(--gradient);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-
       .ccs-hero-left p {
         font-size: 16px;
         line-height: 1.7;
@@ -91,14 +79,12 @@
         margin-top: 18px;
         max-width: 520px;
       }
-
       .ccs-hero-actions {
         display: flex;
         gap: 16px;
         margin-top: 30px;
         flex-wrap: wrap;
       }
-
       .ccs-hero-actions .btn-outline-hero {
         background: #ffffff;
         border: 1px solid rgba(0, 0, 0, 0.1);
@@ -114,7 +100,6 @@
         transition: all 0.35s ease;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
       }
-
       .ccs-hero-actions .btn-outline-hero:hover {
         border-color: var(--accent-teal);
         color: var(--accent-teal);
@@ -123,6 +108,7 @@
         box-shadow: 0 8px 15px rgba(128, 99, 199, 0.1);
       }
 
+      /* ── Console Card ── */
       .ccs-console-wrapper {
         perspective: 1200px;
         flex: 1 1 450px;
@@ -130,13 +116,10 @@
         display: flex;
         justify-content: flex-end;
       }
-
-      /* Cleaning Services Console Card */
       .ccs-console {
         background: rgba(255, 255, 255, 0.7);
         border: 1px solid rgba(255, 255, 255, 0.8);
-        box-shadow: 0 30px 60px -20px rgba(48, 36, 71, 0.15),
-          0 0 40px rgba(128, 99, 199, 0.08);
+        box-shadow: 0 30px 60px -20px rgba(48, 36, 71, 0.15), 0 0 40px rgba(128, 99, 199, 0.08);
         backdrop-filter: blur(20px);
         border-radius: 20px;
         padding: 28px;
@@ -148,14 +131,11 @@
         transform-origin: center right;
         transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.6s ease, border-color 0.6s ease;
       }
-
       .ccs-console:hover {
         border-color: var(--accent-teal);
         transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.02);
-        box-shadow: 0 35px 70px -15px rgba(48, 36, 71, 0.2),
-          0 0 50px rgba(128, 99, 199, 0.12);
+        box-shadow: 0 35px 70px -15px rgba(48, 36, 71, 0.2), 0 0 50px rgba(128, 99, 199, 0.12);
       }
-
       .ccs-console-header {
         display: flex;
         align-items: center;
@@ -164,7 +144,6 @@
         padding-bottom: 16px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.06);
       }
-
       .ccs-console-title {
         display: flex;
         align-items: center;
@@ -173,12 +152,7 @@
         font-weight: 700;
         color: var(--bg-deep);
       }
-
-      .ccs-console-title i {
-        color: var(--accent-teal);
-        font-size: 16px;
-      }
-
+      .ccs-console-title i { color: var(--accent-teal); font-size: 16px; }
       .ccs-console-badge {
         display: flex;
         align-items: center;
@@ -192,7 +166,6 @@
         padding: 4px 12px;
         letter-spacing: 0.5px;
       }
-
       .ccs-pulse {
         width: 6px;
         height: 6px;
@@ -200,19 +173,16 @@
         background: #22c55e;
         animation: ccs-pulse-anim 2s ease-in-out infinite;
       }
-
       @keyframes ccs-pulse-anim {
         0%, 100% { opacity: 1; }
         50% { opacity: 0.3; }
       }
-
       .ccs-console-metrics {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
         margin-bottom: 20px;
       }
-
       .ccs-metric {
         background: #ffffff;
         border: 1px solid rgba(0, 0, 0, 0.04);
@@ -221,11 +191,7 @@
         box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         transition: border-color 0.3s ease;
       }
-
-      .ccs-metric:hover {
-        border-color: var(--accent-teal);
-      }
-
+      .ccs-metric:hover { border-color: var(--accent-teal); }
       .ccs-metric-label {
         font-size: 11px;
         font-weight: 600;
@@ -235,25 +201,9 @@
         margin-bottom: 6px;
         display: block;
       }
-
-      .ccs-metric-value {
-        font-size: 22px;
-        font-weight: 800;
-        color: var(--bg-deep);
-      }
-
-      .ccs-metric-value span {
-        font-size: 13px;
-        color: var(--text-slate);
-        font-weight: 500;
-      }
-
-      .ccs-console-services {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-
+      .ccs-metric-value { font-size: 22px; font-weight: 800; color: var(--bg-deep); }
+      .ccs-metric-value span { font-size: 13px; color: var(--text-slate); font-weight: 500; }
+      .ccs-console-services { display: flex; flex-direction: column; gap: 10px; }
       .ccs-svc {
         display: flex;
         align-items: center;
@@ -265,104 +215,68 @@
         box-shadow: 0 2px 6px rgba(0,0,0,0.02);
         transition: border-color 0.3s ease;
       }
-
-      .ccs-svc:hover {
-        border-color: var(--accent-teal);
-      }
-
+      .ccs-svc:hover { border-color: var(--accent-teal); }
       .ccs-svc-icon {
-        width: 32px;
-        height: 32px;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 13px;
-        flex-shrink: 0;
+        width: 32px; height: 32px; border-radius: 8px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 13px; flex-shrink: 0;
       }
-
-      .ccs-svc-icon.floor {
-        background: rgba(232, 113, 74, 0.12);
-        color: var(--accent-teal);
-      }
-
-      .ccs-svc-icon.restroom {
-        background: rgba(34, 197, 94, 0.1);
-        color: #22c55e;
-      }
-
-      .ccs-svc-icon.common {
-        background: rgba(139, 92, 246, 0.1);
-        color: #8b5cf6;
-      }
-
-      .ccs-svc-info {
-        flex: 1;
-      }
-
-      .ccs-svc-name {
-        font-size: 13px;
-        font-weight: 600;
-        color: var(--text-dark);
-      }
-
-      .ccs-svc-detail {
-        font-size: 11px;
-        color: var(--text-slate);
-        margin-top: 2px;
-      }
-
+      .ccs-svc-icon.floor { background: rgba(232, 113, 74, 0.12); color: var(--accent-teal); }
+      .ccs-svc-icon.restroom { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
+      .ccs-svc-icon.common { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+      .ccs-svc-info { flex: 1; }
+      .ccs-svc-name { font-size: 13px; font-weight: 600; color: var(--text-dark); }
+      .ccs-svc-detail { font-size: 11px; color: var(--text-slate); margin-top: 2px; }
       .ccs-svc-freq {
-        font-size: 11px;
-        font-weight: 600;
-        padding: 3px 10px;
-        border-radius: 100px;
-        flex-shrink: 0;
-        background: rgba(128, 99, 199, 0.1);
-        color: var(--accent-teal);
+        font-size: 11px; font-weight: 600; padding: 3px 10px;
+        border-radius: 100px; flex-shrink: 0;
+        background: rgba(128, 99, 199, 0.1); color: var(--accent-teal);
       }
 
-      @media (max-width: 900px) {
-        .ccs-hero-grid {
-          flex-direction: column;
-          gap: 36px;
-        }
-
-        .ccs-hero-grid,
-        .ccs-hero-left,
-        .ccs-console-wrapper {
-          width: 100%;
-          max-width: 100%;
-        }
-
-        .ccs-hero-left {
-          align-items: center;
-          flex-basis: auto;
-          padding-right: 0;
-          text-align: center;
-        }
-
-        .ccs-hero-left p {
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        .ccs-hero-actions {
-          justify-content: center;
-        }
-
-        .ccs-console {
-          max-width: min(440px, 100%);
-          margin: 0 auto;
-        }
-
-        .ccs-console-wrapper {
-          flex-basis: auto;
-          justify-content: center;
-        }
+      /* ── Cleaning Intro: centered ── */
+      .page-cleaning .cleaning-intro { text-align: center; }
+      .page-cleaning .cleaning-intro .eyebrow {
+        justify-content: center;
+      }
+      .page-cleaning .cleaning-intro p {
+        text-align: center;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
-      /* Modern Light Theme Tech Box override for this page */
+      /* ── Page Sections: consistent left alignment + tight gaps ── */
+      .page-cleaning main section.container {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      .page-cleaning main section.container h2 {
+        text-align: left;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .page-cleaning main section.container .eyebrow {
+        justify-content: flex-start;
+      }
+      .page-cleaning main section.container p {
+        text-align: left;
+        max-width: 760px;
+      }
+      .page-cleaning main section.container .section-lead {
+        text-align: left;
+        max-width: 760px;
+      }
+
+      /* ── Cleaning Intro: override center-aligned h2 ── */
+      .page-cleaning main section.cleaning-intro h2 {
+        text-align: center;
+        max-width: 560px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* ── Tech Box (light theme) ── */
       .page-cleaning .tech-box {
         background: rgba(255, 255, 255, 0.7);
         border: 1px solid rgba(0, 0, 0, 0.08);
@@ -372,155 +286,155 @@
         position: relative;
         overflow: hidden;
       }
-      
-      .page-cleaning .tech-box h2 {
-        color: var(--bg-deep);
-      }
-      
-      .page-cleaning .tech-box p {
-        color: var(--text-slate);
-      }
-      
+      .page-cleaning .tech-box h2 { color: var(--bg-deep); }
+      .page-cleaning .tech-box p { color: var(--text-slate); }
       .page-cleaning .tech-box .live-badge {
         color: var(--accent-teal);
         border: 1px solid rgba(128, 99, 199, 0.25);
         background: rgba(128, 99, 199, 0.08);
       }
-      
       .page-cleaning .tech-box .live-dot {
         background: var(--accent-teal);
         box-shadow: 0 0 0 0 rgba(128, 99, 199, 0.4);
       }
-      
       .page-cleaning .tech-box .t-item {
         background: #ffffff;
         border: 1px solid rgba(0, 0, 0, 0.05);
         border-radius: 16px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.02);
       }
-      
-      .page-cleaning .tech-box .t-item h4 {
-        color: var(--text-dark);
-      }
-      
+      .page-cleaning .tech-box .t-item h4 { color: var(--text-dark); }
       .page-cleaning .tech-box .t-item-icon {
         background: rgba(128, 99, 199, 0.1);
         color: var(--accent-teal);
       }
-      
       .page-cleaning .tech-box .tech-scanline {
         background: linear-gradient(90deg, transparent, rgba(128, 99, 199, 0.08), transparent);
       }
-      
-      /* Fix layout for the tech-box inside focus-flex (cleaning-console) */
       .page-cleaning .focus-flex .tech-box.cleaning-console {
         display: flex;
         flex-direction: column;
         gap: 20px;
         padding: 30px;
       }
-      
       .page-cleaning .focus-flex .tech-box.cleaning-console .tech-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 16px;
       }
 
-      .page-cleaning .facility-type-section {
-        text-align: center;
-      }
-
+      /* ── Facility Type Chips ── */
+      .page-cleaning .facility-type-section { text-align: left; }
       .page-cleaning .facility-type-section .eyebrow {
         display: block;
         width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
+      }
+      .page-cleaning .facility-type-section h2 { max-width: 640px; }
+
+      /* ── Service Cards: first card selected ── */
+      .page-cleaning .cleaning-scope .s-item.active {
+        border-color: var(--accent-teal);
+        background: linear-gradient(160deg, rgba(128, 99, 199, 0.06) 0%, #ffffff 100%);
+        box-shadow: 0 16px 40px -12px rgba(128, 99, 199, 0.22);
+        border-width: 2px;
+        position: relative;
+      }
+      .page-cleaning .cleaning-scope .s-item.active::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: var(--gradient);
+        border-radius: 22px 22px 0 0;
+      }
+      .page-cleaning .cleaning-scope .s-item.active .s-icon {
+        box-shadow: 0 4px 16px rgba(128, 99, 199, 0.3);
+        transform: scale(1.05);
       }
 
-      .page-cleaning .facility-type-section h2 {
-        max-width: 640px;
-        margin-left: auto;
-        margin-right: auto;
+      /* ── Section backgrounds: clean, no yellow ── */
+      .page-cleaning .schedule-section { background: transparent; }
+      .page-cleaning .quality-section { background: transparent; }
+      .page-cleaning .faq-section { background: transparent; }
+      .industry-standard { background: transparent; }
+
+      /* ── Frequency list ── */
+      .page-cleaning .frequency-list {
+        margin-top: 20px;
+        display: grid;
+        gap: 14px;
+      }
+      .page-cleaning .frequency-list div {
+        display: grid;
+        grid-template-columns: 170px 1fr;
+        gap: 16px;
+        padding: 14px 18px;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: 12px;
+        transition: border-color 0.3s ease;
+      }
+      .page-cleaning .frequency-list div:hover {
+        border-color: rgba(128, 99, 199, 0.3);
+      }
+      .page-cleaning .frequency-list b {
+        color: var(--bg-deep);
+        font-size: 14px;
+      }
+      .page-cleaning .frequency-list span {
+        color: var(--text-slate);
+        font-size: 14px;
       }
 
-      .ccs-console,
-      .ccs-svc,
-      .ccs-svc-info,
-      .facility-chips,
-      .facility-chips .chip {
-        min-width: 0;
+      /* ── Cleaning scope cards ── */
+      .page-cleaning .cleaning-scope .s-item { min-height: 240px; }
+      .page-cleaning .mini-grid { grid-template-columns: repeat(3, 1fr); }
+      .page-cleaning .quality-grid { grid-template-columns: repeat(4, 1fr); }
+      .page-cleaning .quality-grid .s-item { min-height: 210px; }
+      .page-cleaning .quality-grid .s-item > i {
+        color: var(--accent-blue);
+        font-size: 28px;
+        margin-bottom: 22px;
+      }
+      .page-cleaning .process-seven { grid-template-columns: repeat(4, 1fr); }
+      .page-cleaning .process-seven .step-card:nth-child(n + 5) {
+        border-top-color: var(--accent-blue);
       }
 
-      .ccs-svc,
-      .facility-chips .chip {
-        overflow-wrap: anywhere;
+      /* ── Min-width fixes ── */
+      .ccs-console, .ccs-svc, .ccs-svc-info, .facility-chips, .facility-chips .chip { min-width: 0; }
+      .ccs-svc, .facility-chips .chip { overflow-wrap: anywhere; }
+
+      /* ── Responsive ── */
+      @media (max-width: 900px) {
+        .ccs-hero-grid { flex-direction: column; gap: 36px; }
+        .ccs-hero-grid, .ccs-hero-left, .ccs-console-wrapper { width: 100%; max-width: 100%; }
+        .ccs-hero-left { align-items: center; flex-basis: auto; padding-right: 0; text-align: center; }
+        .ccs-hero-left p { margin-left: auto; margin-right: auto; }
+        .ccs-hero-actions { justify-content: center; }
+        .ccs-console { max-width: min(440px, 100%); margin: 0 auto; }
+        .ccs-console-wrapper { flex-basis: auto; justify-content: center; }
+        .page-cleaning .mini-grid { grid-template-columns: 1fr; }
+        .page-cleaning .quality-grid { grid-template-columns: 1fr 1fr; }
+        .page-cleaning .process-seven { grid-template-columns: 1fr 1fr; }
       }
-
-      @media (max-width: 560px) {
-        .ccs-hero .container {
-          width: 100%;
-          padding-left: 32px;
-          padding-right: 32px;
-        }
-
-        .ccs-hero-left h1 {
-          max-width: 100%;
-          font-size: clamp(28px, 7vw, 32px);
-        }
-
-        .ccs-hero-left h1 .gradient-text {
-          display: block;
-        }
-
-        .ccs-hero-actions {
-          align-items: stretch;
-          flex-direction: column;
-          width: 100%;
-        }
-
-        .ccs-hero-actions a {
-          justify-content: center;
-          width: 100%;
-        }
-
-        .ccs-console {
-          padding: 22px;
-          border-radius: 16px;
-          transform: none;
-        }
-
-        .ccs-console:hover {
-          transform: none;
-        }
-
-        .ccs-console-header,
-        .ccs-svc {
-          align-items: flex-start;
-        }
-
-        .ccs-console-metrics {
-          grid-template-columns: 1fr;
-        }
-
-        .ccs-svc {
-          flex-wrap: wrap;
-        }
-
-        .ccs-svc-freq {
-          margin-left: 48px;
-        }
-
-        .facility-chips .chip {
-          flex: 1 1 100%;
-        }
-      }
-
       @media (max-width: 600px) {
-        .page-cleaning .focus-flex .tech-box.cleaning-console .tech-grid {
-          grid-template-columns: 1fr;
-        }
+        .ccs-hero .container { width: 100%; padding-left: 32px; padding-right: 32px; }
+        .ccs-hero-left h1 { max-width: 100%; font-size: clamp(28px, 7vw, 32px); }
+        .ccs-hero-left h1 .gradient-text { display: block; }
+        .ccs-hero-actions { align-items: stretch; flex-direction: column; width: 100%; }
+        .ccs-hero-actions a { justify-content: center; width: 100%; }
+        .ccs-console { padding: 22px; border-radius: 16px; transform: none; }
+        .ccs-console:hover { transform: none; }
+        .ccs-console-header, .ccs-svc { align-items: flex-start; }
+        .ccs-console-metrics { grid-template-columns: 1fr; }
+        .ccs-svc { flex-wrap: wrap; }
+        .ccs-svc-freq { margin-left: 48px; }
+        .facility-chips .chip { flex: 1 1 100%; }
+        .page-cleaning .quality-grid { grid-template-columns: 1fr; }
+        .page-cleaning .process-seven { grid-template-columns: 1fr; }
+        .page-cleaning .focus-flex .tech-box.cleaning-console .tech-grid { grid-template-columns: 1fr; }
       }
-      
     </style>
   </head>
   <body class="page-cleaning">
@@ -617,35 +531,30 @@
     </section>
 
     <main>
-      <section class="container section-padding cleaning-intro">
-        <div class="split-intro">
-          <div>
-            <span class="eyebrow">Cleaning designed around your operation</span>
-            <h2>
-              Your facility should not be forced into a standard cleaning
-              package
-            </h2>
-          </div>
-          <div>
-            <p>
-              Every commercial property operates differently. An office may need
-              recurring workspace, restroom and common-area cleaning, while a
-              manufacturing or technology facility may need carefully
-              coordinated service around active work areas and restricted
-              spaces.
-            </p>
-            <p>
-              RCC-BGM reviews how your building functions, which areas require
-              the most attention and when cleaning can be performed with the
-              least disruption. The result is a defined scope, realistic
-              frequency and shared expectation from the beginning.
-            </p>
-          </div>
+      <section class="container section-padding cleaning-intro" style="background: none !important;">
+        <div>
+          <span class="eyebrow">Cleaning designed around your operation</span>
+          <h2>
+            Your facility should not be forced into a standard cleaning
+            package
+          </h2>
+          <p>
+            Every commercial property operates differently. An office may need
+            recurring workspace, restroom and common-area cleaning, while a
+            manufacturing or technology facility may need carefully
+            coordinated service around active work areas and restricted
+            spaces.
+          </p>
+          <p>
+            RCC-BGM reviews how your building functions, which areas require
+            the most attention and when cleaning can be performed with the
+            least disruption. The result is a defined scope, realistic
+            frequency and shared expectation from the beginning.
+          </p>
         </div>
       </section>
 
       <section class="container section-padding">
-        <!-- <span class="eyebrow">Complete facility cleaning support</span> -->
         <h2>Professional cleaning for the areas that matter most</h2>
         <p class="section-lead">
           A cleaning scope can combine recurring tasks with periodic and
@@ -734,7 +643,7 @@
         <div class="focus-flex">
           <div>
             <span class="eyebrow">One facility. One defined plan.</span>
-            <h2>A cleaning program based on your building’s actual needs</h2>
+            <h2>A cleaning program based on your building's actual needs</h2>
             <p>
               A successful program requires more than a number of cleaners. It
               requires a clear understanding of the facility, realistic task
@@ -846,45 +755,39 @@
       </section>
 
       <section class="container section-padding frequency-section">
-        <div class="split-intro">
+        <span class="eyebrow">The right task at the right frequency</span>
+        <h2>Daily, recurring and periodic cleaning</h2>
+        <p>
+          Not every task needs to be completed at the same frequency. The
+          final schedule is based on building usage rather than an arbitrary
+          package.
+        </p>
+        <div class="frequency-list">
           <div>
-            <span class="eyebrow">The right task at the right frequency</span>
-            <h2>Daily, recurring and periodic cleaning</h2>
+            <b>Daily or high-frequency</b
+            ><span
+              >Restrooms, waste, shared areas and selected high-use
+              surfaces.</span
+            >
           </div>
           <div>
-            <p>
-              Not every task needs to be completed at the same frequency. The
-              final schedule is based on building usage rather than an arbitrary
-              package.
-            </p>
-            <div class="frequency-list">
-              <div>
-                <b>Daily or high-frequency</b
-                ><span
-                  >Restrooms, waste, shared areas and selected high-use
-                  surfaces.</span
-                >
-              </div>
-              <div>
-                <b>Recurring scheduled</b
-                ><span
-                  >Offices, meeting rooms, floors and lower-traffic areas.</span
-                >
-              </div>
-              <div>
-                <b>Periodic detail</b
-                ><span
-                  >Deep cleaning, floor-care projects and specialty tasks.</span
-                >
-              </div>
-              <div>
-                <b>Event or project-based</b
-                ><span
-                  >Before or after events, facility changes or construction
-                  activity.</span
-                >
-              </div>
-            </div>
+            <b>Recurring scheduled</b
+            ><span
+              >Offices, meeting rooms, floors and lower-traffic areas.</span
+            >
+          </div>
+          <div>
+            <b>Periodic detail</b
+            ><span
+              >Deep cleaning, floor-care projects and specialty tasks.</span
+            >
+          </div>
+          <div>
+            <b>Event or project-based</b
+            ><span
+              >Before or after events, facility changes or construction
+              activity.</span
+            >
           </div>
         </div>
       </section>
@@ -1049,45 +952,39 @@
       </section>
 
       <section class="container section-padding pricing-section">
-        <div class="split-intro">
-          <div>
-            <span class="eyebrow">Custom pricing based on the facility</span>
-            <h2>What affects the cost of commercial cleaning services?</h2>
-          </div>
-          <div>
-            <p>
-              Pricing should reflect the actual property and service
-              requirements rather than a generic advertised rate.
-            </p>
-            <ul class="check-list">
-              <li>
-                <i class="fa-solid fa-check"></i> Facility size and property
-                type
-              </li>
-              <li>
-                <i class="fa-solid fa-check"></i> Service areas and cleaning
-                frequency
-              </li>
-              <li>
-                <i class="fa-solid fa-check"></i> Access hours and current
-                condition
-              </li>
-              <li>
-                <i class="fa-solid fa-check"></i> Floor types, surfaces and
-                periodic tasks
-              </li>
-              <li>
-                <i class="fa-solid fa-check"></i> Restricted access, locations
-                and equipment needs
-              </li>
-            </ul>
-          </div>
-        </div>
+        <span class="eyebrow">Custom pricing based on the facility</span>
+        <h2>What affects the cost of commercial cleaning services?</h2>
+        <p>
+          Pricing should reflect the actual property and service
+          requirements rather than a generic advertised rate.
+        </p>
+        <ul class="check-list">
+          <li>
+            <i class="fa-solid fa-check"></i> Facility size and property
+            type
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i> Service areas and cleaning
+            frequency
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i> Access hours and current
+            condition
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i> Floor types, surfaces and
+            periodic tasks
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i> Restricted access, locations
+            and equipment needs
+          </li>
+        </ul>
       </section>
 
-      <section class="container section-padding" style="text-align: center;">
-        <div style="max-width: 760px; margin: 0 auto;">
-          <span class="eyebrow" style="justify-content: center;"
+      <section class="container section-padding">
+        <div>
+          <span class="eyebrow"
             >Commercial cleaning across active U.S. markets</span
           >
           <h2>Local service planning with coordinated facility support</h2>
@@ -1097,7 +994,7 @@
             property and city.
           </p>
         </div>
-        <div class="chip-container" style="justify-content: center; margin-top: 32px;">
+        <div class="chip-container" style="margin-top: 20px;">
           <a class="chip" href="san-jose-ca.html">San Jose</a
           ><a class="chip" href="santa-clara-ca.html">Santa Clara</a
           ><a class="chip" href="palo-alto-ca.html">Palo Alto</a
