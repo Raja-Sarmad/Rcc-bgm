@@ -601,6 +601,23 @@
       border-color: var(--accent-gold-border);
     }
 
+    .modern-step-card.active {
+      border-color: var(--accent-gold-border);
+      box-shadow: var(--shadow-hover);
+      background: var(--accent-gold-soft);
+    }
+
+    .modern-step-card.active::before { transform: scaleX(1); }
+
+    .modern-step-card.active .step-icon-box {
+      background: var(--gradient);
+      border-color: transparent;
+      box-shadow: 0 6px 20px rgba(128, 99, 199, 0.3);
+    }
+
+    .modern-step-card.active .step-icon-box i { color: white; }
+    .modern-step-card.active h4 { color: var(--accent-gold); }
+
     .modern-step-card:hover::before { transform: scaleX(1); }
 
     .modern-card-header {
@@ -677,6 +694,15 @@
     }
 
     .s-item:hover::before { transform: scaleX(1); }
+
+    .s-item.active {
+      border-color: var(--accent-gold);
+      background: var(--accent-gold-soft);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .s-item.active::before { transform: scaleX(1); }
+
     .s-item h3 { font-size: 1.15rem; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
     .s-item p { font-size: 0.92rem; color: var(--text-body); flex-grow: 1; margin-bottom: 12px; }
     
@@ -994,7 +1020,7 @@
       <h2 style="text-align: center;">How the work is planned</h2>
       <p class="section-intro" style="text-align: center; max-width: 680px; margin: 0 auto 30px;">A focused process keeps the scope useful and the delivery aligned with your property.</p>
       <div class="modern-process-grid">
-        <div class="modern-step-card">
+        <div class="modern-step-card active">
           <div class="modern-card-header">
             <h2>01</h2>
             <div class="step-icon-box"><i class="fa-solid fa-clipboard-question"></i></div>

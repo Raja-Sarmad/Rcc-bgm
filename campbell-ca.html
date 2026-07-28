@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Commercial Facility Services in Campbell, CA | RCC-BGM</title>
-    <meta name="description" content="RCC-BGM provides commercial cleaning, janitorial, construction, HVAC and facility services for business properties in Campbell, California, subject to service availability.">
+    <meta name="description" content="RCC-BGM provides commercial cleaning, janitorial, HVAC, tenant improvements, maintenance and construction services in Campbell, California.">
+    <link rel="canonical" href="https://rcc-bgm.com/locations/campbell-ca">
+    <!-- DEV NOTE: Ensure 301 redirect from /LocationCampbell to /locations/campbell-ca is configured on the server -->
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,24 +16,23 @@
         :root {
             --bg-main: #FAF7F2;
             --bg-white: #FFFFFF;
-            --bg-warm: #f4f0f9;
+            --bg-warm: #F5F0E8;
             --bg-card: #FFFFFF;
-            --accent-gold: #8063c7;
-            --accent-gold-light: #a78bda;
-            --accent-gold-soft: rgba(128, 99, 199, 0.08);
-            --accent-gold-border: rgba(128, 99, 199, 0.2);
-            --accent-blue: #d96f9f;
-            --text-dark: #2d2740;
-            --text-body: #675f78;
-            --text-light: #8a7fa0;
-            --border-warm: rgba(128, 99, 199, 0.12);
+            --accent-gold: #C4813A;
+            --accent-gold-light: #E8A85C;
+            --accent-gold-soft: rgba(196, 129, 58, 0.08);
+            --accent-gold-border: rgba(196, 129, 58, 0.2);
+            --accent-blue: #4A7C9B;
+            --text-dark: #2D2A26;
+            --text-body: #5A554E;
+            --text-light: #8A847C;
+            --border-warm: rgba(196, 129, 58, 0.12);
             --border-light: rgba(0, 0, 0, 0.06);
-            --shadow-soft: 0 4px 20px rgba(128, 99, 199, 0.06);
-            --shadow-medium: 0 8px 32px rgba(128, 99, 199, 0.1);
-            --shadow-hover: 0 16px 48px rgba(128, 99, 199, 0.15);
+            --shadow-soft: 0 4px 20px rgba(196, 129, 58, 0.06);
+            --shadow-medium: 0 8px 32px rgba(196, 129, 58, 0.1);
+            --shadow-hover: 0 16px 48px rgba(196, 129, 58, 0.15);
             --radius: 18px;
             --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            --gradient: linear-gradient(135deg, #8c70d1 0%, #df8eaf 54%, #f4d47f 100%);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -51,7 +52,7 @@
         /* ===== NAVIGATION ===== */
         nav {
             position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(250, 247, 242, 0.9);
+            background: rgba(250, 247, 242, 0.95);
             backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border-warm);
             padding: 16px 0; transition: var(--transition);
@@ -77,10 +78,10 @@
             background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
             color: white; padding: 12px 28px; border-radius: 50px; text-decoration: none;
             font-weight: 600; font-size: 0.9rem; transition: var(--transition); border: none;
-            cursor: pointer; box-shadow: 0 4px 16px rgba(128, 99, 199, 0.25);
+            cursor: pointer; box-shadow: 0 4px 16px rgba(196, 129, 58, 0.25);
             display: inline-flex; align-items: center; gap: 8px;
         }
-        .btn-header:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(128, 99, 199, 0.35); }
+        .btn-header:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(196, 129, 58, 0.35); }
 
         /* ===== HERO ===== */
         .hero {
@@ -91,19 +92,19 @@
             padding: 150px 0 100px;
             overflow: hidden;
             background:
-                radial-gradient(rgba(128,99,199,0.05) 1px, transparent 1px) 0 0 / 26px 26px,
-                linear-gradient(160deg, #FAF7F2 0%, #ede8f8 45%, #ede8f8 75%, #FAF7F2 100%);
+                radial-gradient(rgba(196,129,58,0.05) 1px, transparent 1px) 0 0 / 26px 26px,
+                linear-gradient(160deg, #FAF7F2 0%, #F6EEE1 45%, #FDF6EC 75%, #FAF7F2 100%);
         }
         .hero::before {
             content: ''; position: absolute; top: -10%; right: -8%;
             width: 620px; height: 620px;
-            background: radial-gradient(circle, rgba(128, 99, 199, 0.10) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(196, 129, 58, 0.10) 0%, transparent 70%);
             border-radius: 50%; animation: float 9s ease-in-out infinite;
         }
         .hero::after {
             content: ''; position: absolute; bottom: -15%; left: -10%;
             width: 460px; height: 460px;
-            background: radial-gradient(circle, rgba(217, 111, 159, 0.06) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(74, 124, 155, 0.06) 0%, transparent 70%);
             border-radius: 50%; animation: float 11s ease-in-out infinite reverse;
         }
         @keyframes float {
@@ -128,14 +129,14 @@
             margin-bottom: 26px; letter-spacing: 0.5px; box-shadow: var(--shadow-soft);
         }
         .hero h1 {
-            font-size: clamp(2.2rem, 4vw, 3.4rem);
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
             font-weight: 800; line-height: 1.15; margin-bottom: 22px; color: var(--text-dark);
         }
         .hero h1 span {
-            background: var(--gradient);
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
-        .hero p { color: var(--text-body); font-size: 1.08rem; max-width: 540px; margin: 0 0 36px; }
+        .hero p { color: var(--text-body); font-size: 1.05rem; max-width: 600px; margin: 0 0 36px; }
 
         .hero-labels { display: flex; gap: 20px; justify-content: flex-start; align-items: center; flex-wrap: wrap; margin-bottom: 44px; }
         .btn-glow { position: relative; overflow: hidden; }
@@ -161,20 +162,19 @@
         .hero-stat .num { font-size: 1.7rem; font-weight: 800; color: var(--accent-gold); line-height: 1; }
         .hero-stat .lbl { font-size: 0.85rem; color: var(--text-light); margin-top: 6px; }
 
-        /* ----- Hero visual ----- */
         .hero-visual { position: relative; }
         .hv-panel {
             position: relative; border-radius: 30px; padding: 30px;
             background:
-                radial-gradient(rgba(128,99,199,0.10) 1px, transparent 1px) 0 0 / 22px 22px,
+                radial-gradient(rgba(196,129,58,0.10) 1px, transparent 1px) 0 0 / 22px 22px,
                 linear-gradient(160deg, rgba(255,255,255,0.65), rgba(253,246,236,0.45));
-            border: 1px solid rgba(128,99,199,0.18);
-            box-shadow: 0 30px 70px rgba(45,39,64,0.14);
+            border: 1px solid rgba(196,129,58,0.18);
+            box-shadow: 0 30px 70px rgba(120,80,30,0.14);
             backdrop-filter: blur(4px);
         }
         .hv-glow { position: absolute; border-radius: 50%; filter: blur(45px); z-index: 0; }
-        .hv-glow.g1 { top: -30px; right: -20px; width: 180px; height: 180px; background: rgba(167,139,218,0.45); }
-        .hv-glow.g2 { bottom: -30px; left: -20px; width: 160px; height: 160px; background: rgba(217,111,159,0.22); }
+        .hv-glow.g1 { top: -30px; right: -20px; width: 180px; height: 180px; background: rgba(232,168,92,0.45); }
+        .hv-glow.g2 { bottom: -30px; left: -20px; width: 160px; height: 160px; background: rgba(74,124,155,0.22); }
 
         .hv-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
         .hv-card {
@@ -182,7 +182,7 @@
             backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.85); border-radius: 18px;
             padding: 20px; display: flex; gap: 14px; align-items: flex-start;
-            box-shadow: 0 18px 40px rgba(45,39,64,0.12);
+            box-shadow: 0 18px 40px rgba(120,80,30,0.12);
             animation: floaty 6s ease-in-out infinite;
         }
         .hv-card:nth-child(2) { animation-delay: 0.8s; }
@@ -193,7 +193,7 @@
             width: 46px; height: 46px; border-radius: 12px; flex: none;
             background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
             color: #fff; display: grid; place-items: center; font-size: 1.05rem;
-            box-shadow: 0 8px 18px rgba(128,99,199,0.3);
+            box-shadow: 0 8px 18px rgba(196,129,58,0.3);
         }
         .hv-card h4 { font-size: 0.95rem; color: var(--text-dark); font-weight: 600; margin-bottom: 2px; line-height: 1.3; }
         .hv-card span { font-size: 0.78rem; color: var(--text-light); }
@@ -203,7 +203,7 @@
             backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.95); border-radius: 50px;
             padding: 11px 18px; display: flex; align-items: center; gap: 9px;
-            box-shadow: 0 14px 30px rgba(45,39,64,0.16);
+            box-shadow: 0 14px 30px rgba(120,80,30,0.16);
             font-size: 0.82rem; font-weight: 600; color: var(--text-dark);
             animation: floaty 5s ease-in-out infinite;
         }
@@ -226,7 +226,8 @@
 
         /* ===== SECTION HEADERS ===== */
         h2 { font-size: 2rem; font-weight: 700; margin-bottom: 14px; color: var(--text-dark); }
-        .section-intro { color: var(--text-body); font-size: 1.05rem; max-width: 680px; margin-bottom: 40px; }
+        .section-intro { color: var(--text-body); font-size: 1.05rem; max-width: 800px; margin-bottom: 40px; line-height: 1.7; }
+        .section-subtitle { font-size: 0.85rem; font-weight: 600; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; display: block; }
 
         /* ===== CARDS ===== */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
@@ -242,7 +243,7 @@
         }
         .s-item::after {
             content: ''; position: absolute; inset: 0;
-            background: linear-gradient(135deg, rgba(128,99,199,0.03), rgba(167,139,218,0.02));
+            background: linear-gradient(135deg, rgba(196,129,58,0.03), rgba(232,168,92,0.02));
             opacity: 0; transition: opacity 0.4s ease; pointer-events: none;
         }
         .s-item:hover { transform: translateY(-8px); border-color: var(--accent-gold-border); box-shadow: var(--shadow-hover); }
@@ -250,18 +251,27 @@
         .s-item:hover::after { opacity: 1; }
         .s-item i {
             font-size: 1.6rem; color: var(--accent-gold); margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--accent-gold-soft), rgba(128,99,199,0.04));
+            background: linear-gradient(135deg, var(--accent-gold-soft), rgba(196,129,58,0.04));
             width: 58px; height: 58px; display: flex; align-items: center; justify-content: center;
             border-radius: 14px; border: 1px solid var(--accent-gold-border); transition: var(--transition);
         }
         .s-item:hover i {
             background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
-            color: white; border-color: transparent; box-shadow: 0 6px 20px rgba(128,99,199,0.3);
+            color: white; border-color: transparent; box-shadow: 0 6px 20px rgba(196,129,58,0.3);
         }
         .s-item h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 12px; color: var(--text-dark); position: relative; z-index: 1; }
         .s-item p { color: var(--text-body); font-size: 0.92rem; flex-grow: 1; margin-bottom: 20px; position: relative; z-index: 1; }
         .s-link { color: var(--accent-gold); font-weight: 600; font-size: 0.88rem; display: flex; align-items: center; gap: 8px; transition: gap 0.3s ease; position: relative; z-index: 1; }
         .s-item:hover .s-link { gap: 14px; }
+
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 32px; }
+        .info-card { background: var(--bg-white); border: 1px solid var(--border-light); border-radius: var(--radius); padding: 32px; }
+        .info-card h4 { color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 16px; font-weight: 600; }
+        .info-card ul { list-style: none; padding: 0; }
+        .info-card ul li { position: relative; padding-left: 24px; margin-bottom: 10px; font-size: 0.95rem; color: var(--text-body); }
+        .info-card ul li::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--accent-gold); position: absolute; left: 0; top: 2px; font-size: 0.85rem; }
+
+        .boundary-note { background: var(--accent-gold-soft); border-left: 4px solid var(--accent-gold); padding: 16px 20px; border-radius: 0 8px 8px 0; margin-top: 24px; font-size: 0.9rem; color: var(--text-dark); }
 
         /* ===== PROCESS ===== */
         .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 40px; }
@@ -275,7 +285,7 @@
         }
         .step-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--accent-gold-border); }
         .step-card:hover::before { transform: scaleX(1); }
-        .step-card h2 { font-size: 3.5rem; font-weight: 800; color: rgba(128,99,199,0.08); position: absolute; top: 12px; right: 20px; line-height: 1; margin: 0; }
+        .step-card .step-num { font-size: 3.5rem; font-weight: 800; color: rgba(196,129,58,0.08); position: absolute; top: 12px; right: 20px; line-height: 1; margin: 0; }
         .step-card h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 12px; color: var(--accent-gold); position: relative; z-index: 1; }
         .step-card p { color: var(--text-body); font-size: 0.92rem; position: relative; z-index: 1; }
 
@@ -292,15 +302,16 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
 
         /* ===== CTA ===== */
-        .cta-box { background: linear-gradient(135deg, #f4f0f9, #ede8f8, #e8e0f5); border: 1px solid var(--accent-gold-border); border-radius: 24px; padding: 60px 40px; text-align: center; position: relative; overflow: hidden; box-shadow: var(--shadow-medium); }
-        .cta-box::before { content: ''; position: absolute; top: -50%; right: -30%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(128,99,199,0.08) 0%, transparent 70%); border-radius: 50%; }
-        .cta-box::after { content: ''; position: absolute; bottom: -40%; left: -20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(217,111,159,0.05) 0%, transparent 70%); border-radius: 50%; }
+        .cta-box { background: linear-gradient(135deg, #FDF6EC, #FAF0E0, #F8EDD8); border: 1px solid var(--accent-gold-border); border-radius: 24px; padding: 60px 40px; text-align: center; position: relative; overflow: hidden; box-shadow: var(--shadow-medium); }
+        .cta-box::before { content: ''; position: absolute; top: -50%; right: -30%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(196,129,58,0.08) 0%, transparent 70%); border-radius: 50%; }
+        .cta-box::after { content: ''; position: absolute; bottom: -40%; left: -20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(74,124,155,0.05) 0%, transparent 70%); border-radius: 50%; }
         .cta-box h2, .cta-box p, .cta-box a { position: relative; z-index: 1; }
         .cta-box .btn-header { background: var(--text-dark); color: white; box-shadow: 0 4px 20px rgba(45,42,38,0.2); }
-        .cta-box .btn-header:hover { background: var(--accent-gold); box-shadow: 0 8px 30px rgba(128,99,199,0.3); }
+        .cta-box .btn-header:hover { background: var(--accent-gold); box-shadow: 0 8px 30px rgba(196,129,58,0.3); }
 
         /* ===== FOOTER ===== */
         footer { background: var(--bg-warm); border-top: 1px solid var(--border-warm); padding: 40px 0; text-align: center; color: var(--text-light); font-size: 0.88rem; }
+        footer .source-note { max-width: 900px; margin: 20px auto 0; font-size: 0.8rem; line-height: 1.6; opacity: 0.8; }
 
         /* ===== SCROLL REVEAL ===== */
         .scroll-reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.25,0.46,0.45,0.94); }
@@ -330,6 +341,52 @@
             .hero-stat { padding: 0 18px; }
         }
     </style>
+
+    <!-- Schema Markup: WebPage + Service + BreadcrumbList + FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://rcc-bgm.com/locations/campbell-ca",
+          "url": "https://rcc-bgm.com/locations/campbell-ca",
+          "name": "Commercial Facility Services in Campbell, CA | RCC-BGM",
+          "description": "RCC-BGM provides commercial cleaning, janitorial, HVAC, tenant improvements, maintenance and construction services in Campbell, California.",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rcc-bgm.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://rcc-bgm.com/locations" },
+              { "@type": "ListItem", "position": 3, "name": "Campbell, CA", "item": "https://rcc-bgm.com/locations/campbell-ca" }
+            ]
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Commercial Facility Services",
+          "provider": { "@type": "Organization", "name": "RCC-BGM" },
+          "areaServed": { "@type": "City", "name": "Campbell", "address": { "@type": "PostalAddress", "addressRegion": "CA" } },
+          "serviceType": ["Commercial Cleaning", "Janitorial Services", "Commercial HVAC", "Tenant Improvements", "Facility Maintenance", "Commercial Construction"]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What commercial facility services may be available in Campbell?", "acceptedAnswer": { "@type": "Answer", "text": "Qualified enquiries may include cleaning, janitorial, maintenance, HVAC, MEP, tenant improvements, construction and facility upgrades." } },
+            { "@type": "Question", "name": "Is every service available for every property?", "acceptedAnswer": { "@type": "Answer", "text": "No. Availability depends on the property, scope, division, trade, licensing, staffing and local resources." } },
+            { "@type": "Question", "name": "Can RCC-BGM clean technology and professional offices?", "acceptedAnswer": { "@type": "Answer", "text": "BGM can assess recurring office cleaning based on security, occupancy, access and frequency." } },
+            { "@type": "Question", "name": "Can RCC-BGM support med-tech or laboratory environments?", "acceptedAnswer": { "@type": "Answer", "text": "Qualified support may be reviewed, but SOPs, room class, hazards, validation and compliance responsibilities must be confirmed." } },
+            { "@type": "Question", "name": "Does RCC-BGM provide commercial HVAC in Campbell?", "acceptedAnswer": { "@type": "Answer", "text": "HVAC maintenance, repair, replacement or project coordination may be assessed according to equipment and local requirements." } },
+            { "@type": "Question", "name": "Can RCC-BGM manage a tenant improvement?", "acceptedAnswer": { "@type": "Answer", "text": "RCC can review the suite, intended use, planning path, drawings, building systems and timeline." } },
+            { "@type": "Question", "name": "Can work be completed around active tenants or customers?", "acceptedAnswer": { "@type": "Answer", "text": "Many scopes can be phased around approved operations, access and communication requirements." } },
+            { "@type": "Question", "name": "Can final cleaning follow construction?", "acceptedAnswer": { "@type": "Answer", "text": "Post-construction or recurring cleaning may be separately coordinated when responsible project work is ready." } },
+            { "@type": "Question", "name": "How is pricing determined?", "acceptedAnswer": { "@type": "Answer", "text": "Pricing follows review of the property, existing conditions, frequency or project phases, materials, access and schedule." } },
+            { "@type": "Question", "name": "What is the first step?", "acceptedAnswer": { "@type": "Answer", "text": "Submit a Campbell facility assessment request with the information currently available." } }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="page-location">
 
@@ -355,237 +412,395 @@
     <section class="hero">
         <div class="container">
             <div class="hero-grid">
-                <!-- Left: content -->
                 <div class="hero-content">
-                    <span class="hero-tag animate__animated animate__fadeInDown"><i class="fa-solid fa-location-dot"></i> South Bay / Silicon Valley</span>
-                    <h1 class="animate__animated animate__fadeInUp">Commercial Facility Services in <span>Campbell, California</span></h1>
+                    <span class="hero-tag animate__animated animate__fadeInDown"><i class="fa-solid fa-location-dot"></i> Campbell Commercial Facility Solutions</span>
+                    <h1 class="animate__animated animate__fadeInUp">Commercial Cleaning, Construction and Facility Services in <span>Campbell, CA</span></h1>
                     <p class="animate__animated animate__fadeInUp" style="animation-delay: 0.15s;">
-                        Commercial facility support for tech offices, R&D spaces and business properties in Campbell, a key South Bay community in the heart of Silicon Valley.
+                        RCC-BGM supports qualified Campbell commercial properties through recurring janitorial service, specialty cleaning, facility maintenance, HVAC, MEP coordination, tenant improvements and construction. Each requirement is developed around the building, occupancy, access, technical environment and desired outcome.
                     </p>
                     <div class="hero-labels animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
-                        <a class="btn-header btn-glow" href="contact.html">Request a Local Facility Assessment <i class="fa-solid fa-arrow-right"></i></a>
+                        <a class="btn-header btn-glow" href="contact.html">Request a Campbell Facility Assessment <i class="fa-solid fa-arrow-right"></i></a>
                         <a class="h-label" href="services.html"><i class="fa-solid fa-layer-group"></i> Explore Services</a>
                     </div>
                     <div class="hero-stats animate__animated animate__fadeInUp" style="animation-delay: 0.45s;">
-                        <div class="hero-stat">
-                            <div class="num">01</div>
-                            <div class="lbl">Clear scope</div>
-                        </div>
-                        <div class="hero-stat">
-                            <div class="num">02</div>
-                            <div class="lbl">Coordinated team</div>
-                        </div>
-                        <div class="hero-stat">
-                            <div class="num">03</div>
-                            <div class="lbl">Planned delivery</div>
-                        </div>
+                        <div class="hero-stat"><div class="num">01</div><div class="lbl">Clear scope</div></div>
+                        <div class="hero-stat"><div class="num">02</div><div class="lbl">Coordinated team</div></div>
+                        <div class="hero-stat"><div class="num">03</div><div class="lbl">Planned delivery</div></div>
                     </div>
                 </div>
 
-                <!-- Right: glass visual -->
                 <div class="hero-visual animate__animated animate__fadeInRight" style="animation-delay: 0.3s;">
                     <div class="hv-panel">
                         <span class="hv-glow g1"></span>
                         <span class="hv-glow g2"></span>
-
                         <div class="hv-chip loc"><i class="fa-solid fa-location-dot"></i> Campbell, CA</div>
                         <div class="hv-chip trust"><i class="fa-solid fa-circle-check"></i> Local team ready</div>
-
                         <div class="hv-grid">
-                            <div class="hv-card">
-                                <div class="ic"><i class="fa-solid fa-broom"></i></div>
-                                <div><h4>Cleaning &amp; Janitorial</h4><span>Office &amp; recurring</span></div>
-                            </div>
-                            <div class="hv-card">
-                                <div class="ic"><i class="fa-solid fa-helmet-safety"></i></div>
-                                <div><h4>Construction &amp; TI</h4><span>Tenant improvements</span></div>
-                            </div>
-                            <div class="hv-card">
-                                <div class="ic"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                                <div><h4>Facility Maintenance</h4><span>Repairs &amp; upgrades</span></div>
-                            </div>
-                            <div class="hv-card">
-                                <div class="ic"><i class="fa-solid fa-temperature-arrow-down"></i></div>
-                                <div><h4>HVAC &amp; MEP</h4><span>Coordinated systems</span></div>
-                            </div>
+                            <div class="hv-card"><div class="ic"><i class="fa-solid fa-broom"></i></div><div><h4>Cleaning &amp; Janitorial</h4><span>Office &amp; recurring</span></div></div>
+                            <div class="hv-card"><div class="ic"><i class="fa-solid fa-helmet-safety"></i></div><div><h4>Construction &amp; TI</h4><span>Tenant improvements</span></div></div>
+                            <div class="hv-card"><div class="ic"><i class="fa-solid fa-screwdriver-wrench"></i></div><div><h4>Facility Maintenance</h4><span>Repairs &amp; upgrades</span></div></div>
+                            <div class="hv-card"><div class="ic"><i class="fa-solid fa-temperature-arrow-down"></i></div><div><h4>HVAC &amp; MEP</h4><span>Coordinated systems</span></div></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="scroll-cue">
-            <span>Scroll</span>
-            <i class="fa-solid fa-chevron-down"></i>
-        </div>
+        <div class="scroll-cue"><span>Scroll</span><i class="fa-solid fa-chevron-down"></i></div>
     </section>
 
     <main>
         <!-- Local Introduction -->
         <section class="container section-padding">
-            <div style="max-width: 780px;">
-                <span class="hero-tag">Silicon Valley Market</span>
+            <div style="max-width: 800px;">
+                <span class="section-subtitle">Campbell Market Context</span>
                 <h2>Commercial Facility Support in Campbell</h2>
-                <p style="margin-top: 16px;">Campbell sits in the South Bay's technology corridor, home to a mix of corporate offices, R&D centers and light industrial properties. RCC-BGM supports commercial properties in Campbell through Brilliant General Maintenance and Reliable Concepts Corporation. Cleaning, janitorial, construction, HVAC and facility work are scoped around the property and confirmed local availability.</p>
-            </div>
-            <div class="services-grid" style="margin-top: 48px;">
-                <a class="s-item scroll-reveal active" href="commercial-cleaning-services.html">
-                    <i class="fa-solid fa-broom"></i>
-                    <h3>Commercial Cleaning &amp; Janitorial</h3>
-                    <p>BGM can develop office cleaning and recurring janitorial support for commercial offices, tech workplaces and business properties in Campbell, subject to the confirmed facility scope and local service availability.</p>
-                    <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-                <a class="s-item scroll-reveal" href="commercial-construction.html">
-                    <i class="fa-solid fa-helmet-safety"></i>
-                    <h3>Commercial Construction &amp; Improvements</h3>
-                    <p>RCC can coordinate tenant improvements, HVAC, MEP and facility upgrades for commercial properties in Campbell, based on the project, licensing and trade requirements.</p>
-                    <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-                <a class="s-item scroll-reveal" href="facility-maintenance-services.html">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <h3>Facility Maintenance</h3>
-                    <p>Selected building maintenance, repairs and facility-upgrade work can be connected with cleaning and building-system needs in Campbell.</p>
-                    <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-                <a class="s-item scroll-reveal" href="commercial-hvac-services.html">
-                    <i class="fa-solid fa-temperature-arrow-down"></i>
-                    <h3>Commercial HVAC &amp; MEP</h3>
-                    <p>HVAC and MEP work can be reviewed as stand-alone service or coordinated with tenant improvements and facility projects in Campbell.</p>
-                    <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
-                </a>
+                <p class="section-intro">Campbell combines Silicon Valley access with compact business districts, technology and startup activity, light-industrial space, med-tech firms, professional services, retail and restaurants. The City of Campbell highlights Downtown, The Pruneyard, Hamilton Plaza and the Dell Avenue innovation district as important business environments. These settings create different facility requirements. A technology office may need secure after-hours cleaning and HVAC coordination, while retail properties place stronger emphasis on presentation and operating-hour coordination.</p>
+                <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 16px;"><em>Local data usage note: Census QuickFacts reports Campbell as a compact, high-density city with a high median household income. These facts support broad market context but are not used as a sales guarantee. We do not name specific companies as RCC-BGM customers or imply city endorsement.</em></p>
             </div>
         </section>
 
-        <!-- Industries -->
-        <section class="container section-padding" style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
-            <h2>Industries in Campbell</h2>
-            <p class="section-intro">RCC-BGM supports commercial properties connected to Campbell's key business sectors, with services tailored to each facility type.</p>
+        <!-- Commercial Cleaning -->
+        <section class="container section-padding" style="background: var(--bg-warm); border-radius: 24px; padding: 60px 40px;">
+            <span class="section-subtitle">Cleaning Programs</span>
+            <h2>Commercial Cleaning for Campbell Business Properties</h2>
+            <p class="section-intro">RCC-BGM can review commercial cleaning services in Campbell for qualified offices, professional-service properties, retail environments, mixed commercial buildings and other approved facilities. The program is built around service zones, traffic, operating hours, access, material requirements and quality-control expectations. <a href="commercial-cleaning-services.html" style="color: var(--accent-gold); font-weight: 600;">View full Commercial Cleaning Services scope</a>.</p>
+            
             <div class="services-grid">
                 <div class="s-item scroll-reveal" style="cursor: default;">
-                    <i class="fa-solid fa-microchip"></i>
-                    <h3>Technology &amp; Software</h3>
-                    <p>Software companies and tech offices requiring clean, professional environments with controlled access.</p>
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <h3>Recurring Commercial Cleaning</h3>
+                    <p>Daily, several-times-weekly or customized cleaning for approved areas including reception, offices, conference spaces, kitchens, break rooms and restrooms.</p>
                 </div>
                 <div class="s-item scroll-reveal" style="cursor: default;">
-                    <i class="fa-solid fa-flask"></i>
-                    <h3>R&amp;D Facilities</h3>
-                    <p>Research and development spaces needing specialized cleaning and environmental controls.</p>
+                    <i class="fa-solid fa-briefcase"></i>
+                    <h3>Office Cleaning</h3>
+                    <p>Workplace-focused service organized around employees, meetings, security protocols and shared amenities.</p>
+                </div>
+                <div class="s-item scroll-reveal" style="cursor: default;">
+                    <i class="fa-solid fa-store"></i>
+                    <h3>Retail &amp; Customer-Facing</h3>
+                    <p>Presentation-focused service around visitors and business hours, covering lobbies, corridors, interior glass and approved common areas.</p>
+                </div>
+                <div class="s-item scroll-reveal" style="cursor: default;">
+                    <i class="fa-solid fa-sparkles"></i>
+                    <h3>Deep &amp; Post-Construction</h3>
+                    <p>Separately defined corrective, turnover, transition or detailed cleaning after responsible trades release the space.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Janitorial & Office -->
+        <section class="container section-padding">
+            <span class="section-subtitle">Workplace Programs</span>
+            <h2>Janitorial Services for Campbell Offices and Multi-Tenant Properties</h2>
+            <p class="section-intro">Campbell’s office and professional-service environments range from smaller suites to multi-tenant properties and flexible workplaces. A janitorial proposal clearly separates routine service, periodic projects, consumables, access procedures and service-review methods, avoiding vague claims. A defined service matrix helps property managers understand daily, weekly, monthly and on-request tasks.</p>
+            <div class="info-grid">
+                <div class="info-card scroll-reveal">
+                    <h4><i class="fa-solid fa-building-user" style="margin-right: 8px;"></i> Office &amp; Multi-Tenant Considerations</h4>
+                    <ul>
+                        <li>Private offices, shared desks, conference rooms and client-facing areas</li>
+                        <li>Common lobbies, corridors, elevators and landlord-controlled spaces</li>
+                        <li>Tenant-suite requests and property-management communication</li>
+                        <li>Badges, alarms, secure documents and after-hours access</li>
+                        <li>Daytime, evening, weekend or event-related service windows</li>
+                        <li>Inspection, issue reporting and corrective-action process</li>
+                    </ul>
+                </div>
+                <div class="info-card scroll-reveal">
+                    <h4><i class="fa-solid fa-clipboard-check" style="margin-right: 8px;"></i> Suggested Service Cards</h4>
+                    <ul>
+                        <li><strong>Office janitorial:</strong> Recurring workplace cleaning with defined frequencies and quality checks.</li>
+                        <li><strong>Multi-tenant common areas:</strong> Landlord-controlled lobbies, corridors, restrooms and shared amenities.</li>
+                        <li><strong>Day porter support:</strong> Visible assistance for active areas where locally available.</li>
+                        <li><strong>Tenant turnover cleaning:</strong> Separately scoped move-in, move-out or suite-preparation cleaning.</li>
+                        <li><strong>Multi-site programs:</strong> Common standards with separate Campbell and nearby-site assessments.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology & Med-Tech -->
+        <section class="container section-padding" style="background: var(--bg-warm); border-radius: 24px; padding: 60px 40px;">
+            <div class="info-grid" style="margin-top: 0;">
+                <div>
+                    <span class="section-subtitle">Innovation Sector</span>
+                    <h2>Facility Services for Campbell Technology and Hardware Companies</h2>
+                    <p style="margin-bottom: 20px; font-size: 0.95rem;">Facilities in these categories may combine offices, engineering areas, prototyping, storage, employee spaces and restricted work zones. RCC-BGM positions itself around property support, not technical production processes.</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+                        <li style="margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--accent-gold); margin-right: 8px;"></i> Secure office and engineering-area cleaning</li>
+                        <li style="margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--accent-gold); margin-right: 8px;"></i> Approved light-industrial and warehouse floor cleaning</li>
+                        <li style="margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--accent-gold); margin-right: 8px;"></i> HVAC, ventilation and controls coordination for qualified areas</li>
+                        <li style="margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--accent-gold); margin-right: 8px;"></i> Tenant improvements and flexible space reconfiguration</li>
+                    </ul>
+                    <div class="boundary-note">
+                        <strong>Specialist boundary:</strong> Hazardous, process, cleanroom, semiconductor or production work requires separate verification and specialist review.
+                    </div>
+                </div>
+                <div>
+                    <span class="section-subtitle">Controlled Environments</span>
+                    <h2>Facility Support for Campbell Med-Tech and Laboratory Environments</h2>
+                    <p style="margin-bottom: 20px; font-size: 0.95rem;">Campbell’s growing med-tech cluster involving medical devices, diagnostics, software, R&D and manufacturing requires careful qualification. We may introduce laboratory, ESD-floor and controlled-environment cleaning, HVAC and construction coordination.</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+                        <li style="margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--accent-gold); margin-right: 8px;"></i> Administrative, office, meeting and employee-support areas</li>
+                        <li style="margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--accent-gold); margin-right: 8px;"></i> Approved laboratory support areas under customer procedures</li>
+                        <li style="margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--accent-gold); margin-right: 8px;"></i> ESD-sensitive floors under installed-system requirements</li>
+                        <li style="margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--accent-gold); margin-right: 8px;"></i> Cleanroom cleaning only after room class, SOPs and documentation are confirmed</li>
+                    </ul>
+                    <div class="boundary-note">
+                        <strong>Validation boundary:</strong> Testing, certification and validation remain with the responsible qualified party. We do not claim validation, sterile processing, infection-control compliance or ISO classifications without confirmed procedures.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Retail & Dining -->
+        <section class="container section-padding">
+            <span class="section-subtitle">Customer-Facing Spaces</span>
+            <h2>Commercial Facility Services for Campbell Retail and Dining Districts</h2>
+            <p class="section-intro">The City identifies Downtown Campbell and The Pruneyard as strong retail and dining destinations. Customer-facing properties require cleaning, maintenance, HVAC and project schedules that protect entrances, sales areas, guest routes and operating hours.</p>
+            <div class="services-grid">
+                <div class="s-item scroll-reveal" style="cursor: default;">
+                    <i class="fa-solid fa-store"></i>
+                    <h3>Retail Storefronts</h3>
+                    <p>Presentation cleaning, restrooms, employee areas and approved maintenance.</p>
+                </div>
+                <div class="s-item scroll-reveal" style="cursor: default;">
+                    <i class="fa-solid fa-utensils"></i>
+                    <h3>Restaurants and Cafes</h3>
+                    <p>Customer and staff areas, with kitchen and sanitation boundaries clarified.</p>
+                </div>
+                <div class="s-item scroll-reveal" style="cursor: default;">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <h3>Professional Client Spaces</h3>
+                    <p>Reception, meeting, office and hospitality-oriented presentation areas.</p>
                 </div>
                 <div class="s-item scroll-reveal" style="cursor: default;">
                     <i class="fa-solid fa-building"></i>
-                    <h3>Corporate Offices</h3>
-                    <p>Regional and satellite offices requiring consistent janitorial and maintenance programs.</p>
+                    <h3>Mixed-Use Properties</h3>
+                    <p>Shared entrances, tenant coordination and landlord-controlled responsibilities.</p>
+                </div>
+            </div>
+            <div class="boundary-note" style="max-width: 800px; margin: 24px auto 0;">
+                <strong>Property-type boundary:</strong> We address general commercial property support rather than food-production sanitation, health-department compliance or specialized kitchen-system work unless separately confirmed.
+            </div>
+        </section>
+
+        <!-- Maintenance & HVAC -->
+        <section class="container section-padding" style="background: var(--bg-warm); border-radius: 24px; padding: 60px 40px;">
+            <div class="info-grid" style="margin-top: 0;">
+                <div>
+                    <span class="section-subtitle">Upkeep & Appearance</span>
+                    <h2>Facility Maintenance Services in Campbell</h2>
+                    <p style="font-size: 0.95rem; margin-bottom: 20px;">Campbell’s compact, walkable business districts place strong emphasis on property condition and appearance. Facility maintenance supports routine upkeep and approved minor repairs, while construction-level corrections are routed to Reliable Concepts Corporation.</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px;"><i class="fa-solid fa-wrench" style="color: var(--accent-gold); margin-right: 8px;"></i> Interior condition observations and approved minor repair items</li>
+                        <li style="margin-bottom: 8px;"><i class="fa-solid fa-wrench" style="color: var(--accent-gold); margin-right: 8px;"></i> Door, hardware, wall, ceiling and finish issues</li>
+                        <li style="margin-bottom: 8px;"><i class="fa-solid fa-wrench" style="color: var(--accent-gold); margin-right: 8px;"></i> Recurring property walk-through and priority tracking</li>
+                        <li style="margin-bottom: 8px;"><i class="fa-solid fa-wrench" style="color: var(--accent-gold); margin-right: 8px;"></i> Coordination with HVAC, MEP and construction services</li>
+                    </ul>
+                    <p style="font-size: 0.9rem; margin-top: 16px;"><strong>Landscaping note:</strong> Selected properties may require grounds maintenance, planting-bed care, pruning, debris removal and irrigation observation. Chemical application, licensed irrigation, arborist services, major tree removal and civil drainage require separate qualification.</p>
+                </div>
+                <div>
+                    <span class="section-subtitle">Climate Control</span>
+                    <h2>Commercial HVAC Services in Campbell</h2>
+                    <p style="font-size: 0.95rem; margin-bottom: 20px;">Commercial HVAC enquiries may involve maintenance, comfort issues, equipment repair, planned replacement, ventilation changes or integration with a tenant improvement. The scope considers equipment, controls, power, drainage, ductwork, access and surrounding building work.</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px;"><i class="fa-solid fa-temperature-arrow-down" style="color: var(--accent-gold); margin-right: 8px;"></i> Commercial equipment assessment, repair and maintenance</li>
+                        <li style="margin-bottom: 8px;"><i class="fa-solid fa-temperature-arrow-down" style="color: var(--accent-gold); margin-right: 8px;"></i> Replacement or installation within qualified projects</li>
+                        <li style="margin-bottom: 8px;"><i class="fa-solid fa-temperature-arrow-down" style="color: var(--accent-gold); margin-right: 8px;"></i> Ductwork, ventilation and controls coordination</li>
+                        <li style="margin-bottom: 8px;"><i class="fa-solid fa-temperature-arrow-down" style="color: var(--accent-gold); margin-right: 8px;"></i> Roof, ceiling and mechanical-area access planning</li>
+                    </ul>
+                    <div class="boundary-note">
+                        <strong>Campbell Air Quality Ordinance Context:</strong> A 2024 Air Quality Ordinance prohibits NOx emissions from appliances and equipment in new residential and commercial buildings and substantial rebuilds, with limited exemptions. This may affect equipment and project planning, but responsible design professionals and authorities must determine applicability. We do not give legal advice or promise compliance.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Construction & TI -->
+        <section class="container section-padding">
+            <span class="section-subtitle">Build & Renovate</span>
+            <h2>Commercial Construction Services in Campbell</h2>
+            <p class="section-intro">Reliable Concepts Corporation can review qualified commercial construction requirements for Campbell offices, professional-service spaces, retail properties, med-tech environments, light-industrial facilities and mixed commercial buildings. The project begins with existing conditions, intended use, planning or zoning requirements, building permits, design responsibility, access and the required completion outcome.</p>
+            
+            <div class="info-grid">
+                <div class="info-card scroll-reveal">
+                    <h4>Potential Project Types</h4>
+                    <ul>
+                        <li>Commercial interior renovation and office reconfiguration</li>
+                        <li>Tenant suite build-outs and occupancy preparation</li>
+                        <li>Retail, professional-service and customer-facing improvements</li>
+                        <li>Light-industrial office and support-space modifications</li>
+                        <li>Maintenance construction and facility upgrades</li>
+                        <li>HVAC, MEP, carpentry, painting and finish coordination</li>
+                    </ul>
+                </div>
+                <div class="info-card scroll-reveal">
+                    <h4>Project Controls & Permit Context</h4>
+                    <p style="font-size: 0.9rem; margin-bottom: 16px;">The City of Campbell states that construction requires a building permit and provides commercial remodel, new commercial construction and MEP application guidance. Planning, zoning, business-license and inspection requirements depend on the proposed use. <strong>We do not guarantee permit approval, review time or occupancy authorization.</strong></p>
+                    <ul>
+                        <li><strong>Preconstruction:</strong> Existing conditions, use, plans, planning path, permits and budget structure.</li>
+                        <li><strong>Logistics:</strong> Access, deliveries, protection, working hours and neighboring tenants.</li>
+                        <li><strong>Trade coordination:</strong> HVAC, electrical, plumbing, carpentry, painting and specialists.</li>
+                        <li><strong>Changes:</strong> Unforeseen conditions and additional work documented before execution.</li>
+                        <li><strong>Closeout:</strong> Inspections, punch items and agreed turnover documentation.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- TI, MEP & Upgrades -->
+        <section class="container section-padding" style="background: var(--bg-warm); border-radius: 24px; padding: 60px 40px;">
+            <span class="section-subtitle">Modernization</span>
+            <h2>Tenant Improvements, MEP Coordination and Facility Upgrades in Campbell</h2>
+            <p class="section-intro">A Campbell tenant improvement may support a startup office, professional-service suite, med-tech space, retail storefront, restaurant, hardware company or other approved commercial use. The scope reflects intended occupancy, zoning, landlord criteria, building systems, permit path and required move-in date.</p>
+            <div class="services-grid">
+                <div class="s-item scroll-reveal" style="cursor: default;">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    <h3>Tenant Improvement Phases</h3>
+                    <p>Site and use review, plans and approvals, construction (partitions, ceilings, doors, finishes), occupied or adjacent work coordination, and turnover (punch items, inspections, documentation and final cleaning).</p>
                 </div>
                 <div class="s-item scroll-reveal" style="cursor: default;">
-                    <i class="fa-solid fa-industry"></i>
-                    <h3>Light Industrial</h3>
-                    <p>Operational facilities and flex spaces with combined office and production areas.</p>
+                    <i class="fa-solid fa-gears"></i>
+                    <h3>MEP Coordination</h3>
+                    <p><strong>Mechanical:</strong> HVAC equipment, ventilation, controls. <strong>Electrical:</strong> Power, lighting, equipment connections. <strong>Plumbing:</strong> Supply, drainage, fixtures. <strong>Documentation:</strong> Plans, submittals, inspections and closeout.</p>
+                </div>
+                <div class="s-item scroll-reveal" style="cursor: default;">
+                    <i class="fa-solid fa-arrow-up-right-dots"></i>
+                    <h3>Facility Upgrades</h3>
+                    <p>Interior modernization, accessibility modifications, building-system improvements, energy or water projects and phased capital work. Savings, incentives and compliance outcomes must be supported by project-specific analysis.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Process -->
+        <!-- Occupied Building Planning -->
         <section class="container section-padding">
-            <h2>How a Local Service Request Works in Campbell</h2>
-            <p class="section-intro">A focused process keeps the scope useful and the delivery aligned with your property.</p>
-            <div class="process-grid">
-                <div class="step-card scroll-reveal">
-                    <h2>01</h2>
-                    <h4>Share the Property</h4>
-                    <p>Provide the Campbell address, facility type, current need and preferred timing.</p>
-                </div>
-                <div class="step-card scroll-reveal">
-                    <h2>02</h2>
-                    <h4>Confirm Coverage</h4>
-                    <p>RCC-BGM confirms which division, service and local team can support the request.</p>
-                </div>
-                <div class="step-card scroll-reveal">
-                    <h2>03</h2>
-                    <h4>Review the Site</h4>
-                    <p>A walkthrough is arranged when the scope cannot be accurately defined remotely.</p>
-                </div>
-                <div class="step-card scroll-reveal">
-                    <h2>04</h2>
-                    <h4>Receive a Proposal</h4>
-                    <p>The proposal identifies services, frequency or project scope, responsibilities and exclusions.</p>
-                </div>
+            <span class="section-subtitle">Operational Continuity</span>
+            <h2>Services Adapted to Campbell Commercial Properties</h2>
+            <p class="section-intro">Many scopes can be phased around approved operations, access and communication requirements. We identify employees, tenants, customers, visitors and critical hours; confirm access routes and approved work windows; plan noise, dust, odor, deliveries and temporary protection; coordinate building notices and decision-making contacts; document scope changes before additional work; and complete service reviews or project closeout against the approved scope.</p>
+            <div class="services-grid">
+                <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-laptop-code"></i><h3>Technology &amp; Startup</h3><p>Recurring cleaning, flexible occupancy, HVAC, secure access and frequent space changes.</p></div>
+                <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-industry"></i><h3>Hardware &amp; Light-Industrial</h3><p>Office, engineering, approved production-support and warehouse areas.</p></div>
+                <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-flask"></i><h3>Med-Tech &amp; Laboratory</h3><p>Qualified cleaning, ESD floors, HVAC, MEP and controlled construction coordination.</p></div>
+                <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-briefcase"></i><h3>Professional Services</h3><p>Client-ready offices, conference areas, janitorial, HVAC and tenant improvements.</p></div>
+                <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-store"></i><h3>Retail &amp; Restaurants</h3><p>Customer presentation, operating-hour schedules, HVAC and approved interior work.</p></div>
+                <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-building"></i><h3>Mixed-Use &amp; Multi-Tenant</h3><p>Shared areas, tenant communication, landlord responsibilities and suite work.</p></div>
             </div>
         </section>
 
-        <!-- Related Services -->
-        <section class="container section-padding" style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
-            <h2>Related RCC-BGM Services</h2>
-            <div class="services-grid" style="margin-top: 30px;">
-                <a class="s-item scroll-reveal" href="commercial-cleaning-services.html">
-                    <h3>Commercial Cleaning Services</h3>
-                    <p>Explore BGM commercial cleaning capabilities available in the Campbell market.</p>
-                    <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-                <a class="s-item scroll-reveal" href="commercial-construction.html">
-                    <h3>Commercial Construction</h3>
-                    <p>Explore RCC construction, tenant improvements and facility upgrades in Campbell.</p>
-                    <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-                <a class="s-item scroll-reveal" href="facility-maintenance-services.html">
-                    <h3>Facility Maintenance Services</h3>
-                    <p>Explore connected maintenance programs for Campbell commercial properties.</p>
-                    <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-                <a class="s-item scroll-reveal" href="industries.html">
-                    <h3>Industries</h3>
-                    <p>See which industries RCC-BGM serves and how services connect to your facility type.</p>
-                    <span class="s-link">View industries <i class="fa-solid fa-arrow-right"></i></span>
-                </a>
+        <!-- Process & Pricing -->
+        <section class="container section-padding" style="background: var(--bg-warm); border-radius: 24px; padding: 60px 40px;">
+            <span class="section-subtitle">Engagement</span>
+            <h2>Six-Step Campbell Facility Process</h2>
+            <div class="process-grid">
+                <div class="step-card scroll-reveal"><div class="step-num">01</div><h4>Enquiry</h4><p>Location, property type, service need and desired outcome.</p></div>
+                <div class="step-card scroll-reveal"><div class="step-num">02</div><h4>Qualification</h4><p>Route to BGM, RCC, coordinated review or a specialist.</p></div>
+                <div class="step-card scroll-reveal"><div class="step-num">03</div><h4>Site Assessment</h4><p>Review conditions, size, occupancy, access, systems and documents.</p></div>
+                <div class="step-card scroll-reveal"><div class="step-num">04</div><h4>Scope</h4><p>Define tasks, frequency or phases, materials, assumptions and exclusions.</p></div>
+                <div class="step-card scroll-reveal"><div class="step-num">05</div><h4>Delivery Planning</h4><p>Coordinate people, trades, permits, service windows and communication.</p></div>
+                <div class="step-card scroll-reveal"><div class="step-num">06</div><h4>Review or Closeout</h4><p>Evaluate recurring performance or complete walkthrough and punch items.</p></div>
+            </div>
+
+            <div style="margin-top: 48px; background: var(--bg-white); border: 1px solid var(--border-light); border-radius: var(--radius); padding: 32px;">
+                <h4 style="color: var(--accent-gold); margin-bottom: 16px;">Pricing Factors</h4>
+                <p style="font-size: 0.95rem; margin-bottom: 16px;">Pricing is not universal. It follows review of the property, existing conditions, frequency or project phases, materials, access and schedule. Key factors include:</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; font-size: 0.9rem;">
+                    <div><i class="fa-solid fa-check" style="color: var(--accent-gold); margin-right: 8px;"></i> Property type, size, service zones and locations</div>
+                    <div><i class="fa-solid fa-check" style="color: var(--accent-gold); margin-right: 8px;"></i> Cleaning frequency, operating schedule and existing condition</div>
+                    <div><i class="fa-solid fa-check" style="color: var(--accent-gold); margin-right: 8px;"></i> Equipment, materials, consumables and access requirements</div>
+                    <div><i class="fa-solid fa-check" style="color: var(--accent-gold); margin-right: 8px;"></i> Existing HVAC, MEP and building conditions</div>
+                    <div><i class="fa-solid fa-check" style="color: var(--accent-gold); margin-right: 8px;"></i> Plans, zoning, permits, inspections and design responsibilities</div>
+                    <div><i class="fa-solid fa-check" style="color: var(--accent-gold); margin-right: 8px;"></i> Occupied-building phasing, protection, noise and dust controls</div>
+                    <div><i class="fa-solid fa-check" style="color: var(--accent-gold); margin-right: 8px;"></i> Specialty procedures, controlled environments and qualified trades</div>
+                    <div><i class="fa-solid fa-check" style="color: var(--accent-gold); margin-right: 8px;"></i> Local availability, procurement and preferred timeline</div>
+                </div>
             </div>
         </section>
 
         <!-- FAQ -->
         <section class="container section-padding">
+            <span class="section-subtitle">Support</span>
             <h2>Frequently Asked Questions About Campbell</h2>
+<<<<<<< HEAD
             <p class="section-intro">Quick answers about our Campbell commercial facility services.</p>
             <details class="faq-item scroll-reveal" open>
                 <summary>Does RCC-BGM provide commercial cleaning in Campbell?</summary>
                 <p>RCC-BGM lists Campbell as a service market in the South Bay. Cleaning availability and program frequency must be confirmed for the specific property.</p>
+=======
+            <p class="section-intro">Quick answers about our Campbell commercial facility services. <em>Note: FAQs do not promise response time, permit approval, exact pricing, emergency availability, regulatory compliance, service throughout Silicon Valley or a physical Campbell office.</em></p>
+            
+            <details class="faq-item scroll-reveal">
+                <summary>What commercial facility services may be available in Campbell?</summary>
+                <p>Qualified enquiries may include cleaning, janitorial, maintenance, HVAC, MEP, tenant improvements, construction and facility upgrades.</p>
+>>>>>>> 995a3218410ad001910fcaaaa2545733bf49706e
             </details>
             <details class="faq-item scroll-reveal">
-                <summary>Can I request janitorial service for a tech office?</summary>
-                <p>Yes. Submit the facility type, address and required frequency so BGM can confirm local coverage for technology and office environments.</p>
+                <summary>Is every service available for every property?</summary>
+                <p>No. Availability depends on the property, scope, division, trade, licensing, staffing and local resources.</p>
             </details>
             <details class="faq-item scroll-reveal">
-                <summary>Does RCC provide tenant improvements in Campbell?</summary>
-                <p>RCC can review the project. Licensing, permit requirements, trade availability and scope must be confirmed before a proposal is issued.</p>
+                <summary>Can RCC-BGM clean technology and professional offices?</summary>
+                <p>BGM can assess recurring office cleaning based on security, occupancy, access and frequency.</p>
             </details>
             <details class="faq-item scroll-reveal">
-                <summary>Can RCC-BGM coordinate cleaning and construction work?</summary>
-                <p>Yes. Related cleaning, maintenance, HVAC and improvement work can be organized through the combined platform when clearly scoped.</p>
+                <summary>Can RCC-BGM support med-tech or laboratory environments?</summary>
+                <p>Qualified support may be reviewed, but SOPs, room class, hazards, validation and compliance responsibilities must be confirmed.</p>
             </details>
             <details class="faq-item scroll-reveal">
-                <summary>What property types does RCC-BGM serve in Campbell?</summary>
-                <p>Tech offices, corporate workplaces, R&amp;D facilities, light industrial properties and multi-tenant commercial buildings.</p>
+                <summary>Does RCC-BGM provide commercial HVAC in Campbell?</summary>
+                <p>HVAC maintenance, repair, replacement or project coordination may be assessed according to equipment and local requirements.</p>
+            </details>
+            <details class="faq-item scroll-reveal">
+                <summary>Can RCC-BGM manage a tenant improvement?</summary>
+                <p>RCC can review the suite, intended use, planning path, drawings, building systems and timeline.</p>
+            </details>
+            <details class="faq-item scroll-reveal">
+                <summary>Can work be completed around active tenants or customers?</summary>
+                <p>Many scopes can be phased around approved operations, access and communication requirements.</p>
+            </details>
+            <details class="faq-item scroll-reveal">
+                <summary>Can final cleaning follow construction?</summary>
+                <p>Post-construction or recurring cleaning may be separately coordinated when responsible project work is ready.</p>
+            </details>
+            <details class="faq-item scroll-reveal">
+                <summary>How is pricing determined?</summary>
+                <p>Pricing follows review of the property, existing conditions, frequency or project phases, materials, access and schedule.</p>
+            </details>
+            <details class="faq-item scroll-reveal">
+                <summary>What is the first step?</summary>
+                <p>Submit a Campbell facility assessment request with the information currently available.</p>
             </details>
         </section>
 
         <!-- Final CTA -->
-        <section id="contact" class="container section-padding" style="padding-bottom: 100px;">
+        <section class="container section-padding" style="padding-bottom: 100px;">
             <div class="cta-box scroll-reveal">
-                <h2>Request a Local Facility Assessment in Campbell</h2>
-                <p style="margin-top: 16px; color: var(--text-body); max-width: 600px; margin-left: auto; margin-right: auto;">
-                    Share the property address, facility type and required service. RCC-BGM will confirm local availability and the appropriate next step for your Campbell property.
+                <h2>Request a Campbell Facility Assessment</h2>
+                <p style="margin-top: 16px; color: var(--text-body); max-width: 650px; margin-left: auto; margin-right: auto;">
+                    Tell RCC-BGM about the Campbell property, operating environment, current condition and required outcome. The team can review local availability and identify the appropriate Brilliant, Reliable or coordinated next step.
                 </p>
                 <div style="margin-top: 32px;">
-                    <a href="contact.html" class="btn-header btn-glow">Request an Assessment <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="contact.html" class="btn-header btn-glow">Request a Campbell Facility Assessment <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
 
-        <!-- Nearby Cities -->
+        <!-- Nearby Markets -->
         <section class="container section-padding" style="text-align: center; border-top: 1px solid var(--border-warm);">
+            <span class="section-subtitle">Regional Coverage</span>
             <h2>Explore Nearby Markets</h2>
-            <p style="margin: 14px auto 0; max-width: 620px; color: var(--text-body);">RCC-BGM serves selected commercial properties across the Silicon Valley region. Explore other nearby service markets.</p>
+            <p style="margin: 14px auto 0; max-width: 620px; color: var(--text-body);">RCC-BGM serves selected commercial properties across the Silicon Valley region. Explore other nearby verified service markets.</p>
             <div class="services-grid" style="margin-top: 40px;">
                 <a class="s-item scroll-reveal" href="san-jose-ca.html">
                     <i class="fa-solid fa-location-dot"></i>
                     <h3>San Jose, CA</h3>
                     <p>Explore RCC-BGM commercial facility services available in San Jose.</p>
+                    <span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="s-item scroll-reveal" href="santa-clara-ca.html">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h3>Santa Clara, CA</h3>
+                    <p>Explore RCC-BGM commercial facility services available in Santa Clara.</p>
                     <span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
                 <a class="s-item scroll-reveal" href="cupertino-ca.html">
@@ -601,12 +816,16 @@
                     <span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
             </div>
+            <p style="margin-top: 24px; font-size: 0.85rem; color: var(--text-light);"><em>We do not state a fixed service radius or imply that RCC-BGM has an office in each location.</em></p>
         </section>
     </main>
 
     <footer>
         <div class="container">
             <p>&copy; 2026 RCC-BGM. All rights reserved. | Commercial Facility Services in Campbell, CA</p>
+            <p class="source-note">
+                <strong>Source basis:</strong> RCC-BGM LocationCampbell page; City of Campbell Economic Development, Why Campbell and Key Industry Sectors; Campbell Building and Building Inspections resources; U.S. Census Bureau QuickFacts for Campbell. Local facts are context only and do not imply endorsement or customer relationships.
+            </p>
         </div>
     </footer>
 

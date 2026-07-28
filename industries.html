@@ -146,7 +146,7 @@
     }
 
     /* Spacing */
-    .section-padding { padding: 80px 0; }
+    .section-padding { padding: 50px 0; }
     h2 { font-size: 2rem; font-weight: 800; color: var(--text-dark); margin-bottom: 14px; line-height: 1.25; }
     p { color: var(--text-body); font-size: 1rem; }
 
@@ -242,7 +242,8 @@
     /* Industry Cards Grid */
     .ind-card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 1fr;
       gap: 24px;
       margin-top: 42px;
     }
@@ -285,6 +286,23 @@
       border-radius: 0 6px 6px 0;
       transition: width 0.45s ease;
     }
+
+    .ind-card.active {
+      border-color: var(--accent-gold);
+      background: var(--accent-gold-soft);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .ind-card.active::before { opacity: 1; }
+    .ind-card.active::after { width: 100%; }
+
+    .ind-card.active .ind-card-icon {
+      background: var(--gradient);
+      border-color: transparent;
+      box-shadow: 0 6px 20px rgba(128, 99, 199, 0.3);
+    }
+
+    .ind-card.active .ind-card-icon i { color: #fff; }
 
     .ind-card:hover {
       transform: translateY(-10px);
@@ -339,7 +357,6 @@
       line-height: 1.65;
       position: relative;
       z-index: 1;
-      flex-grow: 1;
     }
 
     .ind-card .ind-features {
@@ -413,6 +430,21 @@
       box-shadow: var(--shadow-soft);
     }
 
+    .adapt-card.active {
+      border-color: var(--accent-gold);
+      background: var(--accent-gold-soft);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .adapt-card.active .adapt-card-icon {
+      background: var(--gradient);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 6px 20px rgba(128, 99, 199, 0.3);
+    }
+
+    .adapt-card.active h4 { color: var(--accent-gold); }
+
     .adapt-card:hover {
       transform: translateY(-5px);
       border-color: var(--accent-gold-border);
@@ -454,10 +486,10 @@
       margin: 0;
     }
 
-    /* Integrated Model Cards - Light Theme */
+    /* Integrated Model Cards */
     .model-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 22px;
       margin-top: 38px;
     }
@@ -466,13 +498,43 @@
       background: var(--bg-card);
       border: 1px solid var(--border-light);
       border-radius: var(--radius);
-      padding: 34px 26px;
+      padding: 38px 24px 32px;
       text-align: center;
       transition: var(--transition);
       display: flex;
       flex-direction: column;
       align-items: center;
       box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .model-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .model-card.active {
+      border-color: var(--accent-gold);
+      background: var(--accent-gold-soft);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .model-card.active::before { transform: scaleX(1); }
+
+    .model-card.active .model-card-icon {
+      background: var(--gradient);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 8px 24px rgba(128, 99, 199, 0.35);
     }
 
     .model-card:hover {
@@ -480,6 +542,8 @@
       border-color: var(--accent-gold-border);
       box-shadow: var(--shadow-hover);
     }
+
+    .model-card:hover::before { transform: scaleX(1); }
 
     .model-card-icon {
       width: 64px;
@@ -536,6 +600,21 @@
       box-shadow: var(--shadow-soft);
     }
 
+    .assess-item.active {
+      border-color: var(--accent-gold);
+      background: var(--accent-gold-soft);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .assess-item.active .assess-num {
+      background: var(--gradient);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 6px 20px rgba(128, 99, 199, 0.3);
+    }
+
+    .assess-item.active h4 { color: var(--accent-gold); }
+
     .assess-item:hover {
       transform: translateY(-6px);
       border-color: var(--accent-gold-border);
@@ -579,10 +658,15 @@
 
     /* Service Selection Guidance */
     .select-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 22px;
       margin-top: 38px;
+    }
+
+    .select-grid .select-item {
+      width: calc((100% - 44px) / 3);
     }
 
     .select-item {
@@ -596,6 +680,21 @@
       transition: var(--transition);
       box-shadow: var(--shadow-soft);
     }
+
+    .select-item.active {
+      border-color: var(--accent-gold);
+      background: var(--accent-gold-soft);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .select-item.active .select-item-icon {
+      background: var(--gradient);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 6px 20px rgba(128, 99, 199, 0.3);
+    }
+
+    .select-item.active h4 { color: var(--accent-gold); }
 
     .select-item:hover {
       transform: translateY(-5px);
@@ -668,6 +767,23 @@
       transform-origin: left;
       transition: transform 0.4s ease;
     }
+
+    .modern-step-card.active {
+      border-color: var(--accent-gold);
+      background: var(--accent-gold-soft);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .modern-step-card.active::before { transform: scaleX(1); }
+
+    .modern-step-card.active .step-icon-box {
+      background: var(--gradient);
+      border-color: transparent;
+      box-shadow: 0 6px 20px rgba(128, 99, 199, 0.3);
+    }
+
+    .modern-step-card.active .step-icon-box i { color: #fff; }
+    .modern-step-card.active h4 { color: var(--accent-gold); }
 
     .modern-step-card:hover {
       transform: translateY(-6px);
@@ -762,6 +878,15 @@
     }
 
     .s-item:hover::before { transform: scaleX(1); }
+
+    .s-item.active {
+      border-color: var(--accent-gold);
+      background: var(--accent-gold-soft);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .s-item.active::before { transform: scaleX(1); }
+
     .s-item h3 { font-size: 1.15rem; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
     .s-item p { font-size: 0.92rem; color: var(--text-body); flex-grow: 1; margin-bottom: 16px; }
     
@@ -941,13 +1066,18 @@
     @media (max-width: 991px) {
       .adapt-split { grid-template-columns: 1fr; gap: 40px; }
       .adapt-wrapper { padding: 40px 24px; }
+      .model-grid { grid-template-columns: repeat(2, 1fr); }
+      .ind-card-grid { grid-template-columns: repeat(2, 1fr); }
       .f-grid { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 768px) {
       .nav-links { display: none; }
-      .section-padding { padding: 50px 0; }
+      .section-padding { padding: 36px 0; }
       .ind-hero { padding: 130px 0 60px 0; }
+      .model-grid { grid-template-columns: 1fr; }
+      .ind-card-grid { grid-template-columns: 1fr; }
+      .select-grid .select-item { width: 100%; }
       .f-grid { grid-template-columns: 1fr; gap: 24px; }
       .footer-bottom { flex-direction: column; text-align: center; }
       .cta-box { padding: 40px 24px; }
@@ -998,7 +1128,7 @@
 
       <div class="ind-card-grid">
         <!-- 1. Corporate Offices -->
-        <div class="ind-card">
+        <div class="ind-card active">
           <div class="ind-card-icon"><i class="fa-solid fa-building"></i></div>
           <h3>Corporate Offices</h3>
           <p>Office properties require reliable presentation, employee-support areas and coordinated building services. RCC-BGM develops recurring cleaning and janitorial programs while separately assessing HVAC, facility maintenance and workplace upgrades.</p>
@@ -1115,7 +1245,7 @@
             <p>Every property has different daily demands. The scope depends on building type, operating schedule, occupancy, technical environment and the outcome your team needs — not a generic service package.</p>
           </div>
           <div class="adapt-right">
-            <article class="adapt-card">
+            <article class="adapt-card active">
               <div class="adapt-card-icon"><i class="fa-solid fa-building-columns"></i></div>
               <div>
                 <h4>Property Use</h4>
@@ -1163,12 +1293,12 @@
     </section>
 
     <!-- SECTION 3 – Integrated BGM & RCC Service Model -->
-    <section class="container section-padding" style="background: var(--bg-white); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
+    <section class="container section-padding">
       <h2 style="text-align: center;">Integrated BGM &amp; RCC Service Model</h2>
       <p style="text-align:center; max-width:700px; margin:12px auto 0;">Programs and projects may be phased around employees, tenants, customers, production and approved access periods. RCC-BGM coordinates across four capability areas.</p>
 
       <div class="model-grid">
-        <div class="model-card">
+        <div class="model-card active">
           <div class="model-card-icon"><i class="fa-solid fa-broom"></i></div>
           <h4>Clean</h4>
           <p>Commercial cleaning, janitorial, deep cleaning, industrial cleaning and specialized protocols.</p>
@@ -1197,7 +1327,7 @@
       <p style="text-align:center; max-width:700px; margin:12px auto 0;">No two properties receive the same package. The assessment gathers enough information to route the inquiry and identify specialist responsibilities.</p>
 
       <div class="assess-grid">
-        <div class="assess-item">
+        <div class="assess-item active">
           <div class="assess-num">1</div>
           <div>
             <h4>Industry &amp; Property Type</h4>
@@ -1257,11 +1387,11 @@
     </section>
 
     <!-- SECTION 5 – 5-Step Conversion Process -->
-    <section class="container section-padding" style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
+    <section class="container" style="padding: 0 0 30px 0;">
       <h2 style="text-align: center;">Recommended Five-Step Conversion Process</h2>
       <p style="text-align: center; max-width: 680px; margin: 0 auto 40px;">A clear path from inquiry to service launch, designed around your property and industry.</p>
       <div class="modern-process-grid">
-        <div class="modern-step-card">
+        <div class="modern-step-card active">
           <div class="modern-card-header">
             <h2>01</h2>
             <div class="step-icon-box"><i class="fa-solid fa-magnifying-glass"></i></div>
@@ -1310,7 +1440,7 @@
       <p style="text-align:center; max-width:700px; margin:12px auto 0;">Not sure which service to start with? Use this guide to find the right entry point for your property.</p>
 
       <div class="select-grid">
-        <div class="select-item">
+        <div class="select-item active">
           <div class="select-item-icon"><i class="fa-solid fa-rotate"></i></div>
           <div>
             <h4>Recurring Cleaning</h4>
@@ -1349,7 +1479,7 @@
     </section>
 
     <!-- SECTION 7 – Related Services -->
-    <section class="container section-padding" style="background: var(--bg-white); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
+    <section class="container section-padding">
       <h2 style="text-align: center;">Related RCC-BGM Services</h2>
       <div class="services-grid">
         <a class="s-item active" href="commercial-cleaning-services.html">
@@ -1431,7 +1561,7 @@
     </section>
 
     <!-- SECTION 9 – Final CTA -->
-    <section class="container section-padding" style="padding-bottom: 100px;">
+    <section class="container section-padding" style="padding-bottom: 70px;">
       <div class="cta-box">
         <span class="hero-tag" style="background: var(--accent-gold-soft); border: 1px solid var(--accent-gold-border); border-radius: 100px; color: var(--accent-gold); padding: 8px 18px; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
           <i class="fa-solid fa-rocket"></i> Build an Industry-Specific Facility Plan
