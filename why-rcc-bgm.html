@@ -147,8 +147,10 @@
       box-shadow: 0 8px 28px rgba(128, 99, 199, 0.35);
     }
 
-    /* Spacing */
-    .section-padding { padding: 80px 0; }
+    /* Spacing — original vertical rhythm; left/right gap is added only on
+       wide screens via the min-width:1248px query below, so the grid's inner
+       width stays exactly 1200px (cards keep their original size & 4-up row). */
+    .section-padding { padding: 24px 0; }
     h2 { font-size: 2rem; font-weight: 800; color: var(--text-dark); margin-bottom: 14px; line-height: 1.25; }
     p { color: var(--text-body); font-size: 1rem; }
 
@@ -252,6 +254,10 @@
     .value-intro p {
       margin-top: 16px;
     }
+
+    .value-intro .hero-tag {
+    margin-bottom: 20px;
+}
 
     .value-cards-row {
       display: flex;
@@ -566,6 +572,7 @@
       padding: 60px 40px;
       margin-top: 10px;
       border: 1px solid var(--border-warm);
+      text-align: center;
     }
 
     .engage-section h2 {
@@ -893,6 +900,71 @@
     
     .footer-bottom-links a:hover { color: var(--accent-gold-light); }
 
+    /* ============================================================
+       Persistent "selected" state for the first card in each
+       section. NO transform / NO scale here on purpose: the card
+       keeps the exact same width, height, padding, margin and
+       position as its siblings. Only colour / shadow / accent-bar
+       mark it as selected (same cues as :hover, minus the lift).
+       ============================================================ */
+    .diff-card.active {
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-gold-border);
+    }
+    .diff-card.active .diff-icon {
+      background: var(--gradient);
+      border-color: transparent;
+    }
+    .diff-card.active .diff-icon i { color: #fff; }
+
+    .scenario-card.active {
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-gold-border);
+    }
+    .scenario-card.active::before { transform: scaleX(1); }
+    .scenario-card.active .scenario-icon {
+      background: var(--gradient);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .engage-card.active {
+      border-color: var(--accent-gold-border);
+      box-shadow: var(--shadow-hover);
+    }
+    .engage-card.active .e-icon {
+      background: var(--gradient);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .trust-wide-card.active {
+      border-color: var(--accent-gold-border);
+      box-shadow: var(--shadow-hover);
+    }
+    .trust-wide-card.active::before { opacity: 1; }
+    .trust-wide-card.active .trust-icon-box {
+      background: var(--gradient);
+      color: #fff;
+      border-color: transparent;
+    }
+    /* ===================== END SELECTED BLOCK ===================== */
+
+    /* ============================================================
+       Left / right gap on the section boxes — applied ONLY on wide
+       screens. The box is widened by the same 48px it is padded, so
+       the grid's inner width stays exactly 1200px: every card keeps
+       its original size and the 4-up rows never wrap. Below 1248px
+       the layout is identical to the original (no shrink, no wrap).
+       ============================================================ */
+    @media (min-width: 1248px) {
+      .section-padding {
+        max-width: 1248px;
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+    }
+
     /* Responsive */
     @media (max-width: 991px) {
       .division-split { grid-template-columns: 1fr; }
@@ -922,7 +994,7 @@
       <ul class="nav-links">
         <li><a href="services.html">Services</a></li>
         <li><a href="industries.html">Industries</a></li>
-        <li><a href="locations.html">Locations</a></li> <!-- ✅ ADDED LOCATIONS HERE -->
+        <li><a href="locations.html">Locations</a></li>
         <li><a href="why-rcc-bgm.html" class="is-active">Why RCC-BGM</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
@@ -984,13 +1056,13 @@
     <!-- ═══════════ 6 DIFFERENTIATION REASONS ═══════════ -->
     <section class="container section-padding" style="background: var(--bg-white); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
       <div style="text-align:center;max-width:700px;margin:0 auto;">
-        <span class="hero-tag" style="color: var(--accent-gold); border-color: var(--accent-gold-border); background: var(--accent-gold-soft); padding: 8px 18px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
-          <i class="fa-solid fa-lightbulb"></i> Six reasons to choose RCC-BGM
+        <span class="hero-tag" style="color: var(--accent-gold); border-color: var(--accent-gold-border); background: var(--accent-gold-soft); padding: 8px 18px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+          <i class="fa-solid fa-lightbulbag"></i> Six reasons to choose RCC-BGM
         </span>
-        <h2>What makes the combined structure more practical</h2>
+        <h2 style="margin-top: 0;">What makes the combined structure more practical</h2>
       </div>
       <div class="diff-grid">
-        <div class="diff-card">
+        <div class="diff-card active">
           <div class="diff-icon"><i class="fa-solid fa-arrow-right-to-bracket"></i></div>
           <h3>Coordinated entry point</h3>
           <p>The customer can begin with the building and required outcome rather than guessing which internal team should receive the request.</p>
@@ -1026,10 +1098,10 @@
     <!-- ═══════════ RCC / BGM DIVIDE ═══════════ -->
     <section id="divisions" class="container section-padding">
       <div style="text-align:center;max-width:700px;margin:0 auto;">
-        <span class="hero-tag" style="color: var(--accent-gold); border-color: var(--accent-gold-border); background: var(--accent-gold-soft); padding: 8px 18px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
+        <span class="hero-tag" style="color: var(--accent-gold); border-color: var(--accent-gold-border); background: var(--accent-gold-soft); padding: 8px 18px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px;">
           <i class="fa-solid fa-code-branch"></i> Two companies, one shared focus
         </span>
-        <h2>The RCC / BGM divide</h2>
+        <h2 style="margin-top: 0;">The RCC / BGM divide</h2>
         <p style="margin-top:14px;">Each company has a distinct role, yet both are structured to support the same commercial property and customer.</p>
       </div>
       <div class="division-split">
@@ -1065,10 +1137,10 @@
     <!-- ═══════════ COMMERCIAL PROPERTY FOCUS ═══════════ -->
     <section class="container section-padding" style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
       <div class="prop-focus-text">
-        <span class="hero-tag" style="color: var(--accent-gold); border-color: var(--accent-gold-border); background: var(--accent-gold-soft); padding: 8px 18px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
+        <span class="hero-tag" style="color: var(--accent-gold); border-color: var(--accent-gold-border); background: var(--accent-gold-soft); padding: 8px 18px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px;">
           <i class="fa-solid fa-building"></i> Built for commercial facilities
         </span>
-        <h2>Commercial property focus</h2>
+        <h2 style="margin-top: 0;">Commercial property focus</h2>
         <p>RCC-BGM is positioned around commercial facilities rather than residential work. Each environment requires a different combination of access planning, cleaning procedures, building-system coordination and construction scope.</p>
       </div>
       <div class="prop-tags">
@@ -1086,14 +1158,14 @@
     <!-- ═══════════ 4 PRACTICAL SCENARIOS ═══════════ -->
     <section class="container section-padding">
       <div style="text-align:center;max-width:700px;margin:0 auto;">
-        <span class="hero-tag" style="color: var(--accent-gold); border-color: var(--accent-gold-border); background: var(--accent-gold-soft); padding: 8px 18px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
+        <span class="hero-tag" style="color: var(--accent-gold); border-color: var(--accent-gold-border); background: var(--accent-gold-soft); padding: 8px 18px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px;">
           <i class="fa-solid fa-puzzle-piece"></i> How the integrated model works
         </span>
-        <h2>Practical scenarios</h2>
+        <h2 style="margin-top: 0;">Practical scenarios</h2>
         <p style="margin-top:14px;">Real-world examples of how RCC and BGM coordinate around the same building, schedule or project outcome.</p>
       </div>
       <div class="scenario-grid">
-        <div class="scenario-card">
+        <div class="scenario-card active">
           <div class="scenario-icon"><i class="fa-solid fa-hammer"></i></div>
           <h3>Tenant Improvement</h3>
           <p>Coordinate construction, HVAC, MEP, carpentry and painting before separately scoped final cleaning and occupancy preparation.</p>
@@ -1125,7 +1197,7 @@
         <h2>Recommended facility engagement process</h2>
         <p class="section-intro">A clear path from the first conversation through to project close-out or ongoing service review.</p>
         <div class="engage-grid">
-          <div class="engage-card">
+          <div class="engage-card active">
             <div class="e-header">
               <span class="e-num">01</span>
               <div class="e-icon"><i class="fa-solid fa-building-circle-arrow-right"></i></div>
@@ -1180,7 +1252,7 @@
     <!-- ═══════════ TRUST SECTION: WIDE CARDS ═══════════ -->
     <section class="container section-padding" style="background: var(--bg-white); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
       <div style="text-align:center;max-width:700px;margin:0 auto;">
-        <span class="hero-tag" style="color: var(--accent-gold); border-color: var(--accent-gold-border); background: var(--accent-gold-soft); padding: 8px 18px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
+        <span class="hero-tag" style="color: var(--accent-gold); border-color: var(--accent-gold-border); background: var(--accent-gold-soft); padding: 8px 18px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px;">
           <i class="fa-solid fa-shield-halved"></i> Accountability you can rely on
         </span>
         <h2>Trust and accountability</h2>
@@ -1188,7 +1260,7 @@
       </div>
       
       <div class="trust-list">
-        <div class="trust-wide-card">
+        <div class="trust-wide-card active">
           <div class="trust-icon-box"><i class="fa-solid fa-circle-check"></i></div>
           <div class="trust-info">
             <h4>Defined scope</h4>
