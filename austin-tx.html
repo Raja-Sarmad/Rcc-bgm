@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Commercial Facility Services in Austin, TX | RCC-BGM</title>
-    <meta name="description" content="RCC-BGM provides commercial cleaning, janitorial, construction, HVAC and facility services for business properties in Austin, Texas, subject to service availability.">
+    <meta name="description" content="RCC-BGM provides commercial cleaning, janitorial, HVAC, facility maintenance, tenant improvements and construction services in Austin, Texas.">
+    <link rel="canonical" href="https://rcc-bgm.com/locations/austin-tx">
+    <!-- DEV NOTE: Ensure 301 redirect from /LocationAustin to /locations/austin-tx is configured on the server -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="site.css">
     <style>
         .svc-card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-top:34px}
-        .svc-card{background:var(--white);border:1px solid rgba(128,99,199,.1);border-radius:16px;padding:30px;transition:all .35s ease;position:relative;overflow:hidden}
+        .svc-card{background:var(--white);border:1px solid rgba(128,99,199,.1);border-radius:16px;padding:30px;transition:all .35s ease;position:relative;overflow:hidden;text-decoration:none;display:block}
         .svc-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px -12px rgba(128,99,199,.18);border-color:var(--accent-teal)}
         .svc-card i{font-size:28px;color:var(--accent-teal);margin-bottom:16px;display:block}
         .svc-card h3{font-size:18px;margin-bottom:10px;color:var(--text-dark)}
@@ -39,7 +41,64 @@
         .cta-section p{color:rgba(255,255,255,.88);max-width:600px;margin:0 auto 28px;font-size:16px}
         .cta-section .btn-header{background:#fff;color:var(--bg-deep);font-weight:700}
         .cta-section .btn-header:hover{background:var(--bg-deep);color:#fff}
+        .section-intro{max-width:800px;margin-top:16px;margin-bottom:24px;font-size:16px;line-height:1.6}
     </style>
+
+    <!-- Schema Markup: WebPage + Service + BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://rcc-bgm.com/locations/austin-tx",
+          "url": "https://rcc-bgm.com/locations/austin-tx",
+          "name": "Commercial Facility Services in Austin, TX | RCC-BGM",
+          "description": "RCC-BGM provides commercial cleaning, janitorial, HVAC, facility maintenance, tenant improvements and construction services in Austin, Texas.",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://rcc-bgm.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Locations",
+                "item": "https://rcc-bgm.com/locations"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Austin, TX",
+                "item": "https://rcc-bgm.com/locations/austin-tx"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Commercial Facility Services",
+          "provider": {
+            "@type": "Organization",
+            "name": "RCC-BGM"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Austin",
+            "address": {
+              "@type": "PostalAddress",
+              "addressRegion": "TX"
+            }
+          },
+          "serviceType": ["Commercial Cleaning", "Janitorial Services", "HVAC Coordination", "Facility Maintenance", "Tenant Improvements", "Commercial Construction"]
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="page-location">
     <nav>
@@ -50,6 +109,7 @@
                 <li><a href="industries.html">Industries</a></li>
                 <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
                 <li><a href="about.html">About</a></li>
+                <li><a href="locations.html">Locations</a></li>
             </ul>
             <a href="contact.html" class="btn-header">Get Assessment</a>
         </div>
@@ -62,16 +122,12 @@
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <span class="hero-tag"><i class="fa-solid fa-location-dot"></i> Austin, Texas</span>
-            <h1>Commercial Facility Services in Austin, Texas</h1>
-            <p style="color:#D4C0AC;max-width:720px;margin:22px auto 0">RCC-BGM supports corporate campuses, semiconductor facilities, tech workplaces and commercial office buildings across Austin's rapidly expanding market with integrated cleaning, construction and facility services.</p>
-            <div class="hero-labels">
-                <a class="btn-header btn-glow" href="contact.html">Request a Local Assessment <i class="fa-solid fa-arrow-right"></i></a>
-                <a class="h-label" href="services.html"><i class="fa-solid fa-layer-group"></i> Explore Services</a>
-            </div>
-            <div class="hero-stats">
-                <div class="hero-stat"><div class="num">01</div><div class="lbl">Tech-sector ready</div></div>
-                <div class="hero-stat"><div class="num">02</div><div class="lbl">Dual-division support</div></div>
-                <div class="hero-stat"><div class="num">03</div><div class="lbl">Growth-aligned</div></div>
+            <span class="hero-tag" style="margin-top:8px;font-size:14px;letter-spacing:1px;text-transform:uppercase;">Austin Commercial Facility Solutions</span>
+            <h1 style="margin-top:16px;">Commercial Cleaning, Construction and Facility Services in Austin, TX</h1>
+            <p style="color:#D4C0AC;max-width:780px;margin:22px auto 0">RCC-BGM supports Austin business properties through commercial cleaning, recurring janitorial programs, facility maintenance, HVAC, MEP coordination, tenant improvements and commercial construction. Each requirement is reviewed around the property, operating schedule, occupants, access conditions and required outcome.</p>
+            <div class="hero-labels" style="margin-top:32px;">
+                <a class="btn-header btn-glow" href="contact.html">Request an Austin Facility Assessment <i class="fa-solid fa-arrow-right"></i></a>
+                <a class="h-label" href="services.html" style="color:#fff;text-decoration:none;margin-left:20px;"><i class="fa-solid fa-layer-group"></i> Explore Services</a>
             </div>
         </div>
         <div class="scroll-cue">Scroll<div class="dot-track"></div></div>
@@ -80,137 +136,284 @@
     <main>
         <!-- Local Introduction -->
         <section class="container section-padding industry-standard">
-            <div style="max-width:780px">
-                <span class="hero-tag" style="color:var(--accent-blue);border-color:rgba(217,111,159,.3);background:rgba(217,111,159,.06)">Austin commercial market</span>
-                <h2>Facility services for the tech capital of Texas</h2>
-                <p style="margin-top:16px">Austin is one of the fastest-growing technology markets in the United States, home to major semiconductor fabrication facilities, corporate headquarters, startup ecosystems and an expanding base of commercial office space. The city's rapid growth means new construction, tenant improvements and ongoing facility maintenance are constant priorities. RCC-BGM connects Austin properties with Brilliant General Maintenance for commercial cleaning and janitorial programs and Reliable Concepts Corporation for construction, tenant improvements, HVAC and MEP coordination. Every engagement is scoped to the property, confirmed services and local team availability.</p>
+            <div style="max-width:800px">
+                <span class="hero-tag" style="color:var(--accent-blue);border-color:rgba(217,111,159,.3);background:rgba(217,111,159,.06)">Austin Market Context</span>
+                <h2 style="margin-top:14px;">Local Relevance and Commercial Context</h2>
+                <p style="margin-top:16px;line-height:1.7;">Austin commercial facilities operate across technology, professional services, government, education, healthcare, hospitality, retail, logistics and creative-industry environments. These properties may share the same city, but their cleaning frequencies, technical systems, access rules and construction schedules can be very different. RCC-BGM begins with the property rather than a generic package. Brilliant General Maintenance can review recurring and specialized cleaning requirements, while Reliable Concepts Corporation can review construction, tenant improvements, HVAC, MEP coordination and facility upgrades. Related requirements may be planned together where the scopes overlap.</p>
+                <p style="margin-top:16px;font-size:14px;color:var(--text-muted);"><em>Local data usage note: Austin Economic Development describes the city as a place where commerce, creativity, education, industry and government connect. While local economic facts support a broad range of commercial property needs, they do not imply that RCC-BGM serves every property type or organization, nor do they serve as an endorsement.</em></p>
             </div>
         </section>
 
-        <!-- Services Available -->
+        <!-- Commercial Cleaning Services -->
         <section class="container section-padding">
-            <span class="hero-tag" style="color:var(--accent-blue);border-color:rgba(217,111,159,.3);background:rgba(217,111,159,.06)">Services in this market</span>
-            <h2 style="margin-top:14px">RCC-BGM services available in Austin</h2>
-            <p class="section-intro">Service availability depends on the property, scope and confirmed local capability. Explore the primary service categories relevant to Austin commercial facilities.</p>
+            <span class="hero-tag" style="color:var(--accent-blue);border-color:rgba(217,111,159,.3);background:rgba(217,111,159,.06)">Cleaning Programs</span>
+            <h2 style="margin-top:14px;">Commercial Cleaning Services Planned Around the Property</h2>
+            <p class="section-intro">RCC-BGM can review recurring and one-time commercial cleaning services in Austin for qualified properties. The cleaning plan should identify service zones, traffic patterns, security requirements, operating hours, material limitations and the agreed quality-control process before service begins. <a href="commercial-cleaning-services.html" style="color:var(--accent-blue);font-weight:600;">View full Commercial Cleaning Services scope</a>.</p>
+            
             <div class="svc-card-grid">
-                <a href="commercial-cleaning-services.html" class="svc-card scroll-reveal">
-                    <i class="fa-solid fa-spray-can-sparkles"></i>
-                    <h3>Commercial Cleaning &amp; Janitorial</h3>
-                    <p>BGM develops recurring cleaning, office cleaning and janitorial programs for Austin's tech workplaces, corporate offices and commercial buildings.</p>
-                    <span class="card-link">View service <i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-                <a href="commercial-janitorial-services.html" class="svc-card scroll-reveal">
+                <div class="svc-card scroll-reveal">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <h3>Recurring Cleaning</h3>
+                    <p>Daily, several-times-weekly or customized tasks for approved areas and operating schedules, including reception, restrooms, kitchens, lobbies, corridors and waste removal.</p>
+                </div>
+                <div class="svc-card scroll-reveal">
                     <i class="fa-solid fa-broom"></i>
                     <h3>Commercial Janitorial Services</h3>
-                    <p>Scheduled janitorial programs for office buildings, multi-tenant campuses and commercial spaces requiring consistent maintenance in the Austin market.</p>
-                    <span class="card-link">View service <i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-                <a href="commercial-construction.html" class="svc-card scroll-reveal">
-                    <i class="fa-solid fa-helmet-safety"></i>
-                    <h3>Commercial Construction</h3>
-                    <p>RCC coordinates commercial construction, tenant improvements and renovation projects for Austin's growing commercial property base, subject to licensing and trade availability.</p>
-                    <span class="card-link">View service <i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-                <a href="tenant-improvements.html" class="svc-card scroll-reveal">
-                    <i class="fa-solid fa-building-circle-arrow-right"></i>
-                    <h3>Tenant Improvements</h3>
-                    <p>Tenant buildouts and improvements for Austin office buildings and tech campuses, coordinating MEP, carpentry, painting and finish work.</p>
-                    <span class="card-link">View service <i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-                <a href="commercial-hvac-services.html" class="svc-card scroll-reveal">
-                    <i class="fa-solid fa-temperature-arrow-down"></i>
-                    <h3>Commercial HVAC Services</h3>
-                    <p>HVAC coordination and maintenance for Austin's hot summers, as stand-alone service or connected to tenant improvement and facility projects.</p>
-                    <span class="card-link">View service <i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-                <a href="facility-maintenance-services.html" class="svc-card scroll-reveal">
-                    <i class="fa-solid fa-wrench"></i>
-                    <h3>Facility Maintenance</h3>
-                    <p>Building maintenance, repairs and facility upgrades coordinated with cleaning and building-system needs for Austin commercial and operational properties.</p>
-                    <span class="card-link">View service <i class="fa-solid fa-arrow-right"></i></span>
-                </a>
+                    <p>Scheduled janitorial programs for Austin workplaces, organized by building, floor, department or tenant suite, with clear daily, weekly and monthly task separation.</p>
+                    <a href="commercial-janitorial-services.html" class="card-link">View Janitorial Services <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="svc-card scroll-reveal">
+                    <i class="fa-solid fa-sparkles"></i>
+                    <h3>Commercial Deep Cleaning</h3>
+                    <p>A separately defined scope for buildup, transition, reopening, turnover or special conditions, including periodic floor and textile care.</p>
+                    <a href="commercial-deep-cleaning.html" class="card-link">View Deep Cleaning <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="svc-card scroll-reveal">
+                    <i class="fa-solid fa-hard-hat"></i>
+                    <h3>Post-Project Cleaning</h3>
+                    <p>Cleaning after responsible trades complete construction work and release the space for detailing, ensuring a ready-to-occupy environment.</p>
+                </div>
             </div>
+        </section>
+
+        <!-- Specialty & Industrial -->
+        <section class="container section-padding" style="background:rgba(128,99,199,0.03);border-radius:24px;padding:48px;">
+            <h2>Cleaning for Warehouses, Industrial Support Areas and Specialized Environments</h2>
+            <p class="section-intro">Austin-area warehouses, logistics facilities, production-support properties and specialized workplaces require more qualification than standard office cleaning. The scope accounts for shifts, loading activity, equipment, restricted zones, safety rules and customer operating procedures.</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:24px;">
+                <div>
+                    <h4 style="margin-bottom:12px;color:var(--accent-teal);">Qualified Service Areas</h4>
+                    <ul style="list-style:none;padding:0;line-height:1.8;font-size:15px;">
+                        <li><i class="fa-solid fa-check" style="color:var(--accent-teal);margin-right:8px;"></i> Warehouse and distribution floors (where approved)</li>
+                        <li><i class="fa-solid fa-check" style="color:var(--accent-teal);margin-right:8px;"></i> Administrative offices inside industrial properties</li>
+                        <li><i class="fa-solid fa-check" style="color:var(--accent-teal);margin-right:8px;"></i> Loading-area and high-traffic cleaning (subject to traffic control)</li>
+                        <li><i class="fa-solid fa-check" style="color:var(--accent-teal);margin-right:8px;"></i> Construction dust and debris detailing</li>
+                        <li><i class="fa-solid fa-check" style="color:var(--accent-teal);margin-right:8px;"></i> Laboratory support and ESD-sensitive floors (under customer-approved procedures)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom:12px;color:var(--accent-teal);">Safety & Scope Boundaries</h4>
+                    <p style="font-size:14px;line-height:1.7;">Hazardous, regulated, biological and high-risk work requires separate review. We do not claim hazardous-material handling, machinery cleaning, confined-space work, biohazard service, sterile processing or cleanroom certification unless those capabilities are explicitly verified for the specific Austin project.</p>
+                    <div style="margin-top:16px;">
+                        <a href="industrial-cleaning.html" class="card-link" style="margin-right:16px;">Industrial Cleaning <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="smart-cleaning-robotics.html" class="card-link">Smart Cleaning Robotics <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Facility Maintenance & HVAC -->
+        <section class="container section-padding">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:40px;">
+                <div>
+                    <span class="hero-tag" style="color:var(--accent-blue);border-color:rgba(217,111,159,.3);background:rgba(217,111,159,.06)">Upkeep & Repairs</span>
+                    <h2 style="margin-top:14px;">Facility Maintenance Services in Austin</h2>
+                    <p style="margin-top:16px;line-height:1.7;font-size:15px;">Facility maintenance supports ongoing property condition, smaller corrective needs and coordinated issue management. We distinguish routine upkeep from construction-level repair, licensed trade work and capital improvement.</p>
+                    <ul style="margin-top:16px;list-style:none;padding:0;line-height:1.8;font-size:14px;">
+                        <li><i class="fa-solid fa-wrench" style="color:var(--accent-blue);margin-right:8px;"></i> Interior condition observations and approved minor repairs</li>
+                        <li><i class="fa-solid fa-wrench" style="color:var(--accent-blue);margin-right:8px;"></i> Door, hardware, wall, ceiling and finish issues</li>
+                        <li><i class="fa-solid fa-wrench" style="color:var(--accent-blue);margin-right:8px;"></i> Coordination with commercial HVAC and construction teams</li>
+                        <li><i class="fa-solid fa-wrench" style="color:var(--accent-blue);margin-right:8px;"></i> Recurring landscape maintenance and exterior appearance (where confirmed)</li>
+                    </ul>
+                    <a href="facility-maintenance-services.html" class="card-link" style="margin-top:16px;">View Facility Maintenance <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div>
+                    <span class="hero-tag" style="color:var(--accent-blue);border-color:rgba(217,111,159,.3);background:rgba(217,111,159,.06)">Climate Control</span>
+                    <h2 style="margin-top:14px;">Commercial HVAC Assessment, Repair and Project Coordination</h2>
+                    <p style="margin-top:16px;line-height:1.7;font-size:15px;">Austin commercial HVAC enquiries may involve comfort complaints, preventive maintenance, equipment failure, planned replacement or coordination with a tenant improvement. Final scope considers equipment type, capacity, controls, access and surrounding construction conditions.</p>
+                    <ul style="margin-top:16px;list-style:none;padding:0;line-height:1.8;font-size:14px;">
+                        <li><i class="fa-solid fa-temperature-arrow-down" style="color:var(--accent-blue);margin-right:8px;"></i> Commercial equipment assessment, maintenance and repair</li>
+                        <li><i class="fa-solid fa-temperature-arrow-down" style="color:var(--accent-blue);margin-right:8px;"></i> Ductwork, ventilation and control-system coordination</li>
+                        <li><i class="fa-solid fa-temperature-arrow-down" style="color:var(--accent-blue);margin-right:8px;"></i> Rooftop access, lifting, protection and occupied-building planning</li>
+                    </ul>
+                    <p style="margin-top:16px;font-size:13px;color:var(--text-muted);"><em>Claims boundary: We do not publish 24/7 emergency availability, same-day repair, guaranteed comfort, guaranteed energy savings or certified air-quality outcomes unless RCC-BGM verifies the exact operational capability.</em></p>
+                    <a href="commercial-hvac-services.html" class="card-link" style="margin-top:12px;">View Commercial HVAC Services <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Commercial Construction & MEP -->
+        <section class="container section-padding" style="background:rgba(128,99,199,0.03);border-radius:24px;padding:48px;">
+            <span class="hero-tag" style="color:var(--accent-blue);border-color:rgba(217,111,159,.3);background:rgba(217,111,159,.06)">Build & Renovate</span>
+            <h2 style="margin-top:14px;">Commercial Construction Planned Around Active Facilities</h2>
+            <p class="section-intro">Reliable Concepts Corporation can review qualified commercial construction requirements in Austin, including commercial interiors, building renovations, maintenance construction and facility upgrades. The strongest local positioning is coordinated commercial project delivery with defined scope, occupied-building planning, qualified trades, documented changes and closeout.</p>
+            
+            <div class="svc-card-grid" style="margin-top:32px;">
+                <div class="svc-card scroll-reveal">
+                    <i class="fa-solid fa-helmet-safety"></i>
+                    <h3>Tenant Improvements & Build-outs</h3>
+                    <p>Tenant suite build-outs, occupancy preparation, and commercial interior renovation coordinated with landlord criteria and schedule.</p>
+                    <a href="tenant-improvements.html" class="card-link">View Tenant Improvements <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="svc-card scroll-reveal">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <h3>MEP Coordination</h3>
+                    <p>Mechanical, electrical and plumbing coordination aligned with tenant layout, equipment, occupancy, ceilings, access and code requirements.</p>
+                </div>
+                <div class="svc-card scroll-reveal">
+                    <i class="fa-solid fa-file-signature"></i>
+                    <h3>Austin Permit & Inspection Context</h3>
+                    <p>Commercial construction generally requires permits. Permitting is project-specific; we do not guarantee approval, review time or code compliance.</p>
+                </div>
+            </div>
+            <p style="margin-top:24px;font-size:14px;color:var(--text-muted);text-align:center;"><em>Project accountability includes: Scope baseline, Responsibilities, Schedule, Changes (documented before execution), and Closeout walkthroughs.</em></p>
         </section>
 
         <!-- Industries -->
         <section class="container section-padding">
             <span class="hero-tag" style="color:var(--accent-blue);border-color:rgba(217,111,159,.3);background:rgba(217,111,159,.06)">Local industry focus</span>
-            <h2 style="margin-top:14px">Industries relevant to Austin facilities</h2>
-            <p class="section-intro">Austin's economy is dominated by technology, semiconductor manufacturing, healthcare systems and a growing base of corporate and startup offices.</p>
+            <h2 style="margin-top:14px;">Facility Services Adapted to Austin Commercial Environments</h2>
+            <p class="section-intro">The Industries section helps users recognize their property type. Each environment has practical facility needs, scoped without implying universal expertise or unverified compliance.</p>
             <div class="ind-grid">
-                <div class="ind-item scroll-reveal"><i class="fa-solid fa-microchip"></i><h4>Semiconductor</h4><p>Fabrication facilities and R&amp;D campuses with specialized environment requirements</p></div>
-                <div class="ind-item scroll-reveal"><i class="fa-solid fa-laptop-code"></i><h4>Technology</h4><p>Corporate tech campuses, software offices and startup workspaces</p></div>
-                <div class="ind-item scroll-reveal"><i class="fa-solid fa-building"></i><h4>Corporate Offices</h4><p>Multi-tenant and single-tenant office buildings across the metro area</p></div>
-                <div class="ind-item scroll-reveal"><i class="fa-solid fa-hospital"></i><h4>Healthcare</h4><p>Medical offices, health-system facilities and selected clinical environments</p></div>
-                <div class="ind-item scroll-reveal"><i class="fa-solid fa-graduation-cap"></i><h4>Education</h4><p>University-adjacent and research-oriented commercial properties</p></div>
-                <div class="ind-item scroll-reveal"><i class="fa-solid fa-store"></i><h4>Retail &amp; Mixed-Use</h4><p>Customer-facing commercial properties in Austin's expanding corridors</p></div>
+                <div class="ind-item scroll-reveal">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h4>Technology & Professional Offices</h4>
+                    <p>Recurring cleaning, secure-area planning, HVAC, tenant changes and workplace upgrades.</p>
+                </div>
+                <div class="ind-item scroll-reveal">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <h4>Government & Institutional</h4>
+                    <p>Approved public-facing and administrative areas with procurement and access requirements.</p>
+                </div>
+                <div class="ind-item scroll-reveal">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h4>Education & Training</h4>
+                    <p>Classrooms, offices, shared areas and phased maintenance or renovation where qualified.</p>
+                </div>
+                <div class="ind-item scroll-reveal">
+                    <i class="fa-solid fa-hospital"></i>
+                    <h4>Healthcare & Medical</h4>
+                    <p>Approved waiting, administrative, staff and patient-facing areas with regulated exclusions.</p>
+                </div>
+                <div class="ind-item scroll-reveal">
+                    <i class="fa-solid fa-utensils"></i>
+                    <h4>Hospitality & Food-Service</h4>
+                    <p>High traffic, customer presentation, employee areas and service windows around operations.</p>
+                </div>
+                <div class="ind-item scroll-reveal">
+                    <i class="fa-solid fa-store"></i>
+                    <h4>Retail & Mixed-Use</h4>
+                    <p>Entrances, sales areas, shared spaces, tenant coordination and phased improvement work.</p>
+                </div>
+                <div class="ind-item scroll-reveal">
+                    <i class="fa-solid fa-truck-ramp-box"></i>
+                    <h4>Warehouses & Logistics</h4>
+                    <p>Shift-based cleaning, employee spaces, facility maintenance and occupied repair projects.</p>
+                </div>
+                <div class="ind-item scroll-reveal">
+                    <i class="fa-solid fa-building"></i>
+                    <h4>Multi-Tenant Commercial</h4>
+                    <p>Common-area janitorial, landlord coordination, tenant improvements and base-building services.</p>
+                </div>
             </div>
+            <p style="margin-top:24px;font-size:13px;color:var(--text-muted);text-align:center;"><em>Industry boundary: We do not imply healthcare compliance, government contracts, university contracts, sterile cleaning, food-production sanitation, data-center uptime support or industrial hazardous services unless specifically verified.</em></p>
         </section>
 
         <!-- Service Process -->
         <section class="container section-padding">
-            <span class="hero-tag" style="color:var(--accent-blue);border-color:rgba(217,111,159,.3);background:rgba(217,111,159,.06)">How engagement works</span>
-            <h2 style="margin-top:14px">Service process for Austin properties</h2>
+            <span class="hero-tag" style="color:var(--accent-blue);border-color:rgba(217,111,159,.3);background:rgba(217,111,159,.06)">Delivery Process</span>
+            <h2 style="margin-top:14px;">Work Planned Around Business Operations</h2>
+            <p class="section-intro">Many Austin facilities cannot simply close while cleaning, maintenance or construction takes place. We consider access, communication, safety and phasing without promising zero disruption.</p>
+            
+            <div style="background:var(--white);border:1px solid rgba(128,99,199,.1);border-radius:16px;padding:32px;margin-bottom:32px;">
+                <h4 style="margin-bottom:16px;color:var(--accent-teal);">Occupied-Property Planning Principles</h4>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));gap:16px;font-size:14px;line-height:1.6;">
+                    <div><i class="fa-solid fa-check" style="color:var(--accent-blue);margin-right:8px;"></i> Identify employees, tenants, visitors, shifts and critical operations</div>
+                    <div><i class="fa-solid fa-check" style="color:var(--accent-blue);margin-right:8px;"></i> Confirm approved work hours, access routes and restricted areas</div>
+                    <div><i class="fa-solid fa-check" style="color:var(--accent-blue);margin-right:8px;"></i> Plan noise, dust, odor, deliveries, lifts and temporary protection</div>
+                    <div><i class="fa-solid fa-check" style="color:var(--accent-blue);margin-right:8px;"></i> Establish authorized contacts, notices and escalation procedures</div>
+                    <div><i class="fa-solid fa-check" style="color:var(--accent-blue);margin-right:8px;"></i> Document changes before additional work is performed</div>
+                    <div><i class="fa-solid fa-check" style="color:var(--accent-blue);margin-right:8px;"></i> Complete walkthroughs and ongoing performance reviews</div>
+                </div>
+            </div>
+
             <div class="steps-grid">
                 <div class="modern-step-card scroll-reveal">
                     <div class="step-num">01</div>
-                    <h4>Share the Property</h4>
-                    <p>Provide the Austin address, facility type, current need and preferred timing so RCC-BGM can begin the review.</p>
+                    <h4>Enquiry</h4>
+                    <p>Location, property type, service requirement and desired outcome.</p>
                 </div>
                 <div class="modern-step-card scroll-reveal">
                     <div class="step-num">02</div>
-                    <h4>Confirm Coverage</h4>
-                    <p>RCC-BGM confirms which division, service and local team can support the Austin request based on scope and availability.</p>
+                    <h4>Qualification</h4>
+                    <p>Route to BGM, RCC, a coordinated review or a specialist based on scope.</p>
                 </div>
                 <div class="modern-step-card scroll-reveal">
                     <div class="step-num">03</div>
-                    <h4>Review the Site</h4>
-                    <p>A walkthrough is arranged when the scope cannot be accurately defined remotely, accounting for new construction and occupancy conditions.</p>
+                    <h4>Assessment</h4>
+                    <p>Review conditions, size, occupancy, access, systems and documents.</p>
                 </div>
                 <div class="modern-step-card scroll-reveal">
                     <div class="step-num">04</div>
-                    <h4>Receive a Defined Proposal</h4>
-                    <p>The proposal identifies services, frequency or project scope, responsibilities and exclusions specific to the Austin facility.</p>
+                    <h4>Scope</h4>
+                    <p>Define tasks, frequency or phases, materials, assumptions and exclusions.</p>
+                </div>
+                <div class="modern-step-card scroll-reveal">
+                    <div class="step-num">05</div>
+                    <h4>Delivery</h4>
+                    <p>Coordinate teams, trades, service windows, permits and communication.</p>
+                </div>
+                <div class="modern-step-card scroll-reveal">
+                    <div class="step-num">06</div>
+                    <h4>Review</h4>
+                    <p>Evaluate recurring performance or complete project closeout and punch items.</p>
                 </div>
             </div>
         </section>
 
         <!-- FAQ -->
         <section class="container section-padding">
-            <h2>Common questions about Austin services</h2>
+            <h2>Pricing, Service Area and Frequently Asked Questions</h2>
+            <p class="section-intro">The Austin page does not publish one universal price. Cleaning and project pricing depend on the real facility and scope, including property type, size, frequency, existing conditions, permits, and occupied-building phasing.</p>
             <div style="max-width:800px;margin-top:24px">
                 <div class="faq-item scroll-reveal">
-                    <h4>Does RCC-BGM provide commercial cleaning in Austin? <i class="fa-solid fa-plus"></i></h4>
-                    <p>Austin is listed as an RCC-BGM service market. Cleaning availability and program frequency must be confirmed for the specific property and scope.</p>
+                    <h4>What services may be available in Austin? <i class="fa-solid fa-plus"></i></h4>
+                    <p>Commercial cleaning, janitorial, maintenance, HVAC, MEP, construction, tenant improvements and other qualified services, subject to final scope and local availability.</p>
                 </div>
                 <div class="faq-item scroll-reveal">
-                    <h4>Can I request tenant improvement services in Austin? <i class="fa-solid fa-plus"></i></h4>
-                    <p>RCC can review tenant improvement projects. Licensing, permit requirements, trade availability and scope must be confirmed before a proposal is issued.</p>
+                    <h4>Is every service available for every property? <i class="fa-solid fa-plus"></i></h4>
+                    <p>No. Availability depends on the facility, service, division, trade, licensing, staffing and final scope.</p>
                 </div>
                 <div class="faq-item scroll-reveal">
-                    <h4>Does RCC provide construction services in Austin? <i class="fa-solid fa-plus"></i></h4>
-                    <p>RCC can review commercial construction projects in Austin subject to licensing, permit requirements and confirmed trade availability.</p>
+                    <h4>Can RCC-BGM support recurring office cleaning? <i class="fa-solid fa-plus"></i></h4>
+                    <p>Brilliant General Maintenance (BGM) can review frequency, size, access, occupancy and operating requirements to develop a tailored program.</p>
                 </div>
                 <div class="faq-item scroll-reveal">
-                    <h4>Can RCC-BGM support semiconductor and tech campuses? <i class="fa-solid fa-plus"></i></h4>
-                    <p>Technology workplaces and semiconductor facilities can be evaluated for cleaning, maintenance and improvement needs based on confirmed local capability and environment requirements.</p>
+                    <h4>Can RCC-BGM manage a tenant improvement? <i class="fa-solid fa-plus"></i></h4>
+                    <p>Reliable Concepts Corporation (RCC) can review the suite, intended use, plans, landlord criteria and schedule to coordinate qualified trades.</p>
                 </div>
                 <div class="faq-item scroll-reveal">
-                    <h4>Can RCC-BGM coordinate cleaning and facility work? <i class="fa-solid fa-plus"></i></h4>
-                    <p>Related cleaning, maintenance, HVAC and improvement work can be organized through the combined RCC-BGM platform when clearly scoped.</p>
+                    <h4>Can cleaning follow construction? <i class="fa-solid fa-plus"></i></h4>
+                    <p>Yes. Post-construction or recurring cleaning may be separately coordinated when the project is ready and responsible trades have released the space.</p>
+                </div>
+                <div class="faq-item scroll-reveal">
+                    <h4>How does pricing work? <i class="fa-solid fa-plus"></i></h4>
+                    <p>Pricing follows assessment of the property, existing conditions, scope, schedule and local availability. We do not publish universal flat rates.</p>
+                </div>
+                <div class="faq-item scroll-reveal">
+                    <h4>What is the first step? <i class="fa-solid fa-plus"></i></h4>
+                    <p>Submit an Austin facility assessment request with the information currently available, including property address, approximate size, current condition, operating schedule, required services and preferred timeline.</p>
                 </div>
             </div>
+            <p style="margin-top:24px;font-size:13px;color:var(--text-muted);text-align:center;"><em>Service-area positioning: We may link to nearby active RCC-BGM markets where those pages genuinely exist. We do not publish an arbitrary service radius, a fake Austin office address, or a list of surrounding cities that have not been confirmed.</em></p>
         </section>
 
-        <!-- CTA -->
+        <!-- Final CTA -->
         <section class="container section-padding">
             <div class="cta-section scroll-reveal">
-                <h2>Request a Local Facility Assessment</h2>
-                <p>Share the property address, facility type and required service for your Austin location. RCC-BGM will confirm local availability and the appropriate next step.</p>
-                <a href="contact.html" class="btn-header">Request Assessment <i class="fa-solid fa-arrow-right"></i></a>
+                <h2>Request an Austin Facility Assessment</h2>
+                <p>Tell RCC-BGM about the Austin property, operating environment, current condition and required outcome. The team can review local availability and identify the appropriate Brilliant, Reliable or coordinated next step.</p>
+                <a href="contact.html" class="btn-header">Request an Austin Facility Assessment <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </section>
     </main>
+
+    <footer style="background:var(--bg-deep);color:#fff;padding:40px 0;text-align:center;margin-top:40px;">
+        <div class="container">
+            <p style="font-size:14px;opacity:0.8;">&copy; 2026 RCC-BGM. All rights reserved. | <a href="privacy.html" style="color:#fff;">Privacy Policy</a> | <a href="terms.html" style="color:#fff;">Terms of Service</a></p>
+            <p style="font-size:12px;opacity:0.6;margin-top:12px;">Sources: RCC-BGM LocationAustin page; City of Austin Economic Development; Austin Development Services commercial plan review and building inspections; U.S. Census Bureau QuickFacts for Austin. Public facts are used as local context only and do not imply endorsement or customer relationships.</p>
+        </div>
+    </footer>
 
     <script src="site.js" defer></script>
 </body>
