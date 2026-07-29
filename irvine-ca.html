@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commercial Facility Services in Irvine, CA | RCC-BGM</title>
-    <meta name="description" content="RCC-BGM provides commercial cleaning, janitorial, construction, HVAC and facility services for business properties in Irvine, California, subject to service availability.">
+    <title>Irvine Commercial Facility Service Assessment | RCC-BGM</title>
+    <meta name="description" content="Explore commercial property context in Irvine, CA, and request an RCC-BGM service assessment. Availability must be confirmed for the specific property and scope.">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -36,101 +36,250 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-main); color: var(--text-body); line-height: 1.7; overflow-x: hidden; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-        .section-padding { padding: 90px 0; }
 
-        /* NAV */
-        nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(250,247,242,0.9); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-warm); padding: 16px 0; transition: var(--transition); }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-body);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .section-padding { padding: 50px 0; }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(250, 247, 242, 0.9);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-warm);
+            padding: 16px 0; transition: var(--transition);
+        }
         .nav-flex { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: 800; color: var(--text-dark); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .logo {
+            font-size: 1.5rem; font-weight: 800; color: var(--text-dark);
+            text-decoration: none; display: flex; align-items: center; gap: 10px;
+        }
         .logo span { color: var(--accent-gold); }
         .logo-icon { color: var(--accent-gold); font-size: 1.7rem; }
         .nav-links { display: flex; list-style: none; gap: 32px; }
-        .nav-links a { color: var(--text-body); text-decoration: none; font-weight: 500; font-size: 0.92rem; transition: var(--transition); position: relative; padding: 4px 0; }
+        .nav-links a {
+            color: var(--text-body); text-decoration: none; font-weight: 500;
+            font-size: 0.92rem; transition: var(--transition); position: relative; padding: 4px 0;
+        }
         .nav-links a:hover, .nav-links a.is-active { color: var(--accent-gold); }
-        .nav-links a.is-active::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 100%; height: 2.5px; background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light)); border-radius: 4px; }
-        .btn-header { background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light)); color: white; padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: var(--transition); border: none; cursor: pointer; box-shadow: 0 4px 16px rgba(128,99,199,0.25); display: inline-flex; align-items: center; gap: 8px; }
-        .btn-header:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(128,99,199,0.35); }
+        .nav-links a.is-active::after {
+            content: ''; position: absolute; bottom: -4px; left: 0; width: 100%; height: 2.5px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light)); border-radius: 4px;
+        }
+        .btn-header {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
+            color: white; padding: 12px 28px; border-radius: 50px; text-decoration: none;
+            font-weight: 600; font-size: 0.9rem; transition: var(--transition); border: none;
+            cursor: pointer; box-shadow: 0 4px 16px rgba(128, 99, 199, 0.25);
+            display: inline-flex; align-items: center; gap: 8px;
+        }
+        .btn-header:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(128, 99, 199, 0.35); }
 
-        /* HERO */
-        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 150px 0 100px; overflow: hidden; background: radial-gradient(rgba(128,99,199,0.05) 1px, transparent 1px) 0 0 / 26px 26px, linear-gradient(160deg, #FAF7F2 0%, #ede8f8 45%, #ede8f8 75%, #FAF7F2 100%); }
-        .hero::before { content: ''; position: absolute; top: -10%; right: -8%; width: 620px; height: 620px; background: radial-gradient(circle, rgba(128,99,199,0.10) 0%, transparent 70%); border-radius: 50%; animation: float 9s ease-in-out infinite; }
-        .hero::after { content: ''; position: absolute; bottom: -15%; left: -10%; width: 460px; height: 460px; background: radial-gradient(circle, rgba(217,111,159,0.06) 0%, transparent 70%); border-radius: 50%; animation: float 11s ease-in-out infinite reverse; }
-        @keyframes float { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-30px) scale(1.05); } }
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 150px 0 100px;
+            overflow: hidden;
+            background:
+                radial-gradient(rgba(128,99,199,0.05) 1px, transparent 1px) 0 0 / 26px 26px,
+                linear-gradient(160deg, #FAF7F2 0%, #ede8f8 45%, #ede8f8 75%, #FAF7F2 100%);
+        }
+        .hero::before {
+            content: ''; position: absolute; top: -10%; right: -8%;
+            width: 620px; height: 620px;
+            background: radial-gradient(circle, rgba(128, 99, 199, 0.10) 0%, transparent 70%);
+            border-radius: 50%; animation: float 9s ease-in-out infinite;
+        }
+        .hero::after {
+            content: ''; position: absolute; bottom: -15%; left: -10%;
+            width: 460px; height: 460px;
+            background: radial-gradient(circle, rgba(217, 111, 159, 0.06) 0%, transparent 70%);
+            border-radius: 50%; animation: float 11s ease-in-out infinite reverse;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-30px) scale(1.05); }
+        }
         .hero .container { position: relative; z-index: 2; }
-        .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 60px; align-items: center; }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 60px;
+            align-items: center;
+        }
         .hero-content { text-align: left; }
-        .hero-tag { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; background: var(--bg-white); border: 1px solid var(--accent-gold-border); border-radius: 50px; color: var(--accent-gold); font-size: 0.85rem; font-weight: 600; margin-bottom: 26px; letter-spacing: 0.5px; box-shadow: var(--shadow-soft); }
-        .hero h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 800; line-height: 1.15; margin-bottom: 22px; color: var(--text-dark); }
-        .hero h1 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+        .hero-tag {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 22px; background: var(--bg-white);
+            border: 1px solid var(--accent-gold-border); border-radius: 50px;
+            color: var(--accent-gold); font-size: 0.85rem; font-weight: 600;
+            margin-bottom: 26px; letter-spacing: 0.5px; box-shadow: var(--shadow-soft);
+        }
+        .hero h1 {
+            font-size: clamp(2.2rem, 4vw, 3.4rem);
+            font-weight: 800; line-height: 1.15; margin-bottom: 22px; color: var(--text-dark);
+        }
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
         .hero p { color: var(--text-body); font-size: 1.08rem; max-width: 540px; margin: 0 0 36px; }
+
         .hero-labels { display: flex; gap: 20px; justify-content: flex-start; align-items: center; flex-wrap: wrap; margin-bottom: 44px; }
         .btn-glow { position: relative; overflow: hidden; }
-        .btn-glow::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); transition: 0.6s; }
+        .btn-glow::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); transition: 0.6s;
+        }
         .btn-glow:hover::before { left: 100%; }
-        .h-label { color: var(--text-body); text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 8px; transition: var(--transition); padding: 12px 24px; border-radius: 50px; border: 1px solid var(--border-warm); background: var(--bg-white); }
+        .h-label {
+            color: var(--text-body); text-decoration: none; font-weight: 500;
+            display: flex; align-items: center; gap: 8px; transition: var(--transition);
+            padding: 12px 24px; border-radius: 50px; border: 1px solid var(--border-warm); background: var(--bg-white);
+        }
         .h-label:hover { color: var(--accent-gold); border-color: var(--accent-gold-border); box-shadow: var(--shadow-soft); }
-        .hero-stats { display: flex; justify-content: flex-start; align-items: center; padding-top: 28px; border-top: 1px solid var(--border-warm); max-width: 540px; }
+
+        .hero-stats {
+            display: flex; justify-content: flex-start; align-items: center;
+            padding-top: 28px; border-top: 1px solid var(--border-warm); max-width: 540px;
+        }
         .hero-stat { padding: 0 30px; border-right: 1px solid var(--border-warm); }
         .hero-stat:first-child { padding-left: 0; }
         .hero-stat:last-child { border-right: none; }
         .hero-stat .num { font-size: 1.7rem; font-weight: 800; color: var(--accent-gold); line-height: 1; }
         .hero-stat .lbl { font-size: 0.85rem; color: var(--text-light); margin-top: 6px; }
 
-        /* Hero visual */
+        /* ----- Hero visual ----- */
         .hero-visual { position: relative; }
-        .hv-panel { position: relative; border-radius: 30px; padding: 30px; background: radial-gradient(rgba(128,99,199,0.10) 1px, transparent 1px) 0 0 / 22px 22px, linear-gradient(160deg, rgba(255,255,255,0.65), rgba(253,246,236,0.45)); border: 1px solid rgba(128,99,199,0.18); box-shadow: 0 30px 70px rgba(45,39,64,0.14); backdrop-filter: blur(4px); }
+        .hv-panel {
+            position: relative; border-radius: 30px; padding: 30px;
+            background:
+                radial-gradient(rgba(128,99,199,0.10) 1px, transparent 1px) 0 0 / 22px 22px,
+                linear-gradient(160deg, rgba(255,255,255,0.65), rgba(253,246,236,0.45));
+            border: 1px solid rgba(128,99,199,0.18);
+            box-shadow: 0 30px 70px rgba(45,39,64,0.14);
+            backdrop-filter: blur(4px);
+        }
         .hv-glow { position: absolute; border-radius: 50%; filter: blur(45px); z-index: 0; }
         .hv-glow.g1 { top: -30px; right: -20px; width: 180px; height: 180px; background: rgba(167,139,218,0.45); }
         .hv-glow.g2 { bottom: -30px; left: -20px; width: 160px; height: 160px; background: rgba(217,111,159,0.22); }
+
         .hv-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-        .hv-card { background: rgba(255,255,255,0.78); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.85); border-radius: 18px; padding: 20px; display: flex; gap: 14px; align-items: flex-start; box-shadow: 0 18px 40px rgba(45,39,64,0.12); animation: floaty 6s ease-in-out infinite; }
+        .hv-card {
+            background: rgba(255,255,255,0.78);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.85); border-radius: 18px;
+            padding: 20px; display: flex; gap: 14px; align-items: flex-start;
+            box-shadow: 0 18px 40px rgba(45,39,64,0.12);
+            animation: floaty 6s ease-in-out infinite;
+        }
         .hv-card:nth-child(2) { animation-delay: 0.8s; }
         .hv-card:nth-child(3) { animation-delay: 1.6s; }
         .hv-card:nth-child(4) { animation-delay: 2.4s; }
         @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-        .hv-card .ic { width: 46px; height: 46px; border-radius: 12px; flex: none; background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light)); color: #fff; display: grid; place-items: center; font-size: 1.05rem; box-shadow: 0 8px 18px rgba(128,99,199,0.3); }
+        .hv-card .ic {
+            width: 46px; height: 46px; border-radius: 12px; flex: none;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
+            color: #fff; display: grid; place-items: center; font-size: 1.05rem;
+            box-shadow: 0 8px 18px rgba(128,99,199,0.3);
+        }
         .hv-card h4 { font-size: 0.95rem; color: var(--text-dark); font-weight: 600; margin-bottom: 2px; line-height: 1.3; }
         .hv-card span { font-size: 0.78rem; color: var(--text-light); }
-        .hv-chip { position: absolute; z-index: 3; background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.95); border-radius: 50px; padding: 11px 18px; display: flex; align-items: center; gap: 9px; box-shadow: 0 14px 30px rgba(45,39,64,0.16); font-size: 0.82rem; font-weight: 600; color: var(--text-dark); animation: floaty 5s ease-in-out infinite; }
+
+        .hv-chip {
+            position: absolute; z-index: 3; background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.95); border-radius: 50px;
+            padding: 11px 18px; display: flex; align-items: center; gap: 9px;
+            box-shadow: 0 14px 30px rgba(45,39,64,0.16);
+            font-size: 0.82rem; font-weight: 600; color: var(--text-dark);
+            animation: floaty 5s ease-in-out infinite;
+        }
         .hv-chip i { color: var(--accent-gold); }
         .hv-chip.loc { top: -18px; left: -16px; }
         .hv-chip.trust { bottom: -18px; right: -16px; animation-delay: 1.2s; }
         .hv-chip.trust i { color: #3FA66A; }
-        .scroll-cue { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: var(--text-light); font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; animation: bounce 2s infinite; z-index: 2; }
-        @keyframes bounce { 0%,20%,50%,80%,100% { transform: translateX(-50%) translateY(0); } 40% { transform: translateX(-50%) translateY(-8px); } 60% { transform: translateX(-50%) translateY(-4px); } }
 
-        /* SECTIONS */
+        .scroll-cue {
+            position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
+            display: flex; flex-direction: column; align-items: center; gap: 8px;
+            color: var(--text-light); font-size: 0.72rem; letter-spacing: 2px;
+            text-transform: uppercase; animation: bounce 2s infinite; z-index: 2;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-8px); }
+            60% { transform: translateX(-50%) translateY(-4px); }
+        }
+
+        /* ===== SECTION HEADERS ===== */
         h2 { font-size: 2rem; font-weight: 700; margin-bottom: 14px; color: var(--text-dark); }
         .section-intro { color: var(--text-body); font-size: 1.05rem; max-width: 680px; margin-bottom: 40px; }
 
-        /* Cards */
+        /* ===== CARDS ===== */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-        .s-item { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius); padding: 34px 30px; text-decoration: none; color: inherit; transition: var(--transition); position: relative; overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow-soft); }
-        .s-item::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light), var(--accent-blue)); transform: scaleX(0); transform-origin: left; transition: transform 0.5s ease; }
-        .s-item::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(128,99,199,0.03), rgba(167,139,218,0.02)); opacity: 0; transition: opacity 0.4s ease; pointer-events: none; }
+        .s-item {
+            background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius);
+            padding: 34px 30px; text-decoration: none; color: inherit; transition: var(--transition);
+            position: relative; overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow-soft);
+        }
+        .s-item::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light), var(--accent-blue));
+            transform: scaleX(0); transform-origin: left; transition: transform 0.5s ease;
+        }
+        .s-item::after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(128,99,199,0.03), rgba(167,139,218,0.02));
+            opacity: 0; transition: opacity 0.4s ease; pointer-events: none;
+        }
         .s-item:hover { transform: translateY(-8px); border-color: var(--accent-gold-border); box-shadow: var(--shadow-hover); }
         .s-item:hover::before { transform: scaleX(1); }
         .s-item:hover::after { opacity: 1; }
-        .s-item i { font-size: 1.6rem; color: var(--accent-gold); margin-bottom: 20px; background: linear-gradient(135deg, var(--accent-gold-soft), rgba(128,99,199,0.04)); width: 58px; height: 58px; display: flex; align-items: center; justify-content: center; border-radius: 14px; border: 1px solid var(--accent-gold-border); transition: var(--transition); }
-        .s-item:hover i { background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light)); color: white; border-color: transparent; box-shadow: 0 6px 20px rgba(128,99,199,0.3); }
+        .s-item i {
+            font-size: 1.6rem; color: var(--accent-gold); margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--accent-gold-soft), rgba(128,99,199,0.04));
+            width: 58px; height: 58px; display: flex; align-items: center; justify-content: center;
+            border-radius: 14px; border: 1px solid var(--accent-gold-border); transition: var(--transition);
+        }
+        .s-item:hover i {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
+            color: white; border-color: transparent; box-shadow: 0 6px 20px rgba(128,99,199,0.3);
+        }
         .s-item h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 12px; color: var(--text-dark); position: relative; z-index: 1; }
         .s-item p { color: var(--text-body); font-size: 0.92rem; flex-grow: 1; margin-bottom: 20px; position: relative; z-index: 1; }
         .s-link { color: var(--accent-gold); font-weight: 600; font-size: 0.88rem; display: flex; align-items: center; gap: 8px; transition: gap 0.3s ease; position: relative; z-index: 1; }
         .s-item:hover .s-link { gap: 14px; }
 
-        /* Process */
+        /* ===== PROCESS ===== */
         .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 40px; }
-        .step-card { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius); padding: 34px 28px; position: relative; transition: var(--transition); box-shadow: var(--shadow-soft); overflow: hidden; }
-        .step-card::before { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light)); transform: scaleX(0); transition: transform 0.4s ease; }
+        .step-card {
+            background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius);
+            padding: 34px 28px; position: relative; transition: var(--transition); box-shadow: var(--shadow-soft); overflow: hidden;
+        }
+        .step-card::before {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light)); transform: scaleX(0); transition: transform 0.4s ease;
+        }
         .step-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--accent-gold-border); }
         .step-card:hover::before { transform: scaleX(1); }
         .step-card h2 { font-size: 3.5rem; font-weight: 800; color: rgba(128,99,199,0.08); position: absolute; top: 12px; right: 20px; line-height: 1; margin: 0; }
         .step-card h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 12px; color: var(--accent-gold); position: relative; z-index: 1; }
         .step-card p { color: var(--text-body); font-size: 0.92rem; position: relative; z-index: 1; }
 
-        /* FAQ */
+        /* ===== FAQ ===== */
         .faq-item { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 14px; margin-bottom: 14px; overflow: hidden; transition: var(--transition); box-shadow: var(--shadow-soft); }
         .faq-item:hover { border-color: var(--accent-gold-border); box-shadow: var(--shadow-medium); }
         .faq-item summary { padding: 22px 28px; font-weight: 600; font-size: 1rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--text-dark); transition: var(--transition); }
@@ -142,7 +291,7 @@
         .faq-item p { padding: 0 28px 22px; color: var(--text-body); font-size: 0.93rem; line-height: 1.7; animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* CTA */
+        /* ===== CTA ===== */
         .cta-box { background: linear-gradient(135deg, #f4f0f9, #ede8f8, #e8e0f5); border: 1px solid var(--accent-gold-border); border-radius: 24px; padding: 60px 40px; text-align: center; position: relative; overflow: hidden; box-shadow: var(--shadow-medium); }
         .cta-box::before { content: ''; position: absolute; top: -50%; right: -30%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(128,99,199,0.08) 0%, transparent 70%); border-radius: 50%; }
         .cta-box::after { content: ''; position: absolute; bottom: -40%; left: -20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(217,111,159,0.05) 0%, transparent 70%); border-radius: 50%; }
@@ -150,19 +299,53 @@
         .cta-box .btn-header { background: var(--text-dark); color: white; box-shadow: 0 4px 20px rgba(45,42,38,0.2); }
         .cta-box .btn-header:hover { background: var(--accent-gold); box-shadow: 0 8px 30px rgba(128,99,199,0.3); }
 
-        /* Footer */
-        .site-footer { background: var(--text-dark); color: rgba(255,255,255,0.7); padding: 70px 0 0; }
-        .footer-bottom { padding: 24px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-        .footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
-        .footer-bottom-links { display: flex; gap: 20px; }
-        .footer-bottom-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.82rem; transition: var(--transition); }
-        .footer-bottom-links a:hover { color: var(--accent-gold-light); }
+        /* ===== FOOTER ===== */
+        footer { background: var(--bg-warm); border-top: 1px solid var(--border-warm); padding: 40px 0; text-align: center; color: var(--text-light); font-size: 0.88rem; }
 
-        /* Scroll Reveal */
+        /* ===== SCROLL REVEAL ===== */
         .scroll-reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.25,0.46,0.45,0.94); }
         .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
 
-        /* Responsive */
+        /* ===== RESPONSIVE ===== */
+/* Footer */
+        footer {
+            background: var(--text-dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 70px 0 30px 0;
+        }
+
+        .f-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .f-col h4 { color: white; margin-bottom: 20px; font-size: 1rem; }
+        .f-col ul { list-style: none; }
+        .f-col li { margin-bottom: 12px; }
+        .f-col a { color: rgba(255, 255, 255, 0.55); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
+        .f-col a:hover { color: var(--accent-gold-light); transform: translateX(4px); display: inline-block; }
+        .f-col p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.55); }
+
+        .footer-bottom {
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); }
+        .footer-bottom-links { display: flex; gap: 20px; }
+        .footer-bottom-links a { color: rgba(255, 255, 255, 0.4); text-decoration: none; font-size: 0.85rem; transition: var(--transition); }
+        .footer-bottom-links a:hover { color: var(--accent-gold-light); }
+        footer .btn-header { color: black; }
+        footer .btn-header:hover { color: #000; }
+
+
         @media (max-width: 980px) {
             .hero-grid { grid-template-columns: 1fr; gap: 50px; }
             .hero-content { text-align: center; }
@@ -170,7 +353,7 @@
             .hero-labels { justify-content: center; }
             .hero-stats { justify-content: center; margin-left: auto; margin-right: auto; flex-wrap: wrap; gap: 8px 0; }
             .hero-visual { max-width: 480px; margin: 0 auto; }
-            }
+        }
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .section-padding { padding: 60px 0; }
@@ -180,9 +363,11 @@
             .hv-chip.loc { left: 6px; }
             .hv-chip.trust { right: 6px; }
             .cta-box { padding: 40px 24px; }
-            .footer-bottom { flex-direction: column; text-align: center; }
         }
-        @media (max-width: 420px) { .hv-grid { grid-template-columns: 1fr; } .hero-stat { padding: 0 18px; } }
+        @media (max-width: 420px) {
+            .hv-grid { grid-template-columns: 1fr; }
+            .hero-stat { padding: 0 18px; }
+        }
     </style>
 </head>
 <body class="page-location">
@@ -190,7 +375,10 @@
     <!-- Navigation -->
     <nav>
         <div class="container nav-flex">
-            <a href="index.html" class="logo"><span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span> RCC<span>BGM</span></a>
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span>
+                RCC<span>BGM</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="services.html">Services</a></li>
                 <li><a href="industries.html">Industries</a></li>
@@ -202,124 +390,132 @@
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-grid">
+                <!-- Left: content -->
                 <div class="hero-content">
                     <span class="hero-tag animate__animated animate__fadeInDown"><i class="fa-solid fa-location-dot"></i> Orange County / Southern California</span>
-                    <h1 class="animate__animated animate__fadeInUp">Commercial Facility Services in <span>Irvine, California</span></h1>
-                    <p class="animate__animated animate__fadeInUp" style="animation-delay: 0.15s;">Commercial facility support for corporate offices, technology workplaces and planned tenant improvements in Irvine, Orange County's premier business center.</p>
+                    <h1 class="animate__animated animate__fadeInUp">Commercial Facility Service Assessment in <span>Irvine, CA</span></h1>
+                    <p class="animate__animated animate__fadeInUp" style="animation-delay: 0.15s;">RCC-BGM lists Irvine as a Reliable + Brilliant market. Cleaning, maintenance, construction and building-system needs are assessed separately and remain subject to local availability.</p>
                     <div class="hero-labels animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
                         <a class="btn-header btn-glow" href="contact.html">Request a Local Facility Assessment <i class="fa-solid fa-arrow-right"></i></a>
                         <a class="h-label" href="services.html"><i class="fa-solid fa-layer-group"></i> Explore Services</a>
                     </div>
                     <div class="hero-stats animate__animated animate__fadeInUp" style="animation-delay: 0.45s;">
-                        <div class="hero-stat"><div class="num">01</div><div class="lbl">Clear scope</div></div>
-                        <div class="hero-stat"><div class="num">02</div><div class="lbl">Coordinated team</div></div>
-                        <div class="hero-stat"><div class="num">03</div><div class="lbl">Planned delivery</div></div>
+                        <div class="hero-stat">
+                            <div class="num">01</div>
+                            <div class="lbl">Clear scope</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="num">02</div>
+                            <div class="lbl">Coordinated team</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="num">03</div>
+                            <div class="lbl">Planned delivery</div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Right: glass visual -->
                 <div class="hero-visual animate__animated animate__fadeInRight" style="animation-delay: 0.3s;">
                     <div class="hv-panel">
-                        <span class="hv-glow g1"></span><span class="hv-glow g2"></span>
+                        <span class="hv-glow g1"></span>
+                        <span class="hv-glow g2"></span>
+
                         <div class="hv-chip loc"><i class="fa-solid fa-location-dot"></i> Irvine, CA</div>
-                        <div class="hv-chip trust"><i class="fa-solid fa-circle-check"></i> Local team ready</div>
+                        <div class="hv-chip trust"><i class="fa-solid fa-circle-check"></i> Scope confirmation required</div>
+
                         <div class="hv-grid">
-                            <div class="hv-card"><div class="ic"><i class="fa-solid fa-broom"></i></div><div><h4>Cleaning &amp; Janitorial</h4><span>Corporate &amp; tech</span></div></div>
-                            <div class="hv-card"><div class="ic"><i class="fa-solid fa-helmet-safety"></i></div><div><h4>Construction &amp; TI</h4><span>Tenant improvements</span></div></div>
-                            <div class="hv-card"><div class="ic"><i class="fa-solid fa-screwdriver-wrench"></i></div><div><h4>Facility Maintenance</h4><span>Repairs &amp; upgrades</span></div></div>
-                            <div class="hv-card"><div class="ic"><i class="fa-solid fa-temperature-arrow-down"></i></div><div><h4>HVAC &amp; MEP</h4><span>Coordinated systems</span></div></div>
+                            <div class="hv-card">
+                                <div class="ic"><i class="fa-solid fa-broom"></i></div>
+                                <div><h4>Cleaning &amp; Janitorial</h4><span>Office &amp; controlled env.</span></div>
+                            </div>
+                            <div class="hv-card">
+                                <div class="ic"><i class="fa-solid fa-helmet-safety"></i></div>
+                                <div><h4>Construction &amp; TI</h4><span>Tenant improvements</span></div>
+                            </div>
+                            <div class="hv-card">
+                                <div class="ic"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                                <div><h4>Facility Maintenance</h4><span>Repairs &amp; upgrades</span></div>
+                            </div>
+                            <div class="hv-card">
+                                <div class="ic"><i class="fa-solid fa-temperature-arrow-down"></i></div>
+                                <div><h4>HVAC &amp; MEP</h4><span>Coordinated systems</span></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="scroll-cue"><span>Scroll</span><i class="fa-solid fa-chevron-down"></i></div>
+        <div class="scroll-cue">
+            <span>Scroll</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
     </section>
 
     <main>
-        <!-- Local Introduction -->
-        <section class="container section-padding">
-            <div style="max-width: 780px;">
-                <span class="hero-tag">Southern California Market</span>
-                <h2>Commercial Facility Support in Irvine</h2>
-                <p style="margin-top: 16px;">Irvine is Orange County's corporate and technology center, featuring extensive office parks, planned business communities, technology companies and healthcare campuses. RCC-BGM supports corporate offices, technology workplaces and commercial properties in Irvine through Brilliant General Maintenance and Reliable Concepts Corporation. Cleaning, janitorial, construction, HVAC and facility work are scoped around the property and confirmed local availability.</p>
-            </div>
-            <div class="services-grid" style="margin-top: 48px;">
-                <a class="s-item scroll-reveal active" href="commercial-cleaning-services.html"><i class="fa-solid fa-broom"></i><h3>Commercial Cleaning &amp; Janitorial</h3><p>BGM can develop commercial cleaning, office cleaning and janitorial programs for corporate offices, technology workplaces and commercial properties in Irvine, subject to the confirmed facility scope and local service availability.</p><span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span></a>
-                <a class="s-item scroll-reveal" href="commercial-construction.html"><i class="fa-solid fa-helmet-safety"></i><h3>Commercial Construction &amp; Improvements</h3><p>RCC can coordinate commercial construction, tenant improvements, HVAC, MEP and maintenance construction for commercial properties in Irvine, based on the project, licensing and trade requirements.</p><span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span></a>
-                <a class="s-item scroll-reveal" href="facility-maintenance-services.html"><i class="fa-solid fa-screwdriver-wrench"></i><h3>Facility Maintenance</h3><p>Selected building maintenance, repairs and facility-upgrade work can be connected with cleaning and building-system needs in Irvine.</p><span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span></a>
-                <a class="s-item scroll-reveal" href="commercial-hvac-services.html"><i class="fa-solid fa-temperature-arrow-down"></i><h3>Commercial HVAC &amp; MEP</h3><p>HVAC and MEP work can be reviewed as stand-alone service or coordinated with tenant improvements and facility projects in Irvine.</p><span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span></a>
-            </div>
-        </section>
+      <section class="container section-padding">
+        <div style="max-width:850px">
+          <span class="hero-tag">Orange County / Southern California Market</span>
+          <h2>Commercial Property Context in Irvine</h2>
+          <p style="margin-top:16px">Irvine&#x27;s planned business districts include corporate campuses, life-science and medical space, technology offices, retail centers and industrial properties. RCC-BGM's official locations page includes Irvine in its service network, but that listing does not establish that every service is available at every address. Any request must be matched to the property, division, requested work and current local availability.</p>
+        </div>
+        <div class="services-grid" style="margin-top:48px">
+          <a class="s-item scroll-reveal active" href="commercial-cleaning-services.html"><i class="fa-solid fa-broom"></i><h3>Janitorial &amp; Specialty Cleaning Assessment</h3><p>Commercial janitorial, floor care and specialty-cleaning needs for a Irvine property may be assessed by Brilliant. Program type, frequency, access procedures and local availability must be confirmed for the specific property and scope.</p><span class="s-link">Review cleaning services <i class="fa-solid fa-arrow-right"></i></span></a>
+          <a class="s-item scroll-reveal" href="commercial-construction.html"><i class="fa-solid fa-helmet-safety"></i><h3>Construction &amp; Tenant-Improvement Review</h3><p>Commercial maintenance, tenant-improvement, HVAC or MEP needs in Irvine may be assessed by Reliable. Applicable licensing, permits, trade availability and property-specific scope must be confirmed before work is proposed.</p><span class="s-link">Review construction services <i class="fa-solid fa-arrow-right"></i></span></a>
+          <a class="s-item scroll-reveal" href="facility-maintenance-services.html"><i class="fa-solid fa-screwdriver-wrench"></i><h3>Property-Specific Maintenance</h3><p>Repair and upkeep needs may be assessed after the building type, affected systems, access limits and responsibility boundaries are known. Service is subject to local availability.</p><span class="s-link">Review maintenance services <i class="fa-solid fa-arrow-right"></i></span></a>
+          <a class="s-item scroll-reveal" href="commercial-hvac-services.html"><i class="fa-solid fa-temperature-arrow-down"></i><h3>HVAC &amp; MEP Scope Confirmation</h3><p>HVAC or MEP work must be confirmed for the specific Irvine property and scope, including jurisdiction, permits, licensing, system condition and trade availability.</p><span class="s-link">Review HVAC services <i class="fa-solid fa-arrow-right"></i></span></a>
+        </div>
+      </section>
+      <section class="container section-padding" style="background:var(--bg-warm);border-top:1px solid var(--border-warm);border-bottom:1px solid var(--border-warm)">
+        <h2>Irvine Industries and Commercial Property Types</h2>
+        <p class="section-intro">Irvine&#x27;s planned business districts include corporate campuses, life-science and medical space, technology offices, retail centers and industrial properties. These market characteristics help frame a site conversation; they are not claims that RCC-BGM serves every facility in these categories.</p>
+        <div class="services-grid"><div class="s-item scroll-reveal" style="cursor:default"><i class="fa-solid fa-microchip"></i><h3>Corporate Campuses</h3><p>Corporate Campuses properties may have different occupancy, access, finish, hygiene and operating-hour requirements; the facility and requested scope should be assessed before service is confirmed.</p></div><div class="s-item scroll-reveal" style="cursor:default"><i class="fa-solid fa-building"></i><h3>Life Science &amp; Medical</h3><p>Life Science &amp; Medical properties may have different occupancy, access, finish, hygiene and operating-hour requirements; the facility and requested scope should be assessed before service is confirmed.</p></div><div class="s-item scroll-reveal" style="cursor:default"><i class="fa-solid fa-industry"></i><h3>Technology</h3><p>Technology properties may have different occupancy, access, finish, hygiene and operating-hour requirements; the facility and requested scope should be assessed before service is confirmed.</p></div><div class="s-item scroll-reveal" style="cursor:default"><i class="fa-solid fa-briefcase"></i><h3>Industrial &amp; Retail</h3><p>Industrial &amp; Retail properties may have different occupancy, access, finish, hygiene and operating-hour requirements; the facility and requested scope should be assessed before service is confirmed.</p></div></div>
+      </section>
+      <section class="container section-padding">
+        <h2>Permitting and Project Planning in Irvine</h2>
+        <p class="section-intro">Irvine&#x27;s Community Development team reviews building and planning applications; commercial tenant work may also require fire review and inspection sequencing. Property owners and managers should confirm the authority having jurisdiction and required approvals directly with official agencies. RCC-BGM service availability does not replace permit, design, licensing or inspection requirements.</p>
+        <div class="process-grid">
+          <div class="step-card scroll-reveal"><h2>01</h2><h4>Identify the Property</h4><p>Share the exact Irvine address, occupancy, facility type and operating constraints.</p></div>
+          <div class="step-card scroll-reveal"><h2>02</h2><h4>Define the Need</h4><p>Separate recurring cleaning, repair, building-system and improvement needs into a reviewable scope.</p></div>
+          <div class="step-card scroll-reveal"><h2>03</h2><h4>Confirm Coverage</h4><p>RCC-BGM confirms the applicable division and whether service is locally available for that property and scope.</p></div>
+          <div class="step-card scroll-reveal"><h2>04</h2><h4>Check Requirements</h4><p>Confirm permits, licensing, access, schedule, exclusions and responsibilities before a proposal or work plan.</p></div>
+        </div>
+      </section>
+      <section class="container section-padding" style="background:var(--bg-warm);border-top:1px solid var(--border-warm);border-bottom:1px solid var(--border-warm)">
+        <h2>Service Questions for a Irvine Property</h2>
+        <div class="services-grid" style="margin-top:30px">
+          <div class="s-item scroll-reveal"><h3>Facility conditions</h3><p>Building size, occupancy, surfaces, equipment, security and operating hours shape what may be appropriate.</p></div>
+          <div class="s-item scroll-reveal"><h3>Division availability</h3><p>The official network identifies this as a Reliable + Brilliant market. The specific service still must be confirmed.</p></div>
+          <div class="s-item scroll-reveal"><h3>Jurisdiction and permits</h3><p>City, county, fire or other agency requirements may apply depending on the address and work.</p></div>
+          <div class="s-item scroll-reveal"><h3>Proposal boundaries</h3><p>A useful proposal should identify included work, frequency or schedule, assumptions, responsibilities and exclusions.</p></div>
+        </div>
+      </section>
+      <section class="container section-padding">
+        <h2>Frequently Asked Questions About Irvine</h2>
+        <p class="section-intro">Answers are intentionally conditional because availability is confirmed property by property.</p>
+        <details class="faq-item scroll-reveal" open><summary>Is Irvine supported by RCC-BGM?</summary><p>Yes. RCC-BGM's original official locations page lists Irvine in its multi-state service network and identifies the market as Reliable + Brilliant. Service must still be confirmed for the specific property and scope.</p></details>
+        <details class="faq-item scroll-reveal"><summary>Can I request commercial cleaning in Irvine?</summary><p>A commercial cleaning or janitorial need may be assessed. Frequency, facility requirements, access and current local availability must be reviewed before service is confirmed.</p></details>
+        <details class="faq-item scroll-reveal"><summary>Are construction and HVAC services automatically available here?</summary><p>No. Do not assume that every RCC-BGM service is offered in this market. Construction, HVAC, MEP and improvement work is subject to division coverage, licensing, trade availability and the particular property scope.</p></details>
+        <details class="faq-item scroll-reveal"><summary>Who confirms permits for work in Irvine?</summary><p>The property owner and project participants should verify requirements with the authority having jurisdiction. Irvine&#x27;s Community Development team reviews building and planning applications; commercial tenant work may also require fire review and inspection sequencing.</p></details>
+        <details class="faq-item scroll-reveal"><summary>What should I provide for an assessment?</summary><p>Provide the exact address, facility and occupancy type, requested work, preferred schedule, known site restrictions and any existing plans or permit information. RCC-BGM can then confirm the appropriate next step.</p></details>
+      </section>
+      <section id="contact" class="container section-padding" style="padding-bottom:100px">
+        <div class="cta-box scroll-reveal"><h2>Confirm Service for Your Irvine Property</h2>
+          <p style="margin-top:16px;color:var(--text-body);max-width:680px;margin-left:auto;margin-right:auto">Tell RCC-BGM what the property is, where it is located and what outcome you need. The request may be assessed and routed only after the relevant division and local availability are confirmed for the specific scope.</p>
+          <div style="margin-top:32px"><a href="contact.html" class="btn-header btn-glow">Request a Property Review <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div>
+      </section>
+      <section class="container section-padding" style="text-align:center;border-top:1px solid var(--border-warm)">
+        <h2>Compare Nearby RCC-BGM Markets</h2><p style="margin:14px auto 0;max-width:680px;color:var(--text-body)">Each market has its own business, property and service-availability context. Use the location page for the property's actual address.</p>
+        <div class="services-grid" style="margin-top:40px"><a class="s-item scroll-reveal" href="long-beach-ca.html"><i class="fa-solid fa-location-dot"></i><h3>Long Beach, CA</h3><p>Review the separate market context and confirm service availability for a property in Long Beach.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a><a class="s-item scroll-reveal" href="los-angeles-ca.html"><i class="fa-solid fa-location-dot"></i><h3>Los Angeles, CA</h3><p>Review the separate market context and confirm service availability for a property in Los Angeles.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a><a class="s-item scroll-reveal" href="san-diego-ca.html"><i class="fa-solid fa-location-dot"></i><h3>San Diego, CA</h3><p>Review the separate market context and confirm service availability for a property in San Diego.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a></div>
+      </section>
+    </main>
 
-        <!-- Industries -->
-        <section class="container section-padding" style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
-            <h2>Industries in Irvine</h2>
-            <p class="section-intro">RCC-BGM supports commercial properties connected to Irvine's key business sectors, with services tailored to each facility type.</p>
-            <div class="services-grid">
-                <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-microchip"></i><h3>Technology &amp; Software</h3><p>Tech companies, software firms and innovation centers in Irvine's business parks.</p></div>
-                <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-building"></i><h3>Corporate Headquarters</h3><p>Regional and national corporate offices requiring high-standard facility maintenance.</p></div>
-                <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-hospital"></i><h3>Healthcare &amp; Medical</h3><p>Medical offices, healthcare campuses and clinical environments.</p></div>
-                <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-landmark"></i><h3>Financial Services</h3><p>Banking, insurance and professional service offices with specific security and cleaning needs.</p></div>
-            </div>
-        </section>
-
-        <!-- Process -->
-        <section class="container section-padding">
-            <h2>How a Local Service Request Works in Irvine</h2>
-            <p class="section-intro">A focused process keeps the scope useful and the delivery aligned with your property.</p>
-            <div class="process-grid">
-                <div class="step-card scroll-reveal"><h2>01</h2><h4>Share the Property</h4><p>Provide the Irvine address, facility type, current need and preferred timing.</p></div>
-                <div class="step-card scroll-reveal"><h2>02</h2><h4>Confirm Coverage</h4><p>RCC-BGM confirms which division, service and local team can support the request.</p></div>
-                <div class="step-card scroll-reveal"><h2>03</h2><h4>Review the Site</h4><p>A walkthrough is arranged when the scope cannot be accurately defined remotely.</p></div>
-                <div class="step-card scroll-reveal"><h2>04</h2><h4>Receive a Proposal</h4><p>The proposal identifies services, frequency or project scope, responsibilities and exclusions.</p></div>
-            </div>
-        </section>
-
-        <!-- Related Services -->
-        <section class="container section-padding" style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
-            <h2>Related RCC-BGM Services</h2>
-            <div class="services-grid" style="margin-top: 30px;">
-                <a class="s-item scroll-reveal" href="commercial-cleaning-services.html"><h3>Commercial Cleaning Services</h3><p>Explore BGM commercial cleaning capabilities available in the Irvine market.</p><span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span></a>
-                <a class="s-item scroll-reveal" href="commercial-construction.html"><h3>Commercial Construction</h3><p>Explore RCC construction, tenant improvements and facility upgrades in Irvine.</p><span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span></a>
-                <a class="s-item scroll-reveal" href="facility-maintenance-services.html"><h3>Facility Maintenance Services</h3><p>Explore connected maintenance programs for Irvine commercial properties.</p><span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span></a>
-                <a class="s-item scroll-reveal" href="industries.html"><h3>Industries</h3><p>See which industries RCC-BGM serves and how services connect to your facility type.</p><span class="s-link">View industries <i class="fa-solid fa-arrow-right"></i></span></a>
-            </div>
-        </section>
-
-        <!-- FAQ -->
-        <section class="container section-padding">
-            <h2>Frequently Asked Questions About Irvine</h2>
-            <p class="section-intro">Quick answers about our Irvine commercial facility services.</p>
-            <details class="faq-item scroll-reveal" open><summary>Does RCC-BGM provide commercial cleaning in Irvine?</summary><p>RCC-BGM lists Irvine as a service market in Orange County. Cleaning availability and program frequency must be confirmed for the specific property.</p></details>
-            <details class="faq-item scroll-reveal"><summary>Can I request janitorial service for a corporate campus?</summary><p>Yes. Submit the facility type, address and required frequency so BGM can confirm local coverage for corporate environments.</p></details>
-            <details class="faq-item scroll-reveal"><summary>Does RCC provide tenant improvements in Irvine?</summary><p>RCC can review the project. Licensing, permit requirements, trade availability and scope must be confirmed before a proposal is issued.</p></details>
-            <details class="faq-item scroll-reveal"><summary>Can RCC-BGM coordinate cleaning and construction?</summary><p>Yes. Related cleaning, maintenance, HVAC and improvement work can be organized through the combined platform when clearly scoped.</p></details>
-            <details class="faq-item scroll-reveal"><summary>What property types does RCC-BGM serve in Irvine?</summary><p>Corporate offices, technology workplaces, healthcare facilities, financial offices and planned commercial properties.</p></details>
-        </section>
-
-        <!-- CTA -->
-        <section id="contact" class="container section-padding" style="padding-bottom: 100px;">
-            <div class="cta-box scroll-reveal">
-                <h2>Request a Local Facility Assessment in Irvine</h2>
-                <p style="margin-top: 16px; color: var(--text-body); max-width: 600px; margin-left: auto; margin-right: auto;">Share the property address, facility type and required service. RCC-BGM will confirm local availability and the appropriate next step for your Irvine property.</p>
-                <div style="margin-top: 32px;"><a href="contact.html" class="btn-header btn-glow">Request an Assessment <i class="fa-solid fa-arrow-right"></i></a></div>
-            </div>
-        </section>
-
-        <!-- Nearby Cities -->
-        <section class="container section-padding" style="text-align: center; border-top: 1px solid var(--border-warm);">
-            <h2>Explore Nearby Markets</h2>
-            <p style="margin: 14px auto 0; max-width: 620px; color: var(--text-body);">RCC-BGM serves selected commercial properties across the Southern California region. Explore other nearby service markets.</p>
-            <div class="services-grid" style="margin-top: 40px;">
-                <a class="s-item scroll-reveal" href="anaheim-ca.html"><i class="fa-solid fa-location-dot"></i><h3>Anaheim, CA</h3><p>Explore RCC-BGM commercial facility services available in Anaheim.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a>
-                <a class="s-item scroll-reveal" href="long-beach-ca.html"><i class="fa-solid fa-location-dot"></i><h3>Long Beach, CA</h3><p>Explore RCC-BGM commercial facility services available in Long Beach.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a>
-                <a class="s-item scroll-reveal" href="santa-monica-ca.html"><i class="fa-solid fa-location-dot"></i><h3>Santa Monica, CA</h3><p>Explore RCC-BGM commercial facility services available in Santa Monica.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a>
-            </div>
-        </section>
-    </main>    <!-- Footer -->
+        <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="f-grid">
@@ -333,9 +529,9 @@
                     <h4>Services</h4>
                     <ul>
                         <li><a href="commercial-cleaning-services.html">Commercial Cleaning</a></li>
-                        <li><a href="commercial-construction.html">Construction &amp; TI</a></li>
+                        <li><a href="commercial-construction.html">Construction & TI</a></li>
                         <li><a href="facility-maintenance-services.html">Facility Maintenance</a></li>
-                        <li><a href="commercial-hvac-services.html">HVAC &amp; MEP</a></li>
+                        <li><a href="commercial-hvac-services.html">HVAC & MEP</a></li>
                     </ul>
                 </div>
                 <div class="f-col">
@@ -358,7 +554,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 RCC-BGM. All rights reserved. | Reliable Concepts Corporation &amp; Brilliant General Maintenance</p>
+                <p>&copy; 2026 RCC-BGM. All rights reserved. | Reliable Concepts Corporation & Brilliant General Maintenance</p>
                 <div class="footer-bottom-links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
@@ -370,7 +566,12 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
             }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
             document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
         });

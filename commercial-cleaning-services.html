@@ -286,7 +286,7 @@
         position: relative;
         overflow: hidden;
       }
-      .page-cleaning .tech-box h2 { color: var(--bg-deep); }
+      .page-cleaning .tech-box h2 { color: var(--bg-deep); text-align: left; }
       .page-cleaning .tech-box p { color: var(--text-slate); }
       .page-cleaning .tech-box .live-badge {
         color: var(--accent-teal);
@@ -352,6 +352,40 @@
         transform: scale(1.05);
       }
 
+      /* ── Quality-Grid: first card persistent selected state ── */
+      .page-cleaning .quality-grid .s-item.active {
+        border-color: var(--accent-teal);
+        background: linear-gradient(160deg, rgba(128, 99, 199, 0.06) 0%, #ffffff 100%);
+        box-shadow: 0 16px 40px -12px rgba(128, 99, 199, 0.22);
+        border-width: 2px;
+        position: relative;
+      }
+      .page-cleaning .quality-grid .s-item.active::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: var(--gradient);
+        border-radius: 22px 22px 0 0;
+      }
+
+      /* ── Mini-Grid: first card persistent selected state ── */
+      .page-cleaning .mini-grid .s-item.active {
+        border-color: var(--accent-teal);
+        background: linear-gradient(160deg, rgba(128, 99, 199, 0.06) 0%, #ffffff 100%);
+        box-shadow: 0 16px 40px -12px rgba(128, 99, 199, 0.22);
+        border-width: 2px;
+        position: relative;
+      }
+      .page-cleaning .mini-grid .s-item.active::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: var(--gradient);
+        border-radius: 22px 22px 0 0;
+      }
+
       /* ── Section backgrounds: clean, no yellow ── */
       .page-cleaning .schedule-section { background: transparent; }
       .page-cleaning .quality-section { background: transparent; }
@@ -406,6 +440,45 @@
       .ccs-svc, .facility-chips .chip { overflow-wrap: anywhere; }
 
       /* ── Responsive ── */
+/* Footer */
+        footer {
+            background: var(--text-dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 70px 0 30px 0;
+        }
+
+        .f-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .f-col h4 { color: white; margin-bottom: 20px; font-size: 1rem; }
+        .f-col ul { list-style: none; }
+        .f-col li { margin-bottom: 12px; }
+        .f-col a { color: rgba(255, 255, 255, 0.55); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
+        .f-col a:hover { color: var(--accent-gold-light); transform: translateX(4px); display: inline-block; }
+        .f-col p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.55); }
+
+        .footer-bottom {
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); }
+        .footer-bottom-links { display: flex; gap: 20px; }
+        .footer-bottom-links a { color: rgba(255, 255, 255, 0.4); text-decoration: none; font-size: 0.85rem; transition: var(--transition); }
+        .footer-bottom-links a:hover { color: var(--accent-gold-light); }
+        footer .btn-header { color: black; }
+        footer .btn-header:hover { color: #000; }
+
+        
       @media (max-width: 900px) {
         .ccs-hero-grid { flex-direction: column; gap: 36px; }
         .ccs-hero-grid, .ccs-hero-left, .ccs-console-wrapper { width: 100%; max-width: 100%; }
@@ -754,10 +827,10 @@
         </div>
       </section>
 
-      <section class="container section-padding frequency-section">
-        <span class="eyebrow">The right task at the right frequency</span>
-        <h2>Daily, recurring and periodic cleaning</h2>
-        <p>
+      <section class="container section-padding frequency-section" style="text-align:center;">
+        <span class="eyebrow" style="justify-content:center;">The right task at the right frequency</span>
+        <h2 style="text-align:center;">Daily, recurring and periodic cleaning</h2>
+        <p style="text-align:center; max-width:100%; margin-left:auto; margin-right:auto;">
           Not every task needs to be completed at the same frequency. The
           final schedule is based on building usage rather than an arbitrary
           package.
@@ -793,10 +866,10 @@
       </section>
 
       <section class="container section-padding schedule-section">
-        <div class="industry-standard">
-          <span class="eyebrow">Planned around facility operations</span>
-          <h2>Commercial cleaning without unnecessary disruption</h2>
-          <p>
+        <div class="industry-standard" style="text-align:center;">
+          <span class="eyebrow" style="justify-content:center;">Planned around facility operations</span>
+          <h2 style="text-align:center;">Commercial cleaning without unnecessary disruption</h2>
+          <p style="text-align:center; max-width:100%; margin-left:auto; margin-right:auto;">
             Service timing can be coordinated around approved access hours,
             normal business activity and building requirements. Planning may
             consider opening and closing times, employee activity, production
@@ -804,7 +877,7 @@
             and shared tenant spaces.
           </p>
           <div class="services-grid mini-grid">
-            <article class="s-item">
+            <article class="s-item active">
               <h3>Before or after hours</h3>
               <p>
                 Coordinate service windows around the operating rhythm of the
@@ -829,11 +902,11 @@
         </div>
       </section>
 
-      <section class="container section-padding quality-section">
-        <span class="eyebrow">Consistency requires accountability</span>
-        <h2>A clearer approach to cleaning quality</h2>
+      <section class="container section-padding quality-section" style="text-align:center;">
+        <span class="eyebrow" style="justify-content:center;">Consistency requires accountability</span>
+        <h2 style="text-align:center;">A clearer approach to cleaning quality</h2>
         <div class="services-grid quality-grid">
-          <article class="s-item">
+          <article class="s-item active">
             <i class="fa-solid fa-file-lines"></i>
             <h3>Defined scope</h3>
             <p>
@@ -874,7 +947,7 @@
             <span class="live-badge"
               ><span class="live-dot"></span> Smarter facility support</span
             >
-            <h2>Trained teams supported by cleaning technology</h2>
+            <h2 style="text-align:left;">Trained teams supported by cleaning technology</h2>
             <p>
               Where suitable and available, technology can support
               repeatability, visibility and resource coordination for large or
@@ -909,9 +982,9 @@
         </div>
       </section>
 
-      <section class="container section-padding">
-        <span class="eyebrow">From walkthrough to ongoing service</span>
-        <h2>How the commercial cleaning process works</h2>
+      <section class="container section-padding" style="text-align:center;">
+        <span class="eyebrow" style="justify-content:center;">From walkthrough to ongoing service</span>
+        <h2 style="text-align:center;">How the commercial cleaning process works</h2>
         <div class="process-grid process-seven">
           <div class="step-card">
             <h2>01</h2>
@@ -951,10 +1024,10 @@
         </div>
       </section>
 
-      <section class="container section-padding pricing-section">
-        <span class="eyebrow">Custom pricing based on the facility</span>
-        <h2>What affects the cost of commercial cleaning services?</h2>
-        <p>
+      <section class="container section-padding pricing-section" style="text-align:center;">
+        <span class="eyebrow" style="justify-content:center;">Custom pricing based on the facility</span>
+        <h2 style="text-align:center;">What affects the cost of commercial cleaning services?</h2>
+        <p style="text-align:center; max-width:100%; margin-left:auto; margin-right:auto;">
           Pricing should reflect the actual property and service
           requirements rather than a generic advertised rate.
         </p>
@@ -982,13 +1055,13 @@
         </ul>
       </section>
 
-      <section class="container section-padding">
+      <section class="container section-padding" style="text-align:center;">
         <div>
-          <span class="eyebrow"
+          <span class="eyebrow" style="justify-content:center;"
             >Commercial cleaning across active U.S. markets</span
           >
-          <h2>Local service planning with coordinated facility support</h2>
-          <p>
+          <h2 style="text-align:center;">Local service planning with coordinated facility support</h2>
+          <p style="text-align:center; max-width:100%; margin-left:auto; margin-right:auto;">
             Service availability may vary according to location, facility type and
             scope. Contact RCC-BGM to confirm availability for the required
             property and city.
@@ -1009,9 +1082,9 @@
         </div>
       </section>
 
-      <section class="container section-padding faq-section">
-        <span class="eyebrow">Questions from facility teams</span>
-        <h2>Commercial cleaning services FAQs</h2>
+      <section class="container section-padding faq-section" style="text-align:center;">
+        <span class="eyebrow" style="justify-content:center;">Questions from facility teams</span>
+        <h2 style="text-align:center;">Commercial cleaning services FAQs</h2>
         <div class="faq-item">
           <h4>
             What are commercial cleaning services?
@@ -1130,9 +1203,9 @@
                     <h4>Services</h4>
                     <ul>
                         <li><a href="commercial-cleaning-services.html">Commercial Cleaning</a></li>
-                        <li><a href="commercial-construction.html">Construction &amp; TI</a></li>
+                        <li><a href="commercial-construction.html">Construction & TI</a></li>
                         <li><a href="facility-maintenance-services.html">Facility Maintenance</a></li>
-                        <li><a href="commercial-hvac-services.html">HVAC &amp; MEP</a></li>
+                        <li><a href="commercial-hvac-services.html">HVAC & MEP</a></li>
                     </ul>
                 </div>
                 <div class="f-col">
@@ -1155,7 +1228,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 RCC-BGM. All rights reserved. | Reliable Concepts Corporation &amp; Brilliant General Maintenance</p>
+                <p>&copy; 2026 RCC-BGM. All rights reserved. | Reliable Concepts Corporation & Brilliant General Maintenance</p>
                 <div class="footer-bottom-links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
