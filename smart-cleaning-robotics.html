@@ -25,12 +25,10 @@
     <style>
       .scr-hero {
         position: relative;
-        background: radial-gradient(circle at 70% 20%, rgba(232, 113, 74, 0.14) 0%, transparent 50%),
-          radial-gradient(circle at 20% 75%, rgba(128, 99, 199, 0.08) 0%, transparent 50%),
-          #181310;
+        background: #ffffff;
         padding: 140px 0 85px 0;
         overflow: hidden;
-        border-bottom: 1px solid rgba(232, 113, 74, 0.15);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
       }
 
       .scr-hero::before {
@@ -41,15 +39,15 @@
         width: 100%;
         height: 100%;
         background-image:
-          radial-gradient(rgba(255, 255, 255, 0.006) 1px, transparent 1px);
+          radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
         background-size: 18px 18px;
         pointer-events: none;
       }
 
       .scr-hero-grid {
         display: grid;
-        grid-template-columns: 1fr 1.15fr;
-        gap: 56px;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 100px;
         align-items: center;
         position: relative;
         z-index: 10;
@@ -64,7 +62,7 @@
 
       .scr-hero-left h1 {
         font-size: clamp(32px, 4.5vw, 52px);
-        color: white;
+        color: #111;
         font-weight: 800;
         line-height: 1.15;
         letter-spacing: -1.2px;
@@ -81,7 +79,7 @@
       .scr-hero-left p {
         font-size: 16px;
         line-height: 1.7;
-        color: #D4C0AC;
+        color: #555;
         margin-top: 20px;
         max-width: 480px;
       }
@@ -90,13 +88,16 @@
         display: flex;
         gap: 16px;
         margin-top: 32px;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+      }
+      .scr-hero-actions .btn-header {
+        white-space: nowrap;
       }
 
       .scr-hero-actions .btn-outline-hero {
-        border: 1px solid rgba(232, 113, 74, 0.3);
-        background: rgba(255, 255, 255, 0.02);
-        color: white;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        background: transparent;
+        color: #333;
         padding: 12px 24px;
         border-radius: 99px;
         font-weight: 700;
@@ -106,20 +107,23 @@
         align-items: center;
         gap: 8px;
         transition: all 0.3s ease;
+        white-space: nowrap;
       }
 
       .scr-hero-actions .btn-outline-hero:hover {
         border-color: var(--accent-teal);
-        background: rgba(232, 113, 74, 0.08);
+        background: rgba(232, 113, 74, 0.06);
+        color: var(--accent-teal);
       }
 
       /* Tech Spec Panel */
       .scr-spec-panel {
-        background: rgba(5, 15, 35, 0.45);
-        border: 1px solid rgba(232, 113, 74, 0.12);
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.07);
         border-radius: 24px;
-        backdrop-filter: blur(12px);
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
         overflow: hidden;
+        justify-self: end;
       }
 
       .scr-spec-header {
@@ -127,7 +131,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 20px 26px;
-        border-bottom: 1px solid rgba(232, 113, 74, 0.08);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       }
 
       .scr-spec-title {
@@ -136,7 +140,7 @@
         gap: 10px;
         font-size: 14px;
         font-weight: 700;
-        color: white;
+        color: #111;
       }
 
       .scr-spec-title i {
@@ -178,7 +182,7 @@
         align-items: center;
         gap: 16px;
         padding: 14px 0;
-        border-bottom: 1px solid rgba(232, 113, 74, 0.05);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.04);
       }
 
       .scr-spec-row:last-child {
@@ -224,13 +228,13 @@
       .scr-spec-name {
         font-size: 13px;
         font-weight: 600;
-        color: white;
+        color: #111;
         margin-bottom: 2px;
       }
 
       .scr-spec-detail {
         font-size: 11px;
-        color: #64748b;
+        color: #777;
       }
 
       .scr-spec-bar-wrap {
@@ -248,7 +252,7 @@
       }
 
       .scr-spec-bar-label span:first-child {
-        color: #64748b;
+        color: #999;
       }
 
       .scr-spec-bar-label span:last-child {
@@ -258,7 +262,7 @@
       .scr-spec-bar {
         height: 5px;
         border-radius: 10px;
-        background: rgba(232, 113, 74, 0.1);
+        background: rgba(0, 0, 0, 0.06);
         overflow: hidden;
       }
 
@@ -294,7 +298,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
+flex-wrap: nowrap;
             gap: 12px;
         }
 
@@ -306,6 +310,41 @@
         footer .btn-header:hover { color: #000; }
 
         
+
+      .tech-grid-section .services-grid,
+      .facility-grid-section .services-grid {
+        grid-template-columns: repeat(6, 1fr);
+      }
+      .tech-grid-section .services-grid .s-item:nth-child(-n+3),
+      .facility-grid-section .services-grid .s-item:nth-child(-n+3) {
+        grid-column: auto / span 2;
+      }
+      .tech-grid-section .services-grid .s-item:nth-child(4),
+      .facility-grid-section .services-grid .s-item:nth-child(4) {
+        grid-column: 2 / 4;
+      }
+      .tech-grid-section .services-grid .s-item:nth-child(5),
+      .facility-grid-section .services-grid .s-item:nth-child(5) {
+        grid-column: 4 / 6;
+      }
+      .facility-grid-section,
+      .related-capabilities-section,
+      .faq-section {
+        padding-top: 50px;
+      }
+      .facility-grid-section h2,
+      .assessment-section h2 {
+        margin-bottom: 30px;
+      }
+      .assessment-section .eyebrow,
+      .related-capabilities-section .eyebrow,
+      .faq-section .eyebrow,
+      .tech-grid-section .eyebrow {
+        margin-bottom: 16px;
+      }
+      .split-intro .eyebrow {
+        margin-bottom: 8px;
+      }
 
       @media (max-width: 900px) {
         .scr-hero-grid {
@@ -336,6 +375,21 @@
           display: none;
         }
       }
+      .related-services-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .related-services-grid .s-item p {
+        margin-bottom: 0;
+      }
+      .related-services-grid .s-link {
+        margin-top: 8px;
+      }
+      @media (max-width: 1100px) {
+        .related-services-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
     </style>
   </head>
   <body class="page-specialist">
@@ -364,7 +418,7 @@
             <span class="hero-tag"
               style="background: rgba(232, 113, 74, 0.08); border: 1px solid rgba(232, 113, 74, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;"><i
                 class="fa-solid fa-robot"></i> RCC-BGM SMART CLEANING</span>
-            <h1>Smart Cleaning<br><span class="gradient-text">& Robotics</span></h1>
+            <h1>Smart Cleaning <span class="gradient-text">& Robotics</span></h1>
             <p>
               Technology-enabled cleaning support for teams looking to improve consistency, visibility and facility
               coverage. Robotics and connected tools complement—not replace—a well-defined facility program.
@@ -463,7 +517,7 @@
           </div>
         </div>
       </section>
-      <section class="container section-padding">
+      <section class="container section-padding tech-grid-section">
         <span class="eyebrow">Connected cleaning technology</span>
         <h2>Technology components that complement trained teams</h2>
         <p class="section-lead">
@@ -518,7 +572,7 @@
           <div class="tech-scanline"></div>
           <div>
             <span class="live-badge"><span class="live-dot"></span> Suitability first</span>
-            <h2>Not every property is appropriate for autonomous equipment</h2>
+            <h2 style="font-size: clamp(22px, 2.6vw, 30px);">Not every property is appropriate for autonomous equipment</h2>
             <p>
               Floor type, obstacles, access, security, traffic, charging, storage,
               connectivity and facility rules must be reviewed before deployment.
@@ -550,11 +604,11 @@
           </div>
         </div>
       </section>
-      <section class="container section-padding">
+      <section class="container section-padding facility-grid-section">
         <span class="eyebrow">Where robotics may fit</span>
         <h2>Facility types that may benefit from smart cleaning technology</h2>
         <div class="services-grid">
-          <article class="s-item">
+          <article class="s-item active">
             <div class="s-icon"><i class="fa-solid fa-building"></i></div>
             <h3>Large, open commercial floor areas</h3>
             <p>
@@ -596,7 +650,7 @@
           </article>
         </div>
       </section>
-      <section class="container section-padding">
+      <section class="container section-padding assessment-section">
         <span class="eyebrow">From assessment to integrated program</span>
         <h2>Smart cleaning assessment process</h2>
         <div class="process-grid">
@@ -622,11 +676,11 @@
           </div>
         </div>
       </section>
-      <section class="container section-padding">
+      <section class="container section-padding related-capabilities-section">
         <span class="eyebrow">Related RCC-BGM capabilities</span>
         <h2>Services that connect with smart cleaning technology</h2>
-        <div class="services-grid">
-          <a class="s-item" href="commercial-cleaning-services.html">
+        <div class="services-grid related-services-grid">
+          <a class="s-item active" href="commercial-cleaning-services.html">
             <h3>Commercial Cleaning Services</h3>
             <p>Recurring and periodic cleaning programs that form the foundation of any technology-enhanced facility plan.</p>
             <span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span>
