@@ -1,0 +1,50 @@
+/*
+ * Location-page alignment pass.
+ * Scoped to the content area so navigation, hero, footer, and copy remain untouched.
+ */
+body.page-location main > .section-padding > h2,
+body.page-location main > .section-padding > .section-intro {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.page-location main > .section-padding > div:first-child:not(.services-grid):not(.process-grid):not(.cta-box) {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+body.page-location main > .section-padding > .services-grid:first-of-type > .s-item:first-child,
+body.page-location main > .section-padding > .process-grid > .step-card:first-child {
+    transform: translateY(-6px);
+    border-color: var(--accent-gold-border);
+    box-shadow: var(--shadow-hover);
+}
+
+body.page-location main > .section-padding > .services-grid:first-of-type > .s-item:first-child::before,
+body.page-location main > .section-padding > .process-grid > .step-card:first-child::before {
+    transform: scaleX(1);
+}
+
+body.page-location main > .section-padding > .services-grid:first-of-type > .s-item:first-child::after {
+    opacity: 1;
+}
+
+body.page-location main > .section-padding > .services-grid:first-of-type > .s-item:first-child > i {
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 6px 20px var(--accent-gold-border);
+}
+
+body.page-location main > .section-padding > .services-grid:first-of-type > .s-item:first-child .s-link {
+    gap: 14px;
+}
+
+@media (max-width: 768px) {
+    body.page-location main > .section-padding > .services-grid:first-of-type > .s-item:first-child,
+    body.page-location main > .section-padding > .process-grid > .step-card:first-child {
+        transform: none;
+    }
+}
