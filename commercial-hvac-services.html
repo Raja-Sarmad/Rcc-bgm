@@ -24,14 +24,244 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <style>
+      .hvac-intro .split-intro {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 0;
+      }
+
+      .hvac-intro .split-intro > div:first-child {
+        margin-bottom: 20px;
+      }
+
+      .hvac-intro .split-intro > div:last-child {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      .preventive-section .split-intro {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 0;
+      }
+
+      .preventive-section .split-intro > div:first-child {
+        margin-bottom: 20px;
+      }
+
+      .preventive-section .split-intro > div:last-child {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      .preventive-section .check-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 28px;
+        margin-top: 26px;
+      }
+
+      .preventive-section .check-list li {
+        margin-bottom: 0;
+      }
+
+      .repair-section .split-intro .intro-card h2 {
+        font-size: clamp(24px, 2.8vw, 36px);
+        font-weight: 800;
+        line-height: 1.2;
+        background: linear-gradient(135deg, #ffffff 0%, #d4c5f0 50%, #f0c5d8 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 20px;
+      }
+
+      .repair-section .split-intro .intro-card p {
+        font-size: 17px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .repair-section .repair-list {
+        text-align: center;
+      }
+
+      .repair-section .repair-list h3 {
+        text-align: center;
+      }
+
+      .repair-section .chip-container {
+        justify-content: center;
+      }
+
+      .installation-section .focus-flex {
+        align-items: start;
+      }
+
+      .installation-section .focus-flex > div:first-child {
+        text-align: center;
+      }
+
+      .installation-section .focus-flex > div:first-child .check-list {
+        justify-content: center;
+      }
+
+      .installation-section .focus-flex > div:first-child .check-list li {
+        justify-content: center;
+      }
+
+      .replacement-section {
+        text-align: center;
+      }
+
+      .replacement-section .services-grid {
+        text-align: left;
+      }
+
+      section:has(> .hvac-scope) {
+        text-align: center;
+      }
+      section:has(> .hvac-scope) .hvac-scope {
+        text-align: left;
+      }
+
+      .maintenance-section .tech-box h2 {
+        font-size: clamp(26px, 3vw, 38px);
+        font-weight: 800;
+        line-height: 1.2;
+        background: linear-gradient(135deg, #ffffff 0%, #d4c5f0 50%, #f0c5d8 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 20px;
+      }
+
+      .maintenance-section .tech-box > div:first-of-type p {
+        font-size: 17px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .maintenance-section .t-item {
+        backdrop-filter: blur(4px);
+      }
+
+      .maintenance-section .t-item:hover {
+        background: rgba(128, 99, 199, 0.12);
+        border-color: var(--accent-blue);
+        box-shadow: 0 8px 30px rgba(217, 111, 159, 0.15);
+      }
+
+      .maintenance-section .t-item-icon {
+        background: rgba(217, 111, 159, 0.15);
+        border-color: rgba(217, 111, 159, 0.35);
+        color: var(--accent-blue);
+      }
+
+      .maintenance-section .t-item h4 {
+        color: #f0d0e0;
+        font-size: 17px;
+      }
+
+      .maintenance-section .live-badge {
+        border-color: rgba(217, 111, 159, 0.4);
+        background: rgba(217, 111, 159, 0.1);
+      }
+
+      .mep-section .tech-box h2 {
+        font-size: clamp(26px, 3vw, 38px);
+        font-weight: 800;
+        line-height: 1.2;
+        background: linear-gradient(135deg, #ffffff 0%, #d4c5f0 50%, #f0c5d8 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 20px;
+      }
+
+      .mep-section .tech-box > div:nth-child(2) {
+        text-align: center;
+      }
+
+      .mep-section .tech-box > div:nth-child(2) p {
+        font-size: 17px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 600px;
+        margin: 0 auto 22px;
+      }
+
+      .mep-section .tech-box > div:nth-child(2) .btn-header {
+        margin: 0 auto;
+        display: inline-block;
+      }
+
+      .occupied-section .industry-standard {
+        text-align: center;
+      }
+
+      .occupied-section .industry-standard .services-grid {
+        text-align: left;
+      }
+
+      section:has(> .property-grid) {
+        text-align: center;
+      }
+
+      section:has(> .property-grid) .services-grid {
+        text-align: left;
+      }
+
+      .process-section {
+        text-align: center;
+        background: transparent !important;
+      }
+
+      .process-section .process-grid {
+        text-align: left;
+      }
+
+      .process-section .step-card {
+        transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+                    box-shadow 0.3s ease,
+                    border-color 0.3s ease;
+      }
+
+      .process-section .step-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 40px -12px rgba(128, 99, 199, 0.25);
+        border-color: var(--accent-teal);
+      }
+
+      .location-strip {
+        text-align: center;
+      }
+
+      .location-strip .chip-container {
+        justify-content: center;
+      }
+
+      .faq-section {
+        text-align: center;
+      }
+
+      .faq-section .faq-item {
+        text-align: left;
+      }
+
+      main .container.section-padding {
+        padding-top: 18px !important;
+        padding-bottom: 18px !important;
+        border-bottom: none !important;
+      }
+
       .hvac-hero {
         position: relative;
-        background: radial-gradient(circle at 30% 20%, rgba(232, 113, 74, 0.14) 0%, transparent 50%),
-          radial-gradient(circle at 70% 80%, rgba(128, 99, 199, 0.09) 0%, transparent 50%),
-          #181310;
-        padding: 140px 0 85px 0;
+        background: #ffffff;
+        /* padding: 100px 0 80px 0; */
+        padding-right: 10px;
         overflow: hidden;
-        border-bottom: 1px solid rgba(232, 113, 74, 0.15);
       }
 
       .hvac-hero::before {
@@ -41,34 +271,40 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: radial-gradient(rgba(255, 255, 255, 0.006) 1px, transparent 1px);
-        background-size: 20px 20px;
+        background: radial-gradient(ellipse at 30% 20%, rgba(128, 99, 199, 0.06) 0%, transparent 50%),
+                    radial-gradient(ellipse at 70% 80%, rgba(217, 111, 159, 0.04) 0%, transparent 50%);
         pointer-events: none;
       }
 
       .hvac-hero-grid {
-        display: grid;
-        grid-template-columns: 0.9fr 1.1fr;
-        gap: 48px;
+        display: flex;
+        justify-content: space-between; /* Isse content dono kinaro par chala jayega (logo aur button ke neeche) */
         align-items: center;
         position: relative;
         z-index: 10;
+        gap: 80px; /* Minimum gap barqarar rakhne ke liye */
       }
 
       .hvac-hero-left {
+        max-width: 580px; /* Thoda wide kiya hai taake heading khul kar aye */
+        flex-shrink: 0;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         text-align: left;
+        opacity: 0;
+        animation: fadeInLeft 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        margin-left: -180px;
+        margin-right: 170px;
       }
 
       .hvac-hero-left h1 {
-        font-size: clamp(26px, 3.5vw, 42px);
-        color: white;
+        font-size: clamp(28px, 4vw, 48px); /* Font size thoda optimize kiya hai */
+        color: var(--text-dark);
         font-weight: 800;
-        line-height: 1.12;
+        line-height: 1.1;
         letter-spacing: -1.4px;
-        margin-top: 18px;
+        margin-top: 22px;
       }
 
       .hvac-hero-left h1 span.gradient-text {
@@ -79,24 +315,24 @@
       }
 
       .hvac-hero-left p {
-        font-size: 16px;
+        font-size: 17px;
         line-height: 1.7;
-        color: #D4C0AC;
-        margin-top: 20px;
-        max-width: 480px;
+        color: var(--text-slate);
+        margin-top: 24px;
+        max-width: 500px;
       }
 
       .hvac-hero-actions {
         display: flex;
         gap: 16px;
-        margin-top: 32px;
+        margin-top: 36px;
         flex-wrap: wrap;
       }
 
       .hvac-hero-actions .btn-outline-hero {
-        border: 1px solid rgba(232, 113, 74, 0.3);
-        background: rgba(255, 255, 255, 0.02);
-        color: white;
+        border: 1px solid rgba(128, 99, 199, 0.3);
+        background: rgba(128, 99, 199, 0.04);
+        color: var(--text-dark);
         padding: 12px 24px;
         border-radius: 99px;
         font-weight: 700;
@@ -110,16 +346,21 @@
 
       .hvac-hero-actions .btn-outline-hero:hover {
         border-color: var(--accent-teal);
-        background: rgba(232, 113, 74, 0.08);
+        background: rgba(128, 99, 199, 0.08);
+        color: var(--accent-teal);
       }
 
-      /* HVAC System Hub */
+      /* Hub / Cards Styling */
       .hvac-hub {
         position: relative;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
-        gap: 14px;
+        gap: 16px;
+        max-width: 460px;
+        flex-shrink: 0;
+        opacity: 0;
+        animation: fadeInRight 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s forwards;
       }
 
       .hvac-hub-center {
@@ -127,246 +368,170 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 72px;
-        height: 72px;
+        width: 76px;
+        height: 76px;
         border-radius: 50%;
-        background: rgba(232, 113, 74, 0.1);
-        border: 1px solid rgba(232, 113, 74, 0.3);
+        background: #fff;
+        border: 1px solid rgba(128, 99, 199, 0.2);
         display: flex;
         align-items: center;
         justify-content: center;
         z-index: 2;
-        backdrop-filter: blur(8px);
+        box-shadow: 0 10px 30px rgba(128, 99, 199, 0.12);
       }
 
       .hvac-hub-center i {
-        font-size: 26px;
+        font-size: 28px;
         color: var(--accent-teal);
       }
 
       .hvac-hub-node {
-        background: rgba(5, 15, 35, 0.45);
-        border: 1px solid rgba(232, 113, 74, 0.1);
-        border-radius: 18px;
-        padding: 22px 20px;
-        backdrop-filter: blur(8px);
-        transition: border-color 0.3s ease, transform 0.3s ease;
+        background: #ffffff;
+        border: 1px solid #EAD8CC;
+        border-radius: 20px;
+        padding: 24px 22px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+        transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
         position: relative;
+        overflow: hidden;
+        opacity: 0;
+        animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      }
+
+      .hvac-hub-node:nth-child(1) { animation-delay: 0.25s; }
+      .hvac-hub-node:nth-child(2) { animation-delay: 0.35s; }
+      .hvac-hub-node:nth-child(3) { animation-delay: 0.45s; }
+      .hvac-hub-node:nth-child(4) { animation-delay: 0.55s; }
+
+      .hvac-hub-node::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--accent-teal), transparent);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
       .hvac-hub-node:hover {
-        border-color: rgba(232, 113, 74, 0.35);
-        transform: scale(1.03);
+        transform: translateY(-8px) scale(1.02);
+        border-color: rgba(128, 99, 199, 0.3);
+        box-shadow: 0 20px 45px -12px rgba(128, 99, 199, 0.2);
       }
 
-      .hvac-hub-node:nth-child(1) {
-        border-top-right-radius: 8px;
-      }
-
-      .hvac-hub-node:nth-child(2) {
-        border-top-left-radius: 8px;
-      }
-
-      .hvac-hub-node:nth-child(3) {
-        border-bottom-right-radius: 8px;
-      }
-
-      .hvac-hub-node:nth-child(4) {
-        border-bottom-left-radius: 8px;
-      }
+      .hvac-hub-node:hover::before { transform: scaleX(1); }
 
       .hvac-node-icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 10px;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 17px;
-        margin-bottom: 12px;
+        font-size: 18px;
+        margin-bottom: 14px;
       }
 
-      .hvac-node-icon.heating {
-        background: rgba(239, 68, 68, 0.1);
-        color: #ef4444;
-      }
+      .hvac-node-icon.heating { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+      .hvac-node-icon.cooling { background: rgba(128, 99, 199, 0.1); color: var(--accent-teal); }
+      .hvac-node-icon.ventilation { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
+      .hvac-node-icon.controls { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
 
-      .hvac-node-icon.cooling {
-        background: rgba(232, 113, 74, 0.12);
-        color: var(--accent-teal);
-      }
-
-      .hvac-node-icon.ventilation {
-        background: rgba(34, 197, 94, 0.1);
-        color: #22c55e;
-      }
-
-      .hvac-node-icon.controls {
-        background: rgba(139, 92, 246, 0.1);
-        color: #8b5cf6;
-      }
-
-      .hvac-node-title {
-        font-size: 14px;
-        font-weight: 700;
-        color: white;
-        margin-bottom: 4px;
-      }
-
-      .hvac-node-desc {
-        font-size: 12px;
-        color: rgba(255, 255, 255, 0.72);
-        line-height: 1.5;
-      }
+      .hvac-node-title { font-size: 15px; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; }
+      .hvac-node-desc { font-size: 12px; color: var(--text-slate); line-height: 1.5; }
 
       .hvac-node-tag {
         display: inline-block;
         font-size: 10px;
-        font-weight: 600;
-        padding: 3px 8px;
+        font-weight: 700;
+        padding: 4px 10px;
         border-radius: 6px;
-        margin-top: 10px;
-        letter-spacing: 0.3px;
+        margin-top: 12px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
       }
 
-      .hvac-node-tag.essential {
-        background: rgba(239, 68, 68, 0.1);
-        color: #ef4444;
+      .hvac-node-tag.essential { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+      .hvac-node-tag.standard { background: rgba(128, 99, 199, 0.1); color: var(--accent-teal); }
+      .hvac-node-tag.eco { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
+      .hvac-node-tag.smart { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+
+      @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
+      @keyframes fadeInRight { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
+      @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+      /* Footer */
+      footer {
+          background: var(--text-dark);
+          color: rgba(255, 255, 255, 0.7);
+          padding: 70px 0 30px 0;
       }
 
-      .hvac-node-tag.standard {
-        background: rgba(232, 113, 74, 0.1);
-        color: var(--accent-teal);
+      .f-grid {
+          display: grid;
+          grid-template-columns: 1.5fr 1fr 1fr 1fr;
+          gap: 40px;
+          padding-bottom: 40px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       }
 
-      .hvac-node-tag.eco {
-        background: rgba(34, 197, 94, 0.1);
-        color: #22c55e;
+      .f-col h4 { color: white; margin-bottom: 20px; font-size: 1rem; }
+      .f-col ul { list-style: none; }
+      .f-col li { margin-bottom: 12px; }
+      .f-col a { color: rgba(255, 255, 255, 0.55); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
+      .f-col a:hover { color: var(--accent-gold-light); transform: translateX(4px); display: inline-block; }
+      .f-col p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.55); }
+
+      .footer-bottom {
+          padding-top: 30px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 12px;
       }
 
-      .hvac-node-tag.smart {
-        background: rgba(139, 92, 246, 0.1);
-        color: #8b5cf6;
+      .footer-bottom p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); }
+      .footer-bottom-links { display: flex; gap: 20px; }
+      .footer-bottom-links a { color: rgba(255, 255, 255, 0.4); text-decoration: none; font-size: 0.85rem; transition: var(--transition); }
+      .footer-bottom-links a:hover { color: var(--accent-gold-light); }
+      footer .btn-header { color: black; }
+      footer .btn-header:hover { color: #000; }
+
+      @media (max-width: 1024px) {
+        .hvac-hero-grid { gap: 30px; }
+        .hvac-hero-left { max-width: 50%; }
+        .hvac-hub { max-width: 45%; }
       }
-/* Footer */
-        footer {
-            background: var(--text-dark);
-            color: rgba(255, 255, 255, 0.7);
-            padding: 70px 0 30px 0;
-        }
-
-        .f-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr;
-            gap: 40px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .f-col h4 { color: white; margin-bottom: 20px; font-size: 1rem; }
-        .f-col ul { list-style: none; }
-        .f-col li { margin-bottom: 12px; }
-        .f-col a { color: rgba(255, 255, 255, 0.55); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
-        .f-col a:hover { color: var(--accent-gold-light); transform: translateX(4px); display: inline-block; }
-        .f-col p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.55); }
-
-        .footer-bottom {
-            padding-top: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .footer-bottom p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); }
-        .footer-bottom-links { display: flex; gap: 20px; }
-        .footer-bottom-links a { color: rgba(255, 255, 255, 0.4); text-decoration: none; font-size: 0.85rem; transition: var(--transition); }
-        .footer-bottom-links a:hover { color: var(--accent-gold-light); }
-        footer .btn-header { color: black; }
-        footer .btn-header:hover { color: #000; }
-
-        
 
       @media (max-width: 900px) {
         .hvac-hero-grid {
-          grid-template-columns: 1fr;
-          gap: 40px;
-        }
-
-        .hvac-hero-grid,
-        .hvac-hero-left,
-        .hvac-hub {
-          width: 100%;
-          max-width: 100%;
+          flex-direction: column;
+          text-align: center;
+          gap: 50px;
         }
 
         .hvac-hero-left {
+          max-width: 100%;
           align-items: center;
           text-align: center;
         }
 
-        .hvac-hero-left p {
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        .hvac-hero-actions {
-          justify-content: center;
-        }
-
-        .hvac-hub {
-          max-width: min(400px, 100%);
-          margin: 0 auto;
-        }
-
-        .hvac-hub-center {
-          display: none;
-        }
-      }
-
-      .hvac-hub,
-      .hvac-hub-node {
-        min-width: 0;
-      }
-
-      .hvac-hub-node {
-        overflow-wrap: anywhere;
+        .hvac-hero-left p { margin-left: auto; margin-right: auto; }
+        .hvac-hero-actions { justify-content: center; }
+        .hvac-hub { max-width: 540px; margin: 0 auto; padding-right: -150px;}
+        .hvac-hub-center { display: none; }
       }
 
       @media (max-width: 560px) {
-        .hvac-hero .container {
-          width: 100%;
-          padding-left: 32px;
-          padding-right: 32px;
-        }
-
-        .hvac-hero-left h1 {
-          max-width: 100%;
-          font-size: clamp(28px, 7vw, 32px);
-        }
-
-        .hvac-hero-actions {
-          align-items: stretch;
-          flex-direction: column;
-          width: 100%;
-        }
-
-        .hvac-hero-actions a {
-          justify-content: center;
-          width: 100%;
-        }
-
-        .hvac-hub {
-          grid-template-columns: 1fr;
-          max-width: 420px;
-        }
-
-        .hvac-hub-node,
-        .hvac-hub-node:nth-child(n) {
-          border-radius: 16px;
-          padding: 22px;
-        }
+        .hvac-hero .container { padding-left: 24px; padding-right: 24px; }
+        .hvac-hero-left h1 { font-size: 32px; }
+        .hvac-hero-actions { flex-direction: column; width: 100%; }
+        .hvac-hero-actions a { width: 100%; justify-content: center; }
+        .hvac-hub { grid-template-columns: 1fr; width: 100%; }
       }
     </style>
   </head>
@@ -394,7 +559,7 @@
 
           <div class="hvac-hero-left">
             <span class="hero-tag"
-              style="background: rgba(232, 113, 74, 0.08); border: 1px solid rgba(232, 113, 74, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;"><i
+              style="background: rgba(128, 99, 199, 0.08); border: 1px solid rgba(128, 99, 199, 0.3); border-radius: 100px; color: var(--accent-teal); padding: 6px 16px;"><i
                 class="fa-solid fa-temperature-half"></i> RCC-BGM HVAC DIVISION</span>
             <h1>Commercial HVAC<br><span class="gradient-text">Built Around Your Facility</span></h1>
             <p>
@@ -868,7 +1033,7 @@
             impact, shutdowns, delivery and phasing.
           </p>
           <div class="services-grid mini-grid">
-            <article class="s-item">
+            <article class="s-item active">
               <h3>Phased work</h3>
               <p>Divide larger projects into zones or stages.</p>
             </article>
@@ -889,7 +1054,7 @@
         >
         <h2>HVAC services for a range of commercial properties</h2>
         <div class="services-grid property-grid">
-          <article class="s-item">
+          <article class="s-item active">
             <h3>Corporate offices</h3>
             <p>Workplaces, meeting areas and commercial office environments.</p>
           </article>
