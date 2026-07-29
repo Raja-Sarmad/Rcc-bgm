@@ -248,6 +248,12 @@
         .s-item p { color: var(--text-body); font-size: 0.92rem; flex-grow: 1; margin-bottom: 20px; position: relative; z-index: 1; }
         .s-link { color: var(--accent-gold); font-weight: 600; font-size: 0.88rem; display: flex; align-items: center; gap: 8px; transition: gap 0.3s ease; position: relative; z-index: 1; }
         .s-item:hover .s-link { gap: 14px; }
+        .s-item.selected { transform: translateY(-8px); border-color: var(--accent-gold-border); box-shadow: var(--shadow-hover); }
+        .s-item.selected::before { transform: scaleX(1); }
+        .s-item.selected::after { opacity: 1; }
+        .s-item.selected i { background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light)); color: white; border-color: transparent; box-shadow: 0 6px 20px rgba(196,129,58,0.3); }
+        .step-card.selected { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--accent-gold-border); }
+        .step-card.selected::before { transform: scaleX(1); }
 
         /* Content blocks */
         .content-block { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius); padding: 40px 36px; box-shadow: var(--shadow-soft); margin-bottom: 24px; }
@@ -556,15 +562,15 @@
         </section>
 
         <!-- ===== SECTION: Chicago Commercial Environment ===== -->
-        <section style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
+        <section style="background: white; border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
             <div class="container section-padding">
-                <span class="section-label"><i class="fa-solid fa-city"></i> Local Relevance</span>
-                <h2>Chicago's Commercial Environment</h2>
-                <p class="section-intro">Chicago is a major center of commerce with offices, healthcare, hospitality, retail, manufacturing, logistics and neighborhood businesses. The City of Chicago's Department of Planning and Development supports economic development and maintains planning programs for downtown, neighborhoods and industrial corridors. This diversity creates varied cleaning, HVAC, maintenance and construction needs.</p>
+                <span class="section-label" style="display: flex; justify-content: center; width: fit-content; margin: 0 auto 18px auto;"><i class="fa-solid fa-city"></i> Local Relevance</span>
+                <h2 style="color: var(--text-dark); text-align: center;">Chicago's Commercial Environment</h2>
+                <p class="section-intro" style="text-align: center; margin-left: auto; margin-right: auto;">Chicago is a major center of commerce with offices, healthcare, hospitality, retail, manufacturing, logistics and neighborhood businesses. The City of Chicago's Department of Planning and Development supports economic development and maintains planning programs for downtown, neighborhoods and industrial corridors. This diversity creates varied cleaning, HVAC, maintenance and construction needs.</p>
 
                 <h3 style="margin-bottom: 16px;">Building Diversity</h3>
                 <div class="services-grid-3">
-                    <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-building"></i><h3>High-Rise &amp; Mid-Rise Offices</h3><p>Office towers and multi-story commercial buildings requiring zoned service, elevator coordination and structured reporting.</p></div>
+                    <div class="s-item scroll-reveal selected" style="cursor: default;"><i class="fa-solid fa-building"></i><h3>High-Rise &amp; Mid-Rise Offices</h3><p>Office towers and multi-story commercial buildings requiring zoned service, elevator coordination and structured reporting.</p></div>
                     <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-landmark"></i><h3>Historic &amp; Older Properties</h3><p>Legacy commercial buildings requiring careful existing-condition review before renovation or system work.</p></div>
                     <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-microchip"></i><h3>Modern Corporate Workplaces</h3><p>Technology and corporate campuses with secure access, collaborative spaces and phased upgrade needs.</p></div>
                     <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-hospital"></i><h3>Healthcare &amp; Medical Offices</h3><p>Hospitals, clinics and medical-office buildings with regulated adjacency and specialized facility requirements.</p></div>
@@ -589,9 +595,9 @@
 
         <!-- ===== SECTION: Commercial Cleaning Services ===== -->
         <section class="container section-padding">
-            <span class="section-label"><i class="fa-solid fa-spray-can-sparkles"></i> Commercial Cleaning</span>
-            <h2>Commercial Cleaning Services in Chicago</h2>
-            <p class="section-intro">RCC-BGM can assess recurring and one-time cleaning requirements for qualified Chicago properties. The scope should define service zones, frequency, shifts, access, materials, equipment, security and quality-review procedures.</p>
+            <span class="section-label" style="display: flex; justify-content: center; width: fit-content; margin: 0 auto 18px auto;"><i class="fa-solid fa-spray-can-sparkles"></i> Commercial Cleaning</span>
+            <h2 style="text-align: center;">Commercial Cleaning Services in Chicago</h2>
+            <p class="section-intro" style="text-align: center; margin-left: auto; margin-right: auto;">RCC-BGM can assess recurring and one-time cleaning requirements for qualified Chicago properties. The scope should define service zones, frequency, shifts, access, materials, equipment, security and quality-review procedures.</p>
 
             <div class="two-col">
                 <div class="content-block scroll-reveal">
@@ -639,9 +645,9 @@
         <!-- ===== SECTION: Janitorial & High-Rise ===== -->
         <section style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
             <div class="container section-padding">
-                <span class="section-label blue"><i class="fa-solid fa-broom"></i> Janitorial &amp; High-Rise</span>
-                <h2>Commercial Janitorial and High-Rise Facility Cleaning in Chicago</h2>
-                <p class="section-intro">Chicago janitorial programs may need to account for multiple tenants, security desks, passenger and freight elevators, loading docks, public routes and different occupancy schedules by floor. The scope should separate landlord areas, tenant areas and excluded spaces.</p>
+                <span class="section-label blue" style="display: flex; justify-content: center; width: fit-content; margin: 0 auto 18px auto;"><i class="fa-solid fa-broom"></i> Janitorial &amp; High-Rise</span>
+                <h2 style="text-align: center;">Commercial Janitorial and High-Rise<br>Facility Cleaning in Chicago</h2>
+                <p class="section-intro" style="text-align: center; margin-left: auto; margin-right: auto;">Chicago janitorial programs may need to account for multiple tenants, security desks, passenger and freight elevators, loading docks, public routes and different occupancy schedules by floor. The scope should separate landlord areas, tenant areas and excluded spaces.</p>
 
                 <div class="two-col">
                     <div class="content-block scroll-reveal">
@@ -691,9 +697,9 @@
 
         <!-- ===== SECTION: Industrial, Manufacturing & Warehouse ===== -->
         <section class="container section-padding">
-            <span class="section-label"><i class="fa-solid fa-industry"></i> Industrial Support</span>
-            <h2>Industrial, Manufacturing and Warehouse Cleaning in Chicago</h2>
-            <p class="section-intro">Chicago has long-standing industrial and transportation activity, and the city maintains planning initiatives for industrial corridors. RCC-BGM can assess approved cleaning, maintenance and construction needs in warehouses, distribution properties and manufacturing-support buildings.</p>
+            <span class="section-label" style="display: flex; justify-content: center; width: fit-content; margin: 0 auto 18px auto;"><i class="fa-solid fa-industry"></i> Industrial Support</span>
+            <h2 style="text-align: center;">Industrial, Manufacturing and Warehouse<br>Cleaning in Chicago</h2>
+            <p class="section-intro" style="text-align: center; margin-left: auto; margin-right: auto;">Chicago has long-standing industrial and transportation activity, and the city maintains planning initiatives for industrial corridors. RCC-BGM can assess approved cleaning, maintenance and construction needs in warehouses, distribution properties and manufacturing-support buildings.</p>
 
             <div class="two-col">
                 <div class="content-block scroll-reveal">
@@ -742,9 +748,9 @@
         <!-- ===== SECTION: Healthcare, Medical-Office & Laboratory ===== -->
         <section style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
             <div class="container section-padding">
-                <span class="section-label blue"><i class="fa-solid fa-hospital"></i> Healthcare &amp; Laboratory</span>
-                <h2>Healthcare, Medical-Office and Laboratory Facility Support in Chicago</h2>
-                <p class="section-intro">Chicago healthcare and medical-office properties may require cleaning and facility support for waiting areas, offices, staff rooms, approved patient-facing areas and building common spaces. Routine commercial cleaning must be clearly separated from clinical, biohazard and infection-control responsibilities.</p>
+                <span class="section-label blue" style="display: flex; justify-content: center; width: fit-content; margin: 0 auto 18px auto;"><i class="fa-solid fa-hospital"></i> Healthcare &amp; Laboratory</span>
+                <h2 style="text-align: center;">Healthcare, Medical-Office and Laboratory<br>Facility Support in Chicago</h2>
+                <p class="section-intro" style="text-align: center; margin-left: auto; margin-right: auto;">Chicago healthcare and medical-office properties may require cleaning and facility support for waiting areas, offices, staff rooms, approved patient-facing areas and building common spaces. Routine commercial cleaning must be clearly separated from clinical, biohazard and infection-control responsibilities.</p>
 
                 <div class="two-col">
                     <div class="content-block scroll-reveal">
@@ -801,9 +807,9 @@
 
         <!-- ===== SECTION: Facility Maintenance & HVAC ===== -->
         <section class="container section-padding">
-            <span class="section-label"><i class="fa-solid fa-screwdriver-wrench"></i> Maintenance &amp; HVAC</span>
-            <h2>Facility Maintenance and Commercial HVAC in Chicago</h2>
-            <p class="section-intro">A Chicago facility-maintenance program may support recurring observations, minor approved repairs, issue documentation and escalation to construction or licensed technical services. The scope should distinguish maintenance from emergency response and construction-level correction.</p>
+            <span class="section-label" style="display: flex; justify-content: center; width: fit-content; margin: 0 auto 18px auto;"><i class="fa-solid fa-screwdriver-wrench"></i> Maintenance &amp; HVAC</span>
+            <h2 style="text-align: center;">Facility Maintenance and<br>Commercial HVAC in Chicago</h2>
+            <p class="section-intro" style="text-align: center; margin-left: auto; margin-right: auto;">A Chicago facility-maintenance program may support recurring observations, minor approved repairs, issue documentation and escalation to construction or licensed technical services. The scope should distinguish maintenance from emergency response and construction-level correction.</p>
 
             <div class="two-col">
                 <div class="content-block scroll-reveal">
@@ -854,9 +860,9 @@
         <!-- ===== SECTION: Tenant Improvements ===== -->
         <section style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
             <div class="container section-padding">
-                <span class="section-label green"><i class="fa-solid fa-drafting-compass"></i> Tenant Improvements</span>
-                <h2>Tenant Improvements and Office Reconfiguration in Chicago</h2>
-                <p class="section-intro">Chicago tenants and landlords may seek tenant improvements for a new lease, expansion, consolidation, office reconfiguration, customer-facing update or change in use.</p>
+                <span class="section-label green" style="display: flex; justify-content: center; width: fit-content; margin: 0 auto 18px auto;"><i class="fa-solid fa-drafting-compass"></i> Tenant Improvements</span>
+                <h2 style="text-align: center;">Tenant Improvements and<br>Office Reconfiguration in Chicago</h2>
+                <p class="section-intro" style="text-align: center; margin-left: auto; margin-right: auto;">Chicago tenants and landlords may seek tenant improvements for a new lease, expansion, consolidation, office reconfiguration, customer-facing update or change in use.</p>
 
                 <div class="two-col">
                     <div class="content-block scroll-reveal">
@@ -908,9 +914,9 @@
 
         <!-- ===== SECTION: MEP, Maintenance Construction & Upgrades ===== -->
         <section class="container section-padding">
-            <span class="section-label blue"><i class="fa-solid fa-gears"></i> MEP &amp; Upgrades</span>
-            <h2>MEP, Maintenance Construction and Facility Upgrades in Chicago</h2>
-            <p class="section-intro">Mechanical, electrical and plumbing work must align with building systems, tenant plans, code requirements, ceilings, access and other trades. RCC-BGM presents MEP as coordination and project management unless the responsible engineering or licensed trade role is confirmed.</p>
+            <span class="section-label blue" style="display: flex; justify-content: center; width: fit-content; margin: 0 auto 18px auto;"><i class="fa-solid fa-gears"></i> MEP &amp; Upgrades</span>
+            <h2 style="text-align: center;">MEP, Maintenance Construction and<br>Facility Upgrades in Chicago</h2>
+            <p class="section-intro" style="text-align: center; margin-left: auto; margin-right: auto;">Mechanical, electrical and plumbing work must align with building systems, tenant plans, code requirements, ceilings, access and other trades. RCC-BGM presents MEP as coordination and project management unless the responsible engineering or licensed trade role is confirmed.</p>
 
             <table class="matrix-table scroll-reveal">
                 <thead>
@@ -961,9 +967,9 @@
         <!-- ===== SECTION: Retail, Hospitality & Customer-Facing ===== -->
         <section style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
             <div class="container section-padding">
-                <span class="section-label purple"><i class="fa-solid fa-store"></i> Customer-Facing</span>
-                <h2>Retail, Hospitality and Customer-Facing Facility Services in Chicago</h2>
-                <p class="section-intro">Chicago retail, hospitality, restaurant, entertainment and visitor-serving properties depend on presentation, access and timing. Cleaning, HVAC, repairs and renovations may need to occur before opening, after closing or in phases that preserve customer routes.</p>
+                <span class="section-label purple" style="display: flex; justify-content: center; width: fit-content; margin: 0 auto 18px auto;"><i class="fa-solid fa-store"></i> Customer-Facing</span>
+                <h2 style="text-align: center;">Retail, Hospitality and Customer-Facing<br>Facility Services in Chicago</h2>
+                <p class="section-intro" style="text-align: center; margin-left: auto; margin-right: auto;">Chicago retail, hospitality, restaurant, entertainment and visitor-serving properties depend on presentation, access and timing. Cleaning, HVAC, repairs and renovations may need to occur before opening, after closing or in phases that preserve customer routes.</p>
 
                 <div class="two-col">
                     <div class="content-block scroll-reveal">
@@ -1008,9 +1014,9 @@
 
         <!-- ===== SECTION: Multi-Site & Portfolio Strategy ===== -->
         <section class="container section-padding">
-            <span class="section-label"><i class="fa-solid fa-diagram-project"></i> Portfolio Strategy</span>
-            <h2>Chicago Multi-Site, Neighborhood and Portfolio Service Strategy</h2>
-            <p class="section-intro">Chicago customers may manage several buildings, branches, offices, clinics, retail sites or industrial properties. RCC-BGM can assess whether a consistent scope can be coordinated across locations while still accounting for each building's access, condition and local resources.</p>
+            <span class="section-label" style="display: flex; justify-content: center; width: fit-content; margin: 0 auto 18px auto;"><i class="fa-solid fa-diagram-project"></i> Portfolio Strategy</span>
+            <h2 style="text-align: center;">Chicago Multi-Site, Neighborhood and Portfolio<br>Service Strategy</h2>
+            <p class="section-intro" style="text-align: center; margin-left: auto; margin-right: auto;">Chicago customers may manage several buildings, branches, offices, clinics, retail sites or industrial properties. RCC-BGM can assess whether a consistent scope can be coordinated across locations while still accounting for each building's access, condition and local resources.</p>
 
             <h3 style="margin-bottom: 8px;">Standardization Versus Site Variation</h3>
             <div class="strategy-grid scroll-reveal">
@@ -1051,13 +1057,13 @@
         <!-- ===== SECTION: Assessment, Pricing & Permits ===== -->
         <section style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
             <div class="container section-padding">
-                <span class="section-label green"><i class="fa-solid fa-clipboard-check"></i> Engagement</span>
-                <h2>Chicago Facility Assessment, Pricing and Permit Content</h2>
-                <p class="section-intro">A structured engagement process keeps the scope useful and the delivery aligned with your building.</p>
+                <span class="section-label green" style="display: flex; justify-content: center; width: fit-content; margin: 0 auto 18px auto;"><i class="fa-solid fa-clipboard-check"></i> Engagement</span>
+                <h2 style="text-align: center;">Chicago Facility Assessment, Pricing and<br>Permit Content</h2>
+                <p class="section-intro" style="text-align: center; margin-left: auto; margin-right: auto;">A structured engagement process keeps the scope useful and the delivery aligned with your building.</p>
 
                 <h3 style="margin-bottom: 8px;">Six-Step Engagement Process</h3>
                 <div class="process-grid-6">
-                    <div class="step-card scroll-reveal"><span class="step-num">01</span><h4>Initial Enquiry</h4><p>Address, building type, current need and intended result.</p></div>
+                    <div class="step-card scroll-reveal selected"><span class="step-num">01</span><h4>Initial Enquiry</h4><p>Address, building type, current need and intended result.</p></div>
                     <div class="step-card scroll-reveal"><span class="step-num">02</span><h4>Route</h4><p>Identify BGM, RCC or coordinated review.</p></div>
                     <div class="step-card scroll-reveal"><span class="step-num">03</span><h4>Assess</h4><p>Review size, floors, occupancy, access, systems and documents.</p></div>
                     <div class="step-card scroll-reveal"><span class="step-num">04</span><h4>Scope</h4><p>Define tasks or phases, assumptions, exclusions and responsibilities.</p></div>
@@ -1091,7 +1097,7 @@
 
                 <div class="content-block scroll-reveal" style="margin-top: 24px;">
                     <h3><i class="fa-solid fa-file-pen" style="color: var(--accent-gold); margin-right: 8px;"></i>Recommended Form Fields</h3>
-                    <div class="form-fields">
+                    <div class="form-fields" style="grid-template-columns: repeat(5, 1fr);">
                         <div class="form-field"><i class="fa-solid fa-location-dot"></i> Chicago address</div>
                         <div class="form-field"><i class="fa-solid fa-building"></i> Building type</div>
                         <div class="form-field"><i class="fa-solid fa-layer-group"></i> Number of floors or areas</div>
@@ -1109,9 +1115,9 @@
 
         <!-- ===== SECTION: FAQs ===== -->
         <section class="container section-padding">
-            <span class="section-label"><i class="fa-solid fa-circle-question"></i> FAQs</span>
-            <h2>Frequently Asked Questions About Chicago</h2>
-            <p class="section-intro">Detailed answers for commercial service and project enquiries in the Chicago market.</p>
+            <span class="section-label" style="display: flex; justify-content: center; width: fit-content; margin: 0 auto 18px auto;"><i class="fa-solid fa-circle-question"></i> FAQs</span>
+            <h2 style="text-align: center;">Frequently Asked Questions About Chicago</h2>
+            <p class="section-intro" style="text-align: center; margin-left: auto; margin-right: auto;">Detailed answers for commercial service and project enquiries in the Chicago market.</p>
 
             <div class="two-col" style="gap: 24px;">
                 <div>
@@ -1156,8 +1162,8 @@
         <section class="container section-padding" style="text-align: center; border-top: 1px solid var(--border-warm);">
             <h2>Explore Related Markets</h2>
             <p style="margin: 14px auto 0; max-width: 620px; color: var(--text-body);">RCC-BGM serves selected commercial properties across multiple regions. Explore other verified service markets for portfolio navigation.</p>
-            <div class="services-grid" style="margin-top: 40px;">
-                <a class="s-item scroll-reveal" href="locations.html"><i class="fa-solid fa-location-dot"></i><h3>All Locations</h3><p>View the complete RCC-BGM service market directory.</p><span class="s-link">View locations <i class="fa-solid fa-arrow-right"></i></span></a>
+            <div class="services-grid" style="margin-top: 40px; grid-template-columns: repeat(3, 1fr);">
+                <a class="s-item scroll-reveal selected" href="locations.html"><i class="fa-solid fa-location-dot"></i><h3>All Locations</h3><p>View the complete RCC-BGM service market directory.</p><span class="s-link">View locations <i class="fa-solid fa-arrow-right"></i></span></a>
                 <a class="s-item scroll-reveal" href="san-diego-ca.html"><i class="fa-solid fa-location-dot"></i><h3>San Diego, CA</h3><p>Explore RCC-BGM commercial facility services in Southern California.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a>
                 <a class="s-item scroll-reveal" href="carlsbad-ca.html"><i class="fa-solid fa-location-dot"></i><h3>Carlsbad, CA</h3><p>Explore RCC-BGM commercial facility services in Carlsbad.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a>
             </div>
@@ -1165,7 +1171,7 @@
 
         <!-- ===== SECTION: Research Basis ===== -->
         <section class="container" style="padding-bottom: 60px;">
-            <div style="max-width: 780px; padding: 28px 32px; background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-sm); box-shadow: var(--shadow-soft);">
+            <div style="max-width: 780px; margin: 0 auto; padding: 28px 32px; background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-sm); box-shadow: var(--shadow-soft);">
                 <h4 style="font-size: 0.92rem; color: var(--text-dark); margin-bottom: 10px;"><i class="fa-solid fa-book" style="color: var(--accent-gold); margin-right: 8px;"></i>Research Basis</h4>
                 <p style="font-size: 0.84rem; color: var(--text-light); line-height: 1.7;">The current RCC-BGM Chicago page contains only a broad platform description and site links. Official City of Chicago resources support local context around economic development, industrial corridors, building permit review, ProjectDox status and inspection records. Census QuickFacts provides authoritative city business and demographic data. These sources are used for context only and do not imply endorsement.</p>
             </div>

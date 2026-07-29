@@ -119,6 +119,11 @@
         .s-item p { color: var(--text-body); font-size: 0.92rem; flex-grow: 1; margin-bottom: 20px; position: relative; z-index: 1; }
         .s-link { color: var(--accent-gold); font-weight: 600; font-size: 0.88rem; display: flex; align-items: center; gap: 8px; transition: gap 0.3s ease; position: relative; z-index: 1; }
         .s-item:hover .s-link { gap: 14px; }
+        .s-item.active { transform: translateY(-8px); border-color: var(--accent-gold-border); box-shadow: var(--shadow-hover); }
+        .s-item.active::before { transform: scaleX(1); }
+        .s-item.active::after { opacity: 1; }
+        .s-item.active i { background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light)); color: white; border-color: transparent; box-shadow: 0 6px 20px rgba(128,99,199,0.3); }
+        .s-item.active .s-link { gap: 14px; }
 
         /* Process */
         .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 40px; }
@@ -126,6 +131,8 @@
         .step-card::before { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light)); transform: scaleX(0); transition: transform 0.4s ease; }
         .step-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--accent-gold-border); }
         .step-card:hover::before { transform: scaleX(1); }
+        .step-card.active { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--accent-gold-border); }
+        .step-card.active::before { transform: scaleX(1); }
         .step-card h2 { font-size: 3.5rem; font-weight: 800; color: rgba(128,99,199,0.08); position: absolute; top: 12px; right: 20px; line-height: 1; margin: 0; }
         .step-card h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 12px; color: var(--accent-gold); position: relative; z-index: 1; }
         .step-card p { color: var(--text-body); font-size: 0.92rem; position: relative; z-index: 1; }
@@ -270,7 +277,7 @@
     <main>
         <!-- Local Introduction -->
         <section class="container section-padding">
-            <div style="max-width: 780px;">
+            <div style="max-width: 780px; margin: 0 auto; text-align: center;">
                 <span class="hero-tag">Southern California Market</span>
                 <h2>Commercial Facility Support in Anaheim</h2>
                 <p style="margin-top: 16px;">Anaheim is home to major entertainment venues, hospitality operations and a growing base of commercial offices and retail properties. RCC-BGM supports commercial properties in Anaheim through Brilliant General Maintenance and Reliable Concepts Corporation. Cleaning, janitorial, construction, HVAC and facility work are scoped around the property and confirmed local availability.</p>
@@ -285,10 +292,12 @@
 
         <!-- Industries -->
         <section class="container section-padding" style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
-            <h2>Industries in Anaheim</h2>
-            <p class="section-intro">RCC-BGM supports commercial properties connected to Anaheim's key business sectors, with services tailored to each facility type.</p>
+            <div style="text-align: center;">
+                <h2>Industries in Anaheim</h2>
+                <p class="section-intro" style="margin-left: auto; margin-right: auto;">RCC-BGM supports commercial properties connected to Anaheim's key business sectors, with services tailored to each facility type.</p>
+            </div>
             <div class="services-grid">
-                <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-hotel"></i><h3>Entertainment &amp; Hospitality</h3><p>Hotels, event venues and entertainment facilities requiring frequent turnover cleaning and occupied maintenance.</p></div>
+                <div class="s-item scroll-reveal active" style="cursor: default;"><i class="fa-solid fa-hotel"></i><h3>Entertainment &amp; Hospitality</h3><p>Hotels, event venues and entertainment facilities requiring frequent turnover cleaning and occupied maintenance.</p></div>
                 <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-store"></i><h3>Retail &amp; Customer-Facing</h3><p>Shopping centers, retail stores and service businesses with public-facing spaces that need consistent presentation.</p></div>
                 <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-building"></i><h3>Commercial Offices</h3><p>Single-tenant and multi-tenant office properties requiring recurring janitorial and facility upkeep.</p></div>
                 <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-hospital"></i><h3>Healthcare Offices</h3><p>Medical offices and selected clinical environments needing specialized cleaning protocols.</p></div>
@@ -297,10 +306,12 @@
 
         <!-- Process -->
         <section class="container section-padding">
-            <h2>How a Local Service Request Works in Anaheim</h2>
-            <p class="section-intro">A focused process keeps the scope useful and the delivery aligned with your property.</p>
+            <div style="text-align: center;">
+                <h2>How a Local Service Request Works in Anaheim</h2>
+                <p class="section-intro" style="margin-left: auto; margin-right: auto;">A focused process keeps the scope useful and the delivery aligned with your property.</p>
+            </div>
             <div class="process-grid">
-                <div class="step-card scroll-reveal"><h2>01</h2><h4>Share the Property</h4><p>Provide the Anaheim address, facility type, current need and preferred timing.</p></div>
+                <div class="step-card scroll-reveal active"><h2>01</h2><h4>Share the Property</h4><p>Provide the Anaheim address, facility type, current need and preferred timing.</p></div>
                 <div class="step-card scroll-reveal"><h2>02</h2><h4>Confirm Coverage</h4><p>RCC-BGM confirms which division, service and local team can support the request.</p></div>
                 <div class="step-card scroll-reveal"><h2>03</h2><h4>Review the Site</h4><p>A walkthrough is arranged when the scope cannot be accurately defined remotely.</p></div>
                 <div class="step-card scroll-reveal"><h2>04</h2><h4>Receive a Proposal</h4><p>The proposal identifies services, frequency or project scope, responsibilities and exclusions.</p></div>
@@ -309,9 +320,11 @@
 
         <!-- Related Services -->
         <section class="container section-padding" style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
-            <h2>Related RCC-BGM Services</h2>
+            <div style="text-align: center;">
+                <h2>Related RCC-BGM Services</h2>
+            </div>
             <div class="services-grid" style="margin-top: 30px;">
-                <a class="s-item scroll-reveal" href="commercial-cleaning-services.html"><h3>Commercial Cleaning Services</h3><p>Explore BGM commercial cleaning capabilities available in the Anaheim market.</p><span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span></a>
+                <a class="s-item scroll-reveal active" href="commercial-cleaning-services.html"><h3>Commercial Cleaning Services</h3><p>Explore BGM commercial cleaning capabilities available in the Anaheim market.</p><span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span></a>
                 <a class="s-item scroll-reveal" href="commercial-construction.html"><h3>Commercial Construction</h3><p>Explore RCC construction, tenant improvements and facility upgrades in Anaheim.</p><span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span></a>
                 <a class="s-item scroll-reveal" href="facility-maintenance-services.html"><h3>Facility Maintenance Services</h3><p>Explore connected maintenance programs for Anaheim commercial properties.</p><span class="s-link">View service <i class="fa-solid fa-arrow-right"></i></span></a>
                 <a class="s-item scroll-reveal" href="industries.html"><h3>Industries</h3><p>See which industries RCC-BGM serves and how services connect to your facility type.</p><span class="s-link">View industries <i class="fa-solid fa-arrow-right"></i></span></a>
@@ -320,8 +333,10 @@
 
         <!-- FAQ -->
         <section class="container section-padding">
-            <h2>Frequently Asked Questions About Anaheim</h2>
-            <p class="section-intro">Quick answers about our Anaheim commercial facility services.</p>
+            <div style="text-align: center;">
+                <h2>Frequently Asked Questions About Anaheim</h2>
+                <p class="section-intro" style="margin-left: auto; margin-right: auto;">Quick answers about our Anaheim commercial facility services.</p>
+            </div>
             <details class="faq-item scroll-reveal" open><summary>Does RCC-BGM provide commercial cleaning in Anaheim?</summary><p>RCC-BGM lists Anaheim as a service market. Cleaning availability and program frequency must be confirmed for the specific property and scope.</p></details>
             <details class="faq-item scroll-reveal"><summary>Can I request janitorial service for a hospitality property?</summary><p>Yes. Submit the facility type, address and required frequency so BGM can confirm local coverage for hospitality and customer-facing environments.</p></details>
             <details class="faq-item scroll-reveal"><summary>Does RCC provide construction or tenant improvements in Anaheim?</summary><p>RCC can review the project. Licensing, permit requirements, trade availability and scope must be confirmed before a proposal is issued.</p></details>
@@ -343,7 +358,7 @@
             <h2>Explore Nearby Markets</h2>
             <p style="margin: 14px auto 0; max-width: 620px; color: var(--text-body);">RCC-BGM serves selected commercial properties across the Southern California region. Explore other nearby service markets.</p>
             <div class="services-grid" style="margin-top: 40px;">
-                <a class="s-item scroll-reveal" href="irvine-ca.html"><i class="fa-solid fa-location-dot"></i><h3>Irvine, CA</h3><p>Explore RCC-BGM commercial facility services available in Irvine.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a>
+                <a class="s-item scroll-reveal active" href="irvine-ca.html"><i class="fa-solid fa-location-dot"></i><h3>Irvine, CA</h3><p>Explore RCC-BGM commercial facility services available in Irvine.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a>
                 <a class="s-item scroll-reveal" href="long-beach-ca.html"><i class="fa-solid fa-location-dot"></i><h3>Long Beach, CA</h3><p>Explore RCC-BGM commercial facility services available in Long Beach.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a>
                 <a class="s-item scroll-reveal" href="los-angeles-ca.html"><i class="fa-solid fa-location-dot"></i><h3>Los Angeles, CA</h3><p>Explore RCC-BGM commercial facility services available in Los Angeles.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a>
             </div>
