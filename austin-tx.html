@@ -84,7 +84,11 @@
         .footer-bottom-links a { color: var(--text-light); text-decoration: none; font-size: 0.85rem; transition: var(--transition); }
         .footer-bottom-links a:hover { color: var(--accent-gold); }
         footer .btn-header { color: black; }
-        footer .btn-header:hover { color: #000; }</style>
+        footer .btn-header:hover { color: #000; }    @media (max-width: 768px) {
+      .f-grid { grid-template-columns: 1fr; gap: 30px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
 
     <!-- Schema Markup: WebPage + Service + BreadcrumbList -->
     <script type="application/ld+json">

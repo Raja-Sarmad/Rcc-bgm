@@ -1060,6 +1060,15 @@ footer {
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 44px;
 }
+.footer-bottom {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 
 .footer-summary {
   margin-top: 16px;
@@ -1137,6 +1146,11 @@ footer a:hover {
 
   .section-padding {
     padding: 44px 0;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
   }
 
   .hero-stats {

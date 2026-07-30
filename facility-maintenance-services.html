@@ -269,7 +269,11 @@
           grid-template-columns: 1fr;
         }
       }
-    </style>
+        @media (max-width: 768px) {
+      .f-grid { grid-template-columns: 1fr; gap: 30px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
   </head>
   <body class="page-maintenance">
     <nav>
