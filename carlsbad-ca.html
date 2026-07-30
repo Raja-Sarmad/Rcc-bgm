@@ -170,7 +170,7 @@
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
         .services-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; }
         .services-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .s-item { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius); padding: 34px 30px; text-decoration: none; color: inherit; transition: var(--transition); position: relative; overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow-soft); }
+        .s-item { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius); padding: 34px 30px; text-decoration: none; color: inherit; transition: var(--transition); position: relative; overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow-soft); user-select: none; -webkit-user-select: none; }
         .s-item::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light), var(--accent-blue)); transform: scaleX(0); transform-origin: left; transition: transform 0.5s ease; }
         .s-item::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(128,99,199,0.03), rgba(167,139,218,0.02)); opacity: 0; transition: opacity 0.4s ease; pointer-events: none; }
         .s-item:hover { transform: translateY(-8px); border-color: var(--accent-gold-border); box-shadow: var(--shadow-hover); }
@@ -182,6 +182,11 @@
         .s-item p { color: var(--text-body); font-size: 0.92rem; flex-grow: 1; margin-bottom: 20px; position: relative; z-index: 1; }
         .s-link { color: var(--accent-gold); font-weight: 600; font-size: 0.88rem; display: flex; align-items: center; gap: 8px; transition: gap 0.3s ease; position: relative; z-index: 1; }
         .s-item:hover .s-link { gap: 14px; }
+        .s-item.active { transform: translateY(-8px); border-color: var(--accent-gold-border); box-shadow: var(--shadow-hover); }
+        .s-item.active::before { transform: scaleX(1); }
+        .s-item.active::after { opacity: 1; }
+        .s-item.active i { background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light)); color: white; border-color: transparent; box-shadow: 0 6px 20px rgba(128,99,199,0.3); }
+        .s-item.active .s-link { gap: 14px; }
 
         /* Content blocks */
         .content-block { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius); padding: 40px 36px; box-shadow: var(--shadow-soft); margin-bottom: 24px; }
@@ -236,6 +241,8 @@
         .step-card::before { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light)); transform: scaleX(0); transition: transform 0.4s ease; }
         .step-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--accent-gold-border); }
         .step-card:hover::before { transform: scaleX(1); }
+        .step-card.active { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--accent-gold-border); }
+        .step-card.active::before { transform: scaleX(1); }
         .step-num { font-size: 3.5rem; font-weight: 800; color: rgba(128,99,199,0.08); position: absolute; top: 12px; right: 20px; line-height: 1; }
         .step-card h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 12px; color: var(--accent-gold); position: relative; z-index: 1; }
         .step-card p { color: var(--text-body); font-size: 0.92rem; position: relative; z-index: 1; }
@@ -474,10 +481,10 @@
 
         <!-- ===== SECTION: Carlsbad Business Environment ===== -->
         <section style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
-            <div class="container section-padding">
+            <div class="container section-padding" style="text-align:center;">
                 <span class="section-label"><i class="fa-solid fa-city"></i> Local Relevance</span>
                 <h2>Carlsbad's Commercial Profile</h2>
-                <p class="section-intro">The City of Carlsbad supports a diverse business community. Local economic-development materials identify technology, life sciences, sports and active lifestyle, cleantech and tourism as important industry clusters. These sectors create a mix of laboratories, offices, R&amp;D spaces, resorts, customer-facing properties, light industrial buildings and support facilities.</p>
+                <p class="section-intro" style="margin-left:auto;margin-right:auto;">The City of Carlsbad supports a diverse business community. Local economic-development materials identify technology, life sciences, sports and active lifestyle, cleantech and tourism as important industry clusters. These sectors create a mix of laboratories, offices, R&amp;D spaces, resorts, customer-facing properties, light industrial buildings and support facilities.</p>
 
                 <div class="services-grid-3">
                     <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-microchip"></i><h3>Technology Workplaces</h3><p>Secure access, office cleaning, HVAC reliability, tenant improvements and phased upgrades for tech offices and campuses.</p></div>
@@ -496,10 +503,10 @@
         </section>
 
         <!-- ===== SECTION: Janitorial & Office Cleaning ===== -->
-        <section class="container section-padding">
+        <section class="container section-padding" style="text-align:center;">
             <span class="section-label"><i class="fa-solid fa-broom"></i> Recurring Service</span>
             <h2>Commercial Janitorial and Office Cleaning in Carlsbad</h2>
-            <p class="section-intro">A janitorial program should reflect how the Carlsbad property is occupied and managed. An R&amp;D office, multi-tenant building, resort administration area and professional-services office should not receive identical frequency assumptions.</p>
+            <p class="section-intro" style="margin-left:auto;margin-right:auto;">A janitorial program should reflect how the Carlsbad property is occupied and managed. An R&amp;D office, multi-tenant building, resort administration area and professional-services office should not receive identical frequency assumptions.</p>
 
             <div class="two-col">
                 <div class="content-block scroll-reveal">
@@ -545,10 +552,10 @@
 
         <!-- ===== SECTION: Life-Science, Lab & Cleanroom ===== -->
         <section style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
-            <div class="container section-padding">
+            <div class="container section-padding" style="text-align:center;">
                 <span class="section-label blue"><i class="fa-solid fa-flask"></i> Specialty Cleaning</span>
                 <h2>Life-Science, Laboratory and Cleanroom Support in Carlsbad</h2>
-                <p class="section-intro">Life-science, laboratory and cleanroom environments cannot be treated as ordinary office cleaning. The scope may depend on customer SOPs, room classifications, gowning, access control, contamination-control procedures, approved products, ESD-sensitive surfaces, equipment restrictions and documentation requirements.</p>
+                <p class="section-intro" style="margin-left:auto;margin-right:auto;">Life-science, laboratory and cleanroom environments cannot be treated as ordinary office cleaning. The scope may depend on customer SOPs, room classifications, gowning, access control, contamination-control procedures, approved products, ESD-sensitive surfaces, equipment restrictions and documentation requirements.</p>
 
                 <div class="content-block scroll-reveal">
                     <h3>Potential Qualified Service Areas</h3>
@@ -562,8 +569,8 @@
                     </ul>
                 </div>
 
-                <h3 style="margin-top: 36px; margin-bottom: 8px;">Mandatory Responsibility Boundaries</h3>
-                <p style="font-size: 0.92rem; margin-bottom: 20px;">Clear separation of responsibilities protects the customer, the facility and the service team.</p>
+                <div style="text-align:center;"><h3 style="margin-top: 36px; margin-bottom: 8px;">Mandatory Responsibility Boundaries</h3>
+                <p style="font-size: 0.92rem; margin-bottom: 20px;">Clear separation of responsibilities protects the customer, the facility and the service team.</p></div>
                 <div class="resp-grid scroll-reveal">
                     <div class="resp-card assess">
                         <h4><i class="fa-solid fa-magnifying-glass"></i> RCC-BGM May Assess</h4>
@@ -600,10 +607,10 @@
         </section>
 
         <!-- ===== SECTION: Industrial, Manufacturing & Warehouse ===== -->
-        <section class="container section-padding">
+        <section class="container section-padding" style="text-align:center;">
             <span class="section-label"><i class="fa-solid fa-industry"></i> Industrial Support</span>
             <h2>Industrial, Manufacturing and Warehouse Facility Support in Carlsbad</h2>
-            <p class="section-intro">Carlsbad's technology, product-development, life-science and active-lifestyle sectors may use warehouses, light manufacturing spaces, test areas and distribution support. RCC-BGM can assess approved facility cleaning and construction needs while separating routine building support from hazardous process cleaning or machinery work.</p>
+            <p class="section-intro" style="margin-left:auto;margin-right:auto;">Carlsbad's technology, product-development, life-science and active-lifestyle sectors may use warehouses, light manufacturing spaces, test areas and distribution support. RCC-BGM can assess approved facility cleaning and construction needs while separating routine building support from hazardous process cleaning or machinery work.</p>
 
             <div class="two-col">
                 <div class="content-block scroll-reveal">
@@ -648,10 +655,10 @@
 
         <!-- ===== SECTION: Facility Maintenance & HVAC ===== -->
         <section style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
-            <div class="container section-padding">
+            <div class="container section-padding" style="text-align:center;">
                 <span class="section-label"><i class="fa-solid fa-screwdriver-wrench"></i> Maintenance &amp; HVAC</span>
                 <h2>Facility Maintenance and Commercial HVAC in Carlsbad</h2>
-                <p class="section-intro">Facility maintenance is organized property-condition support — not an undefined promise to fix everything. A Carlsbad program may include recurring observations, minor approved repairs, issue documentation and escalation to construction or specialist services.</p>
+                <p class="section-intro" style="margin-left:auto;margin-right:auto;">Facility maintenance is organized property-condition support — not an undefined promise to fix everything. A Carlsbad program may include recurring observations, minor approved repairs, issue documentation and escalation to construction or specialist services.</p>
 
                 <div class="two-col">
                     <div class="content-block scroll-reveal">
@@ -698,10 +705,10 @@
         </section>
 
         <!-- ===== SECTION: Commercial Construction ===== -->
-        <section class="container section-padding">
+        <section class="container section-padding" style="text-align:center;">
             <span class="section-label green"><i class="fa-solid fa-helmet-safety"></i> Construction</span>
             <h2>Commercial Construction Services in Carlsbad</h2>
-            <p class="section-intro">Reliable Concepts Corporation can review qualified commercial construction projects in Carlsbad, including interior renovations, tenant-space work, maintenance construction and planned facility upgrades. The emphasis is on preconstruction clarity, occupied-building planning and coordination.</p>
+            <p class="section-intro" style="margin-left:auto;margin-right:auto;">Reliable Concepts Corporation can review qualified commercial construction projects in Carlsbad, including interior renovations, tenant-space work, maintenance construction and planned facility upgrades. The emphasis is on preconstruction clarity, occupied-building planning and coordination.</p>
 
             <div class="two-col">
                 <div class="content-block scroll-reveal">
@@ -742,10 +749,10 @@
 
         <!-- ===== SECTION: Tenant Improvements ===== -->
         <section style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
-            <div class="container section-padding">
+            <div class="container section-padding" style="text-align:center;">
                 <span class="section-label"><i class="fa-solid fa-drafting-compass"></i> Tenant Improvements</span>
                 <h2>Tenant Improvements in Carlsbad</h2>
-                <p class="section-intro">Carlsbad tenants and property managers may search for a contractor when signing a new lease, expanding, relocating, changing use or modernizing an existing suite.</p>
+                <p class="section-intro" style="margin-left:auto;margin-right:auto;">Carlsbad tenants and property managers may search for a contractor when signing a new lease, expanding, relocating, changing use or modernizing an existing suite.</p>
 
                 <div class="two-col">
                     <div class="content-block scroll-reveal">
@@ -796,10 +803,10 @@
         </section>
 
         <!-- ===== SECTION: MEP, Maintenance Construction & Upgrades ===== -->
-        <section class="container section-padding">
+        <section class="container section-padding" style="text-align:center;">
             <span class="section-label blue"><i class="fa-solid fa-gears"></i> MEP &amp; Upgrades</span>
             <h2>MEP, Maintenance Construction and Facility Upgrades in Carlsbad</h2>
-            <p class="section-intro">Mechanical, electrical and plumbing requirements must align with the space plan, equipment, ceilings, access, code, inspections and other trades. RCC-BGM positions MEP as coordination and project management unless the exact engineering or licensed trade role is confirmed for the project.</p>
+            <p class="section-intro" style="margin-left:auto;margin-right:auto;">Mechanical, electrical and plumbing requirements must align with the space plan, equipment, ceilings, access, code, inspections and other trades. RCC-BGM positions MEP as coordination and project management unless the exact engineering or licensed trade role is confirmed for the project.</p>
 
             <table class="matrix-table scroll-reveal">
                 <thead>
@@ -855,10 +862,10 @@
 
         <!-- ===== SECTION: Carpentry, Painting, Landscaping ===== -->
         <section style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
-            <div class="container section-padding">
+            <div class="container section-padding" style="text-align:center;">
                 <span class="section-label"><i class="fa-solid fa-paint-roller"></i> Supporting Trades</span>
                 <h2>Carpentry, Painting, Landscaping and Exterior Support in Carlsbad</h2>
-                <p class="section-intro">Local supporting-trade content for commercial interiors, finishes and property presentation.</p>
+                <p class="section-intro" style="margin-left:auto;margin-right:auto;">Local supporting-trade content for commercial interiors, finishes and property presentation.</p>
 
                 <div class="services-grid-3">
                     <div class="content-block scroll-reveal" style="margin-bottom: 0;">
@@ -912,10 +919,10 @@
         </section>
 
         <!-- ===== SECTION: Smart Cleaning Robotics ===== -->
-        <section class="container section-padding">
+        <section class="container section-padding" style="text-align:center;">
             <span class="section-label blue"><i class="fa-solid fa-robot"></i> Technology</span>
             <h2>Smart Cleaning Robotics and Connected Facility Workflows in Carlsbad</h2>
-            <p class="section-intro">Carlsbad technology, office, campus and selected commercial properties may be assessed for autonomous floor cleaning, occupancy-informed dispatch, supply monitoring or connected task reporting.</p>
+            <p class="section-intro" style="margin-left:auto;margin-right:auto;">Carlsbad technology, office, campus and selected commercial properties may be assessed for autonomous floor cleaning, occupancy-informed dispatch, supply monitoring or connected task reporting.</p>
 
             <div class="two-col">
                 <div class="content-block scroll-reveal">
@@ -956,10 +963,10 @@
 
         <!-- ===== SECTION: Industry-Specific Service Pathways ===== -->
         <section style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
-            <div class="container section-padding">
+            <div class="container section-padding" style="text-align:center;">
                 <span class="section-label"><i class="fa-solid fa-route"></i> Service Pathways</span>
                 <h2>Carlsbad Industry-Specific Service Pathways</h2>
-                <p class="section-intro">Select the right RCC-BGM service family based on your Carlsbad facility type and operational needs.</p>
+                <p class="section-intro" style="margin-left:auto;margin-right:auto;">Select the right RCC-BGM service family based on your Carlsbad facility type and operational needs.</p>
 
                 <div class="pathway-grid">
                     <div class="pathway-card scroll-reveal">
@@ -1021,10 +1028,10 @@
         </section>
 
         <!-- ===== SECTION: Assessment, Pricing & Permits ===== -->
-        <section class="container section-padding">
+        <section class="container section-padding" style="text-align:center;">
             <span class="section-label green"><i class="fa-solid fa-clipboard-check"></i> Engagement</span>
             <h2>Carlsbad Facility Assessment, Pricing and Permit Content</h2>
-            <p class="section-intro">A structured engagement process keeps the scope useful and the delivery aligned with your property.</p>
+            <p class="section-intro" style="margin-left:auto;margin-right:auto;">A structured engagement process keeps the scope useful and the delivery aligned with your property.</p>
 
             <h3 style="margin-bottom: 8px;">Six-Step Engagement Process</h3>
             <div class="process-grid-6">
@@ -1077,10 +1084,10 @@
 
         <!-- ===== SECTION: FAQs ===== -->
         <section style="background: var(--bg-warm); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm);">
-            <div class="container section-padding">
+            <div class="container section-padding" style="text-align:center;">
                 <span class="section-label"><i class="fa-solid fa-circle-question"></i> FAQs</span>
                 <h2>Frequently Asked Questions About Carlsbad</h2>
-                <p class="section-intro">Quick answers about RCC-BGM commercial facility services in Carlsbad.</p>
+                <p class="section-intro" style="margin-left:auto;margin-right:auto;">Quick answers about RCC-BGM commercial facility services in Carlsbad.</p>
 
                 <details class="faq-item scroll-reveal"><summary>What services may be available in Carlsbad?</summary><p>Qualified enquiries may include cleaning, janitorial, specialty cleaning, maintenance, HVAC, MEP, tenant improvements, construction and facility upgrades. Availability depends on the specific property, division and scope.</p></details>
                 <details class="faq-item scroll-reveal"><summary>Can RCC-BGM support life-science facilities?</summary><p>Specialized cleaning or construction may be assessed, but SOPs, room classifications, validation and technical responsibilities must be confirmed before a scope is developed. RCC-BGM does not claim cleanroom certification or biotech validation without evidence.</p></details>

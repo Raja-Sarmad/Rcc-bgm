@@ -14,23 +14,27 @@
         .svc-card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-top:34px}
         .svc-card{background:var(--white);border:1px solid rgba(128,99,199,.1);border-radius:16px;padding:30px;transition:all .35s ease;position:relative;overflow:hidden;text-decoration:none;display:block}
         .svc-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px -12px rgba(128,99,199,.18);border-color:var(--accent-teal)}
+        .svc-card.active{transform:translateY(-6px);box-shadow:0 18px 40px -12px rgba(128,99,199,.18);border-color:var(--accent-teal)}
         .svc-card i{font-size:28px;color:var(--accent-teal);margin-bottom:16px;display:block}
         .svc-card h3{font-size:18px;margin-bottom:10px;color:var(--text-dark)}
         .svc-card p{font-size:14px;line-height:1.6}
         .svc-card .card-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:13px;font-weight:600;color:var(--accent-blue);text-decoration:none;transition:gap .25s}
         .svc-card:hover .card-link{gap:10px}
+        .svc-card.active .card-link{gap:10px}
         .ind-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;margin-top:30px}
         .ind-item{background:var(--white);border:1px solid rgba(128,99,199,.08);border-radius:12px;padding:22px;text-align:center;transition:all .3s ease}
         .ind-item:hover{border-color:var(--accent-blue);transform:translateY(-4px);box-shadow:0 12px 30px -10px rgba(217,111,159,.15)}
+        .ind-item.active{border-color:var(--accent-blue);transform:translateY(-4px);box-shadow:0 12px 30px -10px rgba(217,111,159,.15)}
         .ind-item i{font-size:26px;color:var(--accent-blue);margin-bottom:12px;display:block}
         .ind-item h4{font-size:15px;color:var(--text-dark);margin-bottom:6px}
         .ind-item p{font-size:13px}
         .modern-step-card{background:var(--white);border:1px solid rgba(128,99,199,.1);border-radius:16px;padding:32px;position:relative;transition:all .35s ease}
         .modern-step-card:hover{transform:translateY(-5px);box-shadow:0 16px 36px -12px rgba(128,99,199,.16);border-color:var(--accent-teal)}
+        .modern-step-card.active{transform:translateY(-5px);box-shadow:0 16px 36px -12px rgba(128,99,199,.16);border-color:var(--accent-teal)}
         .modern-step-card .step-num{font-size:42px;font-weight:800;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:12px}
         .modern-step-card h4{font-size:17px;font-weight:700;color:var(--text-dark);margin-bottom:8px}
         .modern-step-card p{font-size:14px;line-height:1.6}
-        .steps-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;margin-top:30px}
+        .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px}
         .faq-item{background:var(--white);border:1px solid rgba(128,99,199,.08);border-radius:14px;padding:24px 28px;margin-bottom:14px;transition:all .3s ease;cursor:pointer}
         .faq-item:hover{border-color:var(--accent-teal);box-shadow:0 8px 24px -8px rgba(128,99,199,.12)}
         .faq-item h4{display:flex;justify-content:space-between;align-items:center;font-size:16px;font-weight:600;color:var(--text-dark)}
@@ -183,13 +187,14 @@
         </section>
 
         <!-- Commercial Cleaning Services -->
-        <section class="container section-padding">
+        <section class="container section-padding" style="text-align:center">
             <span class="hero-tag" style="color:var(--accent-blue);border-color:rgba(217,111,159,.3);background:rgba(217,111,159,.06)">Cleaning Programs</span>
             <h2 style="margin-top:14px;">Commercial Cleaning Services Planned Around the Property</h2>
             <p class="section-intro">RCC-BGM can review recurring and one-time commercial cleaning services in Austin for qualified properties. The cleaning plan should identify service zones, traffic patterns, security requirements, operating hours, material limitations and the agreed quality-control process before service begins. <a href="commercial-cleaning-services.html" style="color:var(--accent-blue);font-weight:600;">View full Commercial Cleaning Services scope</a>.</p>
             
+            <div style="padding:0 40px">
             <div class="svc-card-grid">
-                <div class="svc-card scroll-reveal">
+                <div class="svc-card scroll-reveal active">
                     <i class="fa-solid fa-calendar-check"></i>
                     <h3>Recurring Cleaning</h3>
                     <p>Daily, several-times-weekly or customized tasks for approved areas and operating schedules, including reception, restrooms, kitchens, lobbies, corridors and waste removal.</p>
@@ -212,14 +217,15 @@
                     <p>Cleaning after responsible trades complete construction work and release the space for detailing, ensuring a ready-to-occupy environment.</p>
                 </div>
             </div>
+            </div>
         </section>
 
         <!-- Specialty & Industrial -->
         <section class="container section-padding" style="background:rgba(128,99,199,0.03);border-radius:24px;padding:48px;">
             <h2>Cleaning for Warehouses, Industrial Support Areas and Specialized Environments</h2>
             <p class="section-intro">Austin-area warehouses, logistics facilities, production-support properties and specialized workplaces require more qualification than standard office cleaning. The scope accounts for shifts, loading activity, equipment, restricted zones, safety rules and customer operating procedures.</p>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:24px;">
-                <div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:70px;margin-top:24px;">
+                <div style="padding-left:20px;">
                     <h4 style="margin-bottom:12px;color:var(--accent-teal);">Qualified Service Areas</h4>
                     <ul style="list-style:none;padding:0;line-height:1.8;font-size:15px;">
                         <li><i class="fa-solid fa-check" style="color:var(--accent-teal);margin-right:8px;"></i> Warehouse and distribution floors (where approved)</li>
@@ -229,10 +235,10 @@
                         <li><i class="fa-solid fa-check" style="color:var(--accent-teal);margin-right:8px;"></i> Laboratory support and ESD-sensitive floors (under customer-approved procedures)</li>
                     </ul>
                 </div>
-                <div>
+                <div style="padding-right:20px;">
                     <h4 style="margin-bottom:12px;color:var(--accent-teal);">Safety & Scope Boundaries</h4>
-                    <p style="font-size:14px;line-height:1.7;">Hazardous, regulated, biological and high-risk work requires separate review. We do not claim hazardous-material handling, machinery cleaning, confined-space work, biohazard service, sterile processing or cleanroom certification unless those capabilities are explicitly verified for the specific Austin project.</p>
-                    <div style="margin-top:16px;">
+                    <p style="font-size:14px;line-height:1.7;">Hazardous, regulated, biological and high-risk work requires separate review.<br>We do not claim hazardous-material handling, machinery cleaning,<br>confined-space work, biohazard service, sterile processing<br>or cleanroom certification unless those capabilities<br>are explicitly verified for the specific Austin project.</p>
+                    <div style="margin-top:16px;text-align:center;">
                         <a href="industrial-cleaning.html" class="card-link" style="margin-right:16px;">Industrial Cleaning <i class="fa-solid fa-arrow-right"></i></a>
                         <a href="smart-cleaning-robotics.html" class="card-link">Smart Cleaning Robotics <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
@@ -241,9 +247,9 @@
         </section>
 
         <!-- Facility Maintenance & HVAC -->
-        <section class="container section-padding">
-            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:40px;">
-                <div>
+        <section class="container section-padding" style="padding-left:40px;padding-right:40px">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:50px;">
+                <div style="background:var(--bg-card);border:1px solid rgba(128,99,199,.1);border-radius:16px;padding:32px;text-align:center">
                     <span class="hero-tag" style="color:var(--accent-blue);border-color:rgba(217,111,159,.3);background:rgba(217,111,159,.06)">Upkeep & Repairs</span>
                     <h2 style="margin-top:14px;">Facility Maintenance Services in Austin</h2>
                     <p style="margin-top:16px;line-height:1.7;font-size:15px;">Facility maintenance supports ongoing property condition, smaller corrective needs and coordinated issue management. We distinguish routine upkeep from construction-level repair, licensed trade work and capital improvement.</p>
@@ -255,7 +261,7 @@
                     </ul>
                     <a href="facility-maintenance-services.html" class="card-link" style="margin-top:16px;">View Facility Maintenance <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
-                <div>
+                <div style="background:var(--bg-card);border:1px solid rgba(128,99,199,.1);border-radius:16px;padding:32px;text-align:center">
                     <span class="hero-tag" style="color:var(--accent-blue);border-color:rgba(217,111,159,.3);background:rgba(217,111,159,.06)">Climate Control</span>
                     <h2 style="margin-top:14px;">Commercial HVAC Assessment, Repair and Project Coordination</h2>
                     <p style="margin-top:16px;line-height:1.7;font-size:15px;">Austin commercial HVAC enquiries may involve comfort complaints, preventive maintenance, equipment failure, planned replacement or coordination with a tenant improvement. Final scope considers equipment type, capacity, controls, access and surrounding construction conditions.</p>
@@ -271,13 +277,14 @@
         </section>
 
         <!-- Commercial Construction & MEP -->
-        <section class="container section-padding" style="background:rgba(128,99,199,0.03);border-radius:24px;padding:48px;">
+        <section class="container section-padding" style="text-align:center;background:rgba(128,99,199,0.03);border-radius:24px;padding:48px;">
             <span class="hero-tag" style="color:var(--accent-blue);border-color:rgba(217,111,159,.3);background:rgba(217,111,159,.06)">Build & Renovate</span>
             <h2 style="margin-top:14px;">Commercial Construction Planned Around Active Facilities</h2>
             <p class="section-intro">Reliable Concepts Corporation can review qualified commercial construction requirements in Austin, including commercial interiors, building renovations, maintenance construction and facility upgrades. The strongest local positioning is coordinated commercial project delivery with defined scope, occupied-building planning, qualified trades, documented changes and closeout.</p>
             
+            <div style="display:flex;justify-content:center">
             <div class="svc-card-grid" style="margin-top:32px;">
-                <div class="svc-card scroll-reveal">
+                <div class="svc-card scroll-reveal active">
                     <i class="fa-solid fa-helmet-safety"></i>
                     <h3>Tenant Improvements & Build-outs</h3>
                     <p>Tenant suite build-outs, occupancy preparation, and commercial interior renovation coordinated with landlord criteria and schedule.</p>
@@ -294,79 +301,84 @@
                     <p>Commercial construction generally requires permits. Permitting is project-specific; we do not guarantee approval, review time or code compliance.</p>
                 </div>
             </div>
+            </div>
             <p style="margin-top:24px;font-size:14px;color:var(--text-muted);text-align:center;"><em>Project accountability includes: Scope baseline, Responsibilities, Schedule, Changes (documented before execution), and Closeout walkthroughs.</em></p>
         </section>
 
         <!-- Industries -->
-        <section class="container section-padding">
+        <section class="container section-padding" style="text-align:center">
             <span class="hero-tag" style="color:var(--accent-blue);border-color:rgba(217,111,159,.3);background:rgba(217,111,159,.06)">Local industry focus</span>
             <h2 style="margin-top:14px;">Facility Services Adapted to Austin Commercial Environments</h2>
             <p class="section-intro">The Industries section helps users recognize their property type. Each environment has practical facility needs, scoped without implying universal expertise or unverified compliance.</p>
-            <div class="ind-grid">
-                <div class="ind-item scroll-reveal">
-                    <i class="fa-solid fa-laptop-code"></i>
-                    <h4>Technology & Professional Offices</h4>
-                    <p>Recurring cleaning, secure-area planning, HVAC, tenant changes and workplace upgrades.</p>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:20px;margin-top:30px">
+                <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center">
+                    <div class="ind-item scroll-reveal active" style="flex:0 0 220px">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <h4>Technology & Professional Offices</h4>
+                        <p>Recurring cleaning, secure-area planning, HVAC, tenant changes and workplace upgrades.</p>
+                    </div>
+                    <div class="ind-item scroll-reveal" style="flex:0 0 220px">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <h4>Government & Institutional</h4>
+                        <p>Approved public-facing and administrative areas with procurement and access requirements.</p>
+                    </div>
+                    <div class="ind-item scroll-reveal" style="flex:0 0 220px">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <h4>Education & Training</h4>
+                        <p>Classrooms, offices, shared areas and phased maintenance or renovation where qualified.</p>
+                    </div>
+                    <div class="ind-item scroll-reveal" style="flex:0 0 220px">
+                        <i class="fa-solid fa-hospital"></i>
+                        <h4>Healthcare & Medical</h4>
+                        <p>Approved waiting, administrative, staff and patient-facing areas with regulated exclusions.</p>
+                    </div>
                 </div>
-                <div class="ind-item scroll-reveal">
-                    <i class="fa-solid fa-building-columns"></i>
-                    <h4>Government & Institutional</h4>
-                    <p>Approved public-facing and administrative areas with procurement and access requirements.</p>
-                </div>
-                <div class="ind-item scroll-reveal">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <h4>Education & Training</h4>
-                    <p>Classrooms, offices, shared areas and phased maintenance or renovation where qualified.</p>
-                </div>
-                <div class="ind-item scroll-reveal">
-                    <i class="fa-solid fa-hospital"></i>
-                    <h4>Healthcare & Medical</h4>
-                    <p>Approved waiting, administrative, staff and patient-facing areas with regulated exclusions.</p>
-                </div>
-                <div class="ind-item scroll-reveal">
-                    <i class="fa-solid fa-utensils"></i>
-                    <h4>Hospitality & Food-Service</h4>
-                    <p>High traffic, customer presentation, employee areas and service windows around operations.</p>
-                </div>
-                <div class="ind-item scroll-reveal">
-                    <i class="fa-solid fa-store"></i>
-                    <h4>Retail & Mixed-Use</h4>
-                    <p>Entrances, sales areas, shared spaces, tenant coordination and phased improvement work.</p>
-                </div>
-                <div class="ind-item scroll-reveal">
-                    <i class="fa-solid fa-truck-ramp-box"></i>
-                    <h4>Warehouses & Logistics</h4>
-                    <p>Shift-based cleaning, employee spaces, facility maintenance and occupied repair projects.</p>
-                </div>
-                <div class="ind-item scroll-reveal">
-                    <i class="fa-solid fa-building"></i>
-                    <h4>Multi-Tenant Commercial</h4>
-                    <p>Common-area janitorial, landlord coordination, tenant improvements and base-building services.</p>
+                <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center">
+                    <div class="ind-item scroll-reveal" style="flex:0 0 220px">
+                        <i class="fa-solid fa-utensils"></i>
+                        <h4>Hospitality & Food-Service</h4>
+                        <p>High traffic, customer presentation, employee areas and service windows around operations.</p>
+                    </div>
+                    <div class="ind-item scroll-reveal" style="flex:0 0 220px">
+                        <i class="fa-solid fa-store"></i>
+                        <h4>Retail & Mixed-Use</h4>
+                        <p>Entrances, sales areas, shared spaces, tenant coordination and phased improvement work.</p>
+                    </div>
+                    <div class="ind-item scroll-reveal" style="flex:0 0 220px">
+                        <i class="fa-solid fa-truck-ramp-box"></i>
+                        <h4>Warehouses & Logistics</h4>
+                        <p>Shift-based cleaning, employee spaces, facility maintenance and occupied repair projects.</p>
+                    </div>
+                    <div class="ind-item scroll-reveal" style="flex:0 0 220px">
+                        <i class="fa-solid fa-building"></i>
+                        <h4>Multi-Tenant Commercial</h4>
+                        <p>Common-area janitorial, landlord coordination, tenant improvements and base-building services.</p>
+                    </div>
                 </div>
             </div>
-            <p style="margin-top:24px;font-size:13px;color:var(--text-muted);text-align:center;"><em>Industry boundary: We do not imply healthcare compliance, government contracts, university contracts, sterile cleaning, food-production sanitation, data-center uptime support or industrial hazardous services unless specifically verified.</em></p>
+            <p style="margin-top:24px;font-size:13px;color:var(--text-muted);text-align:center;"><em>Industry boundary: We do not imply healthcare compliance, government contracts,<br>university contracts, sterile cleaning, food-production sanitation, data-center uptime support,<br>or industrial hazardous services unless specifically verified.</em></p>
         </section>
 
         <!-- Service Process -->
-        <section class="container section-padding">
+        <section class="container section-padding" style="text-align:center">
             <span class="hero-tag" style="color:var(--accent-blue);border-color:rgba(217,111,159,.3);background:rgba(217,111,159,.06)">Delivery Process</span>
             <h2 style="margin-top:14px;">Work Planned Around Business Operations</h2>
             <p class="section-intro">Many Austin facilities cannot simply close while cleaning, maintenance or construction takes place. We consider access, communication, safety and phasing without promising zero disruption.</p>
             
             <div style="background:var(--white);border:1px solid rgba(128,99,199,.1);border-radius:16px;padding:32px;margin-bottom:32px;">
                 <h4 style="margin-bottom:16px;color:var(--accent-teal);">Occupied-Property Planning Principles</h4>
-                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));gap:16px;font-size:14px;line-height:1.6;">
-                    <div><i class="fa-solid fa-check" style="color:var(--accent-blue);margin-right:8px;"></i> Identify employees, tenants, visitors, shifts and critical operations</div>
-                    <div><i class="fa-solid fa-check" style="color:var(--accent-blue);margin-right:8px;"></i> Confirm approved work hours, access routes and restricted areas</div>
-                    <div><i class="fa-solid fa-check" style="color:var(--accent-blue);margin-right:8px;"></i> Plan noise, dust, odor, deliveries, lifts and temporary protection</div>
-                    <div><i class="fa-solid fa-check" style="color:var(--accent-blue);margin-right:8px;"></i> Establish authorized contacts, notices and escalation procedures</div>
-                    <div><i class="fa-solid fa-check" style="color:var(--accent-blue);margin-right:8px;"></i> Document changes before additional work is performed</div>
-                    <div><i class="fa-solid fa-check" style="color:var(--accent-blue);margin-right:8px;"></i> Complete walkthroughs and ongoing performance reviews</div>
+                <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:16px;font-size:14px;line-height:1.6;">
+                    <div style="text-align:left"><i class="fa-solid fa-check" style="color:var(--accent-blue);margin-right:8px;"></i> Identify employees, tenants, visitors, shifts and critical operations</div>
+                    <div style="text-align:left"><i class="fa-solid fa-check" style="color:var(--accent-blue);margin-right:8px;"></i> Confirm approved work hours, access routes and restricted areas</div>
+                    <div style="text-align:left"><i class="fa-solid fa-check" style="color:var(--accent-blue);margin-right:8px;"></i> Plan noise, dust, odor, deliveries, lifts and temporary protection</div>
+                    <div style="text-align:left"><i class="fa-solid fa-check" style="color:var(--accent-blue);margin-right:8px;"></i> Establish authorized contacts, notices and escalation procedures</div>
+                    <div style="text-align:left"><i class="fa-solid fa-check" style="color:var(--accent-blue);margin-right:8px;"></i> Document changes before additional work is performed</div>
+                    <div style="text-align:left"><i class="fa-solid fa-check" style="color:var(--accent-blue);margin-right:8px;"></i> Complete walkthroughs and ongoing performance reviews</div>
                 </div>
             </div>
 
             <div class="steps-grid">
-                <div class="modern-step-card scroll-reveal">
+                <div class="modern-step-card scroll-reveal active">
                     <div class="step-num">01</div>
                     <h4>Enquiry</h4>
                     <p>Location, property type, service requirement and desired outcome.</p>
@@ -433,7 +445,7 @@
                     <p>Submit an Austin facility assessment request with the information currently available, including property address, approximate size, current condition, operating schedule, required services and preferred timeline.</p>
                 </div>
             </div>
-            <p style="margin-top:24px;font-size:13px;color:var(--text-muted);text-align:center;"><em>Service-area positioning: We may link to nearby active RCC-BGM markets where those pages genuinely exist. We do not publish an arbitrary service radius, a fake Austin office address, or a list of surrounding cities that have not been confirmed.</em></p>
+            <p style="margin-top:24px;font-size:13px;color:var(--text-muted);text-align:center;"><em>Service-area positioning: We may link to nearby active RCC-BGM markets where those pages genuinely exist.<br>We do not publish an arbitrary service radius, a fake Austin office address,<br>or a list of surrounding cities that have not been confirmed.</em></p>
         </section>
 
         <!-- Final CTA -->

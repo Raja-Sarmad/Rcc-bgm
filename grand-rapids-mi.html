@@ -226,7 +226,7 @@
 
         /* ===== SECTION HEADERS ===== */
         h2 { font-size: 2rem; font-weight: 700; margin-bottom: 14px; color: var(--text-dark); }
-        .section-intro { color: var(--text-body); font-size: 1.05rem; max-width: 680px; margin-bottom: 40px; }
+        .section-intro { color: var(--text-body); font-size: 1.05rem; max-width: 680px; margin: 0 auto 40px; text-align:center; }
 
         /* ===== CARDS ===== */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
@@ -246,8 +246,11 @@
             opacity: 0; transition: opacity 0.4s ease; pointer-events: none;
         }
         .s-item:hover { transform: translateY(-8px); border-color: var(--accent-gold-border); box-shadow: var(--shadow-hover); }
+        .s-item.active { transform: translateY(-8px); border-color: var(--accent-gold-border); box-shadow: var(--shadow-hover); }
         .s-item:hover::before { transform: scaleX(1); }
         .s-item:hover::after { opacity: 1; }
+        .s-item.active::before { transform: scaleX(1); }
+        .s-item.active::after { opacity: 1; }
         .s-item i {
             font-size: 1.6rem; color: var(--accent-gold); margin-bottom: 20px;
             background: linear-gradient(135deg, var(--accent-gold-soft), rgba(128,99,199,0.04));
@@ -258,10 +261,15 @@
             background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
             color: white; border-color: transparent; box-shadow: 0 6px 20px rgba(128,99,199,0.3);
         }
+        .s-item.active i {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
+            color: white; border-color: transparent; box-shadow: 0 6px 20px rgba(128,99,199,0.3);
+        }
         .s-item h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 12px; color: var(--text-dark); position: relative; z-index: 1; }
         .s-item p { color: var(--text-body); font-size: 0.92rem; flex-grow: 1; margin-bottom: 20px; position: relative; z-index: 1; }
         .s-link { color: var(--accent-gold); font-weight: 600; font-size: 0.88rem; display: flex; align-items: center; gap: 8px; transition: gap 0.3s ease; position: relative; z-index: 1; }
         .s-item:hover .s-link { gap: 14px; }
+        .s-item.active .s-link { gap: 14px; }
 
         /* ===== PROCESS ===== */
         .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 40px; }
@@ -274,7 +282,9 @@
             background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light)); transform: scaleX(0); transition: transform 0.4s ease;
         }
         .step-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--accent-gold-border); }
+        .step-card.active { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--accent-gold-border); }
         .step-card:hover::before { transform: scaleX(1); }
+        .step-card.active::before { transform: scaleX(1); }
         .step-card h2 { font-size: 3.5rem; font-weight: 800; color: rgba(128,99,199,0.08); position: absolute; top: 12px; right: 20px; line-height: 1; margin: 0; }
         .step-card h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 12px; color: var(--accent-gold); position: relative; z-index: 1; }
         .step-card p { color: var(--text-body); font-size: 0.92rem; position: relative; z-index: 1; }
@@ -458,10 +468,10 @@
 
     <main>
       <section class="container section-padding">
-        <div style="max-width:850px">
+        <div style="max-width:850px;margin:0 auto;text-align:center">
           <span class="hero-tag">Kent County / West Michigan Market</span>
           <h2>Commercial Property Context in Grand Rapids</h2>
-          <p style="margin-top:16px">Grand Rapids anchors a diverse West Michigan economy with healthcare, office, manufacturing, distribution, hospitality and downtown commercial properties. RCC-BGM's official locations page includes Grand Rapids in its service network, but that listing does not establish that every service is available at every address. Any request must be matched to the property, division, requested work and current local availability.</p>
+          <p style="margin-top:16px;text-align:center">Grand Rapids anchors a diverse West Michigan economy with healthcare, office, manufacturing, distribution, hospitality and downtown commercial properties. RCC-BGM's official locations page includes Grand Rapids in its service network, but that listing does not establish that every service is available at every address. Any request must be matched to the property, division, requested work and current local availability.</p>
         </div>
         <div class="services-grid" style="margin-top:48px">
           <a class="s-item scroll-reveal active" href="commercial-cleaning-services.html"><i class="fa-solid fa-broom"></i><h3>Janitorial &amp; Specialty Cleaning Assessment</h3><p>Commercial janitorial, floor care and specialty-cleaning needs for a Grand Rapids property may be assessed by Brilliant. Program type, frequency, access procedures and local availability must be confirmed for the specific property and scope.</p><span class="s-link">Review cleaning services <i class="fa-solid fa-arrow-right"></i></span></a>
@@ -470,31 +480,31 @@
           <a class="s-item scroll-reveal" href="commercial-hvac-services.html"><i class="fa-solid fa-temperature-arrow-down"></i><h3>HVAC &amp; MEP Scope Confirmation</h3><p>HVAC or MEP work must be confirmed for the specific Grand Rapids property and scope, including jurisdiction, permits, licensing, system condition and trade availability.</p><span class="s-link">Review HVAC services <i class="fa-solid fa-arrow-right"></i></span></a>
         </div>
       </section>
-      <section class="container section-padding" style="background:var(--bg-warm);border-top:1px solid var(--border-warm);border-bottom:1px solid var(--border-warm)">
-        <h2>Grand Rapids Industries and Commercial Property Types</h2>
+      <section class="container section-padding" style="background:var(--bg-warm);border-top:1px solid var(--border-warm);border-bottom:1px solid var(--border-warm);text-align:center">
+        <h2>Grand Rapids Industries and<br>Commercial Property Types</h2>
         <p class="section-intro">Grand Rapids anchors a diverse West Michigan economy with healthcare, office, manufacturing, distribution, hospitality and downtown commercial properties. These market characteristics help frame a site conversation; they are not claims that RCC-BGM serves every facility in these categories.</p>
-        <div class="services-grid"><div class="s-item scroll-reveal" style="cursor:default"><i class="fa-solid fa-microchip"></i><h3>Healthcare</h3><p>Healthcare properties may have different occupancy, access, finish, hygiene and operating-hour requirements; the facility and requested scope should be assessed before service is confirmed.</p></div><div class="s-item scroll-reveal" style="cursor:default"><i class="fa-solid fa-building"></i><h3>Manufacturing</h3><p>Manufacturing properties may have different occupancy, access, finish, hygiene and operating-hour requirements; the facility and requested scope should be assessed before service is confirmed.</p></div><div class="s-item scroll-reveal" style="cursor:default"><i class="fa-solid fa-industry"></i><h3>Distribution</h3><p>Distribution properties may have different occupancy, access, finish, hygiene and operating-hour requirements; the facility and requested scope should be assessed before service is confirmed.</p></div><div class="s-item scroll-reveal" style="cursor:default"><i class="fa-solid fa-briefcase"></i><h3>Downtown Offices &amp; Hospitality</h3><p>Downtown Offices &amp; Hospitality properties may have different occupancy, access, finish, hygiene and operating-hour requirements; the facility and requested scope should be assessed before service is confirmed.</p></div></div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:0 10px"><div class="s-item scroll-reveal active" style="cursor:default"><i class="fa-solid fa-microchip"></i><h3>Healthcare</h3><p>Healthcare properties may have different occupancy, access, finish, hygiene and operating-hour requirements; the facility and requested scope should be assessed before service is confirmed.</p></div><div class="s-item scroll-reveal" style="cursor:default"><i class="fa-solid fa-building"></i><h3>Manufacturing</h3><p>Manufacturing properties may have different occupancy, access, finish, hygiene and operating-hour requirements; the facility and requested scope should be assessed before service is confirmed.</p></div><div class="s-item scroll-reveal" style="cursor:default"><i class="fa-solid fa-industry"></i><h3>Distribution</h3><p>Distribution properties may have different occupancy, access, finish, hygiene and operating-hour requirements; the facility and requested scope should be assessed before service is confirmed.</p></div><div class="s-item scroll-reveal" style="cursor:default"><i class="fa-solid fa-briefcase"></i><h3>Downtown Offices &amp; Hospitality</h3><p>Downtown Offices &amp; Hospitality properties may have different occupancy, access, finish, hygiene and operating-hour requirements; the facility and requested scope should be assessed before service is confirmed.</p></div></div>
       </section>
-      <section class="container section-padding">
+      <section class="container section-padding" style="text-align:center">
         <h2>Permitting and Project Planning in Grand Rapids</h2>
         <p class="section-intro">The City of Grand Rapids Development Center coordinates permits and plan review; building, trade, fire and zoning requirements depend on the proposed work and occupancy. Property owners and managers should confirm the authority having jurisdiction and required approvals directly with official agencies. RCC-BGM service availability does not replace permit, design, licensing or inspection requirements.</p>
         <div class="process-grid">
-          <div class="step-card scroll-reveal"><h2>01</h2><h4>Identify the Property</h4><p>Share the exact Grand Rapids address, occupancy, facility type and operating constraints.</p></div>
+          <div class="step-card scroll-reveal active"><h2>01</h2><h4>Identify the Property</h4><p>Share the exact Grand Rapids address, occupancy, facility type and operating constraints.</p></div>
           <div class="step-card scroll-reveal"><h2>02</h2><h4>Define the Need</h4><p>Separate recurring cleaning, repair, building-system and improvement needs into a reviewable scope.</p></div>
           <div class="step-card scroll-reveal"><h2>03</h2><h4>Confirm Coverage</h4><p>RCC-BGM confirms the applicable division and whether service is locally available for that property and scope.</p></div>
           <div class="step-card scroll-reveal"><h2>04</h2><h4>Check Requirements</h4><p>Confirm permits, licensing, access, schedule, exclusions and responsibilities before a proposal or work plan.</p></div>
         </div>
       </section>
-      <section class="container section-padding" style="background:var(--bg-warm);border-top:1px solid var(--border-warm);border-bottom:1px solid var(--border-warm)">
+      <section class="container section-padding" style="background:var(--bg-warm);border-top:1px solid var(--border-warm);border-bottom:1px solid var(--border-warm);text-align:center">
         <h2>Service Questions for a Grand Rapids Property</h2>
-        <div class="services-grid" style="margin-top:30px">
-          <div class="s-item scroll-reveal"><h3>Facility conditions</h3><p>Building size, occupancy, surfaces, equipment, security and operating hours shape what may be appropriate.</p></div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px;padding:0 10px">
+          <div class="s-item scroll-reveal active"><h3>Facility conditions</h3><p>Building size, occupancy, surfaces, equipment, security and operating hours shape what may be appropriate.</p></div>
           <div class="s-item scroll-reveal"><h3>Division availability</h3><p>The official network identifies this as a Brilliant market. The specific service still must be confirmed.</p></div>
           <div class="s-item scroll-reveal"><h3>Jurisdiction and permits</h3><p>City, county, fire or other agency requirements may apply depending on the address and work.</p></div>
           <div class="s-item scroll-reveal"><h3>Proposal boundaries</h3><p>A useful proposal should identify included work, frequency or schedule, assumptions, responsibilities and exclusions.</p></div>
         </div>
       </section>
-      <section class="container section-padding">
+      <section class="container section-padding" style="text-align:center">
         <h2>Frequently Asked Questions About Grand Rapids</h2>
         <p class="section-intro">Answers are intentionally conditional because availability is confirmed property by property.</p>
         <details class="faq-item scroll-reveal" open><summary>Is Grand Rapids supported by RCC-BGM?</summary><p>Yes. RCC-BGM's original official locations page lists Grand Rapids in its multi-state service network and identifies the market as Brilliant. Service must still be confirmed for the specific property and scope.</p></details>
@@ -511,7 +521,7 @@
       </section>
       <section class="container section-padding" style="text-align:center;border-top:1px solid var(--border-warm)">
         <h2>Compare Nearby RCC-BGM Markets</h2><p style="margin:14px auto 0;max-width:680px;color:var(--text-body)">Each market has its own business, property and service-availability context. Use the location page for the property's actual address.</p>
-        <div class="services-grid" style="margin-top:40px"><a class="s-item scroll-reveal" href="kalamazoo-mi.html"><i class="fa-solid fa-location-dot"></i><h3>Kalamazoo, MI</h3><p>Review the separate market context and confirm service availability for a property in Kalamazoo.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a><a class="s-item scroll-reveal" href="reno-nv.html"><i class="fa-solid fa-location-dot"></i><h3>Reno, NV</h3><p>Review the separate market context and confirm service availability for a property in Reno.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a><a class="s-item scroll-reveal" href="phoenix-az.html"><i class="fa-solid fa-location-dot"></i><h3>Phoenix, AZ</h3><p>Review the separate market context and confirm service availability for a property in Phoenix.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a></div>
+        <div class="services-grid" style="margin-top:40px"><a class="s-item scroll-reveal active" href="kalamazoo-mi.html"><i class="fa-solid fa-location-dot"></i><h3>Kalamazoo, MI</h3><p>Review the separate market context and confirm service availability for a property in Kalamazoo.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a><a class="s-item scroll-reveal" href="reno-nv.html"><i class="fa-solid fa-location-dot"></i><h3>Reno, NV</h3><p>Review the separate market context and confirm service availability for a property in Reno.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a><a class="s-item scroll-reveal" href="phoenix-az.html"><i class="fa-solid fa-location-dot"></i><h3>Phoenix, AZ</h3><p>Review the separate market context and confirm service availability for a property in Phoenix.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a></div>
       </section>
     </main>
 
