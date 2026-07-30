@@ -35,7 +35,7 @@
       --radius: 18px;
       --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-      /* site.css overrides */
+<!-- site.css overrides -->
       --bg-deep: #302447;
       --text-slate: #675f78;
       --accent-teal: #8063c7;
@@ -524,6 +524,38 @@ h1 .gradient-text,
     .faq-item p {
       color: var(--text-body) !important;
     }
+
+    .nav-cta-mobile { display: none; }
+
+    nav {
+      background: rgba(250, 247, 242, 0.9);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    nav .btn-header {
+      color: white !important;
+    }
+
+    nav .nav-toggle {
+      color: var(--accent-gold);
+      background: var(--bg-warm);
+      border-color: var(--accent-gold-border);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+      .nav-flex > .btn-header { display: none; }
+      .nav-cta-mobile { display: block; }
+      .nav-cta-mobile .btn-header { display: block; margin-top: 8px; text-align: center; width: 100%; background: var(--gradient); color: white; border: none; }
+      .loc-hero { padding: 130px 0 60px 0; }
+      .loc-hero-actions { margin-left: 0; justify-content: center; }
+      .loc-hero-actions > a { min-width: 0; width: 100%; }
+      .region-section { padding: 32px 20px !important; }
+      .f-grid { grid-template-columns: 1fr; gap: 30px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
   </style>
 </head>
 
@@ -537,7 +569,11 @@ h1 .gradient-text,
         <li><a href="industries.html">Industries</a></li>
         <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
         <li><a href="about.html">About</a></li>
+        <li class="nav-cta-mobile"><a href="contact.html" class="btn-header">Get Assessment</a></li>
       </ul>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
       <a href="contact.html" class="btn-header">Get Assessment</a>
     </div>
   </nav>
@@ -1117,6 +1153,32 @@ h1 .gradient-text,
             </div>
         </div>
     </footer>
+  <script>
+    // Mobile Nav Toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      if (navToggle) {
+        navToggle.addEventListener('click', () => {
+          const isOpen = navLinks.style.display === 'flex';
+          navLinks.style.display = isOpen ? 'none' : 'flex';
+          navLinks.style.flexDirection = 'column';
+          navLinks.style.position = 'absolute';
+          navLinks.style.top = '100%';
+          navLinks.style.left = '0';
+          navLinks.style.right = '0';
+          navLinks.style.background = 'rgba(250, 247, 242, 0.98)';
+          navLinks.style.padding = '20px';
+          navLinks.style.borderBottom = '1px solid var(--border-warm)';
+          navLinks.style.boxShadow = 'var(--shadow-medium)';
+          navLinks.style.opacity = isOpen ? '' : '1';
+          navLinks.style.visibility = isOpen ? '' : 'visible';
+          navLinks.style.pointerEvents = isOpen ? '' : 'auto';
+          navLinks.style.transform = isOpen ? '' : 'none';
+        });
+      }
+    });
+  </script>
   <script src="site.js" defer></script>
 </body>
 
