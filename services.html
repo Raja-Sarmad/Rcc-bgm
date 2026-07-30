@@ -99,6 +99,20 @@
       list-style: none;
     }
 
+    .nav-cta-mobile { display: none; }
+
+    .nav-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--accent-gold-border);
+      border-radius: 12px;
+      background: var(--bg-warm);
+      color: var(--accent-gold);
+      font-size: 18px;
+      cursor: pointer;
+    }
+
     .nav-links a {
       color: var(--text-body);
       text-decoration: none;
@@ -862,6 +876,10 @@
 
     @media (max-width: 768px) {
       .nav-links { display: none; }
+      .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+      .nav-flex > .btn-header { display: none; }
+      .nav-cta-mobile { display: block; }
+      .nav-cta-mobile .btn-header { display: inline-block; margin-top: 8px; text-align: center; width: 100%; }
       .section-padding { padding: 40px 0; }
       .services-hero-stats-dock .hero-stats { flex-direction: column; gap: 16px; padding: 16px; }
       .services-hero-stats-dock .hero-stat { border-right: none; border-bottom: 1px solid var(--border-warm); padding-bottom: 16px; width: 100%; }
@@ -870,6 +888,8 @@
       .redesign-right { grid-template-columns: 1fr; }
       .redesign-card:nth-child(3) { max-width: 100%; }
       .cta-box { padding: 30px 20px; }
+      .f-grid { grid-template-columns: 1fr; gap: 30px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -883,10 +903,14 @@
       <ul class="nav-links">
         <li><a href="services.html" class="is-active">Services</a></li>
         <li><a href="industries.html">Industries</a></li>
-        <li><a href="locations.html">Locations</a></li> <!-- ✅ ADDED LOCATIONS HERE -->
+        <li><a href="locations.html">Locations</a></li>
         <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
         <li><a href="about.html">About</a></li>
+        <li class="nav-cta-mobile"><a href="contact.html" class="btn-header">Get Assessment</a></li>
       </ul>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
       <a href="contact.html" class="btn-header">Get Assessment</a>
     </div>
   </nav>
@@ -1166,6 +1190,26 @@
     </footer>
 
   <script>
+    // 0. Mobile Nav Toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      if (navToggle) {
+        navToggle.addEventListener('click', () => {
+          navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+          navLinks.style.flexDirection = 'column';
+          navLinks.style.position = 'absolute';
+          navLinks.style.top = '100%';
+          navLinks.style.left = '0';
+          navLinks.style.right = '0';
+          navLinks.style.background = 'rgba(250, 247, 242, 0.98)';
+          navLinks.style.padding = '20px';
+          navLinks.style.borderBottom = '1px solid var(--border-warm)';
+          navLinks.style.boxShadow = 'var(--shadow-medium)';
+        });
+      }
+    });
+
     // 1. FAQ Accordion Logic
     document.querySelectorAll('.faq-item').forEach(item => {
       item.addEventListener('toggle', () => {
