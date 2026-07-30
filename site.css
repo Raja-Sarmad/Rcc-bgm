@@ -7104,15 +7104,9 @@ input::placeholder, textarea::placeholder { color: #837a92; opacity: 1; }
 /* ===== Footer Light Theme Override ===== */
 
 footer {
-    background: linear-gradient(
-        160deg,
-        #FAF7F2 0%,
-        #ede8f8 45%,
-        #ede8f8 75%,
-        #FAF7F2 100%
-    ) !important;
-    border-top: 3px solid #F3CF7C !important;
-    color: #2D2D2D !important;
+    background: white !important;
+    border-top: 1px solid var(--border-warm) !important;
+    color: var(--text-body) !important;
 }
 
 footer *,
