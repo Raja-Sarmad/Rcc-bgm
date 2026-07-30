@@ -130,6 +130,8 @@
             transition: color 0.25s ease;
         }
 
+        .nav-cta-mobile { display: none; }
+
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -1150,6 +1152,14 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
+            .nav-links { display: none; }
+            .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+            .nav-flex > .btn-header { display: none; }
+            .nav-cta-mobile { display: block; }
+            .nav-cta-mobile .btn-header { display: inline-block; margin-top: 8px; text-align: center; width: 100%; }
+        }
+
+        @media (max-width: 1024px) {
             .split-intro, .focus-flex, .focus-flex.reversed, .tech-box, .f-grid, .why-split { grid-template-columns: 1fr; }
             .focus-flex.reversed > :first-child { order: 1; }
             .focus-flex.reversed > :last-child { order: 2; }
@@ -1158,9 +1168,8 @@
         }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
             .section-padding { padding: 60px 0; }
+            .focus-flex video { width: 400px; max-width: 100%; height: auto; }
             .hero { padding: 130px 0 80px 0; }
             .hero-stats { gap: 20px; padding: 20px; }
             .hero-stat:not(:last-child)::after { display: none; }
@@ -1203,6 +1212,7 @@
                 <li><a href="commercial-construction.html">Construction</a></li>
                 <li><a href="smart-cleaning-robotics.html">Technology</a></li>
                 <li><a href="#faq">FAQ</a></li>
+                <li class="nav-cta-mobile"><a href="contact.html" class="btn-header">Get Assessment</a></li>
             </ul>
             <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
                 <i class="fa-solid fa-bars"></i>

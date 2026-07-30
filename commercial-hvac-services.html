@@ -533,7 +533,11 @@
         .hvac-hero-actions a { width: 100%; justify-content: center; }
         .hvac-hub { grid-template-columns: 1fr; width: 100%; }
       }
-    </style>
+        @media (max-width: 768px) {
+      .f-grid { grid-template-columns: 1fr; gap: 30px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
   </head>
   <body class="page-hvac">
     <nav>

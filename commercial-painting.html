@@ -935,7 +935,11 @@
           display: none;
         }
       }
-    </style>
+        @media (max-width: 768px) {
+      .f-grid { grid-template-columns: 1fr; gap: 30px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
 
     <!-- Main structured data -->
     <script type="application/ld+json">

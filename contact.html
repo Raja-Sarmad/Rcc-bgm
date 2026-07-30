@@ -20,26 +20,24 @@
     />
     <style>
       /* ── Contact Hero ── */
-      .contact-hero {
-        position: relative;
-        background: #ffffff;
-        padding: 120px 0 60px;
-        overflow: hidden;
-        border-bottom: 1px solid rgba(217,111,159,.2);
-        margin-left: -300px;
-      }
-      .contact-hero::before {
-        display: none;
-      }
-      .contact-hero-grid {
-        display: grid;
-        grid-template-columns: 1.15fr .85fr;
-        gap: 32px;
-        align-items: right;
-        position: relative;
-        z-index: 10;
-        margin-right: -350px;
-      }
+.contact-hero {
+  position: relative;
+  background: #ffffff;
+  padding: 120px 0 60px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(217,111,159,.2);
+}
+.contact-hero::before {
+  display: none;
+}
+.contact-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 32px;
+  align-items: right;
+  position: relative;
+  z-index: 10;
+}
       .contact-hero-left {
         display: flex;
         flex-direction: column;
@@ -591,8 +589,15 @@
         footer .btn-header:hover { color: #000; }
 
         
-      @media (max-width: 991px) {
+      @media (max-width: 1024px) {
+        .nav-links { display: none; }
+        .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+        .nav-flex > .btn-header { display: none; }
+        .nav-cta-mobile { display: block; }
+        .nav-cta-mobile .btn-header { display: inline-block; margin-top: 8px; text-align: center; width: 100%; }
+        .contact-hero { margin-left: 0; }
         .contact-hero-grid {
+          margin-right: 0;
           grid-template-columns: 1fr;
           gap: 24px;
         }
@@ -633,6 +638,8 @@
           grid-template-columns: 1fr;
           gap: 12px;
         }
+        .f-grid { grid-template-columns: 1fr; gap: 30px; }
+        .footer-bottom { flex-direction: column; text-align: center; }
       }
     </style>
   </head>
@@ -650,7 +657,11 @@
           <li><a href="industries.html">Industries</a></li>
           <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
           <li><a href="about.html">About</a></li>
+          <li class="nav-cta-mobile"><a href="contact.html" class="btn-header">Get Assessment</a></li>
         </ul>
+        <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
         <a href="contact.html" class="btn-header">Get Assessment</a>
       </div>
     </nav>

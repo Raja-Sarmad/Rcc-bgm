@@ -526,7 +526,11 @@
         .cr-hero-stats { gap: 16px; }
         .cr-stat-div { display: none; }
       }
-    </style>
+        @media (max-width: 768px) {
+      .f-grid { grid-template-columns: 1fr; gap: 30px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
     <main>
       <section class="container section-padding cleanroom-intro">
         <div class="split-intro">

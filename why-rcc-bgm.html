@@ -964,14 +964,18 @@
       .division-split { grid-template-columns: 1fr; }
       }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .nav-links { display: none; }
+    }
+    @media (max-width: 768px) {
       .section-padding { padding: 50px 0; }
       .why-hero { padding: 130px 0 60px 0; }
       .trust-wide-card { padding: 24px; gap: 20px; flex-direction: column; text-align: center; }
       .trust-icon-box { width: 54px; height: 54px; font-size: 1.2rem; }
       .why-cta-box { padding: 40px 24px; }
       .engage-section { padding: 40px 24px; }
+      .f-grid { grid-template-columns: 1fr; gap: 30px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
     }
 
     @media (max-width: 480px) {
@@ -1022,11 +1026,12 @@
         <li><a href="locations.html">Locations</a></li>
         <li><a href="why-rcc-bgm.html" class="is-active">Why RCC-BGM</a></li>
         <li><a href="about.html">About</a></li>
+        <li class="nav-cta-mobile"><a href="contact.html" class="btn-header">Get Assessment</a></li>
       </ul>
       <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
         <i class="fa-solid fa-bars"></i>
       </button>
-      <a href="contact.html" class="btn-header">Get Assessment</a>
+      <a href="contact.html" class="btn-header nav-cta">Get Assessment</a>
     </div>
   </nav>
 

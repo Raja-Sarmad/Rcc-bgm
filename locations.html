@@ -760,14 +760,18 @@
       .city-grid { grid-template-columns: repeat(2, 1fr); }
       }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .nav-links { display: none; }
+    }
+    @media (max-width: 768px) {
       .section-padding { padding: 30px 0; }
       .region-section { padding: 32px 24px; }
       .loc-hero { padding: 130px 0 60px 0; }
       .loc-stats-row { gap: 24px; }
       .city-grid { grid-template-columns: 1fr; }
       .cta-box { padding: 40px 24px; }
+      .f-grid { grid-template-columns: 1fr; gap: 30px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
     }
 
     @media (max-width: 480px) {
@@ -818,11 +822,12 @@
         <li><a href="locations.html" class="is-active">Locations</a></li>
         <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
         <li><a href="about.html">About</a></li>
+        <li class="nav-cta-mobile"><a href="contact.html" class="btn-header">Get Assessment</a></li>
       </ul>
       <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
         <i class="fa-solid fa-bars"></i>
       </button>
-      <a href="contact.html" class="btn-header">Get Assessment</a>
+      <a href="contact.html" class="btn-header nav-cta">Get Assessment</a>
     </div>
   </nav>
 

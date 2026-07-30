@@ -55,6 +55,7 @@
         <ul class="nav-links">
           <li class="nav-logo-item"><a href="index.html" class="logo" aria-label="RCC-BGM home"><span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span>RCC<span>BGM</span></a></li>
           ${navLinksHtml}
+          <li class="nav-cta-mobile"><a href="contact.html" class="btn-header">Get Assessment</a></li>
         </ul>
         <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
@@ -74,10 +75,12 @@
       navToggle.querySelector("i").className = open
         ? "fa-solid fa-xmark"
         : "fa-solid fa-bars";
+      document.body.classList.toggle("menu-open", open);
     });
     navLinks?.addEventListener("click", () => {
       nav.classList.remove("nav-open");
       navToggle?.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
     });
 
     nav.querySelectorAll("a[href]").forEach((link) => {
