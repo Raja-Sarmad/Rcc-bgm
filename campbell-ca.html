@@ -16,23 +16,35 @@
         :root {
             --bg-main: #FAF7F2;
             --bg-white: #FFFFFF;
-            --bg-warm: #F5F0E8;
+            --bg-warm: #f4f0f9;
             --bg-card: #FFFFFF;
-            --accent-gold: #C4813A;
-            --accent-gold-light: #E8A85C;
-            --accent-gold-soft: rgba(196, 129, 58, 0.08);
-            --accent-gold-border: rgba(196, 129, 58, 0.2);
-            --accent-blue: #4A7C9B;
-            --text-dark: #2D2A26;
-            --text-body: #5A554E;
-            --text-light: #8A847C;
-            --border-warm: rgba(196, 129, 58, 0.12);
+            --accent-gold: #8063c7;
+            --accent-gold-light: #a78bda;
+            --accent-gold-soft: rgba(128, 99, 199, 0.08);
+            --accent-gold-border: rgba(128, 99, 199, 0.2);
+            --accent-blue: #d96f9f;
+            --accent-blue-soft: rgba(217, 111, 159, 0.08);
+            --accent-blue-border: rgba(217, 111, 159, 0.2);
+            --accent-green: #3FA66A;
+            --accent-green-soft: rgba(63, 166, 106, 0.08);
+            --accent-red: #C0564F;
+            --accent-red-soft: rgba(192, 86, 79, 0.08);
+            --accent-purple: #805AA0;
+            --accent-purple-soft: rgba(128, 90, 160, 0.06);
+            --accent-teal: #2E8B8B;
+            --accent-teal-soft: rgba(46, 139, 139, 0.07);
+            --text-dark: #2d2740;
+            --text-body: #675f78;
+            --text-light: #8a7fa0;
+            --border-warm: rgba(128, 99, 199, 0.12);
             --border-light: rgba(0, 0, 0, 0.06);
-            --shadow-soft: 0 4px 20px rgba(196, 129, 58, 0.06);
-            --shadow-medium: 0 8px 32px rgba(196, 129, 58, 0.1);
-            --shadow-hover: 0 16px 48px rgba(196, 129, 58, 0.15);
+            --shadow-soft: 0 4px 20px rgba(128, 99, 199, 0.06);
+            --shadow-medium: 0 8px 32px rgba(128, 99, 199, 0.1);
+            --shadow-hover: 0 16px 48px rgba(128, 99, 199, 0.15);
             --radius: 18px;
+            --radius-sm: 12px;
             --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gradient: linear-gradient(135deg, #8c70d1 0%, #df8eaf 54%, #f4d47f 100%);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -75,13 +87,15 @@
             background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light)); border-radius: 4px;
         }
         .btn-header {
-            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
+            background: var(--gradient);
             color: white; padding: 12px 28px; border-radius: 50px; text-decoration: none;
             font-weight: 600; font-size: 0.9rem; transition: var(--transition); border: none;
-            cursor: pointer; box-shadow: 0 4px 16px rgba(196, 129, 58, 0.25);
+            cursor: pointer; box-shadow: 0 4px 16px rgba(128, 99, 199, 0.25);
             display: inline-flex; align-items: center; gap: 8px;
         }
-        .btn-header:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(196, 129, 58, 0.35); }
+        .btn-header:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(128, 99, 199, 0.35); }
+        .btn-secondary { background: var(--bg-white); color: var(--accent-gold); padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: var(--transition); border: 1px solid var(--accent-gold-border); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-secondary:hover { background: var(--accent-gold-soft); transform: translateY(-2px); box-shadow: var(--shadow-soft); }
 
         /* ===== HERO ===== */
         .hero {
@@ -92,19 +106,19 @@
             padding: 150px 0 100px;
             overflow: hidden;
             background:
-                radial-gradient(rgba(196,129,58,0.05) 1px, transparent 1px) 0 0 / 26px 26px,
-                linear-gradient(160deg, #FAF7F2 0%, #F6EEE1 45%, #FDF6EC 75%, #FAF7F2 100%);
+                radial-gradient(rgba(128,99,199,0.05) 1px, transparent 1px) 0 0 / 26px 26px,
+                linear-gradient(160deg, #FAF7F2 0%, #ede8f8 45%, #ede8f8 75%, #FAF7F2 100%);
         }
         .hero::before {
             content: ''; position: absolute; top: -10%; right: -8%;
             width: 620px; height: 620px;
-            background: radial-gradient(circle, rgba(196, 129, 58, 0.10) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(128,99,199,0.10) 0%, transparent 70%);
             border-radius: 50%; animation: float 9s ease-in-out infinite;
         }
         .hero::after {
             content: ''; position: absolute; bottom: -15%; left: -10%;
             width: 460px; height: 460px;
-            background: radial-gradient(circle, rgba(74, 124, 155, 0.06) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(217,111,159,0.06) 0%, transparent 70%);
             border-radius: 50%; animation: float 11s ease-in-out infinite reverse;
         }
         @keyframes float {
@@ -133,7 +147,7 @@
             font-weight: 800; line-height: 1.15; margin-bottom: 22px; color: var(--text-dark);
         }
         .hero h1 span {
-            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
+            background: var(--gradient);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
         .hero p { color: var(--text-body); font-size: 1.05rem; max-width: 600px; margin: 0 0 36px; }
@@ -166,15 +180,15 @@
         .hv-panel {
             position: relative; border-radius: 30px; padding: 30px;
             background:
-                radial-gradient(rgba(196,129,58,0.10) 1px, transparent 1px) 0 0 / 22px 22px,
+                radial-gradient(rgba(128,99,199,0.10) 1px, transparent 1px) 0 0 / 22px 22px,
                 linear-gradient(160deg, rgba(255,255,255,0.65), rgba(253,246,236,0.45));
-            border: 1px solid rgba(196,129,58,0.18);
-            box-shadow: 0 30px 70px rgba(120,80,30,0.14);
+            border: 1px solid rgba(128,99,199,0.18);
+            box-shadow: 0 30px 70px rgba(45,39,64,0.14);
             backdrop-filter: blur(4px);
         }
         .hv-glow { position: absolute; border-radius: 50%; filter: blur(45px); z-index: 0; }
-        .hv-glow.g1 { top: -30px; right: -20px; width: 180px; height: 180px; background: rgba(232,168,92,0.45); }
-        .hv-glow.g2 { bottom: -30px; left: -20px; width: 160px; height: 160px; background: rgba(74,124,155,0.22); }
+        .hv-glow.g1 { top: -30px; right: -20px; width: 180px; height: 180px; background: rgba(167,139,218,0.45); }
+        .hv-glow.g2 { bottom: -30px; left: -20px; width: 160px; height: 160px; background: rgba(217,111,159,0.22); }
 
         .hv-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
         .hv-card {
@@ -182,7 +196,7 @@
             backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.85); border-radius: 18px;
             padding: 20px; display: flex; gap: 14px; align-items: flex-start;
-            box-shadow: 0 18px 40px rgba(120,80,30,0.12);
+            box-shadow: 0 18px 40px rgba(45,39,64,0.12);
             animation: floaty 6s ease-in-out infinite;
         }
         .hv-card:nth-child(2) { animation-delay: 0.8s; }
@@ -191,9 +205,9 @@
         @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
         .hv-card .ic {
             width: 46px; height: 46px; border-radius: 12px; flex: none;
-            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
+            background: var(--gradient);
             color: #fff; display: grid; place-items: center; font-size: 1.05rem;
-            box-shadow: 0 8px 18px rgba(196,129,58,0.3);
+            box-shadow: 0 8px 18px rgba(128,99,199,0.3);
         }
         .hv-card h4 { font-size: 0.95rem; color: var(--text-dark); font-weight: 600; margin-bottom: 2px; line-height: 1.3; }
         .hv-card span { font-size: 0.78rem; color: var(--text-light); }
@@ -203,7 +217,7 @@
             backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.95); border-radius: 50px;
             padding: 11px 18px; display: flex; align-items: center; gap: 9px;
-            box-shadow: 0 14px 30px rgba(120,80,30,0.16);
+            box-shadow: 0 14px 30px rgba(45,39,64,0.16);
             font-size: 0.82rem; font-weight: 600; color: var(--text-dark);
             animation: floaty 5s ease-in-out infinite;
         }
@@ -226,9 +240,9 @@
 
         /* ===== SECTION HEADERS ===== */
         h2 { font-size: 2rem; font-weight: 700; margin-bottom: 14px; color: var(--text-dark); }
-        .section-intro { color: var(--text-body); font-size: 1.05rem; max-width: 800px; margin-bottom: 40px; line-height: 1.7; }
+        .section-intro { color: var(--text-body); font-size: 1.05rem; max-width: 680px; margin-bottom: 40px; line-height: 1.7; }
+        h3 { font-size: 1.3rem; font-weight: 600; color: var(--text-dark); }
         .section-subtitle { font-size: 0.85rem; font-weight: 600; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; display: block; }
-
         /* ===== CARDS ===== */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
         .s-item {
@@ -243,21 +257,25 @@
         }
         .s-item::after {
             content: ''; position: absolute; inset: 0;
-            background: linear-gradient(135deg, rgba(196,129,58,0.03), rgba(232,168,92,0.02));
+            background: linear-gradient(135deg, rgba(128,99,199,0.03), rgba(167,139,218,0.02));
             opacity: 0; transition: opacity 0.4s ease; pointer-events: none;
         }
         .s-item:hover { transform: translateY(-8px); border-color: var(--accent-gold-border); box-shadow: var(--shadow-hover); }
         .s-item:hover::before { transform: scaleX(1); }
         .s-item:hover::after { opacity: 1; }
+        .s-item.selected { transform: translateY(-8px); border-color: var(--accent-gold-border); box-shadow: var(--shadow-hover); }
+        .s-item.selected::before { transform: scaleX(1); }
+        .s-item.selected::after { opacity: 1; }
+        .s-item.selected i { background: var(--gradient); color: white; border-color: transparent; box-shadow: 0 6px 20px rgba(128,99,199,0.3); }
         .s-item i {
             font-size: 1.6rem; color: var(--accent-gold); margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--accent-gold-soft), rgba(196,129,58,0.04));
+            background: linear-gradient(135deg, var(--accent-gold-soft), rgba(128,99,199,0.04));
             width: 58px; height: 58px; display: flex; align-items: center; justify-content: center;
             border-radius: 14px; border: 1px solid var(--accent-gold-border); transition: var(--transition);
         }
         .s-item:hover i {
-            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
-            color: white; border-color: transparent; box-shadow: 0 6px 20px rgba(196,129,58,0.3);
+            background: var(--gradient);
+            color: white; border-color: transparent; box-shadow: 0 6px 20px rgba(128,99,199,0.3);
         }
         .s-item h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 12px; color: var(--text-dark); position: relative; z-index: 1; }
         .s-item p { color: var(--text-body); font-size: 0.92rem; flex-grow: 1; margin-bottom: 20px; position: relative; z-index: 1; }
@@ -285,7 +303,9 @@
         }
         .step-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--accent-gold-border); }
         .step-card:hover::before { transform: scaleX(1); }
-        .step-card .step-num { font-size: 3.5rem; font-weight: 800; color: rgba(196,129,58,0.08); position: absolute; top: 12px; right: 20px; line-height: 1; margin: 0; }
+        .step-card.selected { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--accent-gold-border); }
+        .step-card.selected::before { transform: scaleX(1); }
+        .step-card .step-num { font-size: 3.5rem; font-weight: 800; color: rgba(128,99,199,0.08); position: absolute; top: 12px; right: 20px; line-height: 1; margin: 0; }
         .step-card h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 12px; color: var(--accent-gold); position: relative; z-index: 1; }
         .step-card p { color: var(--text-body); font-size: 0.92rem; position: relative; z-index: 1; }
 
@@ -302,16 +322,12 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
 
         /* ===== CTA ===== */
-        .cta-box { background: linear-gradient(135deg, #FDF6EC, #FAF0E0, #F8EDD8); border: 1px solid var(--accent-gold-border); border-radius: 24px; padding: 60px 40px; text-align: center; position: relative; overflow: hidden; box-shadow: var(--shadow-medium); }
-        .cta-box::before { content: ''; position: absolute; top: -50%; right: -30%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(196,129,58,0.08) 0%, transparent 70%); border-radius: 50%; }
-        .cta-box::after { content: ''; position: absolute; bottom: -40%; left: -20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(74,124,155,0.05) 0%, transparent 70%); border-radius: 50%; }
+        .cta-box { background: linear-gradient(135deg, #f4f0f9, #ede8f8, #e8e0f5); border: 1px solid var(--accent-gold-border); border-radius: 24px; padding: 60px 40px; text-align: center; position: relative; overflow: hidden; box-shadow: var(--shadow-medium); }
+        .cta-box::before { content: ''; position: absolute; top: -50%; right: -30%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(128,99,199,0.08) 0%, transparent 70%); border-radius: 50%; }
+        .cta-box::after { content: ''; position: absolute; bottom: -40%; left: -20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(217,111,159,0.05) 0%, transparent 70%); border-radius: 50%; }
         .cta-box h2, .cta-box p, .cta-box a { position: relative; z-index: 1; }
         .cta-box .btn-header { background: var(--text-dark); color: white; box-shadow: 0 4px 20px rgba(45,42,38,0.2); }
-        .cta-box .btn-header:hover { background: var(--accent-gold); box-shadow: 0 8px 30px rgba(196,129,58,0.3); }
-
-        /* ===== FOOTER ===== */
-        footer { background: var(--bg-warm); border-top: 1px solid var(--border-warm); padding: 40px 0; text-align: center; color: var(--text-light); font-size: 0.88rem; }
-        footer .source-note { max-width: 900px; margin: 20px auto 0; font-size: 0.8rem; line-height: 1.6; opacity: 0.8; }
+        .cta-box .btn-header:hover { background: var(--accent-gold); box-shadow: 0 8px 30px rgba(128,99,199,0.3); }
 
         /* ===== SCROLL REVEAL ===== */
         .scroll-reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.25,0.46,0.45,0.94); }
@@ -501,28 +517,28 @@
 
         <!-- Commercial Cleaning -->
         <section class="container section-padding" style="background: var(--bg-warm); border-radius: 24px; padding: 60px 40px;">
-            <span class="section-subtitle">Cleaning Programs</span>
-            <h2>Commercial Cleaning for Campbell Business Properties</h2>
-            <p class="section-intro">RCC-BGM can review commercial cleaning services in Campbell for qualified offices, professional-service properties, retail environments, mixed commercial buildings and other approved facilities. The program is built around service zones, traffic, operating hours, access, material requirements and quality-control expectations. <a href="commercial-cleaning-services.html" style="color: var(--accent-gold); font-weight: 600;">View full Commercial Cleaning Services scope</a>.</p>
+            <span class="section-subtitle" style="display: block; text-align: center;">Cleaning Programs</span>
+            <h2 style="text-align: center;">Commercial Cleaning for Campbell Business Properties</h2>
+            <p class="section-intro" style="text-align: center; margin-left: auto; margin-right: auto;">RCC-BGM can review commercial cleaning services in Campbell for qualified offices, professional-service properties, retail environments, mixed commercial buildings and other approved facilities. The program is built around service zones, traffic, operating hours, access, material requirements and quality-control expectations. <a href="commercial-cleaning-services.html" style="color: var(--accent-gold); font-weight: 600;">View full Commercial Cleaning Services scope</a>.</p>
             
-            <div class="services-grid">
-                <div class="s-item scroll-reveal" style="cursor: default;">
+            <div class="services-grid" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="s-item scroll-reveal" style="cursor: default; padding: 24px 18px;">
                     <i class="fa-solid fa-calendar-check"></i>
                     <h3>Recurring Commercial Cleaning</h3>
                     <p>Daily, several-times-weekly or customized cleaning for approved areas including reception, offices, conference spaces, kitchens, break rooms and restrooms.</p>
                 </div>
-                <div class="s-item scroll-reveal" style="cursor: default;">
+                <div class="s-item scroll-reveal" style="cursor: default; padding: 24px 18px;">
                     <i class="fa-solid fa-briefcase"></i>
                     <h3>Office Cleaning</h3>
                     <p>Workplace-focused service organized around employees, meetings, security protocols and shared amenities.</p>
                 </div>
-                <div class="s-item scroll-reveal" style="cursor: default;">
+                <div class="s-item scroll-reveal" style="cursor: default; padding: 24px 18px;">
                     <i class="fa-solid fa-store"></i>
                     <h3>Retail &amp; Customer-Facing</h3>
                     <p>Presentation-focused service around visitors and business hours, covering lobbies, corridors, interior glass and approved common areas.</p>
                 </div>
-                <div class="s-item scroll-reveal" style="cursor: default;">
-                    <i class="fa-solid fa-sparkles"></i>
+                <div class="s-item scroll-reveal" style="cursor: default; padding: 24px 18px;">
+                    <i class="fa-solid fa-broom"></i>
                     <h3>Deep &amp; Post-Construction</h3>
                     <p>Separately defined corrective, turnover, transition or detailed cleaning after responsible trades release the space.</p>
                 </div>
@@ -531,7 +547,7 @@
 
         <!-- Janitorial & Office -->
         <section class="container section-padding">
-            <span class="section-subtitle">Workplace Programs</span>
+            <span class="section-subtitle" style="display: block; text-align: center;">Workplace Programs</span>
             <h2>Janitorial Services for Campbell Offices and Multi-Tenant Properties</h2>
             <p class="section-intro">Campbell’s office and professional-service environments range from smaller suites to multi-tenant properties and flexible workplaces. A janitorial proposal clearly separates routine service, periodic projects, consumables, access procedures and service-review methods, avoiding vague claims. A defined service matrix helps property managers understand daily, weekly, monthly and on-request tasks.</p>
             <div class="info-grid">
@@ -595,7 +611,7 @@
 
         <!-- Retail & Dining -->
         <section class="container section-padding">
-            <span class="section-subtitle">Customer-Facing Spaces</span>
+            <span class="section-subtitle" style="display: block; text-align: center;">Customer-Facing Spaces</span>
             <h2>Commercial Facility Services for Campbell Retail and Dining Districts</h2>
             <p class="section-intro">The City identifies Downtown Campbell and The Pruneyard as strong retail and dining destinations. Customer-facing properties require cleaning, maintenance, HVAC and project schedules that protect entrances, sales areas, guest routes and operating hours.</p>
             <div class="services-grid">
@@ -659,7 +675,7 @@
 
         <!-- Construction & TI -->
         <section class="container section-padding">
-            <span class="section-subtitle">Build & Renovate</span>
+            <span class="section-subtitle" style="display: block; text-align: center;">Build & Renovate</span>
             <h2>Commercial Construction Services in Campbell</h2>
             <p class="section-intro">Reliable Concepts Corporation can review qualified commercial construction requirements for Campbell offices, professional-service spaces, retail properties, med-tech environments, light-industrial facilities and mixed commercial buildings. The project begins with existing conditions, intended use, planning or zoning requirements, building permits, design responsibility, access and the required completion outcome.</p>
             
@@ -691,7 +707,7 @@
 
         <!-- TI, MEP & Upgrades -->
         <section class="container section-padding" style="background: var(--bg-warm); border-radius: 24px; padding: 60px 40px;">
-            <span class="section-subtitle">Modernization</span>
+            <span class="section-subtitle" style="display: block; text-align: center;">Modernization</span>
             <h2>Tenant Improvements, MEP Coordination and Facility Upgrades in Campbell</h2>
             <p class="section-intro">A Campbell tenant improvement may support a startup office, professional-service suite, med-tech space, retail storefront, restaurant, hardware company or other approved commercial use. The scope reflects intended occupancy, zoning, landlord criteria, building systems, permit path and required move-in date.</p>
             <div class="services-grid">
@@ -715,10 +731,10 @@
 
         <!-- Occupied Building Planning -->
         <section class="container section-padding">
-            <span class="section-subtitle">Operational Continuity</span>
+            <span class="section-subtitle" style="display: block; text-align: center;">Operational Continuity</span>
             <h2>Services Adapted to Campbell Commercial Properties</h2>
             <p class="section-intro">Many scopes can be phased around approved operations, access and communication requirements. We identify employees, tenants, customers, visitors and critical hours; confirm access routes and approved work windows; plan noise, dust, odor, deliveries and temporary protection; coordinate building notices and decision-making contacts; document scope changes before additional work; and complete service reviews or project closeout against the approved scope.</p>
-            <div class="services-grid">
+            <div class="services-grid" style="grid-template-columns: repeat(3, 1fr);">
                 <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-laptop-code"></i><h3>Technology &amp; Startup</h3><p>Recurring cleaning, flexible occupancy, HVAC, secure access and frequent space changes.</p></div>
                 <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-industry"></i><h3>Hardware &amp; Light-Industrial</h3><p>Office, engineering, approved production-support and warehouse areas.</p></div>
                 <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-flask"></i><h3>Med-Tech &amp; Laboratory</h3><p>Qualified cleaning, ESD floors, HVAC, MEP and controlled construction coordination.</p></div>
@@ -726,14 +742,13 @@
                 <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-store"></i><h3>Retail &amp; Restaurants</h3><p>Customer presentation, operating-hour schedules, HVAC and approved interior work.</p></div>
                 <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-building"></i><h3>Mixed-Use &amp; Multi-Tenant</h3><p>Shared areas, tenant communication, landlord responsibilities and suite work.</p></div>
             </div>
-        </section>
 
         <!-- Process & Pricing -->
         <section class="container section-padding" style="background: var(--bg-warm); border-radius: 24px; padding: 60px 40px;">
-            <span class="section-subtitle">Engagement</span>
-            <h2>Six-Step Campbell Facility Process</h2>
-            <div class="process-grid">
-                <div class="step-card scroll-reveal"><div class="step-num">01</div><h4>Enquiry</h4><p>Location, property type, service need and desired outcome.</p></div>
+            <span class="section-subtitle" style="display: block; text-align: center;">Engagement</span>
+            <h2 style="text-align: center;">Six-Step Campbell Facility Process</h2>
+            <div class="process-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="step-card scroll-reveal selected"><div class="step-num">01</div><h4>Enquiry</h4><p>Location, property type, service need and desired outcome.</p></div>
                 <div class="step-card scroll-reveal"><div class="step-num">02</div><h4>Qualification</h4><p>Route to BGM, RCC, coordinated review or a specialist.</p></div>
                 <div class="step-card scroll-reveal"><div class="step-num">03</div><h4>Site Assessment</h4><p>Review conditions, size, occupancy, access, systems and documents.</p></div>
                 <div class="step-card scroll-reveal"><div class="step-num">04</div><h4>Scope</h4><p>Define tasks, frequency or phases, materials, assumptions and exclusions.</p></div>
@@ -759,8 +774,8 @@
 
         <!-- FAQ -->
         <section class="container section-padding">
-            <span class="section-subtitle">Support</span>
-            <h2>Frequently Asked Questions About Campbell</h2>
+            <span class="section-subtitle" style="display: block; text-align: center;">Support</span>
+            <h2 style="text-align: center;">Frequently Asked Questions About Campbell</h2>
             <p class="section-intro">Quick answers about our Campbell commercial facility services.</p>
             <details class="faq-item scroll-reveal" open>
                 <summary>Does RCC-BGM provide commercial cleaning in Campbell?</summary>
@@ -823,7 +838,7 @@
             <h2>Explore Nearby Markets</h2>
             <p style="margin: 14px auto 0; max-width: 620px; color: var(--text-body);">RCC-BGM serves selected commercial properties across the Silicon Valley region. Explore other nearby verified service markets.</p>
             <div class="services-grid" style="margin-top: 40px;">
-                <a class="s-item scroll-reveal" href="san-jose-ca.html">
+                <a class="s-item scroll-reveal selected" href="san-jose-ca.html">
                     <i class="fa-solid fa-location-dot"></i>
                     <h3>San Jose, CA</h3>
                     <p>Explore RCC-BGM commercial facility services available in San Jose.</p>

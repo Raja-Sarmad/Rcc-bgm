@@ -101,7 +101,7 @@
         .nav-links a { color: var(--text-body); text-decoration: none; font-weight: 500; font-size: 0.92rem; transition: var(--transition); position: relative; padding: 4px 0; }
         .nav-links a:hover, .nav-links a.is-active { color: var(--accent-gold); }
         .nav-links a.is-active::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 100%; height: 2.5px; background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light)); border-radius: 4px; }
-        .btn-header { background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light)); color: white; padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: var(--transition); border: none; cursor: pointer; box-shadow: 0 4px 16px rgba(128,99,199,0.25); display: inline-flex; align-items: center; gap: 8px; }
+        .btn-header { background: var(--gradient); color: white; padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: var(--transition); border: none; cursor: pointer; box-shadow: 0 4px 16px rgba(128,99,199,0.25); display: inline-flex; align-items: center; gap: 8px; }
         .btn-header:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(128,99,199,0.35); }
         .btn-secondary { background: var(--bg-white); color: var(--accent-gold); padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: var(--transition); border: 1px solid var(--accent-gold-border); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
         .btn-secondary:hover { background: var(--accent-gold-soft); transform: translateY(-2px); box-shadow: var(--shadow-soft); }
@@ -149,7 +149,7 @@
         .hv-card:nth-child(3) { animation-delay: 1.6s; }
         .hv-card:nth-child(4) { animation-delay: 2.4s; }
         @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-        .hv-card .ic { width: 46px; height: 46px; border-radius: 12px; flex: none; background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light)); color: #fff; display: grid; place-items: center; font-size: 1.05rem; box-shadow: 0 8px 18px rgba(128,99,199,0.3); }
+        .hv-card .ic { width: 46px; height: 46px; border-radius: 12px; flex: none; background: var(--gradient); color: #fff; display: grid; place-items: center; font-size: 1.05rem; box-shadow: 0 8px 18px rgba(128,99,199,0.3); }
         .hv-card h4 { font-size: 0.95rem; color: var(--text-dark); font-weight: 600; margin-bottom: 2px; line-height: 1.3; }
         .hv-card span { font-size: 0.78rem; color: var(--text-light); }
         .hv-chip { position: absolute; z-index: 3; background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.95); border-radius: 50px; padding: 11px 18px; display: flex; align-items: center; gap: 9px; box-shadow: 0 14px 30px rgba(45,39,64,0.16); font-size: 0.82rem; font-weight: 600; color: var(--text-dark); animation: floaty 5s ease-in-out infinite; }
@@ -177,7 +177,7 @@
         .s-item:hover::before { transform: scaleX(1); }
         .s-item:hover::after { opacity: 1; }
         .s-item i { font-size: 1.6rem; color: var(--accent-gold); margin-bottom: 20px; background: linear-gradient(135deg, var(--accent-gold-soft), rgba(128,99,199,0.04)); width: 58px; height: 58px; display: flex; align-items: center; justify-content: center; border-radius: 14px; border: 1px solid var(--accent-gold-border); transition: var(--transition); }
-        .s-item:hover i { background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light)); color: white; border-color: transparent; box-shadow: 0 6px 20px rgba(128,99,199,0.3); }
+        .s-item:hover i { background: var(--gradient); color: white; border-color: transparent; box-shadow: 0 6px 20px rgba(128,99,199,0.3); }
         .s-item h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 12px; color: var(--text-dark); position: relative; z-index: 1; }
         .s-item p { color: var(--text-body); font-size: 0.92rem; flex-grow: 1; margin-bottom: 20px; position: relative; z-index: 1; }
         .s-link { color: var(--accent-gold); font-weight: 600; font-size: 0.88rem; display: flex; align-items: center; gap: 8px; transition: gap 0.3s ease; position: relative; z-index: 1; }
@@ -185,7 +185,7 @@
         .s-item.active { transform: translateY(-8px); border-color: var(--accent-gold-border); box-shadow: var(--shadow-hover); }
         .s-item.active::before { transform: scaleX(1); }
         .s-item.active::after { opacity: 1; }
-        .s-item.active i { background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light)); color: white; border-color: transparent; box-shadow: 0 6px 20px rgba(128,99,199,0.3); }
+        .s-item.active i { background: var(--gradient); color: white; border-color: transparent; box-shadow: 0 6px 20px rgba(128,99,199,0.3); }
         .s-item.active .s-link { gap: 14px; }
 
         /* Content blocks */
@@ -215,7 +215,7 @@
 
         /* Tables / Matrices */
         .matrix-table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-light); box-shadow: var(--shadow-soft); margin-top: 20px; }
-        .matrix-table th { background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light)); color: white; padding: 16px 20px; font-size: 0.88rem; font-weight: 600; text-align: left; }
+        .matrix-table th { background: var(--gradient); color: white; padding: 16px 20px; font-size: 0.88rem; font-weight: 600; text-align: left; }
         .matrix-table td { padding: 16px 20px; font-size: 0.88rem; color: var(--text-body); border-bottom: 1px solid var(--border-light); background: var(--bg-card); vertical-align: top; }
         .matrix-table tr:last-child td { border-bottom: none; }
         .matrix-table tr:hover td { background: var(--accent-gold-soft); }
@@ -487,7 +487,7 @@
                 <p class="section-intro" style="margin-left:auto;margin-right:auto;">The City of Carlsbad supports a diverse business community. Local economic-development materials identify technology, life sciences, sports and active lifestyle, cleantech and tourism as important industry clusters. These sectors create a mix of laboratories, offices, R&amp;D spaces, resorts, customer-facing properties, light industrial buildings and support facilities.</p>
 
                 <div class="services-grid-3">
-                    <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-microchip"></i><h3>Technology Workplaces</h3><p>Secure access, office cleaning, HVAC reliability, tenant improvements and phased upgrades for tech offices and campuses.</p></div>
+                    <div class="s-item scroll-reveal active" style="cursor: default;"><i class="fa-solid fa-microchip"></i><h3>Technology Workplaces</h3><p>Secure access, office cleaning, HVAC reliability, tenant improvements and phased upgrades for tech offices and campuses.</p></div>
                     <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-dna"></i><h3>Life-Science Properties</h3><p>Qualified laboratory or cleanroom cleaning, ESD-sensitive surfaces, HVAC and MEP coordination for research environments.</p></div>
                     <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-umbrella-beach"></i><h3>Tourism &amp; Resorts</h3><p>Guest-facing presentation, back-of-house cleaning, operating-hour restrictions and seasonal facility demands.</p></div>
                     <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-person-running"></i><h3>Sports &amp; Active Lifestyle</h3><p>Offices, product-development spaces, showrooms, warehouses and employee facilities for active-lifestyle brands.</p></div>
@@ -534,11 +534,11 @@
             </div>
 
             <div class="two-col" style="margin-top: 24px;">
-                <div class="content-block scroll-reveal">
+                <div class="content-block scroll-reveal" style="height: 100%;">
                     <h3><i class="fa-solid fa-clipboard-check" style="color: var(--accent-gold); margin-right: 8px;"></i>Quality Control</h3>
                     <p>Checklists, inspections, issue tracking and periodic service reviews are configurable program elements. A specific inspection frequency or reporting dashboard is confirmed for each Carlsbad account during scope development.</p>
                 </div>
-                <div class="content-block scroll-reveal">
+                <div class="content-block scroll-reveal" style="height: 100%;">
                     <h3><i class="fa-solid fa-user-check" style="color: var(--accent-blue); margin-right: 8px;"></i>Day Porter &amp; Visible Service</h3>
                     <p>Day-porter support may be useful for high-traffic offices, multi-tenant buildings, visitor-serving properties and active campuses. Tasks can include visible-area upkeep, spill response, restocking, waste checks and communication with the facility contact. Exact duties and hours require separate scope definition.</p>
                 </div>
@@ -595,13 +595,13 @@
                     <p>Reliable Concepts Corporation may coordinate qualified tenant improvements, HVAC, MEP, interior construction and finish work in laboratory or technical spaces. The page does not claim design, validation or regulatory expertise without confirmed responsible professionals.</p>
                 </div>
 
-                <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: wrap;">
-                    <a href="cleanroom-cleaning-services.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Cleanroom Cleaning</a>
-                    <a href="laboratory-medical-cleaning.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Laboratory &amp; Medical Cleaning</a>
-                    <a href="commercial-hvac-services.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial HVAC</a>
-                    <a href="commercial-mep.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial MEP</a>
-                    <a href="tenant-improvements.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Tenant Improvements</a>
-                    <a href="commercial-construction.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial Construction</a>
+                <div style="margin-top: 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+                    <a href="cleanroom-cleaning-services.html" class="btn-secondary" style="justify-content: center; width: 100%;"><i class="fa-solid fa-link"></i> Cleanroom Cleaning</a>
+                    <a href="laboratory-medical-cleaning.html" class="btn-secondary" style="justify-content: center; width: 100%;"><i class="fa-solid fa-link"></i> Laboratory &amp; Medical Cleaning</a>
+                    <a href="commercial-hvac-services.html" class="btn-secondary" style="justify-content: center; width: 100%;"><i class="fa-solid fa-link"></i> Commercial HVAC</a>
+                    <a href="commercial-mep.html" class="btn-secondary" style="justify-content: center; width: 100%;"><i class="fa-solid fa-link"></i> Commercial MEP</a>
+                    <a href="tenant-improvements.html" class="btn-secondary" style="justify-content: center; width: 100%;"><i class="fa-solid fa-link"></i> Tenant Improvements</a>
+                    <a href="commercial-construction.html" class="btn-secondary" style="justify-content: center; width: 100%;"><i class="fa-solid fa-link"></i> Commercial Construction</a>
                 </div>
             </div>
         </section>
@@ -613,7 +613,7 @@
             <p class="section-intro" style="margin-left:auto;margin-right:auto;">Carlsbad's technology, product-development, life-science and active-lifestyle sectors may use warehouses, light manufacturing spaces, test areas and distribution support. RCC-BGM can assess approved facility cleaning and construction needs while separating routine building support from hazardous process cleaning or machinery work.</p>
 
             <div class="two-col">
-                <div class="content-block scroll-reveal">
+                <div class="content-block scroll-reveal" style="height: 100%;">
                     <h3><i class="fa-solid fa-warehouse" style="color: var(--accent-gold); margin-right: 8px;"></i>Potential Cleaning Areas</h3>
                     <ul class="check-list">
                         <li>Warehouse floors and approved traffic lanes</li>
@@ -624,7 +624,7 @@
                         <li>Periodic deep cleaning around planned shutdowns</li>
                     </ul>
                 </div>
-                <div class="content-block scroll-reveal">
+                <div class="content-block scroll-reveal" style="height: 100%;">
                     <h3><i class="fa-solid fa-clipboard-list" style="color: var(--accent-blue); margin-right: 8px;"></i>Operational Planning</h3>
                     <ul class="check-list blue">
                         <li>Shift patterns and employee movement</li>
@@ -694,7 +694,7 @@
                     </tbody>
                 </table>
 
-                <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: wrap;">
+                <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: nowrap; justify-content: center;">
                     <a href="facility-maintenance-services.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Facility Maintenance</a>
                     <a href="commercial-hvac-services.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial HVAC</a>
                     <a href="commercial-mep.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial MEP</a>
@@ -736,11 +736,11 @@
             </div>
 
             <div class="two-col" style="margin-top: 24px;">
-                <div class="content-block scroll-reveal">
+                <div class="content-block scroll-reveal" style="height: 100%;">
                     <h3><i class="fa-solid fa-file-signature" style="color: var(--accent-gold); margin-right: 8px;"></i>Preconstruction</h3>
                     <p>The first phase reviews existing conditions, intended use, plans, landlord requirements, design responsibilities, permits, procurement, schedule and budget structure. This page does not advertise a generic construction price per square foot because Carlsbad project conditions vary significantly.</p>
                 </div>
-                <div class="content-block scroll-reveal">
+                <div class="content-block scroll-reveal" style="height: 100%;">
                     <h3><i class="fa-solid fa-code-branch" style="color: var(--accent-blue); margin-right: 8px;"></i>Change Management &amp; Closeout</h3>
                     <p>Unforeseen conditions and owner-requested changes are documented before the approved scope expands. The proposal identifies assumptions, exclusions, allowances and the process for reviewing additional work. Closeout may include walkthroughs, punch-list items and agreed documentation. Final cleaning can be separately coordinated with Brilliant General Maintenance.</p>
                 </div>
@@ -755,15 +755,15 @@
                 <p class="section-intro" style="margin-left:auto;margin-right:auto;">Carlsbad tenants and property managers may search for a contractor when signing a new lease, expanding, relocating, changing use or modernizing an existing suite.</p>
 
                 <div class="two-col">
-                    <div class="content-block scroll-reveal">
+                    <div class="content-block scroll-reveal" style="height: 100%;">
                         <h3><i class="fa-solid fa-ruler-combined" style="color: var(--accent-gold); margin-right: 8px;"></i>Typical TI Scope Categories</h3>
-                        <ul class="check-list">
-                            <li>Existing-condition review and selective demolition</li>
-                            <li>Partitions, ceilings, doors and interior finishes</li>
-                            <li>Reception, office, conference and employee areas</li>
-                            <li>HVAC distribution, controls and approved MEP coordination</li>
-                            <li>Carpentry, painting and finish restoration</li>
-                            <li>Punch list, occupancy preparation and closeout</li>
+                        <ul class="check-list" style="display: flex; flex-direction: column; gap: 12px;">
+                            <li style="padding: 10px 0 10px 30px;">Existing-condition review and selective demolition</li>
+                            <li style="padding: 10px 0 10px 30px;">Partitions, ceilings, doors and interior finishes</li>
+                            <li style="padding: 10px 0 10px 30px;">Reception, office, conference and employee areas</li>
+                            <li style="padding: 10px 0 10px 30px;">HVAC distribution, controls and approved MEP coordination</li>
+                            <li style="padding: 10px 0 10px 30px;">Carpentry, painting and finish restoration</li>
+                            <li style="padding: 10px 0 10px 30px;">Punch list, occupancy preparation and closeout</li>
                         </ul>
                     </div>
                     <div>
@@ -823,7 +823,7 @@
             </table>
 
             <div class="two-col" style="margin-top: 30px;">
-                <div class="content-block scroll-reveal">
+                <div class="content-block scroll-reveal" style="height: 100%;">
                     <h3><i class="fa-solid fa-hammer" style="color: var(--accent-gold); margin-right: 8px;"></i>Maintenance Construction</h3>
                     <p>Maintenance construction addresses conditions that exceed routine facility maintenance but do not require a complete renovation. Potential scopes include:</p>
                     <ul class="check-list" style="margin-top: 12px;">
@@ -833,7 +833,7 @@
                         <li>Common-area corrections</li>
                     </ul>
                 </div>
-                <div class="content-block scroll-reveal">
+                <div class="content-block scroll-reveal" style="height: 100%;">
                     <h3><i class="fa-solid fa-arrow-up-right-dots" style="color: var(--accent-blue); margin-right: 8px;"></i>Facility Upgrades</h3>
                     <ul class="check-list blue">
                         <li>Office and common-area modernization</li>
@@ -851,12 +851,12 @@
                 <p>Efficiency improvements are not marketed with guaranteed utility savings, payback or certification unless supported by a documented analysis and the responsible professionals. Upgrades can be evaluated for operational and efficiency goals.</p>
             </div>
 
-            <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: wrap;">
-                <a href="commercial-mep.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial MEP</a>
-                <a href="maintenance-construction.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Maintenance Construction</a>
-                <a href="facility-upgrades.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Facility Upgrades</a>
-                <a href="commercial-hvac-services.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial HVAC</a>
-                <a href="commercial-construction.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial Construction</a>
+            <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: nowrap; justify-content: center;">
+                <a href="commercial-mep.html" class="btn-secondary" style="width: 100%;"><i class="fa-solid fa-link"></i> Commercial MEP</a>
+                <a href="maintenance-construction.html" class="btn-secondary" style="width: 100%;"><i class="fa-solid fa-link"></i> Maintenance Construction</a>
+                <a href="facility-upgrades.html" class="btn-secondary" style="width: 100%;"><i class="fa-solid fa-link"></i> Facility Upgrades</a>
+                <a href="commercial-hvac-services.html" class="btn-secondary" style="width: 100%;"><i class="fa-solid fa-link"></i> Commercial HVAC</a>
+                <a href="commercial-construction.html" class="btn-secondary" style="width: 100%;"><i class="fa-solid fa-link"></i> Commercial Construction</a>
             </div>
         </section>
 
@@ -908,12 +908,12 @@
                     </tbody>
                 </table>
 
-                <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: wrap;">
-                    <a href="commercial-carpentry.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial Carpentry</a>
-                    <a href="commercial-painting.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial Painting</a>
-                    <a href="commercial-landscaping.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial Landscaping</a>
-                    <a href="facility-maintenance-services.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Facility Maintenance</a>
-                    <a href="facility-upgrades.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Facility Upgrades</a>
+                <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: nowrap; justify-content: center;">
+                    <a href="commercial-carpentry.html" class="btn-secondary" style="width: 100%;"><i class="fa-solid fa-link"></i> Commercial Carpentry</a>
+                    <a href="commercial-painting.html" class="btn-secondary" style="width: 100%;"><i class="fa-solid fa-link"></i> Commercial Painting</a>
+                    <a href="commercial-landscaping.html" class="btn-secondary" style="width: 100%;"><i class="fa-solid fa-link"></i> Commercial Landscaping</a>
+                    <a href="facility-maintenance-services.html" class="btn-secondary" style="width: 100%;"><i class="fa-solid fa-link"></i> Facility Maintenance</a>
+                    <a href="facility-upgrades.html" class="btn-secondary" style="width: 100%;"><i class="fa-solid fa-link"></i> Facility Upgrades</a>
                 </div>
             </div>
         </section>
@@ -921,7 +921,7 @@
         <!-- ===== SECTION: Smart Cleaning Robotics ===== -->
         <section class="container section-padding" style="text-align:center;">
             <span class="section-label blue"><i class="fa-solid fa-robot"></i> Technology</span>
-            <h2>Smart Cleaning Robotics and Connected Facility Workflows in Carlsbad</h2>
+            <h2>Smart Cleaning Robotics and Connected Facility Workflows<br>in Carlsbad</h2>
             <p class="section-intro" style="margin-left:auto;margin-right:auto;">Carlsbad technology, office, campus and selected commercial properties may be assessed for autonomous floor cleaning, occupancy-informed dispatch, supply monitoring or connected task reporting.</p>
 
             <div class="two-col">
@@ -944,7 +944,7 @@
 
             <h3 style="margin-top: 36px; margin-bottom: 8px;">Pilot Program Structure</h3>
             <div class="process-grid" style="grid-template-columns: repeat(4, 1fr); margin-top: 20px;">
-                <div class="step-card scroll-reveal"><span class="step-num">01</span><h4>Baseline</h4><p>Document the current route, labor, floor condition and service expectations.</p></div>
+                <div class="step-card scroll-reveal active"><span class="step-num">01</span><h4>Baseline</h4><p>Document the current route, labor, floor condition and service expectations.</p></div>
                 <div class="step-card scroll-reveal"><span class="step-num">02</span><h4>Pilot</h4><p>Test a defined area, schedule and equipment workflow.</p></div>
                 <div class="step-card scroll-reveal"><span class="step-num">03</span><h4>Review</h4><p>Evaluate route completion, exceptions, safety and staff interaction.</p></div>
                 <div class="step-card scroll-reveal"><span class="step-num">04</span><h4>Expand</h4><p>Scale only when the property and results support a wider deployment.</p></div>
@@ -1035,7 +1035,7 @@
 
             <h3 style="margin-bottom: 8px;">Six-Step Engagement Process</h3>
             <div class="process-grid-6">
-                <div class="step-card scroll-reveal"><span class="step-num">01</span><h4>Initial Request</h4><p>Location, property type, current condition and intended result.</p></div>
+                <div class="step-card scroll-reveal active"><span class="step-num">01</span><h4>Initial Request</h4><p>Location, property type, current condition and intended result.</p></div>
                 <div class="step-card scroll-reveal"><span class="step-num">02</span><h4>Route</h4><p>Determine BGM, RCC or coordinated review.</p></div>
                 <div class="step-card scroll-reveal"><span class="step-num">03</span><h4>Assess</h4><p>Review size, access, occupancy, systems and available documents.</p></div>
                 <div class="step-card scroll-reveal"><span class="step-num">04</span><h4>Scope</h4><p>Define tasks or phases, materials, assumptions, exclusions and responsibilities.</p></div>
@@ -1044,14 +1044,14 @@
             </div>
 
             <h3 style="margin-top: 48px; margin-bottom: 8px;">Pricing Factors</h3>
-            <div class="pricing-grid scroll-reveal">
-                <div class="pricing-item"><i class="fa-solid fa-check"></i> Property type, size, number of service areas and locations</div>
-                <div class="pricing-item"><i class="fa-solid fa-check"></i> Cleaning frequency, current condition and operating window</div>
-                <div class="pricing-item"><i class="fa-solid fa-check"></i> Specialty materials, equipment, access and documentation</div>
-                <div class="pricing-item"><i class="fa-solid fa-check"></i> Existing HVAC, MEP and building conditions</div>
-                <div class="pricing-item"><i class="fa-solid fa-check"></i> Design, permits, inspections and responsible trades</div>
-                <div class="pricing-item"><i class="fa-solid fa-check"></i> Occupied-building protection and phasing</div>
-                <div class="pricing-item"><i class="fa-solid fa-check"></i> Procurement, travel, local resources and timeline</div>
+            <div class="pricing-grid scroll-reveal" style="grid-template-columns: repeat(8, 1fr);">
+                <div class="pricing-item" style="grid-column: 1 / 3;"><i class="fa-solid fa-check"></i> Property type, size, number of service areas and locations</div>
+                <div class="pricing-item" style="grid-column: 3 / 5;"><i class="fa-solid fa-check"></i> Cleaning frequency, current condition and operating window</div>
+                <div class="pricing-item" style="grid-column: 5 / 7;"><i class="fa-solid fa-check"></i> Specialty materials, equipment, access and documentation</div>
+                <div class="pricing-item" style="grid-column: 7 / 9;"><i class="fa-solid fa-check"></i> Existing HVAC, MEP and building conditions</div>
+                <div class="pricing-item" style="grid-column: 2 / 4;"><i class="fa-solid fa-check"></i> Design, permits, inspections and responsible trades</div>
+                <div class="pricing-item" style="grid-column: 4 / 6;"><i class="fa-solid fa-check"></i> Occupied-building protection and phasing</div>
+                <div class="pricing-item" style="grid-column: 6 / 8;"><i class="fa-solid fa-check"></i> Procurement, travel, local resources and timeline</div>
             </div>
 
             <div class="two-col" style="margin-top: 36px;">
@@ -1068,7 +1068,7 @@
 
             <div class="content-block scroll-reveal" style="margin-top: 24px;">
                 <h3><i class="fa-solid fa-file-pen" style="color: var(--accent-gold); margin-right: 8px;"></i>Recommended Form Fields</h3>
-                <div class="form-fields">
+                <div class="form-fields" style="grid-template-columns: repeat(3, 1fr);">
                     <div class="form-field"><i class="fa-solid fa-location-dot"></i> Property address</div>
                     <div class="form-field"><i class="fa-solid fa-building"></i> Facility type</div>
                     <div class="form-field"><i class="fa-solid fa-ruler-combined"></i> Approximate square footage</div>
@@ -1117,7 +1117,7 @@
             <h2>Explore Nearby Markets</h2>
             <p style="margin: 14px auto 0; max-width: 620px; color: var(--text-body);">RCC-BGM serves selected commercial properties across the Southern California region. Explore other verified service markets.</p>
             <div class="services-grid" style="margin-top: 40px;">
-                <a class="s-item scroll-reveal" href="san-diego-ca.html"><i class="fa-solid fa-location-dot"></i><h3>San Diego, CA</h3><p>Explore RCC-BGM commercial facility services available in San Diego.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a>
+                <a class="s-item scroll-reveal active" href="san-diego-ca.html"><i class="fa-solid fa-location-dot"></i><h3>San Diego, CA</h3><p>Explore RCC-BGM commercial facility services available in San Diego.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a>
                 <a class="s-item scroll-reveal" href="chula-vista-ca.html"><i class="fa-solid fa-location-dot"></i><h3>Chula Vista, CA</h3><p>Explore RCC-BGM commercial facility services available in Chula Vista.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a>
                 <a class="s-item scroll-reveal" href="irvine-ca.html"><i class="fa-solid fa-location-dot"></i><h3>Irvine, CA</h3><p>Explore RCC-BGM commercial facility services available in Irvine.</p><span class="s-link">View market <i class="fa-solid fa-arrow-right"></i></span></a>
             </div>
