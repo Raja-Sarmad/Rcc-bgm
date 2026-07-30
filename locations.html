@@ -769,6 +769,39 @@
       .city-grid { grid-template-columns: 1fr; }
       .cta-box { padding: 40px 24px; }
     }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 14px; }
+      .section-padding { padding: 24px 0; }
+      h2 { font-size: 1.4rem; }
+      .loc-hero { padding: 110px 0 40px; }
+      .loc-hero h1 { font-size: 1.5rem; }
+      .loc-hero .hero-tag { font-size: 0.7rem; padding: 6px 14px; }
+      .loc-stats-row { gap: 16px; flex-direction: column; align-items: center; }
+      .region-section { padding: 24px 16px; }
+      .region-section h3 { font-size: 1.1rem; }
+      .city-grid { grid-template-columns: 1fr; }
+      .city-card { padding: 16px; }
+      .cta-box { padding: 28px 16px; }
+      .cta-box h2 { font-size: 1.2rem; }
+      footer { padding: 40px 0 20px; }
+      .f-grid { grid-template-columns: 1fr; gap: 24px; }
+      .f-col:nth-child(1) { grid-column: 1; }
+      .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
+    }
+
+    @media (max-width: 375px) {
+      .container { padding: 0 12px; }
+      .loc-hero h1 { font-size: 1.3rem; }
+      h2 { font-size: 1.2rem; }
+      .btn-header { padding: 10px 20px; font-size: 0.82rem; }
+    }
+.nav-logo-item { display: none; }
+@media (max-width: 768px) {
+  nav .nav-flex > .logo { display: none; }
+  nav.nav-open .nav-logo-item { display: block; padding: 6px 4px 10px; border-bottom: 1px solid rgba(128,99,199,0.15); margin-bottom: 2px; list-style: none; }
+  nav.nav-open .nav-logo-item .logo { display: flex; align-items: center; gap: 8px; font-size: 22px; font-weight: 700; text-decoration: none; }
+}
   </style>
 </head>
 
@@ -779,12 +812,16 @@
         <span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span>RCC<span>BGM</span>
       </a>
       <ul class="nav-links">
+        <li class="nav-logo-item"><a href="index.html" class="logo"><span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span>RCC<span>BGM</span></a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="industries.html">Industries</a></li>
         <li><a href="locations.html" class="is-active">Locations</a></li>
         <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
       <a href="contact.html" class="btn-header">Get Assessment</a>
     </div>
   </nav>
@@ -1276,6 +1313,40 @@
         </div>
     </footer>
 
+  <style>
+    @media (max-width: 768px) {
+      .nav-toggle { display: inline-flex; align-items: center; justify-content: center; background: var(--accent-gold-soft); border: 1px solid var(--accent-gold-border); border-radius: 12px; width: 44px; height: 44px; color: var(--accent-gold); font-size: 18px; cursor: pointer; }
+      nav.nav-open .nav-links { display: flex; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: var(--bg-white); padding: 16px; border-bottom: 1px solid var(--border-warm); box-shadow: 0 20px 40px rgba(0,0,0,0.1); gap: 4px; z-index: 100; border-radius: 0 0 18px 18px; }
+      nav.nav-open .nav-links a { display: block; padding: 12px 14px; border-radius: 9px; }
+      nav.nav-open .nav-links a:hover, nav.nav-open .nav-links a.is-active { background: var(--accent-gold-soft); }
+      nav.nav-open .nav-links a::after { display: none; }
+    }
+    body.menu-open { overflow: hidden; }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.querySelector('nav');
+      if (toggle && nav) {
+        toggle.addEventListener('click', function() {
+          nav.classList.toggle('nav-open');
+          var expanded = nav.classList.contains('nav-open');
+          toggle.setAttribute('aria-expanded', expanded);
+          toggle.setAttribute('aria-label', expanded ? 'Close navigation' : 'Open navigation');
+          toggle.querySelector('i').className = expanded ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+          document.body.classList.toggle('menu-open');
+        });
+        nav.querySelectorAll('.nav-links a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            nav.classList.remove('nav-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.querySelector('i').className = 'fa-solid fa-bars';
+            document.body.classList.remove('menu-open');
+          });
+        });
+      }
+    });
+  </script>
   <script>
     // Smooth Scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

@@ -371,50 +371,52 @@
         footer .btn-header:hover { color: #000; }
 
         
-    @media (max-width: 991px) {
-      .bgm-split {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-
-      .bgm-hero {
-        padding: 100px 0 55px 0;
-      }
-
-      .quality-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .industries-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* 5-column process grid responsive */
+    body.menu-open { overflow: hidden; }
+    .nav-toggle { display: none; }
+    .nav-cta { display: inline-flex; }
     @media (max-width: 1024px) {
       .modern-process-grid.bgm-5col {
         grid-template-columns: repeat(3, 1fr) !important;
       }
     }
-
+    @media (max-width: 991px) {
+      .bgm-split {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .bgm-hero {
+        padding: 100px 0 55px 0;
+      }
+      .quality-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .industries-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-toggle { display: flex; }
+      .nav-cta { display: none; }
+    }
     @media (max-width: 768px) {
       .modern-process-grid.bgm-5col {
         grid-template-columns: repeat(2, 1fr) !important;
       }
+      .nav-links { display: none; }
+      nav.nav-open .nav-links { display: flex; }
     }
-
     @media (max-width: 600px) {
       .modern-process-grid.bgm-5col {
         grid-template-columns: 1fr !important;
       }
-
       .quality-grid {
         grid-template-columns: 1fr;
       }
-
       .bgm-hero-inner h1 {
         font-size: 28px;
       }
+    }
+    @media (max-width: 480px) {
+    }
+    @media (max-width: 375px) {
     }
   </style>
 </head>
@@ -431,7 +433,11 @@
         <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
-      <a href="contact.html" class="btn-header">Get Assessment</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger">&#9776;</span>
+        <span class="close" style="display:none">&#10005;</span>
+      </button>
+      <a href="contact.html" class="nav-cta">Get Assessment</a>
     </div>
   </nav>
 
@@ -907,6 +913,30 @@
           e.preventDefault();
           this.closest('.faq-item').classList.toggle('is-open');
         }
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggle = document.querySelector('.nav-toggle');
+      if (!toggle) return;
+      var nav = toggle.closest('nav');
+      var links = nav.querySelectorAll('.nav-links a');
+      toggle.addEventListener('click', function() {
+        var isOpen = nav.classList.toggle('nav-open');
+        toggle.setAttribute('aria-expanded', isOpen);
+        document.body.classList.toggle('menu-open', isOpen);
+        toggle.querySelector('.hamburger').style.display = isOpen ? 'none' : '';
+        toggle.querySelector('.close').style.display = isOpen ? '' : 'none';
+      });
+      links.forEach(function(link) {
+        link.addEventListener('click', function() {
+          nav.classList.remove('nav-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('menu-open');
+          toggle.querySelector('.hamburger').style.display = '';
+          toggle.querySelector('.close').style.display = 'none';
+        });
       });
     });
   </script>

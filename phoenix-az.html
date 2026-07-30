@@ -350,6 +350,9 @@
         footer .btn-header:hover { color: #000; }
 
 
+        body.menu-open { overflow: hidden; }
+        .nav-toggle { display: none; }
+        .nav-cta { display: inline-flex; }
         @media (max-width: 980px) {
             .hero-grid { grid-template-columns: 1fr; gap: 50px; }
             .hero-content { text-align: center; }
@@ -357,6 +360,8 @@
             .hero-labels { justify-content: center; }
             .hero-stats { justify-content: center; margin-left: auto; margin-right: auto; flex-wrap: wrap; gap: 8px 0; }
             .hero-visual { max-width: 480px; margin: 0 auto; }
+            .nav-toggle { display: flex; }
+            .nav-cta { display: none; }
         }
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -367,10 +372,19 @@
             .hv-chip.loc { left: 6px; }
             .hv-chip.trust { right: 6px; }
             .cta-box { padding: 40px 24px; }
+            nav.nav-open .nav-links { display: flex; }
         }
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             .hv-grid { grid-template-columns: 1fr; }
             .hero-stat { padding: 0 18px; }
+        }
+        @media (max-width: 375px) {
+        }
+        .nav-logo-item { display: none; }
+        @media (max-width: 768px) {
+          nav .nav-flex > .logo { display: none; }
+          nav.nav-open .nav-logo-item { display: block; padding: 6px 4px 10px; border-bottom: 1px solid rgba(128,99,199,0.15); margin-bottom: 2px; list-style: none; }
+          nav.nav-open .nav-logo-item .logo { display: flex; align-items: center; gap: 8px; font-size: 22px; font-weight: 700; text-decoration: none; }
         }
     </style>
 </head>
@@ -384,13 +398,18 @@
                 RCC<span>BGM</span>
             </a>
             <ul class="nav-links">
+                <li class="nav-logo-item"><a href="index.html" class="logo"><span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span>RCC<span>BGM</span></a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="industries.html">Industries</a></li>
                 <li><a href="locations.html" class="is-active">Locations</a></li>
                 <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
-            <a href="contact.html" class="btn-header">Get Assessment</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger">&#9776;</span>
+                <span class="close" style="display:none">&#10005;</span>
+            </button>
+            <a href="contact.html" class="nav-cta">Get Assessment</a>
         </div>
     </nav>
 
@@ -578,6 +597,30 @@
                 });
             }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
             document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var toggle = document.querySelector('.nav-toggle');
+            if (!toggle) return;
+            var nav = toggle.closest('nav');
+            var links = nav.querySelectorAll('.nav-links a');
+            toggle.addEventListener('click', function() {
+                var isOpen = nav.classList.toggle('nav-open');
+                toggle.setAttribute('aria-expanded', isOpen);
+                document.body.classList.toggle('menu-open', isOpen);
+                toggle.querySelector('.hamburger').style.display = isOpen ? 'none' : '';
+                toggle.querySelector('.close').style.display = isOpen ? '' : 'none';
+            });
+            links.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    nav.classList.remove('nav-open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    document.body.classList.remove('menu-open');
+                    toggle.querySelector('.hamburger').style.display = '';
+                    toggle.querySelector('.close').style.display = 'none';
+                });
+            });
         });
     </script>
 </body>

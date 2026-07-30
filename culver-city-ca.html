@@ -280,10 +280,14 @@
 
         
 
+        body.menu-open { overflow: hidden; }
+        .nav-toggle { display: none; }
+        .nav-cta { display: inline-flex; }
         @media(max-width:1024px){.process-grid-6{grid-template-columns:repeat(2,1fr)}.intent-grid{grid-template-columns:repeat(2,1fr)}.qc-grid{grid-template-columns:repeat(2,1fr)}.services-grid-3{grid-template-columns:1fr 1fr}.permit-grid{grid-template-columns:1fr}}
-        @media(max-width:980px){.hero-grid{grid-template-columns:1fr;gap:50px}.hero-content{text-align:center}.hero p{margin-left:auto;margin-right:auto}.hero-labels{justify-content:center}.hero-stats{justify-content:center;margin-left:auto;margin-right:auto;flex-wrap:wrap;gap:8px 0}.hero-visual{max-width:480px;margin:0 auto}.two-col,.two-col-wide{grid-template-columns:1fr}}
-        @media(max-width:768px){.nav-links{display:none}.section-padding{padding:60px 0}.hero{padding:130px 0 80px}.hero-labels{flex-direction:column}.hv-chip.loc{left:6px}.hv-chip.trust{right:6px}.cta-box{padding:40px 24px}.process-grid-6{grid-template-columns:1fr}.intent-grid{grid-template-columns:1fr}.qc-grid{grid-template-columns:1fr}.services-grid-3{grid-template-columns:1fr}.resp-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.matrix-table{font-size:.82rem}.matrix-table th,.matrix-table td{padding:12px 14px}}
-        @media(max-width:420px){.hv-grid{grid-template-columns:1fr}.hero-stat{padding:0 18px}}
+        @media(max-width:980px){.hero-grid{grid-template-columns:1fr;gap:50px}.hero-content{text-align:center}.hero p{margin-left:auto;margin-right:auto}.hero-labels{justify-content:center}.hero-stats{justify-content:center;margin-left:auto;margin-right:auto;flex-wrap:wrap;gap:8px 0}.hero-visual{max-width:480px;margin:0 auto}.two-col,.two-col-wide{grid-template-columns:1fr}.nav-toggle{display:flex}.nav-cta{display:none}}
+        @media(max-width:768px){.nav-links{display:none}.section-padding{padding:60px 0}.hero{padding:130px 0 80px}.hero-labels{flex-direction:column}.hv-chip.loc{left:6px}.hv-chip.trust{right:6px}.cta-box{padding:40px 24px}.process-grid-6{grid-template-columns:1fr}.intent-grid{grid-template-columns:1fr}.qc-grid{grid-template-columns:1fr}.services-grid-3{grid-template-columns:1fr}.resp-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.matrix-table{font-size:.82rem}.matrix-table th,.matrix-table td{padding:12px 14px}nav.nav-open .nav-links{display:flex}}
+        @media(max-width:480px){.hv-grid{grid-template-columns:1fr}.hero-stat{padding:0 18px}}
+        @media(max-width:375px){}
     </style>
     <link rel="stylesheet" href="location-page-ui.css">
     <style>
@@ -319,7 +323,18 @@
 
     <nav><div class="container nav-flex">
         <a href="index.html" class="logo"><span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span> RCC<span>BGM</span></a>
-        <ul class="nav-links"><li><a href="services.html">Services</a></li><li><a href="industries.html">Industries</a></li><li><a href="locations.html" class="is-active">Locations</a></li><li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li><li><a href="about.html">About</a></li></ul>
+        <ul class="nav-links">
+            <li class="nav-logo-item"><a href="index.html" class="logo"><span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span>RCC<span>BGM</span></a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="locations.html" class="is-active">Locations</a></li>
+            <li><a href="why-rcc-bgm.html">Why RCC-BGM</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="hamburger">&#9776;</span>
+            <span class="close" style="display:none">&#10005;</span>
+        </button>
         <a href="contact.html" class="btn-header">Get Assessment</a>
     </div></nav>
 
@@ -1001,6 +1016,30 @@
         document.addEventListener('DOMContentLoaded',()=>{
             const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');o.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
             document.querySelectorAll('.scroll-reveal').forEach(el=>o.observe(el));
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var toggle = document.querySelector('.nav-toggle');
+            if (!toggle) return;
+            var nav = toggle.closest('nav');
+            var links = nav.querySelectorAll('.nav-links a');
+            toggle.addEventListener('click', function() {
+                var isOpen = nav.classList.toggle('nav-open');
+                toggle.setAttribute('aria-expanded', isOpen);
+                document.body.classList.toggle('menu-open', isOpen);
+                toggle.querySelector('.hamburger').style.display = isOpen ? 'none' : '';
+                toggle.querySelector('.close').style.display = isOpen ? '' : 'none';
+            });
+            links.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    nav.classList.remove('nav-open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    document.body.classList.remove('menu-open');
+                    toggle.querySelector('.hamburger').style.display = '';
+                    toggle.querySelector('.close').style.display = 'none';
+                });
+            });
         });
     </script>
 </body>

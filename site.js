@@ -53,6 +53,7 @@
           <span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span>RCC<span>BGM</span>
         </a>
         <ul class="nav-links">
+          <li class="nav-logo-item"><a href="index.html" class="logo" aria-label="RCC-BGM home"><span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span>RCC<span>BGM</span></a></li>
           ${navLinksHtml}
         </ul>
         <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">

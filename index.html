@@ -1182,6 +1182,12 @@
    
         .scroll-reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.25,0.46,0.45,0.94); }
         .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+    .nav-logo-item { display: none; }
+    @media (max-width: 768px) {
+      nav .nav-flex > .logo { display: none; }
+      nav.nav-open .nav-logo-item { display: block; padding: 6px 4px 10px; border-bottom: 1px solid rgba(128,99,199,0.15); margin-bottom: 2px; list-style: none; }
+      nav.nav-open .nav-logo-item .logo { display: flex; align-items: center; gap: 8px; font-size: 22px; font-weight: 700; text-decoration: none; }
+    }
     </style>
 </head>
 
@@ -1191,6 +1197,7 @@
         <div class="container nav-flex">
             <a href="index.html" class="logo"><span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span>RCC<span>BGM</span></a>
             <ul class="nav-links">
+                <li class="nav-logo-item"><a href="index.html" class="logo"><span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span>RCC<span>BGM</span></a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="commercial-cleaning-services.html">Cleaning</a></li>
                 <li><a href="commercial-construction.html">Construction</a></li>
