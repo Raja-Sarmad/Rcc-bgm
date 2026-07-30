@@ -874,12 +874,15 @@
       .services-hero-mockup { transform: none !important; margin: 0 auto; }
       }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .nav-links { display: none; }
       .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
       .nav-flex > .btn-header { display: none; }
       .nav-cta-mobile { display: block; }
       .nav-cta-mobile .btn-header { display: inline-block; margin-top: 8px; text-align: center; width: 100%; }
+    }
+
+    @media (max-width: 768px) {
       .section-padding { padding: 40px 0; }
       .services-hero-stats-dock .hero-stats { flex-direction: column; gap: 16px; padding: 16px; }
       .services-hero-stats-dock .hero-stat { border-right: none; border-bottom: 1px solid var(--border-warm); padding-bottom: 16px; width: 100%; }

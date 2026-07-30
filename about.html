@@ -543,12 +543,15 @@ h1 .gradient-text,
       border-color: var(--accent-gold-border);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .nav-links { display: none; }
       .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
       .nav-flex > .btn-header { display: none; }
       .nav-cta-mobile { display: block; }
       .nav-cta-mobile .btn-header { display: block; margin-top: 8px; text-align: center; width: 100%; background: var(--gradient); color: white; border: none; }
+    }
+
+    @media (max-width: 768px) {
       .loc-hero { padding: 130px 0 60px 0; }
       .loc-hero-actions { margin-left: 0; justify-content: center; }
       .loc-hero-actions > a { min-width: 0; width: 100%; }
