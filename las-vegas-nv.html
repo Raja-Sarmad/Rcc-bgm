@@ -394,6 +394,35 @@
   .hero::after { width: 140px; height: 140px; }
 }
 
+/* Responsive fixes */
+@media (max-width: 1024px) {
+  .services-grid[style*="repeat(4,1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+@media (max-width: 768px) {
+  .container[style*="padding-left:60px"],
+  .container[style*="padding-right:60px"] { padding-left: 24px !important; padding-right: 24px !important; }
+}
+
+@media (max-width: 700px) {
+  .f-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .f-col:nth-child(1) { grid-column: 1 / -1; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
+}
+
+@media (max-width: 640px) {
+  .services-grid[style*="repeat(4,1fr)"] { grid-template-columns: 1fr !important; }
+  .s-item { padding: 24px 18px; }
+  .s-item h3 { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .hv-grid { grid-template-columns: 1fr; }
+  .f-grid { grid-template-columns: 1fr; gap: 18px; }
+  .f-col:nth-child(1) { grid-column: 1; }
+  .footer-bottom-links { justify-content: center; }
+}
+
     </style>
 </head>
 <body class="page-location">

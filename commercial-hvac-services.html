@@ -256,10 +256,11 @@
         border-bottom: none !important;
       }
 
-      .hvac-hero {
+      .page-hvac .hvac-hero {
         position: relative;
         background: #ffffff;
-        /* padding: 100px 0 80px 0; */
+        padding-top: 150px !important;
+        padding-bottom: 90px !important;
         padding-right: 10px;
         overflow: hidden;
       }
@@ -501,9 +502,10 @@
       footer .btn-header { color: black; }
       footer .btn-header:hover { color: #000; }
 
-      @media (max-width: 1024px) {
+      @media (max-width: 1200px) {
+        .hvac-hero { padding-right: 0; }
         .hvac-hero-grid { gap: 30px; }
-        .hvac-hero-left { max-width: 50%; }
+        .hvac-hero-left { max-width: 50%; margin: 0; }
         .hvac-hub { max-width: 45%; }
       }
 
@@ -518,11 +520,12 @@
           max-width: 100%;
           align-items: center;
           text-align: center;
+          margin: 0;
         }
 
         .hvac-hero-left p { margin-left: auto; margin-right: auto; }
         .hvac-hero-actions { justify-content: center; }
-        .hvac-hub { max-width: 540px; margin: 0 auto; padding-right: -150px;}
+        .hvac-hub { max-width: 540px; width: 100%; margin: 0 auto; }
         .hvac-hub-center { display: none; }
       }
 
@@ -531,7 +534,8 @@
         .hvac-hero-left h1 { font-size: 32px; }
         .hvac-hero-actions { flex-direction: column; width: 100%; }
         .hvac-hero-actions a { width: 100%; justify-content: center; }
-        .hvac-hub { grid-template-columns: 1fr; width: 100%; }
+        .hvac-hub { grid-template-columns: 1fr; width: 100%; gap: 12px; }
+        .hvac-hub-node { padding: 20px 18px; }
       }
         @media (max-width: 768px) {
       .f-grid { grid-template-columns: 1fr; gap: 30px; }

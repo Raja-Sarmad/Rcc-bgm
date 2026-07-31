@@ -247,8 +247,7 @@
 
       /* ── Page Sections: consistent left alignment + tight gaps ── */
       .page-cleaning main section.container {
-        padding-top: 10px;
-        padding-bottom: 10px;
+        border-bottom: none !important;
       }
       .page-cleaning main section.container h2 {
         text-align: left;
@@ -492,7 +491,7 @@
         .page-cleaning .process-seven { grid-template-columns: 1fr 1fr; }
       }
       @media (max-width: 600px) {
-        .ccs-hero .container { width: 100%; padding-left: 32px; padding-right: 32px; }
+        .ccs-hero .container { width: 100%; }
         .ccs-hero-left h1 { max-width: 100%; font-size: clamp(28px, 7vw, 32px); }
         .ccs-hero-left h1 .gradient-text { display: block; }
         .ccs-hero-actions { align-items: stretch; flex-direction: column; width: 100%; }
