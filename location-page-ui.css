@@ -42,13 +42,7 @@ body.page-location main > .section-padding > .services-grid:first-of-type > .s-i
     gap: 14px;
 }
 
-body.page-location .nav-logo-item { display: none; }
 @media (max-width: 768px) {
-    body.page-location .nav-flex > .logo { display: none; }
-    body.page-location nav .nav-links .nav-logo-item { display: none; }
-    body.page-location nav.nav-open .nav-links .nav-logo-item { display: block; padding: 6px 4px 10px; border-bottom: 1px solid rgba(128,99,199,0.15); margin-bottom: 2px; list-style: none; }
-    body.page-location nav.nav-open .nav-links .nav-logo-item .logo { display: flex; align-items: center; gap: 8px; font-size: 22px; font-weight: 700; text-decoration: none; }
-
     body.page-location main > .section-padding > .services-grid:first-of-type > .s-item:first-child,
     body.page-location main > .section-padding > .process-grid > .step-card:first-child {
         transform: none;
