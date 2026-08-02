@@ -53,7 +53,6 @@
           <span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span>RCC<span>BGM</span>
         </a>
         <ul class="nav-links">
-          <li class="nav-logo-item"><a href="index.html" class="logo" aria-label="RCC-BGM home"><span class="logo-icon"><i class="fa-solid fa-building-shield"></i></span>RCC<span>BGM</span></a></li>
           ${navLinksHtml}
           <li class="nav-cta-mobile"><a href="contact.html" class="btn-header">Get Assessment</a></li>
         </ul>
