@@ -343,6 +343,21 @@
         footer .btn-header { color: black; }
         footer .btn-header:hover { color: #000; }
 
+        /* Match footer color to the rest of the site (override any global footer styles) */
+        footer {
+            background: #2d2740 !important;
+            color: rgba(255, 255, 255, 0.7) !important;
+            border-top: none !important;
+        }
+        footer::before { display: none; }
+
+        footer .logo, footer .f-col h4, footer .footer-contact-link { color: #fff !important; }
+        footer .logo span { color: var(--accent-gold-light) !important; }
+        footer .f-col a, footer .f-col p, footer .footer-summary { color: rgba(255, 255, 255, 0.55) !important; }
+        footer a:hover { color: var(--accent-gold-light) !important; }
+        footer .footer-bottom p, footer .footer-bottom-links a { color: rgba(255, 255, 255, 0.4) !important; }
+        footer .btn-header { color: #fff !important; }
+        footer .btn-header:hover { color: #fff !important; }
 
 .nav-logo-item { display: none; }
 @media (max-width: 1024px) {

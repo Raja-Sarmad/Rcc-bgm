@@ -502,6 +502,22 @@
       footer .btn-header { color: black; }
       footer .btn-header:hover { color: #000; }
 
+      /* Match footer color to the rest of the site (override site.css global footer styles) */
+      footer {
+          background: #2d2740 !important;
+          color: rgba(255, 255, 255, 0.7) !important;
+          border-top: none !important;
+      }
+      footer::before { display: none; }
+
+      footer .logo, footer .f-col h4, footer .footer-contact-link { color: #fff !important; }
+      footer .logo span { color: var(--accent-gold-light) !important; }
+      footer .f-col a, footer .f-col p, footer .footer-summary { color: rgba(255, 255, 255, 0.55) !important; }
+      footer a:hover { color: var(--accent-gold-light) !important; }
+      footer .footer-bottom p, footer .footer-bottom-links a { color: rgba(255, 255, 255, 0.4) !important; }
+      footer .btn-header { color: #fff !important; }
+      footer .btn-header:hover { color: #fff !important; }
+
       @media (max-width: 1200px) {
         .hvac-hero { padding-right: 0; }
         .hvac-hero-grid { gap: 30px; }
@@ -546,6 +562,33 @@
         margin-left: 0;
         margin-right: auto;
       }
+    }
+
+    main section.container.section-padding {
+      padding-left: 30px !important;
+      padding-right: 30px !important;
+    }
+
+    @media (max-width: 700px) {
+      main section.container.section-padding {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+      }
+    }
+
+    @media (max-width: 760px) {
+      html,
+      body.page-hvac {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      footer { padding: 40px 0 20px; }
+      .f-grid { grid-template-columns: 1fr; gap: 24px; }
+      .f-col:nth-child(1) { grid-column: 1; }
+      .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
     }
   </style>
   </head>
