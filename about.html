@@ -381,6 +381,7 @@ h1 .gradient-text,
       .city-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+      .loc-hero-actions { margin-left: 0; }
     }
 
     @media (max-width: 600px) {
@@ -592,6 +593,11 @@ h1 .gradient-text,
       .region-section { padding: 32px 20px !important; }
       .f-grid { grid-template-columns: 1fr; gap: 30px; }
       .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 760px) {
+      html, body { padding-left: 0 !important; padding-right: 0 !important; }
+      footer .container { padding: 0 18px; }
     }
 
     @media (max-width: 600px) {
