@@ -27,14 +27,18 @@
   overflow: hidden;
   border-bottom: 1px solid rgba(217,111,159,.2);
 }
+.contact-hero > .container {
+  max-width: 1350px !important;
+  width: 100% !important;
+}
 .contact-hero::before {
   display: none;
 }
 .contact-hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr .85fr;
-  gap: 32px;
-  align-items: right;
+  grid-template-columns: 1fr 440px;
+  gap: 48px;
+  align-items: start;
   position: relative;
   z-index: 10;
 }
@@ -103,6 +107,9 @@
         transition: all .4s ease;
         min-height: 380px;
         box-sizing: border-box;
+        width: 100%;
+        max-width: 440px;
+        justify-self: end;
       }
       .contact-intake-card:hover {
         border-color: rgba(128,99,199,.35);
@@ -485,14 +492,24 @@
       }
       .contact-quick-card:hover .s-link { gap: 10px; }
 
-      /* ── Page-specific overrides ── */
-      .page-contact .container.section-padding {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+      /* Full Width Sections & Consistent Containers */
+      .page-contact main > section {
+        width: 100% !important;
+        box-sizing: border-box !important;
       }
-      .page-contact main > section:nth-child(2).container.section-padding {
+      .page-contact .container {
+        width: 100% !important;
+        max-width: 1350px !important;
+        margin: 0 auto !important;
         padding-left: 30px !important;
         padding-right: 30px !important;
+        box-sizing: border-box !important;
+      }
+      @media (max-width: 768px) {
+        .page-contact .container {
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+        }
       }
       .page-contact .step-card h2 {
         color: var(--accent-teal) !important;
@@ -550,43 +567,48 @@
       }
 
       /* ── Responsive ── */
-/* Footer */
-        footer {
-            background: var(--text-dark);
-            color: rgba(255, 255, 255, 0.7);
-            padding: 50px 0 24px 0;
-        }
+      /* Standard Footer Overrides */
+      footer {
+        background: var(--text-dark) !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+        padding: 50px 0 24px 0 !important;
+      }
+      footer .logo, footer .f-col h4, footer .footer-contact-link { color: #fff !important; }
+      footer .logo span { color: var(--accent-gold-light) !important; }
+      footer .f-col a, footer .f-col p, footer .footer-summary { color: rgba(255, 255, 255, 0.55) !important; }
+      footer a:hover { color: var(--accent-gold-light) !important; }
+      footer .footer-bottom p, footer .footer-bottom-links a { color: rgba(255, 255, 255, 0.4) !important; }
+      footer .btn-header { color: #fff !important; }
+      footer .btn-header:hover { color: #fff !important; }
 
-        .f-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr;
-            gap: 28px;
-            padding-bottom: 28px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
+      .f-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        gap: 28px;
+        padding-bottom: 28px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
 
-        .f-col h4 { color: white; margin-bottom: 20px; font-size: 1rem; }
-        .f-col ul { list-style: none; }
-        .f-col li { margin-bottom: 12px; }
-        .f-col a { color: rgba(255, 255, 255, 0.55); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
-        .f-col a:hover { color: var(--accent-gold-light); transform: translateX(4px); display: inline-block; }
-        .f-col p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.55); }
+      .f-col h4 { color: white; margin-bottom: 20px; font-size: 1rem; }
+      .f-col ul { list-style: none; }
+      .f-col li { margin-bottom: 12px; }
+      .f-col a { color: rgba(255, 255, 255, 0.55); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
+      .f-col a:hover { color: var(--accent-gold-light); transform: translateX(4px); display: inline-block; }
+      .f-col p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.55); }
 
-        .footer-bottom {
-            padding-top: 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
+      .footer-bottom {
+        padding-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
 
-        .footer-bottom p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); }
-        .footer-bottom-links { display: flex; gap: 20px; }
-        .footer-bottom-links a { color: rgba(255, 255, 255, 0.4); text-decoration: none; font-size: 0.85rem; transition: var(--transition); }
-        .footer-bottom-links a:hover { color: var(--accent-gold-light); }
-        footer .btn-header { color: black; }
-        footer .btn-header:hover { color: #000; }
+      .footer-bottom p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); }
+      .footer-bottom-links { display: flex; gap: 20px; }
+      .footer-bottom-links a { color: rgba(255, 255, 255, 0.4); text-decoration: none; font-size: 0.85rem; transition: var(--transition); }
+      .footer-bottom-links a:hover { color: var(--accent-gold-light); }
 
         
       @media (max-width: 1024px) {

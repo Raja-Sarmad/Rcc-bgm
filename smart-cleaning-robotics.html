@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -87,6 +87,8 @@
         line-height: 1.7;
         color: #555;
         margin-top: 20px;
+        margin-left: 0;
+        margin-right: 0;
         max-width: 480px;
       }
 
@@ -277,11 +279,12 @@
         border-radius: 10px;
         background: linear-gradient(90deg, var(--accent-teal), #8063c7);
       }
-/* Footer */
+
         footer {
-            background: var(--text-dark);
-            color: rgba(255, 255, 255, 0.7);
-            padding: 70px 0 30px 0;
+            background: #2d2740 !important;
+            color: rgba(255, 255, 255, 0.7) !important;
+            padding: 70px 0 30px 0 !important;
+            border-top: none !important;
         }
 
         .f-grid {
@@ -292,28 +295,45 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .f-col h4 { color: white; margin-bottom: 20px; font-size: 1rem; }
+        .f-col h4 { color: white !important; margin-bottom: 20px; font-size: 1rem; }
         .f-col ul { list-style: none; }
         .f-col li { margin-bottom: 12px; }
-        .f-col a { color: rgba(255, 255, 255, 0.55); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
-        .f-col a:hover { color: var(--accent-gold-light); transform: translateX(4px); display: inline-block; }
-        .f-col p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.55); }
+        .f-col a { color: rgba(255, 255, 255, 0.55) !important; text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
+        .f-col a:hover { color: var(--accent-gold-light) !important; transform: translateX(4px); display: inline-block; }
+        .f-col p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.55) !important; }
 
         .footer-bottom {
             padding-top: 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-flex-wrap: nowrap;
+            flex-wrap: wrap;
             gap: 12px;
         }
 
-        .footer-bottom p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); }
+        .footer-bottom p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.4) !important; }
         .footer-bottom-links { display: flex; gap: 20px; }
-        .footer-bottom-links a { color: rgba(255, 255, 255, 0.4); text-decoration: none; font-size: 0.85rem; transition: var(--transition); }
-        .footer-bottom-links a:hover { color: var(--accent-gold-light); }
-        footer .btn-header { color: black; }
-        footer .btn-header:hover { color: #000; }
+        .footer-bottom-links a { color: rgba(255, 255, 255, 0.4) !important; text-decoration: none; font-size: 0.85rem; transition: var(--transition); }
+        .footer-bottom-links a:hover { color: var(--accent-gold-light) !important; }
+
+        footer::before { display: none !important; }
+
+        footer .container {
+            max-width: 1550px;
+            width: 95%;
+        }
+
+        @media (max-width: 600px) {
+            footer .container { width: 100%; padding: 0 18px; }
+        }
+
+        footer .logo, footer .f-col h4, footer .footer-contact-link { color: #fff !important; }
+        footer .logo span { color: var(--accent-gold-light) !important; }
+        footer .f-col a, footer .f-col p, footer .footer-summary { color: rgba(255, 255, 255, 0.55) !important; }
+        footer a:hover { color: var(--accent-gold-light) !important; }
+        footer .footer-bottom p, footer .footer-bottom-links a { color: rgba(255, 255, 255, 0.4) !important; }
+        footer .btn-header { color: #fff !important; }
+        footer .btn-header:hover { color: #fff !important; }
 
       .facility-grid-section,
       .related-capabilities-section,
@@ -334,10 +354,62 @@ flex-wrap: nowrap;
         margin-bottom: 8px;
       }
 
+      /* Tech Grid Section & Active Card Styling */
+      .tech-grid-section {
+        background: linear-gradient(135deg, #181310 0%, #2a1f3d 50%, #181310 100%) !important;
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+      }
+
+      .tech-grid-section h2 {
+        color: #ffffff !important;
+      }
+
+      .tech-grid-section .section-lead {
+        color: #d4c0ac !important;
+      }
+
+      .services-grid .s-item.active {
+        background: linear-gradient(135deg, #8c70d1 0%, #d96f9f 100%) !important;
+        border: 1px solid rgba(255, 255, 255, 0.35) !important;
+        box-shadow: 0 16px 40px rgba(140, 112, 209, 0.35) !important;
+        color: #ffffff !important;
+      }
+
+      .services-grid .s-item.active h3 {
+        color: #ffffff !important;
+      }
+
+      .services-grid .s-item.active p {
+        color: rgba(255, 255, 255, 0.92) !important;
+      }
+
+      .services-grid .s-item.active .s-icon {
+        background: rgba(255, 255, 255, 0.22) !important;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+        backdrop-filter: blur(8px);
+      }
+
+      .services-grid .s-item.active .s-icon i {
+        color: #ffffff !important;
+      }
+
+      .services-grid .s-item.active .s-link {
+        color: #ffffff !important;
+      }
+
+      .services-grid .s-item.active::before {
+        display: none !important;
+      }
+
       @media (max-width: 1024px) {
+        .scr-hero {
+          padding: 110px 0 45px 0 !important;
+        }
+
         .scr-hero-grid {
           grid-template-columns: 1fr;
-          gap: 48px;
+          gap: 36px;
         }
 
         .scr-hero-left {
@@ -350,12 +422,33 @@ flex-wrap: nowrap;
         }
 
         .scr-hero-left p {
-          margin-left: auto;
-          margin-right: auto;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          text-align: center !important;
+          max-width: 100% !important;
         }
 
         .scr-hero-actions {
-          justify-content: center;
+          flex-direction: column !important;
+          align-items: stretch !important;
+          width: 100% !important;
+          max-width: 360px !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          gap: 12px !important;
+        }
+
+        .scr-hero-actions .btn-header,
+        .scr-hero-actions .btn-outline-hero {
+          width: 100% !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          text-align: center !important;
+          box-sizing: border-box !important;
+          white-space: normal !important;
+          padding: 14px 20px !important;
+          font-size: 0.92rem !important;
         }
 
         .scr-spec-panel {
@@ -385,48 +478,176 @@ flex-wrap: nowrap;
         }
       }
 
-      @media (max-width: 760px) {
-        html,
-        body {
-          padding-left: 0 !important;
-          padding-right: 0 !important;
-        }
+      /* ============================================================
+         Comprehensive Responsive Overhaul (Containers & Card Spacing)
+         ============================================================ */
 
-        .tech-grid-section .services-grid,
-        .facility-grid-section .services-grid,
-        .related-services-grid {
-          grid-template-columns: 1fr;
-          padding-left: 0;
-          padding-right: 0;
+      /* 1. Container & Page Padding on Mobile & Tablets */
+      @media (max-width: 768px) {
+        .container {
+          width: 100% !important;
+          padding-left: 15px !important;
+          padding-right: 15px !important;
+          box-sizing: border-box !important;
+        }
+        .section-padding {
+          padding-top: 36px !important;
+          padding-bottom: 36px !important;
+        }
+      }
+
+      /* 2. Split Intro Section ("Technology supports accountability") */
+      @media (max-width: 900px) {
+        .split-intro {
+          display: grid !important;
+          grid-template-columns: 1fr !important;
+          gap: 20px !important;
+        }
+        .split-intro h2 {
+          font-size: clamp(1.45rem, 5.2vw, 2.1rem) !important;
+          line-height: 1.3 !important;
+          margin-bottom: 12px !important;
+        }
+        .split-intro p {
+          font-size: 0.95rem !important;
+          line-height: 1.65 !important;
+          color: var(--text-body) !important;
+        }
+      }
+
+      /* 3. Services Grids (Tech Grid Section & Facility Grid Section) */
+      .services-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      @media (max-width: 1100px) {
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 20px !important;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .services-grid {
+          grid-template-columns: 1fr !important;
+          gap: 16px !important;
+          padding: 0 !important;
+        }
+      }
+
+      /* 4. Tech Box & Tech Grid (Suitability Section) */
+      @media (max-width: 992px) {
+        .tech-box {
+          grid-template-columns: 1fr !important;
+          gap: 28px !important;
+          padding: 32px 24px !important;
         }
       }
 
       @media (max-width: 600px) {
-        .scr-hero-actions {
-          flex-direction: column;
-          align-items: stretch;
-          width: 100%;
+        .tech-box {
+          padding: 24px 18px !important;
+          border-radius: 18px !important;
         }
-        .scr-hero-actions .btn-header,
-        .scr-hero-actions .btn-outline-hero {
-          width: 100%;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
+        .tech-grid {
+          grid-template-columns: 1fr !important;
+          gap: 14px !important;
         }
+      }
+
+      /* 5. Process Grid (Step Cards 01-04) */
+      .process-grid {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      @media (max-width: 1024px) {
+        .process-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 20px !important;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .process-grid {
+          grid-template-columns: 1fr !important;
+          gap: 16px !important;
+        }
+      }
+
+      /* 6. Related Services Grid (4 bottom cards) */
+      .related-services-grid {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 20px !important;
+      }
+
+      @media (max-width: 1100px) {
+        .related-services-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 20px !important;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .related-services-grid {
+          grid-template-columns: 1fr !important;
+          gap: 16px !important;
+          padding: 0 !important;
+        }
+      }
+
+      /* 7. Card Level Spacing & Mobile Margins */
+      .s-item, .step-card, .t-item, .intro-card, .faq-item, .cta-box {
+        min-height: 0 !important;
+        box-sizing: border-box !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+      }
+
+      @media (max-width: 600px) {
+        .s-item {
+          padding: 24px 20px !important;
+          border-radius: 16px !important;
+        }
+
+        .step-card {
+          padding: 24px 20px !important;
+          border-radius: 16px !important;
+        }
+
+        .t-item {
+          padding: 18px 16px !important;
+          border-radius: 14px !important;
+        }
+
+        .scr-spec-panel {
+          padding: 20px 16px !important;
+          border-radius: 18px !important;
+        }
+
         .scr-spec-header {
-          padding: 16px 18px;
+          padding: 14px 16px !important;
         }
-        .scr-spec-body {
-          padding: 18px 18px 22px 18px;
+
+        .scr-spec-row {
+          gap: 12px !important;
+        }
+
+        .scr-spec-icon {
+          width: 38px !important;
+          height: 38px !important;
+          font-size: 14px !important;
         }
       }
 
       @media (max-width: 1024px) {
-      .f-grid { grid-template-columns: 1fr; gap: 30px; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-    }
+        .f-grid { grid-template-columns: 1fr; gap: 30px; }
+        .footer-bottom { flex-direction: column; text-align: center; }
+      }
   </style>
   </head>
   <body class="page-specialist">
