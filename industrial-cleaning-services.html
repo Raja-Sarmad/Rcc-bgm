@@ -22,6 +22,27 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <style>
+      footer {
+        background: #2d2740 !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+        border-top: none !important;
+      }
+      footer::before { display: none; }
+      footer .logo, footer .f-col h4, footer .footer-contact-link { color: #fff !important; }
+      footer .logo span { color: var(--accent-gold-light) !important; }
+      footer .f-col a, footer .f-col p, footer .footer-summary { color: rgba(255, 255, 255, 0.55) !important; }
+      footer a:hover { color: var(--accent-gold-light) !important; }
+      footer .footer-bottom p, footer .footer-bottom-links a { color: rgba(255, 255, 255, 0.4) !important; }
+
+      @media (max-width: 760px) {
+        html,
+        body {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    </style>
   </head>
   <body class="page-industrial">
     <nav>
