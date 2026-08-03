@@ -31,6 +31,12 @@
         border-bottom: 1px solid rgba(0, 0, 0, 0.06);
       }
 
+      /* Override the global hero rule (site.css) that targets [class$="-hero"]
+         and squeezes the hero container to min(100% - 40px, 900px). */
+      .scr-hero > .container {
+        width: 100% !important;
+      }
+
       .scr-hero::before {
         content: '';
         position: absolute;
@@ -309,24 +315,6 @@ flex-wrap: nowrap;
         footer .btn-header { color: black; }
         footer .btn-header:hover { color: #000; }
 
-        
-
-      .tech-grid-section .services-grid,
-      .facility-grid-section .services-grid {
-        grid-template-columns: repeat(6, 1fr);
-      }
-      .tech-grid-section .services-grid .s-item:nth-child(-n+3),
-      .facility-grid-section .services-grid .s-item:nth-child(-n+3) {
-        grid-column: auto / span 2;
-      }
-      .tech-grid-section .services-grid .s-item:nth-child(4),
-      .facility-grid-section .services-grid .s-item:nth-child(4) {
-        grid-column: 2 / 4;
-      }
-      .tech-grid-section .services-grid .s-item:nth-child(5),
-      .facility-grid-section .services-grid .s-item:nth-child(5) {
-        grid-column: 4 / 6;
-      }
       .facility-grid-section,
       .related-capabilities-section,
       .faq-section {
@@ -346,15 +334,19 @@ flex-wrap: nowrap;
         margin-bottom: 8px;
       }
 
-      @media (max-width: 900px) {
+      @media (max-width: 1024px) {
         .scr-hero-grid {
           grid-template-columns: 1fr;
-          gap: 40px;
+          gap: 48px;
         }
 
         .scr-hero-left {
           align-items: center;
           text-align: center;
+        }
+
+        .scr-hero-left .hero-tag {
+          align-self: center;
         }
 
         .scr-hero-left p {
@@ -367,7 +359,8 @@ flex-wrap: nowrap;
         }
 
         .scr-spec-panel {
-          max-width: 440px;
+          max-width: 480px;
+          width: 100%;
           margin: 0 auto;
         }
 
@@ -375,6 +368,7 @@ flex-wrap: nowrap;
           display: none;
         }
       }
+
       .related-services-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -390,7 +384,46 @@ flex-wrap: nowrap;
           grid-template-columns: repeat(2, 1fr);
         }
       }
-        @media (max-width: 768px) {
+
+      @media (max-width: 760px) {
+        html,
+        body {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+
+        .tech-grid-section .services-grid,
+        .facility-grid-section .services-grid,
+        .related-services-grid {
+          grid-template-columns: 1fr;
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .scr-hero-actions {
+          flex-direction: column;
+          align-items: stretch;
+          width: 100%;
+        }
+        .scr-hero-actions .btn-header,
+        .scr-hero-actions .btn-outline-hero {
+          width: 100%;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+        .scr-spec-header {
+          padding: 16px 18px;
+        }
+        .scr-spec-body {
+          padding: 18px 18px 22px 18px;
+        }
+      }
+
+      @media (max-width: 1024px) {
       .f-grid { grid-template-columns: 1fr; gap: 30px; }
       .footer-bottom { flex-direction: column; text-align: center; }
     }
