@@ -269,6 +269,13 @@
           padding-right: 18px !important;
         }
       }
+      @media (max-width: 760px) {
+        html,
+        body.page-cleaning {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+      }
 
       /* ── Hero ── */
       .ccs-hero {
@@ -500,12 +507,19 @@
       /* ── Responsive Overrides ── */
       @media (max-width: 1024px) {
         .ccs-hero-grid { gap: 36px; }
+        .page-cleaning .services-grid,
+        .page-cleaning .cleaning-scope,
+        .page-cleaning .mini-grid,
+        .page-cleaning .quality-grid {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
         .page-cleaning .services-grid.cleaning-scope { grid-template-columns: repeat(2, 1fr); gap: 20px; }
         .page-cleaning .quality-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
         .page-cleaning .process-seven { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-        .page-cleaning .focus-flex { flex-direction: column; gap: 32px; }
-        .page-cleaning .focus-flex > div { width: 100%; }
-        .page-cleaning .cleaning-console { width: 100%; box-sizing: border-box; }
+        .page-cleaning .focus-flex { grid-template-columns: 1fr !important; gap: 32px !important; }
+        .page-cleaning .cleaning-console { grid-template-columns: 1fr !important; gap: 24px !important; width: 100% !important; box-sizing: border-box !important; }
+        .page-cleaning .cleaning-console .tech-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 14px !important; margin-top: 16px !important; }
       }
 
       @media (max-width: 900px) {
@@ -527,18 +541,21 @@
         .page-cleaning .process-seven { grid-template-columns: 1fr; gap: 16px; }
         .page-cleaning .mini-grid { grid-template-columns: 1fr; gap: 16px; }
         .page-cleaning .frequency-list { grid-template-columns: 1fr; gap: 12px; }
-        .page-cleaning .cleaning-console { padding: 24px 18px !important; }
-        .page-cleaning .cleaning-console .tech-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
         .tech-box { padding: 24px 18px !important; }
-        .tech-box .tech-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
         .cta-box { padding: 28px 18px !important; text-align: center !important; }
         .cta-box .btn-header { width: 100%; justify-content: center; display: inline-flex; box-sizing: border-box; text-align: center; }
         .page-cleaning .cleaning-intro h2, 
         .page-cleaning main section.container h2 { font-size: clamp(24px, 5.5vw, 32px) !important; line-height: 1.25 !important; word-break: break-word; }
         .chip-container { gap: 8px; justify-content: center; }
         .chip { padding: 8px 14px; font-size: 13px; text-align: center; }
+        .page-cleaning .faq-item { width: 100% !important; max-width: 100% !important; margin-left: 0 !important; margin-right: 0 !important; }
         .f-grid { grid-template-columns: 1fr; gap: 30px; }
         .footer-bottom { flex-direction: column; text-align: center; }
+      }
+
+      @media (max-width: 640px) {
+        .page-cleaning .cleaning-console { padding: 22px 16px !important; }
+        .page-cleaning .cleaning-console .tech-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
       }
 
       @media (max-width: 600px) {
@@ -565,9 +582,6 @@
         .ccs-metric { padding: 10px; }
         .ccs-metric-value { font-size: 16px; }
         .ccs-console-services { gap: 8px; }
-      @media (max-width: 768px) {
-        .f-grid { grid-template-columns: 1fr; gap: 30px; }
-        .footer-bottom { flex-direction: column; text-align: center; }
       }
     </style>
   </head>
