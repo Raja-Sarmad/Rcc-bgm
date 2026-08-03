@@ -7253,7 +7253,7 @@ main > section > h2, main > section > h3 {
 }
 
 .services-hero-left p, .about-hero-left p, .loc-hero-left p, .why-hero-left p,
-.ccs-hero-left p, .cc-hero-left p, .hvac-hero-left p {
+.ccs-hero-left p, .cc-hero-left p, .hvac-hero-left p, .scr-hero-left p {
   margin-left: 0 !important;
   margin-right: 0 !important;
   text-align: left !important;
