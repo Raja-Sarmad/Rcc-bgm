@@ -201,7 +201,8 @@
     }
 
     .why-hero-content p {
-      font-size: 1.08rem;
+      font-size: clamp(0.95rem, 0.5rem + 0.9vw, 1.08rem);
+      line-height: 1.65;
       color: var(--text-body);
       margin-top: 20px;
       max-width: 680px;
@@ -256,6 +257,8 @@
 
     .value-intro p {
       margin-top: 16px;
+      font-size: clamp(0.95rem, 0.5rem + 0.9vw, 1.08rem);
+      line-height: 1.65;
     }
 
     .value-intro .hero-tag {

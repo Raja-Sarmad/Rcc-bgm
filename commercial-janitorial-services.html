@@ -279,7 +279,8 @@
         align-items: center;
         position: relative;
         z-index: 10;
-        max-width: 100%;
+        width: 100%;
+        max-width: none;
       }
 
       /* ── Left Side ── */
@@ -688,10 +689,17 @@
          ══════════════════════════════════════ */
 /* Footer */
         footer {
-            background: var(--text-dark);
-            color: rgba(255, 255, 255, 0.7);
+            background: #2d2740 !important;
+            color: rgba(255, 255, 255, 0.7) !important;
+            border-top: none !important;
             padding: 70px 0 30px 0;
         }
+        footer::before { display: none; }
+        footer .logo, footer .f-col h4, footer .footer-contact-link { color: #fff !important; }
+        footer .logo span { color: var(--accent-gold-light) !important; }
+        footer .f-col a, footer .f-col p, footer .footer-summary { color: rgba(255, 255, 255, 0.55) !important; }
+        footer a:hover { color: var(--accent-gold-light) !important; }
+        footer .footer-bottom p, footer .footer-bottom-links a { color: rgba(255, 255, 255, 0.4) !important; }
 
         .f-grid {
             display: grid;
@@ -725,6 +733,14 @@
         footer .btn-header:hover { color: #000; }
 
         
+      @media (max-width: 760px) {
+        html,
+        body {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
       @media (max-width: 900px) {
         .cj-hero {
           padding: 110px 24px 0 24px;

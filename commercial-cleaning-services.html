@@ -504,6 +504,20 @@
       footer .btn-header { color: #fff !important; }
       footer .btn-header:hover { color: #fff !important; }
 
+      /* ── Pricing section: center the cost-factor list ── */
+      .page-cleaning .pricing-section .check-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .page-cleaning .pricing-section .check-list li {
+        justify-content: center;
+        text-align: left;
+      }
+
       /* ── Responsive Overrides ── */
       @media (max-width: 1024px) {
         .ccs-hero-grid { gap: 36px; }
@@ -517,9 +531,15 @@
         .page-cleaning .services-grid.cleaning-scope { grid-template-columns: repeat(2, 1fr); gap: 20px; }
         .page-cleaning .quality-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
         .page-cleaning .process-seven { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+<<<<<<< HEAD
         .page-cleaning .focus-flex { grid-template-columns: 1fr !important; gap: 32px !important; }
         .page-cleaning .cleaning-console { grid-template-columns: 1fr !important; gap: 24px !important; width: 100% !important; box-sizing: border-box !important; }
         .page-cleaning .cleaning-console .tech-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 14px !important; margin-top: 16px !important; }
+=======
+        .page-cleaning .focus-flex { grid-template-columns: 1fr !important; gap: 32px; padding-left: 0 !important; padding-right: 0 !important; }
+        .page-cleaning .focus-flex > div { width: 100%; }
+        .page-cleaning .cleaning-console { width: 100%; box-sizing: border-box; grid-template-columns: 1fr 1.25fr !important; }
+>>>>>>> 53a4a74dec2d59a8224a6836aeb366cf516b0cd0
       }
 
       @media (max-width: 900px) {
@@ -541,6 +561,11 @@
         .page-cleaning .process-seven { grid-template-columns: 1fr; gap: 16px; }
         .page-cleaning .mini-grid { grid-template-columns: 1fr; gap: 16px; }
         .page-cleaning .frequency-list { grid-template-columns: 1fr; gap: 12px; }
+<<<<<<< HEAD
+=======
+        .page-cleaning .cleaning-console { padding: 24px 18px !important; grid-template-columns: 1fr !important; }
+        .page-cleaning .cleaning-console .tech-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+>>>>>>> 53a4a74dec2d59a8224a6836aeb366cf516b0cd0
         .tech-box { padding: 24px 18px !important; }
         .cta-box { padding: 28px 18px !important; text-align: center !important; }
         .cta-box .btn-header { width: 100%; justify-content: center; display: inline-flex; box-sizing: border-box; text-align: center; }

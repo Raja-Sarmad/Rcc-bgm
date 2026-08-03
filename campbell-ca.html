@@ -334,6 +334,26 @@
         .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
 
         /* ===== RESPONSIVE ===== */
+        .cleaning-grid { grid-template-columns: repeat(4, 1fr); }
+        .adapted-grid { grid-template-columns: repeat(3, 1fr); }
+        .process-responsive-grid { grid-template-columns: repeat(3, 1fr); }
+
+        @media (max-width: 980px) {
+            .campbell-cleaning-section { padding: 48px 28px !important; }
+            .cleaning-grid { grid-template-columns: repeat(2, 1fr); }
+            .adapted-grid { grid-template-columns: repeat(2, 1fr); }
+            .campbell-process-section { padding: 48px 28px !important; }
+            .process-responsive-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 560px) {
+            .campbell-cleaning-section { padding: 32px 18px !important; border-radius: 18px !important; }
+            .cleaning-grid { grid-template-columns: 1fr; }
+            .cleaning-grid .s-item { padding: 22px 20px !important; }
+            .adapted-grid { grid-template-columns: 1fr; }
+            .campbell-process-section { padding: 32px 18px !important; border-radius: 18px !important; }
+            .process-responsive-grid { grid-template-columns: 1fr; }
+            .process-responsive-grid .step-card { padding: 26px 22px; }
+        }
 /* Footer */
         footer {
             background: var(--text-dark);
@@ -526,12 +546,12 @@
         </section>
 
         <!-- Commercial Cleaning -->
-        <section class="container section-padding" style="background: var(--bg-warm); border-radius: 24px; padding: 60px 40px;">
+        <section class="container section-padding campbell-cleaning-section" style="background: var(--bg-warm); border-radius: 24px; padding: 60px 40px;">
             <span class="section-subtitle" style="display: block; text-align: center;">Cleaning Programs</span>
             <h2 style="text-align: center;">Commercial Cleaning for Campbell Business Properties</h2>
             <p class="section-intro" style="text-align: center; margin-left: auto; margin-right: auto;">RCC-BGM can review commercial cleaning services in Campbell for qualified offices, professional-service properties, retail environments, mixed commercial buildings and other approved facilities. The program is built around service zones, traffic, operating hours, access, material requirements and quality-control expectations. <a href="commercial-cleaning-services.html" style="color: var(--accent-gold); font-weight: 600;">View full Commercial Cleaning Services scope</a>.</p>
             
-            <div class="services-grid" style="grid-template-columns: repeat(4, 1fr);">
+            <div class="services-grid cleaning-grid">
                 <div class="s-item scroll-reveal" style="cursor: default; padding: 24px 18px;">
                     <i class="fa-solid fa-calendar-check"></i>
                     <h3>Recurring Commercial Cleaning</h3>
@@ -744,7 +764,7 @@
             <span class="section-subtitle" style="display: block; text-align: center;">Operational Continuity</span>
             <h2>Services Adapted to Campbell Commercial Properties</h2>
             <p class="section-intro">Many scopes can be phased around approved operations, access and communication requirements. We identify employees, tenants, customers, visitors and critical hours; confirm access routes and approved work windows; plan noise, dust, odor, deliveries and temporary protection; coordinate building notices and decision-making contacts; document scope changes before additional work; and complete service reviews or project closeout against the approved scope.</p>
-            <div class="services-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="services-grid adapted-grid">
                 <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-laptop-code"></i><h3>Technology &amp; Startup</h3><p>Recurring cleaning, flexible occupancy, HVAC, secure access and frequent space changes.</p></div>
                 <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-industry"></i><h3>Hardware &amp; Light-Industrial</h3><p>Office, engineering, approved production-support and warehouse areas.</p></div>
                 <div class="s-item scroll-reveal" style="cursor: default;"><i class="fa-solid fa-flask"></i><h3>Med-Tech &amp; Laboratory</h3><p>Qualified cleaning, ESD floors, HVAC, MEP and controlled construction coordination.</p></div>
@@ -754,10 +774,10 @@
             </div>
 
         <!-- Process & Pricing -->
-        <section class="container section-padding" style="background: var(--bg-warm); border-radius: 24px; padding: 60px 40px;">
+        <section class="container section-padding campbell-process-section" style="background: var(--bg-warm); border-radius: 24px; padding: 60px 40px;">
             <span class="section-subtitle" style="display: block; text-align: center;">Engagement</span>
             <h2 style="text-align: center;">Six-Step Campbell Facility Process</h2>
-            <div class="process-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="process-grid process-responsive-grid">
                 <div class="step-card scroll-reveal selected"><div class="step-num">01</div><h4>Enquiry</h4><p>Location, property type, service need and desired outcome.</p></div>
                 <div class="step-card scroll-reveal"><div class="step-num">02</div><h4>Qualification</h4><p>Route to BGM, RCC, coordinated review or a specialist.</p></div>
                 <div class="step-card scroll-reveal"><div class="step-num">03</div><h4>Site Assessment</h4><p>Review conditions, size, occupancy, access, systems and documents.</p></div>
