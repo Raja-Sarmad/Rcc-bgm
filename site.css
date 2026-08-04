@@ -1261,8 +1261,8 @@ body.menu-open { overflow: hidden; }
   html,
   body {
     max-width: 100%;
-    padding-left: 18px;
-    padding-right: 18px;
+    /* padding-left: 18px; */
+    /* padding-right: 18px; */
   }
 
   .hero h1 {
