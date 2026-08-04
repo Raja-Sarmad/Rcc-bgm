@@ -907,7 +907,7 @@ main .tech-box h2 {
 .step-card h2 {
   color: var(--accent-blue);
   font-size: 44px;
-  opacity: 0.2;
+  opacity: 0.9;
   margin-bottom: 8px;
 }
 
