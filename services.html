@@ -159,8 +159,8 @@
       box-shadow: 0 8px 28px rgba(128, 99, 199, 0.35);
     }
 
-    /* Spacing - REDUCED GAPS */
-    .section-padding { padding: 60px 0; }
+    /* Spacing */
+    .section-padding { padding: 80px 0; }
     h2 { font-size: 2rem; font-weight: 800; color: var(--text-dark); margin-bottom: 14px; line-height: 1.25; }
     p { color: var(--text-body); font-size: 1rem; }
 
@@ -881,7 +881,7 @@
     }
 
     @media (max-width: 768px) {
-      .section-padding { padding: 40px 0; }
+      .section-padding { padding: 50px 0; }
       .services-hero-stats-dock .hero-stats { flex-direction: column; gap: 16px; padding: 16px; }
       .services-hero-stats-dock .hero-stat { border-right: none; border-bottom: 1px solid var(--border-warm); padding-bottom: 16px; width: 100%; }
       .services-hero-stats-dock .hero-stat:not(:last-child)::after { display: none; }
@@ -895,7 +895,7 @@
 
     @media (max-width: 480px) {
       .container { padding: 0 14px; }
-      .section-padding { padding: 30px 0; }
+      .section-padding { padding: 36px 0 !important; }
       h2 { font-size: 1.5rem; }
       .services-hero { padding: 110px 0 30px; }
       .services-hero h1 { font-size: 1.6rem; }
@@ -919,6 +919,7 @@
 
     @media (max-width: 375px) {
       .container { padding: 0 12px; }
+      .section-padding { padding: 30px 0 !important; }
       .services-hero h1 { font-size: 1.4rem; }
       h2 { font-size: 1.3rem; }
       .btn-header { padding: 10px 20px; font-size: 0.82rem; }
@@ -1139,7 +1140,7 @@
       </div>
     </section>
 
-    <section class="container">
+    <section class="container section-padding">
       <h2 style="text-align: center;">Common questions</h2>
       <div style="max-width: 800px; margin: 30px auto 0;">
         <details class="faq-item" open>
