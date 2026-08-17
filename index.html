@@ -70,17 +70,26 @@
         .section-padding { padding: 50px 0; }
 
         /* Navigation */
+        nav.scrolled .logo { color: var(--text-dark); }
+        nav.scrolled .nav-links a { color: var(--text-body); }
+        nav.scrolled .nav-toggle { background: var(--bg-warm); color: var(--accent-gold); border-color: var(--accent-gold-border); }
+        nav.scrolled .nav-links a:hover { color: var(--accent-gold); }
         nav {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(0, 0, 0, 0.15);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            background: transparent;
             padding: 16px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: none;
             transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(250, 247, 242, 0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-warm);
         }
 
         .nav-flex {
@@ -122,7 +131,7 @@
 
         .nav-links a {
             position: relative;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.85);
             text-decoration: none;
             font-weight: 500;
             font-size: 0.92rem;
@@ -151,7 +160,7 @@
             display: none;
             width: 44px;
             height: 44px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             border-radius: 12px;
             background: rgba(255, 255, 255, 0.1);
             color: #ffffff;
@@ -1380,46 +1389,33 @@
         </div>
     </section>
 
-    <!-- 4. COMMERCIAL CLEANING FOCUS (BGM) -->
-    <section id="cleaning" class="section-padding">
-        <div class="container focus-flex">
-            <div class="scroll-reveal">
-                <span class="hero-tag">Brilliant General Maintenance</span>
-                <h2>Cleaning You Can <span style="color:var(--accent-gold);">Depend On</span></h2>
-                <p style="margin-top: 10px;">BGM delivers commercial cleaning services tailored to each facility's schedule, occupancy, and industry requirements.</p>
-                <ul class="check-list">
-                    <li><i class="fa-solid fa-circle-check"></i> Restroom cleaning and sanitation</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Manufacturing and industrial cleaning</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Office cleaning and common-area maintenance</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Cleanroom and controlled-environment cleaning</li>
-                </ul>
+    <!-- 4. TWO COMPANIES — ONE TEAM -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="split-intro">
+                <div class="intro-card scroll-reveal">
+                    <span class="hero-tag">Brilliant General Maintenance</span>
+                    <h3>Cleaning You Can Depend On</h3>
+                    <p>BGM delivers commercial cleaning services tailored to each facility's schedule, occupancy, and industry requirements.</p>
+                    <ul class="check-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Restroom cleaning and sanitation</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Manufacturing and industrial cleaning</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Office cleaning and common-area maintenance</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Cleanroom and controlled-environment cleaning</li>
+                    </ul>
+                </div>
+                <div class="intro-card scroll-reveal" style="border-top: 4px solid var(--accent-gold);">
+                    <span class="hero-tag">Reliable Concepts Corporation</span>
+                    <h3>Elite Construction & Improvements</h3>
+                    <p>RCC coordinates commercial construction, tenant improvements, HVAC, MEP, carpentry, and painting through a single point of contact.</p>
+                    <ul class="check-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Interior build-outs & space reconfiguration</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Mechanical, electrical, and plumbing upgrades</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Coordinated project management</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Facility renovations & functional upgrades</li>
+                    </ul>
+                </div>
             </div>
-            <video autoplay loop muted playsinline>
-    <source src="videos/video4.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-            <!-- <img src="https://images.unsplash.com/photo-1627905646269-7f034dcc5738?w=500&auto=format&fit=crop&q=60" class="focus-img scroll-reveal" alt="Cleaning Services"> -->
-        </div>
-    </section>
-
-    <!-- 5. RCC CONSTRUCTION FOCUS -->
-    <section id="construction" class="section-padding" style="background: var(--bg-white);">
-        <div class="container focus-flex reversed">
-            <div class="scroll-reveal">
-                <span class="hero-tag">Reliable Concepts Corporation</span>
-                <h2>Elite <span style="color:var(--accent-gold);">Construction</span> & Improvements</h2>
-                <p style="margin-top: 10px;">RCC coordinates commercial construction, tenant improvements, HVAC, MEP, carpentry, and painting through a single point of contact.</p>
-                <ul class="check-list">
-                    <li><i class="fa-solid fa-circle-check"></i> Interior build-outs & space reconfiguration</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Mechanical, electrical, and plumbing upgrades</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Coordinated project management</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Facility renovations & functional upgrades</li>
-                </ul>
-            </div>
-            <video autoplay loop muted playsinline>
-    <source src="videos/video5.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
         </div>
     </section>
 
@@ -1827,6 +1823,18 @@
                 });
             }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
             document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+            // Navbar scroll glass effect
+            const nav = document.querySelector('nav');
+            const hero = document.querySelector('.hero');
+            window.addEventListener('scroll', () => {
+                const heroBottom = hero.offsetTop + hero.offsetHeight;
+                if (window.scrollY > heroBottom - 80) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
 
             // Mobile Nav Toggle
             const navToggle = document.querySelector('.nav-toggle');
