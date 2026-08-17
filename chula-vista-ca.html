@@ -224,6 +224,25 @@
         .matrix-table tr:last-child td { border-bottom: none; }
         .matrix-table tr:hover td { background: var(--accent-gold-soft); }
 
+        /* Program Frequency cards */
+        .program-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 24px; }
+        .program-item { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-sm); padding: 24px 20px; text-align: left; transition: var(--transition); box-shadow: var(--shadow-soft); }
+        .program-item:hover { border-color: var(--accent-gold-border); transform: translateY(-4px); box-shadow: var(--shadow-medium); }
+        .program-item h4 { font-size: 0.95rem; font-weight: 600; color: var(--text-dark); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .program-item h4 i { color: var(--accent-gold); }
+        .program-item p { font-size: 0.85rem; color: var(--text-body); margin: 0; }
+
+        /* Service link rows */
+        .service-link-row { margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+        .service-link-grid { margin-top: 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .service-link-grid .btn-secondary { justify-content: center; width: 100%; }
+        @media (max-width: 1024px) { .service-link-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 480px) { .service-link-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 480px) {
+            .service-link-row { flex-direction: column; align-items: stretch; }
+            .service-link-row .btn-secondary { width: 100%; justify-content: center; }
+        }
+
         /* Responsibility cards */
         .resp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 20px; }
         .resp-card { border-radius: var(--radius-sm); padding: 24px; border: 1px solid var(--border-light); }
@@ -240,6 +259,7 @@
 
         /* Process */
         .process-grid-6 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+        .process-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px; }
         .step-card { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius); padding: 34px 28px; position: relative; transition: var(--transition); box-shadow: var(--shadow-soft); overflow: hidden; }
         .step-card::before { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light)); transform: scaleX(0); transition: transform 0.4s ease; }
         .step-card:hover, .step-card.selected { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--accent-gold-border); }
@@ -375,10 +395,12 @@
         @media (max-width: 1100px) { .pricing-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); } .pricing-item:nth-child(1), .pricing-item:nth-child(2), .pricing-item:nth-child(3), .pricing-item:nth-child(4), .pricing-item:nth-child(5), .pricing-item:nth-child(6), .pricing-item:nth-child(7) { grid-column: auto; grid-row: auto; } }
         @media (max-width: 1024px) {
             .process-grid-6 { grid-template-columns: repeat(2, 1fr); }
+            .process-grid-4 { grid-template-columns: repeat(2, 1fr); }
             .intent-grid { grid-template-columns: repeat(2, 1fr); }
             .qc-grid { grid-template-columns: repeat(2, 1fr); }
             .services-grid-3 { grid-template-columns: 1fr 1fr; }
             .permit-grid { grid-template-columns: 1fr; }
+            .program-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 980px) {
             .hero-grid { grid-template-columns: 1fr; gap: 50px; }
@@ -390,6 +412,8 @@
             .hero::before { width: 300px; height: 300px; }
             .hero::after { width: 220px; height: 220px; }
             .two-col, .two-col-wide { grid-template-columns: 1fr; }
+            .intro-left { text-align: center; }
+            .intro-left p { margin-left: auto; margin-right: auto; }
             .nav-toggle { display: flex; }
             .nav-cta { display: none; }
         }
@@ -404,9 +428,14 @@
             .hero { padding: 130px 0 80px; }
             .hero-labels { flex-direction: column; }
             .hv-chip.loc { left: 6px; }
-            .hv-chip.trust { right: 6px; }
+            .hv-chip.trust { right: 6px; bottom: -56px; }
+            .hero-visual { margin-bottom: 56px; }
+            .hero-stats { flex-direction: column; align-items: center; text-align: center; gap: 16px; }
+            .hero-stat { padding: 0; border-right: none; border-bottom: 1px solid var(--border-warm); padding-bottom: 14px; }
+            .hero-stat:last-child { border-bottom: none; padding-bottom: 0; }
             .cta-box { padding: 40px 24px; }
             .process-grid-6 { grid-template-columns: 1fr; }
+            .process-grid-4 { grid-template-columns: 1fr; }
             .intent-grid { grid-template-columns: 1fr; }
             .qc-grid { grid-template-columns: 1fr; }
             .services-grid-3 { grid-template-columns: 1fr; }
@@ -414,6 +443,9 @@
             .why-grid { grid-template-columns: 1fr; }
             .matrix-table { font-size: 0.82rem; }
             .matrix-table th, .matrix-table td { padding: 12px 14px; }
+            .matrix-table { display: block; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+            .form-fields { grid-template-columns: repeat(2, 1fr); }
+            .program-grid { grid-template-columns: repeat(2, 1fr); }
             nav.nav-open .nav-links { display: flex; }
             .f-grid { grid-template-columns: 1fr; gap: 30px; }
             .footer-bottom { flex-direction: column; text-align: center; }
@@ -423,6 +455,8 @@
             .hero-stat { padding: 0 18px; }
             .hero::before { width: 180px; height: 180px; }
             .hero::after { width: 140px; height: 140px; }
+            .program-grid { grid-template-columns: 1fr; }
+            .form-fields { grid-template-columns: 1fr; }
         }
         @media (max-width: 420px) { .hv-grid { grid-template-columns: 1fr; } .hero-stat { padding: 0 18px; } }
         .nav-logo-item { display: none; }
@@ -495,7 +529,7 @@
         <!-- ===== Page Purpose & Intro ===== -->
         <section class="container section-padding" style="padding-top: 40px;">
             <div class="two-col-wide">
-                <div>
+                <div class="intro-left">
                     <span class="section-label"><i class="fa-solid fa-compass"></i> Local Qualification Hub</span>
                     <h2>Commercial Facility Support in Chula Vista</h2>
                     <p style="margin-top: 16px; font-size: 1.02rem;">This local page helps a Chula Vista owner, property manager, tenant or operations team identify the relevant RCC-BGM service path and understand how availability is confirmed. It does not duplicate the complete content of the national service pages or imply that every service is available at every property.</p>
@@ -566,17 +600,14 @@
             </div>
 
             <h3 style="margin-top: 36px; margin-bottom: 8px;">Program Frequency</h3>
-            <table class="matrix-table scroll-reveal">
-                <thead><tr><th>Daily / High Frequency</th><th>Routine Frequency</th><th>Periodic Care</th><th>Project Cleaning</th></tr></thead>
-                <tbody><tr>
-                    <td>Restrooms, entrances, visible public areas and high-use employee spaces.</td>
-                    <td>Offices, meeting rooms, corridors and standard common areas.</td>
-                    <td>Carpet extraction, hard-floor maintenance, upholstery and high dusting.</td>
-                    <td>Move-in, move-out, post-construction or occupancy preparation.</td>
-                </tr></tbody>
-            </table>
+            <div class="program-grid scroll-reveal">
+                <div class="program-item"><h4><i class="fa-solid fa-bolt"></i> Daily / High Frequency</h4><p>Restrooms, entrances, visible public areas and high-use employee spaces.</p></div>
+                <div class="program-item"><h4><i class="fa-solid fa-repeat"></i> Routine Frequency</h4><p>Offices, meeting rooms, corridors and standard common areas.</p></div>
+                <div class="program-item"><h4><i class="fa-solid fa-arrows-rotate"></i> Periodic Care</h4><p>Carpet extraction, hard-floor maintenance, upholstery and high dusting.</p></div>
+                <div class="program-item"><h4><i class="fa-solid fa-truck-ramp-box"></i> Project Cleaning</h4><p>Move-in, move-out, post-construction or occupancy preparation.</p></div>
+            </div>
 
-            <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: wrap;">
+            <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
                 <a href="commercial-cleaning-services.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial Cleaning</a>
                 <a href="commercial-janitorial-services.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial Janitorial</a>
                 <a href="office-cleaning-services.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Office Cleaning</a>
@@ -676,13 +707,13 @@
                 <p>The City's Bayfront planning discusses energy and communications infrastructure. RCC-BGM may refer to technology-supported cleaning or facility upgrades only when the specific property, equipment and responsibilities are confirmed. Do not claim integration with public infrastructure or guaranteed energy performance.</p>
             </div>
 
-            <div style="margin-top: 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
-                <a href="commercial-cleaning-services.html" class="btn-secondary" style="justify-content: center; width: 100%;"><i class="fa-solid fa-link"></i> Commercial Cleaning</a>
-                <a href="commercial-deep-cleaning.html" class="btn-secondary" style="justify-content: center; width: 100%;"><i class="fa-solid fa-link"></i> Deep Cleaning</a>
-                <a href="commercial-hvac-services.html" class="btn-secondary" style="justify-content: center; width: 100%;"><i class="fa-solid fa-link"></i> Commercial HVAC</a>
-                <a href="commercial-painting.html" class="btn-secondary" style="justify-content: center; width: 100%;"><i class="fa-solid fa-link"></i> Commercial Painting</a>
-                <a href="tenant-improvements.html" class="btn-secondary" style="justify-content: center; width: 100%;"><i class="fa-solid fa-link"></i> Tenant Improvements</a>
-                <a href="facility-upgrades.html" class="btn-secondary" style="justify-content: center; width: 100%;"><i class="fa-solid fa-link"></i> Facility Upgrades</a>
+            <div class="service-link-grid">
+                <a href="commercial-cleaning-services.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial Cleaning</a>
+                <a href="commercial-deep-cleaning.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Deep Cleaning</a>
+                <a href="commercial-hvac-services.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial HVAC</a>
+                <a href="commercial-painting.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial Painting</a>
+                <a href="tenant-improvements.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Tenant Improvements</a>
+                <a href="facility-upgrades.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Facility Upgrades</a>
             </div>
         </section>
 
@@ -726,7 +757,7 @@
                     <p>Avoid "medical-grade," "hospital-grade," "infection-free," "HIPAA-compliant cleaning" and guaranteed pathogen-removal language unless the exact meaning and evidence are established.</p>
                 </div>
 
-                <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: nowrap; justify-content: center;">
+                <div class="service-link-row">
                     <a href="laboratory-medical-cleaning.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Laboratory &amp; Medical Cleaning</a>
                     <a href="commercial-cleaning-services.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial Cleaning</a>
                     <a href="commercial-hvac-services.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial HVAC</a>
@@ -777,7 +808,7 @@
                 <p>Hazardous-material cleanup, confined-space entry, machinery cleaning, combustible-dust remediation, environmental remediation and regulated waste handling require separate qualification.</p>
             </div>
 
-            <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: nowrap; justify-content: center;">
+            <div class="service-link-row">
                 <a href="industrial-cleaning-services.html" class="btn-secondary" style="width: 100%;"><i class="fa-solid fa-link"></i> Industrial Cleaning</a>
                 <a href="facility-maintenance-services.html" class="btn-secondary" style="width: 100%;"><i class="fa-solid fa-link"></i> Facility Maintenance</a>
                 <a href="maintenance-construction.html" class="btn-secondary" style="width: 100%;"><i class="fa-solid fa-link"></i> Maintenance Construction</a>
@@ -832,7 +863,7 @@
                     <p>HVAC or building upgrades can be evaluated for efficiency goals. The page does not guarantee utility savings, payback, code compliance or eligibility for financing or incentive programs.</p>
                 </div>
 
-                <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: nowrap; justify-content: center;">
+                <div class="service-link-row">
                     <a href="facility-maintenance-services.html" class="btn-secondary" style="width: 100%;"><i class="fa-solid fa-link"></i> Facility Maintenance</a>
                     <a href="commercial-hvac-services.html" class="btn-secondary" style="width: 100%;"><i class="fa-solid fa-link"></i> Commercial HVAC</a>
                     <a href="commercial-mep.html" class="btn-secondary" style="width: 100%;"><i class="fa-solid fa-link"></i> Commercial MEP</a>
@@ -888,13 +919,13 @@
                 <p>Chula Vista's business resources specifically identify tenant-improvement plans and permit processing as part of the City's business-assistance framework. The website may link to those official resources, but RCC-BGM does not imply City endorsement or guaranteed processing. <a href="https://www.chulavistaca.gov" target="_blank" rel="noopener" style="color: var(--accent-blue); font-weight: 600;">Visit City of Chula Vista Business Resources →</a></p>
             </div>
 
-            <div style="margin-top: 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
-                <a href="commercial-construction.html" class="btn-secondary" style="justify-content: center; width: 100%;"><i class="fa-solid fa-link"></i> Commercial Construction</a>
-                <a href="tenant-improvements.html" class="btn-secondary" style="justify-content: center; width: 100%;"><i class="fa-solid fa-link"></i> Tenant Improvements</a>
-                <a href="commercial-hvac-services.html" class="btn-secondary" style="justify-content: center; width: 100%;"><i class="fa-solid fa-link"></i> Commercial HVAC</a>
-                <a href="commercial-mep.html" class="btn-secondary" style="justify-content: center; width: 100%;"><i class="fa-solid fa-link"></i> Commercial MEP</a>
-                <a href="commercial-carpentry.html" class="btn-secondary" style="justify-content: center; width: 100%;"><i class="fa-solid fa-link"></i> Commercial Carpentry</a>
-                <a href="commercial-painting.html" class="btn-secondary" style="justify-content: center; width: 100%;"><i class="fa-solid fa-link"></i> Commercial Painting</a>
+            <div class="service-link-grid">
+                <a href="commercial-construction.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial Construction</a>
+                <a href="tenant-improvements.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Tenant Improvements</a>
+                <a href="commercial-hvac-services.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial HVAC</a>
+                <a href="commercial-mep.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial MEP</a>
+                <a href="commercial-carpentry.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial Carpentry</a>
+                <a href="commercial-painting.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial Painting</a>
             </div>
         </section>
 
@@ -905,15 +936,12 @@
                 <h2>MEP, Maintenance Construction<br>and Facility Upgrades in Chula Vista</h2>
                 <p class="section-intro">Mechanical, electrical and plumbing requirements must align with the tenant plan, equipment, ceilings, access, code, inspections and other trades. RCC-BGM describes MEP as coordination and project management unless the responsible engineering or licensed trade function is confirmed.</p>
 
-                <table class="matrix-table scroll-reveal">
-                    <thead><tr><th>Mechanical</th><th>Electrical</th><th>Plumbing</th><th>Documentation</th></tr></thead>
-                    <tbody><tr>
-                        <td>HVAC, ventilation, ductwork, controls and equipment clearances.</td>
-                        <td>Power, lighting, controls and equipment connections through qualified parties.</td>
-                        <td>Supply, drainage, fixtures and equipment connections through qualified parties.</td>
-                        <td>Plans, submittals, inspections, changes and closeout where included.</td>
-                    </tr></tbody>
-                </table>
+                <div class="program-grid scroll-reveal">
+                    <div class="program-item"><h4><i class="fa-solid fa-fan"></i> Mechanical</h4><p>HVAC, ventilation, ductwork, controls and equipment clearances.</p></div>
+                    <div class="program-item"><h4><i class="fa-solid fa-bolt"></i> Electrical</h4><p>Power, lighting, controls and equipment connections through qualified parties.</p></div>
+                    <div class="program-item"><h4><i class="fa-solid fa-shower"></i> Plumbing</h4><p>Supply, drainage, fixtures and equipment connections through qualified parties.</p></div>
+                    <div class="program-item"><h4><i class="fa-solid fa-file-shield"></i> Documentation</h4><p>Plans, submittals, inspections, changes and closeout where included.</p></div>
+                </div>
 
                 <div class="two-col" style="margin-top: 30px;">
                     <div class="content-block scroll-reveal">
@@ -938,7 +966,7 @@
                     <p>Project-specific permitting, design, engineering, accessibility, fire, hazardous-material and specialist responsibilities must be identified before work begins. Do not promise approval or compliance in general page copy.</p>
                 </div>
 
-                <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: nowrap; justify-content: center;">
+                <div class="service-link-row">
                     <a href="commercial-mep.html" class="btn-secondary" style="width: 100%;"><i class="fa-solid fa-link"></i> Commercial MEP</a>
                     <a href="maintenance-construction.html" class="btn-secondary" style="width: 100%;"><i class="fa-solid fa-link"></i> Maintenance Construction</a>
                     <a href="facility-upgrades.html" class="btn-secondary" style="width: 100%;"><i class="fa-solid fa-link"></i> Facility Upgrades</a>
@@ -985,7 +1013,7 @@
                 <p>Do not make generalized promises about salt tolerance, coastal corrosion, plant survival or irrigation performance. These depend on the exact site, design, materials and maintenance plan.</p>
             </div>
 
-            <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: wrap;">
+            <div class="service-link-row">
                 <a href="commercial-landscaping.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial Landscaping</a>
                 <a href="facility-maintenance-services.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Facility Maintenance</a>
                 <a href="facility-upgrades.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Facility Upgrades</a>
@@ -1019,7 +1047,7 @@
                 </div>
 
                 <h3 style="margin-top: 36px; margin-bottom: 8px;">Pilot Framework</h3>
-                <div class="process-grid-6" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="process-grid-4">
                     <div class="step-card scroll-reveal selected"><span class="step-num">01</span><h4>Baseline</h4><p>Document current routes, floor conditions and service expectations.</p></div>
                     <div class="step-card scroll-reveal"><span class="step-num">02</span><h4>Pilot</h4><p>Test a defined area and operating window.</p></div>
                     <div class="step-card scroll-reveal"><span class="step-num">03</span><h4>Review</h4><p>Evaluate route completion, safety, obstacles and staff interaction.</p></div>
@@ -1031,7 +1059,7 @@
                     <p>Do not claim fixed labor savings, productivity multipliers, square-foot capacity, uptime, cleanliness scores, ROI or energy savings without equipment-specific and facility-specific evidence.</p>
                 </div>
 
-                <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: wrap;">
+                <div class="service-link-row">
                     <a href="smart-cleaning-robotics.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Smart Cleaning Robotics</a>
                     <a href="commercial-janitorial-services.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial Janitorial</a>
                 </div>
@@ -1076,15 +1104,12 @@
 
             <div class="content-block scroll-reveal" style="margin-top: 30px;">
                 <h3><i class="fa-solid fa-folder-open" style="color: var(--accent-gold); margin-right: 8px;"></i>Preconstruction Information to Collect</h3>
-                <table class="matrix-table" style="margin-top: 16px;">
-                    <thead><tr><th>Property</th><th>Documents</th><th>Systems</th><th>Schedule</th></tr></thead>
-                    <tbody><tr>
-                        <td>Address, existing use, proposed use, size and occupancy.</td>
-                        <td>Plans, landlord criteria, existing records and photographs.</td>
-                        <td>HVAC, electrical, plumbing, fire and equipment requirements.</td>
-                        <td>Lease milestones, operating constraints and desired occupancy.</td>
-                    </tr></tbody>
-                </table>
+                <div class="program-grid" style="margin-top: 16px;">
+                    <div class="program-item"><h4><i class="fa-solid fa-building"></i> Property</h4><p>Address, existing use, proposed use, size and occupancy.</p></div>
+                    <div class="program-item"><h4><i class="fa-solid fa-folder"></i> Documents</h4><p>Plans, landlord criteria, existing records and photographs.</p></div>
+                    <div class="program-item"><h4><i class="fa-solid fa-gears"></i> Systems</h4><p>HVAC, electrical, plumbing, fire and equipment requirements.</p></div>
+                    <div class="program-item"><h4><i class="fa-solid fa-calendar-check"></i> Schedule</h4><p>Lease milestones, operating constraints and desired occupancy.</p></div>
+                </div>
             </div>
 
             <div class="info-box scroll-reveal" style="margin-top: 20px;">
@@ -1092,7 +1117,7 @@
                 <p>The City's business concierge can help businesses navigate licensing, site selection and permitting. This is a City service separate from RCC-BGM. <a href="https://www.chulavistaca.gov" target="_blank" rel="noopener" style="color: var(--accent-blue); font-weight: 600;">Visit City of Chula Vista Development Services →</a></p>
             </div>
 
-            <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: wrap;">
+            <div class="service-link-row">
                 <a href="commercial-construction.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial Construction</a>
                 <a href="tenant-improvements.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Tenant Improvements</a>
                 <a href="commercial-mep.html" class="btn-secondary"><i class="fa-solid fa-link"></i> Commercial MEP</a>
