@@ -247,7 +247,7 @@ nav.nav-scrolled::after {
   width: auto;
   height: auto;
   transform: translate(-50%, -50%);
-  object-fit: cover;
+  object-fit: contain;
   z-index: 0;
 }
 
